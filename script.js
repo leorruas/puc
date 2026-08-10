@@ -271,7 +271,21 @@ function abrirArtigo(titulo, conteudoMarkdown) {
 
     // Processa blocos Mermaid se houver
     if (typeof mermaid !== 'undefined') {
-        mermaid.init(undefined, artigoCorpo.querySelectorAll('.language-mermaid'));
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        const blocosMermaid = artigoCorpo.querySelectorAll('pre code.language-mermaid, pre.language-mermaid');
+        blocosMermaid.forEach((bloco, idx) => {
+            const containerPre = bloco.tagName.toLowerCase() === 'pre' ? bloco : bloco.parentElement;
+            const codigoMermaid = bloco.textContent;
+            const divMermaid = document.createElement('div');
+            divMermaid.className = 'mermaid';
+            divMermaid.textContent = codigoMermaid;
+            containerPre.replaceWith(divMermaid);
+        });
+        try {
+            mermaid.run({ nodes: artigoCorpo.querySelectorAll('.mermaid') });
+        } catch (err) {
+            console.error("Erro ao renderizar Mermaid:", err);
+        }
     }
 
     leitorDeArtigo.classList.remove("escondido");

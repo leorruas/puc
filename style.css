@@ -280,6 +280,17 @@ button:hover {
     word-break: break-word;
 }
 
+.mermaid {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--accent-blue-alpha-30);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
 .code-line {
     display: flex;
     align-items: flex-start;
