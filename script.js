@@ -314,13 +314,15 @@ function processarLinksObsidian() {
 }
 
 function navegarParaLinkObsidian(nomeOuCaminho) {
-    const limpo = nomeOuCaminho.trim().toLowerCase();
+    const normalizar = (str) => str.trim().toLowerCase().replace(/:/g, " -").replace(/\s+/g, " ");
+    const limpo = normalizar(nomeOuCaminho);
     
     // Procura o artigo correspondente pelo título ou nome de arquivo
     const encontrado = todosOsArtigos.find(a => {
-        const tituloMatch = a.titulo.toLowerCase() === limpo;
-        const nomeArquivo = decodeURI(a.path).split("/").pop().replace(".md", "").toLowerCase();
-        return tituloMatch || nomeArquivo === limpo;
+        const tituloMatch = normalizar(a.titulo) === limpo;
+        const nomeArquivo = normalizar(decodeURI(a.path).split("/").pop().replace(".md", ""));
+        const caminhoSemExtensao = normalizar(decodeURI(a.path).replace("./", "").replace(".md", ""));
+        return tituloMatch || nomeArquivo === limpo || caminhoSemExtensao === limpo;
     });
 
     if (encontrado) {
