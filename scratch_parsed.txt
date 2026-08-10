@@ -1,0 +1,700 @@
+**Joyce Christina de Paiva Carvalho:** Bem, boa noite a todos. Sejam bem-vindos a mais um semestre do ec90a4ca-e4ca-4e64-85da-a91963bddc92/248-0
+
+**William Rocha dos Santos:** Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/253-1
+
+**Joyce Christina de Paiva Carvalho:** curso de Análise e Desenvolvimento de Sistemas. Para quem ainda não me conhece, ec90a4ca-e4ca-4e64-85da-a91963bddc92/253-2 eu sou professora Joice. ec90a4ca-e4ca-4e64-85da-a91963bddc92/264-0 E eu estou aqui como coordenadora do curso. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/264-1 hoje nós vamos aqui dar algumas informações, né, iniciais, ec90a4ca-e4ca-4e64-85da-a91963bddc92/264-2 como a gente faz em todo semestre, mas vocês vão ter ec90a4ca-e4ca-4e64-85da-a91963bddc92/271-0 Encontros com os professores de cada eixo, detalhando mais o projeto de cada um ec90a4ca-e4ca-4e64-85da-a91963bddc92/271-1 deles, certo? Eu gosto aqui de sempre chamar atenção. ec90a4ca-e4ca-4e64-85da-a91963bddc92/280-0 Para o nosso perfil no Instagram, esse é um perfil conjunto com todos os ec90a4ca-e4ca-4e64-85da-a91963bddc92/280-1 cursos de ADS da PUC Minas, então é importante vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/282-0 A. ec90a4ca-e4ca-4e64-85da-a91963bddc92/288-0 Vocês entrarem no perfil, porque lá nós temos várias informações, ec90a4ca-e4ca-4e64-85da-a91963bddc92/288-1 a gente faz várias divulgações e vocês ficam sabendo também o que está ec90a4ca-e4ca-4e64-85da-a91963bddc92/288-2 acontecendo nos outros cursos também, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/292-0 Bom, então é o primeiro assunto que a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/292-1 estava falando logo agora antes de iniciar, que é o acesso às plataformas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/292-2 que é importantíssimo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/293-0 Então, os acessos a partir de hoje, tanto para o Canvas quanto para o Teams, ec90a4ca-e4ca-4e64-85da-a91963bddc92/293-1 eles devem ser feitos utilizando o domínio@pucminas.edu. ec90a4ca-e4ca-4e64-85da-a91963bddc92/298-0 .br, tá? A senha permanece a mesma que vocês ec90a4ca-e4ca-4e64-85da-a91963bddc92/298-1 utilizavam no semestre passado, tá? Qualquer dificuldade, gente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/298-2 em relação a esse acesso, vocês podem entrar em contato ec90a4ca-e4ca-4e64-85da-a91963bddc92/302-0 Com as tutoras, que elas vão ajudá-los, está certo? ec90a4ca-e4ca-4e64-85da-a91963bddc92/307-0 Bom, um outro detalhe é em relação ao GitHub ec90a4ca-e4ca-4e64-85da-a91963bddc92/307-1 Classroom, tá? Que é a ferramenta, né? A plataforma que a gente utiliza para ec90a4ca-e4ca-4e64-85da-a91963bddc92/307-2 criar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/310-0 As turmas é e para vocês criarem os repositórios de vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/314-0 O GitHub Classroom, ele será continuado no final do mês, ec90a4ca-e4ca-4e64-85da-a91963bddc92/314-1 no dia 23 do 8. ec90a4ca-e4ca-4e64-85da-a91963bddc92/316-0 Então a gente está avaliando é outras ferramentas para substituí-lo, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/316-1 E o que que vocês devem fazer? Então aguardar as orientações que serão ec90a4ca-e4ca-4e64-85da-a91963bddc92/316-2 repassadas pelos seus professores. ec90a4ca-e4ca-4e64-85da-a91963bddc92/318-0 De projeto, tá, mas não precisam ficar. É preocupados quanto a isso, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/318-1 A gente vai continuar a utilizar o GitHub. O GitHub classroom é só uma maneira da ec90a4ca-e4ca-4e64-85da-a91963bddc92/318-2 gente organizar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/322-0 Os repositórios em turmas, tá? Mas a nossa plataforma mesmo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/322-1 o nosso repositório de dados de código vai continuar sendo o GitHub, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/322-2 Então é só o GitHub. ec90a4ca-e4ca-4e64-85da-a91963bddc92/325-0 Classroom que foi descontinuado, está bom? ec90a4ca-e4ca-4e64-85da-a91963bddc92/329-0 Então, mais ao longo dessa semana ou da próxima, ec90a4ca-e4ca-4e64-85da-a91963bddc92/329-1 provavelmente mais da próxima. ec90a4ca-e4ca-4e64-85da-a91963bddc92/330-0 Vocês vão receber instruções, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/334-0 Lembrando aqui também do calendário acadêmico, ec90a4ca-e4ca-4e64-85da-a91963bddc92/334-1 o semestre se inicia hoje e ele termina no dia 22 de dezembro, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/337-0 É importante vocês acessarem o calendário acadêmico, ec90a4ca-e4ca-4e64-85da-a91963bddc92/337-1 vocês têm acesso a ele aqui pelo portal da PUC, ec90a4ca-e4ca-4e64-85da-a91963bddc92/337-2 então aqui vocês ficam cientes de uma série de datas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/343-0 É do calendário, como tratamento, início e fim de semestre, é recessos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/343-1 feriados e uma outra plataforma que também é muito importante. ec90a4ca-e4ca-4e64-85da-a91963bddc92/344-0 Que tem várias informações importantes para o dia a dia de vocês, ec90a4ca-e4ca-4e64-85da-a91963bddc92/344-1 é o portal do aluno. ec90a4ca-e4ca-4e64-85da-a91963bddc92/349-0 Então, no portal do aluno, vocês têm muitas informações que ec90a4ca-e4ca-4e64-85da-a91963bddc92/349-1 interessam a vocês, então vocês conseguem acessar o ec90a4ca-e4ca-4e64-85da-a91963bddc92/349-2 calendário acadêmico pelo portal do aluno, o guia do aluno, o formato. ec90a4ca-e4ca-4e64-85da-a91963bddc92/352-0 biblioteca, como fazer acesso à biblioteca, ec90a4ca-e4ca-4e64-85da-a91963bddc92/352-1 lembrar vocês que todas as nossas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/355-0 Referências bibliográficas, elas estão disponíveis na biblioteca ec90a4ca-e4ca-4e64-85da-a91963bddc92/355-1 digital, né? Então ela é muito ampla, né? E é muito importante, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/355-2 Vocês aproveitarem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/357-0 Não é esse recurso que é oferecido pela universidade, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/364-0 Bom, lembrando aqui mais algumas informações ec90a4ca-e4ca-4e64-85da-a91963bddc92/364-1 sobre o curso, então eu estou na coordenação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/370-0 A professora Sandra Silveira é do colegiado e nós temos aqui 3 professores ec90a4ca-e4ca-4e64-85da-a91963bddc92/370-1 que fazem parte do núcleo docente estruturante. ec90a4ca-e4ca-4e64-85da-a91963bddc92/371-0 Tá que é a professora Luciana de Nardin, que ela também. ec90a4ca-e4ca-4e64-85da-a91963bddc92/371-1 Ela é coordenadora de pesquisa do curso. A professora Viviane Torres, ec90a4ca-e4ca-4e64-85da-a91963bddc92/371-2 que é coordenadora. ec90a4ca-e4ca-4e64-85da-a91963bddc92/374-0 de estágio e o professor Will Machado, que ele é coordenador da infraestrutura. ec90a4ca-e4ca-4e64-85da-a91963bddc92/374-1 Temos também como membro aqui o professor Leonardo Vilela. ec90a4ca-e4ca-4e64-85da-a91963bddc92/379-0 né, que é o coordenador do eixo 4, né, que até está aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/379-1 daí depois eu vou chamá-los, né, para se apresentarem, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/379-2 Temos também a professora Viviane Dias, que é a ec90a4ca-e4ca-4e64-85da-a91963bddc92/385-0 Coordenadora de extensão do curso, tá? Então são esses professores que lidam com ec90a4ca-e4ca-4e64-85da-a91963bddc92/385-1 a gestão do curso, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/388-0 A tutoria, então as tutoras que e tutores que vão ec90a4ca-e4ca-4e64-85da-a91963bddc92/388-1 estar no dia a dia de vocês, auxiliando nas questões acadêmicas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/388-2 nas questões administrativas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/392-0 No eixo 2, é a Vanilda, nos eixos 3 e 4, a Aline e no eixo 5, a Camila. ec90a4ca-e4ca-4e64-85da-a91963bddc92/392-1 Vocês podem entrar em contato. ec90a4ca-e4ca-4e64-85da-a91963bddc92/395-0 Com elas, através da caixa de entrada do Canvas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/395-1 só vocês escolherem quando vocês forem escrever alguma mensagem, ec90a4ca-e4ca-4e64-85da-a91963bddc92/395-2 vocês escolhem a disciplina. ec90a4ca-e4ca-4e64-85da-a91963bddc92/399-0 De projeto e no remetente tem a opção assistente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/399-1 então ele já vai direcionar para assistente do seu eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/402-0 Bom, então essas aqui são as assistentes ec90a4ca-e4ca-4e64-85da-a91963bddc92/402-1 responsáveis pelas questões do dia a dia, tanto acadêmicas quanto administrativas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/402-2 E a gente tem um tutor específico ec90a4ca-e4ca-4e64-85da-a91963bddc92/405-0 Para as disciplinas de desafios contemporâneos e competências ec90a4ca-e4ca-4e64-85da-a91963bddc92/405-1 comportamentais, tá? Então as tutoras aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/405-2 elas não têm acesso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/410-0 A essas duas disciplinas, tá? Então, quando vocês precisarem de algum auxílio ec90a4ca-e4ca-4e64-85da-a91963bddc92/410-1 em relação a essas disciplinas, vocês vão entrar em contato com o ec90a4ca-e4ca-4e64-85da-a91963bddc92/410-2 Guilherme Rodrigues de Araújo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/412-0 Da mesma forma, no Canvas, vocês vão escolher a disciplina de ICC ou ec90a4ca-e4ca-4e64-85da-a91963bddc92/412-1 DC, que vocês estão cursando, e no remetente escolher assistente, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/413-0 Bom, os representantes de eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/415-0 Bem, então nós temos aqui alunos que ec90a4ca-e4ca-4e64-85da-a91963bddc92/415-1 representam vocês com a coordenação, então também nos ajudam nesse contato ec90a4ca-e4ca-4e64-85da-a91963bddc92/415-2 entre a coordenação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/417-0 E todos os alunos no eixo 2. Atualmente a gente está sem representante. ec90a4ca-e4ca-4e64-85da-a91963bddc92/417-1 No eixo 3 a gente tem o Lucas, Pedro e a Lucília. ec90a4ca-e4ca-4e64-85da-a91963bddc92/420-0 É auxílio, eu sei que está aí a no eixo 4 a Carol e ec90a4ca-e4ca-4e64-85da-a91963bddc92/420-1 no eixo 5 a Isabela Borges. Mas eu convido a vocês quem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/427-0 Quiser se candidatar como representante, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/427-1 Vocês podem me mandar uma mensagem pelo Canvas ou então para as assistentes, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/427-2 Não tem problema a gente ter mais de um. ec90a4ca-e4ca-4e64-85da-a91963bddc92/430-0 Representante por eixo, tá? A gente pode ter 12 ou 3. ec90a4ca-e4ca-4e64-85da-a91963bddc92/430-1 É até bom que a gente tenha mais alunos, então fica aí o convite. Oi, Heloíse, ec90a4ca-e4ca-4e64-85da-a91963bddc92/429-0
+
+**Heloise Mendes de Avelar:** Yes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/430-2
+
+**Joyce Christina de Paiva Carvalho:** você vai se candidatar? ec90a4ca-e4ca-4e64-85da-a91963bddc92/431-0
+
+**Heloise Mendes de Avelar:** Vou, eu quero, viu? Você representa doixo 2. ec90a4ca-e4ca-4e64-85da-a91963bddc92/439-0
+
+**Joyce Christina de Paiva Carvalho:** Ah, então tá. Beleza, Heloise, ótimo. Te agradeço muito pela disponibilidade. ec90a4ca-e4ca-4e64-85da-a91963bddc92/439-1 Então depois você só me manda uma mensagem, tá? Para eu lembrar, ec90a4ca-e4ca-4e64-85da-a91963bddc92/439-2 manda o seu contato que a gente tem em grupo de WhatsApp e tudo mais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/440-0 Tá bom, gente? Fica o convite para todos os demais ec90a4ca-e4ca-4e64-85da-a91963bddc92/440-1 alunos dos outros eixos, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/441-0 Bye. ec90a4ca-e4ca-4e64-85da-a91963bddc92/445-0 Sempre bom a gente lembrar no início do semestre, ec90a4ca-e4ca-4e64-85da-a91963bddc92/445-1 como que é a metodologia do curso. Então, isso é muito importante. ec90a4ca-e4ca-4e64-85da-a91963bddc92/445-2 Vocês devem ouvir falar muito por aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/451-0 sobre aprendizado baseado em competências. E aqui no nosso curso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/451-1 isso foi implantado desde o início. Então, o que que o aprendizado? ec90a4ca-e4ca-4e64-85da-a91963bddc92/454-0 Baseado em competências. Então, para a gente construir uma competência, ec90a4ca-e4ca-4e64-85da-a91963bddc92/454-1 para vocês adquirirem uma competência, nós temos 3 pilares. ec90a4ca-e4ca-4e64-85da-a91963bddc92/456-0 Que são os conhecimentos, as habilidades e as atitudes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/458-0 Os conhecimentos no nosso curso vocês vão adquirir. ec90a4ca-e4ca-4e64-85da-a91963bddc92/459-0 Através dos microfundamentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/460-0 As habilidades. ec90a4ca-e4ca-4e64-85da-a91963bddc92/462-0 Através das atividades do projeto, onde vocês aplicam os conhecimentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/464-0 que vocês encontram nos microfundamentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/468-0 E as atitudes? Elas são avaliadas na autoavaliação e ec90a4ca-e4ca-4e64-85da-a91963bddc92/468-1 avaliação por pares. Elas são avaliadas, mas elas são desenvolvidas? ec90a4ca-e4ca-4e64-85da-a91963bddc92/470-0 durante o desenvolvimento do projeto. O que são essas atitudes? Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/470-1 é liderança, gestão de tempo, resolução de conflitos, resiliência. ec90a4ca-e4ca-4e64-85da-a91963bddc92/470-2 Então, tudo isso é desenvolvido ao longo do ec90a4ca-e4ca-4e64-85da-a91963bddc92/470-3 projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/471-0 Então o projeto, ele é o centro da nossa formação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/474-0 Então, o nosso aprendizado, além de ser baseado em competências, ec90a4ca-e4ca-4e64-85da-a91963bddc92/474-1 ele é baseado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/479-0 É em projetos. Então, como vocês sabem, vocês aprendem fazendo, desenvolvendo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/479-1 Então isso é, a gente já tem adotado isso, que é uma tendência. ec90a4ca-e4ca-4e64-85da-a91963bddc92/482-0 Na educação superior, então vocês podem ter certeza que a ec90a4ca-e4ca-4e64-85da-a91963bddc92/482-1 metodologia que nós estamos utilizando aqui no curso, ela está como a gente diz, ec90a4ca-e4ca-4e64-85da-a91963bddc92/482-2 hábito date aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/484-0 É em todas as universidades, tanto do Brasil quanto do mundo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/486-0 And. ec90a4ca-e4ca-4e64-85da-a91963bddc92/487-0 O nosso semestre, que a gente chama de eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/494-0 Ele tem a disciplina central, que é a disciplina de projetos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/494-1 Então é sempre bom lembrar isso, né, porque a gente às vezes tem alunos aqui ec90a4ca-e4ca-4e64-85da-a91963bddc92/494-2 que estão cursando o eixo dois ou o eixo três que vieram ec90a4ca-e4ca-4e64-85da-a91963bddc92/497-0 De outros cursos da PUC Minas ou até mesmo de outras universidades, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/497-1 Só para a gente reforçar essa estrutura aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/501-0 Então, em cada eixo a gente tem 3 disciplinas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/501-1 Então, a gente tem o projeto, né, que é a unidade curricular projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/501-2 Junto ao projeto, a gente tem os microfundamentos ec90a4ca-e4ca-4e64-85da-a91963bddc92/502-0 2. ec90a4ca-e4ca-4e64-85da-a91963bddc92/507-0 E completando o eixo, a gente tem as disciplinas de ec90a4ca-e4ca-4e64-85da-a91963bddc92/507-1 competências comportamentais e desafios contemporâneos. Então, no projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/507-2 vocês estão desenvolvendo as competências. ec90a4ca-e4ca-4e64-85da-a91963bddc92/508-0 Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/512-0 Na disciplina, competências comportamentais é ainda mais ec90a4ca-e4ca-4e64-85da-a91963bddc92/512-1 reforçado as questões da soft skills. ec90a4ca-e4ca-4e64-85da-a91963bddc92/514-0 E nos desafios contemporâneos, temas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/516-0 É da atualidade que são discutidos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/519-0 É para completar essa formação humanista que a PUC Minas oferece. ec90a4ca-e4ca-4e64-85da-a91963bddc92/523-0 Bem, como que vocês enxergam, né? Esse aprendizado em competências na ec90a4ca-e4ca-4e64-85da-a91963bddc92/523-1 disciplina de projetos de vocês, né? Então, em cada projeto, então, lá ec90a4ca-e4ca-4e64-85da-a91963bddc92/525-0 No início, o primeiro card do projeto, que eu comece por aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/525-1 tem a lista de competências que vão ser desenvolvidas no eixo. Então, claro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/529-0 Gente, que nós temos aqui, por exemplo, a competência 2, que é analisar, projetar, ec90a4ca-e4ca-4e64-85da-a91963bddc92/529-1 documentar e implementar sistemas computacionais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/529-2 Vocês vão desenvolver essa competência desde o eixo um. ec90a4ca-e4ca-4e64-85da-a91963bddc92/530-0 Até o eixo sim, então não quer dizer que. ec90a4ca-e4ca-4e64-85da-a91963bddc92/537-0
+
+**Rosilane Ribeiro da Mota:** Joyce, te mutaram. É, te mutaram, Joyce. ec90a4ca-e4ca-4e64-85da-a91963bddc92/535-0
+
+**Sandra Maria Silveira:** Don't stop mood. ec90a4ca-e4ca-4e64-85da-a91963bddc92/534-0
+
+**Odilon de Campos:** Oh, Jorge, se mudou. ec90a4ca-e4ca-4e64-85da-a91963bddc92/533-0
+
+**Daniel Roque :** Ficou mudo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/538-0
+
+**Joyce Christina de Paiva Carvalho:** Já vi aqui, então não quer dizer, tá gente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/538-1 que uma competência ela vai ser totalmente desenvolvida durante o eixo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/538-2 né? Então isso é uma construção, né? Vocês vão. ec90a4ca-e4ca-4e64-85da-a91963bddc92/540-0 Percebendo que vocês vão evoluindo semestre a semestre, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/540-1 Então é muito importante vocês verem aqui quais são as competências que estão sendo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/544-0 desenvolvidas, tá, gente? Essas competências a gente não tirou da ec90a4ca-e4ca-4e64-85da-a91963bddc92/544-1 cabeça da gente, não, né? Então isso aqui tá baseado no catálogo ec90a4ca-e4ca-4e64-85da-a91963bddc92/544-2 nacional de cursos superiores de tecnologia. ec90a4ca-e4ca-4e64-85da-a91963bddc92/545-0 Neta baseado na. ec90a4ca-e4ca-4e64-85da-a91963bddc92/550-0 Nas diretrizes da sociedade brasileira de computação, ec90a4ca-e4ca-4e64-85da-a91963bddc92/550-1 então isso está tudo muito alinhado com é com as entidades representativas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/551-0 Não é da nossa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/552-0 Então aqui vocês veem as competências. ec90a4ca-e4ca-4e64-85da-a91963bddc92/557-0 As habilidades que vão ser desenvolvidas, vocês vão ver em cada etapa do projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/557-1 Então, naquela primeira página de cada etapa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/557-2 onde está sendo descrito o que vocês vão executar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/558-0 Tá em cada etapa, no final da etapa, tem as habilidades que vocês vão ec90a4ca-e4ca-4e64-85da-a91963bddc92/558-1 desenvolver, né? Inclusive, né? Vocês vão ser avaliados, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/559-0 Nessas atividades, então nós temos aqui conceitos que vocês ec90a4ca-e4ca-4e64-85da-a91963bddc92/559-1 vão ser avaliados, ou vocês não atendem os requisitos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/559-2 atende parcialmente, atende. ec90a4ca-e4ca-4e64-85da-a91963bddc92/561-0 e supera. Então, baseado nessa avaliação das rubricas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/561-1 essa avaliação, ela vira uma nota da etapa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/562-0 Bom. ec90a4ca-e4ca-4e64-85da-a91963bddc92/563-0 E os microfundamentos, o conhecimento em cada etapa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/563-1 vocês têm aqui os microfundamentos essenciais para cada etapa, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/563-2 Em alguns eixos, a gente coloca também no cronograma. ec90a4ca-e4ca-4e64-85da-a91963bddc92/568-0 inicial das etapas, né? Tem a descrição também de quais ec90a4ca-e4ca-4e64-85da-a91963bddc92/568-1 microfundamentos que vocês devem estudar em cada etapa, né? Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/568-2 seguindo esse cronograma certinho, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/570-0 Até o final do semestre, vocês conseguem cumprir toda a ec90a4ca-e4ca-4e64-85da-a91963bddc92/570-1 programação de estudos de microfundamentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/573-0 E aqui as atitudes também no começo por aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/573-1 vocês têm aqui a lista de atitudes que são desenvolvidas ao longo dos projetos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/573-2 tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/575-0 Bom, então voltando aqui, lembrando então que o nosso eixo é ec90a4ca-e4ca-4e64-85da-a91963bddc92/575-1 formado por 3 unidades curriculares projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/577-0 Desafios contemporâneos e competências comportamentais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/580-0 O nosso curso, né? Então ele é organizado em eixos temáticos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/580-1 né? E a cada dois eixos nós temos um ciclo de ec90a4ca-e4ca-4e64-85da-a91963bddc92/580-2 aprendizagem, tá? Ao final de ec90a4ca-e4ca-4e64-85da-a91963bddc92/582-0 Cada ciclo de aprendizagem a gente tem as certificações intermediárias. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/582-1 quando vocês terminam o primeiro ciclo de aprendizagem, ec90a4ca-e4ca-4e64-85da-a91963bddc92/583-0 Que é ser aprovado? ec90a4ca-e4ca-4e64-85da-a91963bddc92/586-0 Nos projetos do eixo um, do eixo 2 e terem sido aprovados em duas ec90a4ca-e4ca-4e64-85da-a91963bddc92/586-1 disciplinas de competências comportamentais e duas disciplinas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/589-0 De desafios contemporâneos, então não basta ser aprovado somente no ec90a4ca-e4ca-4e64-85da-a91963bddc92/589-1 projeto, tá? Porque a certificação é baseada na ec90a4ca-e4ca-4e64-85da-a91963bddc92/589-2 complementação do ciclo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/593-0 E o ciclo é composto pelos dois eixos e cada eixo é composto por projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/593-1 desafios contemporâneos, competências comportamentais. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/593-2 ao final do primeiro ciclo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/594-0 Vocês têm uma certificação de desenvolvedor de software? ec90a4ca-e4ca-4e64-85da-a91963bddc92/598-0 Ao final do segundo ciclo, que é o término do quarto eixo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/598-1 vocês têm a certificação de analista de software e no final é o término. ec90a4ca-e4ca-4e64-85da-a91963bddc92/601-0 Do curso, vocês obtêm o título de tecnólogo em ec90a4ca-e4ca-4e64-85da-a91963bddc92/601-1 análise e desenvolvimento de sistemas. Lembrando que o nosso curso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/601-2 apesar de ser um curso de tecnologia. ec90a4ca-e4ca-4e64-85da-a91963bddc92/603-0 Ele é um curso de graduação, tá? Ele não é um curso técnico. ec90a4ca-e4ca-4e64-85da-a91963bddc92/602-0
+
+**Mateus da Cunha Tito:** Yes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/603-1
+
+**Joyce Christina de Paiva Carvalho:** Ao completar vocês serem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/607-0 receberem o título de tecnólogo, vocês estão aptos a entrar em qualquer ec90a4ca-e4ca-4e64-85da-a91963bddc92/607-1 pós-graduação, seja lato sensu ou stricto sensu. ec90a4ca-e4ca-4e64-85da-a91963bddc92/611-0 Que é um mestrado ou um doutorado. Inclusive, ec90a4ca-e4ca-4e64-85da-a91963bddc92/611-1 a gente já tem ex-alunos que já fizeram mestrado, já foram provados, ec90a4ca-e4ca-4e64-85da-a91963bddc92/611-2 estão agora no doutorado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/613-0 É um aluno que se formou no semestre passado, ec90a4ca-e4ca-4e64-85da-a91963bddc92/613-1 ele acabou de ser aprovado também no mestrado lá na Universidade Federal do ec90a4ca-e4ca-4e64-85da-a91963bddc92/612-0
+
+**Sandra Maria Silveira:** A universidade é. ec90a4ca-e4ca-4e64-85da-a91963bddc92/613-2
+
+**Joyce Christina de Paiva Carvalho:** Rio Grande do Sul. ec90a4ca-e4ca-4e64-85da-a91963bddc92/615-0 Então, é a formação que vocês têm aqui, além dela estar muito próxima do que o ec90a4ca-e4ca-4e64-85da-a91963bddc92/615-1 mercado exige, ela dá um suporte. ec90a4ca-e4ca-4e64-85da-a91963bddc92/616-0 Para vocês se candidatarem a cursos de pós-graduação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/617-0 OK, Sandra, você tá aí? ec90a4ca-e4ca-4e64-85da-a91963bddc92/619-0
+
+**Sandra Maria Silveira:** É só pra dizer aqui pra Nirvana e pro Samuel que a gente vai deixar as ec90a4ca-e4ca-4e64-85da-a91963bddc92/618-0
+
+**Joyce Christina de Paiva Carvalho:** It's much. ec90a4ca-e4ca-4e64-85da-a91963bddc92/619-1
+
+**Sandra Maria Silveira:** perguntas pro final, né, Joyce? ec90a4ca-e4ca-4e64-85da-a91963bddc92/624-0
+
+**Joyce Christina de Paiva Carvalho:** Isso, gente, vocês podem ir anotando aí e a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/620-0
+
+**Sandra Maria Silveira:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/624-1
+
+**Joyce Christina de Paiva Carvalho:** responde no final, está bom? ec90a4ca-e4ca-4e64-85da-a91963bddc92/626-0
+
+**Nirvana de Oliveira Barros:** It's a listen. ec90a4ca-e4ca-4e64-85da-a91963bddc92/625-0
+
+**Joyce Christina de Paiva Carvalho:** Bank. ec90a4ca-e4ca-4e64-85da-a91963bddc92/633-0 Como vocês vão é solicitar essas certificações, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/633-1 Vocês tem que solicitar, tá? Não é automático, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/633-2 Então vocês vão em serviços acadêmicos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/636-0 No SGA solicitação de serviços, graduação. E aí vocês vão solicitar certificação ec90a4ca-e4ca-4e64-85da-a91963bddc92/636-1 intermediário, né? Então aí vocês vão dizer qual ec90a4ca-e4ca-4e64-85da-a91963bddc92/636-2 certificação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/637-0 Que vocês estão solicitando, tá? Então não é automático. ec90a4ca-e4ca-4e64-85da-a91963bddc92/637-1 Vocês precisam solicitar, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/640-0 Bem, então vamos entrar aqui nos componentes ec90a4ca-e4ca-4e64-85da-a91963bddc92/640-1 curriculares, os temas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/644-0 De competências comportamentais do eixo 1. São inteligência emocional e ec90a4ca-e4ca-4e64-85da-a91963bddc92/644-1 sociabilidade, né? Eu resolvi trazer aqui também os temas do ec90a4ca-e4ca-4e64-85da-a91963bddc92/644-2 eixo 1, que pode ser que tenha alguém, né, que. ec90a4ca-e4ca-4e64-85da-a91963bddc92/645-0 Foi aprovado no projeto, mas não foi aprovado, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/645-1 Em algum BC ou 60, então eu trouxe aqui todos os tempos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/645-2 Então, do eixo um é inteligência emocional e ec90a4ca-e4ca-4e64-85da-a91963bddc92/645-3 sociabilidade. ec90a4ca-e4ca-4e64-85da-a91963bddc92/650-0 do eixo 2, negociação e persuasão, eixo 3, liderança, eixo 4, pensamento crítico, ec90a4ca-e4ca-4e64-85da-a91963bddc92/650-1 eixo 5, comunicação interpessoal no ambiente de ec90a4ca-e4ca-4e64-85da-a91963bddc92/650-2 trabalho. Nos desafios contemporâneos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/653-0 O eixo um, redes sociais como meio de desinformação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/653-1 Eixo 2, o problema da corrupção, ética e gestão humanizada. Eixo 3, ec90a4ca-e4ca-4e64-85da-a91963bddc92/653-2 sociedade, diversidade e ética. Eixo 4, crise em redes sociais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/655-0 E eixo 5 mobilidade humana, crise econômica e relações internacionais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/655-1 O que vocês têm que prestar muita atenção na matrícula de vocês? ec90a4ca-e4ca-4e64-85da-a91963bddc92/656-0 Esses 2 primeiros temas aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/657-0 dos eixos 1 e 2, essas disciplinas, elas têm provas presenciais, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/657-1 Então vocês fiquem cientes disso, né? Os demais, eles ainda ec90a4ca-e4ca-4e64-85da-a91963bddc92/658-0 Ainda tem provas online, né? Nós estamos implantando ec90a4ca-e4ca-4e64-85da-a91963bddc92/660-0 Essa questão das provas presenciais para a gente estar de acordo com a ec90a4ca-e4ca-4e64-85da-a91963bddc92/660-1 regulamentação do MEC em relação ao ensino a distância no Brasil, né? Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/662-0 Nós já estamos implantando a prova presencial para o eixo 2. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/662-1 nesse semestre, eixo um e eixo 2 fazem provas presenciais ec90a4ca-e4ca-4e64-85da-a91963bddc92/662-2 de todas as unidades. ec90a4ca-e4ca-4e64-85da-a91963bddc92/663-0 Curriculares. ec90a4ca-e4ca-4e64-85da-a91963bddc92/664-0 Então prestem bastante atenção nisso aí, confiram se vocês fizeram a matrícula ec90a4ca-e4ca-4e64-85da-a91963bddc92/664-1 corretamente. ec90a4ca-e4ca-4e64-85da-a91963bddc92/667-0 Bom, então agora falar bem rapidamente sobre ec90a4ca-e4ca-4e64-85da-a91963bddc92/667-1 os projetos de cada eixo. Bom, no eixo 2, a gente tem o projeto que é ec90a4ca-e4ca-4e64-85da-a91963bddc92/667-2 desenvolvimento de uma aplicação iterativa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/671-0 Então, em poucas palavras, no eixo 2, vocês vão desenvolver um projeto full ec90a4ca-e4ca-4e64-85da-a91963bddc92/671-1 stack, tanto back-end quanto front-end, que nós temos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/674-0 Os microfunamentos que estão associados a esse projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/677-0 E aqui a gente tem, né, a alocação dos professores. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/677-1 na turma um é a professora Luciana de Nardin, turma 2, professor José Wilson, ec90a4ca-e4ca-4e64-85da-a91963bddc92/677-2 turma 3, professor Cláudio Faria. ec90a4ca-e4ca-4e64-85da-a91963bddc92/679-0 turma 4, o professor Carlos Pietro bom, na turma 5, a professora Rosilane, ec90a4ca-e4ca-4e64-85da-a91963bddc92/679-1 na turma 6, o professor Bernardo. Então nós temos aqui alguns professores ec90a4ca-e4ca-4e64-85da-a91963bddc92/679-2 presentes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/681-0 Que gostariam aí de dar as boas vindas para vocês? ec90a4ca-e4ca-4e64-85da-a91963bddc92/682-0 Isso é Wilson, Rosilane. ec90a4ca-e4ca-4e64-85da-a91963bddc92/684-0 Você está mutado ainda, Zé? ec90a4ca-e4ca-4e64-85da-a91963bddc92/685-0
+
+**Jos&#233; Wilson da Costa:** Eu falei para começar com a Luciana, que é da turma um. ec90a4ca-e4ca-4e64-85da-a91963bddc92/686-0
+
+**Rosilane Ribeiro da Mota:** A Lu não está aqui não, Zé. ec90a4ca-e4ca-4e64-85da-a91963bddc92/687-0
+
+**Joyce Christina de Paiva Carvalho:** Eu não sei se a Lu não está aqui, não. ec90a4ca-e4ca-4e64-85da-a91963bddc92/689-0
+
+**Jos&#233; Wilson da Costa:** Tá, então vou começar comigo mesmo. Então, boa noite a todos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/689-1 Eu sou o professor José Wilson, sou professor do curso de análise de ec90a4ca-e4ca-4e64-85da-a91963bddc92/689-2 sistema, com muito orgulho, com muita Alegria, não é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/691-0 Espero todos lá no a partir dessa semana para a gente começar amanhã teremos uma ec90a4ca-e4ca-4e64-85da-a91963bddc92/691-1 reunião com a professora Luciana para dar início aos nossos trabalhos e espero que ec90a4ca-e4ca-4e64-85da-a91963bddc92/691-2 todos esses. ec90a4ca-e4ca-4e64-85da-a91963bddc92/693-0 se sintam desafiados a proporem e desenvolverem excelentes sistemas com ec90a4ca-e4ca-4e64-85da-a91963bddc92/693-1 regras de negócios interessantes e que nós tenhamos assim um semestre de muita ec90a4ca-e4ca-4e64-85da-a91963bddc92/693-2 aprendizagem. Obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/692-0
+
+**Joyce Christina de Paiva Carvalho:** Obrigada, Zé. ec90a4ca-e4ca-4e64-85da-a91963bddc92/694-0
+
+**Jos&#233; Wilson da Costa:** Joice e bem-vindo aí os outros professores, os alunos e as alunas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/695-0
+
+**Joyce Christina de Paiva Carvalho:** Obrigada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/701-0
+
+**Rosilane Ribeiro da Mota:** Boa noite, todo mundo. Me chamo Rosilane. Eu estou até olhando aqui porque o meu ec90a4ca-e4ca-4e64-85da-a91963bddc92/701-1 encontro com vocês vai ser nas quintas. Só que nessa quinta, especificamente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/701-2 tem formatura. ec90a4ca-e4ca-4e64-85da-a91963bddc92/703-0 Aí depois eu vou estar combinando com vocês aí por mensagem, ec90a4ca-e4ca-4e64-85da-a91963bddc92/703-1 é quando a turma também eu conseguir acesso a ela pelo Canvas, não é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/703-2 Mas aí eu peço a todos, Joyce, se você puder no em algum momento mostrar ec90a4ca-e4ca-4e64-85da-a91963bddc92/703-3 o QR Code da reunião de manhã, porque eu não vou conseguir enviar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/704-0 Tá, então. ec90a4ca-e4ca-4e64-85da-a91963bddc92/705-0
+
+**Joyce Christina de Paiva Carvalho:** Não pode deixar que a gente vai pedir para as assistentes enviarem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/707-0
+
+**Rosilane Ribeiro da Mota:** Ah, então tá. Então amanhã tem uma reunião que vai ec90a4ca-e4ca-4e64-85da-a91963bddc92/706-0
+
+**Joyce Christina de Paiva Carvalho:** That. ec90a4ca-e4ca-4e64-85da-a91963bddc92/707-1
+
+**Rosilane Ribeiro da Mota:** explicar um pouco melhor do eixo 2. O eixo 2 tem uma diferença aí grande em ec90a4ca-e4ca-4e64-85da-a91963bddc92/707-2 relação ao eixo um e justamente por conta dessa diferença no final, ec90a4ca-e4ca-4e64-85da-a91963bddc92/707-3 é muito legal ver o tanto que vocês evoluem profissionalmente. ec90a4ca-e4ca-4e64-85da-a91963bddc92/708-0 né isso dois exigem uma postura um pouco mais de engajamento enquanto grupo né ec90a4ca-e4ca-4e64-85da-a91963bddc92/708-1 então vocês também já coloquem isso aí como meta de ter uma colaboração mais ec90a4ca-e4ca-4e64-85da-a91963bddc92/708-2 assertiva mesmo um com o outro né para fazer com que o projeto aconteça ec90a4ca-e4ca-4e64-85da-a91963bddc92/709-0 Isso qualquer coisa eu estou aí à disposição. ec90a4ca-e4ca-4e64-85da-a91963bddc92/710-0
+
+**Joyce Christina de Paiva Carvalho:** Obrigada, Rose. ec90a4ca-e4ca-4e64-85da-a91963bddc92/711-0
+
+**Rosilane Ribeiro da Mota:** And. ec90a4ca-e4ca-4e64-85da-a91963bddc92/714-0
+
+**Joyce Christina de Paiva Carvalho:** Bom, pessoal, mais para frente eu vou dizer para vocês ec90a4ca-e4ca-4e64-85da-a91963bddc92/714-1 aqui quando que vão ser esses encontros com os professores do eixo ainda essa ec90a4ca-e4ca-4e64-85da-a91963bddc92/714-2 semana, tá? Então, só um minutinho que a gente vai chegar lá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/716-0 Bom, no eixo 3, o projeto é desenvolvimento de uma ec90a4ca-e4ca-4e64-85da-a91963bddc92/716-1 aplicação móvel em um ambiente de negócios. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/716-2 nesse eixo vocês vão aprender a. ec90a4ca-e4ca-4e64-85da-a91963bddc92/720-0 Modelar processos e automatizar esses processos através do desenvolvimento de ec90a4ca-e4ca-4e64-85da-a91963bddc92/720-1 uma aplicação móvel. Então aqui nós temos também os ec90a4ca-e4ca-4e64-85da-a91963bddc92/720-2 microfinamentos. Também não vou. ec90a4ca-e4ca-4e64-85da-a91963bddc92/722-0 Ler aqui para não ficar maçante, é, e aqui nós temos a. ec90a4ca-e4ca-4e64-85da-a91963bddc92/723-0 É a alocação dos professores. ec90a4ca-e4ca-4e64-85da-a91963bddc92/724-0
+
+**Sandra Maria Silveira:** Joyce, não é? Eu não sei se para todos está aparecendo ec90a4ca-e4ca-4e64-85da-a91963bddc92/724-1 na tela, pessoal, está pode deixar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/728-0
+
+**Joyce Christina de Paiva Carvalho:** É, então na turma um é o professor Will ec90a4ca-e4ca-4e64-85da-a91963bddc92/725-0
+
+**Leonardo Vilela Cardoso:** I get OK. ec90a4ca-e4ca-4e64-85da-a91963bddc92/728-1
+
+**Joyce Christina de Paiva Carvalho:** Machado, na turma 2, professor Udo, na turma 3, o professor Harrison, na 4, ec90a4ca-e4ca-4e64-85da-a91963bddc92/728-2 professor Diego. ec90a4ca-e4ca-4e64-85da-a91963bddc92/732-0 Na sim, professor Wesley, na turma 6, a professora Caroline, aqui eu errei, ec90a4ca-e4ca-4e64-85da-a91963bddc92/732-1 tá gente? Turma 7, professor é sinat, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/733-0 No eixo, tem alguém aí do eixo três? Professor, eu acho que não, eu não vi. ec90a4ca-e4ca-4e64-85da-a91963bddc92/734-0 Acho que não. ec90a4ca-e4ca-4e64-85da-a91963bddc92/735-0 Bom, depois vocês vão conhecer os professores ec90a4ca-e4ca-4e64-85da-a91963bddc92/735-1 do eixo 3, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/737-0 Bom, no eixo 4 é o eixo onde vocês vão ec90a4ca-e4ca-4e64-85da-a91963bddc92/737-1 desenvolver uma aplicação distribuída. Então nós temos aqui os microfundamentos ec90a4ca-e4ca-4e64-85da-a91963bddc92/737-2 e aqui ec90a4ca-e4ca-4e64-85da-a91963bddc92/738-0 a alocação dos professores, as turmas 1 e 2, ec90a4ca-e4ca-4e64-85da-a91963bddc92/738-1 então sob a responsabilidade do professor Leonardo Vilela, a turma 3, ec90a4ca-e4ca-4e64-85da-a91963bddc92/738-2 professor Cléber, turmas 4 e 5 ec90a4ca-e4ca-4e64-85da-a91963bddc92/739-0 Professor Pedro Felipe, a turma 6, professor Edvaldo, turma 7, ec90a4ca-e4ca-4e64-85da-a91963bddc92/739-1 professor sinale. ec90a4ca-e4ca-4e64-85da-a91963bddc92/740-0 Léo, você quer dar as boas vindas aí para o ec90a4ca-e4ca-4e64-85da-a91963bddc92/740-1 pessoal 24? ec90a4ca-e4ca-4e64-85da-a91963bddc92/743-0
+
+**Leonardo Vilela Cardoso:** Boa noite a todos, boas vindas para todos vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/743-1 Eu não vou me delongar muito aqui porque a gente vai ter um encontro especial do ec90a4ca-e4ca-4e64-85da-a91963bddc92/743-2 eixo 4 logo às 20 horas. Então no nosso canal aqui já fica atento, ec90a4ca-e4ca-4e64-85da-a91963bddc92/743-3 20 horas a gente começa e lá a gente vai ter um overview sobre tudo que a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/743-4 vai ver ao longo do semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/745-0 Então, para, vamos dizer assim, a gente não gastar muito tempo aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/745-1 daqui a pouco lá a gente debate um pouco sobre o eixo 4, ec90a4ca-e4ca-4e64-85da-a91963bddc92/745-2 mas a parte legal é onde a gente vai juntar tudo que vocês já aprenderam e vai ec90a4ca-e4ca-4e64-85da-a91963bddc92/745-3 aprender um pouquinho mais sobre como colocar tudo isso realmente funcional ec90a4ca-e4ca-4e64-85da-a91963bddc92/745-4 para um cliente real. ec90a4ca-e4ca-4e64-85da-a91963bddc92/746-0 Não tem cliente real, mas vai funcionar para o cliente real. ec90a4ca-e4ca-4e64-85da-a91963bddc92/747-0
+
+**Joyce Christina de Paiva Carvalho:** Isso mesmo, obrigada, Léo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/749-0 Bom, e por fim, nós temos o eixo 5, que é o nosso eixo extensionista, ec90a4ca-e4ca-4e64-85da-a91963bddc92/749-1 onde vocês vão desenvolver uma aplicação para um cliente. ec90a4ca-e4ca-4e64-85da-a91963bddc92/752-0 Real, né? Então aqui é o nosso eixo extensionista. ec90a4ca-e4ca-4e64-85da-a91963bddc92/752-1 Vou mostrar aqui para vocês a alocação. Na turma 1, professora Sandra, na turma 2, ec90a4ca-e4ca-4e64-85da-a91963bddc92/752-2 professora Soraia. ec90a4ca-e4ca-4e64-85da-a91963bddc92/753-0 Turma 3 e 6, professor José Wilson, na turma 4, professor Pedro e na turma 5, ec90a4ca-e4ca-4e64-85da-a91963bddc92/753-1 professor Lúcio. ec90a4ca-e4ca-4e64-85da-a91963bddc92/754-0 Sandra, Zé Wilson. ec90a4ca-e4ca-4e64-85da-a91963bddc92/757-0
+
+**Sandra Maria Silveira:** Boa noite a todos. É uma Alegria encontrarmos vocês aqui no ec90a4ca-e4ca-4e64-85da-a91963bddc92/757-1 eixo 5. Tá aí o Zé nessa Alegria toda, porque a gente fica muito empolgado, ec90a4ca-e4ca-4e64-85da-a91963bddc92/757-2 né Zé? O Wilson é um eixo é. ec90a4ca-e4ca-4e64-85da-a91963bddc92/760-0 Que realmente fecha com chave de ouro, aí o curso de vocês é um cliente real, ec90a4ca-e4ca-4e64-85da-a91963bddc92/760-1 mas também é uma experiência real para vocês. Então a gente fala realmente vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/761-0 São profissionais de análise de desenvolvimento de sistêmicos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/761-1 Faremos o nosso encontro do eixo 5 na quarta-feira, às 19 e 30. Está certo? É, ec90a4ca-e4ca-4e64-85da-a91963bddc92/761-2 nós vamos mandar os convites amanhã para todos vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/765-0 Muitos já estiveram na reunião de preparação para o eixo 5 no final do ec90a4ca-e4ca-4e64-85da-a91963bddc92/765-1 semestre passado e esperamos todos lá na quarta para a gente poder detalhar um ec90a4ca-e4ca-4e64-85da-a91963bddc92/765-2 pouco melhor a elaboração desse eixo. Bem-vindos alunos, bem-vindo colegas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/765-3 é uma alegria. ec90a4ca-e4ca-4e64-85da-a91963bddc92/767-0 Iniciarmos aí o novo semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/768-0
+
+**Joyce Christina de Paiva Carvalho:** Let's see, we got the same, say it. ec90a4ca-e4ca-4e64-85da-a91963bddc92/771-0
+
+**Jos&#233; Wilson da Costa:** Bem, boa noite mais uma vez, como diz a Sandra, de fato, ec90a4ca-e4ca-4e64-85da-a91963bddc92/769-0
+
+**Joyce Christina de Paiva Carvalho:** Okay. ec90a4ca-e4ca-4e64-85da-a91963bddc92/771-1
+
+**Jos&#233; Wilson da Costa:** é uma alegria verdadeira, né, Sandra? Porque aqui a gente se realiza também ec90a4ca-e4ca-4e64-85da-a91963bddc92/771-2 como professor e como profissional da área de informática. ec90a4ca-e4ca-4e64-85da-a91963bddc92/772-0 então vamos ver um grupo um time entregar uma aplicação e ver o depoimento do ec90a4ca-e4ca-4e64-85da-a91963bddc92/772-1 parceiro recebendo aquela aplicação e e utilizando e cada aplicação que a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/772-2 consegue ver aqui mais mais ec90a4ca-e4ca-4e64-85da-a91963bddc92/774-0 confiante mais interessante e resolvendo de fato um problema, ec90a4ca-e4ca-4e64-85da-a91963bddc92/774-1 um problema do cliente e é uma experiência muito interessante para todos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/774-2 não é? Sejam bem-vindos aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/773-0
+
+**Joyce Christina de Paiva Carvalho:** Obrigada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/776-0 Vou continuar aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/779-0 Bom gente, então fiquem atentos, né? Durante essa semana, ec90a4ca-e4ca-4e64-85da-a91963bddc92/779-1 então vocês terão o encontro com, o encontro conjunto de todas as turmas do ec90a4ca-e4ca-4e64-85da-a91963bddc92/779-2 eixo para vocês saberem um pouco mais ec90a4ca-e4ca-4e64-85da-a91963bddc92/781-0 sobre os projetos. Então é amanhã, é a reunião do eixo 2, às 19 e 30, ec90a4ca-e4ca-4e64-85da-a91963bddc92/781-1 do eixo 3 vai ser na quinta-feira, às 19, do eixo 4 é daqui a pouco. ec90a4ca-e4ca-4e64-85da-a91963bddc92/783-0 Daqui a 10 minutos, tá? E do eixo 5 vocês mudaram, né, Sandra? ec90a4ca-e4ca-4e64-85da-a91963bddc92/783-1 Quarta-feira eu vou mudar aqui. É, eu vou mudar aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/784-0
+
+**Sandra Maria Silveira:** Foi necessário mudar, não é? A gente mudou aí no final da tarde, ec90a4ca-e4ca-4e64-85da-a91963bddc92/784-1 está pessoal? ec90a4ca-e4ca-4e64-85da-a91963bddc92/788-0
+
+**Joyce Christina de Paiva Carvalho:** Para vocês ficarem nos slides, ficar tudo certinho, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/788-1 Então o link para cada reunião, ele está na comunicação enviada pelos ec90a4ca-e4ca-4e64-85da-a91963bddc92/788-2 professores. ec90a4ca-e4ca-4e64-85da-a91963bddc92/789-0 Tá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/791-0 Bom, matrícula gente, muito importante vocês conferirem se ec90a4ca-e4ca-4e64-85da-a91963bddc92/791-1 vocês estão matriculados no projeto, desafios contemporâneos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/791-2 competências comportamentais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/792-0 Especial atenção para os alunos do eixo 5 para vocês verificarem se vocês já ec90a4ca-e4ca-4e64-85da-a91963bddc92/792-1 cursaram todos os desafios, todas as competências, se não tem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/794-0 Nada faltando. A gente faz uma conferência com e avisa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/794-1 mas é importante vocês verificarem que pode ser, pode acontecer algum erro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/794-2 É para conferir a matrícula. ec90a4ca-e4ca-4e64-85da-a91963bddc92/797-0 Vocês entram no SGA em serviços acadêmicos, matrícula. Na quarta etapa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/797-1 emitir comprovante de matrícula. Então lá vocês veem todas as disciplinas ec90a4ca-e4ca-4e64-85da-a91963bddc92/797-2 nas quais vocês estão. ec90a4ca-e4ca-4e64-85da-a91963bddc92/798-0 matriculados, né? Caso haja inconsistências, vocês, ec90a4ca-e4ca-4e64-85da-a91963bddc92/798-1 por favor, entrem em contato com a tutora do seu ec90a4ca-e4ca-4e64-85da-a91963bddc92/798-2 eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/799-0 É. ec90a4ca-e4ca-4e64-85da-a91963bddc92/801-0 Bom, para vocês verificarem se vocês estão ec90a4ca-e4ca-4e64-85da-a91963bddc92/801-1 acessando as disciplinas de vocês, vocês vêm aqui em cursos, todos os cursos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/801-2 tá? E aí vocês vão favoritar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/802-0 Os vão ver se os cursos, as disciplinas desse semestre, ec90a4ca-e4ca-4e64-85da-a91963bddc92/802-1 elas estão marcadas com estrelinha. Aí elas vão aparecer no painel de ec90a4ca-e4ca-4e64-85da-a91963bddc92/802-2 controle de vocês, tá? Então verifiquem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/803-0 Isso aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/806-0 Bom, formação de grupos. No início do semestre, ec90a4ca-e4ca-4e64-85da-a91963bddc92/806-1 nós temos a formação dos grupos para iniciar os projetos. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/806-2 os grupos podem ser os mesmos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/807-0 Do eixo passado ou novos grupos a serem informados, não é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/809-0 O importante é a regra de cada grupo ter no máximo seis componentes da mesma turma, ec90a4ca-e4ca-4e64-85da-a91963bddc92/809-1 né? Então, se vocês já tiverem o grupo de vocês ec90a4ca-e4ca-4e64-85da-a91963bddc92/810-0 Definido, vocês podem enviar o nome completo de ec90a4ca-e4ca-4e64-85da-a91963bddc92/810-1 todos os alunos para a tutora do eixo para que a gente possa fazer essa ec90a4ca-e4ca-4e64-85da-a91963bddc92/810-2 distribuição dos grupos entre as turmas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/813-0 Que às vezes, metade do grupo está numa turma, ec90a4ca-e4ca-4e64-85da-a91963bddc92/813-1 outra metade está em outra turma. Então a gente faz a distribuição, ec90a4ca-e4ca-4e64-85da-a91963bddc92/813-2 garantindo que vocês vão estar na mesma turma, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/816-0 É claro que essas transferências de turma, elas são feitas mediante a existência de ec90a4ca-e4ca-4e64-85da-a91963bddc92/816-1 vagas na turma, tá? O que a gente garante é que alunos do ec90a4ca-e4ca-4e64-85da-a91963bddc92/816-2 mesmo grupo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/817-0 ficarão na mesma turma, tá? Então isso é importante, ec90a4ca-e4ca-4e64-85da-a91963bddc92/817-1 vocês se manifestarem quanto a isso, se já tiverem grupos formados, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/817-2 Caso haja alunos que não se manifestaram até o dia 14, ec90a4ca-e4ca-4e64-85da-a91963bddc92/818-0 a gente vai transferir aleatoriamente os alunos entre as turmas para que a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/818-1 possa iniciar os projetos, tá bom? Heloísa, no final eu abro ec90a4ca-e4ca-4e64-85da-a91963bddc92/819-0 Para perguntas, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/821-0 And. ec90a4ca-e4ca-4e64-85da-a91963bddc92/825-0 Processo de avaliação, então não custa nada a gente repassar ec90a4ca-e4ca-4e64-85da-a91963bddc92/825-1 isso aqui, que às vezes gera muita dúvida. Então, em cada etapa do projeto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/826-0 A nota da etapa está atrelada à conclusão dos microfundamentos de cada etapa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/826-1 Tem muito aluno que chega lá no final de semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/829-0 E falar, eu não sabia dessa regra. Está escrito no Canvas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/829-1 a gente fala todo início de semestre aqui. Então, durante cada etapa do projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/829-2 o aluno deve cursar todos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/831-0 os microfundamentos que estão listados na etapa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/831-1 E tem que ter um aproveitamento mínimo de 75% em cada microfundamento, tá? Senão, ec90a4ca-e4ca-4e64-85da-a91963bddc92/833-0 A nota da etapa, ela fica zerada, tá? Então se eu tenho 2 microfundamentos na ec90a4ca-e4ca-4e64-85da-a91963bddc92/833-1 etapa, vamos supor na etapa um. ec90a4ca-e4ca-4e64-85da-a91963bddc92/837-0 Eu completo um microfundamento com 100% de aproveitamento e o segundo eu tenho ec90a4ca-e4ca-4e64-85da-a91963bddc92/837-1 50% de aproveitamento, a nota fica zerada na etapa, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/837-2 Então isso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/839-0 muito importante vocês prestarem atenção nisso aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/839-1 Então agora a gente tem uma ferramenta que vocês podem acompanhar todo esse a ec90a4ca-e4ca-4e64-85da-a91963bddc92/839-2 execução dos microfundamentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/842-0 Que é a farm, vou chegar lá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/844-0 Então, caso o aluno não atinja o percentual ec90a4ca-e4ca-4e64-85da-a91963bddc92/844-1 mínimo que eu disse, a etapa do projeto é zerada, ec90a4ca-e4ca-4e64-85da-a91963bddc92/844-2 zero na etapa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/845-0 Bom, mas você tem oportunidade de recuperar a ec90a4ca-e4ca-4e64-85da-a91963bddc92/845-1 nota. ec90a4ca-e4ca-4e64-85da-a91963bddc92/846-0 Ma'am. ec90a4ca-e4ca-4e64-85da-a91963bddc92/848-0 Se vocês completarem o microfundamento com no mínimo 75% de aproveitamento até 7 ec90a4ca-e4ca-4e64-85da-a91963bddc92/848-1 dias antes da reavaliação, ec90a4ca-e4ca-4e64-85da-a91963bddc92/851-0 vocês recuperam 70% da nota, tá? Então, se a etapa valia cinco pontos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/851-1 atrasou o microfundamento, ficou com zero, né? Fez o micro ec90a4ca-e4ca-4e64-85da-a91963bddc92/853-0 fundamento é em atraso, né? Vocês passam a ter 3 e meio, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/853-1 Caso tenham, né? O grupo tenha tirado total na etapa, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/857-0 Bom, processo de avaliação no eixo 2, nós temos a prova presencial valendo 55 ec90a4ca-e4ca-4e64-85da-a91963bddc92/857-1 pontos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/860-0 As etapas do projeto, né? Então a prova e a avaliação dos ec90a4ca-e4ca-4e64-85da-a91963bddc92/860-1 conhecimentos. Das habilidades são as etapas do projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/860-2 são 40 pontos e a autoavaliação e avaliação por pares. ec90a4ca-e4ca-4e64-85da-a91963bddc92/861-0 dois e meio cada um ec90a4ca-e4ca-4e64-85da-a91963bddc92/862-0 A reavaliação também é uma prova presencial que vale 100 pontos. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/862-1 como é calculada a nota final, então é a nota de todas as avaliações. ec90a4ca-e4ca-4e64-85da-a91963bddc92/864-0 Do semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/866-0 Mais a reavaliação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/867-0 Dividido por 2, então é uma média aritmética entre a nota ec90a4ca-e4ca-4e64-85da-a91963bddc92/867-1 obtida durante o semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/868-0 E a nota da reavaliação, então aqui não há substituição da nota da ec90a4ca-e4ca-4e64-85da-a91963bddc92/868-1 reavaliação, é feita uma média, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/870-0 Bom, nos eixos 3, 4 e 5 nós continuamos com o sistema de ec90a4ca-e4ca-4e64-85da-a91963bddc92/870-1 pesos, né? Então, as avaliações dos microfundamentos, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/870-2 Cada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/871-0 O pilar aqui da construção das competências vale 100 pontos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/871-1 só que com pesos diferentes. Avaliação de conhecimentos tem um peso 03, ec90a4ca-e4ca-4e64-85da-a91963bddc92/871-2 né, de 30%. ec90a4ca-e4ca-4e64-85da-a91963bddc92/873-0 Das habilidades, 60% e das atitudes, 10%. ec90a4ca-e4ca-4e64-85da-a91963bddc92/879-0 Nesses eixos, aí sim, a reavaliação, ela vale 30 e ela substitui a soma das 3 ec90a4ca-e4ca-4e64-85da-a91963bddc92/879-1 avaliações. ec90a4ca-e4ca-4e64-85da-a91963bddc92/880-0 Doce mix. ec90a4ca-e4ca-4e64-85da-a91963bddc92/881-0 That. ec90a4ca-e4ca-4e64-85da-a91963bddc92/883-0 Bom, então isso aqui tudo vocês já sabem, só para lembrar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/884-0 Critérios para aprovação, lembrando aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/887-0 Nota final maior ou igual a 60 pontos e. ec90a4ca-e4ca-4e64-85da-a91963bddc92/888-0
+
+**Josu&#233; Maciel Reis:** Mutaram, ativa aí sua voz. ec90a4ca-e4ca-4e64-85da-a91963bddc92/890-0
+
+**Joyce Christina de Paiva Carvalho:** percentual mínimo de frequência nos encontros semanais de 75%, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/890-1 Os critérios de aprovação para competências comportamentais e desafios ec90a4ca-e4ca-4e64-85da-a91963bddc92/890-2 contemporâneos ec90a4ca-e4ca-4e64-85da-a91963bddc92/894-0 Nota final maior ou igual a 60 pontos. Não tem controle de presença nessas 2 ec90a4ca-e4ca-4e64-85da-a91963bddc92/894-1 disciplinas, que elas são completamente assíncronas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/894-2 A disciplina de projeto nós temos encontros. ec90a4ca-e4ca-4e64-85da-a91963bddc92/895-0 Síncronos semanais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/896-0 Bom, muito importante, né? O aluno é o único responsável pelo seu ec90a4ca-e4ca-4e64-85da-a91963bddc92/896-1 acompanhamento acadêmico, né? Então até nós, as tutoras. ec90a4ca-e4ca-4e64-85da-a91963bddc92/898-0 né? A gente envia avisos e tudo, mas o aluno é que tem que acompanhar ec90a4ca-e4ca-4e64-85da-a91963bddc92/898-1 tanto as suas notas quanto as suas faltas, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/898-2 Esse acompanhamento ele deve ser feito pelo ec90a4ca-e4ca-4e64-85da-a91963bddc92/899-0 SGA. ec90a4ca-e4ca-4e64-85da-a91963bddc92/900-0 Tá que é o sistema oficial, onde tem a nota oficial. ec90a4ca-e4ca-4e64-85da-a91963bddc92/904-0 Bom, apuração de frequência, né? Então isso aqui ainda gera muita dúvida ec90a4ca-e4ca-4e64-85da-a91963bddc92/904-1 nos alunos. Todas as aulas da disciplina de projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/904-2 elas são alocadas no sábado à tarde. ec90a4ca-e4ca-4e64-85da-a91963bddc92/905-0 Tá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/907-0 Isso por motivos administrativos, tá, gente? ec90a4ca-e4ca-4e64-85da-a91963bddc92/908-0 Bom. ec90a4ca-e4ca-4e64-85da-a91963bddc92/912-0 Cada encontro semanal, então cada reunião que você tem com o ec90a4ca-e4ca-4e64-85da-a91963bddc92/912-1 professor de projeto corresponde a duas horas aula, duas aulas, tá? Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/912-2 caso o aluno não compareça ec90a4ca-e4ca-4e64-85da-a91963bddc92/915-0 Ao encontro semanal, a falta é lançada no sábado da semana ec90a4ca-e4ca-4e64-85da-a91963bddc92/915-1 corrente. Então tem muito aluno que vem reclamar ec90a4ca-e4ca-4e64-85da-a91963bddc92/915-2 assim, nossa, mas eu não tenho aula no sábado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/915-3 Por que eu levei falta no sábado? A falta é referente ao encontro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/918-0 Da semana, porque o professor pode atender grupos em ec90a4ca-e4ca-4e64-85da-a91963bddc92/918-1 dias distintos da semana. Então, para ficar mais fácil, ec90a4ca-e4ca-4e64-85da-a91963bddc92/918-2 todas as aulas são alocadas no sábado. Então, um exemplo aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/919-0 Então vamos supor que esse é o nosso encontro semanal, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/923-0 Hoje é dia 3 de agosto, caso o aluno tenha faltado nesse encontro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/925-0 São lançadas duas faltas no sábado seguinte. ec90a4ca-e4ca-4e64-85da-a91963bddc92/926-0 Ou seja, no dia 8 de agosto, então sempre assim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/928-0 Encontros durante a semana e. ec90a4ca-e4ca-4e64-85da-a91963bddc92/931-0 Presença ou falta registrada no sábado da semana na qual ocorreu o encontro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/932-0 Certo gente? ec90a4ca-e4ca-4e64-85da-a91963bddc92/934-0
+
+**Josu&#233; Maciel Reis:** Joyce, desculpa te interromper, o pessoal das 8 horas a gente vai pra ec90a4ca-e4ca-4e64-85da-a91963bddc92/934-1 outra sala ou fica aqui até acabar e depois vai pra outra? ec90a4ca-e4ca-4e64-85da-a91963bddc92/935-0
+
+**Joyce Christina de Paiva Carvalho:** Eu já estou terminando rapidinho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/940-0
+
+**Josu&#233; Maciel Reis:** Ah tá só para saber se a gente ia ou se ficava Ah então tá vai ec90a4ca-e4ca-4e64-85da-a91963bddc92/938-0
+
+**Leonardo Vilela Cardoso:** Pode aguardar aqui, eu mandei uma mensagem lá, ec90a4ca-e4ca-4e64-85da-a91963bddc92/936-0
+
+**Joyce Christina de Paiva Carvalho:** The. ec90a4ca-e4ca-4e64-85da-a91963bddc92/938-1
+
+**Leonardo Vilela Cardoso:** a gente aguarda. ec90a4ca-e4ca-4e64-85da-a91963bddc92/937-0
+
+**Joyce Christina de Paiva Carvalho:** Hey. ec90a4ca-e4ca-4e64-85da-a91963bddc92/943-0 Que isso aqui é importante, tá, gente? Essa questão aqui da frequência e ec90a4ca-e4ca-4e64-85da-a91963bddc92/943-1 lembrando que vocês só podem ter 25% de faltas, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/946-0 Bom, lembrando que a Farm, que é a ferramenta de acompanhamento de ec90a4ca-e4ca-4e64-85da-a91963bddc92/946-1 realização de microfundamentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/948-0 É, pela Farm, vocês acompanham o desempenho de vocês em ec90a4ca-e4ca-4e64-85da-a91963bddc92/948-1 cada microfundamento. Então aqui, ó, o que está verdinho é o que vocês ec90a4ca-e4ca-4e64-85da-a91963bddc92/948-2 terminaram, né, no prazo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/949-0 O que fica vermelho é o que ainda está incompleto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/952-0 E o que está em laranja, né? Então aqui vocês vejam aqui que tem um ec90a4ca-e4ca-4e64-85da-a91963bddc92/952-1 percentual de 85%. Ele foi completado em atraso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/952-2 então não tem desculpa de não saber. ec90a4ca-e4ca-4e64-85da-a91963bddc92/955-0 Qual o percentual que vocês têm no microfundamento? É só acessar a Farm, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/955-1 Então aqui vocês têm os microfundamentos de cada etapa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/955-2 Vocês vão acompanhando aqui se está tudo verdinho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/958-0 Ou não. Então, por exemplo, aqui nessa etapa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/958-1 o aluno aqui está com zero, porque ele completou esses ec90a4ca-e4ca-4e64-85da-a91963bddc92/958-2 microfundamentos, completou um em atraso, mas um aqui ficou. ec90a4ca-e4ca-4e64-85da-a91963bddc92/960-0 Neto com percentual abaixo de 75%, nota fica zero. ec90a4ca-e4ca-4e64-85da-a91963bddc92/962-0 Tá, até que complete esse microfundamento e a ec90a4ca-e4ca-4e64-85da-a91963bddc92/962-1 nota vem de 70% da nota obtida no pelo grupo, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/965-0 O link da Farm, vocês também recebem isso nas mensagens ec90a4ca-e4ca-4e64-85da-a91963bddc92/965-1 das tutoras, que é o virtual.icei. pucminas.br. ec90a4ca-e4ca-4e64-85da-a91963bddc92/966-0 Bom, calendário das avaliações, eixo 2 onde tem as avaliações presenciais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/967-0 A primeira prova vai acontecer. ec90a4ca-e4ca-4e64-85da-a91963bddc92/968-0 nos dias 14 e 21 do 11 são dois sábados tá horário de manhã de 8 às 12:30 e aos ec90a4ca-e4ca-4e64-85da-a91963bddc92/968-1 sábados de 14 à tarde de 14 ec90a4ca-e4ca-4e64-85da-a91963bddc92/970-0 a 18 e 30, né? Vocês vão receber orientações depois, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/970-1 Como que vocês vão fazer esse agendamentos, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/970-2 Local de prova e tudo mais. A reavaliação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/972-0 Vai acontecer nos dias 5 e 6 de dezembro. Aqui é um sábado e domingo, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/972-1 Geralmente a reavaliação acontece só no campus coração eucarístico, aqui no mesmo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/973-0 horário auto avaliação e avaliação por pares ela é online no período de 19 de ec90a4ca-e4ca-4e64-85da-a91963bddc92/973-1 outubro a 3 de novembro tá ec90a4ca-e4ca-4e64-85da-a91963bddc92/974-0 Importante, tá gente? Reabertura da avaliação só é possível ec90a4ca-e4ca-4e64-85da-a91963bddc92/974-1 mediante apresentação de testado e tem um prazo de até 72 horas após o ec90a4ca-e4ca-4e64-85da-a91963bddc92/975-0 término da atividade, segundo as normas acadêmicas. Bom, ec90a4ca-e4ca-4e64-85da-a91963bddc92/975-1 outra coisa que eu gostaria de ressaltar, gente, atestado médico não abona faltas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/975-2 tá? É só ec90a4ca-e4ca-4e64-85da-a91963bddc92/976-0 Quando vocês estão em regime especial de estudos, né, que é um período maior, né, ec90a4ca-e4ca-4e64-85da-a91963bddc92/976-1 um atestado de um período maior, que há, né, abono de faltos durante esse período. ec90a4ca-e4ca-4e64-85da-a91963bddc92/978-0 Então, faltou um encontro e apresentou um ec90a4ca-e4ca-4e64-85da-a91963bddc92/978-1 atestado, isso não abona a falta, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/980-0 Bom, calendário, né? Das avaliações dos eixos 3, 4 e 5, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/980-1 Onde as provas são feitas online. Então vocês têm 3 avaliações. ec90a4ca-e4ca-4e64-85da-a91963bddc92/980-2 A primeira avaliação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/982-0 né Sempre as duas primeiras vocês tem uma semana para fazer né iniciando dia 16 de ec90a4ca-e4ca-4e64-85da-a91963bddc92/982-1 outubro até o dia 23 a segunda no dia 6 de novembro ao dia ec90a4ca-e4ca-4e64-85da-a91963bddc92/983-0 13. ec90a4ca-e4ca-4e64-85da-a91963bddc92/985-0 E a terceira avaliação no dia 29. ec90a4ca-e4ca-4e64-85da-a91963bddc92/987-0 de novembro e a reavaliação no dia 13 de dezembro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/987-1 Eu queria chamar a atenção para a data aqui da terceira avaliação, ec90a4ca-e4ca-4e64-85da-a91963bddc92/987-2 porque ela está marcada para o mesmo dia. ec90a4ca-e4ca-4e64-85da-a91963bddc92/988-0 Quando vai ter a prova do Enade, então provavelmente a gente vai ter uma ec90a4ca-e4ca-4e64-85da-a91963bddc92/988-1 alteração nessa data aqui, mas aí vocês vão ser comunicados, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/992-0 É autoavaliação e avaliação por pares é no mesmo período do eixo 2, ec90a4ca-e4ca-4e64-85da-a91963bddc92/992-1 e a reabertura também obedece a mesma regra. ec90a4ca-e4ca-4e64-85da-a91963bddc92/993-0 Trancamento de matrícula. Vocês podem solicitar trancamento de ec90a4ca-e4ca-4e64-85da-a91963bddc92/993-1 matrícula de acordo com o calendário acadêmico até o dia ec90a4ca-e4ca-4e64-85da-a91963bddc92/994-0 8 de setembro, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/997-0 Monitoria, tá? A monitoria, ela vai iniciar no dia 17 de agosto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/997-1 Então, né, nós temos uma equipe no Teams, onde a gente tem todos os canais e os ec90a4ca-e4ca-4e64-85da-a91963bddc92/997-2 horários. ec90a4ca-e4ca-4e64-85da-a91963bddc92/999-0 Eles vão ser divulgados provavelmente na próxima semana. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1000-0 Huh? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1002-0 Sandra, você quer falar alguma coisa? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1004-0
+
+**Sandra Maria Silveira:** Joyce, não só o Gabriel aí que levantou a mão. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1004-1 Se for se for dúvida da monitoria, Gabriel, pode falar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1006-0
+
+**Gabriel da Silva Machado:** É uma dúvida nos dias de sábado que eu tava com essa dúvida desde do eixo um. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1005-0
+
+**Sandra Maria Silveira:** It's. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1008-0 Não, aí vou esperar o final de todas as ec90a4ca-e4ca-4e64-85da-a91963bddc92/1008-1 dúvidas, tá, Gabriel? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1010-0
+
+**Gabriel da Silva Machado:** It is. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1009-0
+
+**Joyce Christina de Paiva Carvalho:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1013-0 Bom, o atendimento da coordenação, então eu e a professora Sandra, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1013-1 toda semana a gente fica disponível nessa equipe de alunos no canal atendimento da ec90a4ca-e4ca-4e64-85da-a91963bddc92/1013-2 coordenação. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1016-0 né a professora Sandra as terças de 21 às 22 e 30 e eu fico às quintas-feiras de 19 ec90a4ca-e4ca-4e64-85da-a91963bddc92/1016-1 e 30 até às 21 tá então é só entrar na equipe alunos ADS ec90a4ca-e4ca-4e64-85da-a91963bddc92/1017-0 Tem um canal atendimento da coordenação, tá? Então vocês podem nos procurar, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1017-1 não precisa marcar horário, a gente vai estar lá disponível para o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1017-2 que vocês precisarem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1019-0 Dúvidas ou orientações, conversas sobre vida profissional, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1019-1 qualquer coisa que vocês precisem, nós estamos lá à disposição. Sandra, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1020-0 She's algum important. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1023-0
+
+**Sandra Maria Silveira:** Não só reforçar que a gente fica à disposição, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1021-0
+
+**Joyce Christina de Paiva Carvalho:** Yes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1023-1
+
+**Sandra Maria Silveira:** que às vezes conversar é mais rápido para resolver alguma questão para vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1024-0
+
+**Joyce Christina de Paiva Carvalho:** Yes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1026-0 Meios de comunicação, né? Isso que eu sempre falo, né gente? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1026-1 Nós estamos no curso EAD, então vocês precisam ficar atentos aos ec90a4ca-e4ca-4e64-85da-a91963bddc92/1026-2 meios de comunicação que nós temos. Então a caixa de entrada do Canvas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1027-0 Vocês têm que acessar sempre. Nós temos aqui os avisos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1027-1 tanto nas disciplinas de projeto quanto no por dentro do curso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1027-2 Então vocês têm que entrar no Canvas, gente, todos os dias. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1032-0 Se vocês tivessem no curso presencial, vocês não teriam que ir à aula todos os ec90a4ca-e4ca-4e64-85da-a91963bddc92/1032-1 dias. Então aqui no Canvas é o nosso ambiente ec90a4ca-e4ca-4e64-85da-a91963bddc92/1032-2 de aprendizagem, então vocês tem que entrar todos os dias ec90a4ca-e4ca-4e64-85da-a91963bddc92/1032-3 no Canvas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1033-0 Para saber se tem alguma mensagem do professor, da tutora, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1033-1 se tem alguma divulgação, algum aviso importante, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1033-2 então isso tem que virar um hábito, entrar no Canvas todos os dias. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1034-0 Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1036-0 E acessar tanto a caixa de entrada quanto os avisos nas disciplinas de projeto por ec90a4ca-e4ca-4e64-85da-a91963bddc92/1036-1 dentro do curso e também de competências comportamentais e desafios contemporâneos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1038-0 É, vocês podem acessar os avisos também ec90a4ca-e4ca-4e64-85da-a91963bddc92/1038-1 dentro da disciplina de projeto, né? Eles aparecem aqui, ó, com um megafone, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1038-2 tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1039-0 Stone key. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1042-0 E lembrar que vocês têm uma série de recursos de apoio a vocês durante o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1042-1 semestre. Nós temos o NAI, que é o núcleo de apoio à inclusão do ec90a4ca-e4ca-4e64-85da-a91963bddc92/1042-2 aluno com necessidades educacionais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1043-0 especiais né quem precisar né de alguma assistência especial pode entrar em ec90a4ca-e4ca-4e64-85da-a91963bddc92/1043-1 contato com na qualquer dúvida entrar em contato com a tutora a gente tem as ec90a4ca-e4ca-4e64-85da-a91963bddc92/1043-2 clínicas de psicologia fisioterapia ec90a4ca-e4ca-4e64-85da-a91963bddc92/1046-0 Odontologia, né, gratuita para os alunos da PUC. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1046-1 Temos a Pastoral Universitária, o Complexo Esportivo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1046-2 Campus Coração Eucarístico, né? Então, lembrando que vocês são alunos PUC Minos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1048-0 Vocês podem ter acesso a todas as instalações da PUC Minas, né? Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1048-1 vocês podem acessar os laboratórios de informática e biblioteca de todos os ec90a4ca-e4ca-4e64-85da-a91963bddc92/1048-2 campi. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1049-0 Então, vamos supor, eu moro perto da PUC Betim, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1049-1 posso ir lá no laboratório, utilizar o laboratório, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1049-2 desde que não tenha aula no horário, posso acessar a biblioteca. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1051-0 Então tirem partido dessas, desses recursos que a universidade ec90a4ca-e4ca-4e64-85da-a91963bddc92/1051-1 proporciona a vocês. E temos também convênios com escolas de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1051-2 idioma. Então isso tudo é divulgado para vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1052-0 So. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1054-0 A gente tem várias oportunidades que a gente divulga, né? Nos grupos de WhatsApp, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1054-1 os representantes de eixo também divulgam, né? Nós temos o PUC Carreiras, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1054-2 onde vocês encontram vagas de estágio, vagas de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1055-0 emprego é material né para elaborar o currículo para fazer entrevista né para ec90a4ca-e4ca-4e64-85da-a91963bddc92/1055-1 se candidatar né a monitoria né Sandra então tem vários recursos aqui no ec90a4ca-e4ca-4e64-85da-a91963bddc92/1055-2 carreiras ec90a4ca-e4ca-4e64-85da-a91963bddc92/1058-0 A gente tem o PUCTEC, né, que é a nossa incubadora, né, de empresas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1058-1 de negócios. A gente tem o Issei Talks, né, que são palestras. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1060-0 que a gente também divulga para vocês. A gente tem o programa Level Up e o PAM, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1060-1 que é o programa de pré-aceleração de negócios, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1060-2 que também a gente está sempre divulgando aí para vocês. Fiquem atentos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1062-0 Mais oportunidades, né? Extensão universitária. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1062-1 sempre no início do semestre são abertas as inscrições para vocês participarem de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1062-2 projetos de extensão. Podem ser projetos do curso ou de outros ec90a4ca-e4ca-4e64-85da-a91963bddc92/1062-3 cursos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1063-0 Então, esse semestre nós vamos ter um projeto ec90a4ca-e4ca-4e64-85da-a91963bddc92/1063-1 exclusivo do nosso curso, depois nós vamos divulgar o evento para ec90a4ca-e4ca-4e64-85da-a91963bddc92/1063-2 vocês, para vocês saberem mais sobre o projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1063-3 mas vocês podem participar ec90a4ca-e4ca-4e64-85da-a91963bddc92/1064-0 de projetos de quaisquer cursos, desde que estejam necessitando de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1064-1 recursos com o perfil de vocês. Então fiquem atentos que a inscrição é um ec90a4ca-e4ca-4e64-85da-a91963bddc92/1064-2 período muito rápido, começou hoje. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1065-0 E vai até o dia 12 de agosto, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1067-0 Sobre pesquisa, então nós temos aqui o e-mail da ec90a4ca-e4ca-4e64-85da-a91963bddc92/1067-1 coordenação de pesquisa, que é pesquisadsad@pucminas.br. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1067-2 no mês de setembro, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1069-0 Nós vamos ofertar um minicurso de iniciação à pesquisa científica. Então, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1069-1 quem fez esse minicurso no semestre passado já está elaborando um projeto de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1069-2 pesquisa para ser submetido agora no segundo semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1071-0 Então, quem for fazer nesse semestre o minicurso ec90a4ca-e4ca-4e64-85da-a91963bddc92/1071-1 já vai estar preparado para submeter projeto de pesquisa para o próximo ec90a4ca-e4ca-4e64-85da-a91963bddc92/1071-2 semestre. Então isso é muito interessante. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1074-0 Tá, gente? Os alunos têm gostado bastante desse ec90a4ca-e4ca-4e64-85da-a91963bddc92/1074-1 minicurso de iniciação a pesquisa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1075-0 E lembrando que a gente tem diversas parcerias, não é com. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1076-0 Microsoft, a nossa maior parceira, com a Google, Cisco, IBM, Saido, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1076-1 então fiquem atentos também, que a gente divulga oportunidades de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1076-2 vocês fazerem ec90a4ca-e4ca-4e64-85da-a91963bddc92/1077-0 Cursos gratuitos terem desconto em certificações, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1077-1 Então fiquem atentos também a esses avisos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1078-0 Set. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1081-0 E aí terminamos então por aqui, né? Sejam bem-vindos novamente, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1081-1 Desejamos um ótimo semestre a todos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1083-0
+
+**Sandra Maria Silveira:** Pessoal, só começando, qual é a pergunta do sábado? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1087-0 Qual é a pergunta só? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1086-0
+
+**Gabriel da Silva Machado:** Okay. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1093-0 A pergunta do sábado era que a mesma coisa que eu tinha do primeiro semestre ec90a4ca-e4ca-4e64-85da-a91963bddc92/1093-1 que tinha, acho que monitoria no sábado, elas contam como falta ou só o encontro ec90a4ca-e4ca-4e64-85da-a91963bddc92/1094-0
+
+**Sandra Maria Silveira:** Não, monitoria não tem nada de falta não. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1093-2
+
+**Gabriel da Silva Machado:** com o professor? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1102-0
+
+**Joyce Christina de Paiva Carvalho:** Se a gente usa a oficina de programação, não é oficina de programação, não tá? É, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1095-0
+
+**Gabriel da Silva Machado:** Esses. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1102-1
+
+**Joyce Christina de Paiva Carvalho:** são só os encontros síncronos com professor de projeto na disciplina de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1098-0
+
+**Gabriel da Silva Machado:** Sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1102-2
+
+**Joyce Christina de Paiva Carvalho:** projeto, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1101-0
+
+**Gabriel da Silva Machado:** Ah, tá, obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1103-0
+
+**Joyce Christina de Paiva Carvalho:** Por nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1105-0
+
+**Sandra Maria Silveira:** Bruno. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1108-0 Tudo bem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1110-0
+
+**Joyce Christina de Paiva Carvalho:** Boa noite. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1112-0 Daqui a pouco. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1115-0
+
+**Bruno Pereira Barros:** Ah, tá joia, então. Obrigado. Obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1113-0
+
+**Sandra Maria Silveira:** É. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1114-0
+
+**Joyce Christina de Paiva Carvalho:** Isso, Bruno, seja bem-vindo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1116-0
+
+**Sandra Maria Silveira:** Arthur. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1124-0
+
+**Artur Leandro de Oliveira Santos:** Boa noite, é, peço perdão se já foi dito, mas depois de ter começado já o semestre, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1120-0
+
+**Sandra Maria Silveira:** Boa noite. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1119-0
+
+**Joyce Christina de Paiva Carvalho:** Time. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1123-0
+
+**Daniel Lopes da Costa:** Okay. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1124-1
+
+**Artur Leandro de Oliveira Santos:** tem como ainda fazer a troca de. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1126-0 Esqueci o nome, peço perdão, é ec90a4ca-e4ca-4e64-85da-a91963bddc92/1127-0
+
+**Joyce Christina de Paiva Carvalho:** De turma? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1132-0
+
+**Artur Leandro de Oliveira Santos:** Não de turma é de da assédio, não é assédio a palavra certa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1133-0
+
+**Joyce Christina de Paiva Carvalho:** Do polo? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1135-0
+
+**Artur Leandro de Oliveira Santos:** Isso do Polo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1136-0
+
+**Joyce Christina de Paiva Carvalho:** Olha eu. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1143-0 Olha, isso eu vou ficar te devendo, tá? Manda uma mensagem para as tutoras, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1143-1 porque quando você se matricula, você está associado a um polo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1143-2 Eu acredito que deva poder sim, tá, Arthur? Mas é bom a gente confirmar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1141-0
+
+**Artur Leandro de Oliveira Santos:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1144-0
+
+**Joyce Christina de Paiva Carvalho:** Tá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1145-0
+
+**Artur Leandro de Oliveira Santos:** Amém, obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1146-0
+
+**Joyce Christina de Paiva Carvalho:** Você diz por causa das provas presenciais, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1149-0
+
+**Artur Leandro de Oliveira Santos:** Isso a minha acabou ficando um pouco longe, aí gostaria de saber ainda. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1151-0
+
+**Joyce Christina de Paiva Carvalho:** Não, aí é manda uma mensagem para a tutora do ec90a4ca-e4ca-4e64-85da-a91963bddc92/1151-1 seu eixo que a gente vai tentar resolver, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1152-0
+
+**Artur Leandro de Oliveira Santos:** Tá bem, obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1153-0
+
+**Sandra Maria Silveira:** O Léo, eu acho que ele quer chamar o povo dele, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1159-0
+
+**Leonardo Vilela Cardoso:** isso isso agora eu vou levar meu pessoal embora pessoal do eixo 4 é a chamada tá ec90a4ca-e4ca-4e64-85da-a91963bddc92/1153-1
+
+**Sandra Maria Silveira:** né Léo? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1154-0
+
+**Joyce Christina de Paiva Carvalho:** Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1156-0
+
+**Sandra Maria Silveira:** Chamar o pessoal. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1159-1
+
+**Leonardo Vilela Cardoso:** aberta na no canal de alunos vocês têm acesso e eu também mandei para vocês o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1159-2 link os professores também mandaram é eu já vou indo para lá e a gente começa às ec90a4ca-e4ca-4e64-85da-a91963bddc92/1159-3 20:30 para dar um tempo de quem quiser beber uma água alguma ec90a4ca-e4ca-4e64-85da-a91963bddc92/1162-0 Nesse sentido, está bom? Desculpa, Joyce, Sandra, tchau, tchau, nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1163-0
+
+**Joyce Christina de Paiva Carvalho:** Não, obrigada, viu, Nelson? Fui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1172-0
+
+**Sandra Maria Silveira:** O Joyce, se você também quiser aí tomar uma água ec90a4ca-e4ca-4e64-85da-a91963bddc92/1172-1 para iniciar 2030 lá, eu fico com as dúvidas, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1173-0
+
+**Joyce Christina de Paiva Carvalho:** Tá bom. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1179-0
+
+**Sandra Maria Silveira:** Tem alguém que tem pergunta específica para a professora Joyce? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1189-0
+
+**Nirvana de Oliveira Barros:** Deixa eu só perguntar uma coisa sobre, é porque eu tinha pedido equivalência das ec90a4ca-e4ca-4e64-85da-a91963bddc92/1181-0
+
+**Sandra Maria Silveira:** Sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1189-1
+
+**Nirvana de Oliveira Barros:** disciplinas do primeiro eixo na realidade, que foi desafio comportamental. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1189-2 É desafio comportamental, né? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1191-0
+
+**Joyce Christina de Paiva Carvalho:** Desafios contemporâneos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1192-0
+
+**Sandra Maria Silveira:** Desafios contemporâneos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1197-0
+
+**Nirvana de Oliveira Barros:** E isso e exato. E aí AE fiz no lugar é do segundo eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1193-0
+
+**Sandra Maria Silveira:** Competências comportamentais. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1197-1
+
+**Nirvana de Oliveira Barros:** Aí eu só queria saber se eu também consigo pedir agora. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1202-0 É no segundo, depois que eu terminar o segundo do ec90a4ca-e4ca-4e64-85da-a91963bddc92/1202-1 segundo eixo, no caso, eu consigo pedir normalmente também o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1202-2 esse certificado. Tranquilamente consigo pedir o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1202-3 certificado e uma vez que eu já cortei. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1205-0
+
+**Sandra Maria Silveira:** Se você concluir, é se você concluir o eixo e os desafios ec90a4ca-e4ca-4e64-85da-a91963bddc92/1205-1 contemporâneos e competências comportamentais, sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1207-0
+
+**Nirvana de Oliveira Barros:** It's tranquil. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1209-0
+
+**Sandra Maria Silveira:** Sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1213-0
+
+**Nirvana de Oliveira Barros:** Tá bom, então obrigada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1215-0
+
+**Sandra Maria Silveira:** Joyce. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1214-0
+
+**Joyce Christina de Paiva Carvalho:** And. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1216-0 We. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1218-0
+
+**Sandra Maria Silveira:** É, pode ficar à vontade para sair e eu fico ec90a4ca-e4ca-4e64-85da-a91963bddc92/1227-0
+
+**Joyce Christina de Paiva Carvalho:** Eu falei, tá aí, bom gente, então, bom semestre a todos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1218-1
+
+**Sandra Maria Silveira:** aqui com as perguntas, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1227-1
+
+**Joyce Christina de Paiva Carvalho:** Eu vou dar um tempinho aqui, porque logo mais, né, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1227-2 às 20 e 30 vou fazer a recepção dos alunos do eixo um dos calouros. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1223-0
+
+**Sandra Maria Silveira:** Is. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1228-0
+
+**Joyce Christina de Paiva Carvalho:** Tá, então só. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1230-0
+
+**Sandra Maria Silveira:** Pink possível, entro, tá, Joyce? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1237-0
+
+**Joyce Christina de Paiva Carvalho:** Tá joia? E reforçando qualquer dúvida que ainda ec90a4ca-e4ca-4e64-85da-a91963bddc92/1232-0
+
+**Sandra Maria Silveira:** No. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1237-1
+
+**Joyce Christina de Paiva Carvalho:** tenha, que se vocês quiserem conversar comigo, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1237-2 pode me mandar mensagem pelo Teams, pelo Canvas, atendo com maior prazer. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1241-0 Está bom, gente? Então, tchau, bom semestre. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1244-0
+
+**Sandra Maria Silveira:** Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1249-0 William. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1255-0
+
+**Willian Sant Anna Sim&#227;o:** Olá, boa noite. Tudo bem, Sandro? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1256-0
+
+**Sandra Maria Silveira:** Boa noite, William, tudo bem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1265-0
+
+**Willian Sant Anna Sim&#227;o:** Deixa eu te fazer uma pergunta, eu estava nessa correria olhando lá no ec90a4ca-e4ca-4e64-85da-a91963bddc92/1265-1 SGA e percebi que eu não consigo ir para a segunda etapa lá da matrícula por conta, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1265-2 acho que de um déficit, um pagamento que preciso fazer da ec90a4ca-e4ca-4e64-85da-a91963bddc92/1265-3 matrícula. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1270-0 E aí, tudo bem, eu vou regularizar ele até segunda-feira, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1270-1 só que eu queria entender o seguinte, eu consigo participar dessas desses ec90a4ca-e4ca-4e64-85da-a91963bddc92/1270-2 encontros que vão acontecer nessa semana enquanto não regularizado? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1278-0
+
+**Sandra Maria Silveira:** Sim, você entra no link, está? Você pode entrar no link, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1278-1 está porque o link não tem vínculo com o SGA. Você vai, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1278-2 você está recebendo os e-mails? Você recebeu o e-mail dessa comunicação? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1276-0
+
+**Willian Sant Anna Sim&#227;o:** Sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1285-0 Sim, estou recebendo um e-mail. Acho que a única coisa que tem de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1279-0
+
+**Sandra Maria Silveira:** Então, pro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1285-1
+
+**Willian Sant Anna Sim&#227;o:** diferente mesmo é que eu acho que o canva ele é atualizado a partir disso e eu ec90a4ca-e4ca-4e64-85da-a91963bddc92/1282-0
+
+**Sandra Maria Silveira:** Is. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1285-2
+
+**Willian Sant Anna Sim&#227;o:** também para conseguir solicitar o comprovante da matrícula, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1285-3 eu acho que tem que é finalizar, resolver essa pendência. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1288-0
+
+**Sandra Maria Silveira:** Isso para você ser alocado em uma turma, mas ir lá saber como que funciona e ec90a4ca-e4ca-4e64-85da-a91963bddc92/1288-1 informar o professor que você está resolvendo matrícula e já se engajar em ec90a4ca-e4ca-4e64-85da-a91963bddc92/1288-2 grupo. Tudo isso você consegue verbalmente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1288-3 não vai estar no sistema, mas você não precisa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1294-0 né É perder isso você pode participar informar que você tá regularizando ec90a4ca-e4ca-4e64-85da-a91963bddc92/1294-1 importantíssimo Enquanto vocês não matrícula é não fizerem a matrícula de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1292-0
+
+**Willian Sant Anna Sim&#227;o:** You. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1294-2
+
+**Sandra Maria Silveira:** vocês é automático a falta tá porque como ec90a4ca-e4ca-4e64-85da-a91963bddc92/1297-0 Não tem registro da presença, aí vai ser lançado como falta. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1297-1 Então assim, acelera, tá, William? Não tem jeito da gente abonada a gente ec90a4ca-e4ca-4e64-85da-a91963bddc92/1296-0
+
+**Willian Sant Anna Sim&#227;o:** Não, tudo bem. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1297-2
+
+**Sandra Maria Silveira:** fazer nada, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1304-0
+
+**Willian Sant Anna Sim&#227;o:** Não, tudo bem. E aproveitando ainda em cima dessa ec90a4ca-e4ca-4e64-85da-a91963bddc92/1304-1 pergunta, esse encontro que vai acontecer na ec90a4ca-e4ca-4e64-85da-a91963bddc92/1304-2 quinta-feira, ele vai contar como um dia de que seria ec90a4ca-e4ca-4e64-85da-a91963bddc92/1302-0
+
+**Sandra Maria Silveira:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1304-3
+
+**Willian Sant Anna Sim&#227;o:** contabilizado por presença ou falta, ou só quando a gente começar a dividir em ec90a4ca-e4ca-4e64-85da-a91963bddc92/1305-0
+
+**Sandra Maria Silveira:** Quinta-feira, porque você vai para o eixo 5. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1304-4
+
+**Willian Sant Anna Sim&#227;o:** grupos? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1306-0 Não tô no eixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1308-0 33. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1309-0
+
+**Sandra Maria Silveira:** Está e o é porque eu não gravei aqui todas as reuniões, é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1310-0
+
+**Willian Sant Anna Sim&#227;o:** Eu tenho quase certeza que é quinta-feira, 7 horas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1315-0
+
+**Sandra Maria Silveira:** Enquanto você enquanto você não fizer sua matrícula, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1315-1 você vai receber falta automaticamente no sistema, tá? Mas você pode participar, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1311-0
+
+**Willian Sant Anna Sim&#227;o:** Do the pain. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1315-2
+
+**Sandra Maria Silveira:** você pode participar, mas depois o professor não tem como ec90a4ca-e4ca-4e64-85da-a91963bddc92/1315-3 abonar, entende? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1317-0
+
+**Willian Sant Anna Sim&#227;o:** Entendi. Não, tá certo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1318-0
+
+**Sandra Maria Silveira:** Mesmo você participando, não tem como bonar, porque é. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1319-0
+
+**Willian Sant Anna Sim&#227;o:** Deu azar de ser do eixo 3, que se fosse do eixo 4 já teria resolvido. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1322-0
+
+**Sandra Maria Silveira:** Não, tranquilo, mas vai dar tempo para você resolver aí ec90a4ca-e4ca-4e64-85da-a91963bddc92/1320-0
+
+**Willian Sant Anna Sim&#227;o:** Three. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1322-1
+
+**Sandra Maria Silveira:** essa semana, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1323-0
+
+**Willian Sant Anna Sim&#227;o:** Tá bom, obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1325-0
+
+**Sandra Maria Silveira:** Por nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1326-0 Guan. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1328-0
+
+**Ruan:** Oi, boa noite, tudo bem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1330-0
+
+**Sandra Maria Silveira:** Boa noite, Juan, tudo bem e você? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1336-0
+
+**Ruan:** Tudo ótimo. Aqui eu queria te perguntar uma coisa. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1332-0
+
+**Sandra Maria Silveira:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1336-1
+
+**Ruan:** No caso do site de PUC Carreiras, enquanto a gente estiver fazendo o curso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1335-0
+
+**Sandra Maria Silveira:** Hello. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1336-2
+
+**Ruan:** a gente vai ter acesso a ele, certo? Após terminar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1337-0
+
+**Sandra Maria Silveira:** Certo? E depois como ex-aluno também, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1338-0
+
+**Ruan:** Também? Ah, perfeito. Ah, então ótimo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1340-0
+
+**Sandra Maria Silveira:** Também tem uma sessão de ex-alunos lá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1343-0
+
+**Ruan:** Ah, sim, perfeito. Então, obrigado, viu? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1344-0
+
+**Sandra Maria Silveira:** Nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1345-0 Bernardo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1350-0
+
+**Bernardo do Valle Pereira:** Boa noite. Estão me ouvindo? Alô? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1352-0
+
+**Sandra Maria Silveira:** Boa noite, sim, Bernardo, estamos te ouvindo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1354-0
+
+**Bernardo do Valle Pereira:** Boa noite, Sandra, é, eu queria te perguntar uma dúvida ec90a4ca-e4ca-4e64-85da-a91963bddc92/1354-1 referente ao ACG. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1356-0
+
+**Sandra Maria Silveira:** Sim, não temos ACG no curso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1355-0
+
+**Bernardo do Valle Pereira:** Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1362-0 Isso, nós temos 200 horas de ECG no curso de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1362-1 ADS. Aí eu queria entender, por exemplo, Ah, não tem? Ah, tá, no ADS não tem? Ah, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1358-0
+
+**Sandra Maria Silveira:** Não temos, não temos, não. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1359-0 Não, tecnólogo não tem a CG. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1362-2
+
+**Bernardo do Valle Pereira:** tá. Então carga horária suplementar não ec90a4ca-e4ca-4e64-85da-a91963bddc92/1362-3 precisa. Ah, tá. Ah, entendi. Maravilha, obrigado, viu? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1360-0
+
+**Sandra Maria Silveira:** No. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1363-0 Mario. Mario. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1370-0
+
+**Mario Guilherme Carvalho:** Boa noite, professores. Boa noite, pessoal. É, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1364-0
+
+**Sandra Maria Silveira:** One nose. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1370-1
+
+**Mario Guilherme Carvalho:** gostaria de perguntar sobre a pesquisa, né, sobre iniciação científica. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1366-0
+
+**Sandra Maria Silveira:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1370-2
+
+**Mario Guilherme Carvalho:** É qual você tem, já tem data para submeter para o projeto? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1369-0
+
+**Sandra Maria Silveira:** Nancy. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1371-0
+
+**Mario Guilherme Carvalho:** Seu áudio mutou? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1377-0
+
+**Sandra Maria Silveira:** É perceber nesse curso de iniciação científica que vai ter aí, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1377-1 você vai ver quais são os projetos, como fazer isso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1377-2 o que você pode se vincular, as áreas disponíveis para você fazer. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1378-0 That. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1380-0
+
+**Mario Guilherme Carvalho:** Não, mas eu já tenho. Eu gostaria de saber como eu posso meter ec90a4ca-e4ca-4e64-85da-a91963bddc92/1380-1 o pré-projeto. É, tem a data. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1381-0
+
+**Sandra Maria Silveira:** Ah, você já tem um projeto? Quem está te orientando? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1382-0
+
+**Mario Guilherme Carvalho:** Não, eu já tenho por conta. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1385-0
+
+**Vitor de Barros Rigueira Fernandes:** Wait, this show we pens him. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1384-0
+
+**Mario Guilherme Carvalho:** É projeto por conta. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1386-0
+
+**Sandra Maria Silveira:** Você tem uma proposta para ser submetida? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1387-0
+
+**Mario Guilherme Carvalho:** Isso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1393-0
+
+**Sandra Maria Silveira:** Bom, então agora você tem que validar essa ec90a4ca-e4ca-4e64-85da-a91963bddc92/1393-1 proposta que você tem com os professores orientadores para ver se eles podem te ec90a4ca-e4ca-4e64-85da-a91963bddc92/1393-2 orientar nesse tema para você submeter. Você sempre tem que ter um professor para ec90a4ca-e4ca-4e64-85da-a91963bddc92/1393-3 é submeter com você. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1395-0 E os professores têm que estar aptos, não é aí a orientar o projeto que você ec90a4ca-e4ca-4e64-85da-a91963bddc92/1394-0
+
+**Mario Guilherme Carvalho:** Então. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1395-1
+
+**Sandra Maria Silveira:** quer. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1397-0
+
+**Mario Guilherme Carvalho:** Então, ela é pelo site, pelo e-mail, por professor individualmente. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1399-0
+
+**Sandra Maria Silveira:** Não, o caminho é participe, participe dessa formação, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1399-1 apresente as suas ideias para buscar aí o caminho de você seguir. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1399-2 Você não tem como submeter sozinho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1402-0
+
+**Vitor de Barros Rigueira Fernandes:** Ô Sandra, deixa eu te só tirar uma dúvida que eu ec90a4ca-e4ca-4e64-85da-a91963bddc92/1402-1 acho que era a mesma que eu tinha dele. A gente teve uma turma de pesquisa no mês ec90a4ca-e4ca-4e64-85da-a91963bddc92/1400-0
+
+**Sandra Maria Silveira:** Pode. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1402-2
+
+**Vitor de Barros Rigueira Fernandes:** de maio com a professora Luciana. Aí é. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1403-0
+
+**Sandra Maria Silveira:** Ué, então a Luciana já deu os caminhos para ec90a4ca-e4ca-4e64-85da-a91963bddc92/1403-1 vocês, como submeter? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1406-0
+
+**Vitor de Barros Rigueira Fernandes:** É, é não, então, só que agora a gente, eu até tinha conversado com ela, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1406-1 ela me passou um documento que é um roteiro de pesquisa que a gente tem que ec90a4ca-e4ca-4e64-85da-a91963bddc92/1406-2 preencher esse roteiro com 12 perguntas e enviar para ela para conseguir o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1406-3 certificado do último da última turma. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1409-0 E para poder ela também encaminhar isso para o professor, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1405-0
+
+**Sandra Maria Silveira:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1409-1
+
+**Vitor de Barros Rigueira Fernandes:** que aí o professor vai entrar em contato com a gente. Agora, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1409-2 eu também estou na dúvida se a gente já devia estar escrevendo alguma coisa ou se ec90a4ca-e4ca-4e64-85da-a91963bddc92/1409-3 só esse roteiro é suficiente até chegar no professor. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1410-0
+
+**Sandra Maria Silveira:** Você pode fazer essa pergunta diretamente para Luciana, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1416-0 Porque aí esse detalhe amanhã todo eu não sei te responder. É, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1413-0
+
+**Vitor de Barros Rigueira Fernandes:** No, tranquilo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1416-1
+
+**Sandra Maria Silveira:** responda a essas perguntas que ela te pediu e pergunte, professora, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1416-2 o que mais precisamos fazer? Qual o próximo passo? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1417-0
+
+**Vitor de Barros Rigueira Fernandes:** Não, tranquilo, obrigado, viu? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1420-0
+
+**Sandra Maria Silveira:** Por nada, por nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1419-0
+
+**Mario Guilherme Carvalho:** Obrigado também, Sandra. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1421-0
+
+**Sandra Maria Silveira:** Danielle. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1423-0
+
+**Daniel Lopes da Costa:** Opa, boa noite professora, tudo bom? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1424-0
+
+**Sandra Maria Silveira:** Boa noite, tudo bem, Daniel? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1428-0
+
+**Daniel Lopes da Costa:** Professora, perdão, eu não sei se já foi comentado aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1428-1 mas eu percebi aqui a sessão no SGA que eu estou aqui, eu sou do eixo 5, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1428-2 o último último eixo aqui já estão todas as disciplinas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1427-0
+
+**Sandra Maria Silveira:** Sim. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1428-3
+
+**Daniel Lopes da Costa:** professora matriculada aqui bonitinho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1429-0 Só que eu fui acessar o Canvas, infelizmente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1429-1 2 microfundamento não aparece aqui para mim na parte de. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1434-0
+
+**Sandra Maria Silveira:** É, a gente ainda tá convertendo o ambiente ec90a4ca-e4ca-4e64-85da-a91963bddc92/1434-1 para o ponto Edu, sabe? E aí ainda tem algumas coisas que estão ec90a4ca-e4ca-4e64-85da-a91963bddc92/1430-0
+
+**Daniel Lopes da Costa:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1434-2
+
+**Sandra Maria Silveira:** sendo ajustadas. Vão aguardar durante o decorrer da semana ec90a4ca-e4ca-4e64-85da-a91963bddc92/1432-0
+
+**Daniel Lopes da Costa:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1434-3
+
+**Sandra Maria Silveira:** que vai dar tudo certo, tá bom? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1437-0
+
+**Daniel Lopes da Costa:** Tá bom, professor, perdão é sabe esse domínio, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1437-1 esse e-mail mesmo que é vocês preparam para a gente da PUC Minas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1435-0
+
+**Sandra Maria Silveira:** Não muda, o e-mail não vai mudar. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1437-2
+
+**Daniel Lopes da Costa:** sabe dizer se ele é não? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1440-0 Não, perfeito. Essa dúvida é se ele vai ficar inativo ec90a4ca-e4ca-4e64-85da-a91963bddc92/1440-1 depois de um tempo, depois da formação nossa na faculdade, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1440-2 tem um prazo para inativar ele. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1438-0
+
+**Sandra Maria Silveira:** Bing. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1439-0 Bing. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1442-0
+
+**Daniel Lopes da Costa:** Ah, tá bom, não perfeito. Perfeito, senhora, obrigado, viu? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1441-0
+
+**Sandra Maria Silveira:** Thing. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1445-0 Esse e-mail é válido, assim você acessará o ambiente com essa ec90a4ca-e4ca-4e64-85da-a91963bddc92/1445-1 conta aí enquanto você tiver matriculado, está? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1444-0
+
+**Daniel Lopes da Costa:** Mhm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1447-0 Ah tá bom, perfeito, perfeito professora, brigadão viu? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1448-0
+
+**Sandra Maria Silveira:** Oh, nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1450-0 Carlos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1452-0
+
+**Carlos Roberto:** Boa noite. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1455-0
+
+**Sandra Maria Silveira:** Boa noite, Carlos. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1460-0
+
+**Carlos Roberto:** É a minha dúvida em relação ao que a outra mulher falou aí referente ao aquele ec90a4ca-e4ca-4e64-85da-a91963bddc92/1460-1 certificado lá, porque na hora que ela estava explicando, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1460-2 acho que ela ficou um pouco rápido e eu não peguei todos os detalhes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1460-3 Não teria como você só me orientar quanto ao passo a passo novamente? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1464-0
+
+**Sandra Maria Silveira:** Sim, eixo um e eixo dois você precisa concluir ec90a4ca-e4ca-4e64-85da-a91963bddc92/1464-1 os projetos né duas né dois desafios contemporâneos e duas competências ec90a4ca-e4ca-4e64-85da-a91963bddc92/1464-2 comportamentais aí você manda um e-mail né para sua assistente pedindo a ec90a4ca-e4ca-4e64-85da-a91963bddc92/1464-3 elaboração do certificado ec90a4ca-e4ca-4e64-85da-a91963bddc92/1467-0
+
+**Carlos Roberto:** Está perfeito, então não é nada. É no ambiente da SGA, nem no Canvas, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1467-1 não é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1469-0
+
+**Sandra Maria Silveira:** Vou te pedir para você pedir para a assistente o caminho correto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1469-1 que eu não sei se no Canvas tem essa opção, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1469-2 alguém aqui sabe se no SGA tem essa opção. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1470-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Professor, é pelo SGA, é pelo SGA. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1473-0
+
+**Sandra Maria Silveira:** Você pode falar qual que é o caminho dentro do SGA, por favor? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1471-0
+
+**Felipe Miguel Nery Lunkes:** Isso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1475-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** é lá em abertura de chamado que eu inclusive eu tô abrindo até aqui o meu ec90a4ca-e4ca-4e64-85da-a91963bddc92/1475-1 para pegar o do segundo o segundo certificado né que é do ec90a4ca-e4ca-4e64-85da-a91963bddc92/1478-0
+
+**Sandra Maria Silveira:** Então compartilha a tela aí conosco que você vai passar o caminho das pedras aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1481-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Eu é que eu estou no tablet, professora, eu não estou no eu estou fazendo isso no ec90a4ca-e4ca-4e64-85da-a91963bddc92/1477-0
+
+**Daniel Lopes da Costa:** Yes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1483-0
+
+**Sandra Maria Silveira:** Então conta para nós o caminho que eu vou anotar aqui no chat SGA. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1481-1
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** computador. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1493-0 É, você abre, abre, abre o SGA e vai em solicitação de ec90a4ca-e4ca-4e64-85da-a91963bddc92/1487-0
+
+**Felipe Miguel Nery Lunkes:** Quer que eu compartilhe, professora? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1485-0
+
+**Sandra Maria Silveira:** F. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1493-1
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** serviços, serviços acadêmicos, SGA serviços acadêmicos, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1491-0
+
+**Sandra Maria Silveira:** Solicitação de serviço. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1489-0
+
+**Felipe Miguel Nery Lunkes:** Ainda compartilha? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1493-2
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** solicitação de serviços. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1494-0
+
+**Sandra Maria Silveira:** Espera aí que eu estou notando caminho aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1495-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Uh-huh. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1496-0
+
+**Felipe Miguel Nery Lunkes:** Quer que eu compartilhe, professora, na tela? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1497-0
+
+**Sandra Maria Silveira:** You okay? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1500-0
+
+**Felipe Miguel Nery Lunkes:** Tá, eu até fiz isso aqui agora há pouco, eu posso compartilhar aqui. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1501-0
+
+**Sandra Maria Silveira:** Então, deixa eu só acabar de anotar aqui serviço ec90a4ca-e4ca-4e64-85da-a91963bddc92/1501-1 da cadeia, solicitação de serviço, e aí? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1502-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Aí a abertura de chamado ec90a4ca-e4ca-4e64-85da-a91963bddc92/1506-0
+
+**Sandra Maria Silveira:** Oh, gente, está aí mostrando, oh, abertura de chamado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1504-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** I. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1508-0 É nesse primeiro item aí professora, serviços acadêmicos e isso. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1507-0
+
+**Felipe Miguel Nery Lunkes:** Yeah. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1511-0 Solicitação de serviços aqui embaixo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1509-0
+
+**Sandra Maria Silveira:** Uh-huh. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1514-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Aí solicitação de serviços, aí vai em abertura. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1515-0
+
+**Sandra Maria Silveira:** Espera aí, menino, vou tirar a print disso aí, espera aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1513-0
+
+**Felipe Miguel Nery Lunkes:** Abricha. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1517-0 Haha, ta. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1516-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Uh-huh. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1520-0
+
+**Sandra Maria Silveira:** Volta lá, volta lá que eu vou tirar print e por ec90a4ca-e4ca-4e64-85da-a91963bddc92/1518-0
+
+**Felipe Miguel Nery Lunkes:** Thank you. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1520-1
+
+**Sandra Maria Silveira:** aqui no chá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1519-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** Okay. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1521-0
+
+**Felipe Miguel Nery Lunkes:** Tá, solicitação de serviços. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1523-0
+
+**Sandra Maria Silveira:** Espera aí, espera aí que eu vou tirar print sem o ec90a4ca-e4ca-4e64-85da-a91963bddc92/1523-1 seu usuário, está solicitação de serviço. Espera aí que eu vou por aqui no chat ec90a4ca-e4ca-4e64-85da-a91963bddc92/1522-0
+
+**Felipe Miguel Nery Lunkes:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1523-2
+
+**Sandra Maria Silveira:** para vocês. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1524-0 Send it. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1526-0 Solicitação de serviço, isso aí entra. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1527-0
+
+**Felipe Miguel Nery Lunkes:** Aí aqui em abrir chamado aqui no topo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1528-0
+
+**Sandra Maria Silveira:** Espera aí, calma, fica aí com desse jeitinho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1529-0
+
+**Felipe Miguel Nery Lunkes:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1530-0
+
+**Sandra Maria Silveira:** Abrir chamado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1531-0
+
+**Felipe Miguel Nery Lunkes:** Pode apertar? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1532-0
+
+**Sandra Maria Silveira:** Bode. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1533-0
+
+**Felipe Miguel Nery Lunkes:** aí aqui tem uma opção aqui embaixo em ec90a4ca-e4ca-4e64-85da-a91963bddc92/1534-0
+
+**Jos&#233; Denes de Siqueira J&#250;nior:** A certificação intermediária é a 8040 ec90a4ca-e4ca-4e64-85da-a91963bddc92/1536-0
+
+**Felipe Miguel Nery Lunkes:** É aqui ó, solicitação, solicitar, solicitar certificação intermediária. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1535-0
+
+**Sandra Maria Silveira:** Fica aí, fica aí catching, fica aí. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1540-0 Ótimo, gente, muito obrigada que eu não tenho o acesso, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1539-0
+
+**Felipe Miguel Nery Lunkes:** Nada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1540-1
+
+**Sandra Maria Silveira:** tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1541-0
+
+**Felipe Miguel Nery Lunkes:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1542-0
+
+**Sandra Maria Silveira:** Solicitarem são certificado de show homem daqui, abertura do chamado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1543-0 So deal. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1544-0 And. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1545-0 Okay. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1546-0 Oh. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1547-0 Pedro. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1548-0
+
+**Carlos Roberto:** Obrigado, viu gente? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1549-0
+
+**Sandra Maria Silveira:** Obrigada. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1551-0
+
+**Pedro Peres Costa Archanjo:** Boa noite, sir, tudo bem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1552-0
+
+**Sandra Maria Silveira:** Tudo bem, Pedro, e você? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1555-0
+
+**Pedro Peres Costa Archanjo:** Tudo bem, eu tenho uma dúvida, estava nas 2, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1555-1 vou começar pela uma rapidinha aqui, como é que a gente pode fazer que eu não ec90a4ca-e4ca-4e64-85da-a91963bddc92/1555-2 tenho certeza, mas eu acho que o pessoal da minha equipe ec90a4ca-e4ca-4e64-85da-a91963bddc92/1555-3 anterior, ela a gente está em turmas diferentes. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1556-0 Se matricular em toma juvenil. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1557-0
+
+**Sandra Maria Silveira:** Só mandar, só mandar mensagem para a assistente ec90a4ca-e4ca-4e64-85da-a91963bddc92/1557-1 pedindo a ela para movimentar vocês para ficar numa turma só. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1559-0
+
+**Pedro Peres Costa Archanjo:** Tá é esse, no caso, o tutor. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1561-0
+
+**Sandra Maria Silveira:** Coloca-se o nome de é os componentes, tais, tais, tais estão na turma XE, tais, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1561-1 tais, tais estão na turma y favor nos colocar ec90a4ca-e4ca-4e64-85da-a91963bddc92/1561-2 em uma turma. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1562-0
+
+**Pedro Peres Costa Archanjo:** Bom, perfeito. É com o tutor do eixo, no caso eu sou do eixo 2. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1563-0
+
+**Sandra Maria Silveira:** É com assistente, uhum. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1569-0
+
+**Pedro Peres Costa Archanjo:** Tá bom, é o segundo ponto é justamente sobre esse ec90a4ca-e4ca-4e64-85da-a91963bddc92/1569-1 essa questão até da turma, porque na verdade eu não sei que turma eu ec90a4ca-e4ca-4e64-85da-a91963bddc92/1569-2 estou e normalmente a gente eu lembro que no eixo um eu olhei pelo projeto, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1566-0
+
+**Sandra Maria Silveira:** No cavas. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1569-3
+
+**Pedro Peres Costa Archanjo:** pelo card do projeto no campo, justamente. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1568-0
+
+**Sandra Maria Silveira:** É. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1571-0
+
+**Pedro Peres Costa Archanjo:** Só que aqui não está publicado ainda, então eu não sei que. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1572-0
+
+**Sandra Maria Silveira:** Então só manda, não é o nome, fala assim, não consegui olhar o número da minha ec90a4ca-e4ca-4e64-85da-a91963bddc92/1572-1 turma porque ainda não está publicado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1573-0
+
+**Pedro Peres Costa Archanjo:** Tá, tá bom então, beleza. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1574-0
+
+**Sandra Maria Silveira:** Oh. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1577-0
+
+**Pedro Peres Costa Archanjo:** OK, obrigado. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1578-0
+
+**Sandra Maria Silveira:** Carlos Roberto. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1581-0
+
+**Carlos Roberto:** A minha já foi resolvida, já até agora. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1580-0
+
+**Sandra Maria Silveira:** Ah, brigada então. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1582-0 Felipe. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1586-0
+
+**Felipe Miguel Nery Lunkes:** Boa noite professora, eu tenho uma dúvida, é, não sei se eu realmente, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1586-1 apesar de eu ter participado aqui da reunião, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1586-2 sei lá se eu pesquei em algum momento, eu posso ter perdido e meu grupo também ec90a4ca-e4ca-4e64-85da-a91963bddc92/1584-0
+
+**Sandra Maria Silveira:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1586-3
+
+**Felipe Miguel Nery Lunkes:** está em dúvida, então eu acho que eu não pesquei não, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1585-0
+
+**Sandra Maria Silveira:** Tudo bem? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1586-4
+
+**Felipe Miguel Nery Lunkes:** é ali em julho. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1591-0 teve aquela reunião entre o final do semestre e o início desse né, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1591-1 que eu participei, que a gente estava discutindo a questão ec90a4ca-e4ca-4e64-85da-a91963bddc92/1587-0
+
+**Sandra Maria Silveira:** Mm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1591-2
+
+**Felipe Miguel Nery Lunkes:** de Enade ali, e aí até então eu não fiz a inscrição né, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1588-0
+
+**Sandra Maria Silveira:** Mm-hmm. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1591-3
+
+**Felipe Miguel Nery Lunkes:** porque foi pedido que a gente espere né, a gente vai ter um momento para discutir ec90a4ca-e4ca-4e64-85da-a91963bddc92/1590-0
+
+**Sandra Maria Silveira:** É, fica, fica sem fazer, está, é? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1591-4
+
+**Felipe Miguel Nery Lunkes:** isso essa semana ou alguma ec90a4ca-e4ca-4e64-85da-a91963bddc92/1594-0
+
+**Sandra Maria Silveira:** Vamos ter um momento para discutir isso. A gente vai discutir semestre inteiro, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1594-1 Nós vamos orientar vocês, esclarecer o que vocês tem que preencher. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1592-0
+
+**Felipe Miguel Nery Lunkes:** Tá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1594-2
+
+**Sandra Maria Silveira:** É tudo certinho, tá? Fica tranquilo. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1595-0
+
+**Felipe Miguel Nery Lunkes:** Obrigado, professor. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1597-0
+
+**Sandra Maria Silveira:** Por nada, não foi dito na reunião mesmo, está porque isso é específico para o eixo ec90a4ca-e4ca-4e64-85da-a91963bddc92/1596-0
+
+**Felipe Miguel Nery Lunkes:** Ah, tá. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1597-1
+
+**Sandra Maria Silveira:** 5 está. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1598-0
+
+**Felipe Miguel Nery Lunkes:** Não, eu tenho TDAH e passo mosquito aqui do ec90a4ca-e4ca-4e64-85da-a91963bddc92/1601-0
+
+**Sandra Maria Silveira:** Não, tranquilo, não é? Não é. Não é isso que te fez perder, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1598-1
+
+**Felipe Miguel Nery Lunkes:** lado, às vezes eu pesquei. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1601-1
+
+**Sandra Maria Silveira:** não é porque não foi dito mesmo, tá? E a gente vai, é assim, nossa, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1600-0
+
+**Felipe Miguel Nery Lunkes:** Very bad. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1601-2
+
+**Sandra Maria Silveira:** interagi muito com vocês esse semestre sobre o Enade, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1602-0
+
+**Felipe Miguel Nery Lunkes:** Beleza, obrigado professor, boa noite. ec90a4ca-e4ca-4e64-85da-a91963bddc92/1604-0
+
+**Sandra Maria Silveira:** Tá ótimo, pessoal, só um minutinho, tá? É, eu já volto aqui, ec90a4ca-e4ca-4e64-85da-a91963bddc92/1604-1 pode esperar aí que só um minutinho, tá? ec90a4ca-e4ca-4e64-85da-a91963bddc92/1605-0 é só porque extrapolou o prazo aqui eu tenho que resolver um negócio aqui ec90a4ca-e4ca-4e64-85da-a91963bddc92/1605-1 rapidinho e volto
+

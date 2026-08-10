@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "70af2924fdc2108a",
+    "type": "split",
+    "children": [
+      {
+        "id": "dad82614b7a7b601",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51cdb240dd29791b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação: o papel da técnica e da criatividade no design.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11. Racionalismo técnico e reflexão em ação: o papel da técnica e da criatividade no design"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3b13ac9bad03e7f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "941e8115df78cc1f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "decabc597b2ba14f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f8942d06ddb6f10a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:comunicabilidade",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3e729936482f1982",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ade353577ed5945f",
+    "type": "split",
+    "children": [
+      {
+        "id": "3d1e61761fc3b0ed",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a1e2525bee53ff9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "4b41342f92537df5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c13667cc745144cb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9337aa1ab3083eba",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "af5bc537be52c82d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "51cdb240dd29791b",
+  "lastOpenFiles": [
+    "08. Design de Interacao/10. Envolvimento do usuário no design: projetar de modo independente, centrado ou participativo.md",
+    "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação: o papel da técnica e da criatividade no design.md",
+    "08. Design de Interacao/12. Design de Interacao - Resumo.md",
+    "08. Design de Interacao/09. Engenharia semiótica: comunicação usuário-sistema e metacomunicação usuário-designer.md",
+    "08. Design de Interacao/11. Design de Interacao - Resumo.md",
+    "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+    "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos: usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
+    "08. Design de Interacao/10. Design de Interacao - Resumo.md",
+    "08. Design de Interacao/09. Design de Interacao - Resumo.md",
+    "08. Design de Interacao/08. Design de Interacao - Resumo.md",
+    "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md",
+    "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos: usabilidade, comunicabilidade e acessibilidade.md",
+    "08. Design de Interacao/05. Por que a perspectiva da interação importa.md",
+    "06. Projeto - Aplicacao Interativa/06. Projeto - Aplicacao Interativa - Resumo.md",
+    "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md",
+    "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md",
+    "08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md",
+    "08. Design de Interacao/04. Perspectivas de interação usuário-sistema: interagir com o sistema vs. por meio do sistema.md",
+    "08. Design de Interacao/02. O papel dos sistemas interativos na atividade humana.md",
+    "08. Design de Interacao/02. Perspectivas de interação usuário-sistema: interagir com o sistema vs. por meio do sistema.md",
+    "08. Design de Interacao/03. Perspectivas de interação usuário-sistema: interagir com o sistema vs. por meio do sistema.md",
+    "08. Design de Interacao/04. Por que a perspectiva da interação importa.md",
+    "08. Design de Interacao/03. Por que a perspectiva da interação importa.md",
+    "08. Design de Interacao/01. O papel dos sistemas interativos na atividade humana.md",
+    "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+    "08. Design de Interacao/01 - O Papel dos Sistemas Interativos na Atividade Humana.md",
+    "scratch_rosilane.txt",
+    "00. Inbox/Reunião Inicial Turma 5 - Divisão Grupos e Definição de Horários.vtt",
+    "00. Geral",
+    "scratch_parsed.txt",
+    "00. Inbox/Aula Inaugural - Veteranos - 202602.vtt",
+    "00. Inbox",
+    "Leornardo Ruas.pdf",
+    "dotnet-install.sh",
+    "04. Algoritmos e Estruturas de Dados/SomaDoisNumeros.cs",
+    "clean_emojis.py"
+  ]
+}
