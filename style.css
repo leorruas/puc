@@ -157,12 +157,35 @@ button:hover {
 
 .artigo-corpo table {
     width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.85em;
+}
+
+.artigo-corpo th {
+    color: var(--accent-blue);
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 2px solid var(--accent-blue);
+    font-weight: 600;
+}
+
+.artigo-corpo td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--accent-blue-alpha-30);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: .85em;
+}
+
+.artigo-corpo tr:hover td {
+    background-color: var(--accent-blue-alpha-05);
 }
 
 .artigo-corpo ul {
     padding-left: 10px;
 }
-
 
 .artigo-corpo li {
     font-size: .9em;
@@ -207,7 +230,6 @@ button:hover {
     background-color: var(--accent-blue-alpha-15);
 }
 
-
 #artigo-corpo h1 {
     font-size: 1em;
     color: var(--accent-blue);
@@ -231,10 +253,6 @@ button:hover {
     text-transform: uppercase;
     margin-bottom: 0px;
     margin-top: 20px;
-}
-
-.artigo-corpo td {
-    font-size: .8em;
 }
 
 .btn-voltar {
