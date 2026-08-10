@@ -271,7 +271,22 @@ function abrirArtigo(titulo, conteudoMarkdown) {
 
     // Processa blocos Mermaid se houver
     if (typeof mermaid !== 'undefined') {
-        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            fontFamily: 'Archivo, sans-serif',
+            themeVariables: {
+                fontFamily: 'Archivo, sans-serif',
+                darkMode: true,
+                background: '#0d0d0d',
+                primaryColor: '#007aff',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#007aff',
+                lineColor: '#007aff',
+                secondaryColor: '#1a1a1a',
+                tertiaryColor: '#222222'
+            }
+        });
         const blocosMermaid = artigoCorpo.querySelectorAll('pre code.language-mermaid, pre.language-mermaid');
         blocosMermaid.forEach((bloco, idx) => {
             const containerPre = bloco.tagName.toLowerCase() === 'pre' ? bloco : bloco.parentElement;
@@ -281,11 +296,13 @@ function abrirArtigo(titulo, conteudoMarkdown) {
             divMermaid.textContent = codigoMermaid;
             containerPre.replaceWith(divMermaid);
         });
-        try {
-            mermaid.run({ nodes: artigoCorpo.querySelectorAll('.mermaid') });
-        } catch (err) {
-            console.error("Erro ao renderizar Mermaid:", err);
-        }
+        setTimeout(() => {
+            try {
+                mermaid.run({ nodes: artigoCorpo.querySelectorAll('.mermaid') });
+            } catch (err) {
+                console.error("Erro ao renderizar Mermaid:", err);
+            }
+        }, 50);
     }
 
     leitorDeArtigo.classList.remove("escondido");

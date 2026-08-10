@@ -307,6 +307,13 @@ button:hover {
     padding: 20px;
     margin: 20px 0;
     overflow-x: auto;
+    font-family: 'Archivo', sans-serif !important;
+}
+
+.mermaid svg,
+.mermaid text,
+.mermaid tspan {
+    font-family: 'Archivo', sans-serif !important;
 }
 
 .code-line {
