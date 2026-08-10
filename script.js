@@ -163,8 +163,15 @@ function destacarTexto(texto, termo) {
     return texto.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
+function removerFrontmatter(markdown) {
+    if (!markdown) return "";
+    // Remove cabeçalho YAML entre --- e --- no início do arquivo
+    return markdown.replace(/^---[\s\S]*?---\s*/, "");
+}
+
 function extrairTrechoRelevante(conteudo, termo) {
-    const textoLimpo = conteudo.replace(/[#*`_~\[\]]/g, ' ');
+    const conteudoSemFrontmatter = removerFrontmatter(conteudo);
+    const textoLimpo = conteudoSemFrontmatter.replace(/[#*`_~\[\]]/g, ' ');
     const pos = textoLimpo.toLowerCase().indexOf(termo.toLowerCase());
     
     if (pos === -1) {
@@ -249,11 +256,14 @@ function abrirArtigo(titulo, conteudoMarkdown) {
 
     artigoTitulo.textContent = titulo;
     
+    // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter --- ... ---)
+    const markdownLimpo = removerFrontmatter(conteudoMarkdown);
+
     // Converte Markdown para HTML com marked
     if (typeof marked !== 'undefined') {
-        artigoCorpo.innerHTML = marked.parse(conteudoMarkdown);
+        artigoCorpo.innerHTML = marked.parse(markdownLimpo);
     } else {
-        artigoCorpo.innerText = conteudoMarkdown;
+        artigoCorpo.innerText = markdownLimpo;
     }
 
     // Processa os links do Obsidian [[Nome do Artigo]]
