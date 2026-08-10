@@ -1,0 +1,32 @@
+# Configuração do Jekyll para o GitHub Pages
+# Ignora totalmente a compilação de arquivos markdown e subpastas de notas
+# para evitar que o parser de URI do Ruby/Jekyll quebre com dois-pontos (:) ou espaços nos títulos.
+
+exclude:
+  - "00. Geral"
+  - "00. Inbox"
+  - "01. Programacao Modular"
+  - "02. Modelagem de Dados"
+  - "03. Manipulacao de Dados SQL"
+  - "04. Algoritmos e Estruturas de Dados"
+  - "05. Desenvolvimento Web Back-End"
+  - "06. Projeto - Aplicacao Interativa"
+  - "07. Engenharia de Requisitos"
+  - "08. Design de Interacao"
+  - "09. Redes de Computadores"
+  - "10. Lideranca e Competencias"
+  - "11. Desafios Contemporaneos"
+  - ".agents"
+  - "AGENTS.md"
+  - "me.md"
+  - "log.md"
+  - "*.pdf"
+  - "*.txt"
+  - "*.cs"
+  - "*.vtt"
+
+include:
+  - index.html
+  - style.css
+  - script.js
+  - index.md
