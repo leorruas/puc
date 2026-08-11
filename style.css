@@ -709,3 +709,79 @@ mark.obsidian-highlight, mark:not(.highlight) {
         margin-left: 0;
     }
 }
+
+/* Obsidian Callouts / Boxes ([!IMPORTANT], [!NOTE], etc.) */
+.obsidian-callout {
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: #121212;
+    border-left: 4px solid var(--accent-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.obsidian-callout .callout-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.obsidian-callout .callout-content {
+    font-size: 0.85em;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.obsidian-callout .callout-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* IMPORTANT (Roxo / Púrpura) */
+.callout-important {
+    border-left-color: #a855f7;
+    background-color: rgba(168, 85, 247, 0.08);
+}
+.callout-important .callout-title {
+    color: #c084fc;
+}
+
+/* NOTE (Azul) */
+.callout-note {
+    border-left-color: #007aff;
+    background-color: rgba(0, 122, 255, 0.08);
+}
+.callout-note .callout-title {
+    color: #60a5fa;
+}
+
+/* TIP (Verde) */
+.callout-tip {
+    border-left-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.08);
+}
+.callout-tip .callout-title {
+    color: #34d399;
+}
+
+/* WARNING (Âmbar / Amarelo) */
+.callout-warning {
+    border-left-color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.08);
+}
+.callout-warning .callout-title {
+    color: #fbbf24;
+}
+
+/* CAUTION (Vermelho / Carmim) */
+.callout-caution {
+    border-left-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.08);
+}
+.callout-caution .callout-title {
+    color: #f87171;
+}

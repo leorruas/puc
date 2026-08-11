@@ -272,6 +272,9 @@ function abrirArtigo(titulo, conteudoMarkdown) {
     // Processa os links do Obsidian [[Nome do Artigo]]
     processarLinksObsidian();
 
+    // Processa callouts / caixas de aviso do Obsidian ([!IMPORTANT], [!NOTE], [!TIP], etc.)
+    processarCalloutsObsidian();
+
     // Formata itens de lista de tarefas (Checkboxes / Study Roadmap)
     artigoCorpo.querySelectorAll('li input[type="checkbox"]').forEach(checkbox => {
         const li = checkbox.parentElement;
@@ -343,6 +346,48 @@ function processarLinksObsidian() {
             const destino = link.getAttribute("data-destino");
             navegarParaLinkObsidian(destino);
         });
+    });
+}
+
+function processarCalloutsObsidian() {
+    const blockquotes = artigoCorpo.querySelectorAll('blockquote');
+    blockquotes.forEach(bq => {
+        const conteudo = bq.innerHTML;
+        const match = conteudo.match(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*([^\n<]+))?/i);
+        if (match) {
+            const tipo = match[1].toUpperCase();
+            const tituloCustomizado = match[2] ? match[2].trim() : '';
+            
+            // Remove a tag [!TIPO] e o título do conteúdo do parágrafo
+            let htmlLimpo = conteudo.replace(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*[^\n<]+)?/i, '');
+            
+            // Remove parágrafos vazios gerados na conversão
+            htmlLimpo = htmlLimpo.replace(/<p>\s*<\/p>/g, '');
+
+            const rotulos = {
+                'NOTE': 'NOTA',
+                'TIP': 'DICA',
+                'IMPORTANT': 'IMPORTANTE',
+                'WARNING': 'AVISO',
+                'CAUTION': 'ATENÇÃO'
+            };
+
+            const tituloExibicao = tituloCustomizado || rotulos[tipo] || tipo;
+
+            const divCallout = document.createElement('div');
+            divCallout.className = `obsidian-callout callout-${tipo.toLowerCase()}`;
+
+            divCallout.innerHTML = `
+                <div class="callout-header">
+                    <span class="callout-title">${tituloExibicao}</span>
+                </div>
+                <div class="callout-content">
+                    ${htmlLimpo}
+                </div>
+            `;
+
+            bq.replaceWith(divCallout);
+        }
     });
 }
 
