@@ -272,6 +272,19 @@ function abrirArtigo(titulo, conteudoMarkdown) {
     // Processa os links do Obsidian [[Nome do Artigo]]
     processarLinksObsidian();
 
+    // Formata itens de lista de tarefas (Checkboxes / Study Roadmap)
+    artigoCorpo.querySelectorAll('li input[type="checkbox"]').forEach(checkbox => {
+        const li = checkbox.parentElement;
+        if (li) {
+            li.classList.add('task-list-item');
+            const textNodes = Array.from(li.childNodes).filter(node => node !== checkbox);
+            const wrapper = document.createElement('span');
+            wrapper.className = 'task-item-content';
+            textNodes.forEach(node => wrapper.appendChild(node));
+            li.appendChild(wrapper);
+        }
+    });
+
     // Processa blocos Mermaid se houver
     if (typeof mermaid !== 'undefined') {
         mermaid.initialize({

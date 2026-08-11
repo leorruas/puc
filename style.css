@@ -191,6 +191,7 @@ button:hover {
     font-size: .9em;
     margin-bottom: 10px;
     list-style: none;
+    position: relative;
     padding-left: 20px;
 }
 
@@ -198,6 +199,71 @@ button:hover {
     content: "◆ ";
     color: var(--accent-blue);
     font-size: 1.1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Formatação especial para listas de tarefas / Study Roadmap */
+.artigo-corpo li.task-list-item,
+.artigo-corpo li:has(input[type="checkbox"]) {
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.artigo-corpo li.task-list-item::before,
+.artigo-corpo li:has(input[type="checkbox"])::before {
+    content: "" !important;
+    display: none !important;
+}
+
+.artigo-corpo li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid var(--accent-blue);
+    border-radius: 4px;
+    background-color: #0d0d0d;
+    cursor: pointer;
+    margin-top: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.artigo-corpo li input[type="checkbox"]:checked {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 8px rgba(0, 122, 255, 0.4);
+}
+
+.artigo-corpo li input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #000;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.task-item-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.task-item-content strong {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 #artigo-corpo pre code {
