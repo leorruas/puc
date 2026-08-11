@@ -12,3 +12,11 @@
 3. **Capitalização Frasal (Sentence Case):**
  - Em títulos, cabeçalhos, subcabeçalhos, listas e itens em negrito, utilizar capitalização frasal (*sentence case*), com apenas a primeira palavra em maiúscula (exceto para nomes próprios, acrônimos ou siglas). Evitar o uso de *Title Case* (capitalização de todas as palavras).
 
+## Organização e Numeração de Arquivos
+
+4. **Padronização dos Arquivos de Resumo:**
+ - O arquivo principal de resumo de qualquer disciplina deve obrigatoriamente utilizar o prefixo `00.` (ex.: `00. Design de Interacao - Resumo.md`, `00. Engenharia de Requisitos - Resumo.md`).
+
+5. **Numeração Sequencial Única:**
+ - Todas as notas de conteúdo e tópicos dentro de uma disciplina devem seguir uma numeração sequencial estrita (01, 02, 03, ...).
+ - É estritamente proibido haver números duplicados dentro do mesmo diretório.
