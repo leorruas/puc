@@ -156,7 +156,10 @@ button:hover {
 }
 
 .artigo-corpo table {
+    display: block;
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.85em;
@@ -707,6 +710,44 @@ mark.obsidian-highlight, mark:not(.highlight) {
     .artigo-corpo {
         max-width: 100%;
         margin-left: 0;
+    }
+}
+
+/* Otimizações adicionais para dispositivos móveis pequenos (smartphones) */
+@media (max-width: 480px) {
+    #main-search-input {
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 0.6em;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 25px;
+        padding: 12px;
+        font-size: 0.6em;
+    }
+
+    .sticky-nav {
+        gap: 8px;
+    }
+
+    .nav-logo {
+        font-size: 0.5em;
+        max-width: 35%;
+    }
+
+    .nav-search-container {
+        width: 40%;
+    }
+
+    .obsidian-callout {
+        padding: 12px 14px;
+        margin: 15px 0;
+    }
+
+    .mermaid {
+        padding: 10px;
     }
 }
 
