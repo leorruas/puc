@@ -171,7 +171,7 @@ function removerFrontmatter(markdown) {
 
 function extrairTrechoRelevante(conteudo, termo) {
     const conteudoSemFrontmatter = removerFrontmatter(conteudo);
-    const textoLimpo = conteudoSemFrontmatter.replace(/[#*`_~\[\]]/g, ' ');
+    const textoLimpo = conteudoSemFrontmatter.replace(/==/g, '').replace(/[#*`_~\[\]]/g, ' ');
     const pos = textoLimpo.toLowerCase().indexOf(termo.toLowerCase());
     
     if (pos === -1) {
@@ -259,11 +259,14 @@ function abrirArtigo(titulo, conteudoMarkdown) {
     // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter --- ... ---)
     const markdownLimpo = removerFrontmatter(conteudoMarkdown);
 
+    // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
+    const markdownComHighlight = markdownLimpo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
+
     // Converte Markdown para HTML com marked
     if (typeof marked !== 'undefined') {
-        artigoCorpo.innerHTML = marked.parse(markdownLimpo);
+        artigoCorpo.innerHTML = marked.parse(markdownComHighlight);
     } else {
-        artigoCorpo.innerText = markdownLimpo;
+        artigoCorpo.innerText = markdownComHighlight;
     }
 
     // Processa os links do Obsidian [[Nome do Artigo]]
