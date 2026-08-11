@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
+                "file": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "19. Avaliação de sistemas interativos - por que, quando e quem participa"
+              "title": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo"
             }
           }
         ]
@@ -192,8 +192,9 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
-    "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
     "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
+    "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
     "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
     "08. Design de Interacao/17. Projeto de ícones em interfaces interativas - metáfora, mapeamento direto e convenção.md",
     "08. Design de Interacao/16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md",
@@ -217,7 +218,6 @@
     "08. Design de Interacao/09. Engenharia semiótica: comunicação usuário-sistema e metacomunicação usuário-designer.md",
     "08. Design de Interacao/11. Design de Interacao - Resumo.md",
     "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
-    "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos: usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
     "scratch_rosilane.txt",
     "00. Inbox/Reunião Inicial Turma 5 - Divisão Grupos e Definição de Horários.vtt",
     "00. Geral",
