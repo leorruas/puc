@@ -36,3 +36,13 @@
    - Na nota anterior (`N-1`), incluir/atualizar o link `**Próximo artigo:** [[N. Nome da Nova Nota]]`.
    - Na nova nota (`N`), incluir o link `**Artigo anterior:** [[N-1. Nome da Nota Anterior]]`.
  - Todas as notas de conteúdo de uma disciplina devem manter a cadeia completa e ininterrupta de navegação sequencial (`Artigo anterior` e `Próximo artigo`).
+
+## Revisão de Conteúdo e Prompts de Estudo
+
+8. **Simulações de Prova e Diagnóstico de Erros com LLM:**
+ - Ao finalizar a criação de todo o conteúdo de uma disciplina, deve-se revisar o arquivo `Prompts de Estudo (LLM).md` da matéria.
+ - Os prompts de estudo devem ser calibrados com base na totalidade dos tópicos cobertos nas notas.
+ - Devem ser incluídos obrigatoriamente:
+   - **Simulador de Prova Avançado:** instruindo a LLM a gerar questões com distratores altamente plausíveis e complexos, equivalentes a exames de nível acadêmico avançado ou concursos.
+   - **Parâmetros de Feedback e Diagnóstico de Erros:** estrutura padronizada para a LLM explicar o tipo de erro cometido (conceitual, leitura, terminologia ou aplicação) e razões do gabarito.
+
