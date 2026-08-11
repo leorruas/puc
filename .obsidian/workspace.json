@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08. Design de Interacao/00. Design de Interacao - Resumo.md",
+                "file": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00. Design de Interacao - Resumo"
+              "title": "22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos"
             }
           }
         ]
@@ -192,6 +192,7 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "08. Design de Interacao/00. Design de Interacao - Resumo.md",
     "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
     "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
     "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
@@ -203,7 +204,6 @@
     "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md",
     "08. Design de Interacao/14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md",
     "08. Design de Interacao/12. Modelagem de usuário - perfil, persona e mapa de empatia.md",
-    "08. Design de Interacao/00. Design de Interacao - Resumo.md",
     "03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo.md",
     "10. Lideranca e Competencias/00. Lideranca e Competencias - Resumo.md",
     "07. Engenharia de Requisitos/00. Engenharia de Requisitos - Resumo.md",
