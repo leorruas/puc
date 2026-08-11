@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+                "file": "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo"
+              "title": "21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac"
             }
           }
         ]
@@ -192,11 +192,11 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
+    "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
     "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
     "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
-    "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
     "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
-    "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
     "08. Design de Interacao/17. Projeto de ícones em interfaces interativas - metáfora, mapeamento direto e convenção.md",
     "08. Design de Interacao/16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md",
     "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md",

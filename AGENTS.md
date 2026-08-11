@@ -28,3 +28,11 @@
  - **Quebra de Linhas em Nós:** utilizar a tag `<br>` em rótulos de nós que possuam mais de 3 ou 4 palavras para evitar caixas excessivamente largas.
  - **Organização por Subgráficos:** estruturar fluxos longos ou complexos em `subgraph` verticais empilhados.
  - **Sintaxe Padronizada:** envolver todos os textos de rótulos de nós entre aspas duplas `Node["Texto"]` para evitar erros de sintaxe com caracteres especiais.
+
+## Links e Navegação Sequencial
+
+7. **Encadeamento Estrito de Links de Navegação entre Notas:**
+ - Ao criar uma nova nota de tópico (`N. md`), é obrigatorio verificar a nota imediatamente anterior (`N-1. md`) e atualizar ambas:
+   - Na nota anterior (`N-1`), incluir/atualizar o link `**Próximo artigo:** [[N. Nome da Nova Nota]]`.
+   - Na nova nota (`N`), incluir o link `**Artigo anterior:** [[N-1. Nome da Nota Anterior]]`.
+ - Todas as notas de conteúdo de uma disciplina devem manter a cadeia completa e ininterrupta de navegação sequencial (`Artigo anterior` e `Próximo artigo`).
