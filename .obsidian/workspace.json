@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
+                "file": "08. Design de Interacao/23. Teste de usabilidade - método empírico formal de avaliação por observação.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos"
+              "title": "23. Teste de usabilidade - método empírico formal de avaliação por observação"
             }
           }
         ]
@@ -192,9 +192,9 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
     "08. Design de Interacao/23. Teste de usabilidade - método empírico formal de avaliação por observação.md",
     "08. Design de Interacao/00. Design de Interacao - Resumo.md",
-    "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
     "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
     "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
     "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
