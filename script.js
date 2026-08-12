@@ -443,7 +443,8 @@ function processarCalloutsObsidian() {
 function navegarParaLinkObsidian(nomeOuCaminho) {
     if (!nomeOuCaminho) return;
 
-    const normalizar = (str) => decodeURI(str)
+    const normalizar = (str) => decodeURIComponent(decodeURI(str))
+        .replace(/^\.\//, "")
         .trim()
         .toLowerCase()
         .replace(/\.md$/i, "")
@@ -455,7 +456,7 @@ function navegarParaLinkObsidian(nomeOuCaminho) {
 
     // Procura o artigo por correspondência exata de caminho, nome do arquivo ou título
     const encontrado = todosOsArtigos.find(a => {
-        const caminhoSemExtensao = normalizar(a.path.replace("./", ""));
+        const caminhoSemExtensao = normalizar(a.path);
         const nomeArquivo = normalizar(a.path.split("/").pop());
         const tituloNorm = normalizar(a.titulo);
 
