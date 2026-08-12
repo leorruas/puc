@@ -1,0 +1,11 @@
+# System & AI custom files
+.agents/
+AGENTS.md
+*.pdf
+log.md
+me.md
+scratch*.txt
+scratch/
+
+# OS files
+.DS_Store
