@@ -441,15 +441,34 @@ function processarCalloutsObsidian() {
 }
 
 function navegarParaLinkObsidian(nomeOuCaminho) {
-    const normalizar = (str) => str.trim().toLowerCase().replace(/:/g, " -").replace(/\s+/g, " ");
+    if (!nomeOuCaminho) return;
+
+    const normalizar = (str) => decodeURI(str)
+        .trim()
+        .toLowerCase()
+        .replace(/\.md$/i, "")
+        .replace(/:/g, " -")
+        .replace(/\s+/g, " ");
+
     const limpo = normalizar(nomeOuCaminho);
-    
-    // Procura o artigo correspondente pelo título ou nome de arquivo
+    const limpoApenasNome = limpo.split("/").pop();
+
+    // Procura o artigo por correspondência exata de caminho, nome do arquivo ou título
     const encontrado = todosOsArtigos.find(a => {
-        const tituloMatch = normalizar(a.titulo) === limpo;
-        const nomeArquivo = normalizar(decodeURI(a.path).split("/").pop().replace(".md", ""));
-        const caminhoSemExtensao = normalizar(decodeURI(a.path).replace("./", "").replace(".md", ""));
-        return tituloMatch || nomeArquivo === limpo || caminhoSemExtensao === limpo;
+        const caminhoSemExtensao = normalizar(a.path.replace("./", ""));
+        const nomeArquivo = normalizar(a.path.split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+
+        return caminhoSemExtensao === limpo ||
+               nomeArquivo === limpo ||
+               nomeArquivo === limpoApenasNome ||
+               tituloNorm === limpo ||
+               tituloNorm === limpoApenasNome;
+    }) || todosOsArtigos.find(a => {
+        // Fallback: correspondência parcial se não achou exato
+        const nomeArquivo = normalizar(a.path.split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+        return nomeArquivo.includes(limpoApenasNome) || limpoApenasNome.includes(nomeArquivo) || tituloNorm.includes(limpoApenasNome);
     });
 
     if (encontrado) {
