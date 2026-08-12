@@ -6,9 +6,18 @@ async function obterListaDeArquivos() {
 
         const dados = await resposta.json();
 
-        // Filtra apenas os arquivos Markdown (.md), ignorando pastas internas do Obsidian/Git/Agents
+        // Filtra apenas os arquivos Markdown (.md), ignorando arquivos de sistema, index raiz e regras de agentes
         return dados.tree
-            .filter(item => item.path.endsWith(".md") && !item.path.includes(".obsidian") && !item.path.includes(".git") && !item.path.includes(".gemini") && !item.path.includes(".agents") && item.path !== "me.md" && item.path !== "log.md")
+            .filter(item => {
+                const pathLower = item.path.toLowerCase();
+                const fileName = pathLower.split("/").pop();
+                
+                if (!item.path.endsWith(".md")) return false;
+                if (item.path.includes(".obsidian") || item.path.includes(".git") || item.path.includes(".gemini") || item.path.includes(".agents")) return false;
+                if (fileName === "agents.md" || fileName === "index.md" || fileName === "me.md" || fileName === "log.md" || fileName === "gemini.md") return false;
+                
+                return true;
+            })
             .map(item => {
                 const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
                 return {
@@ -20,7 +29,6 @@ async function obterListaDeArquivos() {
         console.warn("Não foi possível listar via GitHub, usando lista padrão completa:", erro);
         // Fallback local completo com todos os arquivos do vault puc
         return [
-            { titulo: "Portal Acadêmico PUC Minas - ADS", path: "./index.md" },
             { titulo: "Aula Inaugural - Resumo", path: "./00. Geral/Aula Inaugural - Resumo.md" },
             { titulo: "Aula Inaugural - Transcrição", path: "./00. Geral/Aula Inaugural - Transcrição.md" },
             { titulo: "01. Programacao Modular - Resumo", path: "./01. Programacao Modular/01. Programacao Modular - Resumo.md" },
