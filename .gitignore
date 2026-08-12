@@ -7,5 +7,9 @@ me.md
 scratch*.txt
 scratch/
 
+# Inbox and audio/vtt transcriptions
+00. Inbox/
+*.vtt
+
 # OS files
 .DS_Store
