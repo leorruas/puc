@@ -249,6 +249,41 @@ function exibirResultados(artigos, termo = "") {
     });
 }
 
+function normalizarListasObsidian(md) {
+    if (!md) return "";
+    const linhas = md.split("\n");
+    let dentroDeBlocoDeCodigo = false;
+
+    return linhas.map(linha => {
+        const linhaTrim = linha.trim();
+        if (linhaTrim.startsWith("```")) {
+            dentroDeBlocoDeCodigo = !dentroDeBlocoDeCodigo;
+            return linha;
+        }
+
+        if (dentroDeBlocoDeCodigo) {
+            return linha;
+        }
+
+        const match = linha.match(/^(\s+)([\*\-\+]|\d+\.|\w)/);
+        if (match) {
+            const spaces = match[1].length;
+            const rest = linha.substring(spaces);
+            const targetSpaces = Math.ceil(spaces / 4) * 4;
+            return " ".repeat(targetSpaces) + rest;
+        }
+        return linha;
+    }).join("\n");
+}
+
+function protegerPipesObsidian(md) {
+    if (!md) return "";
+    return md.replace(/\[\[([^\]]+)\]\]/g, (match, conteudoInterno) => {
+        const protegido = conteudoInterno.replace(/\\?\|/g, "___OBSIDIAN_PIPE___");
+        return "[[" + protegido + "]]";
+    });
+}
+
 function abrirArtigo(titulo, conteudoMarkdown) {
     divResultados.classList.add("escondido");
     const pastasContainer = document.getElementById("pastas-container");
@@ -262,14 +297,20 @@ function abrirArtigo(titulo, conteudoMarkdown) {
     // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
     const markdownComHighlight = markdownLimpo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
 
+    // Protege caracteres '|' em links do Obsidian [[Link|Texto]] para não quebrarem tabelas no marked.parse
+    const markdownProtegido = protegerPipesObsidian(markdownComHighlight);
+
+    // Normaliza identação de listas do Obsidian (1-3 espaços -> 4 espaços) para o marked.parse
+    const markdownNormalizado = normalizarListasObsidian(markdownProtegido);
+
     // Converte Markdown para HTML com marked
     if (typeof marked !== 'undefined') {
-        artigoCorpo.innerHTML = marked.parse(markdownComHighlight);
+        artigoCorpo.innerHTML = marked.parse(markdownNormalizado);
     } else {
-        artigoCorpo.innerText = markdownComHighlight;
+        artigoCorpo.innerText = markdownNormalizado;
     }
 
-    // Processa os links do Obsidian [[Nome do Artigo]]
+    // Processa os links do Obsidian [[Nome do Artigo]] e restaura os pipes dos links
     processarLinksObsidian();
 
     // Processa callouts / caixas de aviso do Obsidian ([!IMPORTANT], [!NOTE], [!TIP], etc.)
@@ -330,16 +371,24 @@ function abrirArtigo(titulo, conteudoMarkdown) {
 
 function processarLinksObsidian() {
     const htmlAtual = artigoCorpo.innerHTML;
-    // Regex para substituir [[Caminho/Artigo|Texto]] ou [[Artigo]]
-    const regexObsidian = /\[\[(?:([^\]\|]+)\|)?([^\]]+)\]\]/g;
+    const regexObsidian = /\[\[([^\n\]]+)\]\]/g;
 
-    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, caminho, textoExibicao) => {
-        const destino = caminho || textoExibicao;
-        const rotulo = textoExibicao || destino;
-        return `<a class="obsidian-link" data-destino="${destino}">${rotulo}</a>`;
+    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, conteudo) => {
+        let caminho = "";
+        let textoExibicao = "";
+
+        if (conteudo.includes("___OBSIDIAN_PIPE___")) {
+            const partes = conteudo.split("___OBSIDIAN_PIPE___");
+            caminho = partes[0].trim();
+            textoExibicao = partes[1].trim();
+        } else {
+            caminho = conteudo.trim();
+            textoExibicao = conteudo.trim();
+        }
+
+        return `<a class="obsidian-link" data-destino="${caminho}">${textoExibicao}</a>`;
     });
 
-    // Adiciona evento de clique para os links obsidian internos
     artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();

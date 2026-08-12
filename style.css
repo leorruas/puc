@@ -186,25 +186,62 @@ button:hover {
     background-color: var(--accent-blue-alpha-05);
 }
 
+.artigo-corpo ul,
+.artigo-corpo ol {
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
 .artigo-corpo ul {
-    padding-left: 10px;
+    padding-left: 20px;
+}
+
+.artigo-corpo ol {
+    padding-left: 25px;
+}
+
+.artigo-corpo li > ul,
+.artigo-corpo li > ol {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 20px;
 }
 
 .artigo-corpo li {
     font-size: .9em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Estilo para listas não-ordenadas (ul > li) */
+.artigo-corpo ul > li {
     list-style: none;
     position: relative;
     padding-left: 20px;
 }
 
-.artigo-corpo li::before {
+.artigo-corpo ul > li::before {
     content: "◆ ";
     color: var(--accent-blue);
     font-size: 1.1em;
     position: absolute;
     left: 0;
     top: 0;
+}
+
+/* Estilo para listas ordenadas/numeradas (ol > li) */
+.artigo-corpo ol > li {
+    list-style-type: decimal;
+    padding-left: 5px;
+}
+
+.artigo-corpo ol > li::before {
+    content: none !important;
+}
+
+.artigo-corpo ol > li::marker {
+    color: var(--accent-blue);
+    font-weight: bold;
 }
 
 /* Formatação especial para listas de tarefas / Study Roadmap */
