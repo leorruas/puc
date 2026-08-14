@@ -1,0 +1,100 @@
+---
+title: "Glossário de conceitos em programação modular"
+disciplina: "01. Programacao Modular"
+modulo: "Módulo 1: Introdução e conceitos iniciais"
+tags:
+  - glossario
+  - conceitos-fundamentais
+  - tipos
+  - operacoes
+  - modulos
+  - atributos
+  - programacao-modular
+relacionados:
+  - "[[01. Introducao a Programacao Modular]]"
+  - "[[03. Tipos abstratos de dados]]"
+  - "[[00. Programacao Modular - Resumo]]"
+---
+
+# Glossário de conceitos em programação modular
+
+> **Contexto:** Guia rápido e comparativo para diferenciar os termos fundamentais da engenharia de software e da programação modular: Tipos, Operações, Módulos, Atributos, Classes, Objetos e Interfaces.
+
+---
+
+## Diferenciação rápida entre os conceitos fundamentais
+
+| Termo | Definição simplificada | O que representa? | Exemplo no código (C#) |
+| --- | --- | --- | --- |
+| **Tipo (*Type*)** | Um conjunto de valores e o conjunto de regras/operações aplicáveis a eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
+| **Operação (*Method/Function*)** | Ação, cálculo ou comportamento executado sobre dados. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
+| **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
+| **Atributo (*Field/Property*)** | Variável interna que guarda o valor do estado de uma entidade. | Os **dados / o estado interno** | `private double _saldo;` |
+| **Classe (*Class*)** | O modelo/molde que junta Atributos e Operações para criar um Tipo. | A **planta estrutural** do TAD | `public class Conta { ... }` |
+| **Objeto (*Instance*)** | Valor concreto criado na memória com base na especificação de uma Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
+| **Interface (*Interface*)** | Contrato de operações expostas públicas sem expor a implementação. | O **ponto de comunicação** | `get { return _criacao; }` ou `IMetodo` |
+
+---
+
+## 1. Tipo (*Type*)
+
+Na Ciência da Computação (e na teoria dos conjuntos), um **Tipo** define o **espaço de valores permitidos** e quais regras/operações podem ser executadas sobre eles.
+
+* **Função:** Impedir que o programa execute operações inválidas (como tentar multiplicar um texto por uma data).
+* **Tipos nativos:** `int`, `double`, `bool`.
+* **Tipos personalizados (TADs):** `Conta`, `Cliente`, `Pilha`.
+
+---
+
+## 2. Operação (*Operation / Method*)
+
+Uma **Operação** é a abstração executável (uma função ou um procedimento) responsável por processar entradas, realizar cálculos ou modificar o estado dos dados.
+
+* **Abstração de expressão (Função):** Calcula e retorna um resultado (ex.: `GetSaldo()`).
+* **Abstração de comando (Procedimento):** Executa uma ação que pode alterar dados ou interagir com E/S (ex.: `Depositar(200)`).
+
+---
+
+## 3. Módulo (*Module*)
+
+Um **Módulo** é a unidade de fronteira e organização do código. É o invólucro que agrupa funções, variáveis e tipos relacionados em uma entidade delimitada.
+
+* **No nível de arquivo:** Um arquivo de código (ex.: `Validador.cs`).
+* **No nível de linguagem:** Uma `class`, um `namespace` ou um módulo de compilação.
+* **No nível de arquitetura:** Uma biblioteca (`.dll`), pacote ou microsserviço.
+
+---
+
+## 4. Atributo (*Attribute / Field*)
+
+Um **Atributo** (também chamado de campo ou variável de instância) é onde o estado interno é efetivamente armazenado na memória.
+
+* **Ocultamento da informação:** Em programação modular bem projetada, os atributos são mantidos **privados** (`private`) para que nenhuma parte externa do sistema possa alterá-los sem autorização.
+* **Exemplo:** O atributo `_saldo` da conta bancária.
+
+---
+
+## Analogia do mundo real
+
+Para fixar a diferença de forma intuitiva:
+
+* **Tipo / Classe:** O projeto arquitetônico de um **Carro**.
+* **Objeto / Instância:** O carro físico vermelho parado na sua garagem.
+* **Atributos (Dados):** O nível de combustível no tanque e a velocidade atual no velocímetro.
+* **Operações (Métodos):** Acelerador, freio e troca de marcha.
+* **Módulo:** O sistema do motor completo encapsulado sob o capô (onde o motorista interage apenas com os pedais, sem tocar nos pistões).
+
+---
+
+## Referências bibliográficas
+
+* SEBESTA, Robert W. **Conceitos de Linguagens de Programação**. 11. ed. Porto Alegre: Bookman, 2018.
+* SOMMERVILLE, Ian. **Engenharia de Software**. 10. ed. São Paulo: Pearson, 2019.
+
+---
+
+## Artigos relacionados e navegação
+
+* **Resumo da disciplina:** [[00. Programacao Modular - Resumo]]
+* **Ver Tipos Abstratos de Dados:** [[03. Tipos abstratos de dados]]
+* **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
