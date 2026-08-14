@@ -11,9 +11,9 @@ tags:
   - atributos
   - programacao-modular
 relacionados:
-  - "[[01. Introducao a Programacao Modular]]"
+  - "[[01. Introdução à programação modular]]"
   - "[[03. Tipos abstratos de dados]]"
-  - "[[00. Programacao Modular - Resumo]]"
+  - "[[00. Programação modular - Resumo]]"
 ---
 
 # Glossário de conceitos em programação modular
@@ -50,8 +50,8 @@ Na Ciência da Computação (e na teoria dos conjuntos), um **Tipo** define o **
 
 Uma **Operação** é a abstração executável (uma função ou um procedimento) responsável por processar entradas, realizar cálculos ou modificar o estado dos dados.
 
-* **Abstração de expressão (Função):** Calcula e retorna um resultado (ex.: `GetSaldo()`).
-* **Abstração de comando (Procedimento):** Executa uma ação que pode alterar dados ou interagir com E/S (ex.: `Depositar(200)`).
+* **Abstração de expressão (Função):** Mapeia entradas em um resultado de saída sem que o usuário precise se preocupar com como isso é feito (ex.: `GetSaldo()`, `CalcularPrimeiroDigito()`).
+* **Abstração de comando (Procedimento):** Agrupa tarefas repetitivas em blocos de comando isolados sem obrigatoriedade de retorno de valor (ex.: `Depositar(200)`, `ExibirMenu()`).
 
 ---
 
@@ -95,6 +95,6 @@ Para fixar a diferença de forma intuitiva:
 
 ## Artigos relacionados e navegação
 
-* **Resumo da disciplina:** [[00. Programacao Modular - Resumo]]
+* **Resumo da disciplina:** [[00. Programação modular - Resumo]]
 * **Ver Tipos Abstratos de Dados:** [[03. Tipos abstratos de dados]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
