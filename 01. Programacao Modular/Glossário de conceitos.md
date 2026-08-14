@@ -9,6 +9,7 @@ tags:
   - operacoes
   - modulos
   - atributos
+  - goto
   - programacao-modular
 relacionados:
   - "[[01. Introdução à programação modular]]"
@@ -18,13 +19,13 @@ relacionados:
 
 # Glossário de conceitos em programação modular
 
-> **Contexto:** Guia rápido e comparativo para diferenciar os termos fundamentais da engenharia de software e da programação modular: Tipos, Operações, Módulos, Atributos, Classes, Objetos e Interfaces.
+> **Contexto:** Guia rápido e comparativo para diferenciar os termos fundamentais da engenharia de software e da programação modular: Tipos, Operações, Módulos, Atributos, Classes, Objetos, Interfaces e a instrução histórica GOTO.
 
 ---
 
 ## Diferenciação rápida entre os conceitos fundamentais
 
-| Termo | Definição simplificada | O que representa? | Exemplo no código (C#) |
+| Termo | Definição simplificada | O que representa? | Exemplo no código (C# / Teoria) |
 | --- | --- | --- | --- |
 | **Tipo (*Type*)** | Um conjunto de valores e o conjunto de regras/operações aplicáveis a eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
 | **Operação (*Method/Function*)** | Ação, cálculo ou comportamento executado sobre dados. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
@@ -33,6 +34,7 @@ relacionados:
 | **Classe (*Class*)** | O modelo/molde que junta Atributos e Operações para criar um Tipo. | A **planta estrutural** do TAD | `public class Conta { ... }` |
 | **Objeto (*Instance*)** | Valor concreto criado na memória com base na especificação de uma Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
 | **Interface (*Interface*)** | Contrato de operações expostas públicas sem expor a implementação. | O **ponto de comunicação** | `get { return _criacao; }` ou `IMetodo` |
+| **`GOTO`** | Instrução de salto incondicional de fluxo obsoleta pela Programação Estruturada. | O **controle desestruturado (evitar)** | `goto Rótulo;` (gera *spaghetti code*) |
 
 ---
 
@@ -74,6 +76,15 @@ Um **Atributo** (também chamado de campo ou variável de instância) é onde o 
 
 ---
 
+## 5. `GOTO` (Salto Incondicional)
+
+A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
+
+* **Problema histórico:** Seu uso desordenado originou o chamado *spaghetti code* ("código espaguete"), tornando imprevisível o rastreamento do estado das variáveis e a localização de bugs.
+* **Substituição:** O Teorema de Böhm-Jacopini (1966) e o artigo de Dijkstra (1968) provaram que o `GOTO` é desnecessário e deve ser substituído por comandos estruturados (Sequência, Seleção e Repetição).
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
@@ -90,11 +101,13 @@ Para fixar a diferença de forma intuitiva:
 
 * SEBESTA, Robert W. **Conceitos de Linguagens de Programação**. 11. ed. Porto Alegre: Bookman, 2018.
 * SOMMERVILLE, Ian. **Engenharia de Software**. 10. ed. São Paulo: Pearson, 2019.
+* DIJKSTRA, Edsger W. **Go To Statement Considered Harmful**. Communications of the ACM, v. 11, n. 3, p. 147-148, 1968.
 
 ---
 
 ## Artigos relacionados e navegação
 
 * **Resumo da disciplina:** [[00. Programação modular - Resumo]]
+* **Ver Introdução e Böhm-Jacopini:** [[01. Introdução à programação modular]]
 * **Ver Tipos Abstratos de Dados:** [[03. Tipos abstratos de dados]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
