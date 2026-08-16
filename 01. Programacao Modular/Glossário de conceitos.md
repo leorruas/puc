@@ -34,6 +34,8 @@ relacionados:
 | **Classe (*Class*)** | O modelo/molde que junta Atributos e Operações para criar um Tipo. | A **planta estrutural** do TAD | `public class Conta { ... }` |
 | **Objeto (*Instance*)** | Valor concreto criado na memória com base na especificação de uma Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
 | **Interface (*Interface*)** | Contrato de operações expostas públicas sem expor a implementação. | O **ponto de comunicação** | `get { return _criacao; }` ou `IMetodo` |
+| **Fatores Externos** | Qualidades perceptíveis diretamente pelos usuários na execução do software. | O **valor e utilidade para o usuário** | Corretude, Robustez, Usabilidade, Eficiência |
+| **Fatores Internos** | Qualidades técnicas do código-fonte perceptíveis apenas pelos desenvolvedores. | A **sustentação arquitetural do código** | Modularidade, Baixo Acoplamento, Coesão |
 | **`GOTO`** | Instrução de salto incondicional de fluxo obsoleta pela Programação Estruturada. | O **controle desestruturado (evitar)** | `goto Rótulo;` (gera *spaghetti code*) |
 
 ---
