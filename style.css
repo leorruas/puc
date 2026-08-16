@@ -96,10 +96,9 @@ button {
     font-size: 1em;
     color: white;
     border: 1px solid var(--accent-blue);
-    border-radius: 50px;
-    padding: 12px 25px;
+    border-radius: 100%;
+    width: 20%;
     cursor: pointer;
-    white-space: nowrap;
     transition: background-color 2s cubic-bezier(0.075, 0.82, 0.165, 1), color 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -833,7 +832,7 @@ mark.obsidian-highlight, mark:not(.highlight) {
 
     button {
         width: 100%;
-        border-radius: 50px;
+        border-radius: 100%;
         padding: 10px;
         font-size: 0.65em;
         text-align: center;
