@@ -406,7 +406,11 @@ function abrirArtigo(titulo, conteudoMarkdown) {
     // Atualiza visibilidade dos controles de TOC
     atualizarControlesTOC(true);
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Garante que o usuário sempre inicie a leitura no topo da página
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, 10);
 }
 
 function gerarTableOfContents() {
