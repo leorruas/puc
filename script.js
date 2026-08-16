@@ -394,8 +394,8 @@ function gerarTableOfContents() {
     tocNavDesktop.innerHTML = "";
     tocNavDrawer.innerHTML = "";
 
-    // Pega todos os títulos H2 e H3 do artigo
-    const headings = artigoCorpo.querySelectorAll("h2, h3, h4");
+    // Pega exclusivamente os títulos principais (H2) do artigo
+    const headings = artigoCorpo.querySelectorAll("h2");
 
     if (headings.length === 0) {
         if (tocSidebar) tocSidebar.style.display = "none";
@@ -487,7 +487,7 @@ function iniciarScrollSpy() {
         scrollSpyObserver.disconnect();
     }
 
-    const headings = artigoCorpo.querySelectorAll("h2, h3, h4");
+    const headings = artigoCorpo.querySelectorAll("h2");
     if (headings.length === 0) return;
 
     const callback = (entries) => {
