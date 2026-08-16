@@ -20,82 +20,92 @@ async function obterListaDeArquivos() {
             })
             .map(item => {
                 const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
+                const pathCodificado = item.path.split("/").map(seg => encodeURIComponent(seg)).join("/");
                 return {
                     titulo: nomeSemExtensao,
-                    path: encodeURI(`./${item.path}`) // Usa encodeURI para preservar barras de subpastas
+                    path: `./${pathCodificado}`
                 };
             });
     } catch (erro) {
         console.warn("Não foi possível listar via GitHub, usando lista padrão completa:", erro);
         // Fallback local completo com todos os arquivos do vault puc
-        return [
-            { titulo: "Aula Inaugural - Resumo", path: "./00. Geral/Aula Inaugural - Resumo.md" },
-            { titulo: "Aula Inaugural - Transcrição", path: "./00. Geral/Aula Inaugural - Transcrição.md" },
-            { titulo: "00. Guia multilinguagem de sintaxe e praticas - Índice", path: "./00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md" },
-            { titulo: "00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python)", path: "./00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md" },
-            { titulo: "01. Variáveis, tipos e atribuição", path: "./00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md" },
-            { titulo: "02. Estruturas condicionais (if, else, switch)", path: "./00. Sintaxe Multilinguagem/02. Estruturas condicionais (if, else, switch).md" },
-            { titulo: "03. Estruturas de repetição (while, for, do-while)", path: "./00. Sintaxe Multilinguagem/03. Estruturas de repetição (while, for, do-while).md" },
-            { titulo: "04. Sub-rotinas (funções e procedimentos)", path: "./00. Sintaxe Multilinguagem/04. Sub-rotinas (funções e procedimentos).md" },
-            { titulo: "05. Abstração e encapsulamento com classes (TADs)", path: "./00. Sintaxe Multilinguagem/05. Abstração e encapsulamento com classes (TADs).md" },
-            { titulo: "06. Modificadores de acesso, escopo e a palavra-chave static", path: "./00. Sintaxe Multilinguagem/06. Modificadores de acesso, escopo e a palavra-chave static.md" },
-            { titulo: "07. Getters, setters e propriedades (acesso e modificação de estado)", path: "./00. Sintaxe Multilinguagem/07. Getters, setters e propriedades (acesso e modificação de estado).md" },
-            { titulo: "08. Estruturas de dados fundamentais (materialização de modelos mentais em código)", path: "./00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código).md" },
-            { titulo: "00. Programação modular - Resumo", path: "./01. Programacao Modular/00. Programação modular - Resumo.md" },
-            { titulo: "01. Introdução à programação modular", path: "./01. Programacao Modular/01. Introdução à programação modular.md" },
-            { titulo: "02. Funções e procedimentos", path: "./01. Programacao Modular/02. Funções e procedimentos.md" },
-            { titulo: "03. Tipos abstratos de dados", path: "./01. Programacao Modular/03. Tipos abstratos de dados.md" },
-            { titulo: "04. Programação orientada a objetos e acoplamento", path: "./01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md" },
-            { titulo: "Glossário de conceitos - Programação Modular", path: "./01. Programacao Modular/Glossário de conceitos.md" },
-            { titulo: "Prompts de Estudo (LLM) - Programacao Modular", path: "./01. Programacao Modular/Prompts de Estudo (LLM).md" },
-            { titulo: "02. Modelagem de Dados - Resumo", path: "./02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Modelagem de Dados", path: "./02. Modelagem de Dados/Prompts de Estudo (LLM).md" },
-            { titulo: "03. Manipulacao de Dados SQL - Resumo", path: "./03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Manipulacao de Dados SQL", path: "./03. Manipulacao de Dados SQL/Prompts de Estudo (LLM).md" },
-            { titulo: "04. Algoritmos e Estruturas de Dados - Resumo", path: "./04. Algoritmos e Estruturas de Dados/04. Algoritmos e Estruturas de Dados - Resumo.md" },
-            { titulo: "Recordando C# e arrays", path: "./04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md" },
-            { titulo: "Prompts de Estudo (LLM) - Algoritmos e Estruturas de Dados", path: "./04. Algoritmos e Estruturas de Dados/Prompts de Estudo (LLM).md" },
-            { titulo: "05. Desenvolvimento Web Back-End - Resumo", path: "./05. Desenvolvimento Web Back-End/05. Desenvolvimento Web Back-End - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Desenvolvimento Web Back-End", path: "./05. Desenvolvimento Web Back-End/Prompts de Estudo (LLM).md" },
-            { titulo: "06. Projeto - Aplicacao Interativa - Resumo", path: "./06. Projeto - Aplicacao Interativa/06. Projeto - Aplicacao Interativa - Resumo.md" },
-            { titulo: "Ods 4 educação de qualidade", path: "./06. Projeto - Aplicacao Interativa/01. Ods 4 educação de qualidade - conceito, metas e fundamentação.md" },
-            { titulo: "Requisitos e diretrizes de escopo do projeto", path: "./06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md" },
-            { titulo: "Cronograma semanal e entregas de etapas", path: "./06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md" },
-            { titulo: "Reunião inicial da turma 5", path: "./06. Projeto - Aplicacao Interativa/04. Reunião inicial da turma 5 - resumo e transcrição integral.md" },
-            { titulo: "Prompts de Estudo (LLM) - Projeto Interativo", path: "./06. Projeto - Aplicacao Interativa/Prompts de Estudo (LLM).md" },
-            { titulo: "07. Engenharia de Requisitos - Resumo", path: "./07. Engenharia de Requisitos/07. Engenharia de Requisitos - Resumo.md" },
-            { titulo: "O que é, afinal, engenharia de requisitos", path: "./07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md" },
-            { titulo: "Engenharia de requisitos e negócios", path: "./07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md" },
-            { titulo: "O conceito de requisito de software", path: "./07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md" },
-            { titulo: "Requisitos funcionais e não-funcionais", path: "./07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md" },
-            { titulo: "Como escrever requisitos de qualidade", path: "./07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md" },
-            { titulo: "Técnicas de elicitação de requisitos", path: "./07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md" },
-            { titulo: "Visão geral da uml e tipos de diagramas", path: "./07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md" },
-            { titulo: "Modelagem de requisitos com casos de uso", path: "./07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md" },
-            { titulo: "Modelagem estrutural com diagrama de classes", path: "./07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md" },
-            { titulo: "Modelagem estrutural e modularização", path: "./07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md" },
-            { titulo: "Verificação e validação de requisitos", path: "./07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md" },
-            { titulo: "Prompts de Estudo (LLM) - Engenharia de Requisitos", path: "./07. Engenharia de Requisitos/Prompts de Estudo (LLM).md" },
-            { titulo: "12. Design de Interacao - Resumo", path: "./08. Design de Interacao/12. Design de Interacao - Resumo.md" },
-            { titulo: "O que é interação humano-computador", path: "./08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md" },
-            { titulo: "Construções teóricas da interação humano-computador", path: "./08. Design de Interacao/02. Construções teóricas da interação humano-computador.md" },
-            { titulo: "O papel dos sistemas interativos na atividade humana", path: "./08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md" },
-            { titulo: "Perspectivas de interação usuário-sistema", path: "./08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md" },
-            { titulo: "Por que a perspectiva da interação importa", path: "./08. Design de Interacao/05. Por que a perspectiva da interação importa.md" },
-            { titulo: "Contexto de uso, interface, interação e papéis", path: "./08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md" },
-            { titulo: "Atributos de qualidade em sistemas interativos", path: "./08. Design de Interacao/07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md" },
-            { titulo: "Engenharia cognitiva e os problemas da interação", path: "./08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md" },
-            { titulo: "Engenharia semiótica", path: "./08. Design de Interacao/09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md" },
-            { titulo: "Envolvimento do usuário no design", path: "./08. Design de Interacao/10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md" },
-            { titulo: "Racionalismo técnico e reflexão em ação", path: "./08. Design de Interacao/11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md" },
-            { titulo: "Prompts de Estudo (LLM) - Design de Interacao", path: "./08. Design de Interacao/Prompts de Estudo (LLM).md" },
-            { titulo: "09. Redes de Computadores - Resumo", path: "./09. Redes de Computadores/09. Redes de Computadores - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Redes de Computadores", path: "./09. Redes de Computadores/Prompts de Estudo (LLM).md" },
-            { titulo: "10. Lideranca e Competencias - Resumo", path: "./10. Lideranca e Competencias/10. Lideranca e Competencias - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Lideranca e Competencias", path: "./10. Lideranca e Competencias/Prompts de Estudo (LLM).md" },
-            { titulo: "11. Desafios Contemporaneos - Resumo", path: "./11. Desafios Contemporaneos/11. Desafios Contemporaneos - Resumo.md" },
-            { titulo: "Prompts de Estudo (LLM) - Desafios Contemporaneos", path: "./11. Desafios Contemporaneos/Prompts de Estudo (LLM).md" }
+        const arquivosFallback = [
+            "00. Geral/Aula Inaugural - Resumo.md",
+            "00. Geral/Aula Inaugural - Transcrição.md",
+            "00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md",
+            "00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md",
+            "00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md",
+            "00. Sintaxe Multilinguagem/02. Estruturas condicionais (if, else, switch).md",
+            "00. Sintaxe Multilinguagem/03. Estruturas de repetição (while, for, do-while).md",
+            "00. Sintaxe Multilinguagem/04. Sub-rotinas (funções e procedimentos).md",
+            "00. Sintaxe Multilinguagem/05. Abstração e encapsulamento com classes (TADs).md",
+            "00. Sintaxe Multilinguagem/06. Modificadores de acesso, escopo e a palavra-chave static.md",
+            "00. Sintaxe Multilinguagem/07. Getters, setters e propriedades (acesso e modificação de estado).md",
+            "00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código).md",
+            "01. Programacao Modular/00. Programação modular - Resumo.md",
+            "01. Programacao Modular/01. Introdução à programação modular.md",
+            "01. Programacao Modular/02. Funções e procedimentos.md",
+            "01. Programacao Modular/03. Tipos abstratos de dados.md",
+            "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md",
+            "01. Programacao Modular/Glossário de conceitos.md",
+            "01. Programacao Modular/Prompts de Estudo (LLM).md",
+            "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
+            "02. Modelagem de Dados/Prompts de Estudo (LLM).md",
+            "03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md",
+            "03. Manipulacao de Dados SQL/Prompts de Estudo (LLM).md",
+            "04. Algoritmos e Estruturas de Dados/04. Algoritmos e Estruturas de Dados - Resumo.md",
+            "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md",
+            "04. Algoritmos e Estruturas de Dados/Prompts de Estudo (LLM).md",
+            "05. Desenvolvimento Web Back-End/05. Desenvolvimento Web Back-End - Resumo.md",
+            "05. Desenvolvimento Web Back-End/Prompts de Estudo (LLM).md",
+            "06. Projeto - Aplicacao Interativa/06. Projeto - Aplicacao Interativa - Resumo.md",
+            "06. Projeto - Aplicacao Interativa/01. Ods 4 educação de qualidade - conceito, metas e fundamentação.md",
+            "06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md",
+            "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md",
+            "06. Projeto - Aplicacao Interativa/04. Reunião inicial da turma 5 - resumo e transcrição integral.md",
+            "06. Projeto - Aplicacao Interativa/Prompts de Estudo (LLM).md",
+            "07. Engenharia de Requisitos/07. Engenharia de Requisitos - Resumo.md",
+            "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md",
+            "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md",
+            "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md",
+            "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md",
+            "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+            "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+            "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+            "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+            "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+            "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+            "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+            "07. Engenharia de Requisitos/Prompts de Estudo (LLM).md",
+            "08. Design de Interacao/12. Design de Interacao - Resumo.md",
+            "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md",
+            "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md",
+            "08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md",
+            "08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md",
+            "08. Design de Interacao/05. Por que a perspectiva da interação importa.md",
+            "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md",
+            "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
+            "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+            "08. Design de Interacao/09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md",
+            "08. Design de Interacao/10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md",
+            "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md",
+            "08. Design de Interacao/Prompts de Estudo (LLM).md",
+            "09. Redes de Computadores/09. Redes de Computadores - Resumo.md",
+            "09. Redes de Computadores/Prompts de Estudo (LLM).md",
+            "10. Lideranca e Competencias/10. Lideranca e Competencias - Resumo.md",
+            "10. Lideranca e Competencias/Prompts de Estudo (LLM).md",
+            "11. Desafios Contemporaneos/11. Desafios Contemporaneos - Resumo.md",
+            "11. Desafios Contemporaneos/Prompts de Estudo (LLM).md"
         ];
+
+        return arquivosFallback.map(p => {
+            const nomeSemExtensao = p.split("/").pop().replace(".md", "");
+            const pathCodificado = p.split("/").map(seg => encodeURIComponent(seg)).join("/");
+            return {
+                titulo: nomeSemExtensao,
+                path: `./${pathCodificado}`
+            };
+        });
     }
 }
 
@@ -583,10 +593,12 @@ function navegarParaLinkObsidian(nomeOuCaminho) {
         .replace(/^\.\//, "")
         .trim()
         .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos para comparação robusta
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
         .replace(/\.md$/i, "")
-        .replace(/:/g, " -")
-        .replace(/\s+/g, " ");
+        .replace(/[(),:;+]/g, " ") // Remove parênteses, vírgulas, dois-pontos, mais
+        .replace(/#/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 
     const limpo = normalizar(caminhoSemHash || nomeOuCaminho);
     const limpoApenasNome = limpo.split("/").pop();
