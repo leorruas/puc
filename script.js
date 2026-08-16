@@ -373,8 +373,172 @@ function abrirArtigo(titulo, conteudoMarkdown) {
         }, 50);
     }
 
+    // Gera a Table of Contents (TOC) a partir dos cabeçalhos h2, h3, h4 do artigo
+    gerarTableOfContents();
+
     leitorDeArtigo.classList.remove("escondido");
+    
+    // Atualiza visibilidade dos controles de TOC
+    atualizarControlesTOC(true);
+
     window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function gerarTableOfContents() {
+    const tocNavDesktop = document.getElementById("toc-nav");
+    const tocNavDrawer = document.getElementById("toc-drawer-nav");
+    const tocSidebar = document.getElementById("artigo-toc-sidebar");
+
+    if (!tocNavDesktop || !tocNavDrawer) return;
+
+    tocNavDesktop.innerHTML = "";
+    tocNavDrawer.innerHTML = "";
+
+    // Pega todos os títulos H2 e H3 do artigo
+    const headings = artigoCorpo.querySelectorAll("h2, h3, h4");
+
+    if (headings.length === 0) {
+        if (tocSidebar) tocSidebar.style.display = "none";
+        const btnTocToggle = document.getElementById("btn-toc-toggle");
+        const fabTocMobile = document.getElementById("fab-toc-mobile");
+        if (btnTocToggle) btnTocToggle.classList.add("escondido");
+        if (fabTocMobile) fabTocMobile.classList.add("escondido");
+        return;
+    }
+
+    if (tocSidebar) tocSidebar.style.display = "";
+
+    const ulDesktop = document.createElement("ul");
+    ulDesktop.className = "toc-list";
+
+    const ulDrawer = document.createElement("ul");
+    ulDrawer.className = "toc-list";
+
+    headings.forEach((heading, index) => {
+        // Cria um ID amigável se o elemento não possuir
+        if (!heading.id) {
+            const slug = heading.textContent
+                .toLowerCase()
+                .replace(/[^\w\s-]/g, "")
+                .replace(/\s+/g, "-") || `secao-${index}`;
+            heading.id = slug;
+        }
+
+        const tag = heading.tagName.toLowerCase();
+        const texto = heading.textContent.trim();
+
+        // Item Desktop
+        const liDesktop = document.createElement("li");
+        liDesktop.className = `toc-item toc-level-${tag}`;
+        const aDesktop = document.createElement("a");
+        aDesktop.href = `#${heading.id}`;
+        aDesktop.textContent = texto;
+        aDesktop.setAttribute("data-heading-id", heading.id);
+        aDesktop.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollParaHeading(heading.id);
+        });
+        liDesktop.appendChild(aDesktop);
+        ulDesktop.appendChild(liDesktop);
+
+        // Item Mobile Drawer
+        const liDrawer = document.createElement("li");
+        liDrawer.className = `toc-item toc-level-${tag}`;
+        const aDrawer = document.createElement("a");
+        aDrawer.href = `#${heading.id}`;
+        aDrawer.textContent = texto;
+        aDrawer.setAttribute("data-heading-id", heading.id);
+        aDrawer.addEventListener("click", (e) => {
+            e.preventDefault();
+            fecharTOCDrawer();
+            scrollParaHeading(heading.id);
+        });
+        liDrawer.appendChild(aDrawer);
+        ulDrawer.appendChild(liDrawer);
+    });
+
+    tocNavDesktop.appendChild(ulDesktop);
+    tocNavDrawer.appendChild(ulDrawer);
+
+    // Inicializa o ScrollSpy para destacar o item ativo enquanto o usuário rola a página
+    iniciarScrollSpy();
+}
+
+function scrollParaHeading(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    
+    // Altura do sticky nav compensada no scroll
+    const stickyNav = document.getElementById("sticky-nav");
+    const navOffset = stickyNav ? stickyNav.offsetHeight + 20 : 80;
+    
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });
+}
+
+let scrollSpyObserver = null;
+function iniciarScrollSpy() {
+    if (scrollSpyObserver) {
+        scrollSpyObserver.disconnect();
+    }
+
+    const headings = artigoCorpo.querySelectorAll("h2, h3, h4");
+    if (headings.length === 0) return;
+
+    const callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                document.querySelectorAll(".toc-nav a, .toc-drawer-nav a").forEach(link => {
+                    if (link.getAttribute("data-heading-id") === id) {
+                        link.classList.add("toc-active");
+                    } else {
+                        link.classList.remove("toc-active");
+                    }
+                });
+            }
+        });
+    };
+
+    scrollSpyObserver = new IntersectionObserver(callback, {
+        rootMargin: "-80px 0px -70% 0px",
+        threshold: 0.1
+    });
+
+    headings.forEach(h => scrollSpyObserver.observe(h));
+}
+
+function atualizarControlesTOC(ativo) {
+    const btnTocToggle = document.getElementById("btn-toc-toggle");
+    const fabTocMobile = document.getElementById("fab-toc-mobile");
+    if (ativo) {
+        if (btnTocToggle) btnTocToggle.classList.remove("escondido");
+        if (fabTocMobile) fabTocMobile.classList.remove("escondido");
+    } else {
+        if (btnTocToggle) btnTocToggle.classList.add("escondido");
+        if (fabTocMobile) fabTocMobile.classList.add("escondido");
+    }
+}
+
+function abrirTOCDrawer() {
+    const drawer = document.getElementById("toc-drawer");
+    const overlay = document.getElementById("toc-drawer-overlay");
+    if (drawer) drawer.classList.remove("escondido");
+    if (overlay) overlay.classList.remove("escondido");
+    document.body.style.overflow = "hidden";
+}
+
+function fecharTOCDrawer() {
+    const drawer = document.getElementById("toc-drawer");
+    const overlay = document.getElementById("toc-drawer-overlay");
+    if (drawer) drawer.classList.add("escondido");
+    if (overlay) overlay.classList.add("escondido");
+    document.body.style.overflow = "";
 }
 
 function processarLinksObsidian() {
@@ -596,7 +760,39 @@ function voltarParaHome() {
     if (campoTexto) campoTexto.value = "";
     if (campoTextoNav) campoTextoNav.value = "";
     containerResultados.innerHTML = "";
+    
+    // Oculta controles de TOC
+    atualizarControlesTOC(false);
+    fecharTOCDrawer();
+
     window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Botões de abertura e fechamento da TOC no Mobile
+const btnTocToggle = document.getElementById("btn-toc-toggle");
+if (btnTocToggle) {
+    btnTocToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        abrirTOCDrawer();
+    });
+}
+
+const fabTocMobile = document.getElementById("fab-toc-mobile");
+if (fabTocMobile) {
+    fabTocMobile.addEventListener("click", (e) => {
+        e.preventDefault();
+        abrirTOCDrawer();
+    });
+}
+
+const btnFecharDrawer = document.getElementById("btn-fechar-drawer");
+if (btnFecharDrawer) {
+    btnFecharDrawer.addEventListener("click", fecharTOCDrawer);
+}
+
+const tocDrawerOverlay = document.getElementById("toc-drawer-overlay");
+if (tocDrawerOverlay) {
+    tocDrawerOverlay.addEventListener("click", fecharTOCDrawer);
 }
 
 const navLogo = document.getElementById("nav-logo");
