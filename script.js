@@ -31,7 +31,22 @@ async function obterListaDeArquivos() {
         return [
             { titulo: "Aula Inaugural - Resumo", path: "./00. Geral/Aula Inaugural - Resumo.md" },
             { titulo: "Aula Inaugural - Transcrição", path: "./00. Geral/Aula Inaugural - Transcrição.md" },
-            { titulo: "01. Programacao Modular - Resumo", path: "./01. Programacao Modular/01. Programacao Modular - Resumo.md" },
+            { titulo: "00. Guia multilinguagem de sintaxe e praticas - Índice", path: "./00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md" },
+            { titulo: "00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python)", path: "./00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md" },
+            { titulo: "01. Variáveis, tipos e atribuição", path: "./00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md" },
+            { titulo: "02. Estruturas condicionais (if, else, switch)", path: "./00. Sintaxe Multilinguagem/02. Estruturas condicionais (if, else, switch).md" },
+            { titulo: "03. Estruturas de repetição (while, for, do-while)", path: "./00. Sintaxe Multilinguagem/03. Estruturas de repetição (while, for, do-while).md" },
+            { titulo: "04. Sub-rotinas (funções e procedimentos)", path: "./00. Sintaxe Multilinguagem/04. Sub-rotinas (funções e procedimentos).md" },
+            { titulo: "05. Abstração e encapsulamento com classes (TADs)", path: "./00. Sintaxe Multilinguagem/05. Abstração e encapsulamento com classes (TADs).md" },
+            { titulo: "06. Modificadores de acesso, escopo e a palavra-chave static", path: "./00. Sintaxe Multilinguagem/06. Modificadores de acesso, escopo e a palavra-chave static.md" },
+            { titulo: "07. Getters, setters e propriedades (acesso e modificação de estado)", path: "./00. Sintaxe Multilinguagem/07. Getters, setters e propriedades (acesso e modificação de estado).md" },
+            { titulo: "08. Estruturas de dados fundamentais (materialização de modelos mentais em código)", path: "./00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código).md" },
+            { titulo: "00. Programação modular - Resumo", path: "./01. Programacao Modular/00. Programação modular - Resumo.md" },
+            { titulo: "01. Introdução à programação modular", path: "./01. Programacao Modular/01. Introdução à programação modular.md" },
+            { titulo: "02. Funções e procedimentos", path: "./01. Programacao Modular/02. Funções e procedimentos.md" },
+            { titulo: "03. Tipos abstratos de dados", path: "./01. Programacao Modular/03. Tipos abstratos de dados.md" },
+            { titulo: "04. Programação orientada a objetos e acoplamento", path: "./01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md" },
+            { titulo: "Glossário de conceitos - Programação Modular", path: "./01. Programacao Modular/Glossário de conceitos.md" },
             { titulo: "Prompts de Estudo (LLM) - Programacao Modular", path: "./01. Programacao Modular/Prompts de Estudo (LLM).md" },
             { titulo: "02. Modelagem de Dados - Resumo", path: "./02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md" },
             { titulo: "Prompts de Estudo (LLM) - Modelagem de Dados", path: "./02. Modelagem de Dados/Prompts de Estudo (LLM).md" },
@@ -561,15 +576,19 @@ function processarCalloutsObsidian() {
 function navegarParaLinkObsidian(nomeOuCaminho) {
     if (!nomeOuCaminho) return;
 
+    // Se o link contiver âncora para uma seção (ex.: [[Nota#Seção]]), extrai apenas o arquivo
+    const [caminhoSemHash, hashSecao] = nomeOuCaminho.split("#");
+
     const normalizar = (str) => decodeURIComponent(decodeURI(str))
         .replace(/^\.\//, "")
         .trim()
         .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos para comparação robusta
         .replace(/\.md$/i, "")
         .replace(/:/g, " -")
         .replace(/\s+/g, " ");
 
-    const limpo = normalizar(nomeOuCaminho);
+    const limpo = normalizar(caminhoSemHash || nomeOuCaminho);
     const limpoApenasNome = limpo.split("/").pop();
 
     // Procura o artigo por correspondência exata de caminho, nome do arquivo ou título
@@ -592,6 +611,15 @@ function navegarParaLinkObsidian(nomeOuCaminho) {
 
     if (encontrado) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo);
+        if (hashSecao) {
+            setTimeout(() => {
+                const slug = hashSecao
+                    .toLowerCase()
+                    .replace(/[^\w\s-]/g, "")
+                    .replace(/\s+/g, "-");
+                scrollParaHeading(slug);
+            }, 100);
+        }
     } else {
         console.warn("Artigo não encontrado para o link Obsidian:", nomeOuCaminho);
     }
