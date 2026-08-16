@@ -386,23 +386,17 @@ function abrirArtigo(titulo, conteudoMarkdown) {
 
 function gerarTableOfContents() {
     const tocNavDesktop = document.getElementById("toc-nav");
-    const tocNavDrawer = document.getElementById("toc-drawer-nav");
     const tocSidebar = document.getElementById("artigo-toc-sidebar");
 
-    if (!tocNavDesktop || !tocNavDrawer) return;
+    if (!tocNavDesktop) return;
 
     tocNavDesktop.innerHTML = "";
-    tocNavDrawer.innerHTML = "";
 
     // Pega exclusivamente os títulos principais (H2) do artigo
     const headings = artigoCorpo.querySelectorAll("h2");
 
     if (headings.length === 0) {
         if (tocSidebar) tocSidebar.style.display = "none";
-        const btnTocToggle = document.getElementById("btn-toc-toggle");
-        const fabTocMobile = document.getElementById("fab-toc-mobile");
-        if (btnTocToggle) btnTocToggle.classList.add("escondido");
-        if (fabTocMobile) fabTocMobile.classList.add("escondido");
         return;
     }
 
@@ -410,9 +404,6 @@ function gerarTableOfContents() {
 
     const ulDesktop = document.createElement("ul");
     ulDesktop.className = "toc-list";
-
-    const ulDrawer = document.createElement("ul");
-    ulDrawer.className = "toc-list";
 
     headings.forEach((heading, index) => {
         // Cria um ID amigável se o elemento não possuir
@@ -424,12 +415,11 @@ function gerarTableOfContents() {
             heading.id = slug;
         }
 
-        const tag = heading.tagName.toLowerCase();
         const texto = heading.textContent.trim();
 
         // Item Desktop
         const liDesktop = document.createElement("li");
-        liDesktop.className = `toc-item toc-level-${tag}`;
+        liDesktop.className = "toc-item";
         const aDesktop = document.createElement("a");
         aDesktop.href = `#${heading.id}`;
         aDesktop.textContent = texto;
@@ -440,25 +430,9 @@ function gerarTableOfContents() {
         });
         liDesktop.appendChild(aDesktop);
         ulDesktop.appendChild(liDesktop);
-
-        // Item Mobile Drawer
-        const liDrawer = document.createElement("li");
-        liDrawer.className = `toc-item toc-level-${tag}`;
-        const aDrawer = document.createElement("a");
-        aDrawer.href = `#${heading.id}`;
-        aDrawer.textContent = texto;
-        aDrawer.setAttribute("data-heading-id", heading.id);
-        aDrawer.addEventListener("click", (e) => {
-            e.preventDefault();
-            fecharTOCDrawer();
-            scrollParaHeading(heading.id);
-        });
-        liDrawer.appendChild(aDrawer);
-        ulDrawer.appendChild(liDrawer);
     });
 
     tocNavDesktop.appendChild(ulDesktop);
-    tocNavDrawer.appendChild(ulDrawer);
 
     // Inicializa o ScrollSpy para destacar o item ativo enquanto o usuário rola a página
     iniciarScrollSpy();
@@ -494,7 +468,7 @@ function iniciarScrollSpy() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
-                document.querySelectorAll(".toc-nav a, .toc-drawer-nav a").forEach(link => {
+                document.querySelectorAll(".toc-nav a").forEach(link => {
                     if (link.getAttribute("data-heading-id") === id) {
                         link.classList.add("toc-active");
                     } else {
@@ -511,34 +485,6 @@ function iniciarScrollSpy() {
     });
 
     headings.forEach(h => scrollSpyObserver.observe(h));
-}
-
-function atualizarControlesTOC(ativo) {
-    const btnTocToggle = document.getElementById("btn-toc-toggle");
-    const fabTocMobile = document.getElementById("fab-toc-mobile");
-    if (ativo) {
-        if (btnTocToggle) btnTocToggle.classList.remove("escondido");
-        if (fabTocMobile) fabTocMobile.classList.remove("escondido");
-    } else {
-        if (btnTocToggle) btnTocToggle.classList.add("escondido");
-        if (fabTocMobile) fabTocMobile.classList.add("escondido");
-    }
-}
-
-function abrirTOCDrawer() {
-    const drawer = document.getElementById("toc-drawer");
-    const overlay = document.getElementById("toc-drawer-overlay");
-    if (drawer) drawer.classList.remove("escondido");
-    if (overlay) overlay.classList.remove("escondido");
-    document.body.style.overflow = "hidden";
-}
-
-function fecharTOCDrawer() {
-    const drawer = document.getElementById("toc-drawer");
-    const overlay = document.getElementById("toc-drawer-overlay");
-    if (drawer) drawer.classList.add("escondido");
-    if (overlay) overlay.classList.add("escondido");
-    document.body.style.overflow = "";
 }
 
 function processarLinksObsidian() {
@@ -760,39 +706,7 @@ function voltarParaHome() {
     if (campoTexto) campoTexto.value = "";
     if (campoTextoNav) campoTextoNav.value = "";
     containerResultados.innerHTML = "";
-    
-    // Oculta controles de TOC
-    atualizarControlesTOC(false);
-    fecharTOCDrawer();
-
     window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Botões de abertura e fechamento da TOC no Mobile
-const btnTocToggle = document.getElementById("btn-toc-toggle");
-if (btnTocToggle) {
-    btnTocToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        abrirTOCDrawer();
-    });
-}
-
-const fabTocMobile = document.getElementById("fab-toc-mobile");
-if (fabTocMobile) {
-    fabTocMobile.addEventListener("click", (e) => {
-        e.preventDefault();
-        abrirTOCDrawer();
-    });
-}
-
-const btnFecharDrawer = document.getElementById("btn-fechar-drawer");
-if (btnFecharDrawer) {
-    btnFecharDrawer.addEventListener("click", fecharTOCDrawer);
-}
-
-const tocDrawerOverlay = document.getElementById("toc-drawer-overlay");
-if (tocDrawerOverlay) {
-    tocDrawerOverlay.addEventListener("click", fecharTOCDrawer);
 }
 
 const navLogo = document.getElementById("nav-logo");

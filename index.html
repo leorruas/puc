@@ -16,10 +16,7 @@
         <div class="nav-search-container">
             <input type="text" id="nav-search-input" placeholder="pesquisar...">
         </div>
-        <div class="nav-links-right">
-            <button id="btn-toc-toggle" class="nav-btn-toc escondido" title="Sumário do artigo">índice</button>
-            <a href="#pastas-container" class="nav-link-pastas" id="nav-link-pastas">pastas</a>
-        </div>
+        <a href="#pastas-container" class="nav-link-pastas" id="nav-link-pastas">pastas</a>
     </nav>
 
     <header>
@@ -38,7 +35,7 @@
         </div>
         <div class="leitor-artigo escondido" id="leitor-artigo">
             <div class="artigo-layout-container">
-                <!-- Table of Contents (TOC) Desktop Sidebar no Lado Esquerdo -->
+                <!-- Table of Contents (TOC) no Lado Esquerdo -->
                 <aside class="artigo-toc-sidebar" id="artigo-toc-sidebar">
                     <div class="toc-header">
                         <span class="toc-title">Neste artigo</span>
@@ -53,22 +50,6 @@
             </div>
         </div>
     </main>
-
-    <!-- Drawer Mobile para Table of Contents -->
-    <div class="toc-drawer-overlay escondido" id="toc-drawer-overlay"></div>
-    <div class="toc-drawer escondido" id="toc-drawer">
-        <div class="toc-drawer-header">
-            <span>Neste artigo</span>
-            <button id="btn-fechar-drawer" class="btn-fechar-drawer">&times;</button>
-        </div>
-        <nav class="toc-drawer-nav" id="toc-drawer-nav"></nav>
-    </div>
-
-    <!-- Botão Flutuante Mobile para abrir o Sumário -->
-    <button class="fab-toc-mobile escondido" id="fab-toc-mobile" title="Abrir sumário">
-        <span class="fab-icon">☰</span>
-        <span class="fab-label">Sumário</span>
-    </button>
 
     <script src="script.js"></script>
 </body>
