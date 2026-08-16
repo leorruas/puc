@@ -457,19 +457,19 @@ button:hover {
 
 /* Highlight na busca */
 mark.highlight {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #000;
-    padding: 0 2px;
-    border-radius: 2px;
+    background-color: rgba(0, 122, 255, 0.4);
+    color: #ffffff;
+    padding: 0 4px;
+    border-radius: 3px;
 }
 
 /* Highlight do Obsidian (==texto==) */
 mark.obsidian-highlight, mark:not(.highlight) {
-    background-color: rgba(0, 122, 255, 0.25);
+    background-color: var(--accent-blue);
     color: #ffffff;
     padding: 2px 6px;
     border-radius: 4px;
-    border-bottom: 2px solid var(--accent-blue);
+    border: none !important;
     font-weight: 500;
 }
 
