@@ -34,6 +34,8 @@ relacionados:
 | **Classe (*Class*)** | O modelo/molde que junta Atributos e Operações para criar um Tipo. | A **planta estrutural** do TAD | `public class Conta { ... }` |
 | **Objeto (*Instance*)** | Valor concreto criado na memória com base na especificação de uma Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
 | **Interface (*Interface*)** | Contrato de operações expostas públicas sem expor a implementação. | O **ponto de comunicação** | `get { return _criacao; }` ou `IMetodo` |
+| **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
+| **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
 | **Fatores Externos** | Qualidades perceptíveis diretamente pelos usuários na execução do software. | O **valor e utilidade para o usuário** | Corretude, Robustez, Usabilidade, Eficiência |
 | **Fatores Internos** | Qualidades técnicas do código-fonte perceptíveis apenas pelos desenvolvedores. | A **sustentação arquitetural do código** | Modularidade, Baixo Acoplamento, Coesão |
 | **Corretude / Correção (*Correctness*)** | Capacidade de executar exatamente aquilo que foi especificado nos requisitos sob condições normais. | A **precisão funcional primária** | $2 + 2 = 4$; calcular juros exatos |
@@ -81,7 +83,20 @@ Um **Atributo** (também chamado de campo ou variável de instância) é onde o 
 
 ---
 
-## 5. `GOTO` (Salto Incondicional)
+## 5. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+
+Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
+
+* **Parâmetro Formal (*Parameter*):** É a **variável declarada na assinatura da sub-rotina** que atua como um espaço reservado (*placeholder*), definindo o tipo e o nome do dado que a função espera receber.
+  - *Analogia de Feynman:* A **abertura da caixa de correio** com o tamanho certo para receber cartas.
+  - *Exemplo:* Em `void Depositar(double valor)`, `double valor` é o **parâmetro**.
+* **Argumento Real (*Argument*):** É o **valor real e concreto fornecido à sub-rotina** no momento em que ela é invocada/chamada na execução.
+  - *Analogia de Feynman:* A **carta física de 50 gramas** que você coloca dentro da caixa de correio.
+  - *Exemplo:* Em `conta.Depositar(150.00)`, o número `150.00` é o **argumento**.
+
+---
+
+## 6. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
