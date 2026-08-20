@@ -104,7 +104,128 @@ Para alcançar o objetivo geral, o trabalho desdobra-se nos seguintes objetivos 
 | **RNF-07** | A interface deve fornecer feedback visual imediato (mensagens claras de sucesso, alertas de validação de formulários e indicadores de carregamento) para todas as ações realizadas pelo usuário.                                              | Usabilidade e Interface               | ALTA       |
 | **RNF-08** | A solução deve ser construída estritamente na stack tecnológica obrigatória do Eixo 2: Back-End em C# (.NET / ASP.NET Core com Entity Framework Core), Banco de Dados Relacional SQL Server, e Front-End em HTML5, CSS3 e JavaScript Vanilla. | Restrição Arquitetural e Tecnológica  | ALTA       |
 
-# 8. Referências bibliográficas
+# 8. Casos de uso do sistema
+
+## 8.1 Atores do sistema
+
+| Ator | Descrição e responsabilidades no sistema |
+| :--- | :--- |
+| **Estudante / Mentorado** | Usuário cadastrado em busca de orientação técnica ou transição de carreira. Pesquisa mentores, agenda atendimentos, participa do fórum de dúvidas e avalia sessões concluídas. |
+| **Mentor Voluntário** | Profissional de tecnologia que disponibiliza horários voluntários. Gerencia seus slots de agenda, aprova ou recusa agendamentos, registra anotações pós-mentoria e compartilha trilhas de estudo. |
+| **Administrador** | Gestor da plataforma responsável por governança, moderação de conteúdos no fórum, auditoria de contas e emissão de relatórios de engajamento e métricas de impacto socioeducacional (ODS 4). |
+
+---
+
+## 8.2 Especificação dos casos de uso
+
+| Identificador | Nome do caso de uso | Ator primário | Requisitos associados | Descrição sucinta |
+| :--- | :--- | :--- | :--- | :--- |
+| **UC-01** | Manter conta de usuário | Estudante, Mentor, Admin | RF-01, RF-13 | Cadastro de perfil, autenticação com credenciais seguras, atualização de dados pessoais e alteração de senha. |
+| **UC-02** | Consultar e filtrar mentores | Estudante | RF-02, RNF-01 | Busca dinâmica de mentores por especialidade, tecnologia (ex.: .NET, React, SQL) e disponibilidade de horários. |
+| **UC-03** | Gerenciar slots de disponibilidade | Mentor | RF-03 | Cadastro, edição e cancelamento de blocos de horários livres para realização de atendimentos voluntários. |
+| **UC-04** | Solicitar agendamento de mentoria | Estudante | RF-04, RNF-03 | Seleção de slot livre na agenda do mentor, definição do tema de interesse e envio de solicitação de mentoria. |
+| **UC-05** | Responder solicitação de mentoria | Mentor | RF-04, RF-07 | Visualização das solicitações pendentes e confirmação ou recusa motivada da sessão, com disparo de alerta ao aluno. |
+| **UC-06** | Registrar avaliação e feedback | Estudante | RF-06 | Atribuição de nota de 1 a 5 estrelas e elaboração de parecer qualitativo após o término da mentoria. |
+| **UC-07** | Interagir no fórum colaborativo | Estudante, Mentor | RF-05, RF-07 | Publicação de tópicos com tags temáticas, respostas a postagens da comunidade e edição ou exclusão do próprio conteúdo. |
+| **UC-08** | Consultar histórico e anotações | Estudante, Mentor | RF-08 | Visualização da linha do tempo de atendimentos e registro de anotações privadas de evolução técnica. |
+| **UC-09** | Emitir relatórios de engajamento e ODS 4 | Administrador | RF-09, RF-10 | Geração de relatórios consolidados de taxa de conclusão e painel analítico de horas voluntárias e alunos beneficiados. |
+| **UC-10** | Moderar conteúdos e auditar contas | Administrador | RF-11 | Exclusão de postagens ofensivas no fórum, bloqueio preventivo de perfis e verificação de logs de auditoria. |
+| **UC-11** | Compartilhar trilhas e materiais de apoio | Mentor | RF-12 | Cadastro e compartilhamento de links de artigos, documentações e repositórios de apoio para os mentorados. |
+
+---
+
+## 8.3 Diagramas de casos de uso (UML)
+
+### Visão geral consolidada do sistema
+
+```mermaid
+flowchart TD
+    subgraph Atores["Atores Principais"]
+        Estudante["Estudante / Mentorado"]
+        Mentor["Mentor Voluntário"]
+        Admin["Administrador"]
+    end
+
+    subgraph ModuloAutenticacao["Módulo 1: Autenticação e Perfis"]
+        UC01["UC-01: Manter conta<br>e autenticar perfil"]
+    end
+
+    subgraph ModuloAgendamento["Módulo 2: Descoberta e Agendamento"]
+        UC02["UC-02: Consultar e<br>filtrar mentores"]
+        UC03["UC-03: Gerenciar slots<br>de disponibilidade"]
+        UC04["UC-04: Solicitar agendamento<br>de mentoria"]
+        UC05["UC-05: Aceitar ou recusar<br>solicitação de mentoria"]
+        UC06["UC-06: Avaliar sessão<br>e enviar feedback"]
+        UC08["UC-08: Consultar histórico<br>e notas privadas"]
+    end
+
+    subgraph ModuloComunidade["Módulo 3: Fórum e Recursos"]
+        UC07["UC-07: Publicar e responder<br>no fórum colaborativo"]
+        UC11["UC-11: Compartilhar trilhas<br>e links de estudo"]
+    end
+
+    subgraph ModuloGovernanca["Módulo 4: Governança e Métricas ODS 4"]
+        UC09["UC-09: Emitir relatórios de<br>engajamento e ODS 4"]
+        UC10["UC-10: Moderar postagens<br>e auditar contas"]
+    end
+
+    Estudante --> UC01
+    Mentor --> UC01
+    Admin --> UC01
+
+    Estudante --> UC02
+    Estudante --> UC04
+    Estudante --> UC06
+    Estudante --> UC08
+    Estudante --> UC07
+
+    Mentor --> UC03
+    Mentor --> UC05
+    Mentor --> UC08
+    Mentor --> UC07
+    Mentor --> UC11
+
+    Admin --> UC09
+    Admin --> UC10
+```
+
+---
+
+### Diagrama detalhado: ciclo de agendamento e mentoria
+
+```mermaid
+flowchart TD
+    subgraph AtoresMentoria["Atores do Fluxo"]
+        AtorAluno["Estudante"]
+        AtorMentor["Mentor"]
+    end
+
+    subgraph CasosDeUsoMentoria["Ciclo de Vida da Mentoria"]
+        UC_Filtrar["UC-02: Filtrar mentores<br>por tecnologia"]
+        UC_Slots["UC-03: Cadastrar horários<br>de atendimento"]
+        UC_Solicitar["UC-04: Solicitar sessão<br>de mentoria"]
+        UC_ValidarSlot["Validação: Verificar<br>conflito de agenda"]
+        UC_Decidir["UC-05: Avaliar solicitação<br>(Aceitar / Recusar)"]
+        UC_Notificar["Sistema: Notificar<br>atualização de status"]
+        UC_Avaliar["UC-06: Registrar nota<br>e feedback"]
+        UC_Historico["UC-08: Registrar anotações<br>e histórico"]
+    end
+
+    AtorMentor --> UC_Slots
+    AtorAluno --> UC_Filtrar
+    UC_Filtrar --> UC_Solicitar
+    UC_Solicitar -.->|include| UC_ValidarSlot
+    UC_Solicitar --> UC_Decidir
+    AtorMentor --> UC_Decidir
+    UC_Decidir -.->|include| UC_Notificar
+    UC_Decidir --> UC_Historico
+    UC_Historico --> UC_Avaliar
+    AtorAluno --> UC_Avaliar
+```
+
+---
+
+# 9. Referências bibliográficas
 
 BRASSCOM (Associação das Empresas de Tecnologia da Informação e Comunicação). **Relatório de Demanda de Talentos em TIC e Estratégia ΣTCEM**. São Paulo: Brasscom, 1 dez. 2021. Disponível em: https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/. Acesso em: ==13/08/2026==.
 
