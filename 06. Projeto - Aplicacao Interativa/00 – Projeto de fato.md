@@ -134,7 +134,20 @@ Para alcançar o objetivo geral, o trabalho desdobra-se nos seguintes objetivos 
 
 ---
 
-## 8.3 Diagramas de casos de uso (UML)
+## 8.3 Convenções e especificação das relações UML
+
+Para assegurar o rigor técnico da modelagem UML nos diagramas a seguir, são empregadas as seguintes convenções de relacionamentos e notações de setas:
+
+| Elemento / Relação UML | Notação gráfica | Tipo de linha e seta | Significado e aplicação no sistema |
+| :--- | :--- | :--- | :--- |
+| **Associação** | `Ator --- CasoDeUso` | Linha contínua sem ponta | Indica a comunicação bidirecional direta entre um ator e o caso de uso que ele executa. |
+| **Generalização / Herança** | `AtorEspecializado --\|> AtorBase` | Linha sólida com seta triangular fechada | Indica herança de comportamento (ex.: Usuário Autenticado herdando de Usuário Base). |
+| **Inclusão (`<<include>>`)** | `UC_Base -.->\|<<include>>\| UC_Obrigatorio` | Linha tracejada com seta aberta em 'V' | O caso de uso base **obrigatoriamente** executa o caso de uso incluído (ex.: agendar mentoria inclui validação de conflitos). A seta aponta do caso base para o incluído. |
+| **Extensão (`<<extend>>`)** | `UC_Extensao -.->\|<<extend>>\| UC_Base` | Linha tracejada com seta aberta em 'V' | Representa comportamento **opcional ou condicional** que pode estender o caso de uso base. A seta aponta do caso opcional (extensão) para o caso de uso base. |
+
+---
+
+## 8.4 Diagramas de casos de uso (UML)
 
 ### Visão geral consolidada do sistema
 
