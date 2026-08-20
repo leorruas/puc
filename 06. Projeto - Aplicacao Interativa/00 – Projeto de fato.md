@@ -153,51 +153,56 @@ Para assegurar o rigor técnico da modelagem UML nos diagramas a seguir, são em
 
 ```mermaid
 flowchart TD
-    Estudante(["👤 Estudante / Mentorado"]):::actorStyle
-    Mentor(["👤 Mentor Voluntário"]):::actorStyle
-    Admin(["👤 Administrador"]):::actorStyle
+    subgraph Atores["Atores do Sistema"]
+        Estudante(["👤 Estudante / Mentorado"]):::actorStyle
+        Mentor(["👤 Mentor Voluntário"]):::actorStyle
+        Admin(["👤 Administrador"]):::actorStyle
+    end
 
-    subgraph Sistema["Limite do Sistema: Plataforma de Mentorias"]
-        subgraph ModuloAutenticacao["Módulo de Autenticação e Perfis"]
-            UC01(["UC-01: Manter conta<br>e autenticar perfil"])
-        end
+    subgraph ModuloAutenticacao["Módulo 1: Autenticação e Perfis"]
+        UC01(["UC-01: Manter conta<br>e autenticar perfil"])
+    end
 
-        subgraph ModuloAgendamento["Módulo de Descoberta e Agendamento"]
-            UC02(["UC-02: Consultar e<br>filtrar mentores"])
-            UC03(["UC-03: Gerenciar slots<br>de disponibilidade"])
-            UC04(["UC-04: Solicitar agendamento<br>de mentoria"])
-            UC05(["UC-05: Aceitar ou recusar<br>solicitação de mentoria"])
-            UC06(["UC-06: Avaliar sessão<br>e enviar feedback"])
-            UC08(["UC-08: Consultar histórico<br>e notas privadas"])
-        end
+    subgraph ModuloDescoberta["Módulo 2: Descoberta e Filtros"]
+        UC02(["UC-02: Consultar e<br>filtrar mentores"])
+    end
 
-        subgraph ModuloComunidade["Módulo de Fórum e Recursos"]
-            UC07(["UC-07: Publicar e responder<br>no fórum colaborativo"])
-            UC11(["UC-11: Compartilhar trilhas<br>e links de estudo"])
-        end
+    subgraph ModuloAgenda["Módulo 3: Gestão de Agenda"]
+        UC03(["UC-03: Gerenciar slots<br>de disponibilidade"])
+    end
 
-        subgraph ModuloGovernanca["Módulo de Governança e Métricas ODS 4"]
-            UC09(["UC-09: Emitir relatórios de<br>engajamento e ODS 4"])
-            UC10(["UC-10: Moderar postagens<br>e auditar contas"])
-        end
+    subgraph ModuloAgendamento["Módulo 4: Agendamentos e Avaliação"]
+        UC04(["UC-04: Solicitar agendamento<br>de mentoria"])
+        UC05(["UC-05: Aceitar ou recusar<br>solicitação de mentoria"])
+        UC06(["UC-06: Avaliar sessão<br>e enviar feedback"])
+        UC08(["UC-08: Consultar histórico<br>e anotações"])
+    end
+
+    subgraph ModuloComunidade["Módulo 5: Fórum e Recursos"]
+        UC07(["UC-07: Publicar e responder<br>no fórum colaborativo"])
+        UC11(["UC-11: Compartilhar trilhas<br>e links de estudo"])
+    end
+
+    subgraph ModuloGovernanca["Módulo 6: Governança e ODS 4"]
+        UC09(["UC-09: Emitir relatórios de<br>engajamento e ODS 4"])
+        UC10(["UC-10: Moderar postagens<br>e auditar contas"])
     end
 
     Estudante --- UC01
-    Mentor --- UC01
-    Admin --- UC01
-
     Estudante --- UC02
     Estudante --- UC04
     Estudante --- UC06
     Estudante --- UC08
     Estudante --- UC07
 
+    Mentor --- UC01
     Mentor --- UC03
     Mentor --- UC05
-    Mentor --- UC08
     Mentor --- UC07
+    Mentor --- UC08
     Mentor --- UC11
 
+    Admin --- UC01
     Admin --- UC09
     Admin --- UC10
 
@@ -206,36 +211,51 @@ flowchart TD
 
 ---
 
-### Diagrama detalhado: ciclo de agendamento e mentoria
+### Diagrama detalhado: ciclo de agendamento e mentoria (fluxo vertical)
 
 ```mermaid
 flowchart TD
-    AtorAluno(["👤 Estudante / Mentorado"]):::actorStyle
-    AtorMentor(["👤 Mentor Voluntário"]):::actorStyle
-
-    subgraph SistemaMentoria["Limite do Sistema: Ciclo de Vida da Mentoria"]
-        UC_Filtrar(["UC-02: Filtrar mentores<br>por tecnologia"])
-        UC_Slots(["UC-03: Cadastrar horários<br>de atendimento"])
-        UC_Solicitar(["UC-04: Solicitar sessão<br>de mentoria"])
-        UC_ValidarSlot(["Validar conflito<br>de agenda"])
-        UC_Decidir(["UC-05: Avaliar solicitação<br>(Aceitar / Recusar)"])
-        UC_Notificar(["Notificar atualização<br>de status"])
-        UC_Avaliar(["UC-06: Registrar nota<br>e feedback"])
-        UC_Historico(["UC-08: Registrar anotações<br>e histórico"])
+    subgraph AtoresMentoria["Atores"]
+        AtorAluno(["👤 Estudante"]):::actorStyle
+        AtorMentor(["👤 Mentor"]):::actorStyle
     end
 
-    AtorAluno --- UC_Filtrar
-    AtorAluno --- UC_Solicitar
-    AtorAluno --- UC_Avaliar
+    subgraph Etapa1["Etapa 1: Descoberta e Agenda"]
+        UC_Slots(["UC-03: Cadastrar slots<br>de disponibilidade"])
+        UC_Filtrar(["UC-02: Filtrar mentores<br>por tecnologia"])
+    end
+
+    subgraph Etapa2["Etapa 2: Solicitação e Validação"]
+        UC_Solicitar(["UC-04: Solicitar sessão<br>de mentoria"])
+        UC_ValidarSlot(["Validar integridade<br>de slot livre"])
+    end
+
+    subgraph Etapa3["Etapa 3: Decisão e Notificação"]
+        UC_Decidir(["UC-05: Avaliar solicitação<br>(Aceitar / Recusar)"])
+        UC_Notificar(["Notificar atualização<br>de status ao aluno"])
+    end
+
+    subgraph Etapa4["Etapa 4: Conclusão e Feedback"]
+        UC_Historico(["UC-08: Registrar anotações<br>privadas da sessão"])
+        UC_Avaliar(["UC-06: Registrar nota<br>e avaliação textual"])
+    end
 
     AtorMentor --- UC_Slots
+    AtorAluno --- UC_Filtrar
+
+    UC_Filtrar --> UC_Solicitar
+    AtorAluno --- UC_Solicitar
+    UC_Solicitar -.->|&lt;&lt;include&gt;&gt;| UC_ValidarSlot
+
+    UC_Solicitar --> UC_Decidir
     AtorMentor --- UC_Decidir
+    UC_Decidir -.->|&lt;&lt;include&gt;&gt;| UC_Notificar
+
+    UC_Decidir --> UC_Historico
     AtorMentor --- UC_Historico
 
-    UC_Solicitar -.->|&lt;&lt;include&gt;&gt;| UC_ValidarSlot
-    UC_Decidir -.->|&lt;&lt;include&gt;&gt;| UC_Notificar
-    UC_Solicitar -.->|&lt;&lt;extend&gt;&gt;| UC_Filtrar
-    UC_Avaliar -.->|&lt;&lt;extend&gt;&gt;| UC_Historico
+    UC_Historico --> UC_Avaliar
+    AtorAluno --- UC_Avaliar
 
     classDef actorStyle fill:#2d3748,stroke:#cbd5e0,stroke-width:2px,color:#ffffff,font-weight:bold;
 ```
