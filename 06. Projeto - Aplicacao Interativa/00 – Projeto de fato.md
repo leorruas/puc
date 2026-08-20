@@ -297,7 +297,106 @@ flowchart TD
 
 ---
 
-# 9. Referências bibliográficas
+# 9. Backlog do produto e planejamento de sprints
+
+## 9.1 Backlog do produto (Product backlog)
+
+| ID do Item | Épico / Módulo | Requisitos associados | Histórias de usuário | Estimativa | Prioridade MoSCoW |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **PB-01** | Autenticação e Perfis (CRUD 1) | RF-01, RF-13, RNF-04, RNF-06 | Base Geral | 8 pts | Must have |
+| **PB-02** | Gestão de Agenda do Mentor (CRUD 2) | RF-03 | HU-07 | 5 pts | Must have |
+| **PB-03** | Descoberta e Filtros de Mentores | RF-02, RNF-01 | HU-01, HU-05 | 5 pts | Must have |
+| **PB-04** | Agendamento e Transações (CRUD 3) | RF-04, RNF-03 | HU-02, HU-03, HU-08 | 8 pts | Must have |
+| **PB-05** | Avaliação e Feedback da Sessão | RF-06 | HU-09 | 3 pts | Should have |
+| **PB-06** | Histórico e Anotações Privadas | RF-07, RF-08 | HU-04, HU-10 | 5 pts | Should have |
+| **PB-07** | Fórum Colaborativo de Dúvidas (CRUD 4) | RF-05, RF-07 | HU-06 | 5 pts | Should have |
+| **PB-08** | Painel de Indicadores ODS 4 (Relatório 2) | RF-10 | HU-10 | 5 pts | Should have |
+| **PB-09** | Relatório de Engajamento (Relatório 1) | RF-09 | HU-10 | 5 pts | Should have |
+| **PB-10** | Moderação Administrativa e Auditoria | RF-11 | Governança | 5 pts | Could have |
+| **PB-11** | Trilhas e Links Recomendados | RF-12 | HU-01 | 2 pts | Could have |
+
+---
+
+## 9.2 Planejamento e divisão em 4 sprints
+
+A execução prática do desenvolvimento de software foi estruturada em **4 Sprints** equilibradas, cobrindo todo o ciclo desde a arquitetura inicial até a entrega da versão final homologada.
+
+```mermaid
+flowchart TD
+    subgraph S1["Sprint 1: Fundação, Autenticação e Agenda (Semanas 9 a 10)"]
+        S1_Meta["Meta: Estabelecer arquitetura MVC, banco de dados e gestão de perfis"]
+        S1_Itens["• PB-01: Cadastro, login e criptografia (Identity)<br>• PB-02: Gestão de slots de horários do mentor"]
+    end
+
+    subgraph S2["Sprint 2: Descoberta, Agendamento e Feedback (Semanas 11 a 12)"]
+        S2_Meta["Meta: Entregar o fluxo central de reserva e avaliação pós-sessão"]
+        S2_Itens["• PB-03: Busca e filtros dinâmicos de mentores<br>• PB-04: Transação de agendamento sem conflito<br>• PB-05: Formulário de nota e avaliação"]
+    end
+
+    subgraph S3["Sprint 3: Comunidade, Fórum e Histórico (Semanas 13 a 14)"]
+        S3_Meta["Meta: Implementar ferramentas colaborativas e registros de evolução"]
+        S3_Itens["• PB-06: Histórico e anotações privadas de mentoria<br>• PB-07: Fórum de dúvidas com tags temáticas<br>• PB-11: Compartilhamento de links e trilhas"]
+    end
+
+    subgraph S4["Sprint 4: Métricas ODS 4, Governança e Homologação (Semanas 15 a 17)"]
+        S4_Meta["Meta: Consolidar relatórios de impacto, moderação e testes finais"]
+        S4_Itens["• PB-08: Painel analítico de impacto social ODS 4<br>• PB-09: Relatório estruturado de engajamento<br>• PB-10: Painel administrativo e moderação<br>• Testes de usabilidade e vídeo pitch demo"]
+    end
+
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
+
+---
+
+### Detalhamento das 4 sprints
+
+#### Sprint 1: Fundação, autenticação e gestão de agenda
+* **Período:** ==28/09 a 11/10/2026== (Semanas 9 e 10 — Início do Módulo 3 / Etapa 03)
+* **Objetivo:** Estabelecer a infraestrutura técnica em camadas (.NET MVC + Entity Framework Core + SQL Server), implementação do Identity para autenticação com segurança criptográfica (hash/salt) e disponibilização do módulo de horários do mentor.
+* **Itens entregues:**
+  * **PB-01:** Scaffold do projeto, mapeamento ORM, migrations, login, cadastro com diferenciação de perfis (*Estudante*, *Mentor*, *Admin*) e troca de senha.
+  * **PB-02:** Interface e rotas de CRUD para o mentor cadastrar, alterar e desativar blocos de horários livres em sua agenda semanal.
+* **Critério de pronto (DoD):** Banco de dados relacional populado, autenticação funcional por cookies/Identity e CRUD de agenda operando com persistência no SQL Server.
+
+---
+
+#### Sprint 2: Descoberta, reserva de sessões e avaliação
+* **Período:** ==12/10 a 25/10/2026== (Semanas 11 e 12 — Fechamento da Etapa 03 e Início da Etapa 04)
+* **Objetivo:** Integrar a Prova de Conceito (POC) conectando Front-End responsivo com Back-End para permitir que o estudante localize mentores, reserve horários sem sobreposição e avalie atendimentos concluídos.
+* **Itens entregues:**
+  * **PB-03:** Catálogo visual de mentores com filtros combinados por tecnologia (ex.: C#, React, SQL) e disponibilidade.
+  * **PB-04:** Fluxo transacional de solicitação de agendamento com validação de slot livre, aprovação/recusa pelo mentor e notificação.
+  * **PB-05:** Sistema de avaliação quantitativa (1 a 5 estrelas) e qualitativa pós-sessão.
+* **Critério de pronto (DoD):** Fluxo fim a fim de solicitação, aprovação e avaliação testado em ambiente web responsivo com relatórios de testes de software registrados.
+
+---
+
+#### Sprint 3: Fórum colaborativo, histórico e acompanhamento
+* **Período:** ==26/10 a 08/11/2026== (Semanas 13 e 14 — Fechamento do Módulo 4 / Etapa 04)
+* **Objetivo:** Implementar os recursos comunitários e a área de acompanhamento pedagógico do estudante, estimulando a troca contínua de conhecimento.
+* **Itens entregues:**
+  * **PB-06:** Linha do tempo de atendimentos realizados e editor de anotações privadas de evolução do mentorado (com controle de privacidade estrito).
+  * **PB-07:** Fórum colaborativo de dúvidas com listagem paginada, postagem por tópicos temáticos e respostas da comunidade.
+  * **PB-11:** Compartilhamento de links de artigos, documentações e repositórios de apoio pelo mentor.
+* **Critério de pronto (DoD):** Fórum 100% funcional, histórico de sessões com anotações salvas e registros formais dos testes de usabilidade com usuários.
+
+---
+
+#### Sprint 4: Painel de impacto ODS 4, governança e entrega final
+* **Período:** ==09/11 a 29/11/2026== (Semanas 15 a 17 — Módulo 5 / Etapa 05)
+* **Objetivo:** Construir a camada analítica de relatórios gerenciais focados na Meta 4.4 do ODS 4, governança administrativa, revisão final de acessibilidade/desempenho e preparação dos artefatos de encerramento.
+* **Itens entregues:**
+  * **PB-08:** Painel gerencial analítico de impacto ODS 4 (horas de mentoria voluntária prestadas, alunos beneficiados e ranking de tecnologias).
+  * **PB-09:** Relatório consolidado de engajamento (mentorias agendadas vs. concluídas, taxa de cancelamento e médias).
+  * **PB-10:** Painel administrativo para moderação de publicações do fórum, auditoria de logs e bloqueio preventivo de perfis.
+  * Refinamento visual, testes finais de regressão, arquivo `citation.cff` e gravação do Vídeo Pitch Comercial com demo (3 min).
+* **Critério de pronto (DoD):** Código-fonte final validado no GitHub, relatórios finais de testes de software e usabilidade, documentação completa e projeto homologado para a banca.
+
+---
+
+# 10. Referências bibliográficas
 
 BRASSCOM (Associação das Empresas de Tecnologia da Informação e Comunicação). **Relatório de Demanda de Talentos em TIC e Estratégia ΣTCEM**. São Paulo: Brasscom, 1 dez. 2021. Disponível em: https://brasscom.org.br/estudo-da-brasscom-aponta-demanda-de-797-mil-profissionais-de-tecnologia-ate-2025/. Acesso em: ==13/08/2026==.
 
