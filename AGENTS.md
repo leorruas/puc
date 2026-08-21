@@ -62,3 +62,10 @@
  - Toda marcação de destaque e grifo (`==texto==`) realizada pelo usuário em qualquer nota do vault é considerada **conteúdo crítico de estudo e aprendizado**.
  - É terminantemente proibido remover, sobrescrever ou limpar essas marcações durante qualquer refatoração, edição de código ou interlinkagem.
  - Todos os highlights manuais devem ser preservados integralmente e sincronizados com o GitHub.
+
+## Diretrizes para Apresentação de Código Didático
+
+13. **Apresentação Dual de Código (Exemplos Atômicos + Código Completo Integrado):**
+ - Sempre que um tópico técnico envolver múltiplos conceitos de programação (ex.: classes, atributos, construtores, métodos, instanciação), o artigo deve apresentar obrigatoriamente duas formas de código:
+   1. **Trechos Atômicos e Isolados:** Pequenos snippets de código demonstrando exatamente o conceito explicado logo abaixo de sua respectiva seção ou definição teórica (mostrando apenas a classe, apenas os atributos, apenas o construtor ou apenas a chamada).
+   2. **Exemplo Completo e Integrado:** Um bloco de código integral, compilável e executável (com namespace, classe, construtor, métodos e função `Main`) que una todas as partes explicadas para demonstrar o fluxo completo em ação.
