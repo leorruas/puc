@@ -35,6 +35,7 @@ relacionados:
 | **Método / Operação (*Method*)** | Sub-rotina (função ou procedimento) que define o comportamento e manipula o estado. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
 | **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
 | **Declaração (*Declaration / Declarar*)** | Ato de informar ao compilador a existência, nome e tipo de um identificador (variável, método ou classe) antes de seu uso. | A **reserva de identidade e tipo** | `double saldo;`, `void Sacar();` |
+| **Semântica de Referência (*Reference Semantics*)** | Modelo onde variáveis guardam ponteiros/endereços de memória do *Heap* e não o objeto em si. | A **comunicação por controle remoto** | `Conta c2 = c1;` (ambas apontam para o mesmo objeto) |
 | **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
 | **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
 | **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
@@ -123,7 +124,17 @@ Na Ciência da Computação, **Declarar** é o ato formal de **apresentar um ide
 
 ---
 
-## 9. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## 9. Semântica de Referência (*Reference Semantics*)
+
+A **Semântica de Referência** é o modelo de gerenciamento de dados em linguagens como C# e Java no qual uma variável associada a uma classe **não contém os dados do objeto em si**, mas sim um **ponteiro / endereço de memória** que aponta para o local no *Heap* onde o objeto físico foi construído.
+
+* **Analogia de Feynman:** O **controle remoto da televisão**. Se você der o seu controle remoto extra para um amigo (`Conta c2 = c1;`), vocês agora têm dois controles diferentes, mas **ambos controlam a exata mesma televisão na sala**. Se o seu amigo mudar de canal (`c2.Depositar(100)`), você imediatamente verá o novo saldo na sua tela (`c1.ObterSaldo()`).
+* **Diferença para Tipos de Valor (*Value Semantics*):** Tipos primitivos (`int a = 10; int b = a;`) criam uma **cópia independente** do valor (como fotocopiar uma folha de papel: rabiscar a cópia não altera o original).
+* **Conexão com Construtores:** O operador `new` aciona o construtor, constrói a televisão na memória *Heap* e devolve a frequência/endereço de rádio para ser gravada na variável de referência.
+
+---
+
+## 10. Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -136,7 +147,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 10. `GOTO` (Salto Incondicional)
+## 11. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
