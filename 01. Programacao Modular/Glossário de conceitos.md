@@ -183,6 +183,17 @@ A instrução **`GOTO`** é um comando primitivo de desvio incondicional no flux
 
 ---
 
+## 14. Robustez (*Robustness*)
+
+A **Robustez** é o fator externo de qualidade de software que mede a capacidade de um sistema computacional **reagir de maneira segura e controlada diante de condições anormais, entradas inválidas ou falhas de ambiente**, sem travar inesperadamente (*crash*) e sem corromper seus dados.
+
+* **Analogia de Feynman:** O **airbag e o cinto de segurança de um carro**. Em condições normais de trânsito, você não percebe sua presença. Porém, diante de um evento imprevisto ou batida (um erro), eles são acionados instantaneamente para proteger a vida dos passageiros e evitar uma tragédia.
+* **Conexão direta com construtores e invariantes ([[08. Construtores (inicialização, sobrecarga e garantia de invariantes)|Artigo 08]]):**
+  - O **construtor defensivo** é o primeiro escudo de robustez do software. Ao validar rigorosamente seus parâmetros de entrada (`if (valor <= 0) throw new ArgumentException(...)`), ele impede que o objeto nasça em estado corrompido, evitando que erros silenciosos se propaguem pela aplicação.
+  - A robustez garante que uma conta bancária nunca seja instanciada com saldo negativo ou titular nulo, protegendo o sistema contra o colapso de regras de negócio.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
