@@ -34,6 +34,7 @@ relacionados:
 | **Estado (*State*)** | O conjunto exato de valores que todos os atributos do objeto possuem em um dado instante. | A **fotografia/momento do dado** | `_saldo = 500.00; _titular = "Leo";` |
 | **Método / Operação (*Method*)** | Sub-rotina (função ou procedimento) que define o comportamento e manipula o estado. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
 | **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
+| **Declaração (*Declaration / Declarar*)** | Ato de informar ao compilador a existência, nome e tipo de um identificador (variável, método ou classe) antes de seu uso. | A **reserva de identidade e tipo** | `double saldo;`, `void Sacar();` |
 | **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
 | **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
 | **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
@@ -109,7 +110,20 @@ A **Qualidade de Código** mede o equilíbrio entre a satisfação das necessida
 
 ---
 
-## 8. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## 8. Declaração em Computação (*Declaration / Declarar*)
+
+Na Ciência da Computação, **Declarar** é o ato formal de **apresentar um identificador ao compilador/interpretador**, especificando seu **nome** e seu **tipo de dado**, antes que ele possa ser utilizado pelo programa.
+
+* **Analogia de Feynman:** **Fazer uma certidão de nascimento** ou reservar um crachá em um evento. Você avisa aos organizadores: *"Existirá uma pessoa chamada Leo que é um Aluno"*. Você reservou a identidade e o papel formal, mesmo antes de o crachá receber o número da mesa.
+* **A tríade fundamental da computação:**
+  1. **Declaração (*Declaration*):** Apresenta o nome e o tipo ao compilador (`double saldo;`).
+  2. **Inicialização (*Initialization*):** Atribui o primeiro valor à variável na memória (`saldo = 0.0;`).
+  3. **Definição / Instanciação (*Instantiation*):** Constrói e aloca fisicamente o espaço na memória RAM (`Conta c = new Conta();`).
+* **Importância:** Linguagens com tipagem estática (C#, Java, C++) exigem a declaração prévia para garantir **segurança de tipos (*Type Safety*)** em tempo de compilação, impedindo operações ilegais.
+
+---
+
+## 9. Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -122,7 +136,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 9. `GOTO` (Salto Incondicional)
+## 10. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
