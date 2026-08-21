@@ -28,14 +28,16 @@ relacionados:
 | Termo | Definição simplificada | O que representa? | Exemplo no código (C# / Teoria) |
 | --- | --- | --- | --- |
 | **Tipo (*Type*)** | Um conjunto de valores e o conjunto de regras/operações aplicáveis a eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
-| **Operação (*Method/Function*)** | Ação, cálculo ou comportamento executado sobre dados. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
-| **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
-| **Atributo (*Field/Property*)** | Variável interna que guarda o valor do estado de uma entidade. | Os **dados / o estado interno** | `private double _saldo;` |
-| **Classe (*Class*)** | O modelo/molde que junta Atributos e Operações para criar um Tipo. | A **planta estrutural** do TAD | `public class Conta { ... }` |
-| **Objeto (*Instance*)** | Valor concreto criado na memória com base na especificação de uma Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
-| **Interface (*Interface*)** | Contrato de operações expostas públicas sem expor a implementação. | O **ponto de comunicação** | `get { return _criacao; }` ou `IMetodo` |
+| **Classe (*Class*)** | O modelo, molde ou especificação abstrata que junta Atributos e Métodos. | A **planta estrutural** do TAD | `public class Conta { ... }` |
+| **Objeto (*Object / Instance*)** | Entidade viva e concreta alocada na memória RAM a partir do molde da Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
+| **Atributo (*Field / Property*)** | Variável interna da classe que armazena os dados que compõem o estado do objeto. | Os **dados estruturais** | `private double _saldo;` |
+| **Estado (*State*)** | O conjunto exato de valores que todos os atributos do objeto possuem em um dado instante. | A **fotografia/momento do dado** | `_saldo = 500.00; _titular = "Leo";` |
+| **Método / Operação (*Method*)** | Sub-rotina (função ou procedimento) que define o comportamento e manipula o estado. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
+| **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
 | **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
 | **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
+| **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
+| **Qualidade de Código** | Grau em que o software atende a fatores externos (usuário) e internos (manutenibilidade). | O **valor e longevidade do sistema** | ISO/IEC 25010, Código Limpo (*Clean Code*) |
 | **Fatores Externos** | Qualidades perceptíveis diretamente pelos usuários na execução do software. | O **valor e utilidade para o usuário** | Corretude, Robustez, Usabilidade, Eficiência |
 | **Fatores Internos** | Qualidades técnicas do código-fonte perceptíveis apenas pelos desenvolvedores. | A **sustentação arquitetural do código** | Modularidade, Baixo Acoplamento, Coesão |
 | **Corretude / Correção (*Correctness*)** | Capacidade de executar exatamente aquilo que foi especificado nos requisitos sob condições normais. | A **precisão funcional primária** | $2 + 2 = 4$; calcular juros exatos |
@@ -83,7 +85,31 @@ Um **Atributo** (também chamado de campo ou variável de instância) é onde o 
 
 ---
 
-## 5. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## 5. Estado (*State*)
+
+O **Estado** de um objeto é a **configuração exata de valores que seus atributos possuem em um determinado instante de tempo**.
+
+* **Analogia de Feynman:** Uma **fotografia instantânea** de uma pessoa. Na foto das 10h ela está sentada e de óculos; na foto das 14h ela está em pé e correndo. A pessoa é o mesmo objeto, mas seu estado mudou.
+* **Mutabilidade:** O estado de um objeto é alterado ao longo da execução exclusivamente através da chamada de seus **métodos**.
+
+---
+
+## 6. Método (*Method*)
+
+Um **Método** é uma sub-rotina (função ou procedimento) declarada dentro do escopo de uma classe que define o **comportamento** dos objetos daquele tipo.
+
+* **Função no TAD:** O método é o único canal legítimo para consultar ou modificar os atributos privados encapsulados.
+* **Exemplo:** `Depositar(valor)` altera o estado aumentando o saldo; `ObterSaldo()` lê o estado atual e o retorna.
+
+---
+
+## 7. Qualidade de Código (*Code Quality*)
+
+A **Qualidade de Código** mede o equilíbrio entre a satisfação das necessidades do usuário (**Fatores Externos** como Corretude e Robustez) e a sustentabilidade técnica da arquitetura para a equipe de engenharia (**Fatores Internos** como Legibilidade, Baixo Acoplamento e Modularidade).
+
+---
+
+## 8. Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -96,7 +122,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 6. `GOTO` (Salto Incondicional)
+## 9. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
