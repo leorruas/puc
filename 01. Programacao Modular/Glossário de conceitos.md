@@ -36,6 +36,7 @@ relacionados:
 | **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
 | **Declaração (*Declaration / Declarar*)** | Ato de informar ao compilador a existência, nome e tipo de um identificador (variável, método ou classe) antes de seu uso. | A **reserva de identidade e tipo** | `double saldo;`, `void Sacar();` |
 | **Semântica de Referência (*Reference Semantics*)** | Modelo onde variáveis guardam ponteiros/endereços de memória do *Heap* e não o objeto em si. | A **comunicação por controle remoto** | `Conta c2 = c1;` (ambas apontam para o mesmo objeto) |
+| **Coletor de Lixo (*Garbage Collector*)** | Mecanismo automático do runtime (.NET/JVM) que rastreia e libera memória de objetos inacessíveis. | O **caminhão de reciclagem de memória** | Executa em segundo plano liberando instâncias órfãs |
 | **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
 | **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
 | **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
@@ -134,7 +135,16 @@ A **Semântica de Referência** é o modelo de gerenciamento de dados em linguag
 
 ---
 
-## 10. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## 10. Coletor de Lixo (*Garbage Collector - GC*)
+
+O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente de execução (*runtime* do .NET CLR ou Java JVM) responsável pelo **gerenciamento automático de memória**. Ele monitora a memória *Heap*, identifica objetos que não podem mais ser alcançados por nenhuma variável de referência do programa e desaloca esse espaço automaticamente.
+
+* **Analogia de Feynman:** O **caminhão de reciclagem da cidade**. Enquanto você estiver usando um móvel na sua casa (tiver uma referência na *Stack* apontando para ele), ele permanece seguro. No momento em que você corta a conexão (`conta = null;` ou a variável local sai de escopo), aquele móvel se torna "lixo órfão". O caminhão de reciclagem passa periodicamente em segundo plano, recolhe o móvel e libera o espaço para novas compras (`new`), impedindo o entupimento da casa (**vazamentos de memória / *Memory Leaks***).
+* **Ciclo de Vida Complementar:** O **Construtor** é a maternidade que dá a vida ao objeto; o **Garbage Collector** é o serviço de limpeza que encerra o ciclo de vida e recupera a memória RAM.
+
+---
+
+## 11. Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -147,7 +157,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 11. `GOTO` (Salto Incondicional)
+## 12. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
