@@ -35,6 +35,7 @@ relacionados:
 | **Método / Operação (*Method*)** | Sub-rotina (função ou procedimento) que define o comportamento e manipula o estado. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
 | **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
 | **Declaração (*Declaration / Declarar*)** | Ato de informar ao compilador a existência, nome e tipo de um identificador (variável, método ou classe) antes de seu uso. | A **reserva de identidade e tipo** | `double saldo;`, `void Sacar();` |
+| **Assinatura de Método (*Signature*)** | Par composto pelo nome da sub-rotina + quantidade, tipos e ordem dos parâmetros. | O **RG / CPF identificador do método** | `Sacar(double)` vs `Sacar(double, string)` |
 | **Semântica de Referência (*Reference Semantics*)** | Modelo onde variáveis guardam ponteiros/endereços de memória do *Heap* e não o objeto em si. | A **comunicação por controle remoto** | `Conta c2 = c1;` (ambas apontam para o mesmo objeto) |
 | **Coletor de Lixo (*Garbage Collector*)** | Mecanismo automático do runtime (.NET/JVM) que rastreia e libera memória de objetos inacessíveis. | O **caminhão de reciclagem de memória** | Executa em segundo plano liberando instâncias órfãs |
 | **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
@@ -125,7 +126,23 @@ Na Ciência da Computação, **Declarar** é o ato formal de **apresentar um ide
 
 ---
 
-## 9. Semântica de Referência (*Reference Semantics*)
+## 9. Assinatura de Método (*Method Signature*)
+
+Na Engenharia de Software, a **Assinatura de um Método** é a impressão digital única (*fingerprint*) que o compilador utiliza para diferenciar uma sub-rotina de todas as outras dentro de uma classe.
+
+* **O que COMPÕE a assinatura em C# e Java:**
+  1. O **Nome** do método ou construtor (ex.: `Depositar`).
+  2. A **Quantidade** de parâmetros.
+  3. Os **Tipos de Dados** dos parâmetros e sua **Ordem exata** (ex.: `(string, double)` $\neq$ `(double, string)`).
+* **O que NÃO faz parte da assinatura:**
+  - O modificador de acesso (`public`, `private`).
+  - O tipo de retorno (`void`, `double`, `int`).
+  - Os nomes internos dos parâmetros (apenas seus tipos importam).
+* **Analogia de Feynman:** O **CPF / RG do Método**. Duas pessoas podem se chamar "João", mas são diferenciadas pelo número do documento. No código, você pode ter dez métodos chamados `Calcular`, desde que cada um tenha uma "lista de tipos" diferente (**Sobrecarga / *Overloading***).
+
+---
+
+## 10. Semântica de Referência (*Reference Semantics*)
 
 A **Semântica de Referência** é o modelo de gerenciamento de dados em linguagens como C# e Java no qual uma variável associada a uma classe **não contém os dados do objeto em si**, mas sim um **ponteiro / endereço de memória** que aponta para o local no *Heap* onde o objeto físico foi construído.
 
@@ -135,7 +152,7 @@ A **Semântica de Referência** é o modelo de gerenciamento de dados em linguag
 
 ---
 
-## 10. Coletor de Lixo (*Garbage Collector - GC*)
+## 11. Coletor de Lixo (*Garbage Collector - GC*)
 
 O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente de execução (*runtime* do .NET CLR ou Java JVM) responsável pelo **gerenciamento automático de memória**. Ele monitora a memória *Heap*, identifica objetos que não podem mais ser alcançados por nenhuma variável de referência do programa e desaloca esse espaço automaticamente.
 
@@ -144,7 +161,7 @@ O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente
 
 ---
 
-## 11. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## 12. Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -157,7 +174,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 12. `GOTO` (Salto Incondicional)
+## 13. `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
