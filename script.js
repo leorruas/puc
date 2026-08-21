@@ -50,6 +50,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md",
             "01. Programacao Modular/05. Fatores externos de qualidade de software.md",
             "01. Programacao Modular/06. Fatores internos de qualidade de software.md",
+            "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
