@@ -9,8 +9,10 @@
 2. **Destaque de Datas em Cronogramas:**
  - Todas as datas e períodos em cronogramas, prazos de entrega e calendários devem ser destacados obrigatoriamente utilizando a sintaxe de highlight do Obsidian (`DD/MM/AAAA`).
 
-3. **Capitalização Frasal (Sentence Case):**
- - Em títulos, cabeçalhos, subcabeçalhos, listas e itens em negrito, utilizar capitalização frasal (*sentence case*), com apenas a primeira palavra em maiúscula (exceto para nomes próprios, acrônimos ou siglas). Evitar o uso de *Title Case* (capitalização de todas as palavras).
+3. **Capitalização Frasal Estrita (Sentence Case Obrigatório em Tudo):**
+ - **Regra Geral da Língua Portuguesa:** Utilizar exclusivamente capitalização frasal (*sentence case*), onde **apenas a primeira palavra da frase/item inicia com letra maiúscula**. Todas as palavras subsequentes devem ser rigorosamente em minúsculas (a menos que sejam nomes próprios, acrônimos ou siglas).
+ - **Proibição Estrita de *Title Case*:** É terminantemente proibido capitalizar a inicial de cada palavra em títulos H1-H6, subcabeçalhos, itens de listas com marcadores (`*`, `-`), cabeçalhos de tabelas, rótulos de diagramas, rótulos em negrito (`**Exemplo de texto:**`) e analogias (ex.: incorreto `**O Explícito É O Apartamento Decorado Básico:**` $\rightarrow$ correto `**O explícito é o apartamento decorado básico:**`).
+ - **Leitura e Verificação Prévia Mandatória:** É obrigatório revisar mentalmente e aplicar a regra de *sentence case* antes de gerar qualquer novo arquivo ou trecho de texto.
 
 4. **Uso Correto de Acentuação nos Nomes de Arquivos e Títulos:**
  - Todos os arquivos Markdown (`.md`), títulos H1, cabeçalhos e frontmatter YAML devem utilizar obrigatoriamente a acentuação correta da língua portuguesa em seus nomes e textos (ex.: `01. Introdução à programação modular.md`, `02. Funções e procedimentos.md`, `Glossário de conceitos.md`).
