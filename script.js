@@ -402,11 +402,23 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     const markdownSemFrontmatter = removerFrontmatter(conteudoMarkdown);
     const markdownLimpo = removerPrimeiroH1(markdownSemFrontmatter);
 
+    // Protege blocos de código (``` e `) para não corromper divisores como // =====...===== com a regex de highlight ==texto==
+    const blocosCodigo = [];
+    const markdownSemCodigo = markdownLimpo.replace(/(```[\s\S]*?```|`[^`\n]+`)/g, (match) => {
+        blocosCodigo.push(match);
+        return `@@CODE_BLOCK_${blocosCodigo.length - 1}@@`;
+    });
+
     // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
-    const markdownComHighlight = markdownLimpo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
+    const markdownComHighlight = markdownSemCodigo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
+
+    // Restaura os blocos de código intactos
+    const markdownComCodigoRestaurado = markdownComHighlight.replace(/@@CODE_BLOCK_(\d+)@@/g, (match, index) => {
+        return blocosCodigo[parseInt(index, 10)] || match;
+    });
 
     // Converte notações LaTeX de setas (ex: $\rightarrow$, $\leftrightarrow$) para caracteres Unicode reais (→, ↔)
-    const markdownComSetas = processarLaTeXSetas(markdownComHighlight);
+    const markdownComSetas = processarLaTeXSetas(markdownComCodigoRestaurado);
 
     // Protege caracteres '|' em links do Obsidian [[Link|Texto]] para não quebrarem tabelas no marked.parse
     const markdownProtegido = protegerPipesObsidian(markdownComSetas);
