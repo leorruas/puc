@@ -194,11 +194,17 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 ---
 
-## 15. Membros estáticos e escopo de classe (*Static Members & Class Scope*)
+## 15. Membro estático (*Static Member*)
 
-Membros marcados com a palavra-chave **`static`** pertencem à **Classe em si (escopo global do tipo)** e não a qualquer instância individual instanciada no *Heap*.
+Um **Membro Estático** é qualquer componente de uma classe (campo, método, propriedade, evento ou construtor) declarado com o modificador **`static`**, o que vincula sua existência, alocação de memória e execução diretamente ao **tipo/classe em si**, e **não a uma instância individual** criada no *Heap*.
 
-* **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (atributo de instância). No entanto, o ar-condicionado é único para a sala inteira (estático). Se o professor alterar a temperatura para 19°C, **todos os alunos na sala sentem a mudança simultaneamente**, porque o recurso é compartilhado no nível da sala.
+* **Definição Técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM).
+* **As 4 Formas de Membros Estáticos:**
+  1. **Atributo Estático (*Static Field*):** Variável única compartilhada por todos os objetos (ex.: `private static int _contador;`).
+  2. **Método Estático (*Static Method*):** Operação pura ou utilitária que não depende de estado de instância e não possui acesso ao ponteiro `this` (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
+  3. **Propriedade Estática (*Static Property*):** Getter/setter de escopo de classe com proteção de regras globais (ex.: `Conta.TaxaGlobal`).
+  4. **Construtor Estático (*Static Constructor*):** Bloco executado uma única vez automaticamente antes do primeiro acesso à classe para preparar dados globais.
+* **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (membro de instância). No entanto, o ar-condicionado é único para a sala inteira (membro estático). Se o professor alterar a temperatura para 19°C, **todos os alunos na sala sentem a mudança simultaneamente**, porque o recurso é compartilhado no nível da sala.
 * **Conexão direta com compartilhamento de estado ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** Usados para geradores sequenciais de identificadores (IDs), contadores de objetos ativos, constantes matemáticas (`Math.PI`) e taxas de configuração global.
 
 ---
