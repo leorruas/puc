@@ -348,6 +348,7 @@ function protegerPipesObsidian(md) {
 }
 
 function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
+    rolarAoTopo();
     divResultados.classList.add("escondido");
     const pastasContainer = document.getElementById("pastas-container");
     if (pastasContainer) pastasContainer.classList.add("escondido");
@@ -461,11 +462,18 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     // Atualiza visibilidade dos controles de TOC
     atualizarControlesTOC(true);
 
-    // Garante que o usuário sempre inicie a leitura no topo da página
+    // Garante que a transição reposicione a leitura no topo exato da tela (scroll 0, 0)
+    rolarAoTopo();
+    requestAnimationFrame(() => rolarAoTopo());
+    setTimeout(rolarAoTopo, 50);
+    setTimeout(rolarAoTopo, 150);
+}
+
+function rolarAoTopo() {
     window.scrollTo(0, 0);
-    setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }, 10);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 }
 
 function gerarTableOfContents() {
