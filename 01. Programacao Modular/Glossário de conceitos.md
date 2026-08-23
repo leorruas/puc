@@ -458,6 +458,27 @@ O **Paradigma Funcional** é um estilo de programação que trata a computação
 
 ---
 
+## 39. Espaço de nomes (*Namespace*)
+
+Um **Espaço de Nomes (*Namespace*)** é um contêiner lógico de nível superior que agrupa tipos correlacionados (classes, interfaces, structs, enums e delegates) sob um domínio nomeado unificado, prevenindo conflitos de identificadores em sistemas de larga escala.
+
+* **Natureza:** Mecanismo de **desambiguação e hierarquização arquitetural** que estabelece um nome qualificado completo (*Fully Qualified Name*) para cada elemento do software (ex.: `Empresa.Financeiro.Conta` vs. `Empresa.Seguranca.Conta`).
+* **Analogia de Feynman:** O **sistema de CEP e endereçamento postal**. Dizer apenas *"Rua das Flores"* causa confusão em qualquer país; dizer *"Brasil, MG, Belo Horizonte, Savassi, Rua das Flores, CEP 30140"* garante que a carta chegue exatamente ao destinatário correto sem nenhuma ambiguidade.
+* **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Estruturação modular por camadas e prevenção de colisões de identificadores.
+
+---
+
+## 40. Classe parcial (*Partial Class*)
+
+Uma **Classe Parcial (*Partial Class*)** é um recurso de linguagem que permite dividir a declaração de uma única classe, interface ou struct em **múltiplos arquivos físicos separados (`.cs`)**, mantendo a unidade lógica indivisível no binário final compilado.
+
+* **Natureza:** Mecanismo de **particionamento físico de código-fonte**. Durante a compilação (*build time*), o compilador funde todas as partes marcadas com `partial` em uma única definição de tipo na memória IL/Heap.
+* **Aplicações essenciais:** Separação de código gerado automaticamente por ferramentas visuais/mapeadores (`Form.Designer.cs`) do código manual de regras de negócio (`Form.cs`), e divisão de trabalho em equipes corporativas sem conflitos no controle de versão (Git).
+* **Analogia de Feynman:** As **peças de um quebra-cabeça 3D que se encaixam perfeitamente**. Você pode pintar uma peça em uma mesa e a outra peça em outra oficina separada; na hora da montagem final (a compilação), elas se unem para formar um único brinquedo sólido e indivisível.
+* **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Modularização em larga escala e métodos parciais (*partial methods*).
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
