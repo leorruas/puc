@@ -337,7 +337,7 @@ O **Encapsulamento** é o mecanismo fundamental da Orientação a Objetos que ag
 A **Herança** é o mecanismo de reutilização e extensão estrutural em POO pelo qual uma nova classe (**classe derivada / subclasse**) adquire todos os atributos, métodos e propriedades de uma classe existente (**classe base / superclasse**), podendo adicionar novas funcionalidades ou especializar comportamentos existentes.
 
 * **Analogia de Feynman:** A **árvore genealógica biológica**. Um ser humano herda o código genético básico dos pais (olhos, coração, circulação sanguínea), mas pode desenvolver habilidades únicas (como tocar violino ou falar três línguas).
-* **Conexão com Ocultação da Informação ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Permite criar hierarquias onde as subclasses herdam contratos estáveis sem precisar reescrever a mecânica das classes ancestrais.
+* **Conexão direta ([[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15]]):** Generalização (*Bottom-Up*), Especialização (*Top-Down*), relação semântica *"é um"* (*is-a*), construtores `base(...)` e Princípio Aberto/Fechado (OCP).
 
 ---
 
