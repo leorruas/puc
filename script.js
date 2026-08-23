@@ -418,6 +418,10 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
             startOnLoad: false,
             theme: 'dark',
             fontFamily: 'Archivo, sans-serif',
+            flowchart: {
+                curve: 'linear',
+                defaultRenderer: 'dagre-wrapper'
+            },
             themeVariables: {
                 fontFamily: 'Archivo, sans-serif',
                 darkMode: true,

@@ -44,8 +44,9 @@
 
 ## Diretrizes para Diagramas Mermaid
 
-9. **Otimização Estrita de Leiturabilidade e Layout Visual Vertical:**
+9. **Otimização Estrita de Leiturabilidade, Layout Visual Vertical e Linhas Retas:**
  - **Orientação Vertical Obrigatória:** utilizar exclusivamente `flowchart TD`. É terminantemente proibido o uso de `graph LR` ou qualquer disposição que force mais de 2 nós lado a lado.
+ - **Linhas e Conectores Retos (*Straight Lines / Linear Curve*):** os diagramas devem priorizar fluxos retos, limpos e sem curvas elásticas confusas. No app web, a engine do Mermaid é configurada com `flowchart: { curve: 'linear' }`.
  - **Empilhamento Vertical em `subgraph`:** fluxos com mais de 2 ramificações devem ser organizados obrigatoriamente em `subgraph` verticais empilhados (um abaixo do outro), evitando que o Mermaid expanda a largura da imagem e reduza o tamanho da fonte.
  - **Quebra Obrigatória de Linhas (`<br>`):** todo rótulo de nó com mais de 2 palavras deve conter `<br>` a cada 2 ou 3 palavras para garantir caixas estreitas e compactas.
  - **Sintaxe Padronizada:** envolver todos os textos de rótulos de nós entre aspas duplas `Node["Texto com<br>Quebra"]` para evitar erros de renderização com caracteres especiais.
