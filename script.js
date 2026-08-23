@@ -59,6 +59,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
             "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
             "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+            "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
@@ -563,6 +564,32 @@ function gerarTableOfContents() {
     });
 
     tocNavDesktop.appendChild(ulDesktop);
+
+    // Configura o filtro em tempo real do sumário lateral
+    const tocFilterContainer = document.getElementById("toc-filter-container");
+    const tocFilterInput = document.getElementById("toc-filter-input");
+
+    if (tocFilterContainer && tocFilterInput) {
+        // Se o artigo tiver mais de 4 seções, exibe a caixinha de filtro rápido
+        if (headings.length >= 4) {
+            tocFilterContainer.style.display = "";
+            tocFilterInput.value = "";
+            tocFilterInput.oninput = (e) => {
+                const termo = e.target.value.toLowerCase().trim();
+                const itens = ulDesktop.querySelectorAll(".toc-item");
+                itens.forEach(item => {
+                    const texto = item.textContent.toLowerCase();
+                    if (!termo || texto.includes(termo)) {
+                        item.style.display = "";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            };
+        } else {
+            tocFilterContainer.style.display = "none";
+        }
+    }
 
     // Inicializa o ScrollSpy para destacar o item ativo enquanto o usuário rola a página
     iniciarScrollSpy();

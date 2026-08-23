@@ -23,32 +23,78 @@ relacionados:
 
 ---
 
-## Diferenciação rápida entre os conceitos fundamentais
+## Índice temático por eixos de conhecimento
 
-| Termo | Definição simplificada | O que representa? | Exemplo no código (C# / Teoria) |
-| --- | --- | --- | --- |
-| **Tipo (*Type*)** | Um conjunto de valores e o conjunto de regras/operações aplicáveis a eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
-| **Classe (*Class*)** | O modelo, molde ou especificação abstrata que junta Atributos e Métodos. | A **planta estrutural** do TAD | `public class Conta { ... }` |
-| **Objeto (*Object / Instance*)** | Entidade viva e concreta alocada na memória RAM a partir do molde da Classe. | A **entidade real na memória** | `Conta contaDoZe = new Conta();` |
-| **Atributo (*Field / Property*)** | Variável interna da classe que armazena os dados que compõem o estado do objeto. | Os **dados estruturais** | `private double _saldo;` |
-| **Estado (*State*)** | O conjunto exato de valores que todos os atributos do objeto possuem em um dado instante. | A **fotografia/momento do dado** | `_saldo = 500.00; _titular = "Leo";` |
-| **Método / Operação (*Method*)** | Sub-rotina (função ou procedimento) que define o comportamento e manipula o estado. | O **comportamento / "o que faz"** | `Sacar()`, `Depositar()`, `CalcularDV()` |
-| **Interface (*Interface*)** | Contrato de operações e métodos expostos publicamente sem revelar a implementação. | O **ponto de comunicação** | `public void Sacar()`, `get / set` |
-| **Declaração (*Declaration / Declarar*)** | Ato de informar ao compilador a existência, nome e tipo de um identificador (variável, método ou classe) antes de seu uso. | A **reserva de identidade e tipo** | `double saldo;`, `void Sacar();` |
-| **Assinatura de Método (*Signature*)** | Par composto pelo nome da sub-rotina + quantidade, tipos e ordem dos parâmetros. | O **RG / CPF identificador do método** | `Sacar(double)` vs `Sacar(double, string)` |
-| **Semântica de Referência (*Reference Semantics*)** | Modelo onde variáveis guardam ponteiros/endereços de memória do *Heap* e não o objeto em si. | A **comunicação por controle remoto** | `Conta c2 = c1;` (ambas apontam para o mesmo objeto) |
-| **Coletor de Lixo (*Garbage Collector*)** | Mecanismo automático do runtime (.NET/JVM) que rastreia e libera memória de objetos inacessíveis. | O **caminhão de reciclagem de memória** | Executa em segundo plano liberando instâncias órfãs |
-| **Parâmetro (*Parameter*)** | Variável declarada na assinatura de uma sub-rotina para receber dados de entrada. | O **espaço reservado / molde de entrada** | `double valor` em `void Depositar(double valor)` |
-| **Argumento (*Argument*)** | Valor real e concreto passado para a sub-rotina no momento em que ela é chamada. | O **dado concreto enviado** | `150.00` em `conta.Depositar(150.00);` |
-| **Módulo (*Module*)** | Unidade de organização física ou lógica que agrupa códigos relacionados. | O **container de organização** | Um arquivo `.cs`, `class`, pacote ou biblioteca |
-| **Qualidade de Código** | Grau em que o software atende a fatores externos (usuário) e internos (manutenibilidade). | O **valor e longevidade do sistema** | ISO/IEC 25010, Código Limpo (*Clean Code*) |
-| **Fatores Externos** | Qualidades perceptíveis diretamente pelos usuários na execução do software. | O **valor e utilidade para o usuário** | Corretude, Robustez, Usabilidade, Eficiência |
-| **Fatores Internos** | Qualidades técnicas do código-fonte perceptíveis apenas pelos desenvolvedores. | A **sustentação arquitetural do código** | Modularidade, Baixo Acoplamento, Coesão |
-| **Corretude / Correção (*Correctness*)** | Capacidade de executar exatamente aquilo que foi especificado nos requisitos sob condições normais. | A **precisão funcional primária** | $2 + 2 = 4$; calcular juros exatos |
-| **Robustez (*Robustness*)** | Capacidade de reagir de forma segura diante de entradas anormais ou falhas sem travar (*crash*). | A **tolerância e segurança a imprevistos** | `try / catch`, validação de dados de entrada |
-| **Degradação Graciosa (*Graceful Degradation*)** | Capacidade do sistema manter funções essenciais ativas reduzindo a sofisticação sob falhas parciais. | A **resiliência e continuidade de serviço** | Reduzir resolução de vídeo sob oscilação de rede |
-| **Ocultação da Informação (*Information Hiding*)** | Princípio de que toda informação do módulo deve ser privativa, exceto se declarada explicitamente pública. | A **blindagem de decisões voláteis** | Parnas (1972), atributos e métodos `private` |
-| **`GOTO`** | Instrução de salto incondicional de fluxo obsoleta pela Programação Estruturada. | O **controle desestruturado (evitar)** | `goto Rótulo;` (gera *spaghetti code*) |
+### 1. Estrutura básica e orientação a objetos (POO)
+* [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
+* [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]]
+
+### 2. Modularidade e arquitetura de software
+* [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
+* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]]
+
+### 3. Memória, ciclo de vida e concorrência
+* [[#10. Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#11. Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#18. Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
+* [[#19. Padrão Dispose e IDisposable (Deterministic Cleanup)|19. Padrão `Dispose` e `IDisposable`]] • [[#20. Buffer e descarregamento de dados (Buffer & Flush)|20. Buffer e *flush*]] • [[#21. Thread (Linha de execução / Fluxo concorrente)|21. *Thread* e concorrência]]
+
+### 4. Recursos de linguagem, sintaxe e C#
+* [[#8. Declaração em Computação (Declaration / Declarar)|8. Declaração]] • [[#9. Assinatura de Método (Method Signature)|9. Assinatura de método]] • [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)|12. Parâmetro vs. argumento]] • [[#13. GOTO (Salto Incondicional)|13. `GOTO`]] • [[#15. Membro estático (Static Member)|15. Membro estático (`static`)]]
+* [[#16. Propriedades (Properties & Auto-Properties)|16. Propriedades]] • [[#17. Escopo (Scope)|17. Escopo]] • [[#31. Métodos de acesso ou getters (Accessors / Getters)|31. *Getters*]] • [[#32. Métodos modificadores ou setters (Mutators / Setters)|32. *Setters*]] • [[#33. Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)|33. Convenções de nomenclatura]]
+* [[#34. Propriedade (Property)|34. Propriedades avançadas]] • [[#35. Princípio DRY (Don't Repeat Yourself)|35. Princípio DRY]] • [[#36. Código boilerplate (Boilerplate Code)|36. Código *boilerplate*]] • [[#37. Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)|37. Expressões lambda (`=>`)]]
+* [[#38. Paradigma funcional (Functional Programming Paradigm)|38. Paradigma funcional]] • [[#42. Compilador Roslyn (.NET Compiler Platform)|42. Compilador Roslyn]] • [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)|43. ORM & Entity Framework]]
+
+### 5. Qualidade e engenharia de software
+* [[#7. Qualidade de Código (Code Quality)|7. Qualidade de código]] • [[#14. Robustez (Robustness)|14. Robustez (*Robustness*)]] • [[#30. Regra prática ou heurística (Rule of Thumb)|30. Regra prática / Heurística]]
+
+---
+
+## Matriz completa de consulta rápida
+
+| ID | Termo | Definição simplificada | O que representa? | Exemplo no código / Teoria |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | [[#1. Tipo (Type)\|Tipo (*Type*)]] | Conjunto de valores e operações válidas sobre eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
+| **02** | [[#2. Operação (Operation / Method)\|Operação (*Operation*)]] | Sub-rotina que executa cálculos ou altera estado. | O **comportamento executável** | `Sacar()`, `CalcularDV()` |
+| **03** | [[#3. Módulo (Module)\|Módulo (*Module*)]] | Unidade de organização física ou lógica do código. | O **container de fronteira** | Arquivo `.cs`, `class`, pacote |
+| **04** | [[#4. Atributo (Attribute / Field)\|Atributo (*Field*)]] | Variável interna que armazena os dados do objeto. | Os **dados estruturais** | `private double _saldo;` |
+| **05** | [[#5. Estado (State)\|Estado (*State*)]] | Valores de todos os atributos em um dado instante. | A **fotografia do objeto** | `_saldo = 500.00;` |
+| **06** | [[#6. Método (Method)\|Método (*Method*)]] | Função ou procedimento pertencente a uma classe. | A **ação vinculada ao dado** | `public void Depositar(...)` |
+| **07** | [[#7. Qualidade de Código (Code Quality)\|Qualidade de código]] | Atendimento a fatores externos e internos. | A **longevidade do software** | ISO/IEC 25010, Código limpo |
+| **08** | [[#8. Declaração em Computação (Declaration / Declarar)\|Declaração]] | Avisar ao compilador a existência e tipo de um item. | A **reserva de identidade** | `double saldo;`, `void Sacar();` |
+| **09** | [[#9. Assinatura de Método (Method Signature)\|Assinatura]] | Nome do método + lista de tipos dos parâmetros. | O **identificador único** | `Sacar(double)` |
+| **10** | [[#10. Semântica de Referência (Reference Semantics)\|Semântica de referência]] | Variável armazena endereço de memória do *Heap*. | O **controle remoto** | `Conta c2 = c1;` |
+| **11** | [[#11. Coletor de Lixo (Garbage Collector - GC)\|Coletor de lixo (*GC*)]] | Limpeza automática de instâncias órfãs da RAM. | A **reciclagem de memória** | Motor de GC do .NET / CLR |
+| **12** | [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)\|Parâmetro vs. argumento]] | Parâmetro é o molde na assinatura; argumento é o valor enviado. | O **molde vs. dado real** | `(double v)` vs `(150.00)` |
+| **13** | [[#13. GOTO (Salto Incondicional)\|`GOTO`]] | Salto arbitrário descontinuado na estruturação. | O **fluxo desordenado (evitar)** | `goto Rotulo;` |
+| **14** | [[#14. Robustez (Robustness)\|Robustez (*Robustness*)]] | Capacidade de reagir a erros sem travar o sistema. | A **segurança a imprevistos** | `try / catch`, validação de dados |
+| **15** | [[#15. Membro estático (Static Member)\|Membro estático]] | Atributo ou método que pertence à classe, não ao objeto. | O **dado compartilhado global** | `static int TotalContas;` |
+| **16** | [[#16. Propriedades (Properties & Auto-Properties)\|Propriedades]] | Encapsulamento elegante de leitura e escrita. | A **fachada inteligente com get/set** | `public double Saldo { get; }` |
+| **17** | [[#17. Escopo (Scope)\|Escopo (*Scope*)]] | Região do código onde um identificador é visível. | A **fronteira de visibilidade** | Bloco `{ }`, classe, método |
+| **18** | [[#18. Destrutor e Finalizador (Destructor & Finalizer)\|Destrutor (*Finalizer*)]] | Método especial invocado antes do GC coletar o objeto. | A **limpeza final de recursos** | `~ContaCorrente() { ... }` |
+| **19** | [[#19. Padrão Dispose e IDisposable (Deterministic Cleanup)\|Padrão `Dispose`]] | Liberação determinística e imediata de recursos nativos. | A **devolução manual expressa** | `using (var f = new FileStream)` |
+| **20** | [[#20. Buffer e descarregamento de dados (Buffer & Flush)\|Buffer & flush]] | Acúmulo temporário em RAM e descarregamento no disco. | O **lote de transferência** | `stream.Flush();` |
+| **21** | [[#21. Thread (Linha de execução / Fluxo concorrente)\|*Thread* / Concorrência]] | Sequência linear de execução concorrente de tarefas. | A **linha de produção paralela** | `Thread`, `Task`, async/await |
+| **22** | [[#22. Encapsulamento (Encapsulation)\|Encapsulamento]] | Ocultação de detalhes internos e proteção de dados. | A **cápsula blindada** | Atributos `private`, métodos `public` |
+| **23** | [[#23. Herança (Inheritance)\|Herança]] | Reaproveitamento e extensão de membros entre classes. | A **relação pai-filho (*is-a*)** | `class Poupanca : Conta` |
+| **24** | [[#24. Polimorfismo (Polymorphism)\|Polimorfismo]] | Capacidade de tratar objetos distintos via contrato comum. | As **múltiplas formas de resposta** | `virtual` / `override` |
+| **25** | [[#25. Interface (Interface / Contrato de Serviço)\|Interface (*Contrato*)]] | Conjunto de assinaturas públicas sem implementação. | O **contrato de serviço** | `interface IConta { void Sacar(); }` |
+| **26** | [[#26. Implementação (Implementation / Mecânica Interna)\|Implementação]] | O código concreto dentro do corpo dos métodos. | O **"como faz" interno** | Corpo das funções `{ ... }` |
+| **27** | [[#27. Coesão (Cohesion)\|Coesão (*Cohesion*)]] | Grau em que os membros da classe têm foco único. | O **foco e propósito único** | Alta coesão (Princípio SRP) |
+| **28** | [[#28. Princípio da caixa preta (Black Box Principle)\|Caixa preta]] | Uso de um componente conhecendo apenas sua entrada/saída. | O **isolamento instrumental** | Usar API sem ler código-fonte |
+| **29** | [[#29. Independência funcional (Functional Independence)\|Independência funcional]] | Módulo opera com autonomia e dependências mínimas. | O **desacoplamento operacional** | Módulos autossuficientes |
+| **30** | [[#30. Regra prática ou heurística (Rule of Thumb)\|Regra prática / Heurística]] | Diretriz empírica consagrada para tomada de decisão. | O **guia de boas práticas** | "Prefira composição a herança" |
+| **31** | [[#31. Métodos de acesso ou getters (Accessors / Getters)\|*Getters*]] | Métodos ou blocos que leem valores sem alterar estado. | A **consulta segura de dados** | `public double GetSaldo()` |
+| **32** | [[#32. Métodos modificadores ou setters (Mutators / Setters)\|*Setters*]] | Métodos ou blocos que alteram estado com validação. | A **modificação controlada** | `public void SetSaldo(double v)` |
+| **33** | [[#33. Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)\|Convenções de nomes]] | Padrões de escrita de identificadores (`PascalCase`, `_camelCase`). | A **legibilidade padronizada** | `_saldoPrivado`, `MetodoPublico` |
+| **34** | [[#34. Propriedade (Property)\|Propriedade]] | Estrutura de C# que encapsula getters e setters como campo. | O **acesso idiomático com regras** | `public int Idade { get; set; }` |
+| **35** | [[#35. Princípio DRY (Don't Repeat Yourself)\|Princípio DRY]] | Eliminação de duplicação lógica no sistema. | A **fonte única de verdade** | Centralizar validações e cálculos |
+| **36** | [[#36. Código boilerplate (Boilerplate Code)\|Código *boilerplate*]] | Código repetitivo e burocrático necessário pela sintaxe. | A **burocracia sintática** | Getters e setters manuais longos |
+| **37** | [[#37. Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)\|Expressões lambda (`=>`)]] | Sintaxe compacta de função anônima ou corpo conciso. | A **flecha expressiva direta** | `public double Saldo => _saldo;` |
+| **38** | [[#38. Paradigma funcional (Functional Programming Paradigm)\|Paradigma funcional]] | Foco em funções puras, imutabilidade e sem efeitos colaterais. | O **cálculo matemático puro** | LINQ (`Select`, `Where`), Imutabilidade |
+| **39** | [[#39. Espaço de nomes (Namespace)\|*Namespace*]] | Escopo hierárquico para organizar classes e evitar colisões. | As **pastas lógicas do projeto** | `namespace MeuApp.Dominio.Contas;` |
+| **40** | [[#40. Classe parcial (Partial Class)\|Classe parcial (`partial`)]] | Divisão da declaração de uma classe em múltiplos arquivos. | A **classe em múltiplos arquivos** | `partial class ContaCorrente` |
+| **41** | [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)\|DLL / *Assembly*]] | Unidade binária compilada reutilizável entre projetos. | O **pacote compilado de entrega** | `Dominio.dll`, Pacotes NuGet |
+| **42** | [[#42. Compilador Roslyn (.NET Compiler Platform)\|Compilador Roslyn]] | Compilador modular como serviço do .NET e C#. | O **motor analítico de código** | Análise estática, refatoração de IDE |
+| **43** | [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
 
 ---
 
