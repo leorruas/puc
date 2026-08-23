@@ -57,6 +57,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
             "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
             "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
+            "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
