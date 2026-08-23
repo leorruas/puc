@@ -27,9 +27,10 @@
 
 ## Organização e Numeração de Arquivos
 
-6. **Padronização dos Arquivos de Resumo e Consolidação Bibliográfica:**
+6. **Padronização dos Arquivos de Resumo, Consolidação Bibliográfica e Autores Citados:**
  - O arquivo principal de resumo de qualquer disciplina deve obrigatoriamente utilizar o prefixo `00.` (ex.: `00. Design de Interacao - Resumo.md`, `00. Engenharia de Requisitos - Resumo.md`, `00. Programação modular - Resumo.md`).
  - **Consolidação Obrigatória de Bibliografia:** O arquivo de resumo `00.` deve conter obrigatoriamente a seção completa e consolidada de **Referências bibliográficas** (Bibliografia Básica e Complementar em normas ABNT com links de acesso), centralizando todas as referências mencionadas nos artigos individuais da matéria.
+ - **Quadro Histórico Obrigatório de Autores Citados com Links da Wikipedia:** O arquivo de resumo `00.` deve conter obrigatoriamente a seção **Autores e pioneiros citados na disciplina**, apresentada em formato de tabela Markdown contendo o nome do autor, sua contribuição central para a matéria, os artigos relacionados na disciplina e o link direto para seu perfil biográfico na Wikipedia.
 
 7. **Numeração Sequencial Única:**
  - Todas as notas de conteúdo e tópicos dentro de uma disciplina devem seguir uma numeração sequencial estrita (01, 02, 03, ...).
