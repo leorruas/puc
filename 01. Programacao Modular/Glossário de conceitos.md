@@ -199,12 +199,12 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 Um **membro estático (*Static Member*)** é definido formalmente como um componente de uma classe com **tempo de vida global** e **escopo local (delimitado à classe)**. São atributos ou métodos que são comuns a todos os objetos de uma classe. Quando declaramos um atributo ou método estático, ele passa a ser um **membro de classe**, sendo compartilhado por todos os objetos daquela classe.
 
-* **Definição Técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM). Ele permanece vivo durante toda a execução (*tempo de vida global*), mas sob as regras de encapsulamento da classe (*escopo local*).
-* **As 4 Formas de Membros Estáticos:**
-  1. **Atributo Estático (*Static Field*):** Variável única compartilhada por todos os objetos (ex.: `private static int _contador;`).
-  2. **Método Estático (*Static Method*):** Operação pura ou utilitária que não depende de estado de instância e não possui acesso ao ponteiro `this` (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
-  3. **Propriedade Estática (*Static Property*):** Getter/setter de escopo de classe com proteção de regras globais (ex.: `Conta.TaxaGlobal`).
-  4. **Construtor Estático (*Static Constructor*):** Bloco executado uma única vez automaticamente antes do primeiro acesso à classe para preparar dados globais.
+* **Definição técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM). Ele permanece vivo durante toda a execução (*tempo de vida global*), mas sob as regras de encapsulamento da classe (*escopo local*).
+* **As 4 formas de membros estáticos:**
+  1. **Atributo estático (*static field*):** Variável única compartilhada por todos os objetos (ex.: `private static int _contador;`).
+  2. **Método estático (*static method*):** Operação pura ou utilitária que não depende de estado de instância e não possui acesso ao ponteiro `this` (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
+  3. **Propriedade estática (*static property*):** Getter/setter de escopo de classe com proteção de regras globais (ex.: `Conta.TaxaGlobal`).
+  4. **Construtor estático (*static constructor*):** Bloco executado uma única vez automaticamente antes do primeiro acesso à classe para preparar dados globais.
 * **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (membro de instância). No entanto, o ar-condicionado é único para a sala inteira (membro estático). Se o professor alterar a temperatura para 19°C, **todos os alunos na sala sentem a mudança simultaneamente**, porque o recurso é compartilhado no nível da sala.
 * **Conexão direta com compartilhamento de estado ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** Usados para geradores sequenciais de identificadores (IDs), contadores de objetos ativos, constantes matemáticas (`Math.PI`) e taxas de configuração global.
 
@@ -228,11 +228,11 @@ O **Escopo** é a região do código-fonte onde um determinado identificador (va
   - **Escopo de método (local / parâmetros):** O **cartão do crachá do seu departamento**. Permite transitar apenas dentro daquela sala durante o horário de trabalho (execução do método).
   - **Escopo de instância (atributos de objeto):** A **sua mesa de trabalho pessoal**. Seus objetos pessoais ficam nela enquanto você for funcionário da empresa (enquanto a instância existir no *Heap*).
   - **Escopo de classe (`static`):** O **hall de entrada principal e o relógio da recepção**. É único, compartilhado por todos os funcionários e visitantes do prédio, existindo enquanto o prédio estiver aberto (enquanto a aplicação estiver em execução).
-* **Níveis Fundamentais de Escopo:**
-  1. **Escopo de Bloco:** Variáveis declaradas dentro de `if`, `for` ou `while` que deixam de existir fora do par de chaves `{ }`.
-  2. **Escopo de Sub-rotina (Local):** Parâmetros e variáveis criados na *Stack* durante a chamada de um método.
-  3. **Escopo de Instância:** Atributos declarados no corpo da classe pertencentes a cada objeto individual no *Heap*.
-  4. **Escopo de Classe (`static`):** Membros globais compartilhados por todas as instâncias da classe.
+* **Níveis fundamentais de escopo:**
+  1. **Escopo de bloco:** Variáveis declaradas dentro de `if`, `for` ou `while` que deixam de existir fora do par de chaves `{ }`.
+  2. **Escopo de sub-rotina (local):** Parâmetros e variáveis criados na *Stack* durante a chamada de um método.
+  3. **Escopo de instância:** Atributos declarados no corpo da classe pertencentes a cada objeto individual no *Heap*.
+  4. **Escopo de classe (`static`):** Membros globais compartilhados por todas as instâncias da classe.
 * **Conexão com Programação Modular ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** O correto isolamento de escopo previne efeitos colaterais indesejados (*Side Effects*) e é a base para o baixo acoplamento e alto encapsulamento.
 
 ---
@@ -304,13 +304,13 @@ O **Polimorfismo** (do grego *"muitas formas"*) é o princípio em POO que permi
 
 ---
 
-## 25. Interface (*Interface / Contrato de Serviço*)
+## ==25. Interface (*Interface / Contrato de Serviço*)==
 
-A **Interface** é a fronteira pública visível de um módulo ou classe que define **o que** o componente faz, expondo um conjunto de assinaturas de operações, métodos e propriedades sem revelar como eles são executados.
+==A **Interface** é a fronteira pública visível de um módulo ou classe que define **o que** o componente faz, expondo um conjunto de assinaturas de operações, métodos e propriedades sem revelar como eles são executados.==
 
-* **Natureza:** É o **contrato formal e estável** firmado entre o fornecedor do serviço e os clientes externos.
-* **Analogia de Feynman:** A **tomada de parede padrão de 3 pinos**. O eletrodoméstico (cliente) precisa apenas conhecer o formato dos pinos da tomada (a interface) para receber energia (220V/110V). O aparelho não sabe e não precisa saber se a energia foi gerada por uma usina hidrelétrica, solar, eólica ou nuclear.
-* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Uma interface bem projetada deve ser enxuta, clara e imune a alterações internas de tecnologia.
+* ==**Natureza:** É o **contrato formal e estável** firmado entre o fornecedor do serviço e os clientes externos.==
+* ==**Analogia de Feynman:** A **tomada de parede padrão de 3 pinos**. O eletrodoméstico (cliente) precisa apenas conhecer o formato dos pinos da tomada (a interface) para receber energia (220V/110V). O aparelho não sabe e não precisa saber se a energia foi gerada por uma usina hidrelétrica, solar, eólica ou nuclear.==
+* ==**Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Uma interface bem projetada deve ser enxuta, clara e imune a alterações internas de tecnologia.==
 
 ---
 
