@@ -11,8 +11,12 @@
 
 3. **Capitalização Frasal Estrita (Sentence Case Obrigatório em Tudo):**
  - **Regra Geral da Língua Portuguesa:** Utilizar exclusivamente capitalização frasal (*sentence case*), onde **apenas a primeira palavra da frase/item inicia com letra maiúscula**. Todas as palavras subsequentes devem ser rigorosamente em minúsculas (a menos que sejam nomes próprios, acrônimos ou siglas).
- - **Proibição Estrita de *Title Case*:** É terminantemente proibido capitalizar a inicial de cada palavra em títulos H1-H6, subcabeçalhos, itens de listas com marcadores (`*`, `-`), cabeçalhos de tabelas, rótulos de diagramas, rótulos em negrito (`**Exemplo de texto:**`) e analogias (ex.: incorreto `**O Explícito É O Apartamento Decorado Básico:**` $\rightarrow$ correto `**O explícito é o apartamento decorado básico:**`).
- - **Leitura e Verificação Prévia Mandatória:** É obrigatório revisar mentalmente e aplicar a regra de *sentence case* antes de gerar qualquer novo arquivo ou trecho de texto.
+ - **Proibição Estrita de *Title Case* em Rótulos, Parênteses e Itálicos:** É terminantemente proibido capitalizar a inicial de cada palavra em:
+   - Títulos H1 a H6 e subcabeçalhos;
+   - Rótulos em negrito no início de listas ou parágrafos (ex.: incorreto `**A Interface (*O Que Faz*):**` $\rightarrow$ correto `**A interface (*o que faz*):**`);
+   - Analogias e definições (ex.: incorreto `**O Explícito É O Apartamento Decorado Básico:**` $\rightarrow$ correto `**O explícito é o apartamento decorado básico:**`);
+   - Itens de listas com marcadores (`*`, `-`), tabelas e diagramas.
+ - **Protocolo de Validação Pré-Escrita Mandatório:** O modelo DEVE fazer uma varredura explícita em cada bloco gerado antes de salvar, convertendo para minúsculas qualquer palavra intermediária em negrito ou parênteses que não seja sigla (como TAD, POO, GC, SQL, C#).
 
 4. **Uso Correto de Acentuação nos Nomes de Arquivos e Títulos:**
  - Todos os arquivos Markdown (`.md`), títulos H1, cabeçalhos e frontmatter YAML devem utilizar obrigatoriamente a acentuação correta da língua portuguesa em seus nomes e textos (ex.: `01. Introdução à programação modular.md`, `02. Funções e procedimentos.md`, `Glossário de conceitos.md`).
