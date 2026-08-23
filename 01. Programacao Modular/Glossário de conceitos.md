@@ -334,6 +334,26 @@ A **Coesão** é a medida do grau em que todos os atributos, métodos e responsa
 
 ---
 
+## 28. Princípio da caixa preta (*Black Box Principle*)
+
+O **Princípio da Caixa Preta** estabelece que um módulo de software deve consistir em um conjunto de comandos com uma **função bem definida**, operando de forma o **mais independente possível** em relação ao restante do sistema.
+
+* **Natureza:** O usuário externo enxerga apenas as entradas e saídas do componente através de sua interface pública, desconhecendo completamente os circuitos, estruturas de dados e variáveis internas.
+* **Analogia de Feynman:** O **forno de micro-ondas**. Você coloca o prato, digita "2 minutos" e aperta "Iniciar" (a interface pública). O micro-ondas aquece a comida usando válvulas magnetron e radiação eletromagnética interna (a mecânica oculta). Você não precisa entender de física quântica ou circuitos de alta voltagem para esquentar seu almoço; você apenas aperta os botões externos da caixa preta!
+* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Permite substituir a tecnologia interna da caixa preta sem que nenhum usuário precise reaprender a utilizá-la.
+
+---
+
+## 29. Independência funcional (*Functional Independence*)
+
+A **Independência Funcional** é o critério de projeto que determina que cada módulo de um sistema deve **cuidar de uma função específica**, servindo a um propósito exclusivo, delimitado e coeso no domínio do problema.
+
+* **Natureza:** É alcançada pelo desenvolvimento de módulos que possuem **alta coesão interna** e **baixo acoplamento externo**, minimizando o tráfego de dependências e efeitos colaterais.
+* **Analogia de Feynman:** A **equipe de mecânicos de um pit stop da Fórmula 1**. Existe o especialista em trocar o pneu dianteiro direito, o especialista que reabastece e o especialista que ajusta a asa. Se o mecânico do pneu tentar trocar a asa enquanto troca a porca da roda, ele perde o foco e atrasa a corrida. Cada membro faz uma única função com perfeição cirúrgica.
+* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Módulos funcionalmente independentes são mais fáceis de testar, documentar, manter e reutilizar em outros sistemas.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
