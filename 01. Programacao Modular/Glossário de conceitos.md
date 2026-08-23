@@ -236,6 +236,25 @@ O **Escopo** é a região do código-fonte onde um determinado identificador (va
 
 ---
 
+## 18. Destrutor e Finalizador (*Destructor & Finalizer*)
+
+O **Destrutor** (denotado em C# como `~NomeDaClasse()`) é um método especial executado automaticamente pelo Coletor de Lixo (*Garbage Collector*) antes de um objeto órfão ser desalocado fisicamente da memória *Heap*.
+
+* **Execução Não Determinística:** Ao contrário do construtor (que roda na hora do `new`), o destrutor roda em um momento imprevisível, apenas quando o GC decidir varrer a memória.
+* **Analogia de Feynman:** O **fechamento do registro de gás de um apartamento desocupado**. Quando o morador abandona o imóvel, a equipe de vistoria da imobiliária (GC) passa para desligar as válvulas e liberar o imóvel para demolição ou reforma.
+* **Conexão direta ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):** Atua como uma **rede de segurança de emergência** para evitar vazamento de recursos do Sistema Operacional caso o desenvolvedor esqueça de fechar conexões manualmente.
+
+---
+
+## 19. Padrão `Dispose` e `IDisposable` (*Deterministic Cleanup*)
+
+O padrão **`IDisposable`** é a interface oficial do ecossistema .NET para **liberação imediata e determinística de recursos não gerenciados** (arquivos abertos, conexões de banco de dados, portas de rede e dispositivos de hardware).
+
+* **A Instrução `using`:** Garante que o método `Dispose()` seja acionado no exato instante em que o bloco de código for encerrado, inclusive em cenários de exceção ou erro de execução.
+* **Analogia de Feynman:** O **quarto de hotel com cartão inteligente**. No momento em que você sai do quarto e retira o cartão da fenda na porta (fim do bloco `using`), o sistema desliga imediatamente o ar-condicionado, a televisão e tranca a porta na mesma fração de segundo.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
