@@ -194,6 +194,24 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 ---
 
+## 15. Membros estáticos e escopo de classe (*Static Members & Class Scope*)
+
+Membros marcados com a palavra-chave **`static`** pertencem à **Classe em si (escopo global do tipo)** e não a qualquer instância individual instanciada no *Heap*.
+
+* **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (atributo de instância). No entanto, o ar-condicionado é único para a sala inteira (estático). Se o professor alterar a temperatura para 19°C, **todos os alunos na sala sentem a mudança simultaneamente**, porque o recurso é compartilhado no nível da sala.
+* **Conexão direta com compartilhamento de estado ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** Usados para geradores sequenciais de identificadores (IDs), contadores de objetos ativos, constantes matemáticas (`Math.PI`) e taxas de configuração global.
+
+---
+
+## 16. Propriedades (*Properties & Auto-Properties*)
+
+Uma **Propriedade** é um membro de primeira classe em C# que fornece um mecanismo flexível para ler, gravar ou computar o valor de um campo privado, combinando a **sintaxe simples de um atributo público** com a **segurança e encapsulamento de métodos assessores (`get` e `set`)**.
+
+* **Analogia de Feynman:** O **painel digital de um cofre inteligente**. Você não encosta diretamente nas engrenagens internas de aço (`_saldo` privado). Você interage com a tela externa (`Saldo` público). Quando você digita um novo valor, a tela executa um leitor biométrico e checa o limite permitido antes de acionar as engrenagens mecânicas.
+* **Auto-Properties (`{ get; set; }`):** Quando nenhuma validação especial é necessária, o compilador cria o campo de apoio privado oculto automaticamente por debaixo dos panos, mantendo o código limpo e preparado para futuras regras de negócio.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
