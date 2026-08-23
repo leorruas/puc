@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+                "file": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08. Construtores (inicialização, sobrecarga e garantia de invariantes)"
+              "title": "14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)"
             }
           }
         ]
@@ -192,9 +192,10 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
-    "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
-    "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
     "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
+    "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+    "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+    "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
     "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
     "00. Sintaxe Multilinguagem/10. Manipulação e representação de datas e horários (DateTime, fusos e formatos).md",
     "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
@@ -220,7 +221,6 @@
     "01. Programacao Modular/02. Funções e procedimentos.md",
     "00. Sintaxe Multilinguagem/06. Modificadores de acesso, escopo e a palavra-chave static.md",
     "01. Programacao Modular/01. Introdução à programação modular.md",
-    "00. Geral/Sintaxe Multilinguagem/02. Estruturas condicionais (if, else, switch).md",
     "00. Sintaxe Multilinguagem",
     "00. Geral/Sintaxe Multilinguagem",
     "scratch_rosilane.txt",

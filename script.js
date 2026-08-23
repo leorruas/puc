@@ -232,6 +232,29 @@ function removerPrimeiroH1(markdown) {
     return markdown.replace(/^\s*#\s+[^\n]+(?:\r?\n)*/, "");
 }
 
+function processarLaTeXSetas(markdown) {
+    if (!markdown) return "";
+    return markdown
+        .replace(/\$\s*\\rightarrow\s*\$/g, "→")
+        .replace(/\$\s*\\leftarrow\s*\$/g, "←")
+        .replace(/\$\s*\\leftrightarrow\s*\$/g, "↔")
+        .replace(/\$\s*\\Rightarrow\s*\$/g, "⇒")
+        .replace(/\$\s*\\Leftarrow\s*\$/g, "⇐")
+        .replace(/\$\s*\\Leftrightarrow\s*\$/g, "⇔")
+        .replace(/\\rightarrow/g, "→")
+        .replace(/\\leftarrow/g, "←")
+        .replace(/\\leftrightarrow/g, "↔")
+        .replace(/\\Rightarrow/g, "⇒")
+        .replace(/\\Leftarrow/g, "⇐")
+        .replace(/\\Leftrightarrow/g, "⇔")
+        .replace(/\$\s*→\s*\$/g, "→")
+        .replace(/\$\s*←\s*\$/g, "←")
+        .replace(/\$\s*↔\s*\$/g, "↔")
+        .replace(/\$\s*⇒\s*\$/g, "⇒")
+        .replace(/\$\s*⇐\s*\$/g, "⇐")
+        .replace(/\$\s*⇔\s*\$/g, "⇔");
+}
+
 function extrairTrechoRelevante(conteudo, termo) {
     const conteudoSemFrontmatter = removerFrontmatter(conteudo);
     const textoLimpo = conteudoSemFrontmatter.replace(/==/g, '').replace(/[#*`_~\[\]]/g, ' ');
@@ -382,8 +405,11 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
     const markdownComHighlight = markdownLimpo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
 
+    // Converte notações LaTeX de setas (ex: $\rightarrow$, $\leftrightarrow$) para caracteres Unicode reais (→, ↔)
+    const markdownComSetas = processarLaTeXSetas(markdownComHighlight);
+
     // Protege caracteres '|' em links do Obsidian [[Link|Texto]] para não quebrarem tabelas no marked.parse
-    const markdownProtegido = protegerPipesObsidian(markdownComHighlight);
+    const markdownProtegido = protegerPipesObsidian(markdownComSetas);
 
     // Normaliza identação de listas do Obsidian (1-3 espaços -> 4 espaços) para o marked.parse
     const markdownNormalizado = normalizarListasObsidian(markdownProtegido);

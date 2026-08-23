@@ -13,8 +13,8 @@
  - **Regra Geral da Língua Portuguesa:** Utilizar exclusivamente capitalização frasal (*sentence case*), onde **apenas a primeira palavra da frase/item inicia com letra maiúscula**. Todas as palavras subsequentes devem ser rigorosamente em minúsculas (a menos que sejam nomes próprios, acrônimos ou siglas).
  - **Proibição Estrita de *Title Case* em Rótulos, Parênteses e Itálicos:** É terminantemente proibido capitalizar a inicial de cada palavra em:
    - Títulos H1 a H6 e subcabeçalhos;
-   - Rótulos em negrito no início de listas ou parágrafos (ex.: incorreto `**A Interface (*O Que Faz*):**` $\rightarrow$ correto `**A interface (*o que faz*):**`);
-   - Analogias e definições (ex.: incorreto `**O Explícito É O Apartamento Decorado Básico:**` $\rightarrow$ correto `**O explícito é o apartamento decorado básico:**`);
+   - Rótulos em negrito no início de listas ou parágrafos (ex.: incorreto `**A Interface (*O Que Faz*):**` → correto `**A interface (*o que faz*):**`);
+   - Analogias e definições (ex.: incorreto `**O Explícito É O Apartamento Decorado Básico:**` → correto `**O explícito é o apartamento decorado básico:**`);
    - Itens de listas com marcadores (`*`, `-`), tabelas e diagramas.
  - **Protocolo de Validação Pré-Escrita Mandatório:** O modelo DEVE fazer uma varredura explícita em cada bloco gerado antes de salvar, convertendo para minúsculas qualquer palavra intermediária em negrito ou parênteses que não seja sigla (como TAD, POO, GC, SQL, C#).
 
