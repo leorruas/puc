@@ -47,6 +47,7 @@ relacionados:
 | **Corretude / Correção (*Correctness*)** | Capacidade de executar exatamente aquilo que foi especificado nos requisitos sob condições normais. | A **precisão funcional primária** | $2 + 2 = 4$; calcular juros exatos |
 | **Robustez (*Robustness*)** | Capacidade de reagir de forma segura diante de entradas anormais ou falhas sem travar (*crash*). | A **tolerância e segurança a imprevistos** | `try / catch`, validação de dados de entrada |
 | **Degradação Graciosa (*Graceful Degradation*)** | Capacidade do sistema manter funções essenciais ativas reduzindo a sofisticação sob falhas parciais. | A **resiliência e continuidade de serviço** | Reduzir resolução de vídeo sob oscilação de rede |
+| **Ocultação da Informação (*Information Hiding*)** | Princípio de que toda informação do módulo deve ser privativa, exceto se declarada explicitamente pública. | A **blindagem de decisões voláteis** | Parnas (1972), atributos e métodos `private` |
 | **`GOTO`** | Instrução de salto incondicional de fluxo obsoleta pela Programação Estruturada. | O **controle desestruturado (evitar)** | `goto Rótulo;` (gera *spaghetti code*) |
 
 ---
