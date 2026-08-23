@@ -43,6 +43,7 @@ async function obterListaDeArquivos() {
             "00. Sintaxe Multilinguagem/07. Getters, setters e propriedades (acesso e modificação de estado).md",
             "00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código).md",
             "00. Sintaxe Multilinguagem/09. Tratamento de exceções e erros (try, catch, finally, throw).md",
+            "00. Sintaxe Multilinguagem/10. Manipulação e representação de datas e horários (DateTime, fusos e formatos).md",
             "01. Programacao Modular/00. Programação modular - Resumo.md",
             "01. Programacao Modular/01. Introdução à programação modular.md",
             "01. Programacao Modular/02. Funções e procedimentos.md",
