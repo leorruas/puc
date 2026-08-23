@@ -407,6 +407,18 @@ Uma **Propriedade (*Property*)** é um membro de primeira classe em linguagens m
 
 ---
 
+## 35. Princípio DRY (*Don't Repeat Yourself*)
+
+Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programmer*, o princípio **DRY (*Don't Repeat Yourself* — Não Se Repita)** afirma que:
+> *"Cada pedaço de conhecimento ou lógica no sistema deve ter uma representação única, não ambígua e definitiva dentro do código."*
+
+* **Aplicação em métodos de acesso e construtores:** Em vez de duplicar validações em 5 lugares diferentes (no construtor, no método de alteração e no setter), a lógica de validação de invariantes é centralizada **exclusivamente no bloco `set` da propriedade** ou em uma única sub-rotina de domínio.
+* **O perigo do oposto (WET - *Write Everything Twice / We Enjoy Typing*):** Quando a mesma regra de validação (ex.: `if (preco <= 0)`) é copiada em vários pontos, uma futura alteração de regra inevitavelmente esquecerá de atualizar uma das cópias, gerando bugs silenciosos e inconsistência de dados.
+* **Analogia de Feynman:** A **certidão de nascimento no cartório**. Quando você muda de nome ou corrige um dado civil, você atualiza a certidão no cartório central (representação única autoritativa). Você não sai imprimindo 50 papéis caseiros diferentes para espalhar pela cidade.
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Centralização de validação de invariantes nos *setters* e propriedades calculadas.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
