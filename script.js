@@ -652,24 +652,16 @@ function renderizarBreadcrumbs(artigo) {
         }, 120);
     });
 
-    const sep2 = document.createElement("span");
-    sep2.className = "breadcrumb-separator";
-    sep2.textContent = "/";
-
-    const itemAtual = document.createElement("span");
-    itemAtual.className = "breadcrumb-current";
-    itemAtual.textContent = artigo.titulo;
-
     breadcrumbsNav.appendChild(linkHome);
     breadcrumbsNav.appendChild(sep1);
     breadcrumbsNav.appendChild(linkCategoria);
-    breadcrumbsNav.appendChild(sep2);
-    breadcrumbsNav.appendChild(itemAtual);
 }
 
 function renderizarBotoesNavegacao(artigo) {
-    const navTopo = document.getElementById("artigo-nav-topo");
     const navRodape = document.getElementById("artigo-nav-rodape");
+    if (!navRodape) return;
+
+    navRodape.innerHTML = "";
 
     const listaCategoria = todasAsPastas[artigo.categoria] || [];
     const indexAtual = listaCategoria.findIndex(a => a.path === artigo.path || a.titulo === artigo.titulo);
@@ -678,55 +670,53 @@ function renderizarBotoesNavegacao(artigo) {
     const artigoProximo = (indexAtual >= 0 && indexAtual < listaCategoria.length - 1) ? listaCategoria[indexAtual + 1] : null;
     const artigoResumo = listaCategoria.find(a => a.path.includes("00.") || a.titulo.toLowerCase().includes("resumo"));
 
-    const criarContainerBotoes = () => {
-        const container = document.createElement("div");
-        container.className = "artigo-nav-botoes-inner";
+    if (!artigoAnterior && !artigoProximo && !artigoResumo) return;
 
-        if (artigoAnterior) {
-            const btnAnterior = document.createElement("button");
-            btnAnterior.className = "btn-nav-artigo btn-nav-anterior";
-            btnAnterior.innerHTML = `&larr; ${artigoAnterior.titulo}`;
-            btnAnterior.title = `Ir para: ${artigoAnterior.titulo}`;
-            btnAnterior.addEventListener("click", () => {
-                abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true);
-            });
-            container.appendChild(btnAnterior);
-        }
+    const cardsGrid = document.createElement("div");
+    cardsGrid.className = "artigo-nav-cards-grid";
 
-        if (artigoResumo && artigoResumo.titulo !== artigo.titulo) {
-            const btnResumo = document.createElement("button");
-            btnResumo.className = "btn-nav-artigo btn-nav-resumo";
-            btnResumo.textContent = "resumo da disciplina";
-            btnResumo.title = "Ir para o resumo consolidado da matéria";
-            btnResumo.addEventListener("click", () => {
-                abrirArtigo(artigoResumo.titulo, artigoResumo.conteudo, true);
-            });
-            container.appendChild(btnResumo);
-        }
-
-        if (artigoProximo) {
-            const btnProximo = document.createElement("button");
-            btnProximo.className = "btn-nav-artigo btn-nav-proximo";
-            btnProximo.innerHTML = `${artigoProximo.titulo} &rarr;`;
-            btnProximo.title = `Ir para: ${artigoProximo.titulo}`;
-            btnProximo.addEventListener("click", () => {
-                abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true);
-            });
-            container.appendChild(btnProximo);
-        }
-
-        return container;
-    };
-
-    if (navTopo) {
-        navTopo.innerHTML = "";
-        navTopo.appendChild(criarContainerBotoes());
+    if (artigoAnterior) {
+        const cardPrev = document.createElement("div");
+        cardPrev.className = "nav-card nav-card-prev";
+        cardPrev.innerHTML = `
+            <span class="nav-card-label">&larr; artigo anterior</span>
+            <span class="nav-card-title">${artigoAnterior.titulo}</span>
+        `;
+        cardPrev.addEventListener("click", () => {
+            abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true);
+        });
+        cardsGrid.appendChild(cardPrev);
+    } else {
+        const placeholder = document.createElement("div");
+        placeholder.className = "nav-card-placeholder";
+        cardsGrid.appendChild(placeholder);
     }
 
-    if (navRodape) {
-        navRodape.innerHTML = "";
-        navRodape.appendChild(criarContainerBotoes());
+    if (artigoProximo) {
+        const cardNext = document.createElement("div");
+        cardNext.className = "nav-card nav-card-next";
+        cardNext.innerHTML = `
+            <span class="nav-card-label">próximo artigo &rarr;</span>
+            <span class="nav-card-title">${artigoProximo.titulo}</span>
+        `;
+        cardNext.addEventListener("click", () => {
+            abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true);
+        });
+        cardsGrid.appendChild(cardNext);
+    } else if (artigoResumo && artigoResumo.titulo !== artigo.titulo) {
+        const cardResumo = document.createElement("div");
+        cardResumo.className = "nav-card nav-card-next nav-card-resumo";
+        cardResumo.innerHTML = `
+            <span class="nav-card-label">resumo da matéria &rarr;</span>
+            <span class="nav-card-title">${artigoResumo.titulo}</span>
+        `;
+        cardResumo.addEventListener("click", () => {
+            abrirArtigo(artigoResumo.titulo, artigoResumo.conteudo, true);
+        });
+        cardsGrid.appendChild(cardResumo);
     }
+
+    navRodape.appendChild(cardsGrid);
 }
 
 function abrirPastaPorNome(nomeCategoria) {

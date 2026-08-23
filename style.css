@@ -197,7 +197,7 @@ button:hover {
     top: 90px;
     max-height: calc(100vh - 110px);
     overflow-y: auto;
-    padding: 12px 16px 12px 0;
+    padding: 0 16px 12px 0;
     border-right: 1px solid var(--accent-blue-alpha-30);
     border-left: none;
     background-color: transparent;
@@ -507,23 +507,22 @@ button:hover {
     color: black;
 }
 
-/* Trilha de Navegação (Breadcrumbs) */
+/* Trilha de Navegação Discreta (Breadcrumbs) */
 .artigo-breadcrumbs {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.9em;
-    margin-bottom: 18px;
-    color: #888888;
+    gap: 6px;
+    font-size: 0.8em;
+    margin-bottom: 8px;
+    color: #666666;
+    text-transform: lowercase;
 }
 
 .breadcrumb-link {
     color: var(--accent-blue);
     cursor: pointer;
     text-decoration: none;
-    transition: color 0.2s ease, opacity 0.2s ease;
-    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .breadcrumb-link:hover {
@@ -532,98 +531,84 @@ button:hover {
 }
 
 .breadcrumb-separator {
-    color: #555555;
+    color: #444444;
     user-select: none;
 }
 
-.breadcrumb-current {
-    color: #cccccc;
-    font-weight: 500;
-    max-width: 450px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Cards de Navegação no Rodapé */
+.artigo-nav-cards {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Botões de Navegação Sequencial (Anterior / Resumo / Próximo) */
-.artigo-nav-botoes {
-    margin-bottom: 24px;
+.artigo-nav-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     width: 100%;
 }
 
-.artigo-nav-botoes-inner {
+.nav-card {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.artigo-nav-rodape {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--accent-blue-alpha-30);
-}
-
-.btn-nav-artigo {
-    background-color: var(--accent-blue-alpha-15);
-    border: 1px solid var(--accent-blue-alpha-30);
-    color: #e0e0e0;
-    padding: 8px 16px;
-    border-radius: 8px;
+    flex-direction: column;
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 0.85em;
-    font-family: inherit;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    max-width: 45%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-nav-artigo:hover {
-    background-color: var(--accent-blue);
-    color: #000000;
+.nav-card:hover {
+    background-color: rgba(0, 122, 255, 0.08);
     border-color: var(--accent-blue);
+    transform: translateY(-2px);
 }
 
-.btn-nav-anterior {
-    margin-right: auto;
+.nav-card-prev {
+    text-align: left;
 }
 
-.btn-nav-proximo {
-    margin-left: auto;
+.nav-card-next {
+    text-align: right;
 }
 
-.btn-nav-resumo {
-    background-color: transparent;
-    border: 1px dashed var(--accent-blue-alpha-50);
+.nav-card-label {
+    font-size: 0.75em;
+    text-transform: lowercase;
     color: var(--accent-blue);
-    margin: 0 auto;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
 }
 
-.btn-nav-resumo:hover {
-    background-color: var(--accent-blue-alpha-15);
-    color: #ffffff;
-    border-color: var(--accent-blue);
+.nav-card-title {
+    font-size: 0.95em;
+    color: #e0e0e0;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
-@media (max-width: 700px) {
-    .artigo-nav-botoes-inner {
-        flex-direction: column;
-        align-items: stretch;
+.nav-card-resumo .nav-card-label {
+    color: #888888;
+}
+
+.nav-card-placeholder {
+    visibility: hidden;
+}
+
+@media (max-width: 650px) {
+    .artigo-nav-cards-grid {
+        grid-template-columns: 1fr;
     }
-    .btn-nav-artigo {
-        max-width: 100%;
-        justify-content: center;
+    .nav-card-next {
+        text-align: left;
     }
-    .breadcrumb-current {
-        max-width: 100%;
+    .nav-card-placeholder {
+        display: none;
     }
 }
 
@@ -631,10 +616,11 @@ button:hover {
 .leitor-artigo h2 {
     color: var(--accent-blue);
     font-size: 1.8em;
-    line-height: 1.15;
+    line-height: 1.2;
+    margin-top: 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #282828;
+    padding-bottom: 12px;
 }
 
 /* Formatação do texto e código */
