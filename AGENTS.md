@@ -76,3 +76,9 @@
  - Sempre que um tópico técnico envolver múltiplos conceitos de programação (ex.: classes, atributos, construtores, métodos, instanciação), o artigo deve apresentar obrigatoriamente duas formas de código:
    1. **Trechos Atômicos e Isolados:** Pequenos snippets de código demonstrando exatamente o conceito explicado logo abaixo de sua respectiva seção ou definição teórica (mostrando apenas a classe, apenas os atributos, apenas o construtor ou apenas a chamada).
    2. **Exemplo Completo e Integrado:** Um bloco de código integral, compilável e executável (com namespace, classe, construtor, métodos e função `Main`) que una todas as partes explicadas para demonstrar o fluxo completo em ação.
+
+## Definição de Terminologias do Projeto
+
+14. **Referência ao Termo "App":**
+ - Sempre que o usuário mencionar o termo **"app"** nas solicitações e conversas, refere-se exclusivamente à aplicação web / leitor de notas hospedado no GitHub Pages: `https://leorruas.github.io/puc`.
+

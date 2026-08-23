@@ -171,8 +171,20 @@ async function carregarTodosOsArtigos() {
         todasAsPastas[artigo.categoria].push(artigo);
     });
 
+    // Ordena os artigos dentro de cada pasta pelo nome e número
+    Object.keys(todasAsPastas).forEach(cat => {
+        todasAsPastas[cat].sort((a, b) => {
+            return a.path.localeCompare(b.path, undefined, { numeric: true, sensitivity: 'base' });
+        });
+    });
+
     // Renderiza a estrutura de pastas na página inicial
     renderizarPastas();
+
+    // Se a página for carregada com uma rota no Hash da URL, abre o artigo correspondente
+    if (window.location.hash) {
+        tratarHashNavegacao();
+    }
 }
 
 function filtrarArtigos(termoBusca) {
@@ -325,12 +337,32 @@ function protegerPipesObsidian(md) {
     });
 }
 
-function abrirArtigo(titulo, conteudoMarkdown) {
+function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     divResultados.classList.add("escondido");
     const pastasContainer = document.getElementById("pastas-container");
     if (pastasContainer) pastasContainer.classList.add("escondido");
 
     artigoTitulo.textContent = titulo;
+
+    // Localiza os metadados do artigo na base carregada
+    const artigoAtual = todosOsArtigos.find(a => a.titulo === titulo || a.conteudo === conteudoMarkdown) || {
+        titulo: titulo,
+        path: `./${titulo}.md`,
+        categoria: "Geral",
+        conteudo: conteudoMarkdown
+    };
+
+    // Atualiza a URL / Rota no navegador para permitir histórico e botões de voltar/avançar
+    if (atualizarHash) {
+        const rotaHash = "#/" + encodeURIComponent(artigoAtual.categoria) + "/" + encodeURIComponent(artigoAtual.titulo);
+        if (window.location.hash !== rotaHash) {
+            history.pushState({ path: artigoAtual.path, titulo: artigoAtual.titulo }, artigoAtual.titulo, rotaHash);
+        }
+    }
+
+    // Renderiza a trilha de navegação (breadcrumbs) e a barra de botões sequenciais
+    renderizarBreadcrumbs(artigoAtual);
+    renderizarBotoesNavegacao(artigoAtual);
     
     // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter --- ... ---)
     const markdownLimpo = removerFrontmatter(conteudoMarkdown);
@@ -595,7 +627,124 @@ function processarCalloutsObsidian() {
     });
 }
 
-function navegarParaLinkObsidian(nomeOuCaminho) {
+function renderizarBreadcrumbs(artigo) {
+    const breadcrumbsNav = document.getElementById("artigo-breadcrumbs");
+    if (!breadcrumbsNav) return;
+
+    breadcrumbsNav.innerHTML = "";
+
+    const linkHome = document.createElement("span");
+    linkHome.className = "breadcrumb-link";
+    linkHome.textContent = "início";
+    linkHome.addEventListener("click", () => voltarParaHome(true));
+
+    const sep1 = document.createElement("span");
+    sep1.className = "breadcrumb-separator";
+    sep1.textContent = "/";
+
+    const linkCategoria = document.createElement("span");
+    linkCategoria.className = "breadcrumb-link";
+    linkCategoria.textContent = artigo.categoria;
+    linkCategoria.addEventListener("click", () => {
+        voltarParaHome(true);
+        setTimeout(() => {
+            abrirPastaPorNome(artigo.categoria);
+        }, 120);
+    });
+
+    const sep2 = document.createElement("span");
+    sep2.className = "breadcrumb-separator";
+    sep2.textContent = "/";
+
+    const itemAtual = document.createElement("span");
+    itemAtual.className = "breadcrumb-current";
+    itemAtual.textContent = artigo.titulo;
+
+    breadcrumbsNav.appendChild(linkHome);
+    breadcrumbsNav.appendChild(sep1);
+    breadcrumbsNav.appendChild(linkCategoria);
+    breadcrumbsNav.appendChild(sep2);
+    breadcrumbsNav.appendChild(itemAtual);
+}
+
+function renderizarBotoesNavegacao(artigo) {
+    const navTopo = document.getElementById("artigo-nav-topo");
+    const navRodape = document.getElementById("artigo-nav-rodape");
+
+    const listaCategoria = todasAsPastas[artigo.categoria] || [];
+    const indexAtual = listaCategoria.findIndex(a => a.path === artigo.path || a.titulo === artigo.titulo);
+
+    const artigoAnterior = indexAtual > 0 ? listaCategoria[indexAtual - 1] : null;
+    const artigoProximo = (indexAtual >= 0 && indexAtual < listaCategoria.length - 1) ? listaCategoria[indexAtual + 1] : null;
+    const artigoResumo = listaCategoria.find(a => a.path.includes("00.") || a.titulo.toLowerCase().includes("resumo"));
+
+    const criarContainerBotoes = () => {
+        const container = document.createElement("div");
+        container.className = "artigo-nav-botoes-inner";
+
+        if (artigoAnterior) {
+            const btnAnterior = document.createElement("button");
+            btnAnterior.className = "btn-nav-artigo btn-nav-anterior";
+            btnAnterior.innerHTML = `&larr; ${artigoAnterior.titulo}`;
+            btnAnterior.title = `Ir para: ${artigoAnterior.titulo}`;
+            btnAnterior.addEventListener("click", () => {
+                abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true);
+            });
+            container.appendChild(btnAnterior);
+        }
+
+        if (artigoResumo && artigoResumo.titulo !== artigo.titulo) {
+            const btnResumo = document.createElement("button");
+            btnResumo.className = "btn-nav-artigo btn-nav-resumo";
+            btnResumo.textContent = "resumo da disciplina";
+            btnResumo.title = "Ir para o resumo consolidado da matéria";
+            btnResumo.addEventListener("click", () => {
+                abrirArtigo(artigoResumo.titulo, artigoResumo.conteudo, true);
+            });
+            container.appendChild(btnResumo);
+        }
+
+        if (artigoProximo) {
+            const btnProximo = document.createElement("button");
+            btnProximo.className = "btn-nav-artigo btn-nav-proximo";
+            btnProximo.innerHTML = `${artigoProximo.titulo} &rarr;`;
+            btnProximo.title = `Ir para: ${artigoProximo.titulo}`;
+            btnProximo.addEventListener("click", () => {
+                abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true);
+            });
+            container.appendChild(btnProximo);
+        }
+
+        return container;
+    };
+
+    if (navTopo) {
+        navTopo.innerHTML = "";
+        navTopo.appendChild(criarContainerBotoes());
+    }
+
+    if (navRodape) {
+        navRodape.innerHTML = "";
+        navRodape.appendChild(criarContainerBotoes());
+    }
+}
+
+function abrirPastaPorNome(nomeCategoria) {
+    const pastasContainer = document.getElementById("pastas-container");
+    if (!pastasContainer) return;
+
+    pastasContainer.querySelectorAll(".pasta-item").forEach(item => {
+        const header = item.querySelector(".pasta-nome");
+        if (header && header.textContent.trim() === nomeCategoria.trim()) {
+            item.classList.add("aberta");
+            item.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+            item.classList.remove("aberta");
+        }
+    });
+}
+
+function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
     if (!nomeOuCaminho) return;
 
     // Se o link contiver âncora para uma seção (ex.: [[Nota#Seção]]), extrai apenas o arquivo
@@ -634,7 +783,7 @@ function navegarParaLinkObsidian(nomeOuCaminho) {
     });
 
     if (encontrado) {
-        abrirArtigo(encontrado.titulo, encontrado.conteudo);
+        abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
             setTimeout(() => {
                 const slug = hashSecao
@@ -686,7 +835,7 @@ function renderizarPastas() {
             linkArtigo.addEventListener("click", async (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                abrirArtigo(arquivo.titulo, arquivo.conteudo);
+                abrirArtigo(arquivo.titulo, arquivo.conteudo, true);
             });
             
             conteudo.appendChild(linkArtigo);
@@ -731,7 +880,7 @@ if (btnPesquisar) {
 }
 
 if (btnVoltar) {
-    btnVoltar.addEventListener("click", voltarParaHome);
+    btnVoltar.addEventListener("click", () => voltarParaHome(true));
 }
 
 // Configuração do Sticky Navbar baseada no scroll
@@ -748,7 +897,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-function voltarParaHome() {
+function voltarParaHome(atualizarHash = true) {
     leitorDeArtigo.classList.add("escondido");
     divResultados.classList.remove("escondido");
     const pastasContainer = document.getElementById("pastas-container");
@@ -758,32 +907,56 @@ function voltarParaHome() {
     if (campoTexto) campoTexto.value = "";
     if (campoTextoNav) campoTextoNav.value = "";
     containerResultados.innerHTML = "";
+
+    if (atualizarHash && window.location.hash) {
+        history.pushState(null, "", window.location.pathname);
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 const navLogo = document.getElementById("nav-logo");
 if (navLogo) {
-    navLogo.addEventListener("click", voltarParaHome);
+    navLogo.addEventListener("click", () => voltarParaHome(true));
 }
 
 const mainTitle = document.querySelector("header h1");
 if (mainTitle) {
-    mainTitle.addEventListener("click", voltarParaHome);
+    mainTitle.addEventListener("click", () => voltarParaHome(true));
 }
 
 const navLinkPastas = document.getElementById("nav-link-pastas");
 if (navLinkPastas) {
     navLinkPastas.addEventListener("click", (e) => {
         e.preventDefault();
-        leitorDeArtigo.classList.add("escondido");
-        divResultados.classList.remove("escondido");
+        voltarParaHome(true);
         const pastasContainer = document.getElementById("pastas-container");
         if (pastasContainer) {
-            pastasContainer.classList.remove("escondido");
             pastasContainer.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     });
 }
 
+// Tratamento de Histórico e Rotas do Navegador (Popstate e Hashchange)
+function tratarHashNavegacao() {
+    const hash = window.location.hash;
+    if (!hash || hash === "#" || hash === "#/") {
+        if (!leitorDeArtigo.classList.contains("escondido")) {
+            voltarParaHome(false);
+        }
+        return;
+    }
+
+    const rotaLimpa = decodeURIComponent(hash.replace(/^#\/?/, "").trim());
+    if (rotaLimpa) {
+        navegarParaLinkObsidian(rotaLimpa, false);
+    }
+}
+
+window.addEventListener("popstate", () => {
+    tratarHashNavegacao();
+});
+
 // Inicializar na carga da página
 carregarTodosOsArtigos();
+

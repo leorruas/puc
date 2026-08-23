@@ -507,6 +507,126 @@ button:hover {
     color: black;
 }
 
+/* Trilha de Navegação (Breadcrumbs) */
+.artigo-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.9em;
+    margin-bottom: 18px;
+    color: #888888;
+}
+
+.breadcrumb-link {
+    color: var(--accent-blue);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    color: #555555;
+    user-select: none;
+}
+
+.breadcrumb-current {
+    color: #cccccc;
+    font-weight: 500;
+    max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botões de Navegação Sequencial (Anterior / Resumo / Próximo) */
+.artigo-nav-botoes {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.artigo-nav-botoes-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.artigo-nav-rodape {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-blue-alpha-30);
+}
+
+.btn-nav-artigo {
+    background-color: var(--accent-blue-alpha-15);
+    border: 1px solid var(--accent-blue-alpha-30);
+    color: #e0e0e0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-nav-artigo:hover {
+    background-color: var(--accent-blue);
+    color: #000000;
+    border-color: var(--accent-blue);
+}
+
+.btn-nav-anterior {
+    margin-right: auto;
+}
+
+.btn-nav-proximo {
+    margin-left: auto;
+}
+
+.btn-nav-resumo {
+    background-color: transparent;
+    border: 1px dashed var(--accent-blue-alpha-50);
+    color: var(--accent-blue);
+    margin: 0 auto;
+}
+
+.btn-nav-resumo:hover {
+    background-color: var(--accent-blue-alpha-15);
+    color: #ffffff;
+    border-color: var(--accent-blue);
+}
+
+@media (max-width: 700px) {
+    .artigo-nav-botoes-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-nav-artigo {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .breadcrumb-current {
+        max-width: 100%;
+    }
+}
+
 /* Título do Artigo */
 .leitor-artigo h2 {
     color: var(--accent-blue);
