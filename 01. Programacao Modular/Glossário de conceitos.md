@@ -490,6 +490,19 @@ Uma **DLL (*Dynamic Link Library* — Biblioteca de Vínculo Dinâmico)**, conhe
 
 ---
 
+## 42. Compilador Roslyn (*.NET Compiler Platform*)
+
+O **Roslyn** (nome oficial: *.NET Compiler Platform*) é o compilador oficial e de código aberto da Microsoft para as linguagens C# e Visual Basic .NET. 
+
+* **A revolução do *Compiler as a Service* (CaaS):** Tradicionalmente, compiladores eram "caixas-pretas opacas": você colocava texto de um lado e saía um binário `.exe` do outro. O Roslyn abriu essas engrenagens através de APIs ricas, permitindo que a IDE (Visual Studio, VS Code, Rider) analise o código em tempo real, mostre erros enquanto você digita (*live squiggles*), faça *IntelliSense*, refatorações automáticas e execute geradores de código (*Source Generators*).
+* **Papel em *Partial Classes* e *Namespaces*:** O Roslyn analisa a Árvore de Sintaxe Abstrata (AST) de todos os arquivos do projeto simultaneamente. Quando encontra múltiplos arquivos com `partial class MeuTipo` no mesmo namespace, ele **combina as árvores sintáticas em uma única definição consolidada antes de gerar a Linguagem Intermediária (IL)**.
+* **Analogia de Feynman:** O **revisor e editor-chefe de uma grande editora de jornais**.
+  - O compilador antigo era como uma gráfica que só aceitava o livro pronto e imprimia tudo de uma vez sem avisar onde estavam os erros gramaticais.
+  - O **Roslyn** é um revisor inteligente que senta ao seu lado enquanto você escreve: ele lê cada palavra no momento em que você digita, junta os capítulos que outros autores escreveram em salas separadas (`partial classes`), aponta erros em tempo real com caneta vermelha e sugere sinônimos e melhorias estruturais imediatamente.
+* **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Fusão de classes parciais e geração de binários.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
