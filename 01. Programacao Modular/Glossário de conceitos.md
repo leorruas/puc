@@ -435,6 +435,29 @@ Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programm
 
 ---
 
+## 37. Expressão lambda e membros com corpo de expressão (*Lambda Expressions & Expression-Bodied Members*)
+
+Uma **Expressão Lambda** é uma forma ultra compacta e anônima de escrever funções e operações no código usando o operador seta **`=>`** (lê-se *"vai para"* ou *"resulta em"*), inspirada diretamente no Cálculo Lambda ($\lambda$) de Alonzo Church (1930).
+
+* **Aplicação em propriedades do C# (*Expression-Bodied Properties*):** Permite escrever métodos e propriedades de somente leitura em uma única linha, eliminando a necessidade de abrir blocos `{ get { return ...; } }`.
+  - Exemplo: `public double Area => Largura * Altura;`
+* **Natureza:** Substitui blocos imperativos verbosos por uma definição matemática direta: *"Dado o estado atual do objeto, a área resulta em $\text{Largura} \times \text{Altura}$"*.
+* **Analogia de Feynman:** O **atalho no teclado do celular**. Em vez de você digitar a frase inteira *"estou chegando em casa agora"* (código procedural tradicional com 5 linhas), você digita o atalho `/casa` e o celular expande instantaneamente na frase completa (`=>`).
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Propriedades calculadas e métodos concisos.
+
+---
+
+## 38. Paradigma funcional (*Functional Programming Paradigm*)
+
+O **Paradigma Funcional** é um estilo de programação que trata a computação como a **avaliação de funções matemáticas puras**, evitando estados mutáveis e efeitos colaterais (*side effects*).
+
+* **Relação com C# e POO:** O C# moderno é uma **linguagem multiparadigma**. Ele une o melhor da Orientação a Objetos (encapsulamento e modelagem de entidades) com os melhores recursos da Programação Funcional (funções lambda, imutabilidade com `init` e propriedades calculadas).
+* **Propriedades calculadas como funções puras:** Uma propriedade como `public double Area => Largura * Altura;` é puramente funcional: ela **não guarda estado**, não altera nenhuma variável na memória e sempre devolve o mesmo resultado exato para as mesmas entradas.
+* **Analogia de Feynman:** A **calculadora de bolso científica**. Você digita $\sqrt{144}$ e aperta `=`. A calculadora exibe `12`. Ela não altera o peso do aparelho, não gasta combustível do carro nem altera o seu saldo no banco (sem efeitos colaterais). Ela apenas avalia a expressão e retorna a resposta.
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Imutabilidade de dados e propriedades derivadas.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
