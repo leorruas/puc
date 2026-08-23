@@ -304,6 +304,26 @@ O **Polimorfismo** (do grego *"muitas formas"*) é o princípio em POO que permi
 
 ---
 
+## 25. Interface (*Interface / Contrato de Serviço*)
+
+A **Interface** é a fronteira pública visível de um módulo ou classe que define **o que** o componente faz, expondo um conjunto de assinaturas de operações, métodos e propriedades sem revelar como eles são executados.
+
+* **Natureza:** É o **contrato formal e estável** firmado entre o fornecedor do serviço e os clientes externos.
+* **Analogia de Feynman:** A **tomada de parede padrão de 3 pinos**. O eletrodoméstico (cliente) precisa apenas conhecer o formato dos pinos da tomada (a interface) para receber energia (220V/110V). O aparelho não sabe e não precisa saber se a energia foi gerada por uma usina hidrelétrica, solar, eólica ou nuclear.
+* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Uma interface bem projetada deve ser enxuta, clara e imune a alterações internas de tecnologia.
+
+---
+
+## 26. Implementação (*Implementation / Mecânica Interna*)
+
+A **Implementação** é o conjunto de código-fonte concreto, algoritmos, estruturas de dados internas (`arrays`, `dicionários`) e detalhes de infraestrutura que realizam as operações prometidas pela interface.
+
+* **Natureza:** É a **decisão de projeto volátil e privada** (o "como fazer") que deve ficar rigorosamente oculta sob o princípio de *Information Hiding*.
+* **Analogia de Feynman:** A **cozinha e os cozinheiros de um restaurante**. O cliente escolhe o prato pelo cardápio (a interface) e recebe a comida na mesa. O cliente não entra na cozinha para ver qual marca de panela, forno ou fogão os cozinheiros usam para preparar o prato (a implementação). Se o restaurante trocar o fogão a gás por fogão por indução, o cliente continua recebendo o mesmo prato sem perceber a mudança.
+* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** A implementação pode ser alterada, otimizada ou substituída integralmente sem que nenhuma linha do código cliente precise ser modificada.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
