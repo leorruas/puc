@@ -395,6 +395,18 @@ As **Convenções de Nomenclatura** são regras e padrões de estilo adotados pe
 
 ---
 
+## 34. Propriedade (*Property*)
+
+Uma **Propriedade (*Property*)** é um membro de primeira classe em linguagens modernas (como C# e Python) que atua como uma **máscara inteligente sobre o estado do objeto**, combinando a sintaxe limpa e direta de acesso a um campo (`objeto.Saldo = 100`) com a segurança, validação e encapsulamento de métodos (`get` e `set`).
+
+* **Natureza:** Funciona como um **par de métodos disfarçados (*Smart Field*)**. Internamente, o compilador traduz a propriedade em dois métodos executáveis (`get_Saldo()` e `set_Saldo(value)`), garantindo que nenhum acesso direto à memória ocorra.
+* **Analogia de Feynman:** O **interruptor com dimmer giratório inteligente na parede da sala**.
+  - Você apenas gira o botão para regular a luz de 0 a 100% com um gesto simples (sintaxe direta de campo).
+  - Por trás da parede plástica, há um circuito eletrônico moderno que impede sobrecargas elétricas, filtra ruídos e nunca permite que a voltagem exploda a lâmpada (a validação e lógica do `get`/`set`).
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Permite criar auto-properties (`{ get; set; }`), propriedades somente leitura (`{ get; }`), imutáveis na inicialização (`{ get; init; }`) e calculadas dinamicamente (`=> expressao`).
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
