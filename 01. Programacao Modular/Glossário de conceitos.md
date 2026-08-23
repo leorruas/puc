@@ -27,7 +27,7 @@ relacionados:
 
 ### 1. Estrutura básica e orientação a objetos (POO)
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
-* [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]]
+* [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -95,6 +95,7 @@ relacionados:
 | **41** | [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)\|DLL / *Assembly*]] | Unidade binária compilada reutilizável entre projetos. | O **pacote compilado de entrega** | `Dominio.dll`, Pacotes NuGet |
 | **42** | [[#42. Compilador Roslyn (.NET Compiler Platform)\|Compilador Roslyn]] | Compilador modular como serviço do .NET e C#. | O **motor analítico de código** | Análise estática, refatoração de IDE |
 | **43** | [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
+| **44** | [[#44. Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
 
 ---
 
@@ -560,6 +561,19 @@ O **Entity Framework (EF / EF Core)** é o principal framework de **Mapeamento O
   - O banco de dados fala a língua das *Tabelas SQL* (tabelas relacionais, linhas e colunas rígidas).
   - O **Entity Framework** é o diplomata que senta no meio da sala: ele ouve você pedir *"me dê todos os clientes de Minas Gerais"* em C# e traduz instantaneamente para SQL perfeito para o banco, trazendo as linhas e transformando-as em objetos prontos na memória.
 * **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Extensão de entidades geradas por ORM via classes parciais.
+
+---
+
+## 44. Subtipagem (*Subtyping / Subtype Polymorphism*)
+
+A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fundamental dos sistemas de tipos segundo a qual um tipo derivado $S$ (**subtipo**) pode ser utilizado em qualquer contexto que espere um tipo mais geral $T$ (**supertipo**), denotado formalmente como $S <: T$.
+
+* **Natureza teórica vs. prática:** Enquanto a **herança** é um mecanismo de implementação (reaproveitamento de código e estrutura), a **subtipagem** é uma **relação semântica de compatibilidade de tipos**: se uma função pede uma `ContaBancaria`, ela aceita receber uma `ContaPoupanca` ou `ContaCorrente` de forma transparente.
+* **A formalização do Princípio de Substituição de Liskov (LSP):** Formalizado por Barbara Liskov (1987), estabelece que qualquer propriedade demonstrável sobre objetos do supertipo $T$ deve continuar válida quando objetos de $T$ forem substituídos por instâncias do subtipo $S$.
+* **Analogia de Feynman:** O **plugue e a tomada padrão**.
+  - A tomada na parede é projetada para aceitar qualquer aparelho que cumpra o padrão de *Aparelho Elétrico 110V* (o supertipo).
+  - Você pode conectar uma furadeira, um liquidificador ou um carregador de celular (os subtipos). A tomada não precisa saber qual é o aparelho; ela apenas entrega energia com segurança porque todos são subtipos compatíveis com o contrato da tomada.
+* **Conexão direta ([[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15]]):** Compatibilidade de tipos, polimorfismo e Princípio de Substituição de Liskov.
 
 ---
 
