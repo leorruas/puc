@@ -265,6 +265,17 @@ Um **Buffer** é uma área temporária de memória RAM utilizada para reter e ag
 
 ---
 
+## 21. *Thread* (Linha de execução / Fluxo concorrente)
+
+Uma **`Thread`** (ou Linha de Execução) é a menor unidade de processamento que pode ser agendada e executada por um Sistema Operacional dentro de um processo. Enquanto processos possuem espaços de memória isolados, múltiplas *threads* dentro do mesmo processo compartilham a mesma memória *Heap*.
+
+* **Analogia de Feynman:** As **bocas do fogão de um restaurante**. O restaurante inteiro é o processo. Cada boca acesa cozinhando um prato diferente ao mesmo tempo é uma *thread*. O cozinheiro pode cortar legumes em uma boca enquanto a sopa ferve em outra, tudo dentro da mesma cozinha (mesma memória).
+* **Conexão com Garbage Collector e Destrutores ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):**
+  - O Garbage Collector roda em **threads de segundo plano (*background threads*)** para inspecionar a memória sem congelar a interface do usuário.
+  - O .NET mantém uma *thread* separada chamada **`Finalizer Thread`** encarregada exclusivamente de disparar os destrutores (`~Classe()`) dos objetos órfãos.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
