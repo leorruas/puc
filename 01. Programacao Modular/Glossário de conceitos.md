@@ -31,7 +31,7 @@ relacionados:
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
-* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]]
+* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#45. Problema do diamante (The Diamond Problem)|45. Problema do diamante]]
 
 ### 3. Memória, ciclo de vida e concorrência
 * [[#10. Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#11. Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#18. Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
@@ -96,6 +96,7 @@ relacionados:
 | **42** | [[#42. Compilador Roslyn (.NET Compiler Platform)\|Compilador Roslyn]] | Compilador modular como serviço do .NET e C#. | O **motor analítico de código** | Análise estática, refatoração de IDE |
 | **43** | [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
 | **44** | [[#44. Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
+| **45** | [[#45. Problema do diamante (The Diamond Problem)\|Problema do diamante]] | Ambiguidade fatal de herança múltipla de classes em grafo losango. | A **ordem contraditória dos pais** | `class D : B, C` com conflito de métodos |
 
 ---
 
@@ -574,6 +575,20 @@ A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fund
   - A tomada na parede é projetada para aceitar qualquer aparelho que cumpra o padrão de *Aparelho Elétrico 110V* (o supertipo).
   - Você pode conectar uma furadeira, um liquidificador ou um carregador de celular (os subtipos). A tomada não precisa saber qual é o aparelho; ela apenas entrega energia com segurança porque todos são subtipos compatíveis com o contrato da tomada.
 * **Conexão direta ([[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15]]):** Compatibilidade de tipos, polimorfismo e Princípio de Substituição de Liskov.
+
+---
+
+## 45. Problema do diamante (*The Diamond Problem*)
+
+O **Problema do Diamante** é uma anomalia e ambiguidade semântica clássica que ocorre em linguagens orientadas a objetos que suportam **herança múltipla de classes**. Ele se manifesta quando duas classes $B$ e $C$ herdam de uma mesma classe ancestral $A$, e uma quarta classe $D$ herda simultaneamente de $B$ e $C$. Se $B$ e $C$ sobrescreverem um método herdado de $A$, o compilador é incapaz de determinar qual das duas implementações a classe $D$ deve executar.
+
+* **A Solução de C# e Java:** Proibição estrita de herança múltipla para classes concretas. Permite-se apenas herança múltipla de **interfaces** (`interface`), onde não há código executável ou conflito de estado, forçando a classe filha a prover sua própria implementação sem ambiguidade.
+* **Analogia de Feynman:** A **ordem contraditória dos pais**.
+  - O avô ($A$) ensina que *"quando o alarme toca, deve-se agir"*.
+  - O pai ($B$) diz: *"quando o alarme tocar, apague as luzes"*.
+  - A mãe ($C$) diz: *"quando o alarme tocar, acenda todas as luzes"*.
+  - O filho ($D$), ao ouvir o alarme, fica paralisado em contradição (**ambiguidade fatal**).
+* **Conexão direta ([[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15]]):** Herança simples vs. múltipla e o design de interfaces.
 
 ---
 
