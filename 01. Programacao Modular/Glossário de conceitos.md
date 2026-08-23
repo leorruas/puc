@@ -354,6 +354,16 @@ A **Independência Funcional** é o critério de projeto que determina que cada 
 
 ---
 
+## 30. Regra prática ou heurística (*Rule of Thumb*)
+
+Uma **Regra Prática (*Rule of Thumb*)** é uma diretriz empírica, heurística ou princípio orientador baseado na experiência acumulada da engenharia de software que ajuda o desenvolvedor a tomar decisões arquiteturais rápidas e seguras sem precisar deduzir fórmulas matemáticas complexas.
+
+* **Natureza:** Não é uma lei rígida do compilador, mas sim uma **boa prática consolidada** que previne 95% dos erros arquiteturais mais comuns em sistemas orientados a objetos.
+* **Analogia de Feynman:** A **regra dos 3 segundos de distância entre carros na estrada**. Não há um radar fiscalizando se você está exatamente a 2,8s ou 3,1s do carro da frente, mas seguir essa regra prática garante tempo suficiente para frear com segurança em quase qualquer emergência.
+* **Conexão com Modificadores de Acesso ([[12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento)|Artigo 12]]):** A regra prática fundamental de visibilidade é: *"Atributos sempre `private`, métodos públicos apenas quando necessários para o contrato, e classes utilitárias como `internal`"*.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
