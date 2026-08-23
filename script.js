@@ -596,14 +596,42 @@ function gerarTableOfContents() {
     iniciarScrollSpy();
 }
 
-function scrollParaHeading(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
+function scrollParaHeading(idOuTexto) {
+    if (!idOuTexto) return;
     
+    const normalizar = (s) => s.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .trim();
+
+    const slug = normalizar(idOuTexto);
+    
+    // 1. Tenta buscar direto por ID exato ou ID em slug
+    let el = document.getElementById(idOuTexto) || document.getElementById(slug);
+    
+    // 2. Se não achar, procura entre todos os títulos do artigoCorpo
+    if (!el && artigoCorpo) {
+        const headings = artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6");
+        for (const h of headings) {
+            const hSlug = normalizar(h.textContent);
+            const hIdSlug = h.id ? normalizar(h.id) : "";
+            if (h.id === idOuTexto || h.id === slug || hSlug === slug || hIdSlug === slug || hSlug.includes(slug) || slug.includes(hSlug)) {
+                el = h;
+                break;
+            }
+        }
+    }
+
+    if (!el) {
+        console.warn("Seção não encontrada para rolagem:", idOuTexto);
+        return;
+    }
+
     // Altura do sticky nav compensada no scroll
     const stickyNav = document.getElementById("sticky-nav");
     const navOffset = stickyNav ? stickyNav.offsetHeight + 20 : 80;
-    
+
     const elementPosition = el.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
@@ -838,8 +866,21 @@ function abrirPastaPorNome(nomeCategoria) {
 function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
     if (!nomeOuCaminho) return;
 
-    // Se o link contiver âncora para uma seção (ex.: [[Nota#Seção]]), extrai apenas o arquivo
+    // Caso 1: Link interno para uma seção da página atual (ex.: [[#1. Tipo (Type)]] ou #secao)
+    if (nomeOuCaminho.startsWith("#")) {
+        const hashSecao = nomeOuCaminho.replace(/^#/, "").trim();
+        scrollParaHeading(hashSecao);
+        return;
+    }
+
+    // Caso 2: Link para outro artigo ou outro artigo com seção (ex.: [[OutroArtigo#Secao]])
     const [caminhoSemHash, hashSecao] = nomeOuCaminho.split("#");
+
+    // Se o caminho antes do # for vazio, é link de âncora interno
+    if (!caminhoSemHash || caminhoSemHash.trim() === "") {
+        if (hashSecao) scrollParaHeading(hashSecao.trim());
+        return;
+    }
 
     const normalizar = (str) => decodeURIComponent(decodeURI(str))
         .replace(/^\.\//, "")
@@ -852,7 +893,7 @@ function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
         .replace(/\s+/g, " ")
         .trim();
 
-    const limpo = normalizar(caminhoSemHash || nomeOuCaminho);
+    const limpo = normalizar(caminhoSemHash);
     const limpoApenasNome = limpo.split("/").pop();
 
     // Procura o artigo por correspondência exata de caminho, nome do arquivo ou título
@@ -877,15 +918,16 @@ function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
             setTimeout(() => {
-                const slug = hashSecao
-                    .toLowerCase()
-                    .replace(/[^\w\s-]/g, "")
-                    .replace(/\s+/g, "-");
-                scrollParaHeading(slug);
-            }, 100);
+                scrollParaHeading(hashSecao.trim());
+            }, 120);
         }
     } else {
-        console.warn("Artigo não encontrado para o link Obsidian:", nomeOuCaminho);
+        // Se não encontrou outro arquivo com esse nome, tenta rolar até a seção no artigo atual
+        if (hashSecao) {
+            scrollParaHeading(hashSecao.trim());
+        } else {
+            scrollParaHeading(nomeOuCaminho);
+        }
     }
 }
 
