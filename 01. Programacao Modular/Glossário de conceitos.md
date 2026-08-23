@@ -503,6 +503,20 @@ O **Roslyn** (nome oficial: *.NET Compiler Platform*) é o compilador oficial e 
 
 ---
 
+## 43. Mapeador objeto-relacional e Entity Framework (*ORM & Entity Framework*)
+
+O **Entity Framework (EF / EF Core)** é o principal framework de **Mapeamento Objeto-Relacional (ORM — *Object-Relational Mapping*)** do ecossistema .NET. Ele atua como uma ponte automática entre o mundo da **Orientação a Objetos na memória** (classes C#, objetos e coleções) e o mundo dos **Bancos de Dados Relacionais no disco** (tabelas SQL, linhas, colunas e chaves estrangeiras).
+
+* **Como elimina o atrito de impedância objeto-relacional:** Em vez de escrever comandos SQL manuais (`SELECT * FROM Clientes`), o desenvolvedor interage diretamente com classes C# fortemente tipadas (`banco.Clientes.Where(c => c.Ativo)`), e o Entity Framework traduz essas consultas para SQL otimizado nos bastidores.
+* **Conexão com *Partial Classes* (Geração automática de código / *Scaffolding*):** Ao fazer engenharia reversa de um banco de dados legado (*Database-First*), o Entity Framework gera automaticamente as classes de entidade com o modificador **`partial class`**. Isso permite que a ferramenta atualize as propriedades do banco sem sobrescrever os métodos de negócio que o programador escreveu na outra metade da classe!
+* **Analogia de Feynman:** O **tradutor diplomático simultâneo da ONU**.
+  - O desenvolvedor fala a língua dos *Objetos C#* (classes, atributos, métodos).
+  - O banco de dados fala a língua das *Tabelas SQL* (tabelas relacionais, linhas e colunas rígidas).
+  - O **Entity Framework** é o diplomata que senta no meio da sala: ele ouve você pedir *"me dê todos os clientes de Minas Gerais"* em C# e traduz instantaneamente para SQL perfeito para o banco, trazendo as linhas e transformando-as em objetos prontos na memória.
+* **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Extensão de entidades geradas por ORM via classes parciais.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
