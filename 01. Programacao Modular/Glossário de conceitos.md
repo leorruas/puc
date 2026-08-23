@@ -414,6 +414,10 @@ Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programm
 
 * **Aplicação em métodos de acesso e construtores:** Em vez de duplicar validações em 5 lugares diferentes (no construtor, no método de alteração e no setter), a lógica de validação de invariantes é centralizada **exclusivamente no bloco `set` da propriedade** ou em uma única sub-rotina de domínio.
 * **O perigo do oposto (WET - *Write Everything Twice / We Enjoy Typing*):** Quando a mesma regra de validação (ex.: `if (preco <= 0)`) é copiada em vários pontos, uma futura alteração de regra inevitavelmente esquecerá de atualizar uma das cópias, gerando bugs silenciosos e inconsistência de dados.
+* **Quando o DRY NÃO se aplica? (A armadilha da abstração prematura):**
+  1. **Duplicação acidental vs. duplicação real de conhecimento:** Se dois trechos de código têm a mesma aparência sintática hoje, mas pertencem a **domínios de negócio completamente diferentes** (ex.: a validação de formato de um `CpfCliente` e de um `CpfFornecedor` que evoluem com regras tributárias distintas), unificá-los à força gera **acoplamento perigoso**.
+  2. **Regra de Sandi Metz (*A duplicação é muito mais barata que a abstração errada*):** Criar uma classe genérica complexa com dezenas de `if/else` apenas para reaproveitar 3 linhas de código torna o sistema ilegível e rígido.
+  3. **Testes automatizados (*DAMP - Descriptive And Meaningful Phrases*):** Em testes unitários, ter um pouco de repetição deliberada de código de montagem de dados (*setup*) é preferível para manter o teste autoexplicativo e fácil de ler de ponta a ponta sem pular entre arquivos.
 * **Analogia de Feynman:** A **certidão de nascimento no cartório**. Quando você muda de nome ou corrige um dado civil, você atualiza a certidão no cartório central (representação única autoritativa). Você não sai imprimindo 50 papéis caseiros diferentes para espalhar pela cidade.
 * **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Centralização de validação de invariantes nos *setters* e propriedades calculadas.
 
