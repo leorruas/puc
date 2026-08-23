@@ -196,9 +196,9 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 ## 15. Membro estático (*Static Member*)
 
-Um **Membro Estático** é qualquer componente de uma classe (campo, método, propriedade, evento ou construtor) declarado com o modificador **`static`**, o que vincula sua existência, alocação de memória e execução diretamente ao **tipo/classe em si**, e **não a uma instância individual** criada no *Heap*.
+Um **membro estático (*Static Member*)** é definido formalmente como um componente de uma classe com **tempo de vida global** e **escopo local (delimitado à classe)**. São atributos ou métodos que são comuns a todos os objetos de uma classe. Quando declaramos um atributo ou método estático, ele passa a ser um **membro de classe**, sendo compartilhado por todos os objetos daquela classe.
 
-* **Definição Técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM).
+* **Definição Técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM). Ele permanece vivo durante toda a execução (*tempo de vida global*), mas sob as regras de encapsulamento da classe (*escopo local*).
 * **As 4 Formas de Membros Estáticos:**
   1. **Atributo Estático (*Static Field*):** Variável única compartilhada por todos os objetos (ex.: `private static int _contador;`).
   2. **Método Estático (*Static Method*):** Operação pura ou utilitária que não depende de estado de instância e não possui acesso ao ponteiro `this` (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
