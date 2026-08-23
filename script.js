@@ -222,6 +222,12 @@ function removerFrontmatter(markdown) {
     return markdown.replace(/^---[\s\S]*?---\s*/, "");
 }
 
+function removerPrimeiroH1(markdown) {
+    if (!markdown) return "";
+    // Remove o primeiro título H1 (# Título...) se houver, para evitar duplicação com o título do leitor
+    return markdown.replace(/^\s*#\s+[^\n]+(?:\r?\n)*/, "");
+}
+
 function extrairTrechoRelevante(conteudo, termo) {
     const conteudoSemFrontmatter = removerFrontmatter(conteudo);
     const textoLimpo = conteudoSemFrontmatter.replace(/==/g, '').replace(/[#*`_~\[\]]/g, ' ');
@@ -364,8 +370,9 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     renderizarBreadcrumbs(artigoAtual);
     renderizarBotoesNavegacao(artigoAtual);
     
-    // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter --- ... ---)
-    const markdownLimpo = removerFrontmatter(conteudoMarkdown);
+    // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter) e o primeiro H1 duplicado
+    const markdownSemFrontmatter = removerFrontmatter(conteudoMarkdown);
+    const markdownLimpo = removerPrimeiroH1(markdownSemFrontmatter);
 
     // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
     const markdownComHighlight = markdownLimpo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
