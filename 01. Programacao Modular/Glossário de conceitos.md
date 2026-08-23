@@ -276,6 +276,33 @@ Uma **`Thread`** (ou Linha de Execução) é a menor unidade de processamento qu
 
 ---
 
+## 22. Encapsulamento (*Encapsulation*)
+
+O **Encapsulamento** é o mecanismo fundamental da Orientação a Objetos que agrupa dados (atributos) e os comportamentos que operam sobre esses dados (métodos) dentro de uma mesma unidade lógica (a Classe), restringindo o acesso direto ao estado interno por meio de modificadores de visibilidade (`private`, `protected`, `public`).
+
+* **Analogia de Feynman:** Uma **cápsula de remédio**. Você não engole o pó químico solto (dados expostos); os compostos químicos ativos ficam selados e protegidos dentro da cápsula de gelatina. Você só interage com a cápsula ingerindo-a inteira (a interface pública).
+* **Conexão com Ocultação da Informação ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** O Encapsulamento é a **ferramenta de linguagem e mecanismo prático** que materializa o princípio arquitetural de *Information Hiding*.
+
+---
+
+## 23. Herança (*Inheritance*)
+
+A **Herança** é o mecanismo de reutilização e extensão estrutural em POO pelo qual uma nova classe (**classe derivada / subclasse**) adquire todos os atributos, métodos e propriedades de uma classe existente (**classe base / superclasse**), podendo adicionar novas funcionalidades ou especializar comportamentos existentes.
+
+* **Analogia de Feynman:** A **árvore genealógica biológica**. Um ser humano herda o código genético básico dos pais (olhos, coração, circulação sanguínea), mas pode desenvolver habilidades únicas (como tocar violino ou falar três línguas).
+* **Conexão com Ocultação da Informação ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Permite criar hierarquias onde as subclasses herdam contratos estáveis sem precisar reescrever a mecânica das classes ancestrais.
+
+---
+
+## 24. Polimorfismo (*Polymorphism*)
+
+O **Polimorfismo** (do grego *"muitas formas"*) é o princípio em POO que permite que objetos de diferentes classes derivadas sejam tratados uniformemente através da interface da sua classe base ou interface comum, executando comportamentos específicos e customizados em tempo de execução (*Dynamic Dispatch / Late Binding*).
+
+* **Analogia de Feynman:** O **botão de "Play" de um controle universal**. Seja você apontando o controle para um tocador de CD, um aplicativo do Spotify ou uma fita VHS, o comando enviado é o mesmo: *"Tocar"* (`Reproduzir()`). Cada aparelho sabe exatamente como reproduzir o som à sua maneira, sem que o controle precise entender a mecânica de lasers ou fitas magnéticas.
+* **Conexão com Ocultação da Informação ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** É o ápice da ocultação da informação: quem chama o método não sabe (e não precisa saber) qual tipo concreto de objeto está respondendo à mensagem, garantindo o menor acoplamento possível no sistema.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
