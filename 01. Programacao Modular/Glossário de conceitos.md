@@ -324,6 +324,16 @@ A **Implementação** é o conjunto de código-fonte concreto, algoritmos, estru
 
 ---
 
+## 27. Coesão (*Cohesion*)
+
+A **Coesão** é a medida do grau em que todos os atributos, métodos e responsabilidades dentro de um único módulo estão **fortemente relacionados, focados e alinhados a um único propósito conceitual**.
+
+* **Natureza:** É a força de união interna de um módulo. Em um módulo altamente coeso, cada linha de código contribui diretamente para a sua missão principal.
+* **Analogia de Feynman:** A **maleta cirúrgica de um médico** (alta coesão) em oposição à **gaveta de bagunça da cozinha** (baixa coesão). A maleta do médico contém apenas bisturis, pinças e gaze esterilizada (todos os itens trabalham juntos para a cirurgia). A gaveta da bagunça contém pilhas velhas, fita crepe, tesoura, chaves antigas e remédio vencido (itens sem nenhuma relação funcional entre si).
+* **Conexão direta ([[11. Princípio da ocultação da informação (information hiding e encapsulamento)|Artigo 11]]):** Um módulo com alta coesão esconde seus segredos com muito mais eficiência, pois tem uma fronteira conceitual clara e não sofre com responsabilidades misturadas.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
