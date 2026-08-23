@@ -423,6 +423,18 @@ Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programm
 
 ---
 
+## 36. Código boilerplate (*Boilerplate Code*)
+
+**Código *Boilerplate*** (literalmente "chapa de caldeira") refere-se a trechos de código padronizados, repetitivos e verbosos que precisam ser incluídos em vários lugares com pouca ou nenhuma alteração apenas para satisfazer as exigências de sintaxe ou cerimônias da linguagem de programação, sem agregar valor imediato à regra de negócio.
+
+* **Origem do termo:** Surgiu na indústria de impressão de jornais no século XIX. Os textos de colunas sindicais e anúncios repetitivos eram fundidos em placas de aço rígido (semelhantes às chapas usadas em caldeiras a vapor — *boiler plates*) e enviados aos jornais locais para serem carimbados diretamente na prensa sem precisar montar letra por letra a cada edição.
+* **Exemplo clássico em POO:** Em Java ou C++ tradicional, escrever 40 linhas de código apenas para declarar atributos privados e funções manuais `getCampo()` / `setCampo()` para 5 variáveis simples.
+* **A solução no C#:** O recurso de **propriedades autoimplementadas (`public string Nome { get; set; }`)** e de propriedades calculadas (`=>`) foi criado especificamente para **destruir o boilerplate**, reduzindo 10 linhas repetitivas para apenas 1 linha limpa.
+* **Analogia de Feynman:** O **contrato padrão de termos de uso de um aplicativo**. São 15 páginas de burocracia jurídica repetitiva que todo serviço precisa ter. O *boilerplate* é a papelada burocrática que a linguagem exige que você preencha antes de deixá-lo escrever a regra de negócio real.
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Propriedades autoimplementadas como eliminadoras de código cerimonial.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
