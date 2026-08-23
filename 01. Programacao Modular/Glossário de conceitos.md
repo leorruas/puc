@@ -364,6 +364,26 @@ Uma **Regra Prática (*Rule of Thumb*)** é uma diretriz empírica, heurística 
 
 ---
 
+## 31. Métodos de acesso ou getters (*Accessors / Getters*)
+
+Um **Método de Acesso (*Getter*)** é uma sub-rotina pública ou bloco de propriedade (`get`) cujo único objetivo é **recuperar e retornar o valor** de um atributo privado de um objeto sem expor a variável diretamente para manipulação externa.
+
+* **Natureza:** Operação de **somente leitura (*read-only*)** que garante transparência de consulta sem efeitos colaterais no estado do objeto.
+* **Analogia de Feynman:** A **janela de vidro blindado do museu**. Você consegue olhar para a joia rara, ver sua cor e tamanho com clareza (ler o valor), mas não consegue colocar as mãos no pedestal para pegar ou quebrar a joia.
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Em C#, pode ser escrito como método explícito `public decimal GetSaldo()` ou como propriedade `public decimal Saldo => _saldo;`.
+
+---
+
+## 32. Métodos modificadores ou setters (*Mutators / Setters*)
+
+Um **Método Modificador (*Setter*)** é uma sub-rotina pública ou bloco de propriedade (`set`) cujo objetivo é **atribuir ou alterar o valor** de um atributo privado, atuando como um filtro obrigatório de validação de regras de negócio e invariantes.
+
+* **Natureza:** Operação de **escrita controlada** que intercepta o novo dado recebido (`value`) e rejeita entradas ilegais (como saldos negativos, textos vazios ou idades impossíveis) antes de atualizar a memória.
+* **Analogia de Feynman:** O **leitor de notas com detector de cédulas falsas em uma máquina de autoatendimento**. Você insere uma cédula de R$ 50; a máquina confere a marca d'água, o tamanho e a autenticidade. Se a nota for falsa ou estiver rasgada, a máquina cospe a nota de volta e não altera o saldo da conta!
+* **Conexão direta ([[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)|Artigo 13]]):** Permite proteger o estado do objeto contra corrupção em tempo de execução via validações e disparo de exceções (`throw new ArgumentOutOfRangeException(...)`).
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
