@@ -212,6 +212,24 @@ Uma **Propriedade** é um membro de primeira classe em C# que fornece um mecanis
 
 ---
 
+## 17. Escopo (*Scope*)
+
+O **Escopo** é a região do código-fonte onde um determinado identificador (variável, parâmetro, atributo ou método) é **visível, acessível e válido**. Ele determina a **fronteira de visibilidade** e o **tempo de vida** dos dados na memória.
+
+* **Analogia de Feynman:** As **chaves de acesso de um prédio**:
+  - **Escopo de bloco (`{ }`):** A **chave do banheiro individual**. Só funciona dentro daquela cabine específica; ao sair dela, ninguém mais tem acesso.
+  - **Escopo de método (local / parâmetros):** O **cartão do crachá do seu departamento**. Permite transitar apenas dentro daquela sala durante o horário de trabalho (execução do método).
+  - **Escopo de instância (atributos de objeto):** A **sua mesa de trabalho pessoal**. Seus objetos pessoais ficam nela enquanto você for funcionário da empresa (enquanto a instância existir no *Heap*).
+  - **Escopo de classe (`static`):** O **hall de entrada principal e o relógio da recepção**. É único, compartilhado por todos os funcionários e visitantes do prédio, existindo enquanto o prédio estiver aberto (enquanto a aplicação estiver em execução).
+* **Níveis Fundamentais de Escopo:**
+  1. **Escopo de Bloco:** Variáveis declaradas dentro de `if`, `for` ou `while` que deixam de existir fora do par de chaves `{ }`.
+  2. **Escopo de Sub-rotina (Local):** Parâmetros e variáveis criados na *Stack* durante a chamada de um método.
+  3. **Escopo de Instância:** Atributos declarados no corpo da classe pertencentes a cada objeto individual no *Heap*.
+  4. **Escopo de Classe (`static`):** Membros globais compartilhados por todas as instâncias da classe.
+* **Conexão com Programação Modular ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** O correto isolamento de escopo previne efeitos colaterais indesejados (*Side Effects*) e é a base para o baixo acoplamento e alto encapsulamento.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
