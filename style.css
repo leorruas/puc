@@ -229,6 +229,35 @@ button:hover {
     letter-spacing: 0.6px;
 }
 
+.toc-filter-container {
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+#toc-filter-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent-blue-alpha-30);
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 0.55em;
+    color: #ffffff;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+#toc-filter-input:focus {
+    border-color: var(--accent-blue);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#toc-filter-input::placeholder {
+    color: #666666;
+    text-transform: lowercase;
+}
+
 .toc-list {
     list-style: none !important;
     padding-left: 0 !important;
