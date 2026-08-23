@@ -384,6 +384,17 @@ Um **Método Modificador (*Setter*)** é uma sub-rotina pública ou bloco de pro
 
 ---
 
+## 33. Convenções de nomenclatura (*Naming Conventions: camelCase e PascalCase*)
+
+As **Convenções de Nomenclatura** são regras e padrões de estilo adotados pela comunidade e fabricantes de linguagens para formatar os nomes de identificadores no código (classes, métodos, variáveis, parâmetros e propriedades).
+
+* **`camelCase` (A corcunda do camelo):** A primeira palavra inicia em minúscula e cada palavra subsequente inicia com maiúscula (ex.: `saldoInicial`, `calcularDesconto`, `numeroConta`). Usado em C# para **variáveis locais e parâmetros de métodos**. Em Java/JavaScript, é usado também para **métodos e funções**.
+* **`PascalCase` (Capitalização de todas as palavras):** Todas as palavras iniciam com letra maiúscula (ex.: `ContaBancaria`, `CalcularTotal`, `DataNascimento`). Usado em C# para **nomes de classes, métodos, propriedades e interfaces (`I...`)**.
+* **Prefixo `_underline` (*Backing Fields*):** Convenção em C# para **atributos privados de instância** (ex.: `private decimal _saldo;`, `private int _quantidade;`), permitindo distingui-los instantaneamente de parâmetros e propriedades sem ambiguidade.
+* **Analogia de Feynman:** O **uniforme de uma equipe esportiva**. Quando você olha para o campo de futebol, sabe imediatamente quem é o goleiro (camisa diferente) e quem é jogador de linha. As convenções de nomenclatura permitem que qualquer programador olhe para um identificador e saiba instantaneamente se ele é uma variável local, um parâmetro, um atributo privado ou uma propriedade pública.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
