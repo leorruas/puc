@@ -255,6 +255,16 @@ O padrão **`IDisposable`** é a interface oficial do ecossistema .NET para **li
 
 ---
 
+## 20. Buffer e descarregamento de dados (*Buffer & Flush*)
+
+Um **Buffer** é uma área temporária de memória RAM utilizada para reter e agrupar dados durante operações de entrada e saída (E/S - *Input/Output*), evitando o custo excessivo de acessar dispositivos físicos lentos (como disco rígido ou rede) a cada caractere individual.
+
+* **O Comando `Flush`:** É a operação de **esvaziamento forçado**, que pega todos os bytes acumulados no buffer da memória RAM e os grava imediatamente no destino físico permanente (o HD ou o socket de rede).
+* **Analogia de Feynman:** A **caixa de correspondências da recepção**. As cartas vão sendo guardadas na caixa. Se você fechar a empresa sem que o carteiro faça o recolhimento (*Flush*), as cartas ficam retidas ou são perdidas.
+* **Conexão com Destrutores e `Dispose` ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):** Métodos de encerramento (`Dispose`, `Close` ou destrutores) executam o `Flush()` obrigatório antes de desalocar a memória, garantindo que nenhum arquivo salvo fique pela metade ou corrompido.
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
