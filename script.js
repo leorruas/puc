@@ -367,7 +367,7 @@ function normalizarListasObsidian(md) {
 function protegerPipesObsidian(md) {
     if (!md) return "";
     return md.replace(/\[\[([^\]]+)\]\]/g, (match, conteudoInterno) => {
-        const protegido = conteudoInterno.replace(/\\?\|/g, "___OBSIDIAN_PIPE___");
+        const protegido = conteudoInterno.replace(/\\?\|/g, "%%OBSIDIANPIPE%%");
         return "[[" + protegido + "]]";
     });
 }
@@ -649,18 +649,30 @@ function processarLinksObsidian() {
     const htmlAtual = artigoCorpo.innerHTML;
     const regexObsidian = /\[\[([^\n\]]+)\]\]/g;
 
-    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, conteudo) => {
+    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, conteudoBruto) => {
+        // Normaliza qualquer resquício de placeholders ou tags intermediárias
+        let conteudo = conteudoBruto
+            .replace(/<[^>]+>OBSIDIAN_PIPE<[^>]+>/g, "%%OBSIDIANPIPE%%")
+            .replace(/___OBSIDIAN_PIPE___/g, "%%OBSIDIANPIPE%%");
+
         let caminho = "";
         let textoExibicao = "";
 
-        if (conteudo.includes("___OBSIDIAN_PIPE___")) {
-            const partes = conteudo.split("___OBSIDIAN_PIPE___");
+        if (conteudo.includes("%%OBSIDIANPIPE%%")) {
+            const partes = conteudo.split("%%OBSIDIANPIPE%%");
+            caminho = partes[0].trim();
+            textoExibicao = partes[1].trim();
+        } else if (conteudo.includes("|")) {
+            const partes = conteudo.split("|");
             caminho = partes[0].trim();
             textoExibicao = partes[1].trim();
         } else {
             caminho = conteudo.trim();
             textoExibicao = conteudo.trim();
         }
+
+        // Remove tags HTML indesejadas do caminho de destino
+        caminho = caminho.replace(/<[^>]+>/g, "").trim();
 
         return `<a class="obsidian-link" data-destino="${caminho}">${textoExibicao}</a>`;
     });
