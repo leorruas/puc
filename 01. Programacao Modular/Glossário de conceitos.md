@@ -479,6 +479,17 @@ Uma **Classe Parcial (*Partial Class*)** é um recurso de linguagem que permite 
 
 ---
 
+## 41. Biblioteca de vínculo dinâmico (*Dynamic Link Library - DLL / Assembly*)
+
+Uma **DLL (*Dynamic Link Library* — Biblioteca de Vínculo Dinâmico)**, conhecida no ecossistema .NET como um **Assembly gerenciado (`.dll`)**, é um pacote de código executável compilado (em formato IL / Intermediate Language) que contém classes, tipos, namespaces e recursos que podem ser **compartilhados e carregados dinamicamente na memória por múltiplos programas simultaneamente**.
+
+* **Diferença entre EXE e DLL:** Um arquivo `.exe` (*Executable*) possui um ponto de entrada principal (`Main()`) e pode ser executado diretamente pelo usuário. Um arquivo `.dll` não roda sozinho: ele funciona como uma **biblioteca de serviços modulares** pronta para ser consumida e invocada por outros executáveis ou projetos.
+* **Diferença entre Namespace e DLL:** Um **Namespace** é uma fronteira puramente **lógica e semântica** no código-fonte para organizar nomes (como pastas conceituais). Uma **DLL** é o contêiner **físico e binário no disco** gerado pela compilação de um projeto (*Class Library*). Uma única DLL pode conter vários namespaces, e um mesmo namespace pode ser estendido por múltiplas DLLs!
+* **Analogia de Feynman:** A **caixa de ferramentas modular ou cartucho de videogame**. O programa principal (`.exe`) é o console ligado na tomada; a DLL é o cartucho ou o conjunto de ferramentas especializadas que você conecta nele quando precisa de funcionalidades extras (como processamento de boletos bancários ou geração de PDFs), sem precisar reconstruir o console do zero.
+* **Conexão direta ([[14. Namespaces e partial classes (espaços de nomes e modularização em larga escala)|Artigo 14]]):** Unidades físicas de distribuição (*assemblies*) vs. unidades lógicas de organização (*namespaces*).
+
+---
+
 ## Analogia do mundo real
 
 Para fixar a diferença de forma intuitiva:
