@@ -23,11 +23,10 @@ relacionados:
 
 ---
 
-## Índice temático por eixos de conhecimento
-
-### 1. Estrutura básica e orientação a objetos (POO)
+## Índice temático ### 1. Estrutura básica e orientação a objetos (POO)
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
+* [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -97,6 +96,10 @@ relacionados:
 | **43** | [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
 | **44** | [[#44. Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
 | **45** | [[#45. Problema do diamante (The Diamond Problem)\|Problema do diamante]] | Ambiguidade fatal de herança múltipla de classes em grafo losango. | A **ordem contraditória dos pais** | `class D : B, C` com conflito de métodos |
+| **46** | [[#46. Método virtual (Virtual Method)\|Método virtual (`virtual`)]] | Método que autoriza e convida subclasses a redefinirem seu comportamento. | A **abertura de contrato extensível** | `public virtual void Sacar()` |
+| **47** | [[#47. Sobrescrita de método (Method Overriding / Override)\|Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
+| **48** | [[#48. Palavra-chave base (Base Keyword)\|Palavra-chave `base`]] | Referência direta aos construtores e métodos da superclasse imediata. | O **acesso à linhagem ancestral** | `: base(...)`, `base.Sacar()` |
+| **49** | [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
 
 ---
 
@@ -589,6 +592,51 @@ O **Problema do Diamante** é uma anomalia e ambiguidade semântica clássica qu
   - A mãe ($C$) diz: *"quando o alarme tocar, acenda todas as luzes"*.
   - O filho ($D$), ao ouvir o alarme, fica paralisado em contradição (**ambiguidade fatal**).
 * **Conexão direta ([[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15]]):** Herança simples vs. múltipla e o design de interfaces.
+
+---
+
+## 46. Método virtual (*Virtual Method*)
+
+Um **método virtual** é uma operação declarada na classe base com o modificador **`virtual`**, concedendo autorização e permissão explícita para que qualquer classe derivada redefina ou especifique o seu comportamento em tempo de execução via polimorfismo dinâmico.
+
+* **Importância arquitetural:** Em C#, métodos são não-virtuais por padrão (resolução estática e direta em tempo de compilação). O modificador `virtual` instrui o compilador a criar uma entrada na tabela de métodos virtuais (*vtable*), permitindo extensibilidade controlada sem quebrar o código cliente.
+* **Analogia de Feynman:** A **tomada universal de parede**. A construtora entrega a tomada padrão com uma voltagem e corrente definidas (a implementação virtual padrão), mas deixa você plugar uma lâmpada, uma TV ou um computador (as subclasses), permitindo que cada aparelho reaja à energia à sua própria maneira.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Abertura de contratos polimórficos e Princípio Aberto/Fechado (OCP).
+
+---
+
+## 47. Sobrescrita de método (*Method Overriding / Override*)
+
+A **sobrescrita de método** é o mecanismo pelo qual uma subclasse fornece uma implementação especializada para um método herdado da superclasse utilizando a palavra-chave **`override`**.
+
+* **Importância arquitetural:** A sobrescrita substitui o ponteiro de execução na *vtable* do objeto. Quando o método é acionado através de uma variável de referência da classe pai (`Animal a = new Cachorro(); a.EmitirSom()`), o *runtime* executa a versão da classe filha, materializando o **despacho dinâmico (*dynamic dispatch*)**.
+* **Diferença fundamental com `new` (Ocultação):** Enquanto `override` participa do polimorfismo dinâmico e executa o filho mesmo através de referências do pai, a palavra-chave `new` apenas oculta o método ancestral e executa o pai se a referência for da superclasse.
+* **Analogia de Feynman:** O **reaproveitamento da receita de família com toque gourmet**. A receita base ensina a assar um bolo simples. O confeiteiro especializado mantém o mesmo nome do bolo no cardápio (`override`), mas adiciona calda de pistache e frutas frescas, entregando uma experiência refinada quando o cliente pede aquele prato.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Polimorfismo de inclusão e especialização comportamental.
+
+---
+
+## 48. Palavra-chave base (*Base Keyword*)
+
+A palavra-chave **`base`** no C# é uma referência explícita aos membros da **superclasse imediata (classe pai)** a partir do interior de uma subclasse (equivalente ao `super` em Java e Python).
+
+* **Usos fundamentais:**
+  1. **Inicialização ancestral em construtores:** `: base(...)` aciona o construtor da superclasse antes do corpo da classe filha executar, garantindo a integridade e as invariantes da base.
+  2. **Reaproveitamento de comportamento em métodos:** `base.NomeDoMetodo()` executa a lógica da superclasse a partir de um método sobrescrito com `override`, permitindo estender a rotina pai sem duplicar código.
+* **Analogia de Feynman:** O **telefonema para o mestre artesão**. O aprendiz sabe fazer o acabamento especial, mas para a estrutura básica ele liga para o mestre (`base.ConstruirEstrutura()`), garantindo que os alicerces fiquem perfeitos antes de aplicar sua própria arte.
+* **Conexões diretas:** [[16. Construtores em classes filhas (ordem de inicialização e a cláusula base)|Artigo 16 (Construtores)]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Métodos)]].
+
+---
+
+## 49. Modificador new e ocultação de membro (*Member Shadowing / New Modifier*)
+
+O modificador **`new`** aplicado a um membro (método, propriedade ou campo) de uma classe filha indica explicitamente ao compilador que aquele membro está **ocultando (*shadowing*)** intencionalmente um membro de mesmo nome da superclasse, sem substituí-lo na tabela virtual (*vtable*).
+
+* **Diferença crítica com `override`:**
+  - `override` participa do polimorfismo dinâmico: se a chamada for feita por uma referência do pai (`Pai p = new Filho(); p.Metodo()`), executa o método do **Filho**.
+  - `new` é estático e **não polimórfico**: se a chamada for feita por uma referência do pai (`Pai p = new Filho(); p.Metodo()`), executa o método do **Pai**, pois o método do filho foi apenas "escondido".
+* **Analogia de Feynman:** O **cartaz sobreposto no mural**. O mural do pai tem um aviso antigo. O filho cola um cartaz novo por cima (`new`). Quem olha de frente para o filho vê o cartaz novo, mas quem olha pelo cadastro oficial do pai ainda lê o aviso antigo original.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** `override` vs. `new` e perigos do *shadowing*.
 
 ---
 
