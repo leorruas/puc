@@ -28,7 +28,7 @@ relacionados:
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
-* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]]
+* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -108,6 +108,7 @@ relacionados:
 | **53** | [[#53. Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
 | **54** | [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
 | **55** | [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)\|Polimorfismo dinâmico vs. estático]] | Dicotomia entre resolução em tempo de compilação (*early binding*) vs. execução (*late binding*). | A **decisão antecipada vs. tardia** | Sobrecarga vs. `virtual`/`override` |
+| **56** | [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)\|Superclasse vs. interface]] | Contraste entre herança rígida ("é um" + estado) e implementação de contratos ("capaz de" sem estado). | A **árvore genealógica vs. habilitação** | `class B : A` vs. `class B : IContrato` |
 
 ---
 
@@ -715,6 +716,24 @@ A dicotomia entre **polimorfismo dinâmico** e **polimorfismo estático** define
   - *Estático:* O **cardápio de código de barras**. O atendente bipa o produto no caixa e o valor é buscado imediatamente no catálogo pré-gravado.
   - *Dinâmico:* O **músico de jazz na jam session**. A partitura diz apenas *"solo no compasso 12"* (o método base); se for a vez do saxofonista ou do pianista, cada um improvisará ao vivo a sua própria melodia especializada (`override`).
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Taxonomia e anatomia da sobreposição de métodos.
+
+---
+
+## 56. Superclasse vs. interface (*Superclass vs. Interface / Inheritance vs. Interface*)
+
+A distinção entre herdar de uma **superclasse (classe base)** e implementar uma **interface (`interface`)** é um dos eixos arquiteturais mais importantes da POO e da programação modular:
+
+| Critério | Superclasse / Herança de classe (`class Base`) | Interface / Contrato puro (`interface IContrato`) |
+| :--- | :--- | :--- |
+| **Relação semântica** | Relação de identidade rígida: **"É um" (*is-a*)**. | Relação de capacidade ou papel: **"Comporta-se como / É capaz de" (*can-do*)**. |
+| **Compartilhamento de código e estado** | **Sim.** Herda campos (`private`/`protected`), propriedades e lógica de métodos concretos da base. | **Não.** Define apenas assinaturas públicas sem estado (sem campos ou atributos de instância). |
+| **Multiplicidade em C# / Java** | **Herança simples:** Uma classe só pode herdar de **uma única** superclasse. | **Múltipla:** Uma classe pode implementar **múltiplas interfaces** simultaneamente sem conflito. |
+| **Construtores e ciclo de vida** | Possui construtores e exige encadeamento com `: base(...)`. | Não possui construtores nem alocação direta de memória. |
+| **Grau de acoplamento** | **Alto acoplamento:** Subclasses ficam amarradas à estrutura e ao ciclo de vida da classe pai. | **Baixíssimo acoplamento:** Desacopla o código cliente de qualquer hierarquia concreta. |
+| **Quando utilizar?** | Quando há um parentesco taxonômico real e reaproveitamento indispensável de estado e código comum. | Quando classes não relacionadas precisam compartilhar um comportamento padrão (ex.: `IImprimivel`, `IDisposable`). |
+| **Analogia de Feynman** | **A árvore genealógica biológica:** Um *Cachorro* é um *Mamífero* (herda sangue quente, coração e esqueleto). | **O contrato profissional ou habilitação:** Um *Cachorro*, um *Humano* e um *Golfinho* podem ter a certificação de *Salva-Vidas* (`ISalvaVidas`). |
+
+* **Conexões diretas:** [[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15 (Herança)]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Polimorfismo)]].
 
 ---
 
