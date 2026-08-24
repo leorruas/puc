@@ -29,7 +29,7 @@ relacionados:
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
-* [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]]
+* [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -112,6 +112,7 @@ relacionados:
 | **56** | [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)\|Superclasse vs. interface]] | Contraste entre herança rígida ("é um" + estado) e implementação de contratos ("capaz de" sem estado). | A **árvore genealógica vs. habilitação** | `class B : A` vs. `class B : IContrato` |
 | **57** | [[#57. Classe abstrata (Abstract Class)\|Classe abstrata (`abstract`)]] | Superclasse incompleta que proíbe instanciação direta (`new`) e serve de molde comum. | O **molde de chassi sem lataria** | `public abstract class Forma` |
 | **58** | [[#58. Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
+| **59** | [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
 
 ---
 
@@ -757,6 +758,19 @@ Um **método abstrato** é uma assinatura de operação declarada com o modifica
 * **Obrigação contratual:** Representa uma promessa inegociável: toda subclasse concreta que herdar da classe abstrata **é forçada pelo compilador a fornecer a implementação com `override`**, sob pena de erro de compilação.
 * **Analogia de Feynman:** A **cláusula de formulário em branco obrigatória**. No contrato de aluguel há um campo assinalado em vermelho dizendo: *"Preencha aqui como você pagará o aluguel (Boleto, Cartão ou PIX)"*. O contrato não assina por você, mas se você deixar em branco, o cartório recusa o registro.
 * **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17]].
+
+---
+
+## 59. Palavra-chave abstract (*Abstract Keyword / Modificador abstract*)
+
+A **palavra-chave `abstract`** é um modificador de linguagem reservado no C#, Java e C++ utilizado para indicar que uma entidade (classe, método, propriedade ou indexador) possui uma **definição incompleta por projeto** e serve exclusivamente como contrato para derivação em tempo de compilação.
+
+* **Regras de aplicação do modificador:**
+  1. **Em classes (`abstract class`):** Proíbe o operador de instanciação direta `new` e autoriza a declaração de membros abstratos em seu interior.
+  2. **Em métodos (`abstract void Metodo()`):** Impõe a ausência de corpo `{ ... }` e obriga a utilização de `override` em subclasses concretas. Um método abstrato só pode existir dentro de uma classe explicitamente marcada como `abstract`.
+  3. **Incompatibilidade:** Não pode ser combinada com `static`, `virtual` ou `sealed`, pois `abstract` exige herança e sobreposição dinâmica obrigatória.
+* **Analogia de Feynman:** A **etiqueta "Rascunho de Engenharia"**. Qualquer documento carimbado com essa etiqueta tem validade jurídica para guiar os operários da fábrica, mas a fiscalização proíbe colocar a peça na prateleira de vendas até que o projeto receba a assinatura definitiva da versão final (`override`).
+* **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade)|Guia de Sintaxe 11]].
 
 ---
 
