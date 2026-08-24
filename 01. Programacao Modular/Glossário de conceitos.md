@@ -29,6 +29,7 @@ relacionados:
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
+* [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -109,6 +110,8 @@ relacionados:
 | **54** | [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
 | **55** | [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)\|Polimorfismo dinâmico vs. estático]] | Dicotomia entre resolução em tempo de compilação (*early binding*) vs. execução (*late binding*). | A **decisão antecipada vs. tardia** | Sobrecarga vs. `virtual`/`override` |
 | **56** | [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)\|Superclasse vs. interface]] | Contraste entre herança rígida ("é um" + estado) e implementação de contratos ("capaz de" sem estado). | A **árvore genealógica vs. habilitação** | `class B : A` vs. `class B : IContrato` |
+| **57** | [[#57. Classe abstrata (Abstract Class)\|Classe abstrata (`abstract`)]] | Superclasse incompleta que proíbe instanciação direta (`new`) e serve de molde comum. | O **molde de chassi sem lataria** | `public abstract class Forma` |
+| **58** | [[#58. Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
 
 ---
 
@@ -734,6 +737,26 @@ A distinção entre herdar de uma **superclasse (classe base)** e implementar um
 | **Analogia de Feynman** | **A árvore genealógica biológica:** Um *Cachorro* é um *Mamífero* (herda sangue quente, coração e esqueleto). | **O contrato profissional ou habilitação:** Um *Cachorro*, um *Humano* e um *Golfinho* podem ter a certificação de *Salva-Vidas* (`ISalvaVidas`). |
 
 * **Conexões diretas:** [[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15 (Herança)]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Polimorfismo)]].
+
+---
+
+## 57. Classe abstrata (*Abstract Class*)
+
+Uma **classe abstrata** é uma superclasse declarada com o modificador `abstract` que serve como molde conceitual incompleto, definindo estado comum e contratos arquiteturais para uma família de subclasses, mas cuja **instanciação direta com `new` é estritamente proibida pelo compilador**.
+
+* **Papel arquitetural:** Centraliza atributos encapsulados, construtores encadeados (`: base(...)`) e rotinas concretas compartilhadas (como no padrão *Template Method*), exigindo que subclasses herdem e implementem suas lacunas operacionais.
+* **Analogia de Feynman:** O **molde de chassi automotivo de fábrica**. Ninguém compra um "molde vazio de chassi" na loja; o molde existe exclusivamente na linha de montagem para ser completado como um *Carro*, uma *Moto* ou um *Caminhão*.
+* **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18]] e [[00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade)|Guia de Sintaxe 11]].
+
+---
+
+## 58. Método abstrato (*Abstract Method*)
+
+Um **método abstrato** é uma assinatura de operação declarada com o modificador `abstract` dentro de uma classe abstrata que **não possui corpo nem implementação `{ ... }`**, terminando com ponto-e-vírgula (`;`).
+
+* **Obrigação contratual:** Representa uma promessa inegociável: toda subclasse concreta que herdar da classe abstrata **é forçada pelo compilador a fornecer a implementação com `override`**, sob pena de erro de compilação.
+* **Analogia de Feynman:** A **cláusula de formulário em branco obrigatória**. No contrato de aluguel há um campo assinalado em vermelho dizendo: *"Preencha aqui como você pagará o aluguel (Boleto, Cartão ou PIX)"*. O contrato não assina por você, mas se você deixar em branco, o cartório recusa o registro.
+* **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17]].
 
 ---
 
