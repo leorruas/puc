@@ -544,9 +544,6 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     gerarTableOfContents();
 
     leitorDeArtigo.classList.remove("escondido");
-    
-    // Atualiza visibilidade dos controles de TOC
-    atualizarControlesTOC(true);
 
     // Garante que a transição reposicione a leitura no topo exato da tela (scroll 0, 0)
     rolarAoTopo();
