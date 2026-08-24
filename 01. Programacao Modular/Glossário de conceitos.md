@@ -26,7 +26,7 @@ relacionados:
 ## Índice temático ### 1. Estrutura básica e orientação a objetos (POO)
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
-* [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
+* [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobreposição e sobrescrita de método (Method Overriding / Override)|47. Sobreposição e sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
@@ -100,7 +100,7 @@ relacionados:
 | **44** | [[#44. Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
 | **45** | [[#45. Problema do diamante (The Diamond Problem)\|Problema do diamante]] | Ambiguidade fatal de herança múltipla de classes em grafo losango. | A **ordem contraditória dos pais** | `class D : B, C` com conflito de métodos |
 | **46** | [[#46. Método virtual (Virtual Method)\|Método virtual (`virtual`)]] | Método que autoriza e convida subclasses a redefinirem seu comportamento. | A **abertura de contrato extensível** | `public virtual void Sacar()` |
-| **47** | [[#47. Sobrescrita de método (Method Overriding / Override)\|Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
+| **47** | [[#47. Sobreposição e sobrescrita de método (Method Overriding / Override)\|Sobreposição / Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
 | **48** | [[#48. Palavra-chave base (Base Keyword)\|Palavra-chave `base`]] | Referência direta aos construtores e métodos da superclasse imediata. | O **acesso à linhagem ancestral** | `: base(...)`, `base.Sacar()` |
 | **49** | [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
 | **50** | [[#50. Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
@@ -618,14 +618,15 @@ Um **método virtual** é uma operação declarada na classe base com o modifica
 
 ---
 
-## 47. Sobrescrita de método (*Method Overriding / Override*)
+## 47. Sobreposição e sobrescrita de método (*Method Overriding / Override*)
 
-A **sobrescrita de método** é o mecanismo pelo qual uma subclasse fornece uma implementação especializada para um método herdado da superclasse utilizando a palavra-chave **`override`**.
+A **sobreposição de método** (sinônimo formal de **sobrescrita de método** ou *method overriding*) é o mecanismo fundamental do polimorfismo de subtipagem pelo qual uma subclasse substitui ou redefine a implementação de um método virtual ou abstrato herdado da superclasse utilizando a palavra-chave **`override`**.
 
-* **Importância arquitetural:** A sobrescrita substitui o ponteiro de execução na *vtable* do objeto. Quando o método é acionado através de uma variável de referência da classe pai (`Animal a = new Cachorro(); a.EmitirSom()`), o *runtime* executa a versão da classe filha, materializando o **despacho dinâmico (*dynamic dispatch*)**.
-* **Diferença fundamental com `new` (ocultação):** Enquanto `override` participa do polimorfismo dinâmico e executa o filho mesmo através de referências do pai, a palavra-chave `new` apenas oculta o método ancestral e executa o pai se a referência for da superclasse.
+* **Importância arquitetural:** A sobreposição redireciona o ponteiro da tabela de métodos virtuais (*vtable*) do objeto. Quando o método é acionado através de uma referência da classe base (`FormaGeometrica f = new Circulo(); f.CalcularArea()`), o *runtime* executa a versão da classe concreta via **despacho dinâmico (*dynamic dispatch*)**.
+* **Diferença fundamental com `new` (ocultação):** Enquanto a **sobreposição (`override`)** participa do polimorfismo dinâmico e executa a subclasse mesmo através de referências ancestrais, a **ocultação (`new`)** quebra o polimorfismo e executa a superclasse caso a variável seja do tipo base.
+* **Diferença com sobrecarga (*overloading*):** A sobrecarga ocorre na mesma classe com parâmetros diferentes (resolvida na compilação / *early binding*); a sobreposição ocorre entre classes em hierarquia com a mesma assinatura (resolvida na execução / *late binding*).
 * **Analogia de Feynman:** O **reaproveitamento da receita de família com toque gourmet**. A receita base ensina a assar um bolo simples. O confeiteiro especializado mantém o mesmo nome do bolo no cardápio (`override`), mas adiciona calda de pistache e frutas frescas, entregando uma experiência refinada quando o cliente pede aquele prato.
-* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Polimorfismo de inclusão e especialização comportamental.
+* **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Sobreposição)]] e [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Métodos abstratos)]].
 
 ---
 
