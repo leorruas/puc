@@ -537,6 +537,9 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
         }, 100);
     }
 
+    // Configura a funcionalidade de cópia ao clicar em tags <code> e blocos <pre>
+    configurarCopiaDeCodigo();
+
     // Gera a Table of Contents (TOC) a partir dos cabeçalhos h2, h3, h4 do artigo
     gerarTableOfContents();
 
@@ -550,6 +553,96 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     requestAnimationFrame(() => rolarAoTopo());
     setTimeout(rolarAoTopo, 50);
     setTimeout(rolarAoTopo, 150);
+}
+
+function configurarCopiaDeCodigo() {
+    // 1. Configura cópia com 1 clique em qualquer trecho inline <code>
+    const inlineCodes = artigoCorpo.querySelectorAll('code');
+    inlineCodes.forEach(code => {
+        // Se estiver dentro de um bloco <pre>, a cópia é gerenciada pelo botão do bloco
+        if (code.closest('pre')) return;
+
+        code.setAttribute('title', 'clique para copiar');
+        code.classList.add('code-copiavel');
+
+        code.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const texto = code.innerText.trim();
+            if (!texto) return;
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(texto);
+                } else {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = texto;
+                    textArea.style.position = 'fixed';
+                    textArea.style.opacity = '0';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                }
+
+                code.classList.add('code-copiado');
+                setTimeout(() => {
+                    code.classList.remove('code-copiado');
+                }, 1400);
+            } catch (err) {
+                console.error('Falha ao copiar texto do code:', err);
+            }
+        });
+    });
+
+    // 2. Configura botão de cópia rápida em blocos de código multilinhas <pre>
+    const blocosPre = artigoCorpo.querySelectorAll('pre');
+    blocosPre.forEach(pre => {
+        if (pre.classList.contains('mermaid') || pre.querySelector('.btn-copiar-codigo')) return;
+
+        const btnCopiar = document.createElement('button');
+        btnCopiar.className = 'btn-copiar-codigo';
+        btnCopiar.type = 'button';
+        btnCopiar.setAttribute('aria-label', 'copiar código');
+        btnCopiar.textContent = 'copiar';
+
+        btnCopiar.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const codeEl = pre.querySelector('code');
+            const textoParaCopiar = (codeEl ? codeEl.innerText : pre.innerText).replace(/copiar|copiado!/g, '').trim();
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(textoParaCopiar);
+                } else {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = textoParaCopiar;
+                    textArea.style.position = 'fixed';
+                    textArea.style.opacity = '0';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                }
+
+                btnCopiar.textContent = 'copiado!';
+                btnCopiar.classList.add('copiado');
+                setTimeout(() => {
+                    btnCopiar.textContent = 'copiar';
+                    btnCopiar.classList.remove('copiado');
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar código:', err);
+                btnCopiar.textContent = 'erro';
+                setTimeout(() => {
+                    btnCopiar.textContent = 'copiar';
+                }, 2000);
+            }
+        });
+
+        pre.appendChild(btnCopiar);
+    });
 }
 
 function rolarAoTopo() {
