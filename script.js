@@ -310,8 +310,9 @@ function exibirResultados(artigos, termo = "") {
         subCardsContainer.className = "cards-container";
 
         grupos[categoria].forEach(artigo => {
-            const card = document.createElement("div");
+            const card = document.createElement("a");
             card.className = "card";
+            card.href = obterRotaArtigo(artigo);
 
             const tag = document.createElement("span");
             tag.className = "card-tag";
@@ -329,7 +330,9 @@ function exibirResultados(artigos, termo = "") {
             card.appendChild(h2);
             card.appendChild(p);
 
-            card.addEventListener("click", () => {
+            card.addEventListener("click", (e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+                e.preventDefault();
                 abrirArtigo(artigo.titulo, artigo.conteudo);
             });
 
@@ -713,6 +716,64 @@ function iniciarScrollSpy() {
     headings.forEach(h => scrollSpyObserver.observe(h));
 }
 
+function buscarArtigoPorCaminho(caminhoOuTitulo) {
+    if (!caminhoOuTitulo) return null;
+    const normalizar = (str) => decodeURIComponent(decodeURI(str))
+        .replace(/^\.\//, "")
+        .trim()
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+        .replace(/\.md$/i, "")
+        .replace(/[(),:;+]/g, " ")
+        .replace(/#/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const limpo = normalizar(caminhoOuTitulo);
+    const limpoApenasNome = limpo.split("/").pop();
+
+    return todosOsArtigos.find(a => {
+        const caminhoSemExtensao = normalizar(a.path);
+        const nomeArquivo = normalizar(a.path.split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+
+        return caminhoSemExtensao === limpo ||
+               nomeArquivo === limpo ||
+               nomeArquivo === limpoApenasNome ||
+               tituloNorm === limpo ||
+               tituloNorm === limpoApenasNome;
+    }) || todosOsArtigos.find(a => {
+        const nomeArquivo = normalizar(a.path.split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+        return nomeArquivo.includes(limpoApenasNome) || limpoApenasNome.includes(nomeArquivo) || tituloNorm.includes(limpoApenasNome);
+    }) || null;
+}
+
+function obterRotaArtigo(artigo, hashSecao = "") {
+    if (!artigo) return "#";
+    let rota = "#/" + encodeURIComponent(artigo.categoria) + "/" + encodeURIComponent(artigo.titulo);
+    if (hashSecao) {
+        rota += "#" + encodeURIComponent(hashSecao);
+    }
+    return rota;
+}
+
+function obterHrefParaLinkObsidian(nomeOuCaminho) {
+    if (!nomeOuCaminho) return "#";
+    if (nomeOuCaminho.startsWith("#")) {
+        return nomeOuCaminho;
+    }
+    const [caminhoSemHash, hashSecao] = nomeOuCaminho.split("#");
+    if (!caminhoSemHash || caminhoSemHash.trim() === "") {
+        return hashSecao ? `#${hashSecao}` : "#";
+    }
+    const encontrado = buscarArtigoPorCaminho(caminhoSemHash);
+    if (encontrado) {
+        return obterRotaArtigo(encontrado, hashSecao);
+    }
+    return "#/" + encodeURIComponent(nomeOuCaminho);
+}
+
 function processarLinksObsidian() {
     const htmlAtual = artigoCorpo.innerHTML;
     const regexObsidian = /\[\[([^\n\]]+)\]\]/g;
@@ -741,12 +802,17 @@ function processarLinksObsidian() {
 
         // Remove tags HTML indesejadas do caminho de destino
         caminho = caminho.replace(/<[^>]+>/g, "").trim();
+        const href = obterHrefParaLinkObsidian(caminho);
 
-        return `<a class="obsidian-link" data-destino="${caminho}">${textoExibicao}</a>`;
+        return `<a class="obsidian-link" href="${href}" data-destino="${caminho}">${textoExibicao}</a>`;
     });
 
     artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
         link.addEventListener("click", (e) => {
+            // Permite abertura nativa em nova aba caso Cmd (Mac), Ctrl (Win/Linux) ou botão do meio estejam pressionados
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
+                return;
+            }
             e.preventDefault();
             const destino = link.getAttribute("data-destino");
             navegarParaLinkObsidian(destino);
@@ -802,19 +868,27 @@ function renderizarBreadcrumbs(artigo) {
 
     breadcrumbsNav.innerHTML = "";
 
-    const linkHome = document.createElement("span");
+    const linkHome = document.createElement("a");
     linkHome.className = "breadcrumb-link";
+    linkHome.href = "#";
     linkHome.textContent = "início";
-    linkHome.addEventListener("click", () => voltarParaHome(true));
+    linkHome.addEventListener("click", (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        voltarParaHome(true);
+    });
 
     const sep1 = document.createElement("span");
     sep1.className = "breadcrumb-separator";
     sep1.textContent = "/";
 
-    const linkCategoria = document.createElement("span");
+    const linkCategoria = document.createElement("a");
     linkCategoria.className = "breadcrumb-link";
+    linkCategoria.href = "#";
     linkCategoria.textContent = artigo.categoria;
-    linkCategoria.addEventListener("click", () => {
+    linkCategoria.addEventListener("click", (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
         voltarParaHome(true);
         setTimeout(() => {
             abrirPastaPorNome(artigo.categoria);
@@ -845,13 +919,16 @@ function renderizarBotoesNavegacao(artigo) {
     cardsGrid.className = "artigo-nav-cards-grid";
 
     if (artigoAnterior) {
-        const cardPrev = document.createElement("div");
+        const cardPrev = document.createElement("a");
         cardPrev.className = "nav-card nav-card-prev";
+        cardPrev.href = obterRotaArtigo(artigoAnterior);
         cardPrev.innerHTML = `
             <span class="nav-card-label">&larr; artigo anterior</span>
             <span class="nav-card-title">${artigoAnterior.titulo}</span>
         `;
-        cardPrev.addEventListener("click", () => {
+        cardPrev.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
             abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true);
         });
         cardsGrid.appendChild(cardPrev);
@@ -862,24 +939,30 @@ function renderizarBotoesNavegacao(artigo) {
     }
 
     if (artigoProximo) {
-        const cardNext = document.createElement("div");
+        const cardNext = document.createElement("a");
         cardNext.className = "nav-card nav-card-next";
+        cardNext.href = obterRotaArtigo(artigoProximo);
         cardNext.innerHTML = `
             <span class="nav-card-label">próximo artigo &rarr;</span>
             <span class="nav-card-title">${artigoProximo.titulo}</span>
         `;
-        cardNext.addEventListener("click", () => {
+        cardNext.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
             abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true);
         });
         cardsGrid.appendChild(cardNext);
     } else if (artigoResumo && artigoResumo.titulo !== artigo.titulo) {
-        const cardResumo = document.createElement("div");
+        const cardResumo = document.createElement("a");
         cardResumo.className = "nav-card nav-card-next nav-card-resumo";
+        cardResumo.href = obterRotaArtigo(artigoResumo);
         cardResumo.innerHTML = `
             <span class="nav-card-label">resumo da matéria &rarr;</span>
             <span class="nav-card-title">${artigoResumo.titulo}</span>
         `;
-        cardResumo.addEventListener("click", () => {
+        cardResumo.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
             abrirArtigo(artigoResumo.titulo, artigoResumo.conteudo, true);
         });
         cardsGrid.appendChild(cardResumo);
@@ -922,37 +1005,7 @@ function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
         return;
     }
 
-    const normalizar = (str) => decodeURIComponent(decodeURI(str))
-        .replace(/^\.\//, "")
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/\.md$/i, "")
-        .replace(/[(),:;+]/g, " ") // Remove parênteses, vírgulas, dois-pontos, mais
-        .replace(/#/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const limpo = normalizar(caminhoSemHash);
-    const limpoApenasNome = limpo.split("/").pop();
-
-    // Procura o artigo por correspondência exata de caminho, nome do arquivo ou título
-    const encontrado = todosOsArtigos.find(a => {
-        const caminhoSemExtensao = normalizar(a.path);
-        const nomeArquivo = normalizar(a.path.split("/").pop());
-        const tituloNorm = normalizar(a.titulo);
-
-        return caminhoSemExtensao === limpo ||
-               nomeArquivo === limpo ||
-               nomeArquivo === limpoApenasNome ||
-               tituloNorm === limpo ||
-               tituloNorm === limpoApenasNome;
-    }) || todosOsArtigos.find(a => {
-        // Fallback: correspondência parcial se não achou exato
-        const nomeArquivo = normalizar(a.path.split("/").pop());
-        const tituloNorm = normalizar(a.titulo);
-        return nomeArquivo.includes(limpoApenasNome) || limpoApenasNome.includes(nomeArquivo) || tituloNorm.includes(limpoApenasNome);
-    });
+    const encontrado = buscarArtigoPorCaminho(caminhoSemHash);
 
     if (encontrado) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
@@ -1004,8 +1057,10 @@ function renderizarPastas() {
             const linkArtigo = document.createElement("a");
             linkArtigo.className = "artigo-lista-link";
             linkArtigo.textContent = arquivo.titulo;
+            linkArtigo.href = obterRotaArtigo(arquivo);
             
             linkArtigo.addEventListener("click", async (e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
                 e.preventDefault();
                 e.stopPropagation();
                 abrirArtigo(arquivo.titulo, arquivo.conteudo, true);

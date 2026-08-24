@@ -123,6 +123,8 @@ button:hover {
 }
 
 .card {
+    display: block;
+    text-decoration: none;
     background-color: var(--accent-blue);
     border: 1px solid var(--accent-blue);
     width: calc((100% - 30px) /3);
