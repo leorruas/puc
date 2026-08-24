@@ -585,7 +585,7 @@ O **Entity Framework (EF / EF Core)** é o principal framework de **Mapeamento O
 A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fundamental dos sistemas de tipos segundo a qual um tipo derivado $S$ (**subtipo**) pode ser utilizado em qualquer contexto que espere um tipo mais geral $T$ (**supertipo**), denotado formalmente como $S <: T$.
 
 * **Natureza teórica vs. prática:** Enquanto a **herança** é um mecanismo de implementação (reaproveitamento de código e estrutura), a **subtipagem** é uma **relação semântica de compatibilidade de tipos**: se uma função pede uma `ContaBancaria`, ela aceita receber uma `ContaPoupanca` ou `ContaCorrente` de forma transparente.
-* **A formalização do Princípio de Substituição de Liskov (LSP):** Formalizado por Barbara Liskov (1987), estabelece que qualquer propriedade demonstrável sobre objetos do supertipo $T$ deve continuar válida quando objetos de $T$ forem substituídos por instâncias do subtipo $S$.
+* **A formalização do princípio de substituição de Liskov (LSP):** Formalizado por Barbara Liskov (1987), estabelece que qualquer propriedade demonstrável sobre objetos do supertipo $T$ deve continuar válida quando objetos de $T$ forem substituídos por instâncias do subtipo $S$.
 * **Analogia de Feynman:** O **plugue e a tomada padrão**.
   - A tomada na parede é projetada para aceitar qualquer aparelho que cumpra o padrão de *Aparelho Elétrico 110V* (o supertipo).
   - Você pode conectar uma furadeira, um liquidificador ou um carregador de celular (os subtipos). A tomada não precisa saber qual é o aparelho; ela apenas entrega energia com segurança porque todos são subtipos compatíveis com o contrato da tomada.
@@ -595,9 +595,9 @@ A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fund
 
 ## 45. Problema do diamante (*The Diamond Problem*)
 
-O **Problema do Diamante** é uma anomalia e ambiguidade semântica clássica que ocorre em linguagens orientadas a objetos que suportam **herança múltipla de classes**. Ele se manifesta quando duas classes $B$ e $C$ herdam de uma mesma classe ancestral $A$, e uma quarta classe $D$ herda simultaneamente de $B$ e $C$. Se $B$ e $C$ sobrescreverem um método herdado de $A$, o compilador é incapaz de determinar qual das duas implementações a classe $D$ deve executar.
+O **problema do diamante** é uma anomalia e ambiguidade semântica clássica que ocorre em linguagens orientadas a objetos que suportam **herança múltipla de classes**. Ele se manifesta quando duas classes $B$ e $C$ herdam de uma mesma classe ancestral $A$, e uma quarta classe $D$ herda simultaneamente de $B$ e $C$. Se $B$ e $C$ sobrescreverem um método herdado de $A$, o compilador é incapaz de determinar qual das duas implementações a classe $D$ deve executar.
 
-* **A Solução de C# e Java:** Proibição estrita de herança múltipla para classes concretas. Permite-se apenas herança múltipla de **interfaces** (`interface`), onde não há código executável ou conflito de estado, forçando a classe filha a prover sua própria implementação sem ambiguidade.
+* **A solução de C# e Java:** Proibição estrita de herança múltipla para classes concretas. Permite-se apenas herança múltipla de **interfaces** (`interface`), onde não há código executável ou conflito de estado, forçando a classe filha a prover sua própria implementação sem ambiguidade.
 * **Analogia de Feynman:** A **ordem contraditória dos pais**.
   - O avô ($A$) ensina que *"quando o alarme toca, deve-se agir"*.
   - O pai ($B$) diz: *"quando o alarme tocar, apague as luzes"*.
@@ -613,7 +613,7 @@ Um **método virtual** é uma operação declarada na classe base com o modifica
 
 * **Importância arquitetural:** Em C#, métodos são não-virtuais por padrão (resolução estática e direta em tempo de compilação). O modificador `virtual` instrui o compilador a criar uma entrada na tabela de métodos virtuais (*vtable*), permitindo extensibilidade controlada sem quebrar o código cliente.
 * **Analogia de Feynman:** A **tomada universal de parede**. A construtora entrega a tomada padrão com uma voltagem e corrente definidas (a implementação virtual padrão), mas deixa você plugar uma lâmpada, uma TV ou um computador (as subclasses), permitindo que cada aparelho reaja à energia à sua própria maneira.
-* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Abertura de contratos polimórficos e Princípio Aberto/Fechado (OCP).
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Abertura de contratos polimórficos e princípio aberto/fechado (OCP).
 
 ---
 
@@ -622,7 +622,7 @@ Um **método virtual** é uma operação declarada na classe base com o modifica
 A **sobrescrita de método** é o mecanismo pelo qual uma subclasse fornece uma implementação especializada para um método herdado da superclasse utilizando a palavra-chave **`override`**.
 
 * **Importância arquitetural:** A sobrescrita substitui o ponteiro de execução na *vtable* do objeto. Quando o método é acionado através de uma variável de referência da classe pai (`Animal a = new Cachorro(); a.EmitirSom()`), o *runtime* executa a versão da classe filha, materializando o **despacho dinâmico (*dynamic dispatch*)**.
-* **Diferença fundamental com `new` (Ocultação):** Enquanto `override` participa do polimorfismo dinâmico e executa o filho mesmo através de referências do pai, a palavra-chave `new` apenas oculta o método ancestral e executa o pai se a referência for da superclasse.
+* **Diferença fundamental com `new` (ocultação):** Enquanto `override` participa do polimorfismo dinâmico e executa o filho mesmo através de referências do pai, a palavra-chave `new` apenas oculta o método ancestral e executa o pai se a referência for da superclasse.
 * **Analogia de Feynman:** O **reaproveitamento da receita de família com toque gourmet**. A receita base ensina a assar um bolo simples. O confeiteiro especializado mantém o mesmo nome do bolo no cardápio (`override`), mas adiciona calda de pistache e frutas frescas, entregando uma experiência refinada quando o cliente pede aquele prato.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Polimorfismo de inclusão e especialização comportamental.
 
@@ -679,7 +679,7 @@ A **vinculação tardia (*late binding*)** é o mecanismo no qual a decisão de 
 Uma **referência polimórfica** é uma variável cujo tipo declarado em tempo de compilação é uma classe ancestral (superclasse) ou interface, mas que aponta no *Heap* para instâncias de diferentes classes filhas derivadas ao longo da execução do programa.
 
 * **Importância:** Permite a criação de coleções heterogêneas (`List<Funcionario>`) e a passagem de parâmetros genéricos em métodos (`ProcessarFolha(List<Funcionario>)`), desvinculando o código cliente da necessidade de conhecer as classes concretas.
-* **Analogia de Feynman:** O **crachá de Visitante**. O segurança na portaria dá um crachá padrão escrito "Visitante" (o tipo declarado). Quem está usando o crachá pode ser um engenheiro, um auditor ou um entregador (o tipo concreto real no *Heap*). O segurança interage com todos pelo protocolo universal do crachá, mas cada um executa seu trabalho especializado no prédio.
+* **Analogia de Feynman:** O **crachá de visitante**. O segurança na portaria dá um crachá padrão escrito "Visitante" (o tipo declarado). Quem está usando o crachá pode ser um engenheiro, um auditor ou um entregador (o tipo concreto real no *Heap*). O segurança interage com todos pelo protocolo universal do crachá, mas cada um executa seu trabalho especializado no prédio.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Tipo declarado vs. tipo concreto e polimorfismo de inclusão.
 
 ---
@@ -713,8 +713,8 @@ A **tabela de métodos virtuais (*vtable*)** é uma estrutura de dados interna c
 
 A dicotomia entre **polimorfismo dinâmico** e **polimorfismo estático** define a temporalidade da tomada de decisão sobre qual código executar:
 
-* **Polimorfismo estático (*Compile-Time / Early Binding*):** O compilador resolve a função em tempo de compilação analisando os tipos e quantidades de argumentos. Materializado pela **sobrecarga de métodos (*overloading*)** e **tipos genéricos (*generics*)**.
-* **Polimorfismo dinâmico (*Runtime / Late Binding*):** A decisão é postergada para o momento em que o programa está rodando no computador, baseando-se no objeto real instanciado no *Heap*. Materializado por **métodos virtuais (`virtual`), sobrescrita (`override`) e interfaces**.
+* **Polimorfismo estático (*compile-time / early binding*):** O compilador resolve a função em tempo de compilação analisando os tipos e quantidades de argumentos. Materializado pela **sobrecarga de métodos (*overloading*)** e **tipos genéricos (*generics*)**.
+* **Polimorfismo dinâmico (*runtime / late binding*):** A decisão é postergada para o momento em que o programa está rodando no computador, baseando-se no objeto real instanciado no *Heap*. Materializado por **métodos virtuais (`virtual`), sobrescrita (`override`) e interfaces**.
 * **Analogia de Feynman:**
   - *Estático:* O **cardápio de código de barras**. O atendente bipa o produto no caixa e o valor é buscado imediatamente no catálogo pré-gravado.
   - *Dinâmico:* O **músico de jazz na jam session**. A partitura diz apenas *"solo no compasso 12"* (o método base); se for a vez do saxofonista ou do pianista, cada um improvisará ao vivo a sua própria melodia especializada (`override`).

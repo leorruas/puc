@@ -1,22 +1,22 @@
-# Prompts de Estudo (LLM) - Programação Modular
+# Prompts de estudo (LLM) - programação modular
 
 Use estes templates de prompt prontos com seu LLM (ChatGPT, Gemini, Claude, etc.) para sanar dúvidas, gerar exemplos práticos e exercitar seu conhecimento nesta disciplina.
 
 ---
 
-### Explicar Conceitos Complexos
+### Explicar conceitos complexos
 ```text
 Aja como um professor sênior de Engenharia de Software. Explique o conceito de [CONCEITO] em Programação Modular de forma intuitiva, usando analogias do mundo real e fornecendo exemplos práticos em C#/Java/Python.
 ```
 
-### Modularizador de Código
+### Modularizador de código
 ```text
 Aja como um especialista em Refatoração. Eu tenho o seguinte bloco de código monolítico. Como posso modularizá-lo em funções/classes com responsabilidade única? [INSIRA O CÓDIGO AQUI]
 ```
 
 ---
 
-### Simulador de Prova Avançado
+### Simulador de prova avançado
 ```text
 Aja como um examinador de nível acadêmico avançado em Engenharia de Software e Programação Modular. Gere um simulador de prova composto por 5 questões de múltipla escolha cobrindo:
 - Motivação e pilares da programação modular (corretude, robustez, escalabilidade e reuso).
@@ -30,7 +30,7 @@ Regras da questão:
 - Não forneça o gabarito imediatamente; aguarde o usuário responder item a item ou todas juntas.
 ```
 
-### Parâmetros de Feedback e Diagnóstico de Erros
+### Parâmetros de feedback e diagnóstico de erros
 ```text
 Com base na resposta fornecida pelo aluno ao simulador de prova, realize o diagnóstico detalhado seguindo a estrutura:
 1. Gabarito comentado de cada questão.
