@@ -62,6 +62,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
             "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md",
             "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+            "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
