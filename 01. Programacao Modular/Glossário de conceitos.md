@@ -28,6 +28,7 @@ relacionados:
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
+* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -105,6 +106,7 @@ relacionados:
 | **51** | [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
 | **52** | [[#52. Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
 | **53** | [[#53. Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
+| **54** | [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
 
 ---
 
@@ -684,6 +686,21 @@ O **`ToString()`** é o método virtual fundamental herdado por todas as classes
 * **Papel polimórfico:** Quando sobrescrito com `override`, o método é invocado de forma transparente por interpolações de strings (`$"..."`), comandos de console (`Console.WriteLine(obj)`) e motores de log via despacho dinâmico (*late binding*).
 * **Analogia de Feynman:** O **crachá de identidade pessoal do objeto**. Sem personalizá-lo (`override`), o crachá vem com o carimbo padrão de fábrica da gráfica contendo apenas o número do lote e da sala (`Namespace.Tipo`). Ao escrever seu nome e cargo no crachá, qualquer pessoa que olhar para você entenderá instantaneamente quem você é e qual é o seu papel.
 * **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (C#)]] e [[00. Sintaxe Multilinguagem/12. Sobrescrita de métodos e representação textual (ToString, toString, __str__)|Guia de Sintaxe Multilinguagem 12]].
+
+---
+
+## 54. Tabela de métodos virtuais (*Virtual Method Table - vtable*)
+
+A **tabela de métodos virtuais (*vtable*)** é uma estrutura de dados interna criada e mantida pelo compilador e pelo *runtime* (como a CLR do .NET ou a JVM do Java) para viabilizar o **despacho dinâmico (*dynamic dispatch*)** no polimorfismo de subtipagem.
+
+* **Como funciona na memória:**
+  - Cada classe que declara ou herda métodos virtuais possui uma única tabela *vtable* na memória contendo um array de **ponteiros de função** para as implementações executáveis de seus métodos.
+  - Todo objeto no *Heap* possui um ponteiro oculto de cabeçalho (*vptr* ou *Type Handle*) que aponta para a *vtable* da sua classe concreta.
+  - Quando o método é chamado através de uma referência ancestral (`Animal a = new Cachorro(); a.EmitirSom()`), o processador não pula para um endereço fixo de código; ele consulta o *vptr* do objeto no *Heap*, abre a *vtable* e salta para o ponteiro de função preenchido por `Cachorro` via `override`.
+* **Analogia de Feynman:** O **catálogo de ramais telefônicos da recepção**.
+  - A central telefônica tem um botão padrão para *"Suporte Técnico"* (a chamada do método virtual).
+  - Em vez de ligar direto para um ramal fixo de metal, a telefonista olha uma tabela dinâmica (*vtable*). Se o cliente que está na linha contratou o plano empresarial, o catálogo aponta para o ramal do engenheiro sênior (`override`); se for o plano comum, aponta para o atendente padrão.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Mecânica interna de execução de `virtual`, `override` e `new`.
 
 ---
 
