@@ -28,7 +28,7 @@ relacionados:
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
-* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]]
+* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -107,6 +107,7 @@ relacionados:
 | **52** | [[#52. Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
 | **53** | [[#53. Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
 | **54** | [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
+| **55** | [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)\|Polimorfismo dinâmico vs. estático]] | Dicotomia entre resolução em tempo de compilação (*early binding*) vs. execução (*late binding*). | A **decisão antecipada vs. tardia** | Sobrecarga vs. `virtual`/`override` |
 
 ---
 
@@ -701,6 +702,19 @@ A **tabela de métodos virtuais (*vtable*)** é uma estrutura de dados interna c
   - A central telefônica tem um botão padrão para *"Suporte Técnico"* (a chamada do método virtual).
   - Em vez de ligar direto para um ramal fixo de metal, a telefonista olha uma tabela dinâmica (*vtable*). Se o cliente que está na linha contratou o plano empresarial, o catálogo aponta para o ramal do engenheiro sênior (`override`); se for o plano comum, aponta para o atendente padrão.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Mecânica interna de execução de `virtual`, `override` e `new`.
+
+---
+
+## 55. Polimorfismo dinâmico vs. polimorfismo estático (*Dynamic vs. Static Polymorphism*)
+
+A dicotomia entre **polimorfismo dinâmico** e **polimorfismo estático** define a temporalidade da tomada de decisão sobre qual código executar:
+
+* **Polimorfismo estático (*Compile-Time / Early Binding*):** O compilador resolve a função em tempo de compilação analisando os tipos e quantidades de argumentos. Materializado pela **sobrecarga de métodos (*overloading*)** e **tipos genéricos (*generics*)**.
+* **Polimorfismo dinâmico (*Runtime / Late Binding*):** A decisão é postergada para o momento em que o programa está rodando no computador, baseando-se no objeto real instanciado no *Heap*. Materializado por **métodos virtuais (`virtual`), sobrescrita (`override`) e interfaces**.
+* **Analogia de Feynman:**
+  - *Estático:* O **cardápio de código de barras**. O atendente bipa o produto no caixa e o valor é buscado imediatamente no catálogo pré-gravado.
+  - *Dinâmico:* O **músico de jazz na jam session**. A partitura diz apenas *"solo no compasso 12"* (o método base); se for a vez do saxofonista ou do pianista, cada um improvisará ao vivo a sua própria melodia especializada (`override`).
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Taxonomia e anatomia da sobreposição de métodos.
 
 ---
 
