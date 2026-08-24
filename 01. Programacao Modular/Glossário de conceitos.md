@@ -27,7 +27,7 @@ relacionados:
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
-* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]]
+* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -103,6 +103,7 @@ relacionados:
 | **49** | [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
 | **50** | [[#50. Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
 | **51** | [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
+| **52** | [[#52. Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
 
 ---
 
@@ -662,6 +663,16 @@ A **vinculação tardia (*late binding*)** é o mecanismo no qual a decisão de 
 * **Vantagem:** Extensibilidade desacoplada e polimorfismo de subtipagem puro (Princípio OCP).
 * **Analogia de Feynman:** O **leilão presencial ao vivo**. Não se sabe antecipadamente quem arrematará a obra; a decisão é tomada dinamicamente no momento em que alguém levanta a placa no salão.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Mecânica interna de `virtual` e `override`.
+
+---
+
+## 52. Referência polimórfica (*Polymorphic Reference*)
+
+Uma **referência polimórfica** é uma variável cujo tipo declarado em tempo de compilação é uma classe ancestral (superclasse) ou interface, mas que aponta no *Heap* para instâncias de diferentes classes filhas derivadas ao longo da execução do programa.
+
+* **Importância:** Permite a criação de coleções heterogêneas (`List<Funcionario>`) e a passagem de parâmetros genéricos em métodos (`ProcessarFolha(List<Funcionario>)`), desvinculando o código cliente da necessidade de conhecer as classes concretas.
+* **Analogia de Feynman:** O **crachá de Visitante**. O segurança na portaria dá um crachá padrão escrito "Visitante" (o tipo declarado). Quem está usando o crachá pode ser um engenheiro, um auditor ou um entregador (o tipo concreto real no *Heap*). O segurança interage com todos pelo protocolo universal do crachá, mas cada um executa seu trabalho especializado no prédio.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Tipo declarado vs. tipo concreto e polimorfismo de inclusão.
 
 ---
 
