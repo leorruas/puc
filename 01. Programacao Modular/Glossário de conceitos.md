@@ -27,7 +27,7 @@ relacionados:
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
-* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]]
+* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -104,6 +104,7 @@ relacionados:
 | **50** | [[#50. Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
 | **51** | [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
 | **52** | [[#52. Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
+| **53** | [[#53. Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
 
 ---
 
@@ -673,6 +674,16 @@ Uma **referência polimórfica** é uma variável cujo tipo declarado em tempo d
 * **Importância:** Permite a criação de coleções heterogêneas (`List<Funcionario>`) e a passagem de parâmetros genéricos em métodos (`ProcessarFolha(List<Funcionario>)`), desvinculando o código cliente da necessidade de conhecer as classes concretas.
 * **Analogia de Feynman:** O **crachá de Visitante**. O segurança na portaria dá um crachá padrão escrito "Visitante" (o tipo declarado). Quem está usando o crachá pode ser um engenheiro, um auditor ou um entregador (o tipo concreto real no *Heap*). O segurança interage com todos pelo protocolo universal do crachá, mas cada um executa seu trabalho especializado no prédio.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Tipo declarado vs. tipo concreto e polimorfismo de inclusão.
+
+---
+
+## 53. Método ToString (*String Representation Method*)
+
+O **`ToString()`** é o método virtual fundamental herdado por todas as classes a partir da raiz universal **`System.Object`** (no C#), responsável por fornecer uma representação textual significativa do estado de um objeto.
+
+* **Papel polimórfico:** Quando sobrescrito com `override`, o método é invocado de forma transparente por interpolações de strings (`$"..."`), comandos de console (`Console.WriteLine(obj)`) e motores de log via despacho dinâmico (*late binding*).
+* **Analogia de Feynman:** O **crachá de identidade pessoal do objeto**. Sem personalizá-lo (`override`), o crachá vem com o carimbo padrão de fábrica da gráfica contendo apenas o número do lote e da sala (`Namespace.Tipo`). Ao escrever seu nome e cargo no crachá, qualquer pessoa que olhar para você entenderá instantaneamente quem você é e qual é o seu papel.
+* **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (C#)]] e [[00. Sintaxe Multilinguagem/12. Sobrescrita de métodos e representação textual (ToString, toString, __str__)|Guia de Sintaxe Multilinguagem 12]].
 
 ---
 
