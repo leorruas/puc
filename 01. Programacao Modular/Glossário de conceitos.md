@@ -27,6 +27,7 @@ relacionados:
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobrescrita de método (Method Overriding / Override)|47. Sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
+* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -100,6 +101,8 @@ relacionados:
 | **47** | [[#47. Sobrescrita de método (Method Overriding / Override)\|Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
 | **48** | [[#48. Palavra-chave base (Base Keyword)\|Palavra-chave `base`]] | Referência direta aos construtores e métodos da superclasse imediata. | O **acesso à linhagem ancestral** | `: base(...)`, `base.Sacar()` |
 | **49** | [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
+| **50** | [[#50. Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
+| **51** | [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
 
 ---
 
@@ -637,6 +640,28 @@ O modificador **`new`** aplicado a um membro (método, propriedade ou campo) de 
   - `new` é estático e **não polimórfico**: se a chamada for feita por uma referência do pai (`Pai p = new Filho(); p.Metodo()`), executa o método do **Pai**, pois o método do filho foi apenas "escondido".
 * **Analogia de Feynman:** O **cartaz sobreposto no mural**. O mural do pai tem um aviso antigo. O filho cola um cartaz novo por cima (`new`). Quem olha de frente para o filho vê o cartaz novo, mas quem olha pelo cadastro oficial do pai ainda lê o aviso antigo original.
 * **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** `override` vs. `new` e perigos do *shadowing*.
+
+---
+
+## 50. Vinculação antecipada (*Early Binding / Static Binding*)
+
+A **vinculação antecipada (*early binding*)** é o mecanismo no qual a associação entre a chamada de um método e o endereço de memória do código executável é resolvida **estaticamente em tempo de compilação (*compile-time*)**.
+
+* **Como opera no compilador:** O compilador emite instruções diretas de salto (`call` no IL do .NET) para um endereço fixo de função. Ocorre em métodos não-virtuais, métodos estáticos e métodos ocultados com `new`.
+* **Vantagem:** Desempenho máximo da CPU (sem custo de pesquisa em tabelas intermediárias).
+* **Analogia de Feynman:** O **casamento arranjado no cartório**. Quem vai casar com quem já está registrado no papel antes mesmo da cerimônia começar.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Métodos normais vs. polimórficos.
+
+---
+
+## 51. Vinculação tardia e despacho dinâmico (*Late Binding & Dynamic Dispatch*)
+
+A **vinculação tardia (*late binding*)** é o mecanismo no qual a decisão de qual implementação de método executar é postergada para o **tempo de execução (*runtime*)**, baseando-se no tipo concreto do objeto alocado na memória *Heap*.
+
+* **Como opera no runtime:** O compilador emite a instrução `callvirt`. Durante a execução, a CPU consulta a tabela de métodos virtuais (*vtable*) associada ao objeto concreto no *Heap* para encontrar a versão mais especializada (marcada com `override`).
+* **Vantagem:** Extensibilidade desacoplada e polimorfismo de subtipagem puro (Princípio OCP).
+* **Analogia de Feynman:** O **leilão presencial ao vivo**. Não se sabe antecipadamente quem arrematará a obra; a decisão é tomada dinamicamente no momento em que alguém levanta a placa no salão.
+* **Conexão direta ([[17. Sobreposição de métodos (virtual e override)|Artigo 17]]):** Mecânica interna de `virtual` e `override`.
 
 ---
 
