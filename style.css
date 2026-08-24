@@ -1157,3 +1157,17 @@ mark.obsidian-highlight, mark:not(.highlight) {
 .callout-caution .callout-title {
     color: #f87171;
 }
+
+/* ==========================================================================
+   ESTILOS PARA FÓRMULAS E SÍMBOLOS MATEMÁTICOS (KaTeX)
+   ========================================================================== */
+.katex {
+    font-size: 1.05em;
+    color: #e2e8f0;
+}
+.katex-display {
+    margin: 1em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em 0;
+}

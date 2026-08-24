@@ -497,6 +497,42 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
         }, 50);
     }
 
+    // Renderiza expressões matemáticas LaTeX ($...$ e $$...$$) com KaTeX
+    if (typeof renderMathInElement !== 'undefined') {
+        try {
+            renderMathInElement(artigoCorpo, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false,
+                ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            });
+        } catch (eMath) {
+            console.warn("Erro ao renderizar KaTeX:", eMath);
+        }
+    } else {
+        // Fallback rápido se o script KaTeX ainda estiver carregando
+        setTimeout(() => {
+            if (typeof renderMathInElement !== 'undefined') {
+                try {
+                    renderMathInElement(artigoCorpo, {
+                        delimiters: [
+                            { left: '$$', right: '$$', display: true },
+                            { left: '$', right: '$', display: false },
+                            { left: '\\(', right: '\\)', display: false },
+                            { left: '\\[', right: '\\]', display: true }
+                        ],
+                        throwOnError: false,
+                        ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                    });
+                } catch (eMath) {}
+            }
+        }, 100);
+    }
+
     // Gera a Table of Contents (TOC) a partir dos cabeçalhos h2, h3, h4 do artigo
     gerarTableOfContents();
 
