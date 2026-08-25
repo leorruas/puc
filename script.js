@@ -732,27 +732,53 @@ function gerarTableOfContents() {
 function scrollParaHeading(idOuTexto) {
     if (!idOuTexto) return;
     
-    const normalizar = (s) => s.toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^\w\s-]/g, "")
-        .replace(/\s+/g, "-")
+    // Decodifica URI caso venha codificado da URL (%20, %C3%A9, etc.)
+    const decodificado = decodeURIComponent(idOuTexto).trim();
+
+    const normalizar = (s) => (s || "").toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+        .replace(/[^\w\s-]/g, "") // Remove pontuação exceto hífen e espaço
+        .replace(/\s+/g, " ")
         .trim();
 
-    const slug = normalizar(idOuTexto);
+    const slug = normalizar(decodificado).replace(/\s+/g, "-");
+    const termoLimpo = normalizar(decodificado);
+
+    // Extrai número inicial se houver (ex.: "54. Tabela de..." -> "54")
+    const matchNumero = decodificado.match(/^(\d+)\./);
+    const numeroItem = matchNumero ? matchNumero[1] : null;
     
     // 1. Tenta buscar direto por ID exato ou ID em slug
-    let el = document.getElementById(idOuTexto) || document.getElementById(slug);
+    let el = document.getElementById(decodificado) || 
+             document.getElementById(idOuTexto) || 
+             document.getElementById(slug);
     
-    // 2. Se não achar, procura entre todos os títulos do artigoCorpo
+    // 2. Se não achar por ID, procura entre todos os títulos (H1 a H6) do artigoCorpo
     if (!el && artigoCorpo) {
-        const headings = artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6");
-        for (const h of headings) {
-            const hSlug = normalizar(h.textContent);
-            const hIdSlug = h.id ? normalizar(h.id) : "";
-            if (h.id === idOuTexto || h.id === slug || hSlug === slug || hIdSlug === slug || hSlug.includes(slug) || slug.includes(hSlug)) {
-                el = h;
-                break;
-            }
+        const headings = Array.from(artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        
+        // Tentativa A: Correspondência exata de texto normalizado ou slug
+        el = headings.find(h => {
+            const hNorm = normalizar(h.textContent);
+            const hSlug = hNorm.replace(/\s+/g, "-");
+            const hId = h.id ? h.id.toLowerCase() : "";
+            return h.id === decodificado || h.id === slug || hId === slug || hNorm === termoLimpo || hSlug === slug;
+        });
+
+        // Tentativa B: Correspondência pelo número do item no início do título (ex.: "54.")
+        if (!el && numeroItem) {
+            el = headings.find(h => {
+                const texto = h.textContent.trim();
+                return texto.startsWith(`${numeroItem}.`) || texto.startsWith(`${numeroItem} `) || h.id.startsWith(`${numeroItem}-`);
+            });
+        }
+
+        // Tentativa C: Correspondência parcial por inclusão de termos significativos
+        if (!el) {
+            el = headings.find(h => {
+                const hNorm = normalizar(h.textContent);
+                return (termoLimpo.length > 5 && hNorm.includes(termoLimpo)) || (hNorm.length > 5 && termoLimpo.includes(hNorm));
+            });
         }
     }
 
@@ -763,13 +789,13 @@ function scrollParaHeading(idOuTexto) {
 
     // Altura do sticky nav compensada no scroll
     const stickyNav = document.getElementById("sticky-nav");
-    const navOffset = stickyNav ? stickyNav.offsetHeight + 20 : 80;
+    const navOffset = stickyNav ? stickyNav.offsetHeight + 24 : 80;
 
     const elementPosition = el.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
     window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, offsetPosition),
         behavior: "smooth"
     });
 }
@@ -1100,9 +1126,13 @@ function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
     if (encontrado) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
+            // Aguarda a renderização do markdown, KaTeX e os resets de scroll do abrirArtigo()
             setTimeout(() => {
                 scrollParaHeading(hashSecao.trim());
-            }, 120);
+            }, 250);
+            setTimeout(() => {
+                scrollParaHeading(hashSecao.trim());
+            }, 500);
         }
     } else {
         // Se não encontrou outro arquivo com esse nome, tenta rolar até a seção no artigo atual
