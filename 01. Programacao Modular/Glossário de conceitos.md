@@ -793,11 +793,52 @@ Um **ponteiro** é uma variável de baixo nível cujo valor não é um dado comu
 
 ## 61. Anti-padrão Yo-Yo (*Yo-Yo Anti-pattern / Yo-Yo Problem*)
 
-O **anti-padrão Yo-Yo** (ou *problema do ioiô*) é uma falha de design arquitetural em programação orientada a objetos que ocorre quando uma hierarquia de herança é **excessivamente profunda e fragmentada em muitas camadas de superclasses e subclasses**.
+O **anti-padrão Yo-Yo** (ou *problema do ioiô*) é uma falha clássica de design arquitetural em Programação Orientada a Objetos que ocorre quando uma hierarquia de herança se torna **excessivamente vertical, profunda e fragmentada em muitas camadas de classes ancestrais e derivadas**.
 
-* **Por que é prejudicial?** Para entender ou depurar o fluxo de execução de um único método, o desenvolvedor é forçado a pular continuamente para cima e para baixo na árvore de arquivos (`ClasseFilha -> ClassePai -> Avo -> Bisavo -> Tataravo -> Filha`), movendo os olhos e a mente como um ioiô.
-* **Sintomas no código:** Dificuldade extrema de rastreabilidade, alto acoplamento frágil e violação da heurística *"prefira composição a herança"*.
-* **Analogia de Feynman:** O **jogo de caça ao tesouro burocrático**. Você abre uma gaveta e ela contém um bilhete dizendo *"olhe no sótão"*; no sótão, um bilhete diz *"olhe no porão"*; no porão, outro bilhete diz *"olhe na garagem"*. Em vez de encontrar o objeto pronto, você passa o dia inteiro subindo e descendo escadas.
+```mermaid
+flowchart TD
+    subgraph EfeitoYoYo ["A oscilação contínua do fluxo de execução (Efeito Ioiô)"]
+        direction TB
+
+        Nivel1["1. Tataravô: DocumentoBase (chama ValidarPermissao())"]
+        Nivel2["2. Bisavô: DocumentoFiscal (sobrescreve ValidarPermissao() e chama base.Calcular())"]
+        Nivel3["3. Avô: DocumentoEletronico (sobrescreve Formatar())"]
+        Nivel4["4. Pai: NotaFiscal (sobrescreve Calcular() e chama base.Auditar())"]
+        Nivel5["5. Filho: NotaFiscalEletronicaSP (inicia o processo em Emitir())"]
+
+        Nivel5 -->|1. Sobe para o topo| Nivel1
+        Nivel1 -->|2. Desce para o meio| Nivel4
+        Nivel4 -->|3. Sobe de volta| Nivel2
+        Nivel2 -->|4. Desce para o filho| Nivel5
+    end
+```
+
+### Por que se chama "Yo-Yo" (Ioiô)?
+O nome vem do movimento físico de um **brinquedo ioiô (que sobe e desce repetidamente em uma corda)**:
+* Quando um programador tenta ler ou depurar um método simples (ex.: `nota.Emitir()`), o código pula para a classe pai (`base.Metodo()`), que pula para a classe avô, que por sua vez chama um método polimórfico sobrescrito de volta na classe bisneta, que chama o tataravô.
+* Os olhos e a atenção do desenvolvedor são forçados a **oscilar freneticamente para cima e para baixo** entre 5 a 10 arquivos de código-fonte diferentes na IDE para entender o que uma única função faz.
+
+---
+
+### Exemplo do problema no código:
+
+```csharp
+// ANTI-PADRÃO YO-YO: 5 níveis de herança espalhando passos simples
+public class A { public virtual void Executar() { Passo1(); Passo2(); } public virtual void Passo1() { ... } public virtual void Passo2() { ... } }
+public class B : A { public override void Passo1() { base.Passo1(); PassoExtraB(); } public virtual void PassoExtraB() { ... } }
+public class C : B { public override void Passo2() { base.Passo2(); PassoExtraC(); } public virtual void PassoExtraC() { ... } }
+public class D : C { public override void PassoExtraB() { base.PassoExtraB(); PassoExtraD(); } }
+public class E : D { /* Onde começa e onde termina a lógica afinal?! */ }
+```
+
+---
+
+### Por que é prejudicial e como evitar?
+1. **Perda total de legibilidade:** O comportamento não está centralizado em lugar nenhum; ele está fragmentado em pequenos pedaços espalhados pela árvore de herança.
+2. **Alto acoplamento e fragilidade (*Fragile Base Class*):** Qualquer alteração mínima em uma classe do meio (`B` ou `C`) causa efeitos colaterais imprevisíveis em todas as subclasses abaixo dela.
+3. **A solução de engenharia:** Aplicar a regra de ouro: **"Prefira composição a herança"**. Mantenha hierarquias de herança com no máximo **2 ou 3 níveis** (ex.: `FormaGeometrica -> Retangulo`) e utilize objetos injetados (composição/interfaces) para comportamentos adicionais.
+
+* **Analogia de Feynman:** O **jogo de caça ao tesouro burocrático**. Você abre uma gaveta e encontra um bilhete: *"vá ao sótão"*; no sótão, um bilhete diz: *"vá ao porão"*; no porão, outro bilhete diz: *"vá à garagem"*; na garagem: *"volte para o quarto"*. Em vez de pegar a ferramenta e trabalhar, você passa o dia inteiro exausto subindo e descendo escadas.
 * **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Quando não usar classes abstratas)]] e [[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15 (Herança e acoplamento)]].
 
 ---
