@@ -38,6 +38,7 @@ relacionados:
 ### 3. Memória, ciclo de vida e concorrência
 * [[#10. Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#11. Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#18. Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
 * [[#19. Padrão Dispose e IDisposable (Deterministic Cleanup)|19. Padrão `Dispose` e `IDisposable`]] • [[#20. Buffer e descarregamento de dados (Buffer & Flush)|20. Buffer e *flush*]] • [[#21. Thread (Linha de execução / Fluxo concorrente)|21. *Thread* e concorrência]]
+* [[#60. Ponteiro (Pointer / vptr / Memory Pointer)|60. Ponteiro (*Pointer / vptr*)]]
 
 ### 4. Recursos de linguagem, sintaxe e C#
 * [[#8. Declaração em Computação (Declaration / Declarar)|8. Declaração]] • [[#9. Assinatura de Método (Method Signature)|9. Assinatura de método]] • [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)|12. Parâmetro vs. argumento]] • [[#13. GOTO (Salto Incondicional)|13. `GOTO`]] • [[#15. Membro estático (Static Member)|15. Membro estático (`static`)]]
@@ -113,6 +114,7 @@ relacionados:
 | **57** | [[#57. Classe abstrata (Abstract Class)\|Classe abstrata (`abstract`)]] | Superclasse incompleta que proíbe instanciação direta (`new`) e serve de molde comum. | O **molde de chassi sem lataria** | `public abstract class Forma` |
 | **58** | [[#58. Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
 | **59** | [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
+| **60** | [[#60. Ponteiro (Pointer / vptr / Memory Pointer)\|Ponteiro (*Pointer / vptr*)]] | Endereço numérico exato na RAM que aponta para objetos, *vtables* ou rotinas de código. | O **papel com o endereço da casa** | `vptr`, referências de memória, ponteiros de função |
 
 ---
 
@@ -772,6 +774,19 @@ A **palavra-chave `abstract`** é um modificador de linguagem reservado no C#, J
   3. **Incompatibilidade:** Não pode ser combinada com `static`, `virtual` ou `sealed`, pois `abstract` exige herança e sobreposição dinâmica obrigatória.
 * **Analogia de Feynman:** A **etiqueta "Rascunho de Engenharia"**. Qualquer documento carimbado com essa etiqueta tem validade jurídica para guiar os operários da fábrica, mas a fiscalização proíbe colocar a peça na prateleira de vendas até que o projeto receba a assinatura definitiva da versão final (`override`).
 * **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade)|Guia de Sintaxe 11]].
+
+---
+
+## 60. Ponteiro (*Pointer / vptr / Memory Pointer*)
+
+Um **ponteiro** é uma variável de baixo nível cujo valor não é um dado comum (como um número ou texto), mas sim o **endereço numérico exato de uma posição de memória RAM**.
+
+* **Papel arquitetural na POO e no polimorfismo:**
+  1. **Referências em linguagens gerenciadas (C#, Java):** Variáveis de tipos por referência (`Conta c = new Conta()`) são internamente ponteiros seguros gerenciados pelo *runtime* (*CLR/JVM*), apontando para o bloco do objeto no *Heap*.
+  2. **Ponteiro de método virtual (*vptr*):** Todo objeto polimórfico possui um ponteiro oculto no cabeçalho (*object header*) que aponta diretamente para a tabela de métodos virtuais (*vtable*) de sua classe concreta, permitindo o **despacho dinâmico** em tempo de execução.
+  3. **Ponteiros de função:** Endereços de memória onde residem as instruções binárias executáveis dos métodos compilados em código de máquina pela CPU.
+* **Analogia de Feynman:** O **papelzinho com o endereço da casa escrito**. O papel não é a casa física de tijolos; ele apenas contém as coordenadas `"Rua das Flores, nº 123"`. Ter o papel na mão permite que você viaje até lá e encontre a casa instantaneamente.
+* **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (vtable e despacho dinâmico)]] e [[Glossário de conceitos#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|Glossário 54 (vtable)]].
 
 ---
 
