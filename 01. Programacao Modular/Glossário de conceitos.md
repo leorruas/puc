@@ -33,7 +33,7 @@ relacionados:
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
-* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#45. Problema do diamante (The Diamond Problem)|45. Problema do diamante]]
+* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#45. Problema do diamante (The Diamond Problem)|45. Problema do diamante]] • [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)|61. Anti-padrão Yo-Yo]]
 
 ### 3. Memória, ciclo de vida e concorrência
 * [[#10. Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#11. Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#18. Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
@@ -115,6 +115,7 @@ relacionados:
 | **58** | [[#58. Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
 | **59** | [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
 | **60** | [[#60. Ponteiro (Pointer / vptr / Memory Pointer)\|Ponteiro (*Pointer / vptr*)]] | Endereço numérico exato na RAM que aponta para objetos, *vtables* ou rotinas de código. | O **papel com o endereço da casa** | `vptr`, referências de memória, ponteiros de função |
+| **61** | [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)\|Anti-padrão Yo-Yo]] | Hierarquia de herança excessivamente profunda que fragmenta o entendimento do código. | A **caça ao tesouro subindo e descendo escadas** | `A -> B -> C -> D -> E` com métodos espalhados |
 
 ---
 
@@ -787,6 +788,17 @@ Um **ponteiro** é uma variável de baixo nível cujo valor não é um dado comu
   3. **Ponteiros de função:** Endereços de memória onde residem as instruções binárias executáveis dos métodos compilados em código de máquina pela CPU.
 * **Analogia de Feynman:** O **papelzinho com o endereço da casa escrito**. O papel não é a casa física de tijolos; ele apenas contém as coordenadas `"Rua das Flores, nº 123"`. Ter o papel na mão permite que você viaje até lá e encontre a casa instantaneamente.
 * **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (vtable e despacho dinâmico)]] e [[Glossário de conceitos#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|Glossário 54 (vtable)]].
+
+---
+
+## 61. Anti-padrão Yo-Yo (*Yo-Yo Anti-pattern / Yo-Yo Problem*)
+
+O **anti-padrão Yo-Yo** (ou *problema do ioiô*) é uma falha de design arquitetural em programação orientada a objetos que ocorre quando uma hierarquia de herança é **excessivamente profunda e fragmentada em muitas camadas de superclasses e subclasses**.
+
+* **Por que é prejudicial?** Para entender ou depurar o fluxo de execução de um único método, o desenvolvedor é forçado a pular continuamente para cima e para baixo na árvore de arquivos (`ClasseFilha -> ClassePai -> Avo -> Bisavo -> Tataravo -> Filha`), movendo os olhos e a mente como um ioiô.
+* **Sintomas no código:** Dificuldade extrema de rastreabilidade, alto acoplamento frágil e violação da heurística *"prefira composição a herança"*.
+* **Analogia de Feynman:** O **jogo de caça ao tesouro burocrático**. Você abre uma gaveta e ela contém um bilhete dizendo *"olhe no sótão"*; no sótão, um bilhete diz *"olhe no porão"*; no porão, outro bilhete diz *"olhe na garagem"*. Em vez de encontrar o objeto pronto, você passa o dia inteiro subindo e descendo escadas.
+* **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Quando não usar classes abstratas)]] e [[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15 (Herança e acoplamento)]].
 
 ---
 
