@@ -837,6 +837,38 @@ mark.obsidian-highlight, mark:not(.highlight) {
     font-weight: 500;
 }
 
+/* Links dentro de texto com highlight (==[[link]]== ou [[==link==]]) */
+mark.obsidian-highlight a,
+mark.obsidian-highlight .obsidian-link,
+a mark.obsidian-highlight,
+.obsidian-link mark.obsidian-highlight,
+mark:not(.highlight) a,
+mark:not(.highlight) .obsidian-link {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    border-bottom: 1.5px solid #000000 !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+mark.obsidian-highlight a:hover,
+mark.obsidian-highlight .obsidian-link:hover,
+a:hover mark.obsidian-highlight,
+.obsidian-link:hover mark.obsidian-highlight {
+    color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Código inline dentro de highlight */
+mark.obsidian-highlight code,
+mark:not(.highlight) code {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
 /* Sticky Navbar */
 .sticky-nav {
     position: fixed;
