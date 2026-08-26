@@ -16,7 +16,7 @@ Aqui estão as pastas de cada disciplina e microfundamentos liberados para seus 
 
 | Código / ID | Disciplina | Foco Principal | Atalhos |
 | :--- | :--- | :--- | :--- |
-| `00` | **[[00. Geral/Aula Inaugural - Resumo.md\|Geral & Coordenação]]** | Orientações institucionais, aula inaugural do Eixo 2, certificações intermediárias e avisos. | [[00. Geral/Aula Inaugural - Transcrição.md\|Transcrição]] |
+| `00` | **[[00. Geral/Aula Inaugural (04-08-2026) - Resumo.md\|Geral & Coordenação]]** | Orientações institucionais, aula inaugural do Eixo 2, certificações intermediárias e avisos. | [[00. Geral/Aula Inaugural (04-08-2026) - Transcrição.md\|Transcrição]] |
 | `01` | **[[01. Programacao Modular/00. Programacao Modular - Resumo.md\|Programação Modular]]** | Estudo de conceitos de modularidade, encapsulamento, reutilização de código, abstração e d... | [[01. Programacao Modular/Prompts de Estudo (LLM)\|Prompts LLM]] |
 | `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo.md\|Modelagem de Dados]]** | Modelagem conceitual, lógica e física de banco de dados. Diagramas Entidade-Relacionamento... | [[02. Modelagem de Dados/Prompts de Estudo (LLM)\|Prompts LLM]] |
 | `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo.md\|Manipulação de Dados com SQL]]** | Linguagem SQL (DDL, DML, DQL, DCL). Criação de consultas complexas, junções, agregações, s... | [[03. Manipulacao de Dados SQL/Prompts de Estudo (LLM)\|Prompts LLM]] |

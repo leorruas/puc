@@ -1,4 +1,4 @@
-# Aula Inaugural - Veteranos (2026/2) - Transcrição Integral
+# Transcrição integral: aula inaugural de veteranos (04/08/2026)
 
 > **Curso:** Análise e Desenvolvimento de Sistemas (ADS EAD) - PUC Minas
 > **Período/Semestre:** 2º Semestre de 2026 (2026/2)

@@ -1,4 +1,4 @@
-# Resumo - Aula Inaugural de Veteranos (Eixo 2 - 2026/2)
+# Resumo: aula inaugural de veteranos (04/08/2026)
 
 > **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas (ADS EAD) 
 > **Instituição:** PUC Minas Virtual 
@@ -82,5 +82,5 @@ O curso é dividido em **Ciclos de Aprendizagem** a cada 2 eixos. Para obter cad
 ---
 
 ## Links e Documentos Relacionados
-* **Transcrição Completa:** [[00. Geral/Aula Inaugural - Transcrição.md|Aula Inaugural - Transcrição]]
+* **Transcrição Completa:** [[00. Geral/Aula Inaugural (04-08-2026) - Transcrição.md|Aula Inaugural - Transcrição]]
 * **Página Inicial da Wiki:** [[index.md|Portal Acadêmico PUC Minas]]

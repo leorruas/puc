@@ -33,8 +33,8 @@ async function obterListaDeArquivos() {
     } catch (erro) {
         console.warn("Não foi possível listar via GitHub, usando lista padrão completa:", erro);
         const arquivosFallback = [
-            "00. Geral/Aula Inaugural - Resumo.md",
-            "00. Geral/Aula Inaugural - Transcrição.md",
+            "00. Geral/Aula Inaugural (04-08-2026) - Resumo.md",
+            "00. Geral/Aula Inaugural (04-08-2026) - Transcrição.md",
             "00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md",
             "00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md",
             "00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md",
@@ -81,11 +81,12 @@ async function obterListaDeArquivos() {
             "04. Algoritmos e Estruturas de Dados/Prompts de Estudo (LLM).md",
             "05. Desenvolvimento Web Back-End/05. Desenvolvimento Web Back-End - Resumo.md",
             "05. Desenvolvimento Web Back-End/Prompts de Estudo (LLM).md",
-            "06. Projeto - Aplicacao Interativa/06. Projeto - Aplicacao Interativa - Resumo.md",
+            "06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo.md",
             "06. Projeto - Aplicacao Interativa/01. Ods 4 educação de qualidade - conceito, metas e fundamentação.md",
             "06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md",
             "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md",
-            "06. Projeto - Aplicacao Interativa/04. Reunião inicial da turma 5 - resumo e transcrição integral.md",
+            "06. Projeto - Aplicacao Interativa/04. Reunião inicial da turma 5 (08-08-2026) - resumo e transcrição integral.md",
+            "06. Projeto - Aplicacao Interativa/05. Reunião de acompanhamento do grupo 4 (20-08-2026) - resumo e transcrição integral.md",
             "06. Projeto - Aplicacao Interativa/Prompts de Estudo (LLM).md",
             "07. Engenharia de Requisitos/07. Engenharia de Requisitos - Resumo.md",
             "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md",
