@@ -1084,6 +1084,15 @@ mark:not(.highlight) code {
 .mermaid svg { flex: 0 0 auto; max-width: none; }
 .mermaid .nodeLabel,
 .mermaid .edgeLabel { font-family: 'Archivo', sans-serif !important; }
+.mermaid svg text,
+.mermaid svg .nodeLabel,
+.mermaid svg .edgeLabel,
+.mermaid svg foreignObject div,
+.mermaid svg foreignObject span,
+.mermaid svg foreignObject p {
+    font-size: 16px !important;
+    line-height: 1.28 !important;
+}
 .mermaid .node rect,
 .mermaid .node polygon { rx: 0 !important; ry: 0 !important; }
 .mermaid .node rect,
@@ -1092,6 +1101,15 @@ mark:not(.highlight) code {
 .mermaid .edgePath .path { stroke-width: 1.25px !important; }
 .mermaid .edgeLabel { background-color: var(--bg) !important; }
 :root[data-theme="light"] .mermaid .edgeLabel { background-color: #ffffff !important; }
+
+@media (max-width: 768px) {
+    .mermaid svg text,
+    .mermaid svg .nodeLabel,
+    .mermaid svg .edgeLabel,
+    .mermaid svg foreignObject div,
+    .mermaid svg foreignObject span,
+    .mermaid svg foreignObject p { font-size: 14px !important; }
+}
 
 /* Imagens com Zoom */
 .artigo-corpo img {

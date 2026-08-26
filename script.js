@@ -189,12 +189,17 @@ function configurarMermaid() {
         startOnLoad: false,
         theme: "base",
         fontFamily: "Archivo, sans-serif",
+        fontSize: 16,
         flowchart: {
             curve: "linear",
-            defaultRenderer: "dagre-wrapper"
+            defaultRenderer: "dagre-wrapper",
+            nodeSpacing: 42,
+            rankSpacing: 56,
+            padding: 16
         },
         themeVariables: temaEscuro ? {
             fontFamily: "Archivo, sans-serif",
+            fontSize: "16px",
             darkMode: true,
             background: "#101010",
             primaryColor: "#182431",
@@ -205,6 +210,7 @@ function configurarMermaid() {
             tertiaryColor: "#20262d"
         } : {
             fontFamily: "Archivo, sans-serif",
+            fontSize: "16px",
             darkMode: false,
             background: "#ffffff",
             primaryColor: "#eef5fc",

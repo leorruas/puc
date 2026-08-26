@@ -9,6 +9,7 @@
 - As notas são carregadas pela cópia pública do repositório para que a página aberta diretamente no vault também preencha as matérias.
 - Diagramas Mermaid usam paletas contrastadas por tema e são redesenhados quando o tema muda.
 - Diagramas usam geometria reta e filetes finos para acompanhar a linguagem editorial do leitor.
+- Rótulos internos usam 16 px no desktop e 14 px em telas compactas, com espaçamento padronizado entre nós.
 
 ## Resultado
 
