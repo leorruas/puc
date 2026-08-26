@@ -83,3 +83,12 @@
 14. **Referência ao Termo "App":**
  - Sempre que o usuário mencionar o termo **"app"** nas solicitações e conversas, refere-se exclusivamente à aplicação web / leitor de notas hospedado no GitHub Pages: `https://leorruas.github.io/puc`.
 
+## Padronização de Reuniões e Aulas Síncronas
+
+15. **Inclusão Obrigatória de Data nos Nomes e Títulos de Reuniões:**
+ - Todas as notas de reuniões de orientação, encontros de equipe, alinhamentos e aulas inaugurais/síncronas devem conter obrigatoriamente a data do encontro no nome do arquivo e no título principal (`# H1`).
+ - **Formato no Nome do Arquivo:** Inserir a data entre parênteses com hifens (ex.: `04. Reunião inicial da turma 5 (08-08-2026) - resumo e transcrição integral.md`, `05. Reunião de acompanhamento do grupo 4 (20-08-2026) - resumo e transcrição integral.md`, `Aula Inaugural (04-08-2026) - Resumo.md`).
+ - **Formato no Título H1 e Metadados:** Inserir a data no título principal em formato `(DD/MM/AAAA)` e no bloco de metadados com destaque Obsidian `==DD/MM/AAAA==` (ex.: `# Reunião de acompanhamento do grupo 4 (20/08/2026): resumo e transcrição integral`).
+ - **Manutenção de Índices e Leitor Web:** Manter os nomes sincronizados no índice da disciplina (`00. ... - Resumo.md`), em `index.md` e no arquivo `script.js` (leitor web do GitHub Pages).
+
+
