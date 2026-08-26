@@ -850,9 +850,10 @@ public class E : D { /* Onde começa e onde termina a lógica afinal?! */ }
 
 Uma **classe selada** (marcada com o modificador **`sealed`** em C# ou `final` em Java) é uma classe completa e concreta cuja **herança é estritamente proibida pelo compilador**.
 
-* **Por que utilizar?**
-  1. **Segurança e integridade:** Impede que subclasses maliciosas ou desatentas alterem invariantes críticas de negócio (como na classe `string` do .NET).
-  2. **Performance JIT (Devirtualização e *Inlining*):** Como o runtime tem a garantia matemática de que não existem classes filhas, ele elimina a consulta à *vtable* e executa saltos diretos ou embutimento de instruções de máquina.
+* **Os 3 motivos fundamentais de sua existência:**
+  1. **Segurança (*Security*):** Impede que subclasses maliciosas ou desatentas alterem invariantes críticas de negócio, protejam credenciais e impeçam brechas de autenticação (como na classe `string` do .NET).
+  2. **Performance (*Performance & Devirtualization*):** Como o runtime tem a garantia de que não existem subclasses, o compilador JIT elimina a consulta indireta à *vtable* (troca `callvirt` por `call` direto) e realiza *inlining* (embutimento de instruções direto na CPU).
+  3. **Segurança de tipos (*Type Safety*):** Previsibilidade semântica absoluta de que o tipo em execução é exatamente o tipo declarado, sem riscos de subtipagem espúria ou violação do Princípio da Substituição de Liskov (LSP).
 * **Analogia de Feynman:** A **embalagem de remédio lacrada de fábrica**. Ninguém tem permissão para abrir o frasco na loja para adicionar ingredientes próprios; o produto vem 100% finalizado e protegido contra adulteração.
 * **Conexões diretas:** [[19. Classes e membros selados (sealed)|Artigo 19 (Classes seladas)]] e [[00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade)|Guia de Sintaxe 11]].
 
