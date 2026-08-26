@@ -23,7 +23,9 @@ relacionados:
 
 ---
 
-## Índice temático ### 1. Estrutura básica e orientação a objetos (POO)
+## Índice temático
+
+### 1. Estrutura básica e orientação a objetos (POO)
 * [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
 * [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
 * [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobreposição e sobrescrita de método (Method Overriding / Override)|47. Sobreposição e sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]

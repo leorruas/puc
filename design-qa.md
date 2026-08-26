@@ -10,7 +10,8 @@
 - Diagramas Mermaid usam paletas contrastadas por tema e são redesenhados quando o tema muda.
 - Diagramas usam geometria reta e filetes finos para acompanhar a linguagem editorial do leitor.
 - Rótulos internos usam 16 px no desktop e 14 px em telas compactas, com espaçamento padronizado entre nós.
+- Glossários extraem o índice temático do Markdown e o exibem como navegação por grupos; a barra lateral mostra apenas esses grupos e as seções editoriais, não cada verbete.
 
 ## Resultado
 
-**passed** — A alteração foi conferida por revisão de estrutura e estilos: as matérias substituem os perfis como percurso principal, sem alterar arquivos de conteúdo ou links de estudo.
+**passed** — A alteração foi conferida por revisão de estrutura e estilos: o índice do glossário não vaza sintaxe Markdown, mantém os atalhos para os verbetes e reduz a navegação lateral a uma escala legível.

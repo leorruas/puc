@@ -767,6 +767,75 @@ mark.highlight {
     background-color: var(--accent-blue-alpha-15);
 }
 
+/* Navegação específica de glossários: grupos temáticos antes da consulta detalhada. */
+.glossario-navegacao {
+    margin: 0 0 36px;
+    border-top: 2px solid var(--accent-blue);
+}
+
+.glossario-navegacao-rotulo {
+    margin: 10px 0 0 !important;
+    color: var(--accent-blue) !important;
+    font-size: .74rem !important;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.glossario-grupos {
+    margin-top: 8px;
+}
+
+.glossario-grupo {
+    display: grid;
+    grid-template-columns: minmax(170px, .78fr) minmax(0, 2fr);
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    scroll-margin-top: 100px;
+}
+
+.artigo-corpo .glossario-grupo h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--text);
+    font-size: .94rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+}
+
+.glossario-termos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px 18px;
+}
+
+.glossario-termo {
+    padding: 3px 0;
+    border: 0;
+    border-bottom: 1px dashed var(--accent-blue-alpha-30);
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent-blue);
+    font: inherit;
+    font-size: .88rem;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+}
+
+.glossario-termo:hover,
+.glossario-termo:focus-visible {
+    color: var(--text);
+    border-bottom-color: var(--accent-blue);
+    outline: none;
+}
+
+.glossario-termo code {
+    font-size: .84em;
+}
+
 /* Listas */
 .artigo-corpo ul,
 .artigo-corpo ol {
@@ -1357,6 +1426,15 @@ mark:not(.highlight) code {
         border-right: none;
         border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
         padding-bottom: 16px;
+    }
+
+    .glossario-grupo {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .glossario-termos {
+        grid-template-columns: 1fr;
     }
 
     .artigo-nav-cards-grid {

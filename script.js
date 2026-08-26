@@ -638,6 +638,85 @@ function processarLaTeXSetas(md) {
         .replace(/\\leftrightarrow(?![a-zA-Z])/gi, "↔");
 }
 
+function extrairIndiceGlossario(md) {
+    const inicio = md.match(/^##\s+Índice temático\s*$(?:\r?\n)?/im);
+    if (!inicio || inicio.index === undefined) return null;
+
+    const antes = md.slice(0, inicio.index);
+    const depoisDoTitulo = md.slice(inicio.index + inicio[0].length);
+    const fim = depoisDoTitulo.search(/^---\s*$\r?\n\r?\n^##\s+/m);
+    if (fim === -1) return null;
+
+    const indiceMarkdown = depoisDoTitulo.slice(0, fim);
+    const depois = depoisDoTitulo.slice(fim);
+    const grupos = [];
+    let grupoAtual = null;
+
+    indiceMarkdown.split(/\r?\n/).forEach(linha => {
+        const tituloGrupo = linha.match(/^###\s+(.+)$/);
+        if (tituloGrupo) {
+            grupoAtual = { titulo: tituloGrupo[1].trim(), termos: [] };
+            grupos.push(grupoAtual);
+            return;
+        }
+
+        if (!grupoAtual) return;
+        const regexLink = /\[\[([^|\]]+)\|([^\]]+)\]\]/g;
+        let link;
+        while ((link = regexLink.exec(linha)) !== null) {
+            grupoAtual.termos.push({ destino: link[1].trim(), rotulo: link[2].trim() });
+        }
+    });
+
+    if (!grupos.length) return null;
+    return { markdown: antes + depois, grupos };
+}
+
+function removerContextoDoCorpo(md) {
+    return md.replace(/^>\s*(?:\*\*Contexto:\*\*\s*)?[^\n\r]+(?:\r?\n>[^\n\r]+)*(?:\r?\n){1,2}/m, "");
+}
+
+function renderizarNavegacaoGlossario(grupos) {
+    if (!grupos?.length || !artigoCorpo) return;
+
+    const navegacao = document.createElement("nav");
+    navegacao.className = "glossario-navegacao";
+    navegacao.setAttribute("aria-label", "Índice temático do glossário");
+    navegacao.innerHTML = '<p class="glossario-navegacao-rotulo">índice temático</p>';
+
+    const listaGrupos = document.createElement("div");
+    listaGrupos.className = "glossario-grupos";
+
+    grupos.forEach((grupo, indice) => {
+        const secao = document.createElement("section");
+        secao.className = "glossario-grupo";
+        secao.id = `glossario-grupo-${indice + 1}`;
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = grupo.titulo;
+        secao.appendChild(titulo);
+
+        const termos = document.createElement("div");
+        termos.className = "glossario-termos";
+
+        grupo.termos.forEach(termo => {
+            const botao = document.createElement("button");
+            botao.type = "button";
+            botao.className = "glossario-termo";
+            botao.dataset.destino = termo.destino;
+            botao.innerHTML = typeof marked !== "undefined" ? marked.parseInline(termo.rotulo) : termo.rotulo;
+            botao.addEventListener("click", () => navegarParaLinkObsidian(termo.destino));
+            termos.appendChild(botao);
+        });
+
+        secao.appendChild(termos);
+        listaGrupos.appendChild(secao);
+    });
+
+    navegacao.appendChild(listaGrupos);
+    artigoCorpo.prepend(navegacao);
+}
+
 // Leitor de Artigos com Suporte Suíço
 function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     rolarAoTopo();
@@ -674,10 +753,12 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     }
 
     const markdownSemFrontmatter = removerFrontmatter(conteudoMarkdown);
-    const markdownLimpo = removerPrimeiroH1(markdownSemFrontmatter);
+    const markdownLimpo = removerContextoDoCorpo(removerPrimeiroH1(markdownSemFrontmatter));
+    const indiceGlossario = extrairIndiceGlossario(markdownLimpo);
+    const markdownParaRenderizar = indiceGlossario ? indiceGlossario.markdown : markdownLimpo;
 
     const blocosCodigo = [];
-    const markdownSemCodigo = markdownLimpo.replace(/(```[\s\S]*?```|`[^`\n]+`)/g, (match) => {
+    const markdownSemCodigo = markdownParaRenderizar.replace(/(```[\s\S]*?```|`[^`\n]+`)/g, (match) => {
         blocosCodigo.push(match);
         return `@@CODE_BLOCK_${blocosCodigo.length - 1}@@`;
     });
@@ -700,6 +781,7 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
 
     processarLinksObsidian();
     processarCalloutsObsidian();
+    renderizarNavegacaoGlossario(indiceGlossario?.grupos);
 
     artigoCorpo.querySelectorAll('li input[type="checkbox"]').forEach(checkbox => {
         const li = checkbox.parentElement;
@@ -913,7 +995,15 @@ function gerarTableOfContents() {
 
     tocNavDesktop.innerHTML = "";
 
-    const headings = Array.from(artigoCorpo.querySelectorAll("h2"));
+    const gruposGlossario = Array.from(artigoCorpo.querySelectorAll(".glossario-grupo"));
+    const headings = gruposGlossario.length
+        ? [
+            ...gruposGlossario,
+            ...Array.from(artigoCorpo.querySelectorAll("h2")).filter(heading =>
+                !heading.closest(".glossario-navegacao") && !/^\d+\.\s/.test(heading.textContent.trim())
+            )
+          ]
+        : Array.from(artigoCorpo.querySelectorAll("h2"));
 
     if (headings.length === 0) {
         if (tocSidebar) tocSidebar.style.display = "none";
