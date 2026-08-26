@@ -6,6 +6,7 @@
 - Busca, listas de artigos, navegação sequencial e retorno à matéria preservados.
 - Direção visual alinhada ao Guia do Portal IFMG: tipografia e números como índice editorial, filetes, pouco preenchimento e fundo contínuo.
 - Na capa, “ads” é o elemento tipográfico dominante; “puc minas” atua como assinatura menor.
+- As notas são carregadas pela cópia pública do repositório para que a página aberta diretamente no vault também preencha as matérias.
 
 ## Resultado
 

@@ -20,12 +20,12 @@ async function obterListaDeArquivos() {
             })
             .map(item => {
                 const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
-                const pathCodificado = item.path.split("/").map(seg => encodeURIComponent(seg)).join("/");
                 const partes = item.path.split("/");
                 const categoria = partes.length > 1 ? partes[0] : "00. Geral";
                 return {
                     titulo: nomeSemExtensao,
-                    path: `./${pathCodificado}`,
+                    // Usa a cópia pública para funcionar também quando o leitor é aberto via file:// pelo Obsidian.
+                    path: encodeURI(`https://raw.githubusercontent.com/leorruas/puc/main/${item.path}`),
                     sourcePath: item.path,
                     categoria: categoria
                 };
@@ -122,12 +122,11 @@ async function obterListaDeArquivos() {
 
         return arquivosFallback.map(p => {
             const nomeSemExtensao = p.split("/").pop().replace(".md", "");
-            const pathCodificado = p.split("/").map(seg => encodeURIComponent(seg)).join("/");
             const partes = p.split("/");
             const categoria = partes.length > 1 ? partes[0] : "00. Geral";
             return {
                 titulo: nomeSemExtensao,
-                path: `./${pathCodificado}`,
+                path: encodeURI(`https://raw.githubusercontent.com/leorruas/puc/main/${p}`),
                 sourcePath: p,
                 categoria: categoria
             };
