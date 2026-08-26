@@ -1336,3 +1336,126 @@ mark:not(.highlight) code {
         gap: 12px;
     }
 }
+
+/* Linguagem editorial compartilhada com o Guia do Portal: matérias ocupam o lugar dos perfis. */
+:root {
+    --bg: #101010;
+    --surface: transparent;
+    --surface-raised: transparent;
+    --text: #f1f0eb;
+    --muted: #a4a39e;
+    --accent-blue: #6fa8e8;
+    --accent-blue-hover: #9ac4f3;
+    --accent-blue-alpha-05: rgba(111, 168, 232, .06);
+    --accent-blue-alpha-15: rgba(111, 168, 232, .15);
+    --accent-blue-alpha-30: rgba(111, 168, 232, .28);
+}
+
+:root[data-theme="light"] {
+    --bg: #ffffff;
+    --surface: transparent;
+    --surface-raised: transparent;
+    --text: #151515;
+    --muted: #65645f;
+    --accent-blue: #1c5f9f;
+    --accent-blue-hover: #174c7e;
+    --accent-blue-alpha-05: rgba(28, 95, 159, .06);
+    --accent-blue-alpha-15: rgba(28, 95, 159, .14);
+    --accent-blue-alpha-30: rgba(28, 95, 159, .28);
+}
+
+body { background: var(--bg); color: var(--text); font-size: 20px; }
+header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
+
+.sticky-nav {
+    padding: 13px 32px;
+    border-bottom-color: color-mix(in srgb, var(--text) 18%, transparent);
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(12px);
+}
+.nav-logo { color: var(--text); font-size: .76rem; font-weight: 650; }
+.nav-logo:hover { color: var(--accent-blue); }
+.nav-link-pastas, .theme-toggle {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--accent-blue);
+    font-size: .76rem;
+}
+.nav-link-pastas:hover, .theme-toggle:hover { background: transparent; color: var(--text); }
+
+.page-masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    grid-template-areas: "copy search";
+    column-gap: 52px;
+    align-items: end;
+    margin: 74px auto 0;
+}
+.masthead-copy { grid-area: copy; }
+.page-masthead .busca-principal { grid-area: search; align-self: end; margin: 0 0 54px; }
+.masthead-copy h1 {
+    font-size: clamp(4.3rem, 9.7vw, 8.7rem);
+    line-height: .84;
+    letter-spacing: -.08em;
+}
+.masthead-copy h1 span,
+.masthead-copy h1 small { display: block; }
+.masthead-copy h1 small {
+    margin-top: .18em;
+    color: var(--accent-blue);
+    font-size: .27em;
+    font-weight: 600;
+    letter-spacing: -.045em;
+    line-height: 1;
+}
+.masthead-copy p { max-width: 390px; margin: 32px 0 54px; font-size: 1rem; line-height: 1.25; }
+.busca-campo, .busca-campo:focus-within {
+    display: block;
+    padding: 0 18px;
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--text) 42%, transparent);
+    border-bottom: 2px solid var(--accent-blue);
+    border-radius: 0;
+    background: transparent;
+}
+.busca-campo input, .busca-campo #main-search-input {
+    box-sizing: border-box;
+    padding: 12px 0 11px;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.05rem;
+}
+
+.orientacoes-iniciais { padding-top: 30px; }
+.explorar-disciplinas { padding: 48px 0 64px; }
+.explorar-disciplinas > h2 { margin-bottom: 18px; font-size: 2.1rem; font-weight: 500; }
+.disciplina-card { min-height: 94px; padding: 14px 0 13px; }
+.pastas-orientacao .disciplina-card { min-height: 126px; }
+.disciplina-card:hover, .disciplina-card:focus-visible { padding-left: 8px; background: transparent; }
+
+/* Navegação de matéria e de artigos: somente linhas e hierarquia textual. */
+.disciplina-leitor, .leitor-artigo { font-size: 16px; }
+.disciplina-leitor { max-width: 1000px; }
+.artigo-nav-cards .nav-card,
+.artigo-nav-cards .nav-card:hover,
+.artigo-nav-cards .nav-card:focus-visible,
+.artigo-nav-cards .nav-card-label,
+.artigo-nav-cards .nav-card-title,
+.retorno-artigo .btn-voltar,
+.retorno-artigo .btn-voltar:hover,
+.retorno-artigo .btn-voltar:focus-visible { text-decoration: none; }
+.btn-voltar { padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--accent-blue); }
+.btn-voltar:hover { background: transparent; color: var(--text); }
+
+@media (max-width: 768px) {
+    header, main { padding-left: 20px; padding-right: 20px; }
+    .sticky-nav { padding: 12px 20px; }
+    .page-masthead { display: flex; flex-direction: column; margin-top: 46px; }
+    .masthead-copy { order: 1; }
+    .page-masthead .busca-principal { order: 2; width: 100%; margin: 26px 0 30px; }
+    .masthead-copy h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
+    .masthead-copy p { margin: 24px 0 26px; }
+    .disciplina-leitor, .leitor-artigo { font-size: 17px; }
+}
