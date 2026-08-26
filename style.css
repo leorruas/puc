@@ -1562,12 +1562,86 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
 .btn-voltar:hover { background: transparent; color: var(--text); }
 
 @media (max-width: 768px) {
+    body { font-size: 18px; }
     header, main { padding-left: 20px; padding-right: 20px; }
     .sticky-nav { padding: 12px 20px; }
-    .page-masthead { display: flex; flex-direction: column; margin-top: 46px; padding: 0 20px; }
+    .nav-logo { font-size: .72rem; }
+    .nav-acoes { gap: 16px; }
+
+    .page-masthead {
+        display: flex;
+        flex-direction: column;
+        margin-top: 42px;
+        padding: 0 20px;
+    }
     .masthead-copy { order: 1; }
-    .page-masthead .busca-principal { order: 2; width: 100%; margin: 26px 0 30px; }
-    .masthead-copy h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
-    .masthead-copy p { margin: 24px 0 26px; }
-    .disciplina-leitor, .leitor-artigo { font-size: 17px; }
+    .page-masthead .busca-principal { order: 2; width: 100%; margin: 20px 0 24px; }
+    .masthead-copy h1 { font-size: clamp(4rem, 21vw, 5.6rem); line-height: .86; }
+    .masthead-copy h1 small { margin-top: .22em; }
+    .masthead-copy p { margin: 20px 0 0; font-size: .92rem; }
+    .busca-campo, .busca-campo:focus-within { padding: 0 12px; }
+    .busca-campo input, .busca-campo #main-search-input { padding: 11px 0; font-size: 1rem; }
+
+    .orientacoes-iniciais { padding-top: 18px; }
+    .explorar-disciplinas { padding: 36px 0 52px; }
+    .explorar-disciplinas > h2 { margin-bottom: 14px; font-size: 1.8rem; }
+    .pastas-container, .pastas-orientacao { grid-template-columns: 1fr; }
+    .disciplina-card,
+    .pastas-orientacao .disciplina-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        min-height: 0;
+        padding: 17px 0;
+    }
+    .disciplina-card:nth-child(odd), .disciplina-card:nth-child(even) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .indice-numero { font-size: 3.15rem; }
+    .disciplina-card-conteudo strong { font-size: 1.35rem; line-height: 1.03; }
+    .disciplina-card-conteudo .indice-resumo { margin-top: 7px; font-size: .82rem; }
+    .disciplina-card:hover, .disciplina-card:focus-visible { padding-left: 0; }
+
+    .disciplina-leitor { margin: 28px auto 44px; }
+    .disciplina-cabecalho { margin-bottom: 22px; padding-bottom: 14px; }
+    .disciplina-cabecalho h2 { font-size: clamp(2rem, 10vw, 3rem); }
+    .disciplina-acao { grid-template-columns: 48px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
+    .disciplina-acao-conteudo strong { font-size: 1.05rem; line-height: 1.18; }
+    .resultado-item { grid-template-columns: 48px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
+    .resultado-conteudo strong { font-size: 1.05rem; }
+
+    .leitor-artigo { margin-top: 26px; font-size: 17px; }
+    .artigo-layout-container { gap: 24px; }
+    .artigo-toc-sidebar {
+        max-height: 38vh;
+        overflow-y: auto;
+        padding-right: 8px;
+        padding-bottom: 12px;
+    }
+    .toc-list .toc-item a { padding: 7px 4px; font-size: .84rem; }
+    #toc-filter-input { min-height: 38px; font-size: .84rem; }
+    .artigo-corpo p { font-size: 1rem; line-height: 1.65; }
+    .artigo-corpo h2 { margin-top: 28px; font-size: 1.32rem; }
+    .artigo-corpo h3 { font-size: 1.12rem; }
+    .artigo-corpo table { margin: 20px 0; font-size: .82rem; }
+    .artigo-corpo th, .artigo-corpo td { padding: 9px 10px; }
+    .artigo-corpo pre { margin: 16px 0; padding: 14px; overflow-x: auto; }
+    .glossario-navegacao { margin-bottom: 26px; }
+    .artigo-nav-cards-grid { gap: 0; }
+    .nav-card { padding: 14px 0; border-width: 0 0 1px; }
+    .nav-card-next { text-align: left; }
+    .retorno-artigo { margin-top: 24px; }
+}
+
+@media (max-width: 420px) {
+    header, main { padding-left: 16px; padding-right: 16px; }
+    .sticky-nav { padding: 11px 16px; }
+    .page-masthead { margin-top: 34px; padding: 0 16px; }
+    .nav-logo { font-size: .68rem; }
+    .nav-acoes { gap: 12px; }
+    .nav-link-pastas, .theme-toggle { font-size: .7rem; }
+    .masthead-copy h1 { font-size: clamp(3.7rem, 21vw, 5rem); }
+    .disciplina-card, .pastas-orientacao .disciplina-card { grid-template-columns: 56px minmax(0, 1fr); }
+    .indice-numero { font-size: 2.8rem; }
+    .disciplina-card-conteudo strong { font-size: 1.24rem; }
+    .artigo-toc-sidebar { max-height: 34vh; }
 }
