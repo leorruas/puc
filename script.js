@@ -1299,18 +1299,6 @@ if (campoTexto) {
     });
 }
 
-if (campoTextoNav) {
-    campoTextoNav.addEventListener("input", (e) => {
-        filtrarArtigos(e.target.value);
-    });
-}
-
-if (btnPesquisar) {
-    btnPesquisar.addEventListener("click", () => {
-        if (campoTexto) filtrarArtigos(campoTexto.value);
-    });
-}
-
 if (btnVoltar) {
     btnVoltar.addEventListener("click", () => voltarParaHome(true));
 }
@@ -1337,7 +1325,6 @@ function voltarParaHome(atualizarHash = true) {
         pastasContainer.classList.remove("escondido");
     }
     if (campoTexto) campoTexto.value = "";
-    if (campoTextoNav) campoTextoNav.value = "";
     containerResultados.innerHTML = "";
 
     if (atualizarHash && window.location.hash) {
