@@ -17,15 +17,18 @@
     <nav class="sticky-nav" id="sticky-nav">
         <span class="nav-logo" id="nav-logo">ads • puc minas</span>
         <div class="nav-acoes">
-            <a href="#pastas-container" class="nav-link-pastas" id="nav-link-pastas">disciplinas</a>
+            <a href="#explorar-disciplinas" class="nav-link-pastas" id="nav-link-pastas">índice</a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema">modo claro</button>
         </div>
     </nav>
 
     <header class="page-masthead" id="page-masthead">
-        <div class="search-wrapper">
-            <input type="search" id="main-search-input" placeholder="pesquisar por assunto ou disciplina..." autocomplete="off">
-        </div>
+        <section class="busca-principal" aria-label="Pesquisar nas matérias">
+            <div class="busca-campo">
+                <label class="sr-only" for="main-search-input">Pesquisar por assunto ou disciplina</label>
+                <input type="search" id="main-search-input" placeholder="pesquisar nas matérias..." autocomplete="off">
+            </div>
+        </section>
         <div class="masthead-copy">
             <h1 id="home-title">ads<br>puc minas</h1>
             <p>caderno digital e repositório de estudos</p>
@@ -33,16 +36,38 @@
     </header>
 
     <main>
-        <div class="pastas-container" id="pastas-container">
-            <!-- As disciplinas serão listadas aqui dinamicamente -->
-        </div>
+        <!-- Orientações Iniciais / Comece Aqui -->
+        <section class="orientacoes-iniciais" id="orientacoes-iniciais" aria-labelledby="orientacoes-iniciais-titulo">
+            <h2 id="orientacoes-iniciais-titulo" class="sr-only">Orientações iniciais</h2>
+            <div class="pastas-container pastas-orientacao" id="orientacoes-container">
+                <!-- Cards de introdução / sintaxe multilinguagem -->
+            </div>
+        </section>
 
-        <div class="resultados">
+        <!-- Grade Suíça de Matérias -->
+        <section class="explorar-disciplinas" id="explorar-disciplinas" aria-labelledby="disciplinas-titulo">
+            <h2 id="disciplinas-titulo">matérias...</h2>
+            <div class="pastas-container" id="pastas-container">
+                <!-- Os cards suíços das matérias serão gerados aqui dinamicamente -->
+            </div>
+        </section>
+
+        <!-- Resultados da Busca -->
+        <div class="resultados escondido" id="resultados">
             <div class="cards-container">
-                <!-- resultados da busca -->
+                <!-- Resultados da busca agrupados -->
             </div>
         </div>
 
+        <!-- Visualizador da Disciplina (Ações / Lista de Artigos) -->
+        <section class="disciplina-leitor escondido" id="disciplina-leitor" aria-live="polite">
+            <nav class="artigo-breadcrumbs" id="disciplina-breadcrumbs" aria-label="Caminho de navegação"></nav>
+            <div class="disciplina-cabecalho" id="disciplina-cabecalho"></div>
+            <div class="disciplina-acoes" id="disciplina-acoes"></div>
+            <button id="btn-voltar-disciplina" class="btn-voltar">&larr; voltar para as matérias</button>
+        </section>
+
+        <!-- Leitor de Artigo Individual -->
         <div class="leitor-artigo escondido" id="leitor-artigo">
             <div class="artigo-layout-container">
                 <!-- Table of Contents (TOC) no Lado Esquerdo -->
@@ -51,7 +76,7 @@
                         <span class="toc-title">Neste artigo</span>
                     </div>
                     <div class="toc-filter-container" id="toc-filter-container">
-                        <input type="search" id="toc-filter-input" placeholder="filtrar tópicos..." autocomplete="off">
+                        <input type="search" id="toc-filter-input" placeholder="filtrar seções..." autocomplete="off">
                     </div>
                     <nav class="toc-nav" id="toc-nav"></nav>
                 </aside>
@@ -64,7 +89,7 @@
                     <nav class="artigo-nav-cards" id="artigo-nav-rodape" aria-label="Navegação entre artigos"></nav>
                     <div class="retorno-artigo">
                         <p id="retorno-artigo-texto">quer continuar estudando?</p>
-                        <button id="btn-voltar" class="btn-voltar">&larr; voltar para as matérias</button>
+                        <button id="btn-voltar" class="btn-voltar">&larr; voltar para a matéria</button>
                     </div>
                 </div>
             </div>

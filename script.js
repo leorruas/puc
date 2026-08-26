@@ -21,14 +21,17 @@ async function obterListaDeArquivos() {
             .map(item => {
                 const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
                 const pathCodificado = item.path.split("/").map(seg => encodeURIComponent(seg)).join("/");
+                const partes = item.path.split("/");
+                const categoria = partes.length > 1 ? partes[0] : "00. Geral";
                 return {
                     titulo: nomeSemExtensao,
-                    path: `./${pathCodificado}`
+                    path: `./${pathCodificado}`,
+                    sourcePath: item.path,
+                    categoria: categoria
                 };
             });
     } catch (erro) {
         console.warn("Não foi possível listar via GitHub, usando lista padrão completa:", erro);
-        // Fallback local completo com todos os arquivos do vault puc
         const arquivosFallback = [
             "00. Geral/Aula Inaugural - Resumo.md",
             "00. Geral/Aula Inaugural - Transcrição.md",
@@ -120,25 +123,52 @@ async function obterListaDeArquivos() {
         return arquivosFallback.map(p => {
             const nomeSemExtensao = p.split("/").pop().replace(".md", "");
             const pathCodificado = p.split("/").map(seg => encodeURIComponent(seg)).join("/");
+            const partes = p.split("/");
+            const categoria = partes.length > 1 ? partes[0] : "00. Geral";
             return {
                 titulo: nomeSemExtensao,
-                path: `./${pathCodificado}`
+                path: `./${pathCodificado}`,
+                sourcePath: p,
+                categoria: categoria
             };
         });
     }
 }
 
+// Descrições e Metadados das Matérias para o Design Suíço
+const informacoesDisciplinas = {
+    "00. Geral": { numero: "01", resumo: "aula inaugural e introdução ao curso de ads" },
+    "00. Sintaxe Multilinguagem": { numero: "02", resumo: "comparativo de sintaxe c#, java, python e javascript" },
+    "01. Programacao Modular": { numero: "03", resumo: "classes, encapsulamento, herança e polimorfismo em c#" },
+    "02. Modelagem de Dados": { numero: "04", resumo: "modelo relacional, entidades, relacionamentos e normalização" },
+    "03. Manipulacao de Dados SQL": { numero: "05", resumo: "consultas dml, joins, agrupamentos, views e ddl" },
+    "04. Algoritmos e Estruturas de Dados": { numero: "06", resumo: "arrays, listas, pilhas, filas e análise assintótica" },
+    "05. Desenvolvimento Web Back-End": { numero: "07", resumo: "arquitetura mvc, apis rest, autenticação e rotas" },
+    "06. Projeto - Aplicacao Interativa": { numero: "08", resumo: "projeto de extensão ods 4, requisitos e entregas" },
+    "07. Engenharia de Requisitos": { numero: "09", resumo: "elicitação, especificação, casos de uso e modelagem uml" },
+    "08. Design de Interacao": { numero: "10", resumo: "experiência do usuário, heurísticas de usabilidade e ihc" },
+    "09. Redes de Computadores": { numero: "11", resumo: "arquitetura tcp/ip, camadas, roteamento e protocolos" },
+    "10. Lideranca e Competencias": { numero: "12", resumo: "gestão de equipes ágeis, comunicação e liderança" },
+    "11. Desafios Contemporaneos": { numero: "13", resumo: "ética na computação, inteligência artificial e sociedade" }
+};
+
 // Variáveis globais
 let todosOsArtigos = [];
 let todasAsPastas = {};
+let artigoAtual = null;
 
 const campoTexto = document.getElementById("main-search-input");
 const containerResultados = document.querySelector(".cards-container");
-const divResultados = document.querySelector(".resultados");
+const divResultados = document.getElementById("resultados");
 const leitorDeArtigo = document.getElementById("leitor-artigo");
+const leitorDeDisciplina = document.getElementById("disciplina-leitor");
+const disciplinaCabecalho = document.getElementById("disciplina-cabecalho");
+const disciplinaAcoes = document.getElementById("disciplina-acoes");
 const artigoTitulo = document.getElementById("artigo-titulo");
 const artigoCorpo = document.getElementById("artigo-corpo");
 const btnVoltar = document.getElementById("btn-voltar");
+const btnVoltarDisciplina = document.getElementById("btn-voltar-disciplina");
+const retornoArtigoTexto = document.getElementById("retorno-artigo-texto");
 const btnTema = document.getElementById("theme-toggle");
 
 // Controle de Tema (Claro / Escuro)
@@ -166,6 +196,18 @@ if (btnTema) {
     });
 }
 
+function limparNomeCategoria(categoria) {
+    return categoria.replace(/^\d+\.\s*/, "").toLowerCase();
+}
+
+function obterRotaCategoria(categoria) {
+    return `#/disciplina/${encodeURIComponent(categoria)}`;
+}
+
+function rotaDoArtigo(artigo) {
+    return `#/${encodeURIComponent(artigo.categoria)}/${encodeURIComponent(artigo.titulo)}`;
+}
+
 // Carrega os arquivos e busca o conteúdo de cada um
 async function carregarTodosOsArtigos() {
     inicializarTema();
@@ -178,14 +220,14 @@ async function carregarTodosOsArtigos() {
             if (!res.ok) return null;
             const texto = await res.text();
             
-            // Extrai pasta/categoria se houver subpasta
             const caminhoDecodificado = decodeURI(item.path);
             const partes = caminhoDecodificado.replace("./", "").split("/");
-            const categoria = partes.length > 1 ? partes[0] : "Geral";
+            const categoria = item.categoria || (partes.length > 1 ? partes[0] : "00. Geral");
 
             return {
                 titulo: item.titulo,
                 path: item.path,
+                sourcePath: item.sourcePath || item.path,
                 categoria: categoria,
                 conteudo: texto
             };
@@ -198,7 +240,7 @@ async function carregarTodosOsArtigos() {
     const resultados = await Promise.all(promessas);
     todosOsArtigos = resultados.filter(artigo => artigo !== null);
 
-    // Organiza artigos em estrutura de pasta para o accordion
+    // Organiza artigos em estrutura de pasta para as matérias
     todasAsPastas = {};
     todosOsArtigos.forEach(artigo => {
         if (!todasAsPastas[artigo.categoria]) {
@@ -207,41 +249,165 @@ async function carregarTodosOsArtigos() {
         todasAsPastas[artigo.categoria].push(artigo);
     });
 
-    // Ordena os artigos dentro de cada pasta pelo nome e número
-    Object.keys(todasAsPastas).forEach(cat => {
-        todasAsPastas[cat].sort((a, b) => {
-            return a.path.localeCompare(b.path, undefined, { numeric: true, sensitivity: 'base' });
+    // Ordena os artigos dentro de cada matéria pelo caminho e numeração real
+    Object.values(todasAsPastas).forEach(artigos => {
+        artigos.sort((a, b) => {
+            return (a.sourcePath || a.path).localeCompare(b.sourcePath || b.path, "pt-BR", { numeric: true, sensitivity: 'base' });
         });
     });
 
-    // Renderiza a estrutura de pastas na página inicial
+    // Renderiza a grade suíça de matérias na página inicial
     renderizarPastas();
 
-    // Se a página for carregada com uma rota no Hash da URL, abre o artigo correspondente
+    // Se a página for carregada com rota no Hash, abre a rota correspondente
     if (window.location.hash) {
         tratarHashNavegacao();
     }
 }
 
+// Renderiza a Grade Suíça de Matérias na Home
+function renderizarPastas() {
+    const orientacoesContainer = document.getElementById("orientacoes-container");
+    const pastasContainer = document.getElementById("pastas-container");
+    if (!pastasContainer || !orientacoesContainer) return;
+
+    pastasContainer.innerHTML = "";
+    orientacoesContainer.innerHTML = "";
+
+    const todasCategorias = Object.keys(todasAsPastas).sort((a, b) => a.localeCompare(b, "pt-BR", { numeric: true }));
+
+    const categoriasOrientacao = ["00. Geral", "00. Sintaxe Multilinguagem"];
+
+    todasCategorias.forEach(categoria => {
+        const info = informacoesDisciplinas[categoria] || {
+            numero: categoria.match(/^\d+/)?.[0] || "•",
+            resumo: `${todasAsPastas[categoria].length} artigos disponíveis`
+        };
+
+        const card = document.createElement("a");
+        card.className = "disciplina-card";
+        card.href = obterRotaCategoria(categoria);
+        card.setAttribute("aria-label", `Abrir disciplina ${limparNomeCategoria(categoria)}`);
+
+        card.innerHTML = `
+            <span class="indice-numero">${info.numero}</span>
+            <span class="disciplina-card-conteudo">
+                <strong>${limparNomeCategoria(categoria)}</strong>
+                <span class="indice-resumo">${info.resumo}</span>
+            </span>
+        `;
+
+        card.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            abrirDisciplina(categoria);
+        });
+
+        if (categoriasOrientacao.includes(categoria)) {
+            orientacoesContainer.appendChild(card);
+        } else {
+            pastasContainer.appendChild(card);
+        }
+    });
+}
+
+// Visualizador da Matéria (Lista Suíça de Artigos da Disciplina)
+function abrirDisciplina(categoria, atualizarRota = true) {
+    const artigos = todasAsPastas[categoria] || [];
+    if (artigos.length === 0) return;
+
+    leitorDeArtigo.classList.add("escondido");
+    divResultados.classList.add("escondido");
+    document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
+    document.getElementById("explorar-disciplinas")?.classList.add("escondido");
+    artigoAtual = null;
+
+    if (atualizarRota && window.location.hash !== obterRotaCategoria(categoria)) {
+        history.pushState({ categoria: categoria }, "", obterRotaCategoria(categoria));
+    }
+
+    const breadcrumbs = document.getElementById("disciplina-breadcrumbs");
+    breadcrumbs.innerHTML = "";
+    const inicio = document.createElement("button");
+    inicio.type = "button";
+    inicio.className = "breadcrumb-link";
+    inicio.textContent = "início";
+    inicio.addEventListener("click", () => voltarParaHome(true));
+
+    const separador = document.createElement("span");
+    separador.className = "breadcrumb-separator";
+    separador.textContent = "/";
+
+    const atual = document.createElement("span");
+    atual.textContent = limparNomeCategoria(categoria);
+
+    breadcrumbs.append(inicio, separador, atual);
+
+    disciplinaCabecalho.innerHTML = `
+        <p class="disciplina-rotulo">matéria • ${artigos.length} artigos</p>
+        <h2>${limparNomeCategoria(categoria)}</h2>
+    `;
+
+    disciplinaAcoes.innerHTML = "";
+    artigos.forEach((artigo, idx) => {
+        const acao = document.createElement("a");
+        acao.className = "disciplina-acao";
+        acao.href = rotaDoArtigo(artigo);
+        acao.setAttribute("aria-label", artigo.titulo);
+
+        const numeroFormatado = String(idx + 1).padStart(2, "0");
+
+        acao.innerHTML = `
+            <span class="disciplina-acao-numero">${numeroFormatado}</span>
+            <span class="disciplina-acao-conteudo">
+                <strong>${artigo.titulo}</strong>
+            </span>
+        `;
+
+        acao.addEventListener("click", (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
+            event.preventDefault();
+            abrirArtigo(artigo.titulo, artigo.conteudo);
+        });
+
+        disciplinaAcoes.appendChild(acao);
+    });
+
+    leitorDeDisciplina.classList.remove("escondido");
+    window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+// Filtro de Busca Suíça em Tempo Real
 function filtrarArtigos(termoBusca) {
+    leitorDeDisciplina.classList.add("escondido");
+    leitorDeArtigo.classList.add("escondido");
+
     if (!termoBusca || termoBusca.trim() === "") {
+        divResultados.classList.add("escondido");
         containerResultados.innerHTML = "";
-        const pastasContainer = document.getElementById("pastas-container");
-        if (pastasContainer) pastasContainer.classList.remove("escondido");
+        document.getElementById("orientacoes-iniciais")?.classList.remove("escondido");
+        document.getElementById("explorar-disciplinas")?.classList.remove("escondido");
         return;
     }
 
     const termo = termoBusca.toLowerCase().trim();
-    
-    // Oculta container de pastas ao fazer busca
-    const pastasContainer = document.getElementById("pastas-container");
-    if (pastasContainer) pastasContainer.classList.add("escondido");
 
-    const filtrados = todosOsArtigos.filter(artigo => {
-        const tituloMatch = artigo.titulo.toLowerCase().includes(termo);
-        const conteudoMatch = artigo.conteudo.toLowerCase().includes(termo);
-        return tituloMatch || conteudoMatch;
-    });
+    document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
+    document.getElementById("explorar-disciplinas")?.classList.add("escondido");
+    divResultados.classList.remove("escondido");
+
+    if (termo.length < 2) {
+        containerResultados.innerHTML = `<p class="mensagem-busca">digite ao menos <strong>duas letras</strong> para pesquisar nos tópicos e artigos.</p>`;
+        return;
+    }
+
+    const filtrados = todosOsArtigos
+        .filter(artigo => artigo.titulo.toLowerCase().includes(termo) || artigo.conteudo.toLowerCase().includes(termo))
+        .sort((a, b) => {
+            const prioridadeA = a.titulo.toLowerCase().includes(termo) ? 0 : 1;
+            const prioridadeB = b.titulo.toLowerCase().includes(termo) ? 0 : 1;
+            return prioridadeA - prioridadeB || a.titulo.localeCompare(b.titulo, "pt-BR", { numeric: true });
+        });
 
     exibirResultados(filtrados, termo);
 }
@@ -252,39 +418,20 @@ function destacarTexto(texto, termo) {
     return texto.replace(regex, '<mark class="highlight">$1</mark>');
 }
 
+function escaparHtml(texto) {
+    const elemento = document.createElement("span");
+    elemento.textContent = texto;
+    return elemento.innerHTML;
+}
+
 function removerFrontmatter(markdown) {
     if (!markdown) return "";
-    // Remove cabeçalho YAML entre --- e --- no início do arquivo
     return markdown.replace(/^---[\s\S]*?---\s*/, "");
 }
 
 function removerPrimeiroH1(markdown) {
     if (!markdown) return "";
-    // Remove o primeiro título H1 (# Título...) se houver, para evitar duplicação com o título do leitor
-    return markdown.replace(/^\s*#\s+[^\n]+(?:\r?\n)*/, "");
-}
-
-function processarLaTeXSetas(markdown) {
-    if (!markdown) return "";
-    return markdown
-        .replace(/\$\s*\\rightarrow\s*\$/g, "→")
-        .replace(/\$\s*\\leftarrow\s*\$/g, "←")
-        .replace(/\$\s*\\leftrightarrow\s*\$/g, "↔")
-        .replace(/\$\s*\\Rightarrow\s*\$/g, "⇒")
-        .replace(/\$\s*\\Leftarrow\s*\$/g, "⇐")
-        .replace(/\$\s*\\Leftrightarrow\s*\$/g, "⇔")
-        .replace(/\\rightarrow/g, "→")
-        .replace(/\\leftarrow/g, "←")
-        .replace(/\\leftrightarrow/g, "↔")
-        .replace(/\\Rightarrow/g, "⇒")
-        .replace(/\\Leftarrow/g, "⇐")
-        .replace(/\\Leftrightarrow/g, "⇔")
-        .replace(/\$\s*→\s*\$/g, "→")
-        .replace(/\$\s*←\s*\$/g, "←")
-        .replace(/\$\s*↔\s*\$/g, "↔")
-        .replace(/\$\s*⇒\s*\$/g, "⇒")
-        .replace(/\$\s*⇐\s*\$/g, "⇐")
-        .replace(/\$\s*⇔\s*\$/g, "⇔");
+    return markdown.replace(/^\s*#\s+[^\n\r]+(\r?\n|$)/, "");
 }
 
 function extrairTrechoRelevante(conteudo, termo) {
@@ -293,11 +440,11 @@ function extrairTrechoRelevante(conteudo, termo) {
     const pos = textoLimpo.toLowerCase().indexOf(termo.toLowerCase());
     
     if (pos === -1) {
-        return textoLimpo.substring(0, 150) + "...";
+        return textoLimpo.substring(0, 140) + "...";
     }
-
-    const inicio = Math.max(0, pos - 40);
-    const fim = Math.min(textoLimpo.length, pos + 110);
+    
+    const inicio = Math.max(0, pos - 50);
+    const fim = Math.min(textoLimpo.length, pos + termo.length + 80);
     let trecho = textoLimpo.substring(inicio, fim);
     
     if (inicio > 0) trecho = "..." + trecho;
@@ -309,65 +456,77 @@ function extrairTrechoRelevante(conteudo, termo) {
 function exibirResultados(artigos, termo = "") {
     containerResultados.innerHTML = "";
     leitorDeArtigo.classList.add("escondido");
+    leitorDeDisciplina.classList.add("escondido");
     divResultados.classList.remove("escondido");
 
     if (artigos.length === 0) {
-        containerResultados.innerHTML = "<p class='sem-resultados'>Nenhum resultado encontrado.</p>";
+        containerResultados.innerHTML = `<p class="mensagem-busca">nenhum artigo ou tópico encontrado para <strong>“${escaparHtml(termo)}”</strong>.</p>`;
         return;
     }
 
-    // Agrupa resultados por categoria (pasta)
+    const resumoBusca = document.createElement("p");
+    resumoBusca.className = "resumo-busca";
+    resumoBusca.textContent = `${artigos.length} ${artigos.length === 1 ? "artigo encontrado" : "artigos encontrados"} para “${termo}”`;
+    containerResultados.appendChild(resumoBusca);
+
+    // Agrupa resultados por matéria
     const grupos = {};
     artigos.forEach(artigo => {
         if (!grupos[artigo.categoria]) grupos[artigo.categoria] = [];
         grupos[artigo.categoria].push(artigo);
     });
 
-    Object.keys(grupos).sort().forEach(categoria => {
-        const grupoDiv = document.createElement("div");
-        grupoDiv.className = "busca-grupo-assunto";
+    Object.keys(grupos)
+        .sort((a, b) => a.localeCompare(b, "pt-BR", { numeric: true }))
+        .forEach(categoria => {
+            const grupoDiv = document.createElement("div");
+            grupoDiv.className = "busca-grupo-assunto";
 
-        const tituloGrupo = document.createElement("h3");
-        tituloGrupo.className = "busca-assunto-titulo";
-        tituloGrupo.textContent = categoria;
-        grupoDiv.appendChild(tituloGrupo);
+            const tituloGrupo = document.createElement("h3");
+            tituloGrupo.className = "busca-assunto-titulo";
+            tituloGrupo.textContent = limparNomeCategoria(categoria);
+            grupoDiv.appendChild(tituloGrupo);
 
-        const subCardsContainer = document.createElement("div");
-        subCardsContainer.className = "cards-container";
+            const subCardsContainer = document.createElement("div");
+            subCardsContainer.className = "resultados-lista";
 
-        grupos[categoria].forEach(artigo => {
-            const card = document.createElement("a");
-            card.className = "card";
-            card.href = obterRotaArtigo(artigo);
+            grupos[categoria].forEach((artigo, indice) => {
+                const card = document.createElement("a");
+                card.className = "resultado-item";
+                card.href = rotaDoArtigo(artigo);
 
-            const tag = document.createElement("span");
-            tag.className = "card-tag";
-            tag.textContent = artigo.categoria;
+                const numero = document.createElement("span");
+                numero.className = "resultado-numero";
+                numero.textContent = String(indice + 1).padStart(2, "0");
 
-            const h2 = document.createElement("h2");
-            h2.innerHTML = destacarTexto(artigo.titulo, termo);
+                const conteudoResultado = document.createElement("span");
+                conteudoResultado.className = "resultado-conteudo";
 
-            const p = document.createElement("p");
-            p.className = "conteudo";
-            const trecho = extrairTrechoRelevante(artigo.conteudo, termo);
-            p.innerHTML = destacarTexto(trecho, termo);
+                const titulo = document.createElement("strong");
+                titulo.innerHTML = destacarTexto(artigo.titulo, termo);
 
-            card.appendChild(tag);
-            card.appendChild(h2);
-            card.appendChild(p);
+                const trecho = document.createElement("span");
+                trecho.className = "resultado-trecho";
+                const textoTrecho = extrairTrechoRelevante(artigo.conteudo, termo);
+                trecho.innerHTML = destacarTexto(textoTrecho, termo);
 
-            card.addEventListener("click", (e) => {
-                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-                e.preventDefault();
-                abrirArtigo(artigo.titulo, artigo.conteudo);
+                conteudoResultado.appendChild(titulo);
+                conteudoResultado.appendChild(trecho);
+                card.appendChild(numero);
+                card.appendChild(conteudoResultado);
+
+                card.addEventListener("click", (event) => {
+                    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
+                    event.preventDefault();
+                    abrirArtigo(artigo.titulo, artigo.conteudo);
+                });
+
+                subCardsContainer.appendChild(card);
             });
 
-            subCardsContainer.appendChild(card);
+            grupoDiv.appendChild(subCardsContainer);
+            containerResultados.appendChild(grupoDiv);
         });
-
-        grupoDiv.appendChild(subCardsContainer);
-        containerResultados.appendChild(grupoDiv);
-    });
 }
 
 function normalizarListasObsidian(md) {
@@ -405,79 +564,84 @@ function protegerPipesObsidian(md) {
     });
 }
 
+function processarLaTeXSetas(md) {
+    if (!md) return "";
+    return md
+        .replace(/\$\s*\\rightarrow\s*\$/gi, "→")
+        .replace(/\$\s*\\to\s*\$/gi, "→")
+        .replace(/\$\s*\\leftarrow\s*\$/gi, "←")
+        .replace(/\$\s*\\leftrightarrow\s*\$/gi, "↔")
+        .replace(/\$\s*\\Rightarrow\s*\$/gi, "⇒")
+        .replace(/\$\s*\\Leftarrow\s*\$/gi, "⇐")
+        .replace(/\$\s*\\Leftrightarrow\s*\$/gi, "⇔")
+        .replace(/\\rightarrow(?![a-zA-Z])/gi, "→")
+        .replace(/\\leftarrow(?![a-zA-Z])/gi, "←")
+        .replace(/\\leftrightarrow(?![a-zA-Z])/gi, "↔");
+}
+
+// Leitor de Artigos com Suporte Suíço
 function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     rolarAoTopo();
     divResultados.classList.add("escondido");
-    const pastasContainer = document.getElementById("pastas-container");
-    if (pastasContainer) pastasContainer.classList.add("escondido");
+    leitorDeDisciplina.classList.add("escondido");
+    document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
+    document.getElementById("explorar-disciplinas")?.classList.add("escondido");
 
-    artigoTitulo.textContent = titulo;
+    artigoAtual = todosOsArtigos.find(a => a.titulo === titulo && a.conteudo === conteudoMarkdown) ||
+                  todosOsArtigos.find(a => a.titulo === titulo) || {
+                      titulo: titulo,
+                      path: `./${titulo}.md`,
+                      categoria: "00. Geral",
+                      conteudo: conteudoMarkdown
+                  };
 
-    // Localiza os metadados do artigo na base carregada
-    const artigoAtual = todosOsArtigos.find(a => a.titulo === titulo || a.conteudo === conteudoMarkdown) || {
-        titulo: titulo,
-        path: `./${titulo}.md`,
-        categoria: "Geral",
-        conteudo: conteudoMarkdown
-    };
+    artigoTitulo.textContent = artigoAtual.titulo;
 
-    // Atualiza a URL / Rota no navegador para permitir histórico e botões de voltar/avançar
     if (atualizarHash) {
-        const rotaHash = "#/" + encodeURIComponent(artigoAtual.categoria) + "/" + encodeURIComponent(artigoAtual.titulo);
+        const rotaHash = rotaDoArtigo(artigoAtual);
         if (window.location.hash !== rotaHash) {
             history.pushState({ path: artigoAtual.path, titulo: artigoAtual.titulo }, artigoAtual.titulo, rotaHash);
         }
     }
 
-    // Renderiza a trilha de navegação (breadcrumbs) e a barra de botões sequenciais
     renderizarBreadcrumbs(artigoAtual);
     renderizarBotoesNavegacao(artigoAtual);
-    
-    // Processa caixa de contexto do artigo se houver
     processarContextoArtigo(conteudoMarkdown);
 
-    // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter) e o primeiro H1 duplicado
+    btnVoltar.textContent = `← voltar para ${limparNomeCategoria(artigoAtual.categoria)}`;
+    btnVoltar.setAttribute("aria-label", `Voltar para ${limparNomeCategoria(artigoAtual.categoria)}`);
+    if (retornoArtigoTexto) {
+        retornoArtigoTexto.innerHTML = `terminou este artigo? <strong>continue pelas outras notas de ${limparNomeCategoria(artigoAtual.categoria)}.</strong>`;
+    }
+
     const markdownSemFrontmatter = removerFrontmatter(conteudoMarkdown);
     const markdownLimpo = removerPrimeiroH1(markdownSemFrontmatter);
 
-    // Protege blocos de código (``` e `) para não corromper divisores como // =====...===== com a regex de highlight ==texto==
     const blocosCodigo = [];
     const markdownSemCodigo = markdownLimpo.replace(/(```[\s\S]*?```|`[^`\n]+`)/g, (match) => {
         blocosCodigo.push(match);
         return `@@CODE_BLOCK_${blocosCodigo.length - 1}@@`;
     });
 
-    // Converte a sintaxe de highlight do Obsidian ==texto== para <mark class="obsidian-highlight">texto</mark>
     const markdownComHighlight = markdownSemCodigo.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
 
-    // Restaura os blocos de código intactos
     const markdownComCodigoRestaurado = markdownComHighlight.replace(/@@CODE_BLOCK_(\d+)@@/g, (match, index) => {
         return blocosCodigo[parseInt(index, 10)] || match;
     });
 
-    // Converte notações LaTeX de setas (ex: $\rightarrow$, $\leftrightarrow$) para caracteres Unicode reais (→, ↔)
     const markdownComSetas = processarLaTeXSetas(markdownComCodigoRestaurado);
-
-    // Protege caracteres '|' em links do Obsidian [[Link|Texto]] para não quebrarem tabelas no marked.parse
     const markdownProtegido = protegerPipesObsidian(markdownComSetas);
-
-    // Normaliza identação de listas do Obsidian (1-3 espaços -> 4 espaços) para o marked.parse
     const markdownNormalizado = normalizarListasObsidian(markdownProtegido);
 
-    // Converte Markdown para HTML com marked
     if (typeof marked !== 'undefined') {
         artigoCorpo.innerHTML = marked.parse(markdownNormalizado);
     } else {
         artigoCorpo.innerText = markdownNormalizado;
     }
 
-    // Processa os links do Obsidian [[Nome do Artigo]] e restaura os pipes dos links
     processarLinksObsidian();
-
-    // Processa callouts / caixas de aviso do Obsidian ([!IMPORTANT], [!NOTE], [!TIP], etc.)
     processarCalloutsObsidian();
 
-    // Formata itens de lista de tarefas (Checkboxes / Study Roadmap)
     artigoCorpo.querySelectorAll('li input[type="checkbox"]').forEach(checkbox => {
         const li = checkbox.parentElement;
         if (li) {
@@ -490,7 +654,6 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
         }
     });
 
-    // Processa blocos Mermaid se houver
     if (typeof mermaid !== 'undefined') {
         mermaid.initialize({
             startOnLoad: false,
@@ -513,7 +676,7 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
             }
         });
         const blocosMermaid = artigoCorpo.querySelectorAll('pre code.language-mermaid, pre.language-mermaid');
-        blocosMermaid.forEach((bloco, idx) => {
+        blocosMermaid.forEach((bloco) => {
             const containerPre = bloco.tagName.toLowerCase() === 'pre' ? bloco : bloco.parentElement;
             const codigoMermaid = bloco.textContent;
             const divMermaid = document.createElement('div');
@@ -530,7 +693,6 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
         }, 50);
     }
 
-    // Renderiza expressões matemáticas LaTeX ($...$ e $$...$$) com KaTeX
     if (typeof renderMathInElement !== 'undefined') {
         try {
             renderMathInElement(artigoCorpo, {
@@ -546,38 +708,14 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
         } catch (eMath) {
             console.warn("Erro ao renderizar KaTeX:", eMath);
         }
-    } else {
-        // Fallback rápido se o script KaTeX ainda estiver carregando
-        setTimeout(() => {
-            if (typeof renderMathInElement !== 'undefined') {
-                try {
-                    renderMathInElement(artigoCorpo, {
-                        delimiters: [
-                            { left: '$$', right: '$$', display: true },
-                            { left: '$', right: '$', display: false },
-                            { left: '\\(', right: '\\)', display: false },
-                            { left: '\\[', right: '\\]', display: true }
-                        ],
-                        throwOnError: false,
-                        ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-                    });
-                } catch (eMath) {}
-            }
-        }, 100);
     }
 
-    // Configura a funcionalidade de cópia ao clicar em tags <code> e blocos <pre>
     configurarCopiaDeCodigo();
-
-    // Configura o visualizador de imagens com zoom em modal
     configurarZoomImagens();
-
-    // Gera a Table of Contents (TOC) a partir dos cabeçalhos h2, h3, h4 do artigo
     gerarTableOfContents();
 
     leitorDeArtigo.classList.remove("escondido");
 
-    // Garante que a transição reposicione a leitura no topo exato da tela (scroll 0, 0)
     rolarAoTopo();
     requestAnimationFrame(() => rolarAoTopo());
     setTimeout(rolarAoTopo, 50);
@@ -588,7 +726,6 @@ function processarContextoArtigo(conteudoMarkdown) {
     const contextoEl = document.getElementById("artigo-contexto");
     if (!contextoEl) return;
 
-    // Busca citação de contexto no topo do documento (> **Contexto:** ...)
     const matchContexto = conteudoMarkdown.match(/^>\s*\*\*Contexto:\*\*\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m) ||
                           conteudoMarkdown.match(/^>\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m);
 
@@ -637,10 +774,8 @@ function configurarZoomImagens() {
 }
 
 function configurarCopiaDeCodigo() {
-    // 1. Configura cópia com 1 clique em qualquer trecho inline <code>
     const inlineCodes = artigoCorpo.querySelectorAll('code');
     inlineCodes.forEach(code => {
-        // Se estiver dentro de um bloco <pre>, a cópia é gerenciada pelo botão do bloco
         if (code.closest('pre')) return;
 
         code.setAttribute('title', 'clique para copiar');
@@ -676,7 +811,6 @@ function configurarCopiaDeCodigo() {
         });
     });
 
-    // 2. Configura botão de cópia rápida em blocos de código multilinhas <pre>
     const blocosPre = artigoCorpo.querySelectorAll('pre');
     blocosPre.forEach(pre => {
         if (pre.classList.contains('mermaid') || pre.querySelector('.btn-copiar-codigo')) return;
@@ -733,6 +867,10 @@ function rolarAoTopo() {
     document.body.scrollTop = 0;
 }
 
+// Table of Contents (TOC) com Scrollspy e Filtro em Tempo Real
+let scrollSpyObserver = null;
+let headingsTOC = [];
+
 function gerarTableOfContents() {
     const tocNavDesktop = document.getElementById("toc-nav");
     const tocSidebar = document.getElementById("artigo-toc-sidebar");
@@ -741,298 +879,179 @@ function gerarTableOfContents() {
 
     tocNavDesktop.innerHTML = "";
 
-    // Pega exclusivamente os títulos principais (H2) do artigo
-    const headings = artigoCorpo.querySelectorAll("h2");
+    const headings = Array.from(artigoCorpo.querySelectorAll("h2"));
 
     if (headings.length === 0) {
         if (tocSidebar) tocSidebar.style.display = "none";
         return;
     }
 
-    if (tocSidebar) tocSidebar.style.display = "";
+    if (tocSidebar) tocSidebar.style.display = "block";
 
-    const ulDesktop = document.createElement("ul");
-    ulDesktop.className = "toc-list";
+    const listaDesktop = document.createElement("ul");
+    listaDesktop.className = "toc-list";
 
     headings.forEach((heading, index) => {
-        // Cria um ID amigável se o elemento não possuir
         if (!heading.id) {
-            const slug = heading.textContent
-                .toLowerCase()
-                .replace(/[^\w\s-]/g, "")
-                .replace(/\s+/g, "-") || `secao-${index}`;
-            heading.id = slug;
+            heading.id = `heading-toc-${index}`;
         }
 
-        const texto = heading.textContent.trim();
-
-        // Item Desktop
         const liDesktop = document.createElement("li");
         liDesktop.className = "toc-item";
-        const aDesktop = document.createElement("a");
-        aDesktop.href = `#${heading.id}`;
-        aDesktop.textContent = texto;
-        aDesktop.setAttribute("data-heading-id", heading.id);
-        aDesktop.addEventListener("click", (e) => {
+        const linkDesktop = document.createElement("a");
+        linkDesktop.textContent = heading.textContent.toLowerCase();
+        linkDesktop.href = `#${heading.id}`;
+        linkDesktop.setAttribute("data-target", heading.id);
+
+        linkDesktop.addEventListener("click", (e) => {
             e.preventDefault();
-            scrollParaHeading(heading.id);
+            scrollParaHeading(heading);
         });
-        liDesktop.appendChild(aDesktop);
-        ulDesktop.appendChild(liDesktop);
+
+        liDesktop.appendChild(linkDesktop);
+        listaDesktop.appendChild(liDesktop);
     });
 
-    tocNavDesktop.appendChild(ulDesktop);
+    tocNavDesktop.appendChild(listaDesktop);
 
-    // Configura o filtro em tempo real do sumário lateral
-    const tocFilterContainer = document.getElementById("toc-filter-container");
     const tocFilterInput = document.getElementById("toc-filter-input");
-
-    if (tocFilterContainer && tocFilterInput) {
-        // Se o artigo tiver mais de 4 seções, exibe a caixinha de filtro rápido
-        if (headings.length >= 4) {
-            tocFilterContainer.style.display = "";
-            tocFilterInput.value = "";
-            tocFilterInput.oninput = (e) => {
-                const termo = e.target.value.toLowerCase().trim();
-                const itens = ulDesktop.querySelectorAll(".toc-item");
-                itens.forEach(item => {
-                    const texto = item.textContent.toLowerCase();
-                    if (!termo || texto.includes(termo)) {
-                        item.style.display = "";
-                    } else {
-                        item.style.display = "none";
-                    }
-                });
-            };
-        } else {
-            tocFilterContainer.style.display = "none";
-        }
+    if (tocFilterInput) {
+        tocFilterInput.value = "";
+        tocFilterInput.oninput = (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const items = listaDesktop.querySelectorAll(".toc-item");
+            items.forEach(item => {
+                const link = item.querySelector("a");
+                if (!link) return;
+                const match = link.textContent.toLowerCase().includes(query);
+                item.style.display = match ? "block" : "none";
+            });
+        };
     }
 
-    // Inicializa o ScrollSpy para destacar o item ativo enquanto o usuário rola a página
-    iniciarScrollSpy();
+    inicializarScrollspyTOC(headings);
 }
 
-function scrollParaHeading(idOuTexto) {
-    if (!idOuTexto) return;
-    
-    // Decodifica URI caso venha codificado da URL (%20, %C3%A9, etc.)
-    const decodificado = decodeURIComponent(idOuTexto).trim();
-
-    const normalizar = (s) => (s || "").toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/[^\w\s-]/g, "") // Remove pontuação exceto hífen e espaço
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const slug = normalizar(decodificado).replace(/\s+/g, "-");
-    const termoLimpo = normalizar(decodificado);
-
-    // Extrai número inicial se houver (ex.: "54. Tabela de..." -> "54")
-    const matchNumero = decodificado.match(/^(\d+)\./);
-    const numeroItem = matchNumero ? matchNumero[1] : null;
-    
-    // 1. Tenta buscar direto por ID exato ou ID em slug
-    let el = document.getElementById(decodificado) || 
-             document.getElementById(idOuTexto) || 
-             document.getElementById(slug);
-    
-    // 2. Se não achar por ID, procura entre todos os títulos (H1 a H6) do artigoCorpo
-    if (!el && artigoCorpo) {
-        const headings = Array.from(artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-        
-        // Tentativa A: Correspondência exata de texto normalizado ou slug
-        el = headings.find(h => {
-            const hNorm = normalizar(h.textContent);
-            const hSlug = hNorm.replace(/\s+/g, "-");
-            const hId = h.id ? h.id.toLowerCase() : "";
-            return h.id === decodificado || h.id === slug || hId === slug || hNorm === termoLimpo || hSlug === slug;
-        });
-
-        // Tentativa B: Correspondência pelo número do item no início do título (ex.: "54.")
-        if (!el && numeroItem) {
-            el = headings.find(h => {
-                const texto = h.textContent.trim();
-                return texto.startsWith(`${numeroItem}.`) || texto.startsWith(`${numeroItem} `) || h.id.startsWith(`${numeroItem}-`);
-            });
-        }
-
-        // Tentativa C: Correspondência parcial por inclusão de termos significativos
-        if (!el) {
-            el = headings.find(h => {
-                const hNorm = normalizar(h.textContent);
-                return (termoLimpo.length > 5 && hNorm.includes(termoLimpo)) || (hNorm.length > 5 && termoLimpo.includes(hNorm));
-            });
-        }
-    }
-
-    if (!el) {
-        console.warn("Seção não encontrada para rolagem:", idOuTexto);
-        return;
-    }
-
-    // Altura do sticky nav compensada no scroll
-    const stickyNav = document.getElementById("sticky-nav");
-    const navOffset = stickyNav ? stickyNav.offsetHeight + 24 : 80;
-
-    const elementPosition = el.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-
-    window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: "smooth"
-    });
-}
-
-let scrollSpyObserver = null;
-function iniciarScrollSpy() {
+function inicializarScrollspyTOC(headings) {
     if (scrollSpyObserver) {
         scrollSpyObserver.disconnect();
     }
 
-    const headings = artigoCorpo.querySelectorAll("h2");
-    if (headings.length === 0) return;
+    headingsTOC = headings;
 
-    const callback = (entries) => {
+    scrollSpyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
-                document.querySelectorAll(".toc-nav a").forEach(link => {
-                    if (link.getAttribute("data-heading-id") === id) {
-                        link.classList.add("toc-active");
-                    } else {
-                        link.classList.remove("toc-active");
-                    }
-                });
+                const links = document.querySelectorAll(`.toc-list a[data-target="${id}"]`);
+                document.querySelectorAll(".toc-list a").forEach(a => a.classList.remove("toc-active"));
+                links.forEach(a => a.classList.add("toc-active"));
             }
         });
-    };
-
-    scrollSpyObserver = new IntersectionObserver(callback, {
+    }, {
         rootMargin: "-80px 0px -70% 0px",
         threshold: 0.1
     });
 
-    headings.forEach(h => scrollSpyObserver.observe(h));
+    headings.forEach(heading => scrollSpyObserver.observe(heading));
 }
 
-function buscarArtigoPorCaminho(caminhoOuTitulo) {
-    if (!caminhoOuTitulo) return null;
-    const normalizar = (str) => decodeURIComponent(decodeURI(str))
-        .replace(/^\.\//, "")
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/\.md$/i, "")
-        .replace(/[(),:;+]/g, " ")
-        .replace(/#/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-    const limpo = normalizar(caminhoOuTitulo);
-    const limpoApenasNome = limpo.split("/").pop();
-
-    return todosOsArtigos.find(a => {
-        const caminhoSemExtensao = normalizar(a.path);
-        const nomeArquivo = normalizar(a.path.split("/").pop());
-        const tituloNorm = normalizar(a.titulo);
-
-        return caminhoSemExtensao === limpo ||
-               nomeArquivo === limpo ||
-               nomeArquivo === limpoApenasNome ||
-               tituloNorm === limpo ||
-               tituloNorm === limpoApenasNome;
-    }) || todosOsArtigos.find(a => {
-        const nomeArquivo = normalizar(a.path.split("/").pop());
-        const tituloNorm = normalizar(a.titulo);
-        return nomeArquivo.includes(limpoApenasNome) || limpoApenasNome.includes(nomeArquivo) || tituloNorm.includes(limpoApenasNome);
-    }) || null;
+function extrairNomeLimpo(nomeComPrefixo) {
+    if (!nomeComPrefixo) return "";
+    return nomeComPrefixo.replace(/^\d+\s*[-.]\s*/, "").replace(/\.md$/i, "").trim();
 }
 
-function obterRotaArtigo(artigo, hashSecao = "") {
+function obterRotaArtigo(artigo) {
     if (!artigo) return "#";
-    let rota = "#/" + encodeURIComponent(artigo.categoria) + "/" + encodeURIComponent(artigo.titulo);
-    if (hashSecao) {
-        rota += "#" + encodeURIComponent(hashSecao);
-    }
-    return rota;
+    return rotaDoArtigo(artigo);
 }
 
-function obterHrefParaLinkObsidian(nomeOuCaminho) {
-    if (!nomeOuCaminho) return "#";
-    if (nomeOuCaminho.startsWith("#")) {
-        return nomeOuCaminho;
+function obterHrefParaLinkObsidian(destino) {
+    if (!destino) return "#";
+    if (destino.startsWith("#")) return destino;
+
+    const [nomeArtigo, hashSecao] = destino.split("#");
+    const artigo = buscarArtigoPorCaminho(nomeArtigo.trim());
+    if (artigo) {
+        const rotaBase = obterRotaArtigo(artigo);
+        return hashSecao ? `${rotaBase}#${encodeURIComponent(hashSecao.trim())}` : rotaBase;
     }
-    const [caminhoSemHash, hashSecao] = nomeOuCaminho.split("#");
-    if (!caminhoSemHash || caminhoSemHash.trim() === "") {
-        return hashSecao ? `#${hashSecao}` : "#";
-    }
-    const encontrado = buscarArtigoPorCaminho(caminhoSemHash);
-    if (encontrado) {
-        return obterRotaArtigo(encontrado, hashSecao);
-    }
-    return "#/" + encodeURIComponent(nomeOuCaminho);
+    return "#";
 }
 
-function processarLinksObsidian() {
-    const htmlAtual = artigoCorpo.innerHTML;
-    const regexObsidian = /\[\[([^\n\]]+)\]\]/g;
+function renderizarBotoesNavegacao(artigoAtual) {
+    const rodapeNavContainer = document.getElementById("artigo-nav-rodape");
+    if (!rodapeNavContainer) return;
 
-    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, conteudoBruto) => {
-        // Normaliza qualquer resquício de placeholders ou tags intermediárias
-        let conteudo = conteudoBruto
-            .replace(/<[^>]+>OBSIDIAN_PIPE<[^>]+>/g, "%%OBSIDIANPIPE%%")
-            .replace(/___OBSIDIAN_PIPE___/g, "%%OBSIDIANPIPE%%");
+    rodapeNavContainer.innerHTML = "";
 
-        let caminho = "";
-        let textoExibicao = "";
+    const artigosDaCategoria = todasAsPastas[artigoAtual.categoria] || [];
+    if (artigosDaCategoria.length <= 1) return;
 
-        if (conteudo.includes("%%OBSIDIANPIPE%%")) {
-            const partes = conteudo.split("%%OBSIDIANPIPE%%");
-            caminho = partes[0].trim();
-            textoExibicao = partes[1].trim();
-        } else if (conteudo.includes("|")) {
-            const partes = conteudo.split("|");
-            caminho = partes[0].trim();
-            textoExibicao = partes[1].trim();
-        } else {
-            caminho = conteudo.trim();
-            textoExibicao = conteudo.trim();
-        }
+    const indiceAtual = artigosDaCategoria.findIndex(a => a.titulo === artigoAtual.titulo);
+    if (indiceAtual === -1) return;
 
-        // Remove tags HTML indesejadas do caminho de destino
-        caminho = caminho.replace(/<[^>]+>/g, "").trim();
-        const href = obterHrefParaLinkObsidian(caminho);
+    const artigoAnterior = indiceAtual > 0 ? artigosDaCategoria[indiceAtual - 1] : null;
+    const artigoProximo = indiceAtual < artigosDaCategoria.length - 1 ? artigosDaCategoria[indiceAtual + 1] : null;
 
-        return `<a class="obsidian-link" href="${href}" data-destino="${caminho}">${textoExibicao}</a>`;
-    });
+    if (!artigoAnterior && !artigoProximo) return;
 
-    artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
-        link.addEventListener("click", (e) => {
-            // Permite abertura nativa em nova aba caso Cmd (Mac), Ctrl (Win/Linux) ou botão do meio estejam pressionados
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
-                return;
-            }
+    const grid = document.createElement("div");
+    grid.className = "artigo-nav-cards-grid";
+
+    if (artigoAnterior) {
+        const cardPrev = document.createElement("a");
+        cardPrev.className = "nav-card nav-card-prev";
+        cardPrev.href = obterRotaArtigo(artigoAnterior);
+        cardPrev.innerHTML = `
+            <span class="nav-card-label">← anterior</span>
+            <span class="nav-card-title">${artigoAnterior.titulo}</span>
+        `;
+        cardPrev.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
             e.preventDefault();
-            const destino = link.getAttribute("data-destino");
-            navegarParaLinkObsidian(destino);
+            abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo);
         });
-    });
+        grid.appendChild(cardPrev);
+    } else {
+        const placeholder = document.createElement("div");
+        placeholder.className = "nav-card nav-card-placeholder";
+        grid.appendChild(placeholder);
+    }
+
+    if (artigoProximo) {
+        const cardNext = document.createElement("a");
+        cardNext.className = "nav-card nav-card-next";
+        cardNext.href = obterRotaArtigo(artigoProximo);
+        cardNext.innerHTML = `
+            <span class="nav-card-label">próximo →</span>
+            <span class="nav-card-title">${artigoProximo.titulo}</span>
+        `;
+        cardNext.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo);
+        });
+        grid.appendChild(cardNext);
+    } else {
+        const placeholder = document.createElement("div");
+        placeholder.className = "nav-card nav-card-placeholder";
+        grid.appendChild(placeholder);
+    }
+
+    rodapeNavContainer.appendChild(grid);
 }
 
 function processarCalloutsObsidian() {
     const blockquotes = artigoCorpo.querySelectorAll('blockquote');
     blockquotes.forEach(bq => {
         const conteudo = bq.innerHTML;
-        const match = conteudo.match(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*([^\n<]+))?/i);
+        const match = conteudo.match(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:[ \t]+([^\n<]+))?/i);
         if (match) {
             const tipo = match[1].toUpperCase();
             const tituloCustomizado = match[2] ? match[2].trim() : '';
             
-            // Remove a tag [!TIPO] e o título do conteúdo do parágrafo
-            let htmlLimpo = conteudo.replace(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*[^\n<]+)?/i, '');
-            
-            // Remove parágrafos vazios gerados na conversão
+            let htmlLimpo = conteudo.replace(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:[ \t]+[^\n<]+)?/i, '');
             htmlLimpo = htmlLimpo.replace(/<p>\s*<\/p>/g, '');
 
             const rotulos = {
@@ -1078,252 +1097,115 @@ function renderizarBreadcrumbs(artigo) {
         voltarParaHome(true);
     });
 
-    const sep1 = document.createElement("span");
-    sep1.className = "breadcrumb-separator";
-    sep1.textContent = "/";
+    const separador1 = document.createElement("span");
+    separador1.className = "breadcrumb-separator";
+    separador1.textContent = "/";
 
     const linkCategoria = document.createElement("a");
     linkCategoria.className = "breadcrumb-link";
-    linkCategoria.href = "#";
-    linkCategoria.textContent = artigo.categoria;
+    linkCategoria.href = obterRotaCategoria(artigo.categoria);
+    linkCategoria.textContent = limparNomeCategoria(artigo.categoria);
     linkCategoria.addEventListener("click", (e) => {
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
         e.preventDefault();
-        voltarParaHome(true);
-        setTimeout(() => {
-            abrirPastaPorNome(artigo.categoria);
-        }, 120);
+        abrirDisciplina(artigo.categoria);
     });
 
-    breadcrumbsNav.appendChild(linkHome);
-    breadcrumbsNav.appendChild(sep1);
-    breadcrumbsNav.appendChild(linkCategoria);
+    const separador2 = document.createElement("span");
+    separador2.className = "breadcrumb-separator";
+    separador2.textContent = "/";
+
+    const spanArtigo = document.createElement("span");
+    spanArtigo.textContent = artigo.titulo;
+
+    breadcrumbsNav.append(linkHome, separador1, linkCategoria, separador2, spanArtigo);
 }
 
-function renderizarBotoesNavegacao(artigo) {
-    const navRodape = document.getElementById("artigo-nav-rodape");
-    if (!navRodape) return;
-
-    navRodape.innerHTML = "";
-
-    const listaCategoria = todasAsPastas[artigo.categoria] || [];
-    const indexAtual = listaCategoria.findIndex(a => a.path === artigo.path || a.titulo === artigo.titulo);
-
-    const artigoAnterior = indexAtual > 0 ? listaCategoria[indexAtual - 1] : null;
-    const artigoProximo = (indexAtual >= 0 && indexAtual < listaCategoria.length - 1) ? listaCategoria[indexAtual + 1] : null;
-    const artigoResumo = listaCategoria.find(a => a.path.includes("00.") || a.titulo.toLowerCase().includes("resumo"));
-
-    if (!artigoAnterior && !artigoProximo && !artigoResumo) return;
-
-    const cardsGrid = document.createElement("div");
-    cardsGrid.className = "artigo-nav-cards-grid";
-
-    if (artigoAnterior) {
-        const cardPrev = document.createElement("a");
-        cardPrev.className = "nav-card nav-card-prev";
-        cardPrev.href = obterRotaArtigo(artigoAnterior);
-        cardPrev.innerHTML = `
-            <span class="nav-card-label">&larr; artigo anterior</span>
-            <span class="nav-card-title">${artigoAnterior.titulo}</span>
-        `;
-        cardPrev.addEventListener("click", (e) => {
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-            e.preventDefault();
-            abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true);
-        });
-        cardsGrid.appendChild(cardPrev);
-    } else {
-        const placeholder = document.createElement("div");
-        placeholder.className = "nav-card-placeholder";
-        cardsGrid.appendChild(placeholder);
-    }
-
-    if (artigoProximo) {
-        const cardNext = document.createElement("a");
-        cardNext.className = "nav-card nav-card-next";
-        cardNext.href = obterRotaArtigo(artigoProximo);
-        cardNext.innerHTML = `
-            <span class="nav-card-label">próximo artigo &rarr;</span>
-            <span class="nav-card-title">${artigoProximo.titulo}</span>
-        `;
-        cardNext.addEventListener("click", (e) => {
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-            e.preventDefault();
-            abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true);
-        });
-        cardsGrid.appendChild(cardNext);
-    } else if (artigoResumo && artigoResumo.titulo !== artigo.titulo) {
-        const cardResumo = document.createElement("a");
-        cardResumo.className = "nav-card nav-card-next nav-card-resumo";
-        cardResumo.href = obterRotaArtigo(artigoResumo);
-        cardResumo.innerHTML = `
-            <span class="nav-card-label">resumo da matéria &rarr;</span>
-            <span class="nav-card-title">${artigoResumo.titulo}</span>
-        `;
-        cardResumo.addEventListener("click", (e) => {
-            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-            e.preventDefault();
-            abrirArtigo(artigoResumo.titulo, artigoResumo.conteudo, true);
-        });
-        cardsGrid.appendChild(cardResumo);
-    }
-
-    navRodape.appendChild(cardsGrid);
+function buscarArtigoPorCaminho(nomeOuCaminho) {
+    if (!nomeOuCaminho) return null;
+    const normalizar = (str) => str.trim().toLowerCase().replace(/:/g, " -").replace(/\s+/g, " ");
+    const limpo = normalizar(nomeOuCaminho);
+    
+    return todosOsArtigos.find(a => {
+        const tituloMatch = normalizar(a.titulo) === limpo;
+        const nomeArquivo = normalizar(decodeURI(a.path).split("/").pop().replace(".md", ""));
+        const caminhoSemExtensao = normalizar(decodeURI(a.path).replace("./", "").replace(/\.md$/, ""));
+        return tituloMatch || nomeArquivo === limpo || caminhoSemExtensao === limpo;
+    });
 }
 
-function abrirPastaPorNome(nomeCategoria) {
-    const pastasContainer = document.getElementById("pastas-container");
-    if (!pastasContainer) return;
+function scrollParaHeading(heading) {
+    if (!heading) return;
+    const stickyNav = document.getElementById("sticky-nav");
+    const offset = (stickyNav ? stickyNav.offsetHeight : 60) + 20;
+    const elementPosition = heading.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth"
+    });
+}
 
-    pastasContainer.querySelectorAll(".pasta-item").forEach(item => {
-        const header = item.querySelector(".pasta-nome");
-        if (header && header.textContent.trim() === nomeCategoria.trim()) {
-            item.classList.add("aberta");
-            item.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-            item.classList.remove("aberta");
+function navegarParaLinkObsidian(destino, atualizarHash = true) {
+    if (!destino) return;
+
+    if (destino.startsWith("#")) {
+        const secaoTexto = destino.substring(1).trim();
+        const todosHeadings = Array.from(artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        const normalizar = (s) => s.toLowerCase().replace(/[\s\-_]+/g, "").replace(/[^a-z0-9]/gi, "");
+        const queryNormalizada = normalizar(secaoTexto);
+
+        let alvo = document.getElementById(secaoTexto);
+        if (!alvo) {
+            alvo = todosHeadings.find(h => normalizar(h.id) === queryNormalizada || normalizar(h.textContent) === queryNormalizada);
         }
-    });
-}
 
-function navegarParaLinkObsidian(nomeOuCaminho, atualizarHash = true) {
-    if (!nomeOuCaminho) return;
-
-    // Caso 1: Link interno para uma seção da página atual (ex.: [[#1. Tipo (Type)]] ou #secao)
-    if (nomeOuCaminho.startsWith("#")) {
-        const hashSecao = nomeOuCaminho.replace(/^#/, "").trim();
-        scrollParaHeading(hashSecao);
+        if (alvo) {
+            scrollParaHeading(alvo);
+        }
         return;
     }
 
-    // Caso 2: Link para outro artigo ou outro artigo com seção (ex.: [[OutroArtigo#Secao]])
-    const [caminhoSemHash, hashSecao] = nomeOuCaminho.split("#");
-
-    // Se o caminho antes do # for vazio, é link de âncora interno
-    if (!caminhoSemHash || caminhoSemHash.trim() === "") {
-        if (hashSecao) scrollParaHeading(hashSecao.trim());
-        return;
-    }
-
-    const encontrado = buscarArtigoPorCaminho(caminhoSemHash);
+    const [nomeArtigo, hashSecao] = destino.split("#");
+    const encontrado = buscarArtigoPorCaminho(nomeArtigo.trim());
 
     if (encontrado) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
-            // Aguarda a renderização do markdown, KaTeX e os resets de scroll do abrirArtigo()
             setTimeout(() => {
-                scrollParaHeading(hashSecao.trim());
+                navegarParaLinkObsidian(`#${hashSecao.trim()}`, false);
             }, 250);
-            setTimeout(() => {
-                scrollParaHeading(hashSecao.trim());
-            }, 500);
-        }
-    } else {
-        // Se não encontrou outro arquivo com esse nome, tenta rolar até a seção no artigo atual
-        if (hashSecao) {
-            scrollParaHeading(hashSecao.trim());
-        } else {
-            scrollParaHeading(nomeOuCaminho);
         }
     }
 }
 
-function renderizarPastas() {
-    const pastasContainer = document.getElementById("pastas-container");
-    if (!pastasContainer) return;
+function processarLinksObsidian() {
+    const htmlAtual = artigoCorpo.innerHTML;
+    const regexObsidian = /\[\[(?:([^\]\|]+)%%OBSIDIANPIPE%%)?([^\]]+)\]\]/g;
 
-    pastasContainer.innerHTML = "";
+    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, caminho, textoExibicao) => {
+        const destino = (caminho || textoExibicao).trim();
+        const rotulo = (textoExibicao || destino).trim();
+        const href = obterHrefParaLinkObsidian(destino);
+        return `<a href="${href}" class="obsidian-link" data-destino="${destino}">${rotulo}</a>`;
+    });
 
-    const categoriasOrdenadas = Object.keys(todasAsPastas).sort();
-
-    categoriasOrdenadas.forEach(categoria => {
-        const pastaItem = document.createElement("div");
-        pastaItem.className = "pasta-item";
-
-        const header = document.createElement("div");
-        header.className = "pasta-header";
-
-        const nome = document.createElement("span");
-        nome.className = "pasta-nome";
-        nome.textContent = categoria;
-
-        const icone = document.createElement("span");
-        icone.className = "pasta-icone";
-        icone.textContent = "+";
-
-        header.appendChild(nome);
-        header.appendChild(icone);
-
-        const conteudo = document.createElement("div");
-        conteudo.className = "pasta-conteudo";
-
-        todasAsPastas[categoria].forEach(arquivo => {
-            const linkArtigo = document.createElement("a");
-            linkArtigo.className = "artigo-lista-link";
-            linkArtigo.textContent = arquivo.titulo;
-            linkArtigo.href = obterRotaArtigo(arquivo);
-            
-            linkArtigo.addEventListener("click", async (e) => {
-                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-                e.preventDefault();
-                e.stopPropagation();
-                abrirArtigo(arquivo.titulo, arquivo.conteudo, true);
-            });
-            
-            conteudo.appendChild(linkArtigo);
+    artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
+        link.addEventListener("click", (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            const destino = link.getAttribute("data-destino");
+            navegarParaLinkObsidian(destino);
         });
-
-        pastaItem.appendChild(header);
-        pastaItem.appendChild(conteudo);
-
-        header.addEventListener("click", () => {
-            const jaAberta = pastaItem.classList.contains("aberta");
-            
-            document.querySelectorAll(".pasta-item").forEach(item => {
-                item.classList.remove("aberta");
-            });
-
-            if (!jaAberta) {
-                pastaItem.classList.add("aberta");
-            }
-        });
-
-        pastasContainer.appendChild(pastaItem);
     });
 }
-
-// Event Listeners para buscas
-if (campoTexto) {
-    campoTexto.addEventListener("input", (e) => {
-        filtrarArtigos(e.target.value);
-    });
-}
-
-if (btnVoltar) {
-    btnVoltar.addEventListener("click", () => voltarParaHome(true));
-}
-
-// Configuração do Sticky Navbar baseada no scroll
-const headerEl = document.querySelector("header");
-const stickyNav = document.getElementById("sticky-nav");
-
-window.addEventListener("scroll", () => {
-    if (!headerEl || !stickyNav) return;
-    const headerHeight = headerEl.offsetHeight;
-    if (window.scrollY > headerHeight) {
-        stickyNav.classList.add("visible");
-    } else {
-        stickyNav.classList.remove("visible");
-    }
-});
 
 function voltarParaHome(atualizarHash = true) {
     leitorDeArtigo.classList.add("escondido");
-    divResultados.classList.remove("escondido");
-    const pastasContainer = document.getElementById("pastas-container");
-    if (pastasContainer) {
-        pastasContainer.classList.remove("escondido");
-    }
+    leitorDeDisciplina.classList.add("escondido");
+    divResultados.classList.add("escondido");
+    document.getElementById("orientacoes-iniciais")?.classList.remove("escondido");
+    document.getElementById("explorar-disciplinas")?.classList.remove("escondido");
+
     if (campoTexto) campoTexto.value = "";
     containerResultados.innerHTML = "";
 
@@ -1334,12 +1216,43 @@ function voltarParaHome(atualizarHash = true) {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Event Listeners
+if (campoTexto) {
+    campoTexto.addEventListener("input", (e) => {
+        filtrarArtigos(e.target.value);
+    });
+}
+
+if (btnVoltar) {
+    btnVoltar.addEventListener("click", () => {
+        if (artigoAtual && artigoAtual.categoria) {
+            abrirDisciplina(artigoAtual.categoria, true);
+        } else {
+            voltarParaHome(true);
+        }
+    });
+}
+
+if (btnVoltarDisciplina) {
+    btnVoltarDisciplina.addEventListener("click", () => voltarParaHome(true));
+}
+
+const stickyNav = document.getElementById("sticky-nav");
+window.addEventListener("scroll", () => {
+    if (!stickyNav) return;
+    if (window.scrollY > 80) {
+        stickyNav.classList.add("visible");
+    } else {
+        stickyNav.classList.remove("visible");
+    }
+});
+
 const navLogo = document.getElementById("nav-logo");
 if (navLogo) {
     navLogo.addEventListener("click", () => voltarParaHome(true));
 }
 
-const mainTitle = document.querySelector("header h1");
+const mainTitle = document.getElementById("home-title");
 if (mainTitle) {
     mainTitle.addEventListener("click", () => voltarParaHome(true));
 }
@@ -1349,33 +1262,49 @@ if (navLinkPastas) {
     navLinkPastas.addEventListener("click", (e) => {
         e.preventDefault();
         voltarParaHome(true);
-        const pastasContainer = document.getElementById("pastas-container");
+        const pastasContainer = document.getElementById("explorar-disciplinas");
         if (pastasContainer) {
             pastasContainer.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     });
 }
 
-// Tratamento de Histórico e Rotas do Navegador (Popstate e Hashchange)
+// Tratamento de Rotas no Hash
 function tratarHashNavegacao() {
     const hash = window.location.hash;
     if (!hash || hash === "#" || hash === "#/") {
-        if (!leitorDeArtigo.classList.contains("escondido")) {
-            voltarParaHome(false);
-        }
+        voltarParaHome(false);
         return;
     }
 
     const rotaLimpa = decodeURIComponent(hash.replace(/^#\/?/, "").trim());
-    if (rotaLimpa) {
-        navegarParaLinkObsidian(rotaLimpa, false);
+    
+    if (rotaLimpa.startsWith("disciplina/")) {
+        const categoria = rotaLimpa.replace("disciplina/", "").trim();
+        abrirDisciplina(categoria, false);
+        return;
     }
+
+    const partes = rotaLimpa.split("/");
+    if (partes.length >= 2) {
+        const [categoria, ...resto] = partes;
+        const nomeArtigo = resto.join("/");
+        const artigo = todosOsArtigos.find(a => 
+            a.categoria.toLowerCase() === categoria.toLowerCase() && 
+            a.titulo.toLowerCase() === nomeArtigo.toLowerCase()
+        );
+        if (artigo) {
+            abrirArtigo(artigo.titulo, artigo.conteudo, false);
+            return;
+        }
+    }
+
+    navegarParaLinkObsidian(rotaLimpa, false);
 }
 
 window.addEventListener("popstate", () => {
     tratarHashNavegacao();
 });
 
-// Inicializar na carga da página
+// Inicialização
 carregarTodosOsArtigos();
-
