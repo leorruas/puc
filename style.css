@@ -1503,6 +1503,7 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     column-gap: 52px;
     align-items: end;
     margin: 74px auto 0;
+    padding: 0 32px;
 }
 .masthead-copy { grid-area: copy; }
 .page-masthead .busca-principal { grid-area: search; align-self: end; margin: 0 0 54px; }
@@ -1563,7 +1564,7 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
 @media (max-width: 768px) {
     header, main { padding-left: 20px; padding-right: 20px; }
     .sticky-nav { padding: 12px 20px; }
-    .page-masthead { display: flex; flex-direction: column; margin-top: 46px; }
+    .page-masthead { display: flex; flex-direction: column; margin-top: 46px; padding: 0 20px; }
     .masthead-copy { order: 1; }
     .page-masthead .busca-principal { order: 2; width: 100%; margin: 26px 0 30px; }
     .masthead-copy h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
