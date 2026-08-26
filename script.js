@@ -181,6 +181,59 @@ function aplicarTema(tema, persistir = true) {
     }
 }
 
+function configurarMermaid() {
+    if (typeof mermaid === "undefined") return;
+
+    const temaEscuro = document.documentElement.dataset.theme !== "light";
+    mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        fontFamily: "Archivo, sans-serif",
+        flowchart: {
+            curve: "linear",
+            defaultRenderer: "dagre-wrapper"
+        },
+        themeVariables: temaEscuro ? {
+            fontFamily: "Archivo, sans-serif",
+            darkMode: true,
+            background: "#101010",
+            primaryColor: "#182431",
+            primaryTextColor: "#f1f0eb",
+            primaryBorderColor: "#6fa8e8",
+            lineColor: "#9ab0c5",
+            secondaryColor: "#15191d",
+            tertiaryColor: "#20262d"
+        } : {
+            fontFamily: "Archivo, sans-serif",
+            darkMode: false,
+            background: "#ffffff",
+            primaryColor: "#eef5fc",
+            primaryTextColor: "#151515",
+            primaryBorderColor: "#1c5f9f",
+            lineColor: "#3f6282",
+            secondaryColor: "#f7f9fc",
+            tertiaryColor: "#e8f0f8"
+        }
+    });
+}
+
+function renderizarDiagramasMermaid() {
+    if (typeof mermaid === "undefined" || !artigoCorpo) return;
+    configurarMermaid();
+
+    const diagramas = artigoCorpo.querySelectorAll(".mermaid");
+    diagramas.forEach(diagrama => {
+        const codigo = diagrama.dataset.mermaidSource || diagrama.textContent;
+        diagrama.dataset.mermaidSource = codigo;
+        diagrama.removeAttribute("data-processed");
+        diagrama.textContent = codigo;
+    });
+
+    mermaid.run({ nodes: diagramas }).catch(err => {
+        console.error("Erro ao renderizar Mermaid:", err);
+    });
+}
+
 function inicializarTema() {
     const temaSalvo = localStorage.getItem("tema-puc-ads");
     const temaDoSistema = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -192,6 +245,7 @@ if (btnTema) {
         const temaAtual = document.documentElement.dataset.theme === "light" ? "light" : "dark";
         const novoTema = temaAtual === "dark" ? "light" : "dark";
         aplicarTema(novoTema, true);
+        renderizarDiagramasMermaid();
     });
 }
 
@@ -654,42 +708,17 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     });
 
     if (typeof mermaid !== 'undefined') {
-        mermaid.initialize({
-            startOnLoad: false,
-            theme: 'dark',
-            fontFamily: 'Archivo, sans-serif',
-            flowchart: {
-                curve: 'linear',
-                defaultRenderer: 'dagre-wrapper'
-            },
-            themeVariables: {
-                fontFamily: 'Archivo, sans-serif',
-                darkMode: true,
-                background: '#0d0d0d',
-                primaryColor: '#007aff',
-                primaryTextColor: '#ffffff',
-                primaryBorderColor: '#007aff',
-                lineColor: '#007aff',
-                secondaryColor: '#1a1a1a',
-                tertiaryColor: '#222222'
-            }
-        });
         const blocosMermaid = artigoCorpo.querySelectorAll('pre code.language-mermaid, pre.language-mermaid');
         blocosMermaid.forEach((bloco) => {
             const containerPre = bloco.tagName.toLowerCase() === 'pre' ? bloco : bloco.parentElement;
             const codigoMermaid = bloco.textContent;
             const divMermaid = document.createElement('div');
             divMermaid.className = 'mermaid';
+            divMermaid.dataset.mermaidSource = codigoMermaid;
             divMermaid.textContent = codigoMermaid;
             containerPre.replaceWith(divMermaid);
         });
-        setTimeout(() => {
-            try {
-                mermaid.run({ nodes: artigoCorpo.querySelectorAll('.mermaid') });
-            } catch (err) {
-                console.error("Erro ao renderizar Mermaid:", err);
-            }
-        }, 50);
+        setTimeout(renderizarDiagramasMermaid, 50);
     }
 
     if (typeof renderMathInElement !== 'undefined') {
