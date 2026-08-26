@@ -1237,28 +1237,73 @@ function renderizarBreadcrumbs(artigo) {
     breadcrumbsNav.append(linkHome, separador1, linkCategoria, separador2, spanArtigo);
 }
 
-function buscarArtigoPorCaminho(nomeOuCaminho) {
-    if (!nomeOuCaminho) return null;
-    const normalizar = (str) => str.trim().toLowerCase().replace(/:/g, " -").replace(/\s+/g, " ");
-    const limpo = normalizar(nomeOuCaminho);
+function scrollParaHeading(idOuTexto) {
+    if (!idOuTexto) return;
     
-    return todosOsArtigos.find(a => {
-        const tituloMatch = normalizar(a.titulo) === limpo;
-        const nomeArquivo = normalizar(decodeURI(a.path).split("/").pop().replace(".md", ""));
-        const caminhoSemExtensao = normalizar(decodeURI(a.path).replace("./", "").replace(/\.md$/, ""));
-        return tituloMatch || nomeArquivo === limpo || caminhoSemExtensao === limpo;
-    });
-}
+    // Se for um elemento DOM direto
+    if (idOuTexto instanceof HTMLElement) {
+        const stickyNav = document.getElementById("sticky-nav");
+        const offset = (stickyNav ? stickyNav.offsetHeight : 60) + 20;
+        const elementPosition = idOuTexto.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: Math.max(0, elementPosition - offset),
+            behavior: "smooth"
+        });
+        return;
+    }
 
-function scrollParaHeading(heading) {
-    if (!heading) return;
-    const stickyNav = document.getElementById("sticky-nav");
-    const offset = (stickyNav ? stickyNav.offsetHeight : 60) + 20;
-    const elementPosition = heading.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth"
-    });
+    const decodificado = decodeURIComponent(idOuTexto).trim();
+
+    const normalizar = (s) => (s || "").toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const slug = normalizar(decodificado).replace(/\s+/g, "-");
+    const termoLimpo = normalizar(decodificado);
+
+    const matchNumero = decodificado.match(/^(\d+)\./);
+    const numeroItem = matchNumero ? matchNumero[1] : null;
+    
+    let el = document.getElementById(decodificado) || 
+             document.getElementById(idOuTexto) || 
+             document.getElementById(slug);
+    
+    if (!el && artigoCorpo) {
+        const headings = Array.from(artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        
+        el = headings.find(h => {
+            const hNorm = normalizar(h.textContent);
+            const hSlug = hNorm.replace(/\s+/g, "-");
+            const hId = h.id ? h.id.toLowerCase() : "";
+            return h.id === decodificado || h.id === slug || hId === slug || hNorm === termoLimpo || hSlug === slug;
+        });
+
+        if (!el && numeroItem) {
+            el = headings.find(h => {
+                const texto = h.textContent.trim();
+                return texto.startsWith(`${numeroItem}.`) || texto.startsWith(`${numeroItem} `) || h.id.startsWith(`${numeroItem}-`);
+            });
+        }
+
+        if (!el) {
+            el = headings.find(h => {
+                const hNorm = normalizar(h.textContent);
+                return (termoLimpo.length > 4 && hNorm.includes(termoLimpo)) || (hNorm.length > 4 && termoLimpo.includes(hNorm));
+            });
+        }
+    }
+
+    if (el) {
+        const stickyNav = document.getElementById("sticky-nav");
+        const offset = (stickyNav ? stickyNav.offsetHeight : 60) + 20;
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: Math.max(0, elementPosition - offset),
+            behavior: "smooth"
+        });
+    }
 }
 
 function navegarParaLinkObsidian(destino, atualizarHash = true) {
@@ -1266,18 +1311,7 @@ function navegarParaLinkObsidian(destino, atualizarHash = true) {
 
     if (destino.startsWith("#")) {
         const secaoTexto = destino.substring(1).trim();
-        const todosHeadings = Array.from(artigoCorpo.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-        const normalizar = (s) => s.toLowerCase().replace(/[\s\-_]+/g, "").replace(/[^a-z0-9]/gi, "");
-        const queryNormalizada = normalizar(secaoTexto);
-
-        let alvo = document.getElementById(secaoTexto);
-        if (!alvo) {
-            alvo = todosHeadings.find(h => normalizar(h.id) === queryNormalizada || normalizar(h.textContent) === queryNormalizada);
-        }
-
-        if (alvo) {
-            scrollParaHeading(alvo);
-        }
+        scrollParaHeading(secaoTexto);
         return;
     }
 
@@ -1288,21 +1322,91 @@ function navegarParaLinkObsidian(destino, atualizarHash = true) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
             setTimeout(() => {
-                navegarParaLinkObsidian(`#${hashSecao.trim()}`, false);
+                scrollParaHeading(hashSecao.trim());
             }, 250);
+            setTimeout(() => {
+                scrollParaHeading(hashSecao.trim());
+            }, 500);
         }
     }
 }
 
+function buscarArtigoPorCaminho(nomeOuCaminho) {
+    if (!nomeOuCaminho) return null;
+    
+    const normalizar = (str) => decodeURIComponent(decodeURI(str))
+        .replace(/^\.\//, "")
+        .trim()
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+        .replace(/\.md$/i, "")
+        .replace(/[(),:;+]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const limpo = normalizar(nomeOuCaminho);
+    const limpoApenasNome = limpo.split("/").pop().trim();
+
+    return todosOsArtigos.find(a => {
+        const caminhoSemExtensao = normalizar(a.sourcePath || a.path);
+        const nomeArquivo = normalizar((a.sourcePath || a.path).split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+
+        return caminhoSemExtensao === limpo ||
+               nomeArquivo === limpo ||
+               nomeArquivo === limpoApenasNome ||
+               tituloNorm === limpo ||
+               tituloNorm === limpoApenasNome;
+    }) || todosOsArtigos.find(a => {
+        const nomeArquivo = normalizar((a.sourcePath || a.path).split("/").pop());
+        const tituloNorm = normalizar(a.titulo);
+        return (limpoApenasNome.length > 3 && (nomeArquivo.includes(limpoApenasNome) || limpoApenasNome.includes(nomeArquivo) || tituloNorm.includes(limpoApenasNome)));
+    }) || null;
+}
+
+function obterHrefParaLinkObsidian(destino) {
+    if (!destino) return "#";
+    if (destino.startsWith("#")) return destino;
+
+    const [nomeArtigo, hashSecao] = destino.split("#");
+    const artigo = buscarArtigoPorCaminho(nomeArtigo.trim());
+    if (artigo) {
+        const rotaBase = rotaDoArtigo(artigo);
+        return hashSecao ? `${rotaBase}#${encodeURIComponent(hashSecao.trim())}` : rotaBase;
+    }
+    return "#";
+}
+
 function processarLinksObsidian() {
     const htmlAtual = artigoCorpo.innerHTML;
-    const regexObsidian = /\[\[(?:([^\]\|]+)%%OBSIDIANPIPE%%)?([^\]]+)\]\]/g;
+    // Regex flexível que aceita tanto %%OBSIDIANPIPE%% quanto pipes puros |
+    const regexObsidian = /\[\[([^\n\]]+)\]\]/g;
 
-    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, caminho, textoExibicao) => {
-        const destino = (caminho || textoExibicao).trim();
-        const rotulo = (textoExibicao || destino).trim();
-        const href = obterHrefParaLinkObsidian(destino);
-        return `<a href="${href}" class="obsidian-link" data-destino="${destino}">${rotulo}</a>`;
+    artigoCorpo.innerHTML = htmlAtual.replace(regexObsidian, (match, conteudoBruto) => {
+        let conteudo = conteudoBruto
+            .replace(/<[^>]+>OBSIDIAN_PIPE<[^>]+>/g, "%%OBSIDIANPIPE%%")
+            .replace(/___OBSIDIAN_PIPE___/g, "%%OBSIDIANPIPE%%");
+
+        let caminho = "";
+        let textoExibicao = "";
+
+        if (conteudo.includes("%%OBSIDIANPIPE%%")) {
+            const partes = conteudo.split("%%OBSIDIANPIPE%%");
+            caminho = partes[0].trim();
+            textoExibicao = partes[1].trim();
+        } else if (conteudo.includes("|")) {
+            const partes = conteudo.split("|");
+            caminho = partes[0].trim();
+            textoExibicao = partes[1].trim();
+        } else {
+            caminho = conteudo.trim();
+            textoExibicao = conteudo.trim();
+        }
+
+        caminho = caminho.replace(/<[^>]+>/g, "").trim();
+        const href = obterHrefParaLinkObsidian(caminho);
+
+        return `<a href="${href}" class="obsidian-link" data-destino="${caminho}">${textoExibicao}</a>`;
     });
 
     artigoCorpo.querySelectorAll(".obsidian-link").forEach(link => {
