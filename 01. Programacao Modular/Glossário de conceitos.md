@@ -33,6 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -122,6 +123,8 @@ relacionados:
 | **62** | [[#62. Classe selada (Sealed Class / Final Class)\|Classe selada (`sealed`)]] | Classe cuja herança é terminantemente proibida pelo compilador por segurança e performance. | A **embalagem de remédio lacrada** | `public sealed class Cripto` |
 | **63** | [[#63. Membro selado (Sealed Member / Sealed Override)\|Membro selado (`sealed override`)]] | Método sobrescrito cuja cadeia de novas sobreposições por subclasses foi encerrada. | A **cláusula pétrea constitucional** | `public sealed override void Taxa()` |
 | **64** | [[#64. Instanciação e instanciar (Instantiation / Object Creation)\|Instanciação / Instanciar]] | Ato de alocar memória no *Heap* e criar um objeto vivo a partir do molde de uma classe. | O **nascimento físico do objeto na RAM** | `Conta c = new Conta();` |
+| **65** | [[#65. Tipos genéricos (Generics / Parametric Polymorphism)\|Tipos genéricos (*Generics*)]] | Parametrização de tipos com `<T>` para criar classes e coleções reutilizáveis e homogêneas. | A **gaveta organizadora com divisórias ajustáveis** | `class Pilha<T>`, `List<Conta>` |
+| **66** | [[#66. Segurança de tipos (Type Safety)\|Segurança de tipos (*Type Safety*)]] | Garantia em tempo de compilação de que uma operação só é executada em tipos compatíveis. | A **catraca eletrônica infalível na compilação** | Erros de *cast* viram erros de build |
 
 ---
 
@@ -926,6 +929,26 @@ flowchart TD
 A classe é a **planta arquitetônica desenhada no papel**. Você não pode morar dentro da planta, não pode acender as luzes da planta nem abrir as portas da planta. **Instanciar** é o trabalho dos pedreiros e engenheiros construindo a **casa física de tijolo e cimento** no terreno (o *Heap*). A partir do momento em que a casa está de pé na RAM, você tem uma **instância** (o objeto real) onde pode entrar e interagir.
 
 * **Conexões diretas:** [[07. Construtores (inicialização, sobrecarga e encapsulamento)|Artigo 07 (Construtores)]], [[10. Semântica de valor versus referência|Artigo 10 (Semântica de referência)]], [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/08. Construtores, instanciação e inicialização de objetos (sintaxe comparada)|Guia de Sintaxe 08]].
+
+---
+
+## 65. Tipos genéricos (*Generics / Parametric Polymorphism*)
+
+**Tipos genéricos** (*Generics* ou polimorfismo paramétrico) são um recurso de linguagens tipadas que permite definir classes, interfaces, estruturas e métodos com **parâmetros formais de tipo (`<T>`)**, desacoplando a lógica algorítmica dos tipos concretos de dados que serão armazenados ou processados.
+
+* **O problema que resolveu:** Substituiu as antigas coleções heterogêneas baseadas em `object` (`ArrayList`), que causavam lentidão por *Boxing/Unboxing* e explosões de erros em tempo de execução (*runtime*).
+* **Analogia de Feynman:** A **fôrma de gelo de silicone flexível**. A fôrma tem o formato perfeito de cubos idênticos; você pode usá-la para congelar água mineral, suco de uva ou chocolate derretido. O molde físico é exatamente o mesmo (`Forma<T>`), mas cada lote é 100% puro e homogêneo com o líquido que você despejou.
+* **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Tipos genéricos)]] e [[00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código)|Guia de Sintaxe 08]].
+
+---
+
+## 66. Segurança de tipos (*Type Safety*)
+
+**Segurança de tipos** (*Type Safety*) é a propriedade arquitetônica e formal de uma linguagem de programação que **impede ou bloqueia erros de tipo antes que o programa seja executado**, garantindo que operações sejam realizadas exclusivamente sobre dados válidos e compatíveis.
+
+* **O papel do compilador:** Em linguagens *type-safe* com suporte a *Generics*, qualquer tentativa de inserir um tipo incompatível (ex.: tentar adicionar um `string` em uma `List<Conta>`) faz o **compilador abortar o build imediatamente**, eliminando completamente a necessidade de conversões forçadas e arriscadas (*type casts* manuais) durante a leitura dos dados.
+* **Analogia de Feynman:** A **catraca eletrônica com leitor biométrico**. Se uma pessoa com crachá de visitante tentar passar na catraca dos diretores, a catraca trava na hora na portaria (tempo de compilação), impedindo que qualquer estranho circule despercebido pelas salas dos servidores (tempo de execução).
+* **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Type safety)]] e [[01. Variáveis, tipos e atribuição|Guia de Sintaxe 01]].
 
 ---
 
