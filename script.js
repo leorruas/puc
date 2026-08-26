@@ -681,31 +681,39 @@ function renderizarNavegacaoGlossario(grupos) {
 
     const navegacao = document.createElement("nav");
     navegacao.className = "glossario-navegacao";
-    navegacao.setAttribute("aria-label", "Conceitos do glossário");
-    navegacao.innerHTML = '<p class="glossario-navegacao-rotulo">conceitos do glossário</p>';
+    navegacao.setAttribute("aria-label", "Índice temático do glossário");
+    navegacao.innerHTML = '<p class="glossario-navegacao-rotulo">índice temático</p>';
 
-    const termos = grupos
-        .flatMap(grupo => grupo.termos)
-        .sort((a, b) => {
-            const numeroA = Number.parseInt(a.rotulo, 10) || 0;
-            const numeroB = Number.parseInt(b.rotulo, 10) || 0;
-            return numeroA - numeroB;
+    const listaGrupos = document.createElement("div");
+    listaGrupos.className = "glossario-grupos";
+
+    grupos.forEach((grupo, indice) => {
+        const secao = document.createElement("section");
+        secao.className = "glossario-grupo";
+        secao.id = `glossario-grupo-${indice + 1}`;
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = grupo.titulo;
+        secao.appendChild(titulo);
+
+        const termos = document.createElement("div");
+        termos.className = "glossario-termos";
+
+        grupo.termos.forEach(termo => {
+            const botao = document.createElement("button");
+            botao.type = "button";
+            botao.className = "glossario-termo";
+            botao.dataset.destino = termo.destino;
+            botao.innerHTML = typeof marked !== "undefined" ? marked.parseInline(termo.rotulo) : termo.rotulo;
+            botao.addEventListener("click", () => navegarParaLinkObsidian(termo.destino));
+            termos.appendChild(botao);
         });
 
-    const listaTermos = document.createElement("div");
-    listaTermos.className = "glossario-termos";
-
-    termos.forEach(termo => {
-        const botao = document.createElement("button");
-        botao.type = "button";
-        botao.className = "glossario-termo";
-        botao.dataset.destino = termo.destino;
-        botao.innerHTML = typeof marked !== "undefined" ? marked.parseInline(termo.rotulo) : termo.rotulo;
-        botao.addEventListener("click", () => navegarParaLinkObsidian(termo.destino));
-        listaTermos.appendChild(botao);
+        secao.appendChild(termos);
+        listaGrupos.appendChild(secao);
     });
 
-    navegacao.appendChild(listaTermos);
+    navegacao.appendChild(listaGrupos);
     artigoCorpo.prepend(navegacao);
 }
 
@@ -987,11 +995,7 @@ function gerarTableOfContents() {
 
     tocNavDesktop.innerHTML = "";
 
-    const headings = artigoCorpo.querySelector(".glossario-navegacao")
-        ? Array.from(artigoCorpo.querySelectorAll("h2")).filter(heading =>
-            !heading.closest(".glossario-navegacao") && !/^\d+\.\s/.test(heading.textContent.trim())
-          )
-        : Array.from(artigoCorpo.querySelectorAll("h2"));
+    const headings = Array.from(artigoCorpo.querySelectorAll("h2"));
 
     if (headings.length === 0) {
         if (tocSidebar) tocSidebar.style.display = "none";

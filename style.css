@@ -767,7 +767,7 @@ mark.highlight {
     background-color: var(--accent-blue-alpha-15);
 }
 
-/* Navegação específica de glossários: lista completa em ordem numérica. */
+/* Navegação específica de glossários: grupos temáticos antes da consulta detalhada. */
 .glossario-navegacao {
     margin: 0 0 36px;
     border-top: 2px solid var(--accent-blue);
@@ -782,13 +782,33 @@ mark.highlight {
     text-transform: uppercase;
 }
 
+.glossario-grupos {
+    margin-top: 8px;
+}
+
+.glossario-grupo {
+    display: grid;
+    grid-template-columns: minmax(170px, .78fr) minmax(0, 2fr);
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    scroll-margin-top: 100px;
+}
+
+.artigo-corpo .glossario-grupo h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--text);
+    font-size: .94rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+}
+
 .glossario-termos {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 4px 18px;
-    margin-top: 10px;
-    padding: 14px 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px 18px;
 }
 
 .glossario-termo {
@@ -1406,6 +1426,11 @@ mark:not(.highlight) code {
         border-right: none;
         border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
         padding-bottom: 16px;
+    }
+
+    .glossario-grupo {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .glossario-termos {
