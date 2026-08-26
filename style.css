@@ -1563,6 +1563,7 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
 
 @media (max-width: 768px) {
     body { font-size: 18px; }
+    html, body { width: 100%; overflow-x: clip; }
     header, main { padding-left: 20px; padding-right: 20px; }
     .sticky-nav { padding: 12px 20px; }
     .nav-logo { font-size: .72rem; }
@@ -1609,7 +1610,19 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .resultado-item { grid-template-columns: 48px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
     .resultado-conteudo strong { font-size: 1.05rem; }
 
-    .leitor-artigo { margin-top: 26px; font-size: 17px; }
+    .leitor-artigo {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 26px;
+        font-size: 17px;
+    }
+    .artigo-layout-container,
+    .artigo-conteudo-wrapper,
+    .artigo-corpo {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
     .artigo-layout-container { gap: 24px; }
     .artigo-toc-sidebar {
         max-height: 38vh;
@@ -1619,6 +1632,13 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     }
     .toc-list .toc-item a { padding: 7px 4px; font-size: .84rem; }
     #toc-filter-input { min-height: 38px; font-size: .84rem; }
+    .artigo-corpo p,
+    .artigo-corpo li,
+    .artigo-corpo td,
+    .artigo-corpo th {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
     .artigo-corpo p { font-size: 1rem; line-height: 1.65; }
     .artigo-corpo h2 { margin-top: 28px; font-size: 1.32rem; }
     .artigo-corpo h3 { font-size: 1.12rem; }
