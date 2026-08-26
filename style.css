@@ -1588,6 +1588,8 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .explorar-disciplinas > h2 { margin-bottom: 14px; font-size: 1.8rem; }
     .pastas-container, .pastas-orientacao { grid-template-columns: 1fr; }
     .disciplina-card,
+    .disciplina-card:nth-child(odd),
+    .disciplina-card:nth-child(even),
     .pastas-orientacao .disciplina-card {
         grid-template-columns: 84px minmax(0, 1fr);
         min-height: 0;
@@ -1680,7 +1682,10 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .nav-acoes { gap: 12px; }
     .nav-link-pastas, .theme-toggle { font-size: .7rem; }
     .masthead-copy h1 { font-size: clamp(3.7rem, 21vw, 5rem); }
-    .disciplina-card, .pastas-orientacao .disciplina-card { grid-template-columns: 76px minmax(0, 1fr); }
+    .disciplina-card,
+    .disciplina-card:nth-child(odd),
+    .disciplina-card:nth-child(even),
+    .pastas-orientacao .disciplina-card { grid-template-columns: 76px minmax(0, 1fr); }
     .indice-numero { font-size: 2.8rem; }
     .disciplina-card-conteudo strong { font-size: 1.24rem; }
     .artigo-toc-sidebar { max-height: 34vh; }
