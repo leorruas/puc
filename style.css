@@ -1607,6 +1607,26 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .disciplina-cabecalho h2 { font-size: clamp(2rem, 10vw, 3rem); }
     .disciplina-acao { grid-template-columns: 48px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
     .disciplina-acao-conteudo strong { font-size: 1.05rem; line-height: 1.18; }
+    .disciplina-leitor .btn-voltar {
+        display: flex;
+        align-items: center;
+        width: 100% !important;
+        min-height: 48px;
+        margin-top: 16px;
+        padding: 0;
+        border-top: 1px solid color-mix(in srgb, var(--text) 30%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--text) 30%, transparent);
+        color: var(--accent-blue);
+        font-size: .94rem;
+        font-weight: 600;
+        text-align: left;
+    }
+    .disciplina-leitor .btn-voltar:hover,
+    .disciplina-leitor .btn-voltar:focus-visible {
+        padding-left: 8px;
+        color: var(--text);
+        outline: none;
+    }
     .resultado-item { grid-template-columns: 48px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
     .resultado-conteudo strong { font-size: 1.05rem; }
 
