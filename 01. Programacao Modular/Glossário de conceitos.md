@@ -30,6 +30,7 @@ relacionados:
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
+* [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -116,6 +117,8 @@ relacionados:
 | **59** | [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
 | **60** | [[#60. Ponteiro (Pointer / vptr / Memory Pointer)\|Ponteiro (*Pointer / vptr*)]] | Endereço numérico exato na RAM que aponta para objetos, *vtables* ou rotinas de código. | O **papel com o endereço da casa** | `vptr`, referências de memória, ponteiros de função |
 | **61** | [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)\|Anti-padrão Yo-Yo]] | Hierarquia de herança excessivamente profunda que fragmenta o entendimento do código. | A **caça ao tesouro subindo e descendo escadas** | `A -> B -> C -> D -> E` com métodos espalhados |
+| **62** | [[#62. Classe selada (Sealed Class / Final Class)\|Classe selada (`sealed`)]] | Classe cuja herança é terminantemente proibida pelo compilador por segurança e performance. | A **embalagem de remédio lacrada** | `public sealed class Cripto` |
+| **63** | [[#63. Membro selado (Sealed Member / Sealed Override)\|Membro selado (`sealed override`)]] | Método sobrescrito cuja cadeia de novas sobreposições por subclasses foi encerrada. | A **cláusula pétrea constitucional** | `public sealed override void Taxa()` |
 
 ---
 
@@ -840,6 +843,28 @@ public class E : D { /* Onde começa e onde termina a lógica afinal?! */ }
 
 * **Analogia de Feynman:** O **jogo de caça ao tesouro burocrático**. Você abre uma gaveta e encontra um bilhete: *"vá ao sótão"*; no sótão, um bilhete diz: *"vá ao porão"*; no porão, outro bilhete diz: *"vá à garagem"*; na garagem: *"volte para o quarto"*. Em vez de pegar a ferramenta e trabalhar, você passa o dia inteiro exausto subindo e descendo escadas.
 * **Conexões diretas:** [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Quando não usar classes abstratas)]] e [[15. Herança (generalização, especialização e extensibilidade modular)|Artigo 15 (Herança e acoplamento)]].
+
+---
+
+## 62. Classe selada (*Sealed Class / Final Class*)
+
+Uma **classe selada** (marcada com o modificador **`sealed`** em C# ou `final` em Java) é uma classe completa e concreta cuja **herança é estritamente proibida pelo compilador**.
+
+* **Por que utilizar?**
+  1. **Segurança e integridade:** Impede que subclasses maliciosas ou desatentas alterem invariantes críticas de negócio (como na classe `string` do .NET).
+  2. **Performance JIT (Devirtualização e *Inlining*):** Como o runtime tem a garantia matemática de que não existem classes filhas, ele elimina a consulta à *vtable* e executa saltos diretos ou embutimento de instruções de máquina.
+* **Analogia de Feynman:** A **embalagem de remédio lacrada de fábrica**. Ninguém tem permissão para abrir o frasco na loja para adicionar ingredientes próprios; o produto vem 100% finalizado e protegido contra adulteração.
+* **Conexões diretas:** [[19. Classes e membros selados (sealed)|Artigo 19 (Classes seladas)]] e [[00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade)|Guia de Sintaxe 11]].
+
+---
+
+## 63. Membro selado (*Sealed Member / Sealed Override*)
+
+Um **membro selado** (método ou propriedade marcado com **`sealed override`** em C#) é um membro herdado de uma superclasse que foi sobrescrito pela classe atual e cujo **recurso de novas sobreposições por subclasses futuras foi definitivamente bloqueado**.
+
+* **Regra de sintaxe mandatória:** Só pode ser aplicado em métodos que já sejam um `override` de um ancestral virtual.
+* **Analogia de Feynman:** A **cláusula pétrea constitucional**. O avô criou uma regra flexível que podia ser ajustada (`virtual`), mas o pai decidiu que aquela versão da regra financeira é definitiva (`sealed override`), proibindo que os filhos futuros a alterem.
+* **Conexões diretas:** [[19. Classes e membros selados (sealed)|Artigo 19 (Membros selados)]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Sobreposição)]].
 
 ---
 
