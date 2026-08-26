@@ -1575,11 +1575,11 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
         margin-top: 42px;
         padding: 0 20px;
     }
-    .masthead-copy { order: 1; }
+    .masthead-copy { order: 1; width: 100%; text-align: right; }
     .page-masthead .busca-principal { order: 2; width: 100%; margin: 20px 0 24px; }
     .masthead-copy h1 { font-size: clamp(4rem, 21vw, 5.6rem); line-height: .86; }
     .masthead-copy h1 small { margin-top: .22em; }
-    .masthead-copy p { margin: 20px 0 0; font-size: .92rem; }
+    .masthead-copy p { margin: 20px 0 0 auto; font-size: .92rem; }
     .busca-campo, .busca-campo:focus-within { padding: 0 12px; }
     .busca-campo input, .busca-campo #main-search-input { padding: 11px 0; font-size: 1rem; }
 
