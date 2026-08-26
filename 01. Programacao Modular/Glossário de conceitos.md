@@ -32,7 +32,7 @@ relacionados:
 * [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
-* [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]]
+* [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -121,6 +121,7 @@ relacionados:
 | **61** | [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)\|Anti-padrão Yo-Yo]] | Hierarquia de herança excessivamente profunda que fragmenta o entendimento do código. | A **caça ao tesouro subindo e descendo escadas** | `A -> B -> C -> D -> E` com métodos espalhados |
 | **62** | [[#62. Classe selada (Sealed Class / Final Class)\|Classe selada (`sealed`)]] | Classe cuja herança é terminantemente proibida pelo compilador por segurança e performance. | A **embalagem de remédio lacrada** | `public sealed class Cripto` |
 | **63** | [[#63. Membro selado (Sealed Member / Sealed Override)\|Membro selado (`sealed override`)]] | Método sobrescrito cuja cadeia de novas sobreposições por subclasses foi encerrada. | A **cláusula pétrea constitucional** | `public sealed override void Taxa()` |
+| **64** | [[#64. Instanciação e instanciar (Instantiation / Object Creation)\|Instanciação / Instanciar]] | Ato de alocar memória no *Heap* e criar um objeto vivo a partir do molde de uma classe. | O **nascimento físico do objeto na RAM** | `Conta c = new Conta();` |
 
 ---
 
@@ -868,6 +869,63 @@ Um **membro selado** (método ou propriedade marcado com **`sealed override`** e
 * **Regra de sintaxe mandatória:** Só pode ser aplicado em métodos que já sejam um `override` de um ancestral virtual.
 * **Analogia de Feynman:** A **cláusula pétrea constitucional**. O avô criou uma regra flexível que podia ser ajustada (`virtual`), mas o pai decidiu que aquela versão da regra financeira é definitiva (`sealed override`), proibindo que os filhos futuros a alterem.
 * **Conexões diretas:** [[19. Classes e membros selados (sealed)|Artigo 19 (Membros selados)]] e [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (Sobreposição)]].
+
+---
+
+## 64. Instanciação e instanciar (*Instantiation / Object Creation*)
+
+**Instanciar** (do inglês *instantiate*, derivado de *"instance"*) é o ato computacional de **dar vida a um objeto real na memória RAM** a partir da especificação conceitual definida por uma classe ou tipo abstrato de dados (TAD). 
+
+Enquanto a **classe** é apenas o arquivo de texto ou o projeto de engenharia estático, a **instanciação** é o evento dinâmico que aloca espaço físico no *Heap*, executa o método construtor para inicializar os atributos e devolve um endereço de memória (referência) para ser armazenado na *Stack*.
+
+```mermaid
+flowchart TD
+    subgraph AnatomiaInstanciacao ["O Processo de Instanciação na Memória"]
+        direction TB
+
+        subgraph Codigo ["1. Instrução do Desenvolvedor"]
+            direction TB
+            C1["Conta c = new Conta('1234-5', 500.00m);"]
+        end
+
+        subgraph MemoriaStack ["2. Pilha de Execução (Stack)"]
+            direction TB
+            S1["Variável Local: c"]
+            S2["Valor armazenado: 0x7FFF1A20 (Endereço no Heap)"]
+            S1 --> S2
+        end
+
+        subgraph MemoriaHeap ["3. Memória Dinâmica (Heap)"]
+            direction TB
+            H1["Objeto Vivo alocado na RAM"]
+            H2["Cabeçalho do Objeto (vptr + TypeHandle)"]
+            H3["_numero = '1234-5'"]
+            H4["_saldo = 500.00m"]
+            H1 --> H2 --> H3 --> H4
+        end
+
+        Codigo -->|Executa operador new| MemoriaStack
+        S2 -.->|Aponta para a referência física| H1
+    end
+```
+
+### O que acontece passo a passo quando você "instancia" um objeto?
+1. **Cálculo de tamanho:** O runtime (CLR no .NET ou JVM no Java) calcula quantos bytes são necessários para armazenar todos os atributos de instância da classe mais os cabeçalhos de controle (`TypeHandle` e *SyncBlockIndex*).
+2. **Alocação no *Heap*:** O operador `new` solicita ao gerenciador de memória esse bloco contíguo de bytes no *Heap*.
+3. **Zerar a memória:** Todos os campos são preenchidos com seus valores padrão (`0`, `false` ou `null`).
+4. **Execução do construtor:** O método construtor da classe (`public Conta(...)`) é executado para aplicar as regras iniciais de negócio e preencher o estado do objeto.
+5. **Retorno do endereço:** O endereço de memória onde o objeto nasceu é retornado e guardado na variável de referência da *Stack*.
+
+### Regras de instanciação na programação orientada a objetos:
+* **Classes comuns (concretas):** Permitem instanciação direta e irrestrita (`new MinhaClasse()`).
+* **Classes abstratas (`abstract`):** **PROIBIDO instanciar diretamente.** O compilador rejeita `new Forma()` porque a classe é incompleta. Ela só ganha vida na RAM quando uma subclasse concreta derivada for instanciada (`Forma f = new Circulo()`).
+* **Interfaces (`interface`):** **PROIBIDO instanciar diretamente.** `new IAutenticavel()` é inválido porque interfaces não possuem implementação nem campos para alocar no *Heap*.
+* **Classes estáticas (`static`):** **PROIBIDO instanciar.** Classes marcadas como `static` não produzem instâncias no *Heap*; todos os seus métodos e dados residem na área de tipos estáticos do runtime.
+
+### Analogia de Feynman:
+A classe é a **planta arquitetônica desenhada no papel**. Você não pode morar dentro da planta, não pode acender as luzes da planta nem abrir as portas da planta. **Instanciar** é o trabalho dos pedreiros e engenheiros construindo a **casa física de tijolo e cimento** no terreno (o *Heap*). A partir do momento em que a casa está de pé na RAM, você tem uma **instância** (o objeto real) onde pode entrar e interagir.
+
+* **Conexões diretas:** [[07. Construtores (inicialização, sobrecarga e encapsulamento)|Artigo 07 (Construtores)]], [[10. Semântica de valor versus referência|Artigo 10 (Semântica de referência)]], [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/08. Construtores, instanciação e inicialização de objetos (sintaxe comparada)|Guia de Sintaxe 08]].
 
 ---
 
