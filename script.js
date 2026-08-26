@@ -133,17 +133,42 @@ let todosOsArtigos = [];
 let todasAsPastas = {};
 
 const campoTexto = document.getElementById("main-search-input");
-const campoTextoNav = document.getElementById("nav-search-input");
-const btnPesquisar = document.querySelector("main button");
 const containerResultados = document.querySelector(".cards-container");
 const divResultados = document.querySelector(".resultados");
 const leitorDeArtigo = document.getElementById("leitor-artigo");
 const artigoTitulo = document.getElementById("artigo-titulo");
 const artigoCorpo = document.getElementById("artigo-corpo");
 const btnVoltar = document.getElementById("btn-voltar");
+const btnTema = document.getElementById("theme-toggle");
+
+// Controle de Tema (Claro / Escuro)
+function aplicarTema(tema, persistir = true) {
+    document.documentElement.dataset.theme = tema;
+    if (persistir) localStorage.setItem("tema-puc-ads", tema);
+    if (btnTema) {
+        const proximoTema = tema === "dark" ? "modo claro" : "modo escuro";
+        btnTema.textContent = proximoTema;
+        btnTema.setAttribute("aria-label", `Alternar para ${proximoTema}`);
+    }
+}
+
+function inicializarTema() {
+    const temaSalvo = localStorage.getItem("tema-puc-ads");
+    const temaDoSistema = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    aplicarTema(temaSalvo || temaDoSistema, false);
+}
+
+if (btnTema) {
+    btnTema.addEventListener("click", () => {
+        const temaAtual = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+        const novoTema = temaAtual === "dark" ? "light" : "dark";
+        aplicarTema(novoTema, true);
+    });
+}
 
 // Carrega os arquivos e busca o conteúdo de cada um
 async function carregarTodosOsArtigos() {
+    inicializarTema();
     const lista = await obterListaDeArquivos();
 
     // Promessas paralelas para ler o conteúdo Markdown de cada arquivo
@@ -408,6 +433,9 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     renderizarBreadcrumbs(artigoAtual);
     renderizarBotoesNavegacao(artigoAtual);
     
+    // Processa caixa de contexto do artigo se houver
+    processarContextoArtigo(conteudoMarkdown);
+
     // Filtra e remove o bloco de metadados/atributos (YAML Frontmatter) e o primeiro H1 duplicado
     const markdownSemFrontmatter = removerFrontmatter(conteudoMarkdown);
     const markdownLimpo = removerPrimeiroH1(markdownSemFrontmatter);
@@ -541,6 +569,9 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     // Configura a funcionalidade de cópia ao clicar em tags <code> e blocos <pre>
     configurarCopiaDeCodigo();
 
+    // Configura o visualizador de imagens com zoom em modal
+    configurarZoomImagens();
+
     // Gera a Table of Contents (TOC) a partir dos cabeçalhos h2, h3, h4 do artigo
     gerarTableOfContents();
 
@@ -551,6 +582,58 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     requestAnimationFrame(() => rolarAoTopo());
     setTimeout(rolarAoTopo, 50);
     setTimeout(rolarAoTopo, 150);
+}
+
+function processarContextoArtigo(conteudoMarkdown) {
+    const contextoEl = document.getElementById("artigo-contexto");
+    if (!contextoEl) return;
+
+    // Busca citação de contexto no topo do documento (> **Contexto:** ...)
+    const matchContexto = conteudoMarkdown.match(/^>\s*\*\*Contexto:\*\*\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m) ||
+                          conteudoMarkdown.match(/^>\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m);
+
+    if (matchContexto && matchContexto[1]) {
+        const textoContexto = matchContexto[1].replace(/\n>/g, ' ').replace(/\*\*/g, '').trim();
+        const textoLimpo = textoContexto.replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');
+        contextoEl.innerHTML = `
+            <div class="contexto-icone">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <path d="m14.8 9.2-2.1 4.3-4.3 2.1 2.1-4.3z"></path>
+                </svg>
+            </div>
+            <p><strong>Contexto:</strong> ${textoLimpo}</p>
+        `;
+        contextoEl.hidden = false;
+    } else {
+        contextoEl.innerHTML = "";
+        contextoEl.hidden = true;
+    }
+}
+
+function configurarZoomImagens() {
+    const imagens = artigoCorpo.querySelectorAll('img');
+    imagens.forEach(img => {
+        img.addEventListener('click', () => {
+            const modalExistente = document.querySelector('.imagem-modal');
+            if (modalExistente) modalExistente.remove();
+
+            const modal = document.createElement('div');
+            modal.className = 'imagem-modal';
+            modal.innerHTML = `
+                <button class="imagem-modal-fechar" aria-label="Fechar">&times;</button>
+                <img src="${img.src}" alt="${img.alt || 'Imagem ampliada'}">
+            `;
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target.classList.contains('imagem-modal-fechar')) {
+                    modal.remove();
+                }
+            });
+
+            document.body.appendChild(modal);
+        });
+    });
 }
 
 function configurarCopiaDeCodigo() {

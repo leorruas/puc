@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>matérias da puc</title>
+    <title>ads • puc minas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -15,29 +15,34 @@
 
 <body>
     <nav class="sticky-nav" id="sticky-nav">
-        <span class="nav-logo" id="nav-logo">matérias da puc</span>
-        <div class="nav-search-container">
-            <input type="text" id="nav-search-input" placeholder="pesquisar...">
+        <span class="nav-logo" id="nav-logo">ads • puc minas</span>
+        <div class="nav-acoes">
+            <a href="#pastas-container" class="nav-link-pastas" id="nav-link-pastas">disciplinas</a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema">modo claro</button>
         </div>
-        <a href="#pastas-container" class="nav-link-pastas" id="nav-link-pastas">pastas</a>
     </nav>
 
-    <header>
-        <h1>matérias da puc</h1>
-    </header>
-    <main>
+    <header class="page-masthead" id="page-masthead">
         <div class="search-wrapper">
-            <input type="text" id="main-search-input" placeholder="o que você quer pesquisar hoje? ">
-            <button>Pesquisar</button>
+            <input type="search" id="main-search-input" placeholder="pesquisar por assunto ou disciplina..." autocomplete="off">
         </div>
+        <div class="masthead-copy">
+            <h1 id="home-title">análise e desenvolvimento de sistemas<br>puc minas</h1>
+            <p>caderno digital e repositório de estudos</p>
+        </div>
+    </header>
+
+    <main>
         <div class="pastas-container" id="pastas-container">
-            <!-- As pastas serão listadas aqui dinamicamente -->
+            <!-- As disciplinas serão listadas aqui dinamicamente -->
         </div>
+
         <div class="resultados">
             <div class="cards-container">
-                <!-- resultados -->
+                <!-- resultados da busca -->
             </div>
         </div>
+
         <div class="leitor-artigo escondido" id="leitor-artigo">
             <div class="artigo-layout-container">
                 <!-- Table of Contents (TOC) no Lado Esquerdo -->
@@ -46,16 +51,21 @@
                         <span class="toc-title">Neste artigo</span>
                     </div>
                     <div class="toc-filter-container" id="toc-filter-container">
-                        <input type="text" id="toc-filter-input" placeholder="filtrar tópicos..." autocomplete="off">
+                        <input type="search" id="toc-filter-input" placeholder="filtrar tópicos..." autocomplete="off">
                     </div>
                     <nav class="toc-nav" id="toc-nav"></nav>
                 </aside>
+
                 <div class="artigo-conteudo-wrapper">
                     <nav class="artigo-breadcrumbs" id="artigo-breadcrumbs"></nav>
                     <h2 id="artigo-titulo"></h2>
+                    <div class="artigo-contexto" id="artigo-contexto" hidden></div>
                     <div id="artigo-corpo" class="artigo-corpo"></div>
-                    <div class="artigo-nav-cards" id="artigo-nav-rodape"></div>
-                    <button id="btn-voltar" class="btn-voltar">&larr; voltar para a busca </button>
+                    <nav class="artigo-nav-cards" id="artigo-nav-rodape" aria-label="Navegação entre artigos"></nav>
+                    <div class="retorno-artigo">
+                        <p id="retorno-artigo-texto">quer continuar estudando?</p>
+                        <button id="btn-voltar" class="btn-voltar">&larr; voltar para as matérias</button>
+                    </div>
                 </div>
             </div>
         </div>
