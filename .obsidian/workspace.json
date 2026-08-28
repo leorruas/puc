@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. Programacao Modular/Glossário de conceitos.md",
+                "file": "06. Projeto - Aplicacao Interativa/00 – Projeto de fato.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Glossário de conceitos"
+              "title": "00 – Projeto de fato"
             }
           }
         ]
@@ -192,9 +192,10 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "07. Engenharia de Requisitos/00. Engenharia de Requisitos - Resumo.md",
+    "01. Programacao Modular/Glossário de conceitos.md",
     "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
     "01. Programacao Modular/19. Classes e membros selados (sealed).md",
-    "01. Programacao Modular/Glossário de conceitos.md",
     "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
     "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md",
     "00. Sintaxe Multilinguagem/12. Sobrescrita de métodos e representação textual (ToString, toString, __str__).md",
@@ -220,7 +221,6 @@
     "01. Programacao Modular/06. Fatores internos de qualidade de software.md",
     "01. Programacao Modular/05. Fatores externos de qualidade de software.md",
     "00. Sintaxe Multilinguagem/09. Tratamento de exceções e erros (try, catch, finally, throw).md",
-    "00. Sintaxe Multilinguagem/08. Estruturas de dados fundamentais (materialização de modelos mentais em código).md",
     "00. Sintaxe Multilinguagem",
     "00. Geral/Sintaxe Multilinguagem",
     "scratch_rosilane.txt",

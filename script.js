@@ -87,6 +87,7 @@ async function obterListaDeArquivos() {
             "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md",
             "06. Projeto - Aplicacao Interativa/04. Reunião inicial da turma 5 (08-08-2026) - resumo e transcrição integral.md",
             "06. Projeto - Aplicacao Interativa/05. Reunião de acompanhamento do grupo 4 (20-08-2026) - resumo e transcrição integral.md",
+            "06. Projeto - Aplicacao Interativa/06. Reunião de acompanhamento do grupo 4 (27-08-2026) - resumo e transcrição integral.md",
             "06. Projeto - Aplicacao Interativa/Prompts de Estudo (LLM).md",
             "07. Engenharia de Requisitos/07. Engenharia de Requisitos - Resumo.md",
             "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md",
