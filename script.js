@@ -49,6 +49,7 @@ async function obterListaDeArquivos() {
             "00. Sintaxe Multilinguagem/10. Manipulação e representação de datas e horários (DateTime, fusos e formatos).md",
             "00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade).md",
             "00. Sintaxe Multilinguagem/12. Sobrescrita de métodos e representação textual (ToString, toString, __str__).md",
+            "00. Sintaxe Multilinguagem/13. Igualdade de objetos, comparação e hashing (Equals, GetHashCode, hashCode, __eq__).md",
             "01. Programacao Modular/00. Programação modular - Resumo.md",
             "01. Programacao Modular/01. Introdução à programação modular.md",
             "01. Programacao Modular/02. Funções e procedimentos.md",
