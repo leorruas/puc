@@ -33,7 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -125,6 +125,7 @@ relacionados:
 | **64** | [[#64. Instanciação e instanciar (Instantiation / Object Creation)\|Instanciação / Instanciar]] | Ato de alocar memória no *Heap* e criar um objeto vivo a partir do molde de uma classe. | O **nascimento físico do objeto na RAM** | `Conta c = new Conta();` |
 | **65** | [[#65. Tipos genéricos (Generics / Parametric Polymorphism)\|Tipos genéricos (*Generics*)]] | Parametrização de tipos com `<T>` para criar classes e coleções reutilizáveis e homogêneas. | A **gaveta organizadora com divisórias ajustáveis** | `class Pilha<T>`, `List<Conta>` |
 | **66** | [[#66. Segurança de tipos (Type Safety)\|Segurança de tipos (*Type Safety*)]] | Garantia em tempo de compilação de que uma operação só é executada em tipos compatíveis. | A **catraca eletrônica infalível na compilação** | Erros de *cast* viram erros de build |
+| **67** | [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)\|Conjuntos disjuntos em tipos]] | Domínios matemáticos sem elementos em comum ($A \cap B = \emptyset$) blindados pelo compilador. | As **duas trilhas de trem paralelas que nunca se cruzam** | `Dictionary<TKey, TValue>` |
 
 ---
 
@@ -949,6 +950,16 @@ A classe é a **planta arquitetônica desenhada no papel**. Você não pode mora
 * **O papel do compilador:** Em linguagens *type-safe* com suporte a *Generics*, qualquer tentativa de inserir um tipo incompatível (ex.: tentar adicionar um `string` em uma `List<Conta>`) faz o **compilador abortar o build imediatamente**, eliminando completamente a necessidade de conversões forçadas e arriscadas (*type casts* manuais) durante a leitura dos dados.
 * **Analogia de Feynman:** A **catraca eletrônica com leitor biométrico**. Se uma pessoa com crachá de visitante tentar passar na catraca dos diretores, a catraca trava na hora na portaria (tempo de compilação), impedindo que qualquer estranho circule despercebido pelas salas dos servidores (tempo de execução).
 * **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Type safety)]] e [[01. Variáveis, tipos e atribuição|Guia de Sintaxe 01]].
+
+---
+
+## 67. Conjuntos disjuntos em tipos (*Disjoint Sets in Types*)
+
+Na teoria formal de tipos e na programação orientada a objetos, **conjuntos disjuntos** são domínios matemáticos de valores cuja **interseção é estritamente vazia ($A \cap B = \emptyset$)**, significando que nenhum elemento de um conjunto pode pertencer ao outro.
+
+* **Aplicação em Generics:** Em estruturas com múltiplos parâmetros de tipo (como `Dictionary<TKey, TValue>`), o conjunto de chaves de busca (`TKey`, ex.: `string`) e o conjunto de valores armazenados (`TValue`, ex.: `ContaCorrente`) formam partições disjuntas. O sistema de tipos impede qualquer contaminação cruzada, garantindo que operações válidas em `TValue` nunca sejam acidentalmente disparadas contra `TKey`.
+* **Analogia de Feynman:** As **duas trilhas de trem paralelas que nunca se cruzam**. O trem de carga viaja exclusivamente no trilho leste e o trem de passageiros viaja exclusivamente no trilho oeste. A sinalização do compilador garante que os dois trens nunca colidam nem troquem de trilho por engano.
+* **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Tipos genéricos)]] e [[03. Tipos abstratos de dados|Artigo 03 (TADs e teoria dos conjuntos)]].
 
 ---
 
