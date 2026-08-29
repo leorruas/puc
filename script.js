@@ -1168,18 +1168,6 @@ function obterRotaArtigo(artigo) {
     return rotaDoArtigo(artigo);
 }
 
-function obterHrefParaLinkObsidian(destino) {
-    if (!destino) return "#";
-    if (destino.startsWith("#")) return destino;
-
-    const [nomeArtigo, hashSecao] = destino.split("#");
-    const artigo = buscarArtigoPorCaminho(nomeArtigo.trim());
-    if (artigo) {
-        const rotaBase = obterRotaArtigo(artigo);
-        return hashSecao ? `${rotaBase}#${encodeURIComponent(hashSecao.trim())}` : rotaBase;
-    }
-    return "#";
-}
 
 function renderizarBotoesNavegacao(artigoAtual) {
     const rodapeNavContainer = document.getElementById("artigo-nav-rodape");
@@ -1392,26 +1380,66 @@ function scrollParaHeading(idOuTexto) {
     }
 }
 
+function separarDestinoEHash(destino) {
+    if (!destino) return { nomeArtigo: "", hashSecao: "" };
+
+    let destinoDecodificado = destino.trim();
+    try {
+        destinoDecodificado = decodeURIComponent(decodeURI(destinoDecodificado));
+    } catch (e) {}
+
+    if (destinoDecodificado.startsWith("#")) {
+        return { nomeArtigo: "", hashSecao: destinoDecodificado.replace(/^#/, "").trim() };
+    }
+
+    // Se tiver '#' que não seja parte do nome de linguagem como 'C#' ou 'c#'
+    const partes = destinoDecodificado.split(/(?<![cC])#/);
+    if (partes.length > 1) {
+        const candidatoNome = partes[0].trim();
+        const candidatoSecao = partes.slice(1).join("#").trim();
+        if (buscarArtigoPorCaminho(candidatoNome)) {
+            return { nomeArtigo: candidatoNome, hashSecao: candidatoSecao };
+        }
+    }
+
+    // Se o destino completo já é um artigo existente (ex.: arquivo contendo C# no título e sem âncora)
+    if (buscarArtigoPorCaminho(destinoDecodificado)) {
+        return { nomeArtigo: destinoDecodificado, hashSecao: "" };
+    }
+
+    // Fallback: se houver qualquer '#' que divida em um artigo válido
+    const ultimoHash = destinoDecodificado.lastIndexOf("#");
+    if (ultimoHash > 0) {
+        const candidatoNome = destinoDecodificado.substring(0, ultimoHash).trim();
+        const candidatoSecao = destinoDecodificado.substring(ultimoHash + 1).trim();
+        if (buscarArtigoPorCaminho(candidatoNome)) {
+            return { nomeArtigo: candidatoNome, hashSecao: candidatoSecao };
+        }
+    }
+
+    return { nomeArtigo: destinoDecodificado, hashSecao: "" };
+}
+
 function navegarParaLinkObsidian(destino, atualizarHash = true) {
     if (!destino) return;
 
-    if (destino.startsWith("#")) {
-        const secaoTexto = destino.substring(1).trim();
-        scrollParaHeading(secaoTexto);
+    const { nomeArtigo, hashSecao } = separarDestinoEHash(destino);
+
+    if (!nomeArtigo && hashSecao) {
+        scrollParaHeading(hashSecao);
         return;
     }
 
-    const [nomeArtigo, hashSecao] = destino.split("#");
-    const encontrado = buscarArtigoPorCaminho(nomeArtigo.trim());
+    const encontrado = buscarArtigoPorCaminho(nomeArtigo);
 
     if (encontrado) {
         abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
         if (hashSecao) {
             setTimeout(() => {
-                scrollParaHeading(hashSecao.trim());
+                scrollParaHeading(hashSecao);
             }, 250);
             setTimeout(() => {
-                scrollParaHeading(hashSecao.trim());
+                scrollParaHeading(hashSecao);
             }, 500);
         }
     }
@@ -1420,15 +1448,20 @@ function navegarParaLinkObsidian(destino, atualizarHash = true) {
 function buscarArtigoPorCaminho(nomeOuCaminho) {
     if (!nomeOuCaminho) return null;
     
-    const normalizar = (str) => decodeURIComponent(decodeURI(str))
-        .replace(/^\.\//, "")
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/\.md$/i, "")
-        .replace(/[(),:;+]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
+    const normalizar = (str) => {
+        try {
+            str = decodeURIComponent(decodeURI(str));
+        } catch (e) {}
+        return str
+            .replace(/^\.\//, "")
+            .trim()
+            .toLowerCase()
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+            .replace(/\.md$/i, "")
+            .replace(/[(),:;+]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+    };
 
     const limpo = normalizar(nomeOuCaminho);
     const limpoApenasNome = limpo.split("/").pop().trim();
@@ -1452,13 +1485,13 @@ function buscarArtigoPorCaminho(nomeOuCaminho) {
 
 function obterHrefParaLinkObsidian(destino) {
     if (!destino) return "#";
-    if (destino.startsWith("#")) return destino;
+    const { nomeArtigo, hashSecao } = separarDestinoEHash(destino);
+    if (!nomeArtigo && hashSecao) return `#${encodeURIComponent(hashSecao)}`;
 
-    const [nomeArtigo, hashSecao] = destino.split("#");
-    const artigo = buscarArtigoPorCaminho(nomeArtigo.trim());
+    const artigo = buscarArtigoPorCaminho(nomeArtigo);
     if (artigo) {
         const rotaBase = rotaDoArtigo(artigo);
-        return hashSecao ? `${rotaBase}#${encodeURIComponent(hashSecao.trim())}` : rotaBase;
+        return hashSecao ? `${rotaBase}#${encodeURIComponent(hashSecao)}` : rotaBase;
     }
     return "#";
 }
