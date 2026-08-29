@@ -155,6 +155,7 @@ Uma **Operação** é a abstração executável (uma função ou um procedimento
 
 * **Abstração de expressão (Função):** Mapeia entradas em um resultado de saída sem que o usuário precise se preocupar com como isso é feito (ex.: `GetSaldo()`, `CalcularPrimeiroDigito()`).
 * **Abstração de comando (Procedimento):** Agrupa tarefas repetitivas em blocos de comando isolados sem obrigatoriedade de retorno de valor (ex.: `Depositar(200)`, `ExibirMenu()`).
+* **Ponte interdisciplinar com Engenharia de Requisitos:** Na modelagem de Casos de Uso da UML ([[07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md#3.3 Relacionamento de inclusão («include»)|«include»]]), a extração de uma rotina compartilhada por múltiplos casos de uso (como validação de CPF ou autenticação) é o equivalente conceitual exato da chamada de uma função/procedimento no código.
 
 ---
 

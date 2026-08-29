@@ -4,6 +4,10 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ---
 
+## 2026-08-29
+
+* **Interlinkagem interdisciplinar (include UML como função/sub-rotina)**: consolidação do conceito arquitetural ensinado pela Profa. Rosilane nas notas de [[07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md|Engenharia de Requisitos]], [[01. Programacao Modular/02. Funções e procedimentos.md|Programação Modular]], [[00. Sintaxe Multilinguagem/04. Sub-rotinas (funções e procedimentos).md|Guia de Sintaxe]] e [[06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md|Diretrizes de Escopo do Projeto]]. O relacionamento `«include»` da UML foi formalmente contextualizado como o equivalente conceitual de uma função/sub-rotina pura reutilizável em código (ex.: cálculo matemático de CPF, autenticação).
+
 ## 2026-08-28
 
 * **Criação da nota de acompanhamento do projeto (Semana 4)**: processada e criada a nota [[06. Projeto - Aplicacao Interativa/06. Reunião de acompanhamento do grupo 4 (27-08-2026) - resumo e transcrição integral.md|06. Reunião de acompanhamento do grupo 4 (27-08-2026)]], contendo o resumo executivo e a transcrição integral da revisão final da Etapa 01, casos de uso, restrições de projeto e vídeo com a Profa. Rosilane Ribeiro da Mota.
