@@ -76,6 +76,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
             "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
             "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md",
+            "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
