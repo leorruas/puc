@@ -91,4 +91,11 @@
  - **Formato no Título H1 e Metadados:** Inserir a data no título principal em formato `(DD/MM/AAAA)` e no bloco de metadados com destaque Obsidian `==DD/MM/AAAA==` (ex.: `# Reunião de acompanhamento do grupo 4 (20/08/2026): resumo e transcrição integral`).
  - **Manutenção de Índices e Leitor Web:** Manter os nomes sincronizados no índice da disciplina (`00. ... - Resumo.md`), em `index.md` e no arquivo `script.js` (leitor web do GitHub Pages).
 
+## Sincronização e Versionamento
+
+16. **Sincronização Obrigatória com o GitHub:**
+ - Sempre que qualquer arquivo for criado, modificado ou refatorado no vault ou no app web, as alterações devem ser obrigatoriamente commitadas e enviadas (*push*) para o repositório remoto no GitHub (`origin/main`).
+ - Manter o repositório sempre sincronizado e atualizado a cada intervenção realizada.
+
+
 

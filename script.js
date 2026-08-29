@@ -852,8 +852,15 @@ function processarContextoArtigo(conteudoMarkdown) {
                           conteudoMarkdown.match(/^>\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m);
 
     if (matchContexto && matchContexto[1]) {
-        const textoContexto = matchContexto[1].replace(/\n>/g, ' ').replace(/\*\*/g, '').trim();
-        const textoLimpo = textoContexto.replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');
+        let textoContexto = matchContexto[1].replace(/\n>/g, ' ').trim();
+        textoContexto = textoContexto.replace(/^(?:\*\*Contexto:\*\*|Contexto:)\s*/i, '');
+        textoContexto = textoContexto.replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1');
+        textoContexto = textoContexto.replace(/==([^=]+)==/g, '<mark class="obsidian-highlight">$1</mark>');
+
+        const htmlContexto = typeof marked !== 'undefined'
+            ? marked.parseInline(textoContexto)
+            : textoContexto;
+
         contextoEl.innerHTML = `
             <div class="contexto-icone">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -861,7 +868,7 @@ function processarContextoArtigo(conteudoMarkdown) {
                     <path d="m14.8 9.2-2.1 4.3-4.3 2.1 2.1-4.3z"></path>
                 </svg>
             </div>
-            <p><strong>Contexto:</strong> ${textoLimpo}</p>
+            <p><strong>Contexto:</strong> ${htmlContexto}</p>
         `;
         contextoEl.hidden = false;
     } else {
