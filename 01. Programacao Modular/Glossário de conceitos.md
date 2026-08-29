@@ -33,7 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#74. Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#74. Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]] • [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)|75. Enganchar e desenganchar (*Hook / Unhook*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -133,6 +133,7 @@ relacionados:
 | **72** | [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)\|Expressão lambda (`=>`)]] | Sintaxe compacta de função anônima descartável definida no ponto de uso. | O **bilhete Post-it de instruções rápidas** | `(a, b) => a + b` |
 | **73** | [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)\|Evento (`event`)]] | Encapsulamento seguro de delegate que restringe o disparo à classe emissora. | A **torre de rádio e os ouvintes sintonizados** | `public event EventHandler Aprovado;` |
 | **74** | [[#74. Função de retorno e callback (Callback / Callback Function)\|Função de retorno (*Callback*)]] | Função passada como parâmetro para ser invocada ao término de uma rotina ou evento. | O **telefone deixado com a oficina mecânica** | `void Baixar(Action<byte[]> callback)` |
+| **75** | [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)\|Enganchar / Desenganchar]] | Inscrição (`+=`) ou cancelamento (`-=`) de funções e manipuladores de eventos em tempo de execução. | O **engate de reboque do carro** | `botao.Click += OnClick; botao.Click -= OnClick;` |
 
 ---
 
@@ -1038,6 +1039,18 @@ Um **callback** (função de retorno) é uma **função passada como argumento p
 * **O papel na arquitetura:** Viabiliza o processamento assíncrono não-bloqueante e a inversão de controle (*Hollywood Principle*: *"Não nos ligue, nós ligamos para você"*).
 * **Analogia de Feynman:** O **número de telefone deixado com a oficina mecânica**. Você deixa o carro para consertar (operação demorada) e dá o seu número dizendo: *"Quando o carro estiver pronto, me ligue de volta (*call me back*)"*. Você continua fazendo suas outras tarefas diárias sem precisar ficar parado esperando na oficina.
 * **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Delegates e Callbacks)]] e [[00. Sintaxe Multilinguagem/15. Expressões lambda, delegates e funções de primeira classe (callbacks, arrow functions, closures)|Guia de Sintaxe 15 (Callbacks)]].
+
+---
+
+## 75. Enganchar e desenganchar (*Hook & Unhook / Event Subscription & Unsubscription*)
+
+**Enganchar (*Hook*)** e **desenganchar (*Unhook*)** referem-se ao ato de **inscrever (*attach / `+=`*)** ou **desinscrever (*detach / `-=`*)** um manipulador de evento (*Event Handler*) ou função de retorno na cadeia de execução de um evento ou ponto de extensão de um sistema.
+
+* **O papel na arquitetura:** Permite estender o comportamento de um módulo em tempo de execução sem modificar seu código-fonte (Princípio Aberto/Fechado - OCP) e prevenir **vazamentos de memória (*Memory Leaks*)** ao desenganchar recursos antes da destruição de objetos.
+* **Analogia de Feynman:** O **engate de reboque do carro**.
+  - *Hook (`+=`):* Você engata a carretinha no engate do carro. Toda vez que o carro acelerar ou frear (o evento disparar), a carretinha segue o mesmo movimento.
+  - *Unhook (`-=`):* Quando a viagem termina, você desengata a carretinha. O carro segue seu caminho livre e a carretinha não fica presa consumindo combustível desnecessário na garagem.
+* **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Inscrição e Cancelamento com += e -=)]] e [[00. Sintaxe Multilinguagem/15. Expressões lambda, delegates e funções de primeira classe (callbacks, arrow functions, closures)|Guia de Sintaxe 15 (Hook e Unhook)]].
 
 ---
 
