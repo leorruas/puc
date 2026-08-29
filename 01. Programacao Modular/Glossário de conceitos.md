@@ -33,7 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#74. Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -132,6 +132,7 @@ relacionados:
 | **71** | [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)\|Delegação (*Delegate*)]] | Tipo de referência que encapsula métodos com assinatura e retorno definidos com segurança. | A **procuração registrada em cartório** | `public delegate void Notificador()` |
 | **72** | [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)\|Expressão lambda (`=>`)]] | Sintaxe compacta de função anônima descartável definida no ponto de uso. | O **bilhete Post-it de instruções rápidas** | `(a, b) => a + b` |
 | **73** | [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)\|Evento (`event`)]] | Encapsulamento seguro de delegate que restringe o disparo à classe emissora. | A **torre de rádio e os ouvintes sintonizados** | `public event EventHandler Aprovado;` |
+| **74** | [[#74. Função de retorno e callback (Callback / Callback Function)\|Função de retorno (*Callback*)]] | Função passada como parâmetro para ser invocada ao término de uma rotina ou evento. | O **telefone deixado com a oficina mecânica** | `void Baixar(Action<byte[]> callback)` |
 
 ---
 
@@ -1027,6 +1028,16 @@ Um **evento (`event`)** é um modificador de segurança que encapsula um delegat
 * **O papel na arquitetura:** Implementa o padrão de projeto *Observer*, promovendo o desacoplamento total entre o emissor da mensagem e os múltiplos destinatários.
 * **Analogia de Feynman:** A **torre de rádio e os ouvintes**. A emissora transmite o sinal no ar; quem sintonizou o rádio na frequência recebe a notícia instantaneamente, mas nenhum ouvinte pode invadir a torre para emitir avisos falsos ou desligar o rádio dos vizinhos.
 * **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Eventos e EventHandler)]].
+
+---
+
+## 74. Função de retorno e callback (*Callback / Callback Function*)
+
+Um **callback** (função de retorno) é uma **função passada como argumento para outro método**, permitindo que o método receptor a invoque ("chame de volta") em um momento posterior para notificar a conclusão de uma tarefa, reportar progresso ou injetar um critério customizado.
+
+* **O papel na arquitetura:** Viabiliza o processamento assíncrono não-bloqueante e a inversão de controle (*Hollywood Principle*: *"Não nos ligue, nós ligamos para você"*).
+* **Analogia de Feynman:** O **número de telefone deixado com a oficina mecânica**. Você deixa o carro para consertar (operação demorada) e dá o seu número dizendo: *"Quando o carro estiver pronto, me ligue de volta (*call me back*)"*. Você continua fazendo suas outras tarefas diárias sem precisar ficar parado esperando na oficina.
+* **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Delegates e Callbacks)]] e [[00. Sintaxe Multilinguagem/15. Expressões lambda, delegates e funções de primeira classe (callbacks, arrow functions, closures)|Guia de Sintaxe 15 (Callbacks)]].
 
 ---
 
