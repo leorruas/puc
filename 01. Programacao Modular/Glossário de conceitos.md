@@ -33,7 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -127,6 +127,7 @@ relacionados:
 | **66** | [[#66. Segurança de tipos (Type Safety)\|Segurança de tipos (*Type Safety*)]] | Garantia em tempo de compilação de que uma operação só é executada em tipos compatíveis. | A **catraca eletrônica infalível na compilação** | Erros de *cast* viram erros de build |
 | **67** | [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)\|Conjuntos disjuntos em tipos]] | Domínios matemáticos sem elementos em comum ($A \cap B = \emptyset$) blindados pelo compilador. | As **duas trilhas de trem paralelas que nunca se cruzam** | `Dictionary<TKey, TValue>` |
 | **68** | [[#68. Função de hashing e código hash (Hash Function & Hash Code)\|Função de hashing (*GetHashCode*)]] | Algoritmo determinístico que mapeia objetos para inteiros de 32 bits para busca $O(1)$. | O **guarda-volumes com 100 mil armários numerados** | `public override int GetHashCode()` |
+| **69** | [[#69. Exceção de coerção inválida (InvalidCastException)\|Exceção de *cast* inválido]] | Erro fatal de *runtime* lançado ao forçar a conversão entre tipos incompatíveis. | O **plugue elétrico forçado na marreta que queima a máquina** | `(ContaCorrente)lista[0]` |
 
 ---
 
@@ -972,6 +973,16 @@ Uma **função de hashing** é um algoritmo matemático determinístico que mape
 * **O contrato sagrado com `Equals`:** Se dois objetos são considerados semanticamente iguais pelo método `Equals()`, eles **DEVEM obrigatoriamente produzir o mesmo código retornado por `GetHashCode()`**.
 * **Analogia de Feynman:** O **guarda-volumes com 100 mil armários**. Em vez de andar armário por armário até achar sua mochila ($O(N)$), a recepcionista aplica uma conta rápida no seu CPF (função hash) e aponta diretamente para o armário 37 ($O(1)$), abrindo-o e checando seu nome na etiqueta (`Equals`).
 * **Conexões diretas:** [[00. Sintaxe Multilinguagem/13. Igualdade de objetos, comparação e hashing (Equals, GetHashCode, hashCode, __eq__)|Guia de Sintaxe 13 (Equals e GetHashCode)]] e [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Tipos genéricos)]].
+
+---
+
+## 69. Exceção de coerção inválida (*InvalidCastException*)
+
+A **`InvalidCastException`** é uma exceção lançada em tempo de execução (*runtime*) quando o programa tenta forçar a conversão explícita de um tipo de dado para outro incompatível (onde não existe relação de herança ou conversão válida).
+
+* **Origem histórica:** Era o erro mais frequente na era pré-Generics, quando coleções heterogêneas baseadas em `object` (`ArrayList`) aceitavam qualquer elemento e exigiam *cast* manual na leitura (`(ContaCorrente)lista[i]`).
+* **Analogia de Feynman:** O **adaptador de tomada forçado na marreta**. O compilador não sabe o que há dentro da caixa e deixa você ligar a tomada; ao ligar a energia no mundo real (*runtime*), descobre-se que o plugue era uma mangueira de água, queimando o circuito instantaneamente.
+* **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (InvalidCastException e generics)]] e [[00. Sintaxe Multilinguagem/09. Tratamento de exceções e erros (try, catch, finally, throw)|Guia de Sintaxe 09]].
 
 ---
 
