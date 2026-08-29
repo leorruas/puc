@@ -72,6 +72,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
             "01. Programacao Modular/19. Classes e membros selados (sealed).md",
             "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
+            "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
             "01. Programacao Modular/Glossário de conceitos.md",
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/02. Modelagem de Dados - Resumo.md",
