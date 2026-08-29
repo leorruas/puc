@@ -36,7 +36,7 @@ relacionados:
 * [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#74. Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]] • [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)|75. Enganchar e desenganchar (*Hook / Unhook*)]]
 
 ### 2. Modularidade e arquitetura de software
-* [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]] • [[#76. Princípios SOLID de design orientado a objetos (SOLID Principles)|76. Princípios SOLID]]
+* [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]] • [[#76. Princípios SOLID de design orientado a objetos (SOLID Principles)|76. Princípios SOLID]] • [[#77. Separação de preocupações (Separation of Concerns - SoC)|77. Separação de preocupações (*SoC*)]]
 * [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#45. Problema do diamante (The Diamond Problem)|45. Problema do diamante]] • [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)|61. Anti-padrão Yo-Yo]]
 
 ### 3. Memória, ciclo de vida e concorrência
@@ -135,6 +135,7 @@ relacionados:
 | **74** | [[#74. Função de retorno e callback (Callback / Callback Function)\|Função de retorno (*Callback*)]] | Função passada como parâmetro para ser invocada ao término de uma rotina ou evento. | O **telefone deixado com a oficina mecânica** | `void Baixar(Action<byte[]> callback)` |
 | **75** | [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)\|Enganchar / Desenganchar]] | Inscrição (`+=`) ou cancelamento (`-=`) de funções e manipuladores de eventos em tempo de execução. | O **engate de reboque do carro** | `botao.Click += OnClick; botao.Click -= OnClick;` |
 | **76** | [[#76. Princípios SOLID de design orientado a objetos (SOLID Principles)\|Princípios SOLID]] | Cinco heurísticas de design (SRP, OCP, LSP, ISP, DIP) para combater a degradação de código. | A **caixa de ferramentas com encaixes padronizados** | `interface`, Injeção de dependência |
+| **77** | [[#77. Separação de preocupações (Separation of Concerns - SoC)\|Separação de preocupações (*SoC*)]] | Decomposição do software em seções onde cada uma trata de um único aspecto de forma isolada. | A **divisão setorial de um hospital moderno** | Arquitetura em camadas, SRP |
 
 ---
 
@@ -1062,6 +1063,16 @@ Os **Princípios SOLID** formam um conjunto de cinco diretrizes de engenharia de
 * **O acrônimo:** **S**RP (Responsabilidade Única), **O**CP (Aberto/Fechado), **L**SP (Substituição de Liskov), **I**SP (Segregação de Interfaces) e **D**IP (Inversão de Dependência).
 * **Analogia de Feynman:** A **caixa de ferramentas com encaixes padronizados**. Cada ferramenta faz apenas uma função com excelência, e você pode trocar as pontas de fenda por novas pontas modernas sem precisar desmontar o cabo ou jogar a caixa fora.
 * **Conexões diretas:** [[23. Princípios SOLID de design orientado a objetos|Artigo 23 (Princípios SOLID)]].
+
+---
+
+## 77. Separação de preocupações (*Separation of Concerns - SoC*)
+
+A **Separação de Preocupações (*Separation of Concerns - SoC*)** é um meta-princípio formulado por Edsger W. Dijkstra em 1974 que estabelece que um sistema de software deve ser decomposto em partes distintas e sobrepostas o mínimo possível, onde cada parte trata exclusivamente de um único aspecto ou interesse (*concern*).
+
+* **O papel na arquitetura:** Serve como base teórica para a arquitetura em camadas (UI, Negócio, Persistência), microsserviços, inversão de controle e para o próprio **Princípio da Responsabilidade Única (SRP)** no design de classes.
+* **Analogia de Feynman:** A **divisão de setores de um hospital moderno**. O pronto-socorro atende emergências imediatas, o laboratório analisa exames de sangue e a farmácia gerencia medicamentos. O médico não vai à fábrica manipular remédios nem limpa o chão cirúrgico; cada profissional foca exclusivamente no seu aspecto, garantindo eficiência máxima e zero confusão.
+* **Conexões diretas:** [[23. Princípios SOLID de design orientado a objetos|Artigo 23 (Fundamentos do SOLID e SoC)]], [[01. Introdução à programação modular]] e [[06. Fatores internos de qualidade de software]].
 
 ---
 
