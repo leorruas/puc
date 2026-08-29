@@ -890,9 +890,11 @@ function processarContextoArtigo(conteudoMarkdown) {
             <p><strong>Contexto:</strong> ${htmlContexto}</p>
         `;
         contextoEl.hidden = false;
+        contextoEl.classList.remove("escondido");
     } else {
         contextoEl.innerHTML = "";
         contextoEl.hidden = true;
+        contextoEl.classList.add("escondido");
     }
 }
 

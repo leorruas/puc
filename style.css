@@ -734,6 +734,12 @@ mark.highlight {
     background: var(--accent-blue-alpha-05);
 }
 
+.artigo-contexto[hidden],
+.artigo-contexto.escondido,
+[hidden] {
+    display: none !important;
+}
+
 .contexto-icone {
     width: 20px;
     height: 20px;
