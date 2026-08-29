@@ -6,6 +6,7 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ## 2026-08-29
 
+* **Atualização dos prompts de estudo com LLM de Programação Modular**: reformulação completa de [[01. Programacao Modular/Prompts de Estudo (LLM).md|Prompts de Estudo (LLM)]], integrando a ementa de todos os 24 tópicos da disciplina, simulador global de prova, simuladores temáticos por unidade (Unidades 1, 2 e 3) e o protocolo de diagnóstico pedagógico estruturado de erros com categorização de falhas.
 * **Inclusão da matriz bidimensional de padrões de projeto GoF**: inserida a tabela de classificação do GoF (cruzamento entre Escopo de Classe vs. Escopo de Objeto e os 3 propósitos: Criacional, Estrutural e Comportamental) na nota [[01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md|24. Padrões de projeto e o catálogo GoF]].
 * **Correção no leitor web (ocultação da caixa de contexto em páginas sem contexto)**: corrigida a regra de especificidade CSS (`.artigo-contexto[hidden], .artigo-contexto.escondido, [hidden] { display: none !important; }`) e no script JavaScript (`classList.add("escondido")`), garantindo que em notas, transcrições e resumos que não possuem parágrafo de `> **Contexto:**`, o container visual de contexto fique 100% oculto, eliminando caixas vazias ou espaçamentos residuais.
 * **Auditoria da regra de interlinkagem interdisciplinar (Regra 18)**: auditoria completa realizada em todo o acervo do vault, implementando pontes conceituais e interlinkagens bidirecionais entre:
