@@ -33,7 +33,7 @@ relacionados:
 * [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
 * [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
 * [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]]
+* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]]
 
 ### 2. Modularidade e arquitetura de software
 * [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]]
@@ -129,6 +129,9 @@ relacionados:
 | **68** | [[#68. Função de hashing e código hash (Hash Function & Hash Code)\|Função de hashing (*GetHashCode*)]] | Algoritmo determinístico que mapeia objetos para inteiros de 32 bits para busca $O(1)$. | O **guarda-volumes com 100 mil armários numerados** | `public override int GetHashCode()` |
 | **69** | [[#69. Exceção de coerção inválida (InvalidCastException)\|Exceção de *cast* inválido]] | Erro fatal de *runtime* lançado ao forçar a conversão entre tipos incompatíveis. | O **plugue elétrico forçado na marreta que queima a máquina** | `(ContaCorrente)lista[0]` |
 | **70** | [[#70. Tupla (Tuple / ValueTuple)\|Tupla (*Tuple / ValueTuple*)]] | Estrutura genérica leve e heterogênea para agrupar múltiplos valores fortemente tipados. | O **porta-copos duplo do carro** | `(string, int)`, `Tuple<T1, T2>` |
+| **71** | [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)\|Delegação (*Delegate*)]] | Tipo de referência que encapsula métodos com assinatura e retorno definidos com segurança. | A **procuração registrada em cartório** | `public delegate void Notificador()` |
+| **72** | [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)\|Expressão lambda (`=>`)]] | Sintaxe compacta de função anônima descartável definida no ponto de uso. | O **bilhete Post-it de instruções rápidas** | `(a, b) => a + b` |
+| **73** | [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)\|Evento (`event`)]] | Encapsulamento seguro de delegate que restringe o disparo à classe emissora. | A **torre de rádio e os ouvintes sintonizados** | `public event EventHandler Aprovado;` |
 
 ---
 
@@ -994,6 +997,36 @@ Uma **tupla** é uma estrutura de dados genérica e heterogênea de tamanho fixo
 * **O papel em Generics:** Permite que métodos retornem dois ou mais valores com tipos diferentes (ex.: `(bool sucesso, string mensagem)`) mantendo a **segurança de tipos (*Type Safety*)** e eliminando o uso arriscado de parâmetros `out` ou coleções heterogêneas de `object`.
 * **Analogia de Feynman:** O **porta-copos duplo do console do carro**. Ele não é uma mesa de jantar completa nem um armário planejado (uma classe formal); é apenas um suporte compacto e provisório feito para segurar exatamente um copo de café (`string`) e uma garrafa de água (`int`) enquanto você dirige.
 * **Conexões diretas:** [[20. Tipos genéricos (generics, type safety e coleções homogêneas)|Artigo 20 (Múltiplos parâmetros genéricos e tuplas)]] e [[00. Sintaxe Multilinguagem/14. Tipos genéricos e polimorfismo paramétrico (Generics, TypeVar, Any, Templates)|Guia de Sintaxe 14]].
+
+---
+
+## 71. Delegação e delegate (*Delegate / Type-Safe Function Pointer*)
+
+Um **delegate** é um **tipo de referência fortemente tipado (*Type-Safe*)** que encapsula a assinatura e o endereço de memória de um ou mais métodos, permitindo que comportamentos sejam tratados como variáveis e passados por parâmetro.
+
+* **O papel em POO:** Viabiliza a inversão de controle (*Inversion of Control*), callbacks assíncronos e o disparo desacoplado de rotinas.
+* **Analogia de Feynman:** A **procuração registrada em cartório**. O documento não executa nada por si próprio, mas concede poder legal para que outra pessoa de confiança (o método apontado) assine e responda em seu nome quando chamada.
+* **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Delegates e Eventos)]] e [[00. Sintaxe Multilinguagem/15. Expressões lambda, delegates e funções de primeira classe (callbacks, arrow functions, closures)|Guia de Sintaxe 15]].
+
+---
+
+## 72. Expressão lambda e função anônima (*Lambda Expression & Anonymous Function*)
+
+Uma **expressão lambda** é uma sintaxe compacta baseada no operador **`=>`** para definir blocos de código executáveis e funções anônimas descartáveis no próprio ponto de invocação, sem a necessidade de declarar um método formal na classe.
+
+* **A fórmula canônica:** $(\text{parâmetros}) \implies \text{expressão ou bloco de instruções}$.
+* **Analogia de Feynman:** O **bilhete autoadesivo (*Post-it*) de instruções rápidas**. Em vez de imprimir um manual encadernado de 50 páginas (um método de classe), você cola um bilhete na tela dizendo *"ao receber o número $X$, multiplique por 2"*.
+* **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Expressões Lambda)]] e [[00. Sintaxe Multilinguagem/15. Expressões lambda, delegates e funções de primeira classe (callbacks, arrow functions, closures)|Guia de Sintaxe 15]].
+
+---
+
+## 73. Evento e publicador/assinante (*Event & Publisher-Subscriber Pattern*)
+
+Um **evento (`event`)** é um modificador de segurança que encapsula um delegate, expondo apenas os operadores de inscrição (**`+=`**) e cancelamento (**`-=`**) para o mundo exterior e garantindo que apenas a classe publicadora tenha autoridade para disparar as notificações.
+
+* **O papel na arquitetura:** Implementa o padrão de projeto *Observer*, promovendo o desacoplamento total entre o emissor da mensagem e os múltiplos destinatários.
+* **Analogia de Feynman:** A **torre de rádio e os ouvintes**. A emissora transmite o sinal no ar; quem sintonizou o rádio na frequência recebe a notícia instantaneamente, mas nenhum ouvinte pode invadir a torre para emitir avisos falsos ou desligar o rádio dos vizinhos.
+* **Conexões diretas:** [[22. Delegates, funções anônimas, expressões lambda e eventos em C#|Artigo 22 (Eventos e EventHandler)]].
 
 ---
 
