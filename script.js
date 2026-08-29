@@ -22,10 +22,11 @@ async function obterListaDeArquivos() {
                 const nomeSemExtensao = item.path.split("/").pop().replace(".md", "");
                 const partes = item.path.split("/");
                 const categoria = partes.length > 1 ? partes[0] : "00. Geral";
+                // Codifica cada segmento de caminho individualmente para preservar caracteres como '#' e acentos
+                const urlSegura = "https://raw.githubusercontent.com/leorruas/puc/main/" + item.path.split("/").map(encodeURIComponent).join("/");
                 return {
                     titulo: nomeSemExtensao,
-                    // Usa a cópia pública para funcionar também quando o leitor é aberto via file:// pelo Obsidian.
-                    path: encodeURI(`https://raw.githubusercontent.com/leorruas/puc/main/${item.path}`),
+                    path: urlSegura,
                     sourcePath: item.path,
                     categoria: categoria
                 };
@@ -132,9 +133,10 @@ async function obterListaDeArquivos() {
             const nomeSemExtensao = p.split("/").pop().replace(".md", "");
             const partes = p.split("/");
             const categoria = partes.length > 1 ? partes[0] : "00. Geral";
+            const urlSegura = "https://raw.githubusercontent.com/leorruas/puc/main/" + p.split("/").map(encodeURIComponent).join("/");
             return {
                 titulo: nomeSemExtensao,
-                path: encodeURI(`https://raw.githubusercontent.com/leorruas/puc/main/${p}`),
+                path: urlSegura,
                 sourcePath: p,
                 categoria: categoria
             };
