@@ -55,3 +55,4 @@ Este arquivo registra o histórico de criações, modificações, edições e re
  * Criação das notas de resumo individuais para cada disciplina (ex: `00. Programacao Modular - Resumo.md`) e guias específicos de prompt de estudo com LLM (`Prompts de Estudo (LLM).md`), estruturados didaticamente de acordo com o Método Feynman.
  * Execução do pós-processamento para remoção de emojis de todo o vault para cumprir a Regra 8 de estética estritamente textual.
 * 2026-08-29: Padronizada a hierarquia de títulos dos artigos, com escala progressiva do `h1` ao `h6` e marcador azul discreto nos três primeiros níveis.
+* 2026-08-29: Navegação de artigo alinhada ao padrão do Guia do Portal, com anterior e próximo em faixa editorial e retorno separado.
