@@ -56,3 +56,4 @@ Este arquivo registra o histórico de criações, modificações, edições e re
  * Execução do pós-processamento para remoção de emojis de todo o vault para cumprir a Regra 8 de estética estritamente textual.
 * 2026-08-29: Padronizada a hierarquia de títulos dos artigos, com escala progressiva do `h1` ao `h6` e marcador azul discreto nos três primeiros níveis.
 * 2026-08-29: Navegação de artigo alinhada ao padrão do Guia do Portal, com anterior e próximo em faixa editorial e retorno separado.
+* 2026-08-29: Busca global consolidada na navbar; removido o campo duplicado da sidebar e preservado o filtro específico de seções.
