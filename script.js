@@ -162,6 +162,7 @@ let todasAsPastas = {};
 let artigoAtual = null;
 
 const campoTexto = document.getElementById("main-search-input");
+const campoTextoSidebar = document.getElementById("sidebar-search-input");
 const containerResultados = document.querySelector(".cards-container");
 const divResultados = document.getElementById("resultados");
 const leitorDeArtigo = document.getElementById("leitor-artigo");
@@ -1442,9 +1443,22 @@ function voltarParaHome(atualizarHash = true) {
 }
 
 // Event Listeners
+function executarBuscaGlobal(termo, campoDeOrigem) {
+    [campoTexto, campoTextoSidebar].forEach(campo => {
+        if (campo && campo !== campoDeOrigem) campo.value = termo;
+    });
+    filtrarArtigos(termo);
+}
+
 if (campoTexto) {
     campoTexto.addEventListener("input", (e) => {
-        filtrarArtigos(e.target.value);
+        executarBuscaGlobal(e.target.value, e.currentTarget);
+    });
+}
+
+if (campoTextoSidebar) {
+    campoTextoSidebar.addEventListener("input", (e) => {
+        executarBuscaGlobal(e.target.value, e.currentTarget);
     });
 }
 

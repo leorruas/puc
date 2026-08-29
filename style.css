@@ -533,6 +533,40 @@ mark.highlight {
     border-radius: 3px;
 }
 
+.sidebar-search {
+    display: block;
+    margin: 0 0 18px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+}
+
+.sidebar-search span {
+    display: block;
+    margin: 0 0 8px;
+    color: var(--accent-blue);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.sidebar-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1px solid var(--accent-blue-alpha-30);
+    border-radius: 6px;
+    background: var(--accent-blue-alpha-05);
+    color: var(--text);
+    font: inherit;
+    font-size: .78rem;
+}
+
+.sidebar-search input:focus {
+    outline: 1px solid var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
 .toc-header {
     margin-bottom: 10px;
     padding-bottom: 6px;
