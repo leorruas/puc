@@ -109,6 +109,29 @@ header, main {
     color: var(--text);
 }
 
+.nav-search-container {
+    flex: 1;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+.nav-search-container input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 36%, transparent);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: .8rem;
+    outline: none;
+}
+
+.nav-search-container input::placeholder { color: var(--muted); }
+.nav-search-container input:focus { border-bottom-color: var(--accent-blue); }
+
 .nav-acoes {
     display: flex;
     align-items: center;
@@ -1723,4 +1746,14 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .indice-numero { font-size: 2.8rem; }
     .disciplina-card-conteudo strong { font-size: 1.24rem; }
     .artigo-toc-sidebar { max-height: 34vh; }
+}
+
+@media (max-width: 768px) {
+    .nav-search-container { min-width: 0; max-width: 180px; margin-right: 12px; }
+    .nav-search-container input { font-size: .72rem; }
+}
+
+@media (max-width: 420px) {
+    .nav-search-container { max-width: 120px; margin-right: 8px; }
+    .nav-search-container input { padding-left: 4px; padding-right: 4px; }
 }

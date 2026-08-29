@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ads • puc minas</title>
-    <link rel="stylesheet" href="style.css?v=mobile-v11">
+    <link rel="stylesheet" href="style.css?v=mobile-v12">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -16,6 +16,10 @@
 <body>
     <nav class="sticky-nav" id="sticky-nav">
         <span class="nav-logo" id="nav-logo">ads • puc minas</span>
+        <label class="nav-search-container" for="nav-search-input">
+            <span class="sr-only">Pesquisar nas matérias</span>
+            <input type="search" id="nav-search-input" placeholder="pesquisar..." autocomplete="off">
+        </label>
         <div class="nav-acoes">
             <a href="#explorar-disciplinas" class="nav-link-pastas" id="nav-link-pastas">índice</a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema">modo claro</button>
@@ -100,7 +104,7 @@
         </div>
     </main>
 
-    <script src="script.js?v=contexto-opcional-v4"></script>
+    <script src="script.js?v=busca-sticky-v5"></script>
 </body>
 
 </html>
