@@ -962,6 +962,26 @@ function configurarCopiaDeCodigo() {
     blocosPre.forEach(pre => {
         if (pre.classList.contains('mermaid') || pre.querySelector('.btn-copiar-codigo')) return;
 
+        const codeEl = pre.querySelector('code');
+        if (codeEl && !pre.classList.contains('has-line-numbers')) {
+            const rawCode = codeEl.textContent.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+            const lines = rawCode.split('\n');
+            if (lines.length > 0 && lines[lines.length - 1] === '') {
+                lines.pop();
+            }
+
+            if (lines.length > 0) {
+                codeEl.innerHTML = '';
+                lines.forEach((linhaTexto) => {
+                    const lineSpan = document.createElement('span');
+                    lineSpan.className = 'code-line';
+                    lineSpan.textContent = linhaTexto || ' ';
+                    codeEl.appendChild(lineSpan);
+                });
+                pre.classList.add('has-line-numbers');
+            }
+        }
+
         const btnCopiar = document.createElement('button');
         btnCopiar.className = 'btn-copiar-codigo';
         btnCopiar.type = 'button';
@@ -970,8 +990,17 @@ function configurarCopiaDeCodigo() {
 
         btnCopiar.addEventListener('click', async (e) => {
             e.stopPropagation();
-            const codeEl = pre.querySelector('code');
-            const textoParaCopiar = (codeEl ? codeEl.innerText : pre.innerText).replace(/copiar|copiado!/g, '').trim();
+            let textoParaCopiar = "";
+            if (codeEl) {
+                const lineSpans = codeEl.querySelectorAll('.code-line');
+                if (lineSpans.length > 0) {
+                    textoParaCopiar = Array.from(lineSpans).map(s => s.textContent === ' ' ? '' : s.textContent).join('\n');
+                } else {
+                    textoParaCopiar = codeEl.innerText.replace(/copiar|copiado!/g, '').trim();
+                }
+            } else {
+                textoParaCopiar = pre.innerText.replace(/copiar|copiado!/g, '').trim();
+            }
 
             try {
                 if (navigator.clipboard && window.isSecureContext) {
@@ -999,6 +1028,7 @@ function configurarCopiaDeCodigo() {
                 btnCopiar.textContent = 'erro';
                 setTimeout(() => {
                     btnCopiar.textContent = 'copiar';
+                    btnCopiar.classList.remove('copiado');
                 }, 2000);
             }
         });

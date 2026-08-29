@@ -1073,19 +1073,55 @@ html body .artigo-corpo h6 {
     transition: border-color 0.2s ease;
 }
 
+.artigo-corpo pre.has-line-numbers {
+    padding-left: 12px;
+}
+
 .artigo-corpo pre:hover {
     border-color: var(--accent-blue-alpha-40);
 }
 
 #artigo-corpo pre code {
+    display: block;
     font-size: .75rem;
-    line-height: 1.5;
+    line-height: 1.55;
     font-family: 'IBM Plex Mono', 'Space Mono', monospace;
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
     color: var(--accent-blue);
     cursor: auto !important;
+    counter-reset: code-line-counter;
+}
+
+#artigo-corpo pre code .code-line {
+    display: block;
+    position: relative;
+    padding-left: 2.75rem;
+    counter-increment: code-line-counter;
+    min-height: 1.55em;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+#artigo-corpo pre code .code-line::before {
+    content: counter(code-line-counter);
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    text-align: right;
+    color: color-mix(in srgb, var(--text) 35%, transparent);
+    user-select: none;
+    -webkit-user-select: none;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#artigo-corpo pre code .code-line:hover::before {
+    color: var(--accent-blue);
+    opacity: 1;
 }
 
 .btn-copiar-codigo {
