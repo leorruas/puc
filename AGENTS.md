@@ -97,5 +97,12 @@
  - Sempre que qualquer arquivo for criado, modificado ou refatorado no vault ou no app web, as alterações devem ser obrigatoriamente commitadas e enviadas (*push*) para o repositório remoto no GitHub (`origin/main`).
  - Manter o repositório sempre sincronizado e atualizado a cada intervenção realizada.
 
+## Tratamento de Caracteres Especiais e URLs no App Web
+
+17. **Tratamento Obrigatório de Caracteres Especiais e Codificação de URLs (`#`, `&`, `+`, Acentos):**
+ - O método nativo `encodeURI()` do JavaScript **não codifica** caracteres como o sustenido (`#`), pois o trata como fragmento/âncora de rota. Arquivos com termos de linguagens como `C#` no nome resultam em erro HTTP 404 ao buscar o conteúdo bruto no GitHub se a URL não estiver devidamente escapada.
+ - **Padrão Obrigatório de Codificação:** Toda requisição `fetch` de arquivos brutos no `script.js` deve codificar cada segmento do caminho individualmente utilizando `encodeURIComponent` (ex.: `path.split("/").map(encodeURIComponent).join("/")`), garantindo que o `#` vire `%23`.
+ - **Proteção de Links Internos com Dunder / Underlines:** Todos os links Obsidian (`[[...]]`) que contenham nomes com múltiplos *underlines* (como métodos mágicos `__eq__`, `__str__` ou atributos `_campo`) devem ser blindados antes do parser Markdown (`marked.js`) para evitar que a engine converta os *underlines* em tags HTML de negrito/itálico (`<strong>` ou `<em>`), quebrando a âncora de navegação.
+
 
 
