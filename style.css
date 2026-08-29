@@ -1124,6 +1124,12 @@ html body .artigo-corpo h6 {
     opacity: 1;
 }
 
+#artigo-corpo pre code .code-comment {
+    color: var(--muted) !important;
+    font-style: italic;
+    opacity: 0.85;
+}
+
 .btn-copiar-codigo {
     position: absolute;
     top: 8px;

@@ -975,7 +975,29 @@ function configurarCopiaDeCodigo() {
                 lines.forEach((linhaTexto) => {
                     const lineSpan = document.createElement('span');
                     lineSpan.className = 'code-line';
-                    lineSpan.textContent = linhaTexto || ' ';
+                    
+                    if (!linhaTexto) {
+                        lineSpan.textContent = ' ';
+                    } else {
+                        // Detecta comentários de linha inteira ou inline (//, #, --, /* */, <!-- -->)
+                        // Preserva strings literais simples antes do comentário se houver
+                        const matchComentario = linhaTexto.match(/^(\s*)(\/\/.*|\/\*.*?\*\/|#.*|--.*|<!--.*?-->)$/) ||
+                                                linhaTexto.match(/^([^"'\n]*?)(\/\/.*|#.*|--.*)$/);
+
+                        if (matchComentario) {
+                            const prefixo = matchComentario[1];
+                            const comentario = matchComentario[2];
+                            if (prefixo) {
+                                lineSpan.appendChild(document.createTextNode(prefixo));
+                            }
+                            const commentSpan = document.createElement('span');
+                            commentSpan.className = 'code-comment';
+                            commentSpan.textContent = comentario;
+                            lineSpan.appendChild(commentSpan);
+                        } else {
+                            lineSpan.textContent = linhaTexto;
+                        }
+                    }
                     codeEl.appendChild(lineSpan);
                 });
                 pre.classList.add('has-line-numbers');
