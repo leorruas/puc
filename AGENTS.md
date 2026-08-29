@@ -104,5 +104,14 @@
  - **Padrão Obrigatório de Codificação:** Toda requisição `fetch` de arquivos brutos no `script.js` deve codificar cada segmento do caminho individualmente utilizando `encodeURIComponent` (ex.: `path.split("/").map(encodeURIComponent).join("/")`), garantindo que o `#` vire `%23`.
  - **Proteção de Links Internos com Dunder / Underlines:** Todos os links Obsidian (`[[...]]`) que contenham nomes com múltiplos *underlines* (como métodos mágicos `__eq__`, `__str__` ou atributos `_campo`) devem ser blindados antes do parser Markdown (`marked.js`) para evitar que a engine converta os *underlines* em tags HTML de negrito/itálico (`<strong>` ou `<em>`), quebrando a âncora de navegação.
 
+## Conexões e Interlinkagem Interdisciplinar
+
+18. **Interlinkagem Interdisciplinar Obrigatória entre Teoria, Modelagem e Código:**
+ - Sempre que um conceito introduzido em uma disciplina possuir correspondência direta, analogia ou desdobramento prático em outra matéria (ex.: os relacionamentos `«include»` e `«extend»` da UML na Engenharia de Requisitos correspondendo a funções/sub-rotinas e tratamento de exceções/condicionais na Programação Modular e no Guia de Sintaxe; ou princípios SOLID e padrões de projeto conectando-se a modelagem de classes da UML e ao Projeto Integrador), deve-se obrigatoriamente:
+   1. **Explicitar a Ponte Conceitual:** Inserir uma subseção dedicada explicando a analogia e o mapeamento entre o modelo teórico/arquitetural e a sua materialização em código.
+   2. **Interlinkagem Exaustiva Bidirecional:** Incluir links internos (`[[...]]`) conectando os artigos de todas as disciplinas envolvidas, atualizando o bloco `relacionados` do frontmatter YAML e o corpo das notas.
+   3. **Visão Holística do Aprendizado:** Garantir que o estudante compreenda como os modelos conceituais (Engenharia de Requisitos, Design de Interação, Modelagem de Dados) se traduzem diretamente em código limpo, modular e de alta qualidade (Programação Modular, Guia de Sintaxe e Projeto Integrador).
+
+
 
 
