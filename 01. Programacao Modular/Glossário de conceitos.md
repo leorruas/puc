@@ -932,7 +932,7 @@ flowchart TD
 ### Analogia de Feynman:
 A classe é a **planta arquitetônica desenhada no papel**. Você não pode morar dentro da planta, não pode acender as luzes da planta nem abrir as portas da planta. **Instanciar** é o trabalho dos pedreiros e engenheiros construindo a **casa física de tijolo e cimento** no terreno (o *Heap*). A partir do momento em que a casa está de pé na RAM, você tem uma **instância** (o objeto real) onde pode entrar e interagir.
 
-* **Conexões diretas:** [[07. Construtores (inicialização, sobrecarga e encapsulamento)|Artigo 07 (Construtores)]], [[10. Semântica de valor versus referência|Artigo 10 (Semântica de referência)]], [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/08. Construtores, instanciação e inicialização de objetos (sintaxe comparada)|Guia de Sintaxe 08]].
+* **Conexões diretas:** [[01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md|Artigo 07 (Construtores)]], [[01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md|Artigo 10 (Semântica de referência)]], [[18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro)|Artigo 18 (Classes abstratas)]] e [[00. Sintaxe Multilinguagem/05. Abstração e encapsulamento com classes (TADs).md|Guia de Sintaxe 08]].
 
 ---
 
