@@ -622,11 +622,12 @@ function normalizarListasObsidian(md) {
     }).join("\n");
 }
 
-function protegerPipesObsidian(md) {
-    if (!md) return "";
+function protegerLinksObsidian(md, storage = []) {
+    if (!md) return md;
     return md.replace(/\[\[([^\]]+)\]\]/g, (match, conteudoInterno) => {
         const protegido = conteudoInterno.replace(/\\?\|/g, "%%OBSIDIANPIPE%%");
-        return "[[" + protegido + "]]";
+        storage.push(protegido);
+        return `@@OBSIDIAN_LINK_${storage.length - 1}@@`;
     });
 }
 
@@ -777,13 +778,24 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
     });
 
     const markdownComSetas = processarLaTeXSetas(markdownComCodigoRestaurado);
-    const markdownProtegido = protegerPipesObsidian(markdownComSetas);
+    const linksObsidianStorage = [];
+    const markdownProtegido = protegerLinksObsidian(markdownComSetas, linksObsidianStorage);
     const markdownNormalizado = normalizarListasObsidian(markdownProtegido);
 
     if (typeof marked !== 'undefined') {
-        artigoCorpo.innerHTML = marked.parse(markdownNormalizado);
+        let htmlRenderizado = marked.parse(markdownNormalizado);
+        htmlRenderizado = htmlRenderizado.replace(/@@OBSIDIAN_LINK_(\d+)@@/g, (match, index) => {
+            const raw = linksObsidianStorage[parseInt(index, 10)];
+            return raw ? `[[${raw}]]` : match;
+        });
+        artigoCorpo.innerHTML = htmlRenderizado;
     } else {
-        artigoCorpo.innerText = markdownNormalizado;
+        let textoRenderizado = markdownNormalizado;
+        textoRenderizado = textoRenderizado.replace(/@@OBSIDIAN_LINK_(\d+)@@/g, (match, index) => {
+            const raw = linksObsidianStorage[parseInt(index, 10)];
+            return raw ? `[[${raw}]]` : match;
+        });
+        artigoCorpo.innerText = textoRenderizado;
     }
 
     processarLinksObsidian();
