@@ -272,6 +272,11 @@ function limparNomeCategoria(categoria) {
     return categoria.replace(/^\d+\.\s*/, "").toLowerCase();
 }
 
+function limparNomeTitulo(titulo) {
+    if (!titulo) return "";
+    return titulo.replace(/^\d+\.\s*/, "");
+}
+
 function obterRotaCategoria(categoria) {
     return `#/disciplina/${encodeURIComponent(categoria)}`;
 }
@@ -425,14 +430,14 @@ function abrirDisciplina(categoria, atualizarRota = true) {
         const acao = document.createElement("a");
         acao.className = "disciplina-acao";
         acao.href = rotaDoArtigo(artigo);
-        acao.setAttribute("aria-label", artigo.titulo);
+        acao.setAttribute("aria-label", limparNomeTitulo(artigo.titulo));
 
         const numeroFormatado = String(idx + 1).padStart(2, "0");
 
         acao.innerHTML = `
             <span class="disciplina-acao-numero">${numeroFormatado}</span>
             <span class="disciplina-acao-conteudo">
-                <strong>${artigo.titulo}</strong>
+                <strong>${limparNomeTitulo(artigo.titulo)}</strong>
             </span>
         `;
 
@@ -575,7 +580,7 @@ function exibirResultados(artigos, termo = "") {
                 conteudoResultado.className = "resultado-conteudo";
 
                 const titulo = document.createElement("strong");
-                titulo.innerHTML = destacarTexto(artigo.titulo, termo);
+                titulo.innerHTML = destacarTexto(limparNomeTitulo(artigo.titulo), termo);
 
                 const trecho = document.createElement("span");
                 trecho.className = "resultado-trecho";
@@ -747,7 +752,7 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
                       conteudo: conteudoMarkdown
                   };
 
-    artigoTitulo.textContent = artigoAtual.titulo;
+    artigoTitulo.textContent = limparNomeTitulo(artigoAtual.titulo);
 
     if (atualizarHash) {
         const rotaHash = rotaDoArtigo(artigoAtual);
@@ -1195,7 +1200,7 @@ function renderizarBotoesNavegacao(artigoAtual) {
         cardPrev.href = obterRotaArtigo(artigoAnterior);
         cardPrev.innerHTML = `
             <span class="nav-card-label">← anterior</span>
-            <span class="nav-card-title">${artigoAnterior.titulo}</span>
+            <span class="nav-card-title">${limparNomeTitulo(artigoAnterior.titulo)}</span>
         `;
         cardPrev.addEventListener("click", (e) => {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
@@ -1215,7 +1220,7 @@ function renderizarBotoesNavegacao(artigoAtual) {
         cardNext.href = obterRotaArtigo(artigoProximo);
         cardNext.innerHTML = `
             <span class="nav-card-label">próximo →</span>
-            <span class="nav-card-title">${artigoProximo.titulo}</span>
+            <span class="nav-card-title">${limparNomeTitulo(artigoProximo.titulo)}</span>
         `;
         cardNext.addEventListener("click", (e) => {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
@@ -1306,7 +1311,7 @@ function renderizarBreadcrumbs(artigo) {
     separador2.textContent = "/";
 
     const spanArtigo = document.createElement("span");
-    spanArtigo.textContent = artigo.titulo;
+    spanArtigo.textContent = limparNomeTitulo(artigo.titulo);
 
     breadcrumbsNav.append(linkHome, separador1, linkCategoria, separador2, spanArtigo);
 }
