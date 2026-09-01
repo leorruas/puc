@@ -21,13 +21,13 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atributo|Atributo]]
-* [[#B|B]]: [[#Banco de Dados (BD)|Banco de Dados (BD)]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]]
+* [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
 * [[#C|C]]: [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]]
 * [[#D|D]]: [[#Dado|Dado]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]]
 * [[#E|E]]: [[#Entidade|Entidade]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Integridade referencial|Integridade referencial]]
-* [[#M|M]]: [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
+* [[#M|M]]: [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
@@ -56,6 +56,10 @@ relacionados:
 * **Objetivo principal:** Garantir a independência total entre dados lógicos e o armazenamento físico em disco.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Atores do banco de dados
+* **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Projetistas de Banco, Analistas de Sistemas, Desenvolvedores de Software e Usuários Finais (*end-users*).
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+
 ### Atributo
 * **Definição formal:** Propriedade, característica ou elemento descritivo associado a uma entidade ou a um relacionamento.
 * **Modelo mental:** Se a entidade for o substantivo "Aluno", os atributos são os adjetivos e dados cadastrais: `Matrícula`, `Nome`, `CPF` e `Data de Nascimento`.
@@ -65,8 +69,8 @@ relacionados:
 
 ## B
 
-### Banco de Dados (BD)
-* **Definição formal:** (*Database*) Coleção estruturada, integrada e logicamente coerente de dados correlacionados que modelam e representam entidades e eventos de um domínio do mundo real (*mini-mundo*).
+### Banco de Dados (BD) / Base de dados
+* **Definição formal:** (*Database*) Coleção estruturada, integrada e logicamente coerente de dados correlacionados e persistentes que modelam e representam entidades e eventos de um domínio do mundo real (*mini-mundo*).
 * **Modelo mental / Feynman:** É o acervo de livros organizado nas estantes de uma biblioteca, contendo todas as obras e registros da instituição.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
@@ -142,6 +146,10 @@ relacionados:
 
 ## M
 
+### Mini-mundo (Universo de discurso)
+* **Definição formal:** A parte ou recorte específico do mundo real cujos dados e processos são de interesse direto para uma organização e que serão modelados e gerenciados pelo Sistema de Banco de Dados.
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+
 ### Modelagem de dados
 * **Definição formal:** O conjunto sistemático de conceitos, técnicas, processos e notações gráficas utilizados para abstrair, estruturar, definir e documentar os requisitos de dados e as regras de negócio de um domínio, desde a concepção abstrata até o esquema físico no banco de dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
@@ -201,7 +209,7 @@ relacionados:
 ### Sistema Gerenciador de Banco de Dados (SGBD)
 * **Definição formal:** (*DBMS - Database Management System*) O software de sistema responsável por gerenciar, controlar, proteger, consultar e manter bancos de dados, fornecendo interfaces padronizadas para definição (DDL), manipulação (DML) e controle (DCL) dos dados.
 * **Modelo mental / Feynman:** É o bibliotecário-chefe de uma grande biblioteca, responsável por catalogar os livros, controlar os empréstimos, impedir furtos e garantir a organização do acervo.
-* **Exemplos:** PostgreSQL, MySQL, Microsoft SQL Server, Oracle Database, SQLite.
+* **Exemplos:** PostgreSQL, MySQL, Microsoft SQL Server, Oracle Database, IBM Db2, Firebird, SQLite.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---

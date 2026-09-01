@@ -113,6 +113,15 @@
    2. **Interlinkagem Exaustiva Bidirecional:** Incluir links internos (`[[...]]`) conectando os artigos de todas as disciplinas envolvidas, atualizando o bloco `relacionados` do frontmatter YAML e o corpo das notas.
    3. **Visão Holística do Aprendizado:** Garantir que o estudante compreenda como os modelos conceituais (Engenharia de Requisitos, Design de Interação, Modelagem de Dados) se traduzem diretamente em código limpo, modular e de alta qualidade (Programação Modular, Guia de Sintaxe e Projeto Integrador).
 
+## Integração de Anotações de Aula
+
+19. **Integração e Expansão Contínua de Anotações de Aula do Usuário:**
+ - Sempre que o usuário fornecer anotações, transcrições ou tópicos brutos capturados durante suas aulas síncronas/assíncronas:
+   1. **Verificação Prévia:** Comparar os tópicos fornecidos com o conteúdo já existente no artigo da disciplina correspondente.
+   2. **Integração Completa sem Perdas:** Incorporar todos os pontos, exemplos práticos mencionados pelo professor (ex.: tabelas de produtos duplicadas para vendas/compras/produção), sinônimos técnicos, ferramentas citadas (PostgreSQL, Oracle, MySQL, SQL Server, IBM Db2, Firebird), links de materiais complementares e capítulos de bibliografia.
+   3. **Expansão Didática Feynman:** Expandir os tópicos em linguagem simples, modelos mentais intuitivos, diagramas Mermaid verticais (`flowchart TD`) e tabelas comparativas nativas de Markdown.
+   4. **Sincronização Imediata:** Atualizar os arquivos relacionados, o `Glossário de conceitos.md` (se novos termos surgirem), o resumo `00.` e sincronizar via Git (`push`).
+
 
 
 
