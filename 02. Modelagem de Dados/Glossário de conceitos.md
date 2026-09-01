@@ -13,6 +13,7 @@ relacionados:
   - "[[02. Abordagem de arquivos vs. abordagem de banco de dados]]"
   - "[[03. Níveis de abstração e arquitetura ansi-sparc]]"
   - "[[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]"
+  - "[[05. Níveis do sgbd e as etapas do projeto de banco de dados]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -30,7 +31,8 @@ relacionados:
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
 * [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
-* [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Propriedades ACID|Propriedades ACID]]
+* [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
+* [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
 * [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Transação|Transação]]
@@ -61,11 +63,11 @@ relacionados:
 
 ### Arquitetura ANSI/SPARC
 * **Definição formal:** Padrão arquitetural tripartite para sistemas de bancos de dados proposto pelo comitê ANSI/X3/SPARC em 1975, que divide o sistema em três níveis de esquemas: externo (visões do usuário), conceitual (estrutura lógica global e regras de negócio) e interno/físico (alocação e estruturas de arquivos).
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Atores do banco de dados
-* **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Administrador de Dados (AD), Projetistas, Desenvolvedores de Software e Usuários Finais.
-* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+* **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Administrador de Dados (AD), Projetistas, Desenvolvedores de Software e Usuários Finais (operacionais e gerenciais).
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Atributo
 * **Definição formal:** Propriedade, característica ou elemento descritivo associado a uma entidade ou a um relacionamento.
@@ -122,7 +124,7 @@ relacionados:
 
 ### Diagrama Entidade-Relacionamento (DER)
 * **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de entidades, relacionamentos e atributos.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### DML (Data Manipulation Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para manipular e operar as instâncias de dados dentro das tabelas existentes (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).
@@ -147,32 +149,31 @@ relacionados:
 
 ### Esquema (Schema / Intensão)
 * **Definição formal:** A descrição ou projeto estrutural global do banco de dados, incluindo definições de tabelas, colunas, tipos e restrições. É estável e raramente sofre alterações ao longo do tempo.
-* **Modelo mental:** A planta baixa da residência ou a forma de um bolo.
 * **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ### Esquema conceitual
 * **Definição formal:** O esquema intermediário global da arquitetura ANSI/SPARC que descreve a estrutura lógica completa de todos os dados da organização, independente de detalhes físicos de armazenamento.
-* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Esquema externo (Visão)
 * **Definição formal:** O esquema da arquitetura ANSI/SPARC mais próximo do usuário, descrevendo apenas a porção do banco de dados relevante para um determinado grupo ou perfil de acesso.
-* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Esquema interno (Físico)
 * **Definição formal:** O esquema de mais baixo nível da arquitetura ANSI/SPARC que descreve como os dados estão fisicamente alocados no hardware, incluindo arquivos, blocos e índices.
-* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ---
 
 ## I
 
 ### Independência física de dados
-* **Definição formal:** Capacidade de modificar o esquema físico sem precisar alterar o esquema conceitual, os esquemas externos ou as aplicações de software.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Definição formal:** Capacidade de modificar as estruturas do nível interno/físico (discos, índices, partições) sem alterar o nível conceitual ou o código SQL das aplicações.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Independência lógica de dados
-* **Definição formal:** Capacidade de alterar o esquema conceitual sem que as aplicações e visões externas que não utilizam esses novos dados precisem ser reescritas ou recompiladas.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Definição formal:** Capacidade de alterar o nível conceitual/lógico (adicionar novas entidades ou colunas) sem que as aplicações e visões externas que não utilizam esses novos dados precisem ser alteradas.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Informação
 * **Definição formal:** O dado bruto estruturado, processado, rotulado e associado a um significado e contexto claro.
@@ -180,7 +181,6 @@ relacionados:
 
 ### Instância (Instance / Estado / Extensão)
 * **Definição formal:** O conjunto real e factual de dados armazenados no banco de dados em um momento específico no tempo. Muda dinamicamente a cada transação DML.
-* **Modelo mental:** As pessoas morando na casa ou o bolo assado que saiu da forma.
 * **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ### Integridade referencial
@@ -193,7 +193,7 @@ relacionados:
 
 ### Mapeamento entre níveis
 * **Definição formal:** As transformações automáticas executadas pelo SGBD para converter solicitações expressas em esquemas externos para comandos no esquema conceitual e, finalmente, em leituras/escritas físicas no esquema interno.
-* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Mini-mundo (Universo de discurso)
 * **Definição formal:** A parte ou recorte específico do mundo real cujos dados e processos são de interesse direto para uma organização e que serão modelados e gerenciados pelo Sistema de Banco de Dados.
@@ -205,19 +205,35 @@ relacionados:
 
 ### Modelo conceitual
 * **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Modelo físico
 * **Definição formal:** A especificação técnica de mais baixo nível, detalhando como os dados são implementados e alocados no hardware e no SGBD específico.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Modelo lógico
 * **Definição formal:** A representação intermediária dos dados adaptada a um paradigma de banco de dados específico (geralmente o modelo relacional).
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Modelo relacional
 * **Definição formal:** Modelo formal de banco de dados introduzido por Edgar F. Codd em 1970, baseado na teoria matemática dos conjuntos, onde todos os dados são representados na forma de relações (tabelas).
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+
+---
+
+## N
+
+### Nível de Visão (Externo)
+* **Definição formal:** O nível de abstração do SGBD voltado para atender às necessidades individuais de diferentes usuários e aplicações, disponibilizando janelas customizadas (*views*) e ocultando dados irrelevantes ou sensíveis.
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
+
+### Nível Físico (Interno)
+* **Definição formal:** O nível de abstração do SGBD que gerencia o armazenamento real no hardware, lidando com alocação de blocos, particionamento e índices B-Tree/Hash.
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
+
+### Nível Lógico (Conceitual)
+* **Definição formal:** O nível de abstração do SGBD que representa a estrutura completa e integrada de todo o banco de dados corporativo, contendo tabelas, chaves e restrições de integridade.
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ---
 
@@ -226,6 +242,21 @@ relacionados:
 ### Perda de atualização (Lost update)
 * **Definição formal:** Falha crítica de concorrência que ocorre quando duas transações leem o mesmo registro simultaneamente e ambas gravam alterações, fazendo com que a última sobrescreva a primeira.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+
+### Projeto Conceitual
+* **Definição formal:** A primeira etapa do projeto de banco de dados, responsável por produzir um esquema semântico abstrato (MER/DER) a partir dos requisitos do mini-mundo, com independência total de SGBD.
+* **Participantes:** Usuários de negócio, Analistas de Sistemas e Administrador de Dados (AD).
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
+
+### Projeto Físico
+* **Definição formal:** A terceira etapa do projeto de banco de dados, responsável por implementar o esquema lógico em um SGBD específico por meio de scripts DDL, definindo tipos nativos, índices e estratégias de armazenamento.
+* **Participantes:** Administrador de Banco de Dados (DBA) e Engenheiros de Infraestrutura.
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
+
+### Projeto Lógico
+* **Definição formal:** A segunda etapa do projeto de banco de dados, responsável por transformar o modelo conceitual em um esquema relacional estruturado (tabelas, colunas, PKs, FKs) e aplicar regras de normalização.
+* **Participantes:** Projetistas de Banco de Dados, Arquitetos de Software e Desenvolvedores.
+* **Artigo correspondente:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ### Propriedades ACID
 * **Definição formal:** Conjunto de quatro propriedades fundamentais que garantem a confiabilidade de transações em um SGBD: Atomicidade, Consistência, Isolamento e Durabilidade.
@@ -273,7 +304,7 @@ relacionados:
 
 ### Visão (View)
 * **Definição formal:** Uma tabela virtual baseada no resultado de uma consulta SQL pré-definida, utilizada para simplificar consultas e proteger colunas sensíveis.
-* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[03. Níveis de abstração e arquitetura ansi-sparc]], [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 
 ---
 
@@ -283,5 +314,6 @@ relacionados:
 * **Voltar ao artigo 02:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 * **Voltar ao artigo 03:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
 * **Voltar ao artigo 04:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+* **Voltar ao artigo 05:** [[05. Níveis do sgbd e as etapas do projeto de banco de dados]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
