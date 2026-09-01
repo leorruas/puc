@@ -174,6 +174,7 @@ const informacoesDisciplinas = {
 let todosOsArtigos = [];
 let todasAsPastas = {};
 let artigoAtual = null;
+let indiceDeBuscaPronto = false;
 
 const campoTexto = document.getElementById("main-search-input");
 const campoTextoNav = document.getElementById("nav-search-input");
@@ -323,6 +324,7 @@ async function carregarTodosOsArtigos() {
 
     const resultados = await Promise.all(promessas);
     todosOsArtigos = resultados.filter(artigo => artigo !== null);
+    indiceDeBuscaPronto = true;
 
     // Organiza artigos em estrutura de pasta para as matérias
     todasAsPastas = {};
@@ -461,6 +463,42 @@ function abrirDisciplina(categoria, atualizarRota = true) {
     window.scrollTo({ top: 0, behavior: "instant" });
 }
 
+function normalizarTextoParaBusca(texto = "") {
+    return String(texto)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLocaleLowerCase("pt-BR");
+}
+
+function termosDaBusca(termoBusca) {
+    return normalizarTextoParaBusca(termoBusca)
+        .replace(/[^\p{L}\p{N}]+/gu, " ")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+}
+
+function contemTodosOsTermos(texto, termos) {
+    const textoNormalizado = normalizarTextoParaBusca(texto);
+    return termos.every(termo => textoNormalizado.includes(termo));
+}
+
+function criarIndiceNormalizado(texto = "") {
+    const caracteres = Array.from(String(texto));
+    const origens = [];
+    let normalizado = "";
+
+    caracteres.forEach((caractere, indiceOriginal) => {
+        const trechoNormalizado = normalizarTextoParaBusca(caractere);
+        for (const caractereNormalizado of trechoNormalizado) {
+            normalizado += caractereNormalizado;
+            origens.push(indiceOriginal);
+        }
+    });
+
+    return { caracteres, normalizado, origens };
+}
+
 // Filtro de Busca Suíça em Tempo Real
 function filtrarArtigos(termoBusca) {
     leitorDeDisciplina.classList.add("escondido");
@@ -474,32 +512,77 @@ function filtrarArtigos(termoBusca) {
         return;
     }
 
-    const termo = termoBusca.toLowerCase().trim();
-
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
     document.getElementById("explorar-disciplinas")?.classList.add("escondido");
-    divResultados.classList.remove("escondido");
 
-    if (termo.length < 2) {
+    if (!indiceDeBuscaPronto) {
+        divResultados.classList.remove("escondido");
+        containerResultados.innerHTML = `<p class="mensagem-busca">preparando a pesquisa dos artigos… tente novamente em instantes.</p>`;
+        return;
+    }
+
+    const termo = termoBusca.trim();
+    const termos = termosDaBusca(termo);
+
+    if (normalizarTextoParaBusca(termo).length < 2) {
+        divResultados.classList.remove("escondido");
         containerResultados.innerHTML = `<p class="mensagem-busca">digite ao menos <strong>duas letras</strong> para pesquisar nos tópicos e artigos.</p>`;
         return;
     }
 
     const filtrados = todosOsArtigos
-        .filter(artigo => artigo.titulo.toLowerCase().includes(termo) || artigo.conteudo.toLowerCase().includes(termo))
+        .filter(artigo => contemTodosOsTermos(`${artigo.titulo} ${artigo.categoria} ${artigo.conteudo}`, termos))
         .sort((a, b) => {
-            const prioridadeA = a.titulo.toLowerCase().includes(termo) ? 0 : 1;
-            const prioridadeB = b.titulo.toLowerCase().includes(termo) ? 0 : 1;
+            const prioridade = (artigo) => {
+                const titulo = normalizarTextoParaBusca(artigo.titulo);
+                const categoria = normalizarTextoParaBusca(artigo.categoria);
+                const consulta = normalizarTextoParaBusca(termo);
+                if (titulo === consulta) return 0;
+                if (titulo.includes(consulta)) return 1;
+                if (contemTodosOsTermos(artigo.titulo, termos)) return 2;
+                if (contemTodosOsTermos(categoria, termos)) return 3;
+                return 4;
+            };
+            const prioridadeA = prioridade(a);
+            const prioridadeB = prioridade(b);
             return prioridadeA - prioridadeB || a.titulo.localeCompare(b.titulo, "pt-BR", { numeric: true });
         });
 
-    exibirResultados(filtrados, termo);
+    exibirResultados(filtrados, termo, termos);
 }
 
 function destacarTexto(texto, termo) {
-    if (!termo) return texto;
-    const regex = new RegExp(`(${termo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    return texto.replace(regex, '<mark class="highlight">$1</mark>');
+    const termos = termosDaBusca(termo);
+    if (!termos.length) return escaparHtml(texto);
+
+    const indice = criarIndiceNormalizado(texto);
+    const intervalos = [];
+    termos.forEach(termoNormalizado => {
+        let posicao = indice.normalizado.indexOf(termoNormalizado);
+        while (posicao !== -1) {
+            const inicio = indice.origens[posicao];
+            const fim = indice.origens[posicao + termoNormalizado.length - 1] + 1;
+            intervalos.push([inicio, fim]);
+            posicao = indice.normalizado.indexOf(termoNormalizado, posicao + termoNormalizado.length);
+        }
+    });
+
+    const mesclados = intervalos
+        .sort((a, b) => a[0] - b[0])
+        .reduce((resultado, intervalo) => {
+            const ultimo = resultado.at(-1);
+            if (ultimo && intervalo[0] <= ultimo[1]) ultimo[1] = Math.max(ultimo[1], intervalo[1]);
+            else resultado.push([...intervalo]);
+            return resultado;
+        }, []);
+
+    let cursor = 0;
+    return mesclados.map(([inicio, fim]) => {
+        const antes = escaparHtml(indice.caracteres.slice(cursor, inicio).join(""));
+        const marcado = escaparHtml(indice.caracteres.slice(inicio, fim).join(""));
+        cursor = fim;
+        return `${antes}<mark class="highlight">${marcado}</mark>`;
+    }).join("") + escaparHtml(indice.caracteres.slice(cursor).join(""));
 }
 
 function escaparHtml(texto) {
@@ -521,14 +604,20 @@ function removerPrimeiroH1(markdown) {
 function extrairTrechoRelevante(conteudo, termo) {
     const conteudoSemFrontmatter = removerFrontmatter(conteudo);
     const textoLimpo = conteudoSemFrontmatter.replace(/==/g, '').replace(/[#*`_~\[\]]/g, ' ');
-    const pos = textoLimpo.toLowerCase().indexOf(termo.toLowerCase());
+    const indice = criarIndiceNormalizado(textoLimpo);
+    const posicaoNormalizada = Math.min(...termosDaBusca(termo)
+        .map(termoNormalizado => indice.normalizado.indexOf(termoNormalizado))
+        .filter(posicao => posicao >= 0));
+    const pos = Number.isFinite(posicaoNormalizada)
+        ? indice.caracteres.slice(0, indice.origens[posicaoNormalizada]).join("").length
+        : -1;
     
     if (pos === -1) {
         return textoLimpo.substring(0, 140) + "...";
     }
     
     const inicio = Math.max(0, pos - 50);
-    const fim = Math.min(textoLimpo.length, pos + termo.length + 80);
+    const fim = Math.min(textoLimpo.length, pos + 90);
     let trecho = textoLimpo.substring(inicio, fim);
     
     if (inicio > 0) trecho = "..." + trecho;
@@ -537,7 +626,7 @@ function extrairTrechoRelevante(conteudo, termo) {
     return trecho;
 }
 
-function exibirResultados(artigos, termo = "") {
+function exibirResultados(artigos, termo = "", termos = []) {
     containerResultados.innerHTML = "";
     leitorDeArtigo.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
@@ -560,8 +649,15 @@ function exibirResultados(artigos, termo = "") {
         grupos[artigo.categoria].push(artigo);
     });
 
+    const listaTermos = termos.length ? termos : termosDaBusca(termo);
+
     Object.keys(grupos)
-        .sort((a, b) => a.localeCompare(b, "pt-BR", { numeric: true }))
+        .sort((a, b) => {
+            const tituloEmA = grupos[a].some(artigo => contemTodosOsTermos(artigo.titulo, listaTermos));
+            const tituloEmB = grupos[b].some(artigo => contemTodosOsTermos(artigo.titulo, listaTermos));
+            const diffTitulo = Number(tituloEmB) - Number(tituloEmA);
+            return diffTitulo !== 0 ? diffTitulo : a.localeCompare(b, "pt-BR", { numeric: true });
+        })
         .forEach(categoria => {
             const grupoDiv = document.createElement("div");
             grupoDiv.className = "busca-grupo-assunto";
@@ -602,7 +698,8 @@ function exibirResultados(artigos, termo = "") {
                 card.addEventListener("click", (event) => {
                     if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
                     event.preventDefault();
-                    abrirArtigo(artigo.titulo, artigo.conteudo);
+                    const abrirNaOcorrencia = !contemTodosOsTermos(artigo.titulo, listaTermos);
+                    abrirArtigo(artigo.titulo, artigo.conteudo, true, abrirNaOcorrencia ? listaTermos : []);
                 });
 
                 subCardsContainer.appendChild(card);
@@ -743,9 +840,24 @@ function renderizarNavegacaoGlossario(grupos) {
     artigoCorpo.prepend(navegacao);
 }
 
+function encontrarAlvoDaBuscaNoArtigo(termos) {
+    if (!termos?.length || !artigoCorpo) return null;
+
+    const secoes = Array.from(artigoCorpo.querySelectorAll("h2, h3, h4"));
+    for (const secao of secoes) {
+        let textoDaSecao = secao.textContent || "";
+        for (let no = secao.nextElementSibling; no && !["H2", "H3", "H4"].includes(no.tagName); no = no.nextElementSibling) {
+            textoDaSecao += ` ${no.textContent || ""}`;
+        }
+        if (contemTodosOsTermos(textoDaSecao, termos)) return secao;
+    }
+
+    return Array.from(artigoCorpo.querySelectorAll("p, li, blockquote, td"))
+        .find(elemento => contemTodosOsTermos(elemento.textContent, termos)) || null;
+}
+
 // Leitor de Artigos com Suporte Suíço
-function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
-    rolarAoTopo();
+function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = []) {
     divResultados.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
@@ -869,10 +981,15 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true) {
 
     leitorDeArtigo.classList.remove("escondido");
 
-    rolarAoTopo();
-    requestAnimationFrame(() => rolarAoTopo());
-    setTimeout(rolarAoTopo, 50);
-    setTimeout(rolarAoTopo, 150);
+    const alvoDaBusca = encontrarAlvoDaBuscaNoArtigo(termosBusca);
+    if (alvoDaBusca) {
+        window.setTimeout(() => alvoDaBusca.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    } else {
+        rolarAoTopo();
+        requestAnimationFrame(() => rolarAoTopo());
+        setTimeout(rolarAoTopo, 50);
+        setTimeout(rolarAoTopo, 150);
+    }
 }
 
 function processarContextoArtigo(conteudoMarkdown) {
@@ -1575,6 +1692,13 @@ function executarBuscaGlobal(termo, campoDeOrigem) {
     filtrarArtigos(termo);
 }
 
+function limparBuscaGlobal() {
+    [campoTexto, campoTextoNav].forEach(campo => {
+        if (campo) campo.value = "";
+    });
+    filtrarArtigos("");
+}
+
 if (campoTexto) {
     campoTexto.addEventListener("input", (e) => {
         executarBuscaGlobal(e.target.value, e.currentTarget);
@@ -1586,6 +1710,22 @@ if (campoTextoNav) {
         executarBuscaGlobal(e.target.value, e.currentTarget);
     });
 }
+
+document.addEventListener("keydown", (event) => {
+    const comandoDeBusca = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
+    if (comandoDeBusca) {
+        event.preventDefault();
+        const campoVisivel = campoTextoNav?.offsetParent !== null ? campoTextoNav : campoTexto;
+        campoVisivel?.focus();
+        campoVisivel?.select();
+        return;
+    }
+
+    if (event.key === "Escape" && [campoTexto, campoTextoNav].includes(document.activeElement)) {
+        limparBuscaGlobal();
+        document.activeElement?.blur();
+    }
+});
 
 if (btnVoltar) {
     btnVoltar.addEventListener("click", () => {
