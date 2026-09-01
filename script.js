@@ -82,6 +82,7 @@ async function obterListaDeArquivos() {
             "01. Programacao Modular/Prompts de Estudo (LLM).md",
             "02. Modelagem de Dados/00. Modelagem de Dados - Resumo.md",
             "02. Modelagem de Dados/01. Introdução à modelagem de dados e sua importância.md",
+            "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md",
             "02. Modelagem de Dados/Glossário de conceitos.md",
             "02. Modelagem de Dados/Prompts de Estudo (LLM).md",
             "03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md",
