@@ -13,6 +13,7 @@ relacionados:
   - "[[02. Abordagem de arquivos vs. abordagem de banco de dados]]"
   - "[[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]"
   - "[[04. Níveis do sgbd e etapas do projeto de banco de dados]]"
+  - "[[05. Modelagem de entidades e tipos de atributos]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -23,9 +24,9 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
-* [[#C|C]]: [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]]
+* [[#C|C]]: [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
 * [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
@@ -35,7 +36,7 @@ relacionados:
 * [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
-* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Transação|Transação]]
+* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -71,7 +72,47 @@ relacionados:
 
 ### Atributo
 * **Definição formal:** Propriedade, característica ou elemento descritivo associado a uma entidade ou a um relacionamento.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Armazenado (Base)
+* **Definição formal:** Atributo cujo valor é gravado fisicamente nas tabelas do banco de dados, pois não pode ser deduzido a partir de nenhuma outra informação existente.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Chave (Identificador)
+* **Definição formal:** Atributo (ou conjunto de atributos) cujos valores são únicos para cada entidade dentro do conjunto, permitindo individualizar cada instância no banco.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Complexo
+* **Definição formal:** Composição aninhada de atributos compostos contendo atributos multivalorados, ou atributos multivalorados cujos elementos são compostos.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Composto
+* **Definição formal:** Atributo formado pela união hierárquica de múltiplos atributos menores e mais simples (ex.: endereço formado por logradouro, número, bairro e CEP).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Derivado (Calculado)
+* **Definição formal:** Atributo cujo valor não é persistido fisicamente no disco, mas calculado dinamicamente pelo sistema a partir de atributos armazenados ou funções de sistema (ex.: idade calculada a partir da data de nascimento).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Monovalorado (Univalorado)
+* **Definição formal:** Atributo que armazena um único valor para cada entidade específica em um determinado momento (ex.: CPF, data de admissão).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Multivalorado
+* **Definição formal:** Atributo que pode assumir múltiplos valores para a mesma entidade (ex.: múltiplos telefones de contato de um cliente).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Nulo (Opcional)
+* **Definição formal:** Atributo que aceita a ausência de valor (`NULL`) quando a informação for desconhecida, inexistente ou não aplicável para determinada instância.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Obrigatório
+* **Definição formal:** Atributo cujo preenchimento de um valor válido é compulsório na inserção da entidade no banco (`NOT NULL`).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Atributo Simples (Atômico)
+* **Definição formal:** Atributo indivisível que não pode ser decomposto em partes menores sem perder sua semântica fundamental (ex.: salário, sexo).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
 
 ---
 
@@ -101,6 +142,10 @@ relacionados:
 * **Definição formal:** A integração de informações contextualizadas com regras de negócio, experiência humana e heurísticas, capacitando a tomada de decisões estratégicas.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Conjunto de Entidades (Entity Set)
+* **Definição formal:** A coleção factual de todas as instâncias ou ocorrências de um determinado tipo de entidade armazenadas no banco de dados em um momento específico no tempo.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
 ---
 
 ## D
@@ -124,7 +169,7 @@ relacionados:
 
 ### Diagrama Entidade-Relacionamento (DER)
 * **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de entidades, relacionamentos e atributos.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]]
 
 ### DML (Data Manipulation Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para manipular e operar as instâncias de dados dentro das tabelas existentes (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).
@@ -144,8 +189,8 @@ relacionados:
 ## E
 
 ### Entidade
-* **Definição formal:** Qualquer objeto, conceito, evento ou elemento do mundo real com existência distinta e sobre o qual o sistema necessita armazenar dados.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Definição formal:** Qualquer objeto, ser, conceito ou evento do mundo real com existência distinta e sobre o qual o sistema necessita armazenar dados.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
 
 ### Esquema (Schema / Intensão)
 * **Definição formal:** A descrição ou projeto estrutural global do banco de dados, incluindo definições de tabelas, colunas, tipos e restrições. É estável e raramente sofre alterações ao longo do tempo.
@@ -213,7 +258,7 @@ relacionados:
 
 ### Modelo conceitual
 * **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]]
 
 ### Modelo físico
 * **Definição formal:** A especificação técnica de mais baixo nível, detalhando como os dados são implementados e alocados no hardware e no SGBD específico.
@@ -302,6 +347,10 @@ relacionados:
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para gerenciar a execução atômica e consistente de transações no banco de dados (`COMMIT`, `ROLLBACK`, `SAVEPOINT`).
 * **Artigo correspondente:** [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]
 
+### Tipo de Entidade (Entity Type)
+* **Definição formal:** O esquema descritivo formal que define a estrutura e o conjunto de atributos comuns compartilhados por um grupo de entidades similares (análogo a uma Classe na POO).
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
 ### Transação
 * **Definição formal:** Uma unidade lógica de processamento que inclui uma ou mais operações de acesso ao banco de dados executadas sob as garantias ACID.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
@@ -322,5 +371,6 @@ relacionados:
 * **Voltar ao artigo 02:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 * **Voltar ao artigo 03:** [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]
 * **Voltar ao artigo 04:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+* **Voltar ao artigo 05:** [[05. Modelagem de entidades e tipos de atributos]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]

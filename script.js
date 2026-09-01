@@ -85,6 +85,7 @@ async function obterListaDeArquivos() {
             "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md",
             "02. Modelagem de Dados/03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md",
             "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+            "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
             "02. Modelagem de Dados/Glossário de conceitos.md",
             "02. Modelagem de Dados/Prompts de Estudo (LLM).md",
             "03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md",
