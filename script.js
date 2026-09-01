@@ -299,7 +299,7 @@ async function carregarTodosOsArtigos() {
     // Promessas paralelas para ler o conteúdo Markdown de cada arquivo
     const promessas = lista.map(async (item) => {
         try {
-            const res = await fetch(item.path);
+            const res = await fetch(item.path, { cache: "no-cache" });
             if (!res.ok) return null;
             const texto = await res.text();
             
