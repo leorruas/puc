@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md",
+                "file": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03. Cronograma semanal e entregas de etapas"
+              "title": "21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica)"
             }
           }
         ]
@@ -173,5 +173,10 @@
     }
   },
   "active": "6f118e7ad3e3db28",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "AGENTS.md",
+    "log.md",
+    "me.md",
+    "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md"
+  ]
 }
