@@ -14,6 +14,7 @@ relacionados:
   - "[[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]"
   - "[[04. Níveis do sgbd e etapas do projeto de banco de dados]]"
   - "[[05. Modelagem de entidades e tipos de atributos]]"
+  - "[[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -24,17 +25,18 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
-* [[#C|C]]: [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
+* [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
 * [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
+* [[#G|G]]: [[#Grau de Relacionamento|Grau de Relacionamento]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
 * [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
-* [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
-* [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]]
+* [[#P|P]]: [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
+* [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
 * [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
@@ -114,6 +116,10 @@ relacionados:
 * **Definição formal:** Atributo indivisível que não pode ser decomposto em partes menores sem perder sua semântica fundamental (ex.: salário, sexo).
 * **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
 
+### Autorrelacionamento
+* **Definição formal:** Relacionamento de grau unário no qual instâncias da mesma entidade se associam entre si desempenhando papéis distintos (ex.: funcionário atua como supervisor de outros funcionários).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
 ---
 
 ## B
@@ -125,6 +131,14 @@ relacionados:
 ---
 
 ## C
+
+### Cardinalidade Máxima
+* **Definição formal:** O limite superior de ocorrências de uma entidade que podem estar associadas a uma única ocorrência de outra entidade através de um relacionamento ($1:1$, $1:N$, $N:M$).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Cardinalidade Mínima
+* **Definição formal:** O limite inferior de ocorrências de uma entidade que devem participar de um relacionamento ($0$ para opcional/parcial, $\ge 1$ para obrigatória/total).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 
 ### Catálogo do sistema (Dicionário de dados)
 * **Definição formal:** Repositório interno e autocontido do SGBD que armazena os metadados — a descrição formal da estrutura, tabelas, colunas, tipos de dados, restrições de integridade e permissões de segurança de todo o banco de dados.
@@ -169,7 +183,7 @@ relacionados:
 
 ### Diagrama Entidade-Relacionamento (DER)
 * **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de entidades, relacionamentos e atributos.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 
 ### DML (Data Manipulation Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para manipular e operar as instâncias de dados dentro das tabelas existentes (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).
@@ -207,6 +221,14 @@ relacionados:
 ### Esquema interno (Físico)
 * **Definição formal:** O esquema de mais baixo nível da arquitetura ANSI/SPARC que descreve como os dados estão fisicamente alocados no hardware, incluindo arquivos, blocos e índices.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+
+---
+
+## G
+
+### Grau de Relacionamento
+* **Definição formal:** O número de tipos de entidades participantes em um determinado relacionamento (unário = 1, binário = 2, ternário = 3, N-ário = N).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 
 ---
 
@@ -292,6 +314,14 @@ relacionados:
 
 ## P
 
+### Participação Parcial
+* **Definição formal:** Restrição estrutural que indica que nem todas as instâncias de uma entidade precisam participar de um relacionamento (cardinalidade mínima = 0, representada por linha simples no DER de Chen).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Participação Total (Restrição de Existência)
+* **Definição formal:** Restrição estrutural que estabelece que toda instância de uma entidade depende obrigatoriamente de sua participação no relacionamento para existir (cardinalidade mínima = 1, representada por linha dupla no DER de Chen).
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
 ### Perda de atualização (Lost update)
 * **Definição formal:** Falha crítica de concorrência que ocorre quando duas transações leem o mesmo registro simultaneamente e ambas gravam alterações, fazendo com que a última sobrescreva a primeira.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
@@ -325,7 +355,27 @@ relacionados:
 
 ### Relacionamento
 * **Definição formal:** Associação semântica e lógica entre duas ou mais entidades do modelo de dados.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Relacionamento Binário
+* **Definição formal:** Relacionamento que conecta exatamente duas entidades distintas do modelo conceitual.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Relacionamento Muitos para Muitos (N:M)
+* **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias ocorrências da entidade B, e vice-versa.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Relacionamento Ternário
+* **Definição formal:** Relacionamento que conecta simultaneamente três entidades distintas para completar a semântica da associação.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Relacionamento Um para Muitos (1:N)
+* **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias da entidade B, mas cada ocorrência de B associa-se a no máximo uma de A.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+
+### Relacionamento Um para Um (1:1)
+* **Definição formal:** Mapeamento de cardinalidade máxima no qual cada ocorrência da entidade A associa-se a no máximo uma ocorrência de B, e vice-versa.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 
 ---
 
@@ -372,5 +422,6 @@ relacionados:
 * **Voltar ao artigo 03:** [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]
 * **Voltar ao artigo 04:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 * **Voltar ao artigo 05:** [[05. Modelagem de entidades e tipos de atributos]]
+* **Voltar ao artigo 06:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
