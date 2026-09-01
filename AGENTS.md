@@ -44,7 +44,8 @@
 
 ## Diretrizes para Diagramas Mermaid
 
-9. **Otimização Estrita de Leiturabilidade, Layout Visual Vertical e Linhas Retas:**
+9. **Otimização Estrita de Leiturabilidade, Layout Visual Vertical e Proibição de ASCII Art:**
+ - **Proibição Estrita de Diagramas e Caixas em ASCII Art:** É terminantemente proibido utilizar diagramas conceituais, pirâmides, caixas, quadros ou fluxos desenhados com caracteres de texto/ASCII art (ex.: `+---+`, `| |`, `----->`, `^`, `v`). Todo e qualquer fluxo, hierarquia, arquitetura ou modelo conceitual deve ser renderizado **obrigatoriamente via Mermaid (`flowchart TD`)**. Quadros comparativos e informativos devem utilizar exclusivamente **tabelas nativas em Markdown (`| Coluna | ... |`)**.
  - **Orientação Vertical Obrigatória:** utilizar exclusivamente `flowchart TD`. É terminantemente proibido o uso de `graph LR` ou qualquer disposição que force mais de 2 nós lado a lado.
  - **Linhas e Conectores Retos (*Straight Lines / Linear Curve*):** os diagramas devem priorizar fluxos retos, limpos e sem curvas elásticas confusas. No app web, a engine do Mermaid é configurada com `flowchart: { curve: 'linear' }`.
  - **Empilhamento Vertical em `subgraph`:** fluxos com mais de 2 ramificações devem ser organizados obrigatoriamente em `subgraph` verticais empilhados (um abaixo do outro), evitando que o Mermaid expanda a largura da imagem e reduza o tamanho da fonte.
