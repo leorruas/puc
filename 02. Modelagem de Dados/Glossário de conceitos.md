@@ -11,6 +11,8 @@ relacionados:
   - "[[00. Modelagem de Dados - Resumo]]"
   - "[[01. Introdução à modelagem de dados e sua importância]]"
   - "[[02. Abordagem de arquivos vs. abordagem de banco de dados]]"
+  - "[[03. Níveis de abstração e arquitetura ansi-sparc]]"
+  - "[[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -21,17 +23,17 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
 * [[#C|C]]: [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]]
-* [[#D|D]]: [[#Dado|Dado]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]]
-* [[#E|E]]: [[#Entidade|Entidade]]
-* [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Integridade referencial|Integridade referencial]]
-* [[#M|M]]: [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
+* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
+* [[#E|E]]: [[#Entidade|Entidade]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
+* [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
+* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#P|P]]: [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
-* [[#T|T]]: [[#Transação|Transação]]
+* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -43,26 +45,30 @@ relacionados:
 * **Modelo mental / Feynman:** É como o painel de um automóvel. O motorista só precisa enxergar o velocímetro, o marcador de combustível e os pedais, sem precisar saber a quantidade de injeção eletrônica de combustível ocorrendo no motor a cada segundo.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Administrador de Banco de Dados (DBA)
+* **Definição formal:** (*Database Administrator*) O profissional responsável pela infraestrutura técnica, desempenho físico (*tuning*), segurança operacional, políticas de backup/restore, alta disponibilidade e integridade física do SGBD e servidores.
+* **Modelo mental / Feynman:** É o engenheiro de tráfego, saneamento e manutenção pesada de uma grande cidade.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
+### Administrador de Dados (AD)
+* **Definição formal:** (*Data Administrator*) O profissional responsável pela governança estratégica da informação, definição do dicionário corporativo de dados, modelagem conceitual/lógica (DER) e alinhamento dos dados às regras de negócio e à conformidade legal (LGPD).
+* **Modelo mental / Feynman:** É o arquiteto e urbanista que projeta o plano diretor e o zoneamento da cidade.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
 ### Anomalia de modificação
 * **Definição formal:** Inconsistências indesejadas que ocorrem em tabelas mal projetadas ou não normalizadas durante operações de inserção, alteração ou exclusão de registros.
-* **Tipos:**
-  - *Anomalia de inserção:* Impossibilidade de registrar um fato sem registrar outro fato não relacionado.
-  - *Anomalia de exclusão:* Perda indesejada de dados essenciais ao apagar um registro secundário.
-  - *Anomalia de alteração:* Necessidade de atualizar o mesmo dado em múltiplos registros, correndo o risco de inconsistência.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Arquitetura ANSI/SPARC
 * **Definição formal:** Padrão arquitetural tripartite para sistemas de bancos de dados proposto pelo comitê ANSI/X3/SPARC em 1975, que divide o sistema em três níveis de esquemas: externo (visões do usuário), conceitual (estrutura lógica global e regras de negócio) e interno/físico (alocação e estruturas de arquivos).
-* **Objetivo principal:** Garantir a independência total entre dados lógicos e o armazenamento físico em disco.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ### Atores do banco de dados
-* **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Projetistas de Banco, Analistas de Sistemas, Desenvolvedores de Software e Usuários Finais (*end-users*).
-* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+* **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Administrador de Dados (AD), Projetistas, Desenvolvedores de Software e Usuários Finais.
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
 
 ### Atributo
 * **Definição formal:** Propriedade, característica ou elemento descritivo associado a uma entidade ou a um relacionamento.
-* **Modelo mental:** Se a entidade for o substantivo "Aluno", os atributos são os adjetivos e dados cadastrais: `Matrícula`, `Nome`, `CPF` e `Data de Nascimento`.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ---
@@ -71,7 +77,6 @@ relacionados:
 
 ### Banco de Dados (BD) / Base de dados
 * **Definição formal:** (*Database*) Coleção estruturada, integrada e logicamente coerente de dados correlacionados e persistentes que modelam e representam entidades e eventos de um domínio do mundo real (*mini-mundo*).
-* **Modelo mental / Feynman:** É o acervo de livros organizado nas estantes de uma biblioteca, contendo todas as obras e registros da instituição.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---
@@ -83,17 +88,15 @@ relacionados:
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Chave estrangeira (FK)
-* **Definição formal:** (*Foreign Key*) Um atributo ou conjunto de atributos em uma tabela que faz referência direta à chave primária (PK) de outra tabela (ou da mesma tabela), estabelecendo e assegurando um vínculo relacional entre os registros.
-* **Papel:** Garantir a integridade referencial, impedindo registros órfãos.
+* **Definição formal:** (*Foreign Key*) Um atributo ou conjunto de atributos em uma tabela que faz referência direta à chave primária (PK) de outra tabela, estabelecendo e assegurando um vínculo relacional entre os registros.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Chave primária (PK)
-* **Definição formal:** (*Primary Key*) Um identificador único e irredutível escolhido para individualizar de forma inequívoca cada tupla (linha/registro) dentro de uma tabela relacional. Uma chave primária nunca pode aceitar valores nulos (`NOT NULL`) nem repetidos (`UNIQUE`).
-* **Modelo mental:** É o CPF ou o número de chassi de um veículo no banco de dados.
+* **Definição formal:** (*Primary Key*) Um identificador único e irredutível escolhido para individualizar de forma inequívoca cada tupla dentro de uma tabela relacional (`NOT NULL` e `UNIQUE`).
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Conhecimento
-* **Definição formal:** A integração de informações contextualizadas com regras de negócio, experiência humana, princípios analíticos e heurísticas, capacitando a tomada de decisões estratégicas e ações fundamentadas.
+* **Definição formal:** A integração de informações contextualizadas com regras de negócio, experiência humana e heurísticas, capacitando a tomada de decisões estratégicas.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ---
@@ -102,72 +105,118 @@ relacionados:
 
 ### Dado
 * **Definição formal:** Um valor ou registro atômico e bruto, desprovido de contexto, semântica ou interpretação inerente.
-* **Modelo mental:** O número isolado `42` anotado em um papel solto.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### DCL (Data Control Language)
+* **Definição formal:** Subconjunto da linguagem SQL voltado para o gerenciamento de permissões, direitos de acesso e privilégios de segurança aos usuários (`GRANT`, `REVOKE`).
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
+### DDL (Data Definition Language)
+* **Definição formal:** Subconjunto da linguagem SQL utilizado para definir, alterar e remover esquemas, tabelas, visões, índices e restrições estruturais no catálogo do banco de dados (`CREATE`, `ALTER`, `DROP`, `TRUNCATE`).
+* **Modelo mental:** A equipe de cenografia que constrói a estrutura física do palco do teatro.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
 ### Dependência lógica e física
-* **Definição formal:** Acoplamento indesejável presente nos sistemas de arquivos legados, onde qualquer alteração no formato de gravação dos dados exigia a reescrita de todos os programas consumidores.
+* **Definição formal:** Acoplamento indesejável presente nos sistemas de arquivos legados, onde qualquer alteração no formato de gravação exigia a reescrita de todos os programas consumidores.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Diagrama Entidade-Relacionamento (DER)
-* **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de retângulos (entidades), losangos (relacionamentos) e elipses/linhas (atributos).
+* **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de entidades, relacionamentos e atributos.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+
+### DML (Data Manipulation Language)
+* **Definição formal:** Subconjunto da linguagem SQL utilizado para manipular e operar as instâncias de dados dentro das tabelas existentes (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).
+* **Modelo mental:** Os atores que entram, contracenam, mudam de posição e saem do palco do teatro.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
+### DML Não Procedural (Declarativa)
+* **Definição formal:** Categoria de linguagem de manipulação (como o SQL padrão) em que o usuário especifica apenas *o que* deseja obter, cabendo ao otimizador do SGBD decidir a estratégia algorítmica e o plano de acesso físico aos dados.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
+### DML Procedural (Navegacional)
+* **Definição formal:** Categoria de linguagem de manipulação (como PL/SQL e linguagens legadas) em que o usuário precisa instruir o computador com comandos explícitos de laços, ponteiros e algoritmos de navegação passo a passo pelos registros.
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
 
 ---
 
 ## E
 
 ### Entidade
-* **Definição formal:** Qualquer objeto, conceito, evento ou elemento do mundo real com existência distinta e sobre o qual o sistema necessita armazenar dados. Pode ser concreta (ex.: `Cliente`, `Livro`) ou abstrata (ex.: `Empréstimo`, `Matrícula`, `Voo`).
+* **Definição formal:** Qualquer objeto, conceito, evento ou elemento do mundo real com existência distinta e sobre o qual o sistema necessita armazenar dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+
+### Esquema (Schema / Intensão)
+* **Definição formal:** A descrição ou projeto estrutural global do banco de dados, incluindo definições de tabelas, colunas, tipos e restrições. É estável e raramente sofre alterações ao longo do tempo.
+* **Modelo mental:** A planta baixa da residência ou a forma de um bolo.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+
+### Esquema conceitual
+* **Definição formal:** O esquema intermediário global da arquitetura ANSI/SPARC que descreve a estrutura lógica completa de todos os dados da organização, independente de detalhes físicos de armazenamento.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+
+### Esquema externo (Visão)
+* **Definição formal:** O esquema da arquitetura ANSI/SPARC mais próximo do usuário, descrevendo apenas a porção do banco de dados relevante para um determinado grupo ou perfil de acesso.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+
+### Esquema interno (Físico)
+* **Definição formal:** O esquema de mais baixo nível da arquitetura ANSI/SPARC que descreve como os dados estão fisicamente alocados no hardware, incluindo arquivos, blocos e índices.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ---
 
 ## I
 
 ### Independência física de dados
-* **Definição formal:** Capacidade de modificar o esquema físico (como trocar o disco por SSD, mudar o tipo de índice de B-Tree para Hash ou reorganizar partições de arquivos) sem precisar alterar o esquema conceitual, o modelo lógico ou os programas de aplicação.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Definição formal:** Capacidade de modificar o esquema físico sem precisar alterar o esquema conceitual, os esquemas externos ou as aplicações de software.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ### Independência lógica de dados
-* **Definição formal:** Capacidade de alterar o esquema conceitual (como adicionar novas tabelas, novos atributos ou novas regras) sem que as aplicações existentes que não utilizam esses novos dados precisem ser reescritas ou recompiladas.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Definição formal:** Capacidade de alterar o esquema conceitual sem que as aplicações e visões externas que não utilizam esses novos dados precisem ser reescritas ou recompiladas.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ### Informação
-* **Definição formal:** O dado bruto estruturado, processado, rotulado e associado a um significado e contexto claro, tornando-o interpretável pelo ser humano e pelo sistema.
-* **Modelo mental:** "A temperatura do sensor 04 atingiu 39.5 °C às 10h".
+* **Definição formal:** O dado bruto estruturado, processado, rotulado e associado a um significado e contexto claro.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Instância (Instance / Estado / Extensão)
+* **Definição formal:** O conjunto real e factual de dados armazenados no banco de dados em um momento específico no tempo. Muda dinamicamente a cada transação DML.
+* **Modelo mental:** As pessoas morando na casa ou o bolo assado que saiu da forma.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+
 ### Integridade referencial
-* **Definição formal:** Regra fundamental de consistência relacional que estabelece que o valor de uma chave estrangeira em uma tabela deve corresponder obrigatoriamente a uma chave primária válida existente na tabela pai referenciada, ou ser nulo (quando permitido).
+* **Definição formal:** Regra fundamental de consistência relacional que estabelece que o valor de uma chave estrangeira em uma tabela deve corresponder a uma chave primária válida existente na tabela pai.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---
 
 ## M
 
+### Mapeamento entre níveis
+* **Definição formal:** As transformações automáticas executadas pelo SGBD para converter solicitações expressas em esquemas externos para comandos no esquema conceitual e, finalmente, em leituras/escritas físicas no esquema interno.
+* **Artigo correspondente:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+
 ### Mini-mundo (Universo de discurso)
 * **Definição formal:** A parte ou recorte específico do mundo real cujos dados e processos são de interesse direto para uma organização e que serão modelados e gerenciados pelo Sistema de Banco de Dados.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Modelagem de dados
-* **Definição formal:** O conjunto sistemático de conceitos, técnicas, processos e notações gráficas utilizados para abstrair, estruturar, definir e documentar os requisitos de dados e as regras de negócio de um domínio, desde a concepção abstrata até o esquema físico no banco de dados.
+* **Definição formal:** O conjunto sistemático de conceitos, técnicas, processos e notações gráficas utilizados para abstrair, estruturar, definir e documentar os requisitos de dados e as regras de negócio de um domínio.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Modelo conceitual
-* **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real, completamente independente de qualquer SGBD ou detalhe de implementação computacional.
+* **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Modelo físico
-* **Definição formal:** A especificação técnica de mais baixo nível, detalhando como os dados são implementados e alocados fisicamente no hardware e no SGBD específico, incluindo arquivos de dados, índices, tablespaces e parâmetros de armazenamento.
+* **Definição formal:** A especificação técnica de mais baixo nível, detalhando como os dados são implementados e alocados no hardware e no SGBD específico.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Modelo lógico
-* **Definição formal:** A representação intermediária dos dados adaptada a um paradigma de banco de dados específico (geralmente o modelo relacional), descrevendo tabelas, colunas, chaves primárias e estrangeiras, tipos de dados e cardinalidades, sem descer aos detalhes de alocação física em disco.
+* **Definição formal:** A representação intermediária dos dados adaptada a um paradigma de banco de dados específico (geralmente o modelo relacional).
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ### Modelo relacional
-* **Definição formal:** Modelo formal de banco de dados introduzido por Edgar F. Codd em 1970, baseado na teoria matemática dos conjuntos e na lógica de predicados de primeira ordem, onde todos os dados são representados na forma de relações (tabelas bidimensionais com linhas e colunas).
+* **Definição formal:** Modelo formal de banco de dados introduzido por Edgar F. Codd em 1970, baseado na teoria matemática dos conjuntos, onde todos os dados são representados na forma de relações (tabelas).
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ---
@@ -175,15 +224,11 @@ relacionados:
 ## P
 
 ### Perda de atualização (Lost update)
-* **Definição formal:** Falha crítica de concorrência que ocorre quando duas transações leem o mesmo registro simultaneamente e ambas gravam alterações baseadas no valor lido, fazendo com que a última gravação sobrescreva e destrua silenciosamente a alteração realizada pela primeira.
+* **Definição formal:** Falha crítica de concorrência que ocorre quando duas transações leem o mesmo registro simultaneamente e ambas gravam alterações, fazendo com que a última sobrescreva a primeira.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Propriedades ACID
-* **Definição formal:** Conjunto de quatro propriedades fundamentais que garantem a confiabilidade de transações em um SGBD:
-  - **A (Atomicidade):** A transação é indivisível; ou todas as suas operações são confirmadas com sucesso (*commit*), ou nenhuma é aplicada (*rollback*).
-  - **C (Consistência):** A transação leva o banco de um estado válido a outro estado igualmente válido, respeitando todas as regras e restrições.
-  - **I (Isolamento):** Transações simultâneas são executadas como se fossem as únicas no sistema, sem interferência mútua antes da confirmação.
-  - **D (Durabilidade):** Uma vez confirmada a transação, suas alterações são permanentes e não serão perdidas mesmo em caso de falha de energia ou travamento do servidor.
+* **Definição formal:** Conjunto de quatro propriedades fundamentais que garantem a confiabilidade de transações em um SGBD: Atomicidade, Consistência, Isolamento e Durabilidade.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---
@@ -191,11 +236,11 @@ relacionados:
 ## R
 
 ### Redundância de dados
-* **Definição formal:** A repetição desnecessária do mesmo dado em múltiplos locais da base de dados, gerando desperdício de espaço de armazenamento e criando risco crítico de inconsistência.
+* **Definição formal:** A repetição desnecessária do mesmo dado em múltiplos locais da base de dados, gerando desperdício de espaço e risco de inconsistência.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Relacionamento
-* **Definição formal:** Associação semântica e lógica entre duas ou mais entidades do modelo de dados, refletindo como elas interagem nas regras de negócio do mundo real (ex.: um `Aluno` *cursa* uma `Disciplina`).
+* **Definição formal:** Associação semântica e lógica entre duas ou mais entidades do modelo de dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
 ---
@@ -203,22 +248,23 @@ relacionados:
 ## S
 
 ### Sistema de Banco de Dados (SBD)
-* **Definição formal:** O ecossistema integrado completo composto pelo Banco de Dados, o Sistema Gerenciador de Banco de Dados (SGBD), as aplicações clientes de software, a infraestrutura de hardware e as pessoas (administradores de banco DBA, desenvolvedores e usuários finais).
+* **Definição formal:** O ecossistema integrado completo composto pelo Banco de Dados, o SGBD, as aplicações clientes, o hardware e a comunidade de usuários.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Sistema Gerenciador de Banco de Dados (SGBD)
-* **Definição formal:** (*DBMS - Database Management System*) O software de sistema responsável por gerenciar, controlar, proteger, consultar e manter bancos de dados, fornecendo interfaces padronizadas para definição (DDL), manipulação (DML) e controle (DCL) dos dados.
-* **Modelo mental / Feynman:** É o bibliotecário-chefe de uma grande biblioteca, responsável por catalogar os livros, controlar os empréstimos, impedir furtos e garantir a organização do acervo.
-* **Exemplos:** PostgreSQL, MySQL, Microsoft SQL Server, Oracle Database, IBM Db2, Firebird, SQLite.
+* **Definição formal:** (*DBMS*) O software de sistema responsável por gerenciar, controlar, proteger, consultar e manter bancos de dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---
 
 ## T
 
+### TCL (Transaction Control Language)
+* **Definição formal:** Subconjunto da linguagem SQL utilizado para gerenciar a execução atômica e consistente de transações no banco de dados (`COMMIT`, `ROLLBACK`, `SAVEPOINT`).
+* **Artigo correspondente:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
+
 ### Transação
-* **Definição formal:** Uma unidade lógica de processamento que inclui uma ou mais operações de acesso ao banco de dados (como leitura, inserção, alteração ou exclusão) que devem ser executadas com garantia estrita das propriedades ACID.
-* **Modelo mental:** Uma transferência bancária de R$ 100 da conta A para a conta B. A operação exige subtrair R$ 100 de A e somar R$ 100 em B. Se a energia cair após subtrair de A, o sistema desfaz o débito para não sumir com o dinheiro do cliente.
+* **Definição formal:** Uma unidade lógica de processamento que inclui uma ou mais operações de acesso ao banco de dados executadas sob as garantias ACID.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ---
@@ -226,9 +272,8 @@ relacionados:
 ## V
 
 ### Visão (View)
-* **Definição formal:** Uma tabela virtual baseada no conjunto de resultados de uma consulta SQL pré-definida. Não armazena dados fisicamente (exceto no caso de visões materializadas), mas fornece uma janela customizada e segura sobre as tabelas subjacentes.
-* **Papel:** Simplificar consultas complexas e restringir o acesso a colunas sensíveis para perfis específicos de usuários.
-* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+* **Definição formal:** Uma tabela virtual baseada no resultado de uma consulta SQL pré-definida, utilizada para simplificar consultas e proteger colunas sensíveis.
+* **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[03. Níveis de abstração e arquitetura ansi-sparc]]
 
 ---
 
@@ -236,5 +281,7 @@ relacionados:
 
 * **Voltar ao artigo 01:** [[01. Introdução à modelagem de dados e sua importância]]
 * **Voltar ao artigo 02:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+* **Voltar ao artigo 03:** [[03. Níveis de abstração e arquitetura ansi-sparc]]
+* **Voltar ao artigo 04:** [[04. Linguagens de banco de dados e perfis profissionais (ad vs. dba)]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
