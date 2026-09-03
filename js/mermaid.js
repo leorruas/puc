@@ -1,13 +1,68 @@
 // js/mermaid.js - Subsistema de Renderização e Exploração de Diagramas Mermaid
 
 /**
+ * Retorna os tokens de cores e temas unificados para Mermaid.
+ * Elimina disparidade entre claro e escuro e remove fundos artificiais.
+ */
+function obterTokensTemaMermaid() {
+    const temaEscuro = document.documentElement.dataset.theme !== "light";
+
+    if (temaEscuro) {
+        return {
+            fontFamily: "Archivo, sans-serif",
+            fontSize: "14px",
+            darkMode: true,
+            background: "transparent",
+            mainBkg: "transparent",
+            nodeBorder: "#3395ff",
+            clusterBkg: "rgba(30, 34, 41, 0.4)",
+            clusterBorder: "#475569",
+            primaryColor: "#1c1c1e",
+            primaryTextColor: "#f1f5f9",
+            primaryBorderColor: "#3395ff",
+            secondaryColor: "#141416",
+            secondaryTextColor: "#f1f5f9",
+            secondaryBorderColor: "#475569",
+            tertiaryColor: "#1e2229",
+            tertiaryTextColor: "#f1f5f9",
+            tertiaryBorderColor: "#475569",
+            lineColor: "#94a3b8",
+            textColor: "#f1f5f9",
+            edgeLabelBackground: "#14161a"
+        };
+    } else {
+        return {
+            fontFamily: "Archivo, sans-serif",
+            fontSize: "14px",
+            darkMode: false,
+            background: "transparent",
+            mainBkg: "transparent",
+            nodeBorder: "#0056b3",
+            clusterBkg: "rgba(241, 245, 249, 0.6)",
+            clusterBorder: "#cbd5e1",
+            primaryColor: "#ffffff",
+            primaryTextColor: "#0f172a",
+            primaryBorderColor: "#0056b3",
+            secondaryColor: "#f8fafc",
+            secondaryTextColor: "#0f172a",
+            secondaryBorderColor: "#cbd5e1",
+            tertiaryColor: "#f1f5f9",
+            tertiaryTextColor: "#0f172a",
+            tertiaryBorderColor: "#94a3b8",
+            lineColor: "#475569",
+            textColor: "#0f172a",
+            edgeLabelBackground: "#ffffff"
+        };
+    }
+}
+
+/**
  * Configura as opções da engine Mermaid com base no tema atual (claro/escuro).
- * Utiliza htmlLabels: false para garantir renderização puramente vetorial e evitar clipping de foreignObject.
+ * Utiliza htmlLabels: false para renderização vetorial estrita (<text>, <tspan>).
  */
 export function configurarMermaid() {
     if (typeof mermaid === "undefined") return;
 
-    const temaEscuro = document.documentElement.dataset.theme !== "light";
     mermaid.initialize({
         startOnLoad: false,
         theme: "base",
@@ -15,42 +70,19 @@ export function configurarMermaid() {
         fontSize: 14,
         flowchart: {
             curve: "linear",
-            defaultRenderer: "dagre-wrapper",
             htmlLabels: false,
             nodeSpacing: 46,
             rankSpacing: 52,
             padding: 18
         },
-        themeVariables: temaEscuro ? {
-            fontFamily: "Archivo, sans-serif",
-            fontSize: "14px",
-            darkMode: true,
-            background: "#111111",
-            primaryColor: "#1c1c1e",
-            primaryTextColor: "#f5f5f7",
-            primaryBorderColor: "#3395ff",
-            lineColor: "#8e9bb0",
-            secondaryColor: "#141416",
-            tertiaryColor: "#1e2229"
-        } : {
-            fontFamily: "Archivo, sans-serif",
-            fontSize: "14px",
-            darkMode: false,
-            background: "#ffffff",
-            primaryColor: "#f1f5f9",
-            primaryTextColor: "#0f172a",
-            primaryBorderColor: "#0056b3",
-            lineColor: "#475569",
-            secondaryColor: "#f8fafc",
-            tertiaryColor: "#e2e8f0"
-        }
+        themeVariables: obterTokensTemaMermaid()
     });
 }
 
 /**
  * Abre o explorador interativo em tela cheia para inspecionar o diagrama selecionado.
- * Implementa sistema de coordenadas único, centralização geométrica e contenção estrita.
- * Remove todos os event listeners ao fechar para evitar memory leaks.
+ * Implementa normalização do viewBox pelo bounding box do conteúdo real,
+ * fundo 100% transparente e validação iterativa pós-renderização.
  */
 export async function abrirModalExploradorMermaid(svgOriginal) {
     if (document.fonts && document.fonts.ready) {
@@ -85,44 +117,62 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
     const stage = modal.querySelector(".mermaid-modal-stage");
     const cloneSvg = svgOriginal.cloneNode(true);
     cloneSvg.removeAttribute("id");
-    stage.appendChild(cloneSvg);
 
+    // Limpeza de estilos de fundo inline e limites rígidos herdados do clone
+    cloneSvg.style.background = "transparent";
+    cloneSvg.style.backgroundColor = "transparent";
+    cloneSvg.style.maxWidth = "none";
+    cloneSvg.style.maxHeight = "none";
+
+    // Remover retângulos de background pretos/brancos internos injetados pela engine
+    const rectsBackground = cloneSvg.querySelectorAll("rect.background, > rect:first-child");
+    rectsBackground.forEach(r => {
+        if (r.getAttribute("width") === "100%" || r.classList.contains("background")) {
+            r.style.fill = "transparent";
+            r.setAttribute("fill", "transparent");
+        }
+    });
+
+    stage.appendChild(cloneSvg);
     document.body.appendChild(modal);
 
     const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
     const body = modal.querySelector(".mermaid-modal-body");
 
-    // 1. Sistema Único de Coordenadas:
-    // Medir dimensões do SVG clonado já inserido na DOM após carregamento de fontes
+    // Normalização do viewBox pelo Bounding Box Real do Grafo:
+    // Garante que enquadramos o CONTEÚDO real, e não uma área vazia externa
     let baseWidth = 800;
     let baseHeight = 600;
 
-    if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
-        baseWidth = cloneSvg.viewBox.baseVal.width;
-        baseHeight = cloneSvg.viewBox.baseVal.height;
-    } else {
-        try {
-            const bbox = cloneSvg.getBBox();
-            if (bbox.width > 0 && bbox.height > 0) {
-                baseWidth = bbox.width;
-                baseHeight = bbox.height;
-            }
-        } catch (_) {
-            const rect = cloneSvg.getBoundingClientRect();
-            if (rect.width > 0 && rect.height > 0) {
-                baseWidth = rect.width;
-                baseHeight = rect.height;
-            }
+    try {
+        const rootGroup = cloneSvg.querySelector("g.root, g") || cloneSvg;
+        const bbox = rootGroup.getBBox();
+        if (bbox && bbox.width > 0 && bbox.height > 0) {
+            const pad = 28; // Margem confortável ao redor do grafo
+            const vbX = Math.floor(bbox.x - pad);
+            const vbY = Math.floor(bbox.y - pad);
+            const vbW = Math.ceil(bbox.width + pad * 2);
+            const vbH = Math.ceil(bbox.height + pad * 2);
+
+            cloneSvg.setAttribute("viewBox", `${vbX} ${vbY} ${vbW} ${vbH}`);
+            baseWidth = vbW;
+            baseHeight = vbH;
+        } else if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
+            baseWidth = cloneSvg.viewBox.baseVal.width;
+            baseHeight = cloneSvg.viewBox.baseVal.height;
+        }
+    } catch (_) {
+        if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
+            baseWidth = cloneSvg.viewBox.baseVal.width;
+            baseHeight = cloneSvg.viewBox.baseVal.height;
         }
     }
 
-    // Fixar o stage nas dimensões exatas de base e forçar SVG a preenchê-lo
+    // Fixar o stage no tamanho-base e fazer o SVG preenchê-lo com precisão
     stage.style.width = `${Math.ceil(baseWidth)}px`;
     stage.style.height = `${Math.ceil(baseHeight)}px`;
     cloneSvg.style.width = "100%";
     cloneSvg.style.height = "100%";
-    cloneSvg.style.maxWidth = "none";
-    cloneSvg.style.maxHeight = "none";
 
     let escala = 1.0;
     let transladoX = 0;
@@ -140,7 +190,6 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
 
     function calcularEscalaFit() {
         const bodyRect = body.getBoundingClientRect();
-        // Margem de segurança confortável de 48px por margem (96px total por eixo)
         const margemX = 96;
         const margemY = 96;
 
@@ -151,8 +200,6 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
         const scaleY = availH / baseHeight;
 
         let fit = Math.min(scaleX, scaleY);
-
-        // Permitir que diagramas pequenos ocupem confortavelmente a viewport (até 4.5x)
         fit = Math.min(Math.max(0.15, fit), 4.5);
 
         return fit;
@@ -165,7 +212,7 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
         escala = calcularEscalaFit();
         aplicarTransformacao();
 
-        // Validação Programática de Contenção (Garantia Estrita sem Clipping)
+        // Validação Programática de Contenção sem Clipping
         requestAnimationFrame(() => {
             const viewportRect = body.getBoundingClientRect();
             const margemSegura = 32;
@@ -286,7 +333,6 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
     body.addEventListener("pointerup", finalizarArrasto);
     body.addEventListener("pointercancel", finalizarArrasto);
 
-    // Limpeza rigorosa de todos os listeners para evitar acúmulo em memória
     function limparListeners() {
         window.removeEventListener("keydown", tratarTeclas);
         btnZoomIn.removeEventListener("click", onZoomIn);
@@ -345,9 +391,15 @@ export function equiparDiagramasMermaidInterativos(container) {
 
 /**
  * Executa a renderização dos diagramas Mermaid presentes no container fornecido.
+ * Aguarda as fontes Archivo estarem carregadas para que a medição de nós seja exata.
  */
-export function renderizarDiagramasMermaid(container) {
+export async function renderizarDiagramasMermaid(container) {
     if (typeof mermaid === "undefined" || !container) return;
+
+    if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (_) {}
+    }
+
     configurarMermaid();
 
     const diagramas = container.querySelectorAll(".mermaid");
@@ -358,9 +410,10 @@ export function renderizarDiagramasMermaid(container) {
         diagrama.textContent = codigo;
     });
 
-    mermaid.run({ nodes: diagramas }).then(() => {
+    try {
+        await mermaid.run({ nodes: diagramas });
         equiparDiagramasMermaidInterativos(container);
-    }).catch(err => {
+    } catch (err) {
         console.error("Erro ao renderizar Mermaid:", err);
-    });
+    }
 }

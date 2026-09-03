@@ -1312,26 +1312,11 @@ mark:not(.highlight) code {
 .mermaid svg .nodeLabel,
 .mermaid svg .edgeLabel {
     font-family: 'Archivo', sans-serif !important;
-    font-size: 14px !important;
-    line-height: 1.3 !important;
-    color: var(--text) !important;
-    fill: var(--text) !important;
+    color: var(--text);
+    fill: var(--text);
 }
 
 .mermaid svg foreignObject {
-    overflow: visible !important;
-}
-
-.mermaid svg foreignObject div,
-.mermaid svg foreignObject span,
-.mermaid svg foreignObject p {
-    font-family: 'Archivo', sans-serif !important;
-    font-size: 14px !important;
-    line-height: 1.3 !important;
-    color: var(--text) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
     overflow: visible !important;
 }
 
@@ -1494,6 +1479,8 @@ mark:not(.highlight) code {
     height: 100% !important;
     max-width: none !important;
     max-height: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 /* Classes Semânticas Globais para Nós Mermaid com Alto Contraste */
@@ -1608,12 +1595,6 @@ mark:not(.highlight) code {
         max-height: 400px;
         padding-top: 40px;
     }
-    .mermaid svg text,
-    .mermaid svg .nodeLabel,
-    .mermaid svg .edgeLabel,
-    .mermaid svg foreignObject div,
-    .mermaid svg foreignObject span,
-    .mermaid svg foreignObject p { font-size: 13px !important; }
 }
 
 /* Imagens com Zoom */
