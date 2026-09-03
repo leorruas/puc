@@ -10,14 +10,14 @@ function obterTokensTemaMermaid() {
         primaryBorderColor: "#3395ff", secondaryColor: "#141416", secondaryTextColor: "#f1f5f9",
         secondaryBorderColor: "#475569", tertiaryColor: "#1e2229", tertiaryTextColor: "#f1f5f9",
         tertiaryBorderColor: "#475569", clusterBkg: "#1e2229", clusterBorder: "#475569",
-        lineColor: "#94a3b8", textColor: "#f1f5f9", edgeLabelBackground: "#14161a"
+        lineColor: "#94a3b8", arrowheadColor: "#94a3b8", textColor: "#f1f5f9", edgeLabelBackground: "#14161a"
     } : {
         fontFamily: "Archivo, sans-serif", fontSize: "14px", darkMode: false,
         background: "transparent", primaryColor: "#ffffff", primaryTextColor: "#0f172a",
         primaryBorderColor: "#0056b3", secondaryColor: "#f8fafc", secondaryTextColor: "#0f172a",
         secondaryBorderColor: "#cbd5e1", tertiaryColor: "#f1f5f9", tertiaryTextColor: "#0f172a",
         tertiaryBorderColor: "#94a3b8", clusterBkg: "#f1f5f9", clusterBorder: "#cbd5e1",
-        lineColor: "#475569", textColor: "#0f172a", edgeLabelBackground: "#ffffff"
+        lineColor: "#475569", arrowheadColor: "#475569", textColor: "#0f172a", edgeLabelBackground: "#ffffff"
     };
 }
 
@@ -118,7 +118,6 @@ export async function abrirModalExploradorMermaid(codigo) {
 
     const svg = stage.querySelector("svg");
     if (!svg) return;
-    svg.removeAttribute("id");
     const { largura, altura } = dimensoesDoSvg(svg);
     stage.style.width = `${Math.ceil(largura)}px`;
     stage.style.height = `${Math.ceil(altura)}px`;
