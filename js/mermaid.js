@@ -125,12 +125,17 @@ export async function abrirModalExploradorMermaid(svgOriginal) {
     cloneSvg.style.maxHeight = "none";
 
     // Remover retângulos de background pretos/brancos internos injetados pela engine
-    const rectsBackground = cloneSvg.querySelectorAll("rect.background, > rect:first-child");
-    rectsBackground.forEach(r => {
-        if (r.getAttribute("width") === "100%" || r.classList.contains("background")) {
-            r.style.fill = "transparent";
-            r.setAttribute("fill", "transparent");
+    if (cloneSvg.firstElementChild && cloneSvg.firstElementChild.tagName.toLowerCase() === "rect") {
+        const primeiroRect = cloneSvg.firstElementChild;
+        if (primeiroRect.getAttribute("width") === "100%" || primeiroRect.classList.contains("background")) {
+            primeiroRect.style.fill = "transparent";
+            primeiroRect.setAttribute("fill", "transparent");
         }
+    }
+    const rectsBackground = cloneSvg.querySelectorAll("rect.background");
+    rectsBackground.forEach(r => {
+        r.style.fill = "transparent";
+        r.setAttribute("fill", "transparent");
     });
 
     stage.appendChild(cloneSvg);
