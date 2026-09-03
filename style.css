@@ -1321,6 +1321,8 @@ mark:not(.highlight) code {
 .mermaid svg foreignObject p {
     font-size: 15px !important;
     line-height: 1.25 !important;
+    color: var(--text) !important;
+    fill: var(--text) !important;
 }
 
 .mermaid .node rect,
@@ -1329,18 +1331,58 @@ mark:not(.highlight) code {
 .mermaid .node ellipse,
 .mermaid .node path {
     stroke-width: 1.5px !important;
+    fill: var(--surface-raised);
+    stroke: color-mix(in srgb, var(--text) 35%, transparent);
 }
 
 .mermaid .edgePath .path {
     stroke-width: 1.5px !important;
+    stroke: color-mix(in srgb, var(--text) 50%, transparent) !important;
 }
 
 .mermaid .edgeLabel {
     background-color: var(--bg) !important;
+    color: var(--muted) !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
 }
 
 :root[data-theme="light"] .mermaid .edgeLabel {
     background-color: #ffffff !important;
+    color: #334155 !important;
+}
+
+/* Subgrafos e Clusters */
+.mermaid .cluster rect,
+.mermaid .cluster polygon {
+    fill: color-mix(in srgb, var(--surface) 65%, transparent) !important;
+    stroke: color-mix(in srgb, var(--text) 22%, transparent) !important;
+    stroke-width: 1.2px !important;
+    rx: 8px !important;
+    ry: 8px !important;
+}
+
+:root[data-theme="light"] .mermaid .cluster rect,
+:root[data-theme="light"] .mermaid .cluster polygon {
+    fill: rgba(241, 245, 249, 0.6) !important;
+    stroke: #cbd5e1 !important;
+}
+
+.mermaid .cluster .cluster-label span,
+.mermaid .cluster .cluster-label text,
+.mermaid .cluster text {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.02em !important;
+    color: var(--muted) !important;
+    fill: var(--muted) !important;
+}
+
+:root[data-theme="light"] .mermaid .cluster .cluster-label span,
+:root[data-theme="light"] .mermaid .cluster .cluster-label text,
+:root[data-theme="light"] .mermaid .cluster text {
+    color: #475569 !important;
+    fill: #475569 !important;
 }
 
 /* Modal de Exploração Mermaid (Zoom / Pan) */
@@ -1350,13 +1392,13 @@ mark:not(.highlight) code {
     z-index: 3000;
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(10px);
+    background: rgba(8, 8, 8, 0.94);
+    backdrop-filter: blur(12px);
     overflow: hidden;
 }
 
 :root[data-theme="light"] .mermaid-modal {
-    background: rgba(248, 250, 252, 0.96);
+    background: rgba(248, 250, 252, 0.97);
 }
 
 .mermaid-modal-header {
@@ -1364,10 +1406,11 @@ mark:not(.highlight) code {
     justify-content: space-between;
     align-items: center;
     padding: 12px 24px;
-    border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
     background: var(--surface);
     color: var(--text);
     user-select: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .mermaid-modal-title {
@@ -1403,7 +1446,7 @@ mark:not(.highlight) code {
 }
 
 .mermaid-modal-zoom-display {
-    min-width: 48px;
+    min-width: 52px;
     text-align: center;
     font-size: 13px;
     font-family: 'Space Mono', monospace;
@@ -1418,6 +1461,7 @@ mark:not(.highlight) code {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 24px;
 }
 
 .mermaid-modal-body.is-dragging {
@@ -1425,21 +1469,36 @@ mark:not(.highlight) code {
 }
 
 .mermaid-modal-stage {
+    display: inline-block;
     transform-origin: center center;
-    transition: transform 0.05s ease-out;
+    transition: transform 0.04s ease-out;
     will-change: transform;
     pointer-events: auto;
 }
 
-/* Classes Semânticas Globais para Nós Mermaid */
+.mermaid-modal-stage svg {
+    display: block;
+    max-width: none !important;
+    height: auto !important;
+}
+
+/* Classes Semânticas Globais para Nós Mermaid com Alto Contraste */
+
 /* 1. Core (Conceito Central / Raiz) */
 .mermaid .node.core > rect,
 .mermaid .node.core > polygon,
 .mermaid .node.core > circle,
 .mermaid .node.core > path {
-    stroke: var(--accent-blue) !important;
+    stroke: #007aff !important;
     stroke-width: 2.2px !important;
-    fill: color-mix(in srgb, var(--accent-blue) 14%, var(--surface-raised)) !important;
+    fill: #142334 !important;
+}
+:root[data-theme="light"] .mermaid .node.core > rect,
+:root[data-theme="light"] .mermaid .node.core > polygon,
+:root[data-theme="light"] .mermaid .node.core > circle,
+:root[data-theme="light"] .mermaid .node.core > path {
+    stroke: #0056b3 !important;
+    fill: #e8f2fe !important;
 }
 
 /* 2. Component (Módulo / Componente Operacional) */
@@ -1447,9 +1506,16 @@ mark:not(.highlight) code {
 .mermaid .node.component > polygon,
 .mermaid .node.component > circle,
 .mermaid .node.component > path {
-    stroke: color-mix(in srgb, var(--text) 35%, transparent) !important;
+    stroke: #475569 !important;
     stroke-width: 1.5px !important;
-    fill: var(--surface-raised) !important;
+    fill: #1e2229 !important;
+}
+:root[data-theme="light"] .mermaid .node.component > rect,
+:root[data-theme="light"] .mermaid .node.component > polygon,
+:root[data-theme="light"] .mermaid .node.component > circle,
+:root[data-theme="light"] .mermaid .node.component > path {
+    stroke: #94a3b8 !important;
+    fill: #f1f5f9 !important;
 }
 
 /* 3. Data (Estrutura de Dados / Entidade / Tabela) */
@@ -1459,7 +1525,14 @@ mark:not(.highlight) code {
 .mermaid .node.data > path {
     stroke: #10b981 !important;
     stroke-width: 1.8px !important;
-    fill: color-mix(in srgb, #10b981 12%, var(--surface-raised)) !important;
+    fill: #0d291e !important;
+}
+:root[data-theme="light"] .mermaid .node.data > rect,
+:root[data-theme="light"] .mermaid .node.data > polygon,
+:root[data-theme="light"] .mermaid .node.data > circle,
+:root[data-theme="light"] .mermaid .node.data > path {
+    stroke: #059669 !important;
+    fill: #ecfdf5 !important;
 }
 
 /* 4. Warning (Exceção / Alerta / Ponto Crítico) */
@@ -1469,7 +1542,14 @@ mark:not(.highlight) code {
 .mermaid .node.warning > path {
     stroke: #f59e0b !important;
     stroke-width: 2px !important;
-    fill: color-mix(in srgb, #f59e0b 14%, var(--surface-raised)) !important;
+    fill: #2d1f06 !important;
+}
+:root[data-theme="light"] .mermaid .node.warning > rect,
+:root[data-theme="light"] .mermaid .node.warning > polygon,
+:root[data-theme="light"] .mermaid .node.warning > circle,
+:root[data-theme="light"] .mermaid .node.warning > path {
+    stroke: #d97706 !important;
+    fill: #fffbeb !important;
 }
 
 /* 5. External (Fronteira Externa / Terceiro) */
@@ -1477,10 +1557,36 @@ mark:not(.highlight) code {
 .mermaid .node.external > polygon,
 .mermaid .node.external > circle,
 .mermaid .node.external > path {
-    stroke: color-mix(in srgb, var(--muted) 60%, transparent) !important;
+    stroke: #64748b !important;
     stroke-width: 1.5px !important;
     stroke-dasharray: 4 3 !important;
-    fill: color-mix(in srgb, var(--muted) 8%, var(--surface)) !important;
+    fill: #14161a !important;
+}
+:root[data-theme="light"] .mermaid .node.external > rect,
+:root[data-theme="light"] .mermaid .node.external > polygon,
+:root[data-theme="light"] .mermaid .node.external > circle,
+:root[data-theme="light"] .mermaid .node.external > path {
+    stroke: #94a3b8 !important;
+    fill: #f8fafc !important;
+}
+
+/* Garantia de contraste nos textos de nós */
+.mermaid .node .nodeLabel,
+.mermaid .node .nodeLabel span,
+.mermaid .node .nodeLabel p,
+.mermaid .node .nodeLabel div,
+.mermaid .node text {
+    color: #f1f5f9 !important;
+    fill: #f1f5f9 !important;
+}
+
+:root[data-theme="light"] .mermaid .node .nodeLabel,
+:root[data-theme="light"] .mermaid .node .nodeLabel span,
+:root[data-theme="light"] .mermaid .node .nodeLabel p,
+:root[data-theme="light"] .mermaid .node .nodeLabel div,
+:root[data-theme="light"] .mermaid .node text {
+    color: #0f172a !important;
+    fill: #0f172a !important;
 }
 
 @media (max-width: 768px) {

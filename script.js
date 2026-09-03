@@ -258,10 +258,11 @@ function abrirModalExploradorMermaid(svgOriginal) {
                 <span>Explorador de diagrama</span>
             </div>
             <div class="mermaid-modal-controls">
-                <button type="button" class="btn-mermaid-zoom-out" title="Reduzir zoom (ou scroll)">-</button>
+                <button type="button" class="btn-mermaid-zoom-out" title="Reduzir zoom (ou scroll)">−</button>
                 <span class="mermaid-modal-zoom-display">100%</span>
                 <button type="button" class="btn-mermaid-zoom-in" title="Aumentar zoom (ou scroll)">+</button>
-                <button type="button" class="btn-mermaid-reset" title="Restaurar tamanho original">1:1</button>
+                <button type="button" class="btn-mermaid-fit" title="Ajustar à tela inteira">ajustar</button>
+                <button type="button" class="btn-mermaid-reset" title="Tamanho real (100%)">1:1</button>
                 <button type="button" class="btn-mermaid-fechar" title="Fechar (Esc)">&times; fechar</button>
             </div>
         </header>
@@ -294,8 +295,58 @@ function abrirModalExploradorMermaid(svgOriginal) {
         zoomDisplay.textContent = `${Math.round(escala * 100)}%`;
     }
 
+    function calcularEscalaFit() {
+        // Obter dimensões reais do SVG a partir de viewBox ou getBBox
+        let svgW = 0;
+        let svgH = 0;
+
+        if (svgOriginal.viewBox && svgOriginal.viewBox.baseVal && svgOriginal.viewBox.baseVal.width > 0) {
+            svgW = svgOriginal.viewBox.baseVal.width;
+            svgH = svgOriginal.viewBox.baseVal.height;
+        } else {
+            const rect = svgOriginal.getBoundingClientRect();
+            svgW = rect.width;
+            svgH = rect.height;
+        }
+
+        if (!svgW || !svgH) {
+            try {
+                const bbox = svgOriginal.getBBox();
+                svgW = bbox.width;
+                svgH = bbox.height;
+            } catch (_) {
+                svgW = 800;
+                svgH = 500;
+            }
+        }
+
+        const bodyRect = body.getBoundingClientRect();
+        // Margem de segurança confortável de 48px por eixo
+        const paddingHorizontal = 64;
+        const paddingVertical = 64;
+
+        const dispW = Math.max(200, bodyRect.width - paddingHorizontal);
+        const dispH = Math.max(200, bodyRect.height - paddingVertical);
+
+        const ratioX = dispW / svgW;
+        const ratioY = dispH / svgH;
+        let fit = Math.min(ratioX, ratioY);
+
+        // Permitir ampliação confortável para diagramas pequenos até 1.8x; mínimo 0.3x
+        fit = Math.min(Math.max(0.35, fit), 2.2);
+
+        return fit;
+    }
+
+    function executarFit() {
+        escala = calcularEscalaFit();
+        transladoX = 0;
+        transladoY = 0;
+        aplicarTransformacao();
+    }
+
     function ajustarZoom(fator, centroX = null, centroY = null) {
-        const novaEscala = Math.min(Math.max(0.3, escala * fator), 4.5);
+        const novaEscala = Math.min(Math.max(0.2, escala * fator), 5.0);
         if (centroX !== null && centroY !== null) {
             const rect = stage.getBoundingClientRect();
             const dx = centroX - (rect.left + rect.width / 2);
@@ -307,8 +358,14 @@ function abrirModalExploradorMermaid(svgOriginal) {
         aplicarTransformacao();
     }
 
+    // Inicialização automática com Fit após renderizar na DOM
+    requestAnimationFrame(() => {
+        executarFit();
+    });
+
     modal.querySelector(".btn-mermaid-zoom-in").addEventListener("click", () => ajustarZoom(1.25));
     modal.querySelector(".btn-mermaid-zoom-out").addEventListener("click", () => ajustarZoom(0.8));
+    modal.querySelector(".btn-mermaid-fit").addEventListener("click", executarFit);
     modal.querySelector(".btn-mermaid-reset").addEventListener("click", () => {
         escala = 1.0;
         transladoX = 0;
@@ -330,6 +387,9 @@ function abrirModalExploradorMermaid(svgOriginal) {
             transladoX = 0;
             transladoY = 0;
             aplicarTransformacao();
+        }
+        if (e.key.toLowerCase() === "f") {
+            executarFit();
         }
     }
 
