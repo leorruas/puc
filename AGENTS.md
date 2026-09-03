@@ -44,14 +44,33 @@
 
 ## Diretrizes para Diagramas Mermaid
 
-9. **Otimização Estrita de Leiturabilidade, Layout Visual Vertical e Proibição de ASCII Art:**
- - **Proibição Estrita de Diagramas e Caixas em ASCII Art:** É terminantemente proibido utilizar diagramas conceituais, pirâmides, caixas, quadros ou fluxos desenhados com caracteres de texto/ASCII art (ex.: `+---+`, `| |`, `----->`, `^`, `v`). Todo e qualquer fluxo, hierarquia, arquitetura ou modelo conceitual deve ser renderizado **obrigatoriamente via Mermaid (`flowchart TD`)**. Quadros comparativos e informativos devem utilizar exclusivamente **tabelas nativas em Markdown (`| Coluna | ... |`)**.
- - **Orientação Vertical Obrigatória:** utilizar exclusivamente `flowchart TD`. É terminantemente proibido o uso de `graph LR` ou qualquer disposição que force mais de 2 nós lado a lado.
- - **Linhas e Conectores Retos (*Straight Lines / Linear Curve*):** os diagramas devem priorizar fluxos retos, limpos e sem curvas elásticas confusas. No app web, a engine do Mermaid é configurada com `flowchart: { curve: 'linear' }`.
- - **Proibição de Subgráficos Horizontais e Separação em Blocos Independentes:** É terminantemente proibido inserir múltiplos `subgraph` soltos dentro do mesmo bloco Mermaid quando isso fizer o Mermaid agrupá-los horizontalmente lado a lado (comprimindo as caixas e reduzindo as fontes). Sempre que houver múltiplos cenários, exemplos comparativos ou categorias, deve-se **obrigatoriamente separá-los em blocos Mermaid individuais e sequenciais no Markdown** (um bloco abaixo do outro), garantindo renderização nítida em largura total.
- - **Anotação Obrigatória de Cardinalidades e Papéis sobre as Linhas:** Todas as cardinalidades mínimas, máximas, limites estruturais `(min, max)` e papéis (*roles*) devem ser posicionados **obrigatoriamente sobre as linhas/arestas de conexão** (`---|"(min, max) — N"|`), e nunca isolados dentro de caixas soltas.
- - **Quebra Obrigatória de Linhas (`<br>`):** todo rótulo de nó com mais de 2 palavras deve conter `<br>` a cada 2 ou 3 palavras para garantir caixas estreitas e compactas.
- - **Sintaxe Padronizada:** envolver todos os textos de rótulos de nós entre aspas duplas `Node["Texto com<br>Quebra"]` para evitar erros de renderização com caracteres especiais.
+9. **Arquitetura Visual e Cognitiva para Diagramas Mermaid:**
+ - **Critério Topológico de Orientação (Fim da Regra Rígida TD vs. LR):** Não há orientação universal pré-definida. A escolha entre `TD`, `LR` ou outra disposição deve seguir a topologia do conhecimento estudado:
+   - *Processos e sequências temporais/lineares:* `LR` (para fluxos com poucas etapas encadeadas) ou `TD` (para fluxos longos ou com desvios).
+   - *Hierarquias, árvores taxonômicas e herança:* `TD` como padrão estrutural.
+   - *Comparações lado a lado e árvores conceituais:* Orientação balanceada pela proporção largura/profundidade para evitar diagramas excessivamente esticados.
+   - *Dependências e grafos relacionais:* Orientação que minimize o cruzamento visual de arestas (*edge crossing*).
+   - *Sistemas sistêmicos e interdisciplinares:* Preservar a visão de conjunto quando as conexões simultâneas agregarem valor cognitivo.
+ - **Avaliação de Complexidade Relacional (Sem Limites Numéricos Rígidos):** Diagramas com muitos nós simples e bem espaçados são bem-vindos; diagramas com poucos nós hipercarregados de texto devem ser evitados. Avaliar sempre: densidade de arestas, cruzamentos, profundidade, tamanho dos rótulos e função didática.
+ - **Visão Global vs. Detalhamento Focal (Estratégia de Duas Camadas):**
+   - Para matérias ou modelos de alta complexidade (matriz GoF, arquiteturas, DER conceitual, mapas interdisciplinares), manter a **visão global integrada** para formação do modelo mental sistêmico.
+   - Sempre que útil, complementar com **diagramas focais ou setoriais** que detalham subsistemas específicos logo abaixo.
+ - **Nós como Identificadores Conceituais Sintéticos:** Rótulos de nós devem ser sintéticos e objetivos. A explicação textual completa e detalhada pertence ao corpo do artigo, e não ao interior de caixas gráficas. Preservar apenas qualificadores indispensáveis para distinguir conceitos.
+ - **Escolha Semântica do Tipo de Diagrama:** Não forçar tudo para `flowchart`. Usar o tipo nativo Mermaid correspondente à natureza da informação:
+   - `classDiagram` para modelagem orientada a objetos (classes, atributos, métodos, multiplicidade, herança e composição);
+   - `erDiagram` para modelos conceituais/lógicos de banco de dados (entidades, atributos e relacionamentos com cardinalidades);
+   - `sequenceDiagram` para interações temporais e troca de mensagens entre componentes;
+   - `stateDiagram-v2` para máquinas de estados e transições de ciclo de vida;
+   - `flowchart` para fluxogramas de controle, arquiteturas e mapas conceituais relacionais.
+ - **Sistema Semântico Global de Classes de Estilo:** Em vez de declarar cores hexadecimais arbitrárias inline em cada diagrama, utilizar as classes padronizadas do vault (definidas no leitor web):
+   - `:::core`: Conceito central, nó raiz ou elemento de maior relevância.
+   - `:::component`: Módulo, classe concreta, componente ou bloco operacional regular.
+   - `:::data`: Estrutura de dados, tabela/entidade de banco, payload ou estado.
+   - `:::warning`: Exceção, ponto crítico de atenção, restrição ou erro.
+   - `:::external`: Ator externo, terceiro, sistema legado ou fronteira de escopo.
+ - **Proibição Absoluta de ASCII Art:** Diagramas, caixas ou pirâmides desenhados com caracteres de texto (`+---+`, `| |`, `----->`) continuam expressamente proibidos. Toda representação estrutural deve utilizar Mermaid ou tabelas nativas Markdown.
+ - **Anotação de Cardinalidades e Papéis sobre as Linhas:** Em fluxogramas e modelos conceituais, especificações de cardinalidade `(min, max)` e papéis devem ser posicionados sobre as linhas de conexão (`---|"(min, max)"|`).
+ - **Sintaxe Padronizada e Quebra Suave de Linhas:** Rótulos em `flowchart` devem ser delimitados por aspas duplas `Node["Texto<br>Conciso"]` para evitar quebras por pontuação.
 
 ## Links e Navegação Sequencial
 

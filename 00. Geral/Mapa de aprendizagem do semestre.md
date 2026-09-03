@@ -59,25 +59,70 @@ Abaixo está o panorama transversal das disciplinas com base na diferenciação 
 
 ## 3. Matriz transversal de pontes conceituais (Teoria → Modelagem → Código)
 
-Conforme estabelecido nas diretrizes de interlinkagem qualitativa, as conexões intelectuais entre disciplinas são organizadas em dois fluxos complementares e compactos:
+A formação técnica do Eixo 2 apoia-se na convergência entre modelagem conceitual, arquitetura de software, persistência relacional e experiência do usuário. Conforme as diretrizes cognitivas do vault, essa relação é organizada em duas camadas complementares:
 
-### Fluxo A: Requisitos, arquitetura de software e código
+### 3.1 Visão global integrada: O ecossistema do Eixo 2
+
+O mapa a seguir apresenta a arquitetura sistêmica completa do semestre, conectando a concepção analítica ao código executável e à entrega funcional no Projeto Integrador:
 
 ```mermaid
 flowchart TD
-    Req["Engenharia de Requisitos<br>(Casos de Uso)"] -->|"Especificação"| ProjBacklog["Projeto Integrador<br>(Backlog e Escopo)"]
-    Req -->|"Relacionamento «include»"| SubRot["Programação Modular<br>(Funções Puras)"]
-    Req -->|"Relacionamento «extend»"| Excep["Programação Modular<br>(Tratamento de Exceções)"]
-    UMLClasses["Diagrama de Classes UML<br>(Modelagem Estrutural)"] -->|"Contratos e Tipos"| POO["Programação Modular<br>(Classes e SOLID)"]
+    subgraph S1 ["1. Concepção e Modelagem Analítica"]
+        Req["Engenharia de Requisitos<br>(Casos de uso e regras)"]:::core
+        MER["Modelagem de Dados<br>(Entidades e cardinalidades)"]:::data
+        IHC["Design de Interação<br>(Personas e heurísticas)"]:::component
+    end
+
+    subgraph S2 ["2. Engenharia e Implementação de Software"]
+        POO["Programação Modular<br>(Classes, SOLID e contratos)"]:::core
+        SubRot["Modularização Funcional<br>(Funções puras e «include»)<br>Tratamento de Exceções («extend»)"]:::component
+        BDProj["Persistência Relacional<br>(Esquema físico SQL Server)"]:::data
+        UIProj["Interface com o Usuário<br>(Telas e wireframes interativos)"]:::component
+    end
+
+    subgraph S3 ["3. Síntese e Aplicação Prática"]
+        Proj["Projeto Integrador: Aplicação Interativa<br>(Solução funcional Eixo 2)"]:::core
+    end
+
+    Req -->|"Especificação de casos"| Proj
+    Req -->|"Contratos de domínio"| POO
+    Req -->|"Decomposição de fluxo"| SubRot
+
+    MER -->|"Mapeamento objeto-relacional"| POO
+    MER -->|"DDL e integridade referencial"| BDProj
+
+    IHC -->|"Diretrizes de usabilidade"| UIProj
+
+    POO -->|"Camada de negócio / regras"| Proj
+    SubRot -->|"Serviços e rotinas internas"| POO
+    BDProj -->|"Armazenamento e consultas"| Proj
+    UIProj -->|"Experiência interativa (front-end)"| Proj
+    BDProj -.->|"Alimentação de estado"| UIProj
 ```
 
-### Fluxo B: Dados relacionais e interface com o usuário
+---
+
+### 3.2 Detalhamento focal: Subsistemas e pontes específicas
+
+Para o estudo concentrado de frentes de trabalho pontuais, as relações acima desdobram-se em dois fluxos focais:
+
+#### Foco A: Da especificação de requisitos ao código modular e OO
 
 ```mermaid
-flowchart TD
-    MER["Modelagem de Dados<br>(DER e Cardinalidades)"] -->|"Mapeamento Relacional"| BDProj["Projeto Integrador<br>(Banco SQL Server)"]
-    IHC["Design de Interação<br>(Personas e Heurísticas)"] -->|"Critérios de Usabilidade"| UIProj["Projeto Integrador<br>(Wireframes e Telas)"]
-    BDProj -->|"Persistência de Dados"| UIProj
+flowchart LR
+    ReqFoco["Casos de Uso<br>(Requisitos)"]:::core -->|"«include»"| SubFoco["Funções Puras<br>(Modularização)"]:::component
+    ReqFoco -->|"«extend»"| ExcepFoco["Tratamento de Exceções<br>(Fluxos alternativos)"]:::warning
+    ReqFoco -->|"Classes conceituais"| ContratosFoco["Diagrama de Classes<br>(Tipos e contratos)"]:::core
+    ContratosFoco -->|"Polimorfismo e interfaces"| SolidFoco["Princípios SOLID<br>(Código desacoplado)"]:::component
+```
+
+#### Foco B: Dos modelos de dados e IHC à interface de persistência
+
+```mermaid
+flowchart LR
+    DerFoco["DER Conceitual<br>(Entidades e cardinalidades)"]:::data -->|"Mapeamento 1:N / N:M"| SqlFoco["Banco SQL Server<br>(Tabelas e integridade)"]:::data
+    IhcFoco["Heurísticas de IHC<br>(Feedback e prevenção)"]:::component -->|"Wireframes validados"| TelasFoco["Interface Web / Desktop<br>(Camada de visualização)"]:::component
+    SqlFoco <-->|"Persistência e estado"| TelasFoco
 ```
 
 ---

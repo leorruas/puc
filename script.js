@@ -211,36 +211,199 @@ function configurarMermaid() {
         startOnLoad: false,
         theme: "base",
         fontFamily: "Archivo, sans-serif",
-        fontSize: 16,
+        fontSize: 15,
         flowchart: {
             curve: "linear",
             defaultRenderer: "dagre-wrapper",
-            nodeSpacing: 42,
-            rankSpacing: 56,
-            padding: 16
+            nodeSpacing: 46,
+            rankSpacing: 52,
+            padding: 18
         },
         themeVariables: temaEscuro ? {
             fontFamily: "Archivo, sans-serif",
-            fontSize: "16px",
+            fontSize: "15px",
             darkMode: true,
-            background: "#101010",
-            primaryColor: "#182431",
-            primaryTextColor: "#f1f0eb",
-            primaryBorderColor: "#6fa8e8",
-            lineColor: "#9ab0c5",
-            secondaryColor: "#15191d",
-            tertiaryColor: "#20262d"
+            background: "#111111",
+            primaryColor: "#1c1c1e",
+            primaryTextColor: "#f5f5f7",
+            primaryBorderColor: "#3395ff",
+            lineColor: "#8e9bb0",
+            secondaryColor: "#141416",
+            tertiaryColor: "#1e2229"
         } : {
             fontFamily: "Archivo, sans-serif",
-            fontSize: "16px",
+            fontSize: "15px",
             darkMode: false,
             background: "#ffffff",
-            primaryColor: "#eef5fc",
-            primaryTextColor: "#151515",
-            primaryBorderColor: "#1c5f9f",
-            lineColor: "#3f6282",
-            secondaryColor: "#f7f9fc",
-            tertiaryColor: "#e8f0f8"
+            primaryColor: "#f1f5f9",
+            primaryTextColor: "#0f172a",
+            primaryBorderColor: "#0056b3",
+            lineColor: "#475569",
+            secondaryColor: "#f8fafc",
+            tertiaryColor: "#e2e8f0"
+        }
+    });
+}
+
+function abrirModalExploradorMermaid(svgOriginal) {
+    const modalExistente = document.querySelector(".mermaid-modal");
+    if (modalExistente) modalExistente.remove();
+
+    const modal = document.createElement("div");
+    modal.className = "mermaid-modal";
+    modal.innerHTML = `
+        <header class="mermaid-modal-header">
+            <div class="mermaid-modal-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <span>Explorador de diagrama</span>
+            </div>
+            <div class="mermaid-modal-controls">
+                <button type="button" class="btn-mermaid-zoom-out" title="Reduzir zoom (ou scroll)">-</button>
+                <span class="mermaid-modal-zoom-display">100%</span>
+                <button type="button" class="btn-mermaid-zoom-in" title="Aumentar zoom (ou scroll)">+</button>
+                <button type="button" class="btn-mermaid-reset" title="Restaurar tamanho original">1:1</button>
+                <button type="button" class="btn-mermaid-fechar" title="Fechar (Esc)">&times; fechar</button>
+            </div>
+        </header>
+        <div class="mermaid-modal-body">
+            <div class="mermaid-modal-stage"></div>
+        </div>
+    `;
+
+    const stage = modal.querySelector(".mermaid-modal-stage");
+    const cloneSvg = svgOriginal.cloneNode(true);
+    cloneSvg.removeAttribute("id");
+    cloneSvg.style.maxWidth = "none";
+    cloneSvg.style.height = "auto";
+    stage.appendChild(cloneSvg);
+
+    document.body.appendChild(modal);
+
+    let escala = 1.0;
+    let transladoX = 0;
+    let transladoY = 0;
+    let arrastando = false;
+    let inicioX = 0;
+    let inicioY = 0;
+
+    const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
+    const body = modal.querySelector(".mermaid-modal-body");
+
+    function aplicarTransformacao() {
+        stage.style.transform = `translate(${transladoX}px, ${transladoY}px) scale(${escala})`;
+        zoomDisplay.textContent = `${Math.round(escala * 100)}%`;
+    }
+
+    function ajustarZoom(fator, centroX = null, centroY = null) {
+        const novaEscala = Math.min(Math.max(0.3, escala * fator), 4.5);
+        if (centroX !== null && centroY !== null) {
+            const rect = stage.getBoundingClientRect();
+            const dx = centroX - (rect.left + rect.width / 2);
+            const dy = centroY - (rect.top + rect.height / 2);
+            transladoX -= dx * (fator - 1) * 0.4;
+            transladoY -= dy * (fator - 1) * 0.4;
+        }
+        escala = novaEscala;
+        aplicarTransformacao();
+    }
+
+    modal.querySelector(".btn-mermaid-zoom-in").addEventListener("click", () => ajustarZoom(1.25));
+    modal.querySelector(".btn-mermaid-zoom-out").addEventListener("click", () => ajustarZoom(0.8));
+    modal.querySelector(".btn-mermaid-reset").addEventListener("click", () => {
+        escala = 1.0;
+        transladoX = 0;
+        transladoY = 0;
+        aplicarTransformacao();
+    });
+
+    function fecharModal() {
+        window.removeEventListener("keydown", tratarTeclas);
+        modal.remove();
+    }
+
+    function tratarTeclas(e) {
+        if (e.key === "Escape") fecharModal();
+        if (e.key === "+" || e.key === "=") ajustarZoom(1.2);
+        if (e.key === "-") ajustarZoom(0.8);
+        if (e.key === "0") {
+            escala = 1.0;
+            transladoX = 0;
+            transladoY = 0;
+            aplicarTransformacao();
+        }
+    }
+
+    modal.querySelector(".btn-mermaid-fechar").addEventListener("click", fecharModal);
+    window.addEventListener("keydown", tratarTeclas);
+
+    body.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const fator = e.deltaY < 0 ? 1.15 : 0.87;
+        ajustarZoom(fator, e.clientX, e.clientY);
+    }, { passive: false });
+
+    body.addEventListener("pointerdown", (e) => {
+        if (e.button !== 0) return;
+        arrastando = true;
+        inicioX = e.clientX - transladoX;
+        inicioY = e.clientY - transladoY;
+        body.classList.add("is-dragging");
+        body.setPointerCapture(e.pointerId);
+    });
+
+    body.addEventListener("pointermove", (e) => {
+        if (!arrastando) return;
+        transladoX = e.clientX - inicioX;
+        transladoY = e.clientY - inicioY;
+        aplicarTransformacao();
+    });
+
+    const finalizarArrasto = (e) => {
+        if (arrastando) {
+            arrastando = false;
+            body.classList.remove("is-dragging");
+            try { body.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+    };
+
+    body.addEventListener("pointerup", finalizarArrasto);
+    body.addEventListener("pointercancel", finalizarArrasto);
+}
+
+function equiparDiagramasMermaidInterativos() {
+    if (!artigoCorpo) return;
+
+    const diagramas = artigoCorpo.querySelectorAll(".mermaid");
+    diagramas.forEach(diagrama => {
+        const svg = diagrama.querySelector("svg");
+        if (!svg) return;
+
+        let wrapper = diagrama.closest(".mermaid-wrapper");
+        if (!wrapper) {
+            wrapper = document.createElement("div");
+            wrapper.className = "mermaid-wrapper";
+
+            const toolbar = document.createElement("div");
+            toolbar.className = "mermaid-toolbar";
+            toolbar.innerHTML = `
+                <button type="button" class="mermaid-btn btn-explorar" title="Abrir em tela cheia com zoom e navegação">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>ampliar</span>
+                </button>
+            `;
+
+            const viewport = document.createElement("div");
+            viewport.className = "mermaid-viewport";
+
+            diagrama.parentNode.insertBefore(wrapper, diagrama);
+            viewport.appendChild(diagrama);
+            wrapper.appendChild(toolbar);
+            wrapper.appendChild(viewport);
+
+            toolbar.querySelector(".btn-explorar").addEventListener("click", () => {
+                const svgAtual = diagrama.querySelector("svg");
+                if (svgAtual) abrirModalExploradorMermaid(svgAtual);
+            });
         }
     });
 }
@@ -257,7 +420,9 @@ function renderizarDiagramasMermaid() {
         diagrama.textContent = codigo;
     });
 
-    mermaid.run({ nodes: diagramas }).catch(err => {
+    mermaid.run({ nodes: diagramas }).then(() => {
+        equiparDiagramasMermaidInterativos();
+    }).catch(err => {
         console.error("Erro ao renderizar Mermaid:", err);
     });
 }
