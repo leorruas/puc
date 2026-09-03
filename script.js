@@ -215,6 +215,7 @@ function configurarMermaid() {
         flowchart: {
             curve: "linear",
             defaultRenderer: "dagre-wrapper",
+            htmlLabels: false,
             nodeSpacing: 46,
             rankSpacing: 52,
             padding: 18
@@ -245,7 +246,11 @@ function configurarMermaid() {
     });
 }
 
-function abrirModalExploradorMermaid(svgOriginal) {
+async function abrirModalExploradorMermaid(svgOriginal) {
+    if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (_) {}
+    }
+
     const modalExistente = document.querySelector(".mermaid-modal");
     if (modalExistente) modalExistente.remove();
 
@@ -259,9 +264,9 @@ function abrirModalExploradorMermaid(svgOriginal) {
             </div>
             <div class="mermaid-modal-controls">
                 <button type="button" class="btn-mermaid-zoom-out" title="Reduzir zoom (ou scroll)">−</button>
-                <span class="mermaid-modal-zoom-display">100%</span>
+                <span class="mermaid-modal-zoom-display">ajustado · 100%</span>
                 <button type="button" class="btn-mermaid-zoom-in" title="Aumentar zoom (ou scroll)">+</button>
-                <button type="button" class="btn-mermaid-fit" title="Ajustar à tela inteira">ajustar</button>
+                <button type="button" class="btn-mermaid-fit" title="Ajustar à tela inteira (f)">ajustar</button>
                 <button type="button" class="btn-mermaid-reset" title="Tamanho real (100%)">1:1</button>
                 <button type="button" class="btn-mermaid-fechar" title="Fechar (Esc)">&times; fechar</button>
             </div>
@@ -274,11 +279,44 @@ function abrirModalExploradorMermaid(svgOriginal) {
     const stage = modal.querySelector(".mermaid-modal-stage");
     const cloneSvg = svgOriginal.cloneNode(true);
     cloneSvg.removeAttribute("id");
-    cloneSvg.style.maxWidth = "none";
-    cloneSvg.style.height = "auto";
     stage.appendChild(cloneSvg);
 
     document.body.appendChild(modal);
+
+    const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
+    const body = modal.querySelector(".mermaid-modal-body");
+
+    // 1. Sistema Único de Coordenadas:
+    // Medir dimensões a partir do clone já inserido na DOM após fontes carregadas
+    let baseWidth = 800;
+    let baseHeight = 600;
+
+    if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
+        baseWidth = cloneSvg.viewBox.baseVal.width;
+        baseHeight = cloneSvg.viewBox.baseVal.height;
+    } else {
+        try {
+            const bbox = cloneSvg.getBBox();
+            if (bbox.width > 0 && bbox.height > 0) {
+                baseWidth = bbox.width;
+                baseHeight = bbox.height;
+            }
+        } catch (_) {
+            const rect = cloneSvg.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+                baseWidth = rect.width;
+                baseHeight = rect.height;
+            }
+        }
+    }
+
+    // Fixar o stage no tamanho-base e fazer o SVG preenchê-lo com precisão
+    stage.style.width = `${Math.ceil(baseWidth)}px`;
+    stage.style.height = `${Math.ceil(baseHeight)}px`;
+    cloneSvg.style.width = "100%";
+    cloneSvg.style.height = "100%";
+    cloneSvg.style.maxWidth = "none";
+    cloneSvg.style.maxHeight = "none";
 
     let escala = 1.0;
     let transladoX = 0;
@@ -286,79 +324,84 @@ function abrirModalExploradorMermaid(svgOriginal) {
     let arrastando = false;
     let inicioX = 0;
     let inicioY = 0;
-
-    const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
-    const body = modal.querySelector(".mermaid-modal-body");
+    let modoFitAtivo = true;
 
     function aplicarTransformacao() {
-        stage.style.transform = `translate(${transladoX}px, ${transladoY}px) scale(${escala})`;
-        zoomDisplay.textContent = `${Math.round(escala * 100)}%`;
+        stage.style.transform = `translate(calc(-50% + ${transladoX}px), calc(-50% + ${transladoY}px)) scale(${escala})`;
+        const perc = `${Math.round(escala * 100)}%`;
+        zoomDisplay.textContent = modoFitAtivo ? `ajustado · ${perc}` : perc;
     }
 
     function calcularEscalaFit() {
-        // Obter dimensões reais do SVG a partir de viewBox ou getBBox
-        let svgW = 0;
-        let svgH = 0;
-
-        if (svgOriginal.viewBox && svgOriginal.viewBox.baseVal && svgOriginal.viewBox.baseVal.width > 0) {
-            svgW = svgOriginal.viewBox.baseVal.width;
-            svgH = svgOriginal.viewBox.baseVal.height;
-        } else {
-            const rect = svgOriginal.getBoundingClientRect();
-            svgW = rect.width;
-            svgH = rect.height;
-        }
-
-        if (!svgW || !svgH) {
-            try {
-                const bbox = svgOriginal.getBBox();
-                svgW = bbox.width;
-                svgH = bbox.height;
-            } catch (_) {
-                svgW = 800;
-                svgH = 500;
-            }
-        }
-
         const bodyRect = body.getBoundingClientRect();
-        // Margem de segurança confortável de 48px por eixo
-        const paddingHorizontal = 64;
-        const paddingVertical = 64;
+        // Margem de segurança confortável de 48px por margem (96px total por eixo)
+        const margemX = 96;
+        const margemY = 96;
 
-        const dispW = Math.max(200, bodyRect.width - paddingHorizontal);
-        const dispH = Math.max(200, bodyRect.height - paddingVertical);
+        const availW = Math.max(160, bodyRect.width - margemX);
+        const availH = Math.max(160, bodyRect.height - margemY);
 
-        const ratioX = dispW / svgW;
-        const ratioY = dispH / svgH;
-        let fit = Math.min(ratioX, ratioY);
+        const scaleX = availW / baseWidth;
+        const scaleY = availH / baseHeight;
 
-        // Permitir ampliação confortável para diagramas pequenos até 1.8x; mínimo 0.3x
-        fit = Math.min(Math.max(0.35, fit), 2.2);
+        let fit = Math.min(scaleX, scaleY);
+
+        // Permitir que diagramas pequenos ocupem confortavelmente a viewport (até 4.5x)
+        fit = Math.min(Math.max(0.15, fit), 4.5);
 
         return fit;
     }
 
     function executarFit() {
-        escala = calcularEscalaFit();
+        modoFitAtivo = true;
         transladoX = 0;
         transladoY = 0;
+        escala = calcularEscalaFit();
         aplicarTransformacao();
+
+        // 5. Validação Programática de Contenção (Garantia Estrita sem Clipping):
+        requestAnimationFrame(() => {
+            const viewportRect = body.getBoundingClientRect();
+            const margemSegura = 32;
+            let iteracoes = 0;
+
+            while (iteracoes < 5) {
+                const diagramRect = stage.getBoundingClientRect();
+                const foraHorizontal = diagramRect.width > (viewportRect.width - margemSegura * 2);
+                const foraVertical = diagramRect.height > (viewportRect.height - margemSegura * 2);
+
+                if (foraHorizontal || foraVertical) {
+                    const ratioReducao = Math.min(
+                        (viewportRect.width - margemSegura * 2) / diagramRect.width,
+                        (viewportRect.height - margemSegura * 2) / diagramRect.height
+                    );
+                    escala = Math.max(0.15, escala * ratioReducao * 0.98);
+                    aplicarTransformacao();
+                    iteracoes++;
+                } else {
+                    break;
+                }
+            }
+        });
     }
 
     function ajustarZoom(fator, centroX = null, centroY = null) {
-        const novaEscala = Math.min(Math.max(0.2, escala * fator), 5.0);
+        modoFitAtivo = false;
+        const novaEscala = Math.min(Math.max(0.15, escala * fator), 6.0);
         if (centroX !== null && centroY !== null) {
-            const rect = stage.getBoundingClientRect();
-            const dx = centroX - (rect.left + rect.width / 2);
-            const dy = centroY - (rect.top + rect.height / 2);
-            transladoX -= dx * (fator - 1) * 0.4;
-            transladoY -= dy * (fator - 1) * 0.4;
+            const bodyRect = body.getBoundingClientRect();
+            const cx = bodyRect.left + bodyRect.width / 2;
+            const cy = bodyRect.top + bodyRect.height / 2;
+            const dx = centroX - (cx + transladoX);
+            const dy = centroY - (cy + transladoY);
+            transladoX -= dx * (fator - 1) * 0.35;
+            transladoY -= dy * (fator - 1) * 0.35;
         }
         escala = novaEscala;
         aplicarTransformacao();
     }
 
-    // Inicialização automática com Fit após renderizar na DOM
+    // Inicialização com Fit garantido após medição no DOM
     requestAnimationFrame(() => {
         executarFit();
     });
@@ -367,6 +410,7 @@ function abrirModalExploradorMermaid(svgOriginal) {
     modal.querySelector(".btn-mermaid-zoom-out").addEventListener("click", () => ajustarZoom(0.8));
     modal.querySelector(".btn-mermaid-fit").addEventListener("click", executarFit);
     modal.querySelector(".btn-mermaid-reset").addEventListener("click", () => {
+        modoFitAtivo = false;
         escala = 1.0;
         transladoX = 0;
         transladoY = 0;
@@ -383,6 +427,7 @@ function abrirModalExploradorMermaid(svgOriginal) {
         if (e.key === "+" || e.key === "=") ajustarZoom(1.2);
         if (e.key === "-") ajustarZoom(0.8);
         if (e.key === "0") {
+            modoFitAtivo = false;
             escala = 1.0;
             transladoX = 0;
             transladoY = 0;
@@ -413,6 +458,7 @@ function abrirModalExploradorMermaid(svgOriginal) {
 
     body.addEventListener("pointermove", (e) => {
         if (!arrastando) return;
+        modoFitAtivo = false;
         transladoX = e.clientX - inicioX;
         transladoY = e.clientY - inicioY;
         aplicarTransformacao();
