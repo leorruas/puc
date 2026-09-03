@@ -1,12 +1,12 @@
-# Diretrizes de Estilo e Formatação do Vault
+# Diretrizes de estilo e formatação do vault
 
-Regras aprovadas pelo usuário para o desenvolvimento das notas no Obsidian Vault:
+Regras consolidadas para o desenvolvimento e manutenção das notas no Obsidian Vault:
 
-1. **Protocolo de Pós-Processamento Automatizado de Títulos**: Sempre executar o script `fix_title_capitalization.py` e `link_linter.py` imediatamente após qualquer criação ou edição de arquivo Markdown para impedir a presença de Title Case.
-2. **Capitalização Estrita em Português (Sentence Case)**: Títulos e subcabeçalhos (incluindo palavras após dois-pontos `:`) devem ser minúsculos (ex: "1. Tailwind CSS: estilização por classes utilitárias"), exceto a primeira palavra do título e nomes próprios de marcas/tecnologias.
-3. **Registro de Histórico em `log.md` (Ordem Decrescente)**: Registrar obrigatoriamente todas as criações, edições, movimentações de arquivos e reorganizações no arquivo `log.md` na raiz do vault, com as entradas mais recentes no topo.
-4. **Lint de Links Obrigatório**: Sempre rodar a verificação de integridade de links (linter) após criar, mover, renomear ou modificar arquivos no vault.
-5. **Links Protegidos em Tabelas**: Em tabelas Markdown, usar sempre `\|` para wikilinks (ex: `[[javascript/03-manipulacao/Regex\|Regex]]`) evitando a quebra de colunas pelo separador `|`.
-6. **Método Feynman**: Explicar conceitos técnicos através de analogias simples do mundo real, didáticas e intuitivas.
-7. **Cross-linking Exaustivo (Hiperconexão)**: Ligar o máximo de artigos e conceitos possíveis a cada nova inserção de conteúdo. Toda vez que criar ou atualizar uma nota, garanta o máximo de links cruzados (WikiLinks) ativos com outros artigos do vault.
-8. **Sem Emojis**: Manter a estética do vault estritamente textual e sem emojis.
+1. **Protocolo de validação de títulos e links**: Realizar verificação ativa de integridade de links internos (`[[...]]`) e de capitalização (*sentence case*) a cada criação ou edição de arquivo Markdown.
+2. **Capitalização estrita em português (Sentence Case)**: Títulos e subcabeçalhos (incluindo termos após dois-pontos `:`) devem ser rigorosamente em minúsculas (ex: "1. Introdução à programação modular: da construção algorítmica à gestão do estado"), exceto a primeira palavra do título e nomes próprios de marcas/tecnologias/siglas.
+3. **Registro de histórico em `log.md` (ordem decrescente)**: Registrar obrigatoriamente todas as criações, edições, movimentações de arquivos e reorganizações no arquivo `log.md` na raiz do vault, com as entradas mais recentes no topo.
+4. **Links protegidos em tabelas**: Em tabelas Markdown, usar sempre `\|` para rótulos de wikilinks (ex: `[[01. Programacao Modular/01. Introdução à programação modular\|Introdução]]`) evitando a quebra de colunas pelo separador `|`.
+5. **Método Feynman**: Explicar conceitos técnicos através de analogias simples do mundo real, modelos mentais didáticos e intuitivos.
+6. **Interlinkagem qualitativa e conexões interdisciplinares**: Priorizar links internos com significado intelectual claro (pré-requisito, conceito → exemplo, teoria → prática, modelagem → código), evitando enlaces superficiais.
+7. **Sem emojis**: Manter a estética do vault estritamente textual, profissional e sem emojis.
+8. **Preservação de highlights (`==texto==`)**: Preservar integralmente todas as marcações de grifo realizadas pelo usuário em arquivos do vault.

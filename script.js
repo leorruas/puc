@@ -36,6 +36,7 @@ async function obterListaDeArquivos() {
         const arquivosFallback = [
             "00. Geral/Aula Inaugural (04-08-2026) - Resumo.md",
             "00. Geral/Aula Inaugural (04-08-2026) - Transcrição.md",
+            "00. Geral/Mapa de aprendizagem do semestre.md",
             "00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md",
             "00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md",
             "00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md",

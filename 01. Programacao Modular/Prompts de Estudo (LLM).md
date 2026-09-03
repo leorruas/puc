@@ -90,7 +90,13 @@ Com base nas respostas fornecidas pelo aluno, realize a correção e o diagnóst
 1. Tabela com o gabarito oficial (sua resposta vs. resposta correta vs. status).
 2. Diagnóstico individual de cada questão:
    - Resumo da regra teórica e arquitetural central testada.
-   - Análise do erro cometido pelo aluno (classifique obrigatoriamente a falha em uma das 4 categorias: erro conceitual, erro de leitura/interpretação de enunciado, erro terminológico ou erro de aplicação prática/código).
+   - Análise do erro cometido pelo aluno (classifique a falha em uma das 6 categorias fundamentais:
+     1. Erro conceitual: incompreensão do conceito, teoria, invariante ou regra estrutural;
+     2. Erro terminológico: confusão de jargões, termos técnicos, nomenclaturas formais ou padrões;
+     3. Erro de interpretação/leitura: leitura precipitada ou desatenção a restrições e premissas do enunciado;
+     4. Erro de aplicação: falha ao empregar a regra teórica na modelagem de um cenário concreto;
+     5. Erro de sintaxe ou leitura de código: engano na mecânica de linguagem, despacho ou execução;
+     6. Distração / desatenção: equívoco em conceito já dominado, sem lacuna estrutural de aprendizado).
    - Justificativa do porquê o distrator assinalado é falso ou incompleto.
    - Justificativa completa do porquê a alternativa correta é a única rigorosamente verdadeira.
 3. Plano de ação e revisão: indique quais tópicos e notas da disciplina o aluno deve revisitar para sanar as lacunas identificadas.

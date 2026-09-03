@@ -64,7 +64,14 @@
 
 ## Revisão de Conteúdo e Prompts de Estudo
 
-   - **Parâmetros de Feedback e Diagnóstico de Erros:** estrutura padronizada para a LLM explicar o tipo de erro cometido (conceitual, leitura, terminologia ou aplicação) e razões do gabarito.
+11. **Parâmetros de Feedback e Diagnóstico Pedagógico de Erros:**
+ - Estrutura padronizada nos prompts de estudo para a LLM explicar erros com base em 6 dimensões taxonômicas:
+   1. **Erro conceitual:** incompreensão do princípio teórico, invariante ou regra estrutural.
+   2. **Erro terminológico:** confusão de nomenclaturas formais, padrões de mercado ou termos técnicos.
+   3. **Erro de interpretação/leitura:** leitura incorreta ou desatenção aos requisitos e premissas do enunciado/cenário.
+   4. **Erro de aplicação:** falha ao traduzir a teoria em modelagem ou na escolha de projeto.
+   5. **Erro de sintaxe ou leitura de código:** engano na mecânica de linguagem, despacho ou execução.
+   6. **Distração / desatenção:** equívoco circunstancial quando a fundamentação teórica já estava dominada.
 
 ## Preservação de Marcações de Estudo do Usuário
 
@@ -106,12 +113,13 @@
  - **Padrão Obrigatório de Codificação:** Toda requisição `fetch` de arquivos brutos no `script.js` deve codificar cada segmento do caminho individualmente utilizando `encodeURIComponent` (ex.: `path.split("/").map(encodeURIComponent).join("/")`), garantindo que o `#` vire `%23`.
  - **Proteção de Links Internos com Dunder / Underlines:** Todos os links Obsidian (`[[...]]`) que contenham nomes com múltiplos *underlines* (como métodos mágicos `__eq__`, `__str__` ou atributos `_campo`) devem ser blindados antes do parser Markdown (`marked.js`) para evitar que a engine converta os *underlines* em tags HTML de negrito/itálico (`<strong>` ou `<em>`), quebrando a âncora de navegação.
 
-## Conexões e Interlinkagem Interdisciplinar
+## Conexões e Interlinkagem Qualitativa
 
-18. **Interlinkagem Interdisciplinar Obrigatória entre Teoria, Modelagem e Código:**
+18. **Interlinkagem Qualitativa e Conexões Interdisciplinares Relevantes:**
+ - A interlinkagem deve priorizar relações intelectualmente úteis e significativas (pré-requisito, aprofundamento, modelo → código, teoria → prática, requisito → arquitetura), evitando ligações forçadas apenas pela ocorrência de palavras semelhantes.
  - Sempre que um conceito introduzido em uma disciplina possuir correspondência direta, analogia ou desdobramento prático em outra matéria (ex.: os relacionamentos `«include»` e `«extend»` da UML na Engenharia de Requisitos correspondendo a funções/sub-rotinas e tratamento de exceções/condicionais na Programação Modular e no Guia de Sintaxe; ou princípios SOLID e padrões de projeto conectando-se a modelagem de classes da UML e ao Projeto Integrador), deve-se obrigatoriamente:
    1. **Explicitar a Ponte Conceitual:** Inserir uma subseção dedicada explicando a analogia e o mapeamento entre o modelo teórico/arquitetural e a sua materialização em código.
-   2. **Interlinkagem Exaustiva Bidirecional:** Incluir links internos (`[[...]]`) conectando os artigos de todas as disciplinas envolvidas, atualizando o bloco `relacionados` do frontmatter YAML e o corpo das notas.
+   2. **Interlinkagem Bidirecional Estruturada:** Incluir links internos (`[[...]]`) conectando os artigos de todas as disciplinas envolvidas, atualizando o bloco `relacionados` do frontmatter YAML e o corpo das notas.
    3. **Visão Holística do Aprendizado:** Garantir que o estudante compreenda como os modelos conceituais (Engenharia de Requisitos, Design de Interação, Modelagem de Dados) se traduzem diretamente em código limpo, modular e de alta qualidade (Programação Modular, Guia de Sintaxe e Projeto Integrador).
 
 ## Integração de Anotações de Aula
@@ -122,6 +130,18 @@
    2. **Integração Completa sem Perdas:** Incorporar todos os pontos, exemplos práticos mencionados pelo professor (ex.: tabelas de produtos duplicadas para vendas/compras/produção), sinônimos técnicos, ferramentas citadas (PostgreSQL, Oracle, MySQL, SQL Server, IBM Db2, Firebird), links de materiais complementares e capítulos de bibliografia.
    3. **Expansão Didática Feynman:** Expandir os tópicos em linguagem simples, modelos mentais intuitivos, diagramas Mermaid verticais (`flowchart TD`) e tabelas comparativas nativas de Markdown.
    4. **Sincronização Imediata:** Atualizar os arquivos relacionados, o `Glossário de conceitos.md` (se novos termos surgirem), o resumo `00.` e sincronizar via Git (`push`).
+
+## Princípios de Maturação e Arquitetura do Vault
+
+20. **Preservação do Desenvolvimento Incremental e Não-Enciclopedismo:**
+ - O vault é construído de forma estritamente incremental ao longo do semestre acadêmico: cada disciplina amadurece conforme o aluno assiste às aulas, lê os materiais didáticos da PUC Minas, realiza exercícios práticos e identifica lacunas reais de estudo.
+ - Diferenças de maturidade e profundidade entre disciplinas são esperadas e legítimas (disciplinas como Programação Modular estão avançadas porque os estudos avançaram primeiro nelas).
+ - **Proibição de Preenchimento Artificial:** É terminantemente proibido gerar artigos antecipadamente apenas para preencher pastas, unidades ou ementas de matérias pouco desenvolvidas com conteúdo genérico.
+ - **Critério de Relevância Didática:** O acervo não deve se transformar em enciclopédia genérica. Antes de acrescentar qualquer conteúdo, responder: *"Isso melhora a compreensão de algo que o aluno está estudando no curso de ADS da PUC Minas ou apenas torna a nota maior?"*. Se for apenas expansão enciclopédica desvinculada do momento acadêmico, não deve ser adicionado.
+
+21. **Distinção Editorial entre Conteúdo da PUC e Complementação Didática:**
+ - As notas devem manter clareza editorial sobre a origem do conhecimento, permitindo identificar com sobriedade quando uma informação é proveniente da ementa e aulas da PUC Minas, quando é complementação técnica/aprofundamento externo ou quando se trata de metáfora pedagógica (Técnica de Feynman).
+ - Essa distinção deve ser feita de forma elegante e limpa, utilizando o parágrafo de `> **Contexto:**` no início da nota, cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
 
 
 

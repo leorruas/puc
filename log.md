@@ -2,6 +2,18 @@
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
 
+## 2026-09-02
+
+* **Revisão funcional do vault e harmonização de regras**:
+  - Auditoria completa das regras em `AGENTS.md`, `.obsidian/vault_rules.md` e `.agents/rules/`.
+  - Corrigida a quebra de numeração da Regra 11 em `AGENTS.md` e formalizadas as Regras 20 (*Preservação do Desenvolvimento Incremental e Não-Enciclopedismo*) e 21 (*Distinção Editorial entre Conteúdo da PUC e Complementação Didática*).
+  - Atualizado `.obsidian/vault_rules.md`, removendo referências a scripts inexistentes (`fix_title_capitalization.py` e `link_linter.py`) e alinhando a diretriz de interlinkagem com foco qualitativo e significado intelectual claro (sem hiperconexão artificial).
+  - Alinhadas as regras em `.agents/rules/artigos.md` e `.agents/rules/interlinkagem.md`.
+* **Criação do Mapa de Aprendizagem do Semestre**: criada a nota transversal [[00. Geral/Mapa de aprendizagem do semestre.md|Mapa de aprendizagem do semestre]] em `00. Geral/`, consolidando critérios objetivos de estado (`Ainda não estudado`, `Em estudo`, `Compreendido`, `Revisar`) baseados estritamente nas evidências reais do vault, acompanhada por matriz visual em Mermaid (`flowchart TD`) das pontes entre teoria, modelagem e código.
+* **Padronização da taxonomia de diagnóstico de erros**: expandido o protocolo pedagógico de feedback nos prompts de estudo com LLM ([[01. Programacao Modular/Prompts de Estudo (LLM).md|Programação Modular]], [[02. Modelagem de Dados/Prompts de Estudo (LLM).md|Modelagem de Dados]], [[07. Engenharia de Requisitos/Prompts de Estudo (LLM).md|Engenharia de Requisitos]] e [[08. Design de Interacao/Prompts de Estudo (LLM).md|Design de Interação]]) para categorizar erros em 6 dimensões: *conceitual*, *terminológico*, *leitura/interpretação*, *aplicação*, *sintaxe/leitura de código* e *distração/desatenção*.
+* **Modernização do `index.md`**: reformulação da página inicial como hub acadêmico funcional; remoção de blocos de configuração cosmética do Obsidian (tema/accent), inserção de atalho em destaque para o *Mapa de Aprendizagem*, atualização do status do Projeto Integrador (Etapa 02) e explicitação do estado real de cada microfundamento.
+* **Atualização do leitor web (`script.js`)**: integrada a nova nota `00. Geral/Mapa de aprendizagem do semestre.md` no roteador e lista de fallback do leitor.
+
 ---
 
 ## 2026-08-29

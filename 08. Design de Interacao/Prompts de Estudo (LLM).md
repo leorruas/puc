@@ -39,7 +39,7 @@ Após responder ao simulado ou colar uma questão que você errou, use este prom
 Analise a resposta que eu forneci para a questão abaixo e diagnostique meus erros utilizando a seguinte estrutura obrigatória de feedback:
 
 1. Diagnóstico do Erro:
-   - Tipo de Erro: [Conceitual / Leitura de Cenário / Confusão de Lente Teórica (Cognitiva vs Semiótica) / Aplicação Incorreta de Heurística/Diretriz]
+   - Tipo de Erro: [Conceitual / Terminológico / Interpretação de Leitura / Aplicação (Heurística/Diretriz) / Confusão Teórica (Cognitiva vs Semiótica) / Distração]
    - Onde errei: Explique exatamente o ponto onde o raciocínio falhou.
 
 2. Explicação da Resposta Correta:
