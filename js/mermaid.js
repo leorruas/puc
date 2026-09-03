@@ -21,12 +21,41 @@ function obterTokensTemaMermaid() {
     };
 }
 
+function obterCssSemanticoMermaid() {
+    const claro = document.documentElement.dataset.theme === "light";
+    const estilos = claro ? {
+        core: ["#e8f2fe", "#0056b3", "2.2px"],
+        component: ["#f1f5f9", "#94a3b8", "1.5px"],
+        data: ["#ecfdf5", "#059669", "1.8px"],
+        warning: ["#fffbeb", "#d97706", "2px"],
+        external: ["#f8fafc", "#94a3b8", "1.5px"]
+    } : {
+        core: ["#142334", "#007aff", "2.2px"],
+        component: ["#1e2229", "#475569", "1.5px"],
+        data: ["#0d291e", "#10b981", "1.8px"],
+        warning: ["#2d1f06", "#f59e0b", "2px"],
+        external: ["#14161a", "#64748b", "1.5px"]
+    };
+    const formas = ["rect", "polygon", "circle", "ellipse", "path"];
+    return Object.entries(estilos).map(function ([classe, valores]) {
+        const fundo = valores[0];
+        const borda = valores[1];
+        const espessura = valores[2];
+        const tracejado = classe === "external" ? " stroke-dasharray: 4 3;" : "";
+        const seletor = formas.map(function (forma) {
+            return ".node." + classe + " > " + forma;
+        }).join(", ");
+        return seletor + " { fill: " + fundo + "; stroke: " + borda + "; stroke-width: " + espessura + ";" + tracejado + " }";
+    }).join("\\n");
+}
+
 export function configurarMermaid() {
     if (typeof mermaid === "undefined") return;
     mermaid.initialize({
         startOnLoad: false, theme: "base", fontFamily: "Archivo, sans-serif", fontSize: 14,
-        flowchart: { curve: "linear", htmlLabels: false, nodeSpacing: 46, rankSpacing: 52, padding: 18 },
-        themeVariables: obterTokensTemaMermaid()
+        flowchart: { curve: "linear", htmlLabels: true, nodeSpacing: 46, rankSpacing: 52, padding: 18 },
+        themeVariables: obterTokensTemaMermaid(),
+        themeCSS: obterCssSemanticoMermaid()
     });
 }
 
@@ -70,7 +99,7 @@ export async function abrirModalExploradorMermaid(codigo) {
                 <button type="button" class="btn-mermaid-fechar" title="Fechar (Esc)">&times; fechar</button>
             </div>
         </header>
-        <div class="mermaid-modal-body"><div class="mermaid-modal-stage mermaid" aria-live="polite"></div></div>`;
+        <div class="mermaid-modal-body"><div class="mermaid-modal-stage" aria-live="polite"></div></div>`;
     document.body.appendChild(modal);
 
     const stage = modal.querySelector(".mermaid-modal-stage");

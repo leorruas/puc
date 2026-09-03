@@ -1,6 +1,6 @@
 // script.js - Coordenador Principal da Aplicação
 import { informacoesDisciplinas, obterListaDeArquivos } from "./js/vault.js";
-import { renderizarDiagramasMermaid } from "./js/mermaid.js";
+import { renderizarDiagramasMermaid } from "./js/mermaid.js?v=mermaid-style-v5";
 
 // Variáveis globais
 let todosOsArtigos = [];
