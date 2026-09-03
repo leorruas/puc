@@ -82,5 +82,6 @@ O curso é dividido em **Ciclos de Aprendizagem** a cada 2 eixos. Para obter cad
 ---
 
 ## Links e Documentos Relacionados
+* **Mapa de Aprendizagem:** [[00. Geral/Mapa de aprendizagem do semestre.md|Mapa de aprendizagem do semestre]]
 * **Transcrição Completa:** [[00. Geral/Aula Inaugural (04-08-2026) - Transcrição.md|Aula Inaugural - Transcrição]]
 * **Página Inicial da Wiki:** [[index.md|Portal Acadêmico PUC Minas]]

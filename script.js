@@ -156,7 +156,7 @@ async function obterListaDeArquivos() {
 
 // Descrições e Metadados das Matérias para o Design Suíço
 const informacoesDisciplinas = {
-    "00. Geral": { numero: "01", resumo: "aula inaugural e introdução ao curso de ads" },
+    "00. Geral": { numero: "01", resumo: "mapa de aprendizagem, aula inaugural e introdução ao curso" },
     "00. Sintaxe Multilinguagem": { numero: "02", resumo: "comparativo de sintaxe c#, java, python e javascript" },
     "01. Programacao Modular": { numero: "03", resumo: "classes, encapsulamento, herança e polimorfismo em c#" },
     "02. Modelagem de Dados": { numero: "04", resumo: "modelo relacional, entidades, relacionamentos e normalização" },
@@ -1771,6 +1771,15 @@ if (navLinkPastas) {
         if (pastasContainer) {
             pastasContainer.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+    });
+}
+
+const navLinkMapa = document.getElementById("nav-link-mapa");
+if (navLinkMapa) {
+    navLinkMapa.addEventListener("click", (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        navegarParaLinkObsidian("00. Geral/Mapa de aprendizagem do semestre", true);
     });
 }
 

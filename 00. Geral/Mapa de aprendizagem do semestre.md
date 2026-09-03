@@ -39,36 +39,45 @@ Para evitar autoavaliações ilusórias ou avanço artificial, cada tópico ou u
 
 ## 2. Quadro de maturidade e acompanhamento por disciplina
 
-Abaixo está o panorama transversal das disciplinas com base no desenvolvimento real das notas e atividades do 2º semestre:
+Abaixo está o panorama transversal das disciplinas com base na diferenciação estrita entre cobertura de conteúdo, progresso da disciplina e evidências reais de aprendizagem do estudante:
 
-| ID | Disciplina | Unidade / Módulo representativo | Estado atual | Evidências no vault |
-| :--- | :--- | :--- | :--- | :--- |
-| `01` | **[[01. Programacao Modular/00. Programação modular - Resumo\|Programação Modular]]** | Unidades 1, 2 e 3 (Fundamentos, Polimorfismo e SOLID/GoF) | **Compreendido** | 24 artigos concluídos, catálogo de TADs, simuladores completos e matriz GoF. |
-| `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo\|Modelagem de Dados]]** | Módulos 1 e 2 (Fundamentos, ANSI/SPARC, MER, Cardinalidade) | **Em estudo** | 6 artigos estruturados, técnica de leitura de cardinalidades e anotações integradas. |
-| `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo\|Manipulação de Dados SQL]]** | DDL, DML, Consultas e Junções relacionais | **Ainda não estudado** | Aguardando avanço do cronograma das aulas teóricas. |
-| `04` | **[[04. Algoritmos e Estruturas de Dados/00. Algoritmos e Estruturas de Dados - Resumo\|Algoritmos e Estruturas de Dados]]** | Complexidade assintótica, coleções e vetores | **Em estudo** | Nota introdutória sobre C# e arrays e código de teste compilado. |
-| `05` | **[[05. Desenvolvimento Web Back-End/00. Desenvolvimento Web Back-End - Resumo\|Desenvolvimento Web Back-End]]** | Arquitetura cliente-servidor e APIs | **Ainda não estudado** | Aguardando início do módulo no semestre. |
-| `06` | **[[06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo\|Projeto: Aplicação Interativa]]** | Etapa 01 concluída; Etapa 02 (Arquitetura e Modelagem) | **Em estudo** | Transcrições das reuniões 4, 5 e 6 com Profa. Rosilane; 3 CRUDs e escopo definidos. |
-| `07` | **[[07. Engenharia de Requisitos/00. Engenharia de Requisitos - Resumo\|Engenharia de Requisitos]]** | Módulos 1 e 2 (Elicitação, Casos de Uso, Diagrama de Classes e Pacotes) | **Compreendido** | 11 artigos completos, critérios ISO/IEEE 29148 e conexões interdisciplinares. |
-| `08` | **[[08. Design de Interacao/00. Design de Interacao - Resumo\|Design de Interação]]** | Módulos 1 e 2 (IHC, Norman vs Clarisse, Usabilidade, Heurísticas, SUS) | **Compreendido** | 24 artigos técnicos, síntese comparativa de avaliação e métodos empíricos. |
-| `09` | **[[09. Redes de Computadores/00. Redes de Computadores - Resumo\|Redes de Computadores]]** | Modelos OSI, TCP/IP e protocolos | **Ainda não estudado** | Aguardando avanço do cronograma. |
-| `10` | **[[10. Lideranca e Competencias/00. Lideranca e Competencias - Resumo\|Liderança e Competências]]** | Soft skills, comunicação e inteligência emocional | **Ainda não estudado** | Aguardando cronograma de atividades. |
-| `11` | **[[11. Desafios Contemporaneos/00. Desafios Contemporaneos - Resumo\|Desafios Contemporâneos]]** | Ética, sociedade e impacto da computação | **Ainda não estudado** | Aguardando cronograma de atividades. |
+| ID | Disciplina | Módulo representativo | Cobertura no vault | Progresso da disciplina | Estado de aprendizagem | Evidências de aprendizagem |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `01` | **[[01. Programacao Modular/00. Programação modular - Resumo\|Programação Modular]]** | Unidades 1, 2 e 3 (Fundamentos, Polimorfismo, SOLID e GoF) | Extensa (24 artigos e catálogo TAD) | Concluída (Unidades 1 a 3) | **Compreendido** | Domínio do modelo mental, simuladores com correção taxonômica, exemplos compilados em C# e aplicação de invariantes. |
+| `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo\|Modelagem de Dados]]** | Módulos 1 e 2 (ANSI/SPARC, MER conceitual e cardinalidades) | Inicial (6 artigos) | Em andamento (Módulo 2) | **Em estudo** | Prática da técnica de leitura de cardinalidades e anotações de aula integradas; aguardando consolidação em exercícios práticos. |
+| `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo\|Manipulação de Dados SQL]]** | DDL, DML, consultas relacionais e junções | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
+| `04` | **[[04. Algoritmos e Estruturas de Dados/00. Algoritmos e Estruturas de Dados - Resumo\|Algoritmos e Estruturas de Dados]]** | Complexidade assintótica (Big O) e vetores | Básica (Arrays em C#) | Em andamento inicial | **Em estudo** | Testes atômicos com arrays em C# e compilação local; aguardando estruturas dinâmicas e análise de complexidade. |
+| `05` | **[[05. Desenvolvimento Web Back-End/00. Desenvolvimento Web Back-End - Resumo\|Desenvolvimento Web Back-End]]** | Arquitetura MVC, APIs REST e autenticação | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
+| `06` | **[[06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo\|Projeto: Aplicação Interativa]]** | Etapas 01 (Concepção) e 02 (Arquitetura e Modelagem) | Robusta (Resumos e 3 transcrições) | Em andamento (Etapa 02) | **Em estudo** | Etapa 01 entregue (ODS 4, 3 CRUDs e casos de uso validados pela orientadora); modelagem da Etapa 02 em execução prática. |
+| `07` | **[[07. Engenharia de Requisitos/00. Engenharia de Requisitos - Resumo\|Engenharia de Requisitos]]** | Módulos 1 e 2 (Elicitação, Casos de Uso, Classes e Pacotes UML) | Ampla (11 artigos) | Módulos 1 e 2 concluídos | **Em estudo** | Casos de uso e requisitos aplicados no projeto integrador; aguardando validação por baterias de simuladores para consolidação. |
+| `08` | **[[08. Design de Interacao/00. Design de Interacao - Resumo\|Design de Interação]]** | Módulos 1 e 2 (IHC, Semiótica vs Cognitiva, Heurísticas e SUS) | Ampla (24 artigos) | Módulos 1 e 2 concluídos | **Em estudo** | Personas e fluxos modelados para o projeto; em consolidação teórica dos métodos de avaliação e semiótica antes das provas. |
+| `09` | **[[09. Redes de Computadores/00. Redes de Computadores - Resumo\|Redes de Computadores]]** | Modelos OSI e TCP/IP, roteamento e protocolos | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
+| `10` | **[[10. Lideranca e Competencias/00. Lideranca e Competencias - Resumo\|Liderança e Competências]]** | Inteligência emocional, trabalho em equipe e liderança | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
+| `11` | **[[11. Desafios Contemporaneos/00. Desafios Contemporaneos - Resumo\|Desafios Contemporâneos]]** | Ética, impacto da IA e cidadania digital | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
 
 ---
 
 ## 3. Matriz transversal de pontes conceituais (Teoria → Modelagem → Código)
 
-Conforme estabelecido nas diretrizes de interlinkagem qualitativa, as conexões intelectuais entre disciplinas conectam o aprendizado em um ecossistema coerente:
+Conforme estabelecido nas diretrizes de interlinkagem qualitativa, as conexões intelectuais entre disciplinas são organizadas em dois fluxos complementares e compactos:
+
+### Fluxo A: Requisitos, arquitetura de software e código
 
 ```mermaid
 flowchart TD
-    Req["Engenharia de Requisitos<br>(Casos de Uso e RTM)"] -->|"Derivação direta"| Proj["Projeto Integrador<br>(Escopo e Backlog)"]
-    Req -->|"Relacionamento «include»"| SubRot["Sintaxe e Programação Modular<br>(Funções e Sub-rotinas)"]
-    Req -->|"Relacionamento «extend»"| Excep["Sintaxe e Programação Modular<br>(Tratamento de Exceções)"]
-    ReqUML["Diagrama de Classes UML<br>(Requisitos 09)"] -->|"Classes e Encapsulamento"| POO["Programação Modular<br>(Atributos, Métodos e SOLID)"]
-    MER["Modelagem de Dados<br>(MER / Cardinalidade)"] -->|"Mapeamento Relacional"| SQLProj["Projeto de Banco de Dados<br>(Etapa 02 do Projeto)"]
-    IHC["Design de Interação<br>(Personas e Heurísticas)"] -->|"Wireframes e Usabilidade"| UIProj["Interfaces do Projeto<br>(Etapa 02 do Projeto)"]
+    Req["Engenharia de Requisitos<br>(Casos de Uso)"] -->|"Especificação"| ProjBacklog["Projeto Integrador<br>(Backlog e Escopo)"]
+    Req -->|"Relacionamento «include»"| SubRot["Programação Modular<br>(Funções Puras)"]
+    Req -->|"Relacionamento «extend»"| Excep["Programação Modular<br>(Tratamento de Exceções)"]
+    UMLClasses["Diagrama de Classes UML<br>(Modelagem Estrutural)"] -->|"Contratos e Tipos"| POO["Programação Modular<br>(Classes e SOLID)"]
+```
+
+### Fluxo B: Dados relacionais e interface com o usuário
+
+```mermaid
+flowchart TD
+    MER["Modelagem de Dados<br>(DER e Cardinalidades)"] -->|"Mapeamento Relacional"| BDProj["Projeto Integrador<br>(Banco SQL Server)"]
+    IHC["Design de Interação<br>(Personas e Heurísticas)"] -->|"Critérios de Usabilidade"| UIProj["Projeto Integrador<br>(Wireframes e Telas)"]
+    BDProj -->|"Persistência de Dados"| UIProj
 ```
 
 ---
