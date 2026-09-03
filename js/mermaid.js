@@ -1,412 +1,219 @@
-// js/mermaid.js - Subsistema de Renderização e Exploração de Diagramas Mermaid
+// js/mermaid.js - Renderização e exploração de diagramas Mermaid
 
-/**
- * Retorna os tokens de cores e temas unificados para Mermaid.
- * Elimina disparidade entre claro e escuro e remove fundos artificiais.
- */
+let proximoIdDeRenderizacao = 0;
+
 function obterTokensTemaMermaid() {
-    const temaEscuro = document.documentElement.dataset.theme !== "light";
-
-    if (temaEscuro) {
-        return {
-            fontFamily: "Archivo, sans-serif",
-            fontSize: "14px",
-            darkMode: true,
-            background: "transparent",
-            mainBkg: "transparent",
-            nodeBorder: "#3395ff",
-            clusterBkg: "rgba(30, 34, 41, 0.4)",
-            clusterBorder: "#475569",
-            primaryColor: "#1c1c1e",
-            primaryTextColor: "#f1f5f9",
-            primaryBorderColor: "#3395ff",
-            secondaryColor: "#141416",
-            secondaryTextColor: "#f1f5f9",
-            secondaryBorderColor: "#475569",
-            tertiaryColor: "#1e2229",
-            tertiaryTextColor: "#f1f5f9",
-            tertiaryBorderColor: "#475569",
-            lineColor: "#94a3b8",
-            textColor: "#f1f5f9",
-            edgeLabelBackground: "#14161a"
-        };
-    } else {
-        return {
-            fontFamily: "Archivo, sans-serif",
-            fontSize: "14px",
-            darkMode: false,
-            background: "transparent",
-            mainBkg: "transparent",
-            nodeBorder: "#0056b3",
-            clusterBkg: "rgba(241, 245, 249, 0.6)",
-            clusterBorder: "#cbd5e1",
-            primaryColor: "#ffffff",
-            primaryTextColor: "#0f172a",
-            primaryBorderColor: "#0056b3",
-            secondaryColor: "#f8fafc",
-            secondaryTextColor: "#0f172a",
-            secondaryBorderColor: "#cbd5e1",
-            tertiaryColor: "#f1f5f9",
-            tertiaryTextColor: "#0f172a",
-            tertiaryBorderColor: "#94a3b8",
-            lineColor: "#475569",
-            textColor: "#0f172a",
-            edgeLabelBackground: "#ffffff"
-        };
-    }
+    const escuro = document.documentElement.dataset.theme !== "light";
+    return escuro ? {
+        fontFamily: "Archivo, sans-serif", fontSize: "14px", darkMode: true,
+        background: "transparent", primaryColor: "#1c1c1e", primaryTextColor: "#f1f5f9",
+        primaryBorderColor: "#3395ff", secondaryColor: "#141416", secondaryTextColor: "#f1f5f9",
+        secondaryBorderColor: "#475569", tertiaryColor: "#1e2229", tertiaryTextColor: "#f1f5f9",
+        tertiaryBorderColor: "#475569", clusterBkg: "#1e2229", clusterBorder: "#475569",
+        lineColor: "#94a3b8", textColor: "#f1f5f9", edgeLabelBackground: "#14161a"
+    } : {
+        fontFamily: "Archivo, sans-serif", fontSize: "14px", darkMode: false,
+        background: "transparent", primaryColor: "#ffffff", primaryTextColor: "#0f172a",
+        primaryBorderColor: "#0056b3", secondaryColor: "#f8fafc", secondaryTextColor: "#0f172a",
+        secondaryBorderColor: "#cbd5e1", tertiaryColor: "#f1f5f9", tertiaryTextColor: "#0f172a",
+        tertiaryBorderColor: "#94a3b8", clusterBkg: "#f1f5f9", clusterBorder: "#cbd5e1",
+        lineColor: "#475569", textColor: "#0f172a", edgeLabelBackground: "#ffffff"
+    };
 }
 
-/**
- * Configura as opções da engine Mermaid com base no tema atual (claro/escuro).
- * Utiliza htmlLabels: false para renderização vetorial estrita (<text>, <tspan>).
- */
 export function configurarMermaid() {
     if (typeof mermaid === "undefined") return;
-
     mermaid.initialize({
-        startOnLoad: false,
-        theme: "base",
-        fontFamily: "Archivo, sans-serif",
-        fontSize: 14,
-        flowchart: {
-            curve: "linear",
-            htmlLabels: false,
-            nodeSpacing: 46,
-            rankSpacing: 52,
-            padding: 18
-        },
+        startOnLoad: false, theme: "base", fontFamily: "Archivo, sans-serif", fontSize: 14,
+        flowchart: { curve: "linear", htmlLabels: false, nodeSpacing: 46, rankSpacing: 52, padding: 18 },
         themeVariables: obterTokensTemaMermaid()
     });
 }
 
-/**
- * Abre o explorador interativo em tela cheia para inspecionar o diagrama selecionado.
- * Implementa normalização do viewBox pelo bounding box do conteúdo real,
- * fundo 100% transparente e validação iterativa pós-renderização.
- */
-export async function abrirModalExploradorMermaid(svgOriginal) {
-    if (document.fonts && document.fonts.ready) {
-        try { await document.fonts.ready; } catch (_) {}
-    }
+async function aguardarFontes() {
+    if (!document.fonts?.ready) return;
+    try { await document.fonts.ready; } catch (_) {}
+}
 
-    const modalExistente = document.querySelector(".mermaid-modal");
-    if (modalExistente) modalExistente.remove();
+async function renderizarSvgMermaid(codigo) {
+    configurarMermaid();
+    return mermaid.render(`mermaid-explorer-${++proximoIdDeRenderizacao}`, codigo);
+}
+
+function dimensoesDoSvg(svg) {
+    const viewBox = svg.viewBox?.baseVal;
+    if (viewBox?.width > 0 && viewBox.height > 0) return { largura: viewBox.width, altura: viewBox.height };
+    const largura = Number.parseFloat(svg.getAttribute("width"));
+    const altura = Number.parseFloat(svg.getAttribute("height"));
+    return {
+        largura: Number.isFinite(largura) && largura > 0 ? largura : 800,
+        altura: Number.isFinite(altura) && altura > 0 ? altura : 600
+    };
+}
+
+/** Abre uma nova renderização do código Mermaid no explorador. */
+export async function abrirModalExploradorMermaid(codigo) {
+    if (!codigo || typeof mermaid === "undefined") return;
+    document.querySelector(".mermaid-modal")?.remove();
 
     const modal = document.createElement("div");
     modal.className = "mermaid-modal";
     modal.innerHTML = `
         <header class="mermaid-modal-header">
-            <div class="mermaid-modal-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                <span>Explorador de diagrama</span>
-            </div>
+            <div class="mermaid-modal-title"><span>Explorador de diagrama</span></div>
             <div class="mermaid-modal-controls">
                 <button type="button" class="btn-mermaid-zoom-out" title="Reduzir zoom (ou scroll)">−</button>
-                <span class="mermaid-modal-zoom-display">ajustado · 100%</span>
+                <span class="mermaid-modal-zoom-display">ajustado</span>
                 <button type="button" class="btn-mermaid-zoom-in" title="Aumentar zoom (ou scroll)">+</button>
                 <button type="button" class="btn-mermaid-fit" title="Ajustar à tela inteira (f)">ajustar</button>
                 <button type="button" class="btn-mermaid-reset" title="Tamanho real (100%)">1:1</button>
                 <button type="button" class="btn-mermaid-fechar" title="Fechar (Esc)">&times; fechar</button>
             </div>
         </header>
-        <div class="mermaid-modal-body">
-            <div class="mermaid-modal-stage"></div>
-        </div>
-    `;
-
-    const stage = modal.querySelector(".mermaid-modal-stage");
-    const cloneSvg = svgOriginal.cloneNode(true);
-    cloneSvg.removeAttribute("id");
-
-    // Limpeza de estilos de fundo inline e limites rígidos herdados do clone
-    cloneSvg.style.background = "transparent";
-    cloneSvg.style.backgroundColor = "transparent";
-    cloneSvg.style.maxWidth = "none";
-    cloneSvg.style.maxHeight = "none";
-
-    // Remover retângulos de background pretos/brancos internos injetados pela engine
-    if (cloneSvg.firstElementChild && cloneSvg.firstElementChild.tagName.toLowerCase() === "rect") {
-        const primeiroRect = cloneSvg.firstElementChild;
-        if (primeiroRect.getAttribute("width") === "100%" || primeiroRect.classList.contains("background")) {
-            primeiroRect.style.fill = "transparent";
-            primeiroRect.setAttribute("fill", "transparent");
-        }
-    }
-    const rectsBackground = cloneSvg.querySelectorAll("rect.background");
-    rectsBackground.forEach(r => {
-        r.style.fill = "transparent";
-        r.setAttribute("fill", "transparent");
-    });
-
-    stage.appendChild(cloneSvg);
+        <div class="mermaid-modal-body"><div class="mermaid-modal-stage mermaid" aria-live="polite"></div></div>`;
     document.body.appendChild(modal);
 
-    const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
+    const stage = modal.querySelector(".mermaid-modal-stage");
     const body = modal.querySelector(".mermaid-modal-body");
-
-    // Normalização do viewBox pelo Bounding Box Real do Grafo:
-    // Garante que enquadramos o CONTEÚDO real, e não uma área vazia externa
-    let baseWidth = 800;
-    let baseHeight = 600;
-
+    const zoomDisplay = modal.querySelector(".mermaid-modal-zoom-display");
     try {
-        const rootGroup = cloneSvg.querySelector("g.root, g") || cloneSvg;
-        const bbox = rootGroup.getBBox();
-        if (bbox && bbox.width > 0 && bbox.height > 0) {
-            const pad = 28; // Margem confortável ao redor do grafo
-            const vbX = Math.floor(bbox.x - pad);
-            const vbY = Math.floor(bbox.y - pad);
-            const vbW = Math.ceil(bbox.width + pad * 2);
-            const vbH = Math.ceil(bbox.height + pad * 2);
-
-            cloneSvg.setAttribute("viewBox", `${vbX} ${vbY} ${vbW} ${vbH}`);
-            baseWidth = vbW;
-            baseHeight = vbH;
-        } else if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
-            baseWidth = cloneSvg.viewBox.baseVal.width;
-            baseHeight = cloneSvg.viewBox.baseVal.height;
-        }
-    } catch (_) {
-        if (cloneSvg.viewBox && cloneSvg.viewBox.baseVal && cloneSvg.viewBox.baseVal.width > 0) {
-            baseWidth = cloneSvg.viewBox.baseVal.width;
-            baseHeight = cloneSvg.viewBox.baseVal.height;
-        }
+        await aguardarFontes();
+        const resultado = await renderizarSvgMermaid(codigo);
+        stage.innerHTML = resultado.svg;
+        resultado.bindFunctions?.(stage);
+    } catch (erro) {
+        console.error("Erro ao renderizar Mermaid no explorador:", erro);
+        stage.textContent = "Não foi possível renderizar este diagrama.";
+        return;
     }
 
-    // Fixar o stage no tamanho-base e fazer o SVG preenchê-lo com precisão
-    stage.style.width = `${Math.ceil(baseWidth)}px`;
-    stage.style.height = `${Math.ceil(baseHeight)}px`;
-    cloneSvg.style.width = "100%";
-    cloneSvg.style.height = "100%";
+    const svg = stage.querySelector("svg");
+    if (!svg) return;
+    svg.removeAttribute("id");
+    const { largura, altura } = dimensoesDoSvg(svg);
+    stage.style.width = `${Math.ceil(largura)}px`;
+    stage.style.height = `${Math.ceil(altura)}px`;
 
-    let escala = 1.0;
-    let transladoX = 0;
-    let transladoY = 0;
+    let escala = 1;
+    let deslocamentoX = 0;
+    let deslocamentoY = 0;
     let arrastando = false;
-    let inicioX = 0;
-    let inicioY = 0;
-    let modoFitAtivo = true;
+    let origemX = 0;
+    let origemY = 0;
+    let ajustado = true;
 
     function aplicarTransformacao() {
-        stage.style.transform = `translate(calc(-50% + ${transladoX}px), calc(-50% + ${transladoY}px)) scale(${escala})`;
-        const perc = `${Math.round(escala * 100)}%`;
-        zoomDisplay.textContent = modoFitAtivo ? `ajustado · ${perc}` : perc;
+        stage.style.transform = `translate(calc(-50% + ${deslocamentoX}px), calc(-50% + ${deslocamentoY}px)) scale(${escala})`;
+        zoomDisplay.textContent = ajustado ? `ajustado · ${Math.round(escala * 100)}%` : `${Math.round(escala * 100)}%`;
     }
-
-    function calcularEscalaFit() {
-        const bodyRect = body.getBoundingClientRect();
-        const margemX = 96;
-        const margemY = 96;
-
-        const availW = Math.max(160, bodyRect.width - margemX);
-        const availH = Math.max(160, bodyRect.height - margemY);
-
-        const scaleX = availW / baseWidth;
-        const scaleY = availH / baseHeight;
-
-        let fit = Math.min(scaleX, scaleY);
-        fit = Math.min(Math.max(0.15, fit), 4.5);
-
-        return fit;
-    }
-
-    function executarFit() {
-        modoFitAtivo = true;
-        transladoX = 0;
-        transladoY = 0;
-        escala = calcularEscalaFit();
+    function ajustar() {
+        const area = body.getBoundingClientRect();
+        const margem = 64;
+        escala = Math.min(
+            Math.max(0.1, (area.width - margem * 2) / largura),
+            Math.max(0.1, (area.height - margem * 2) / altura),
+            4.5
+        );
+        deslocamentoX = 0; deslocamentoY = 0; ajustado = true;
         aplicarTransformacao();
-
-        // Validação Programática de Contenção sem Clipping
-        requestAnimationFrame(() => {
-            const viewportRect = body.getBoundingClientRect();
-            const margemSegura = 32;
-            let iteracoes = 0;
-
-            while (iteracoes < 5) {
-                const diagramRect = stage.getBoundingClientRect();
-                const foraHorizontal = diagramRect.width > (viewportRect.width - margemSegura * 2);
-                const foraVertical = diagramRect.height > (viewportRect.height - margemSegura * 2);
-
-                if (foraHorizontal || foraVertical) {
-                    const ratioReducao = Math.min(
-                        (viewportRect.width - margemSegura * 2) / diagramRect.width,
-                        (viewportRect.height - margemSegura * 2) / diagramRect.height
-                    );
-                    escala = Math.max(0.15, escala * ratioReducao * 0.98);
-                    aplicarTransformacao();
-                    iteracoes++;
-                } else {
-                    break;
-                }
-            }
-        });
     }
-
-    function ajustarZoom(fator, centroX = null, centroY = null) {
-        modoFitAtivo = false;
-        const novaEscala = Math.min(Math.max(0.15, escala * fator), 6.0);
-        if (centroX !== null && centroY !== null) {
-            const bodyRect = body.getBoundingClientRect();
-            const cx = bodyRect.left + bodyRect.width / 2;
-            const cy = bodyRect.top + bodyRect.height / 2;
-            const dx = centroX - (cx + transladoX);
-            const dy = centroY - (cy + transladoY);
-            transladoX -= dx * (fator - 1) * 0.35;
-            transladoY -= dy * (fator - 1) * 0.35;
+    function alterarZoom(fator, x, y) {
+        const anterior = escala;
+        escala = Math.min(6, Math.max(0.1, escala * fator));
+        if (x !== undefined && y !== undefined) {
+            const area = body.getBoundingClientRect();
+            const relativoX = x - area.left - area.width / 2;
+            const relativoY = y - area.top - area.height / 2;
+            deslocamentoX = (deslocamentoX - relativoX) * (escala / anterior) + relativoX;
+            deslocamentoY = (deslocamentoY - relativoY) * (escala / anterior) + relativoY;
         }
-        escala = novaEscala;
+        ajustado = false;
         aplicarTransformacao();
     }
-
-    // Inicialização com Fit garantido após medição no DOM
-    requestAnimationFrame(() => {
-        executarFit();
-    });
-
-    const btnZoomIn = modal.querySelector(".btn-mermaid-zoom-in");
-    const btnZoomOut = modal.querySelector(".btn-mermaid-zoom-out");
-    const btnFit = modal.querySelector(".btn-mermaid-fit");
-    const btnReset = modal.querySelector(".btn-mermaid-reset");
-    const btnFechar = modal.querySelector(".btn-mermaid-fechar");
-
-    const onZoomIn = () => ajustarZoom(1.25);
-    const onZoomOut = () => ajustarZoom(0.8);
-    const onFit = () => executarFit();
-    const onReset = () => {
-        modoFitAtivo = false;
-        escala = 1.0;
-        transladoX = 0;
-        transladoY = 0;
-        aplicarTransformacao();
+    const tamanhoReal = () => {
+        escala = 1; deslocamentoX = 0; deslocamentoY = 0; ajustado = false; aplicarTransformacao();
     };
-
-    btnZoomIn.addEventListener("click", onZoomIn);
-    btnZoomOut.addEventListener("click", onZoomOut);
-    btnFit.addEventListener("click", onFit);
-    btnReset.addEventListener("click", onReset);
-
-    function fecharModal() {
-        limparListeners();
-        modal.remove();
-    }
-
-    function tratarTeclas(e) {
-        if (e.key === "Escape") fecharModal();
-        if (e.key === "+" || e.key === "=") ajustarZoom(1.2);
-        if (e.key === "-") ajustarZoom(0.8);
-        if (e.key === "0") onReset();
-        if (e.key.toLowerCase() === "f") onFit();
-    }
-
-    const onWheel = (e) => {
-        e.preventDefault();
-        const fator = e.deltaY < 0 ? 1.15 : 0.87;
-        ajustarZoom(fator, e.clientX, e.clientY);
+    const fechar = () => { limparListeners(); modal.remove(); };
+    const aoTeclar = evento => {
+        if (evento.key === "Escape") fechar();
+        else if (evento.key.toLowerCase() === "f") ajustar();
+        else if (evento.key === "0") tamanhoReal();
+        else if (evento.key === "+" || evento.key === "=") alterarZoom(1.25);
+        else if (evento.key === "-") alterarZoom(0.8);
     };
-
-    const onPointerDown = (e) => {
-        if (e.button !== 0) return;
-        arrastando = true;
-        inicioX = e.clientX - transladoX;
-        inicioY = e.clientY - transladoY;
-        body.classList.add("is-dragging");
-        body.setPointerCapture(e.pointerId);
+    const aoRolar = evento => {
+        evento.preventDefault();
+        alterarZoom(evento.deltaY < 0 ? 1.15 : 0.87, evento.clientX, evento.clientY);
     };
-
-    const onPointerMove = (e) => {
+    const aoIniciarArrasto = evento => {
+        if (evento.button !== 0) return;
+        arrastando = true; origemX = evento.clientX - deslocamentoX; origemY = evento.clientY - deslocamentoY;
+        body.classList.add("is-dragging"); body.setPointerCapture(evento.pointerId);
+    };
+    const aoArrastar = evento => {
         if (!arrastando) return;
-        modoFitAtivo = false;
-        transladoX = e.clientX - inicioX;
-        transladoY = e.clientY - inicioY;
+        deslocamentoX = evento.clientX - origemX; deslocamentoY = evento.clientY - origemY; ajustado = false;
         aplicarTransformacao();
     };
-
-    const finalizarArrasto = (e) => {
-        if (arrastando) {
-            arrastando = false;
-            body.classList.remove("is-dragging");
-            try { body.releasePointerCapture(e.pointerId); } catch (_) {}
-        }
+    const encerrarArrasto = evento => {
+        if (!arrastando) return;
+        arrastando = false; body.classList.remove("is-dragging");
+        try { body.releasePointerCapture(evento.pointerId); } catch (_) {}
     };
-
-    btnFechar.addEventListener("click", fecharModal);
-    window.addEventListener("keydown", tratarTeclas);
-    body.addEventListener("wheel", onWheel, { passive: false });
-    body.addEventListener("pointerdown", onPointerDown);
-    body.addEventListener("pointermove", onPointerMove);
-    body.addEventListener("pointerup", finalizarArrasto);
-    body.addEventListener("pointercancel", finalizarArrasto);
-
+    const botoes = {
+        aproximar: modal.querySelector(".btn-mermaid-zoom-in"),
+        afastar: modal.querySelector(".btn-mermaid-zoom-out"),
+        ajustar: modal.querySelector(".btn-mermaid-fit"),
+        real: modal.querySelector(".btn-mermaid-reset"),
+        fechar: modal.querySelector(".btn-mermaid-fechar")
+    };
+    const aoRedimensionar = () => ajustar();
+    botoes.aproximar.addEventListener("click", () => alterarZoom(1.25));
+    botoes.afastar.addEventListener("click", () => alterarZoom(0.8));
+    botoes.ajustar.addEventListener("click", ajustar);
+    botoes.real.addEventListener("click", tamanhoReal);
+    botoes.fechar.addEventListener("click", fechar);
+    window.addEventListener("keydown", aoTeclar);
+    window.addEventListener("resize", aoRedimensionar);
+    body.addEventListener("wheel", aoRolar, { passive: false });
+    body.addEventListener("pointerdown", aoIniciarArrasto);
+    body.addEventListener("pointermove", aoArrastar);
+    body.addEventListener("pointerup", encerrarArrasto);
+    body.addEventListener("pointercancel", encerrarArrasto);
     function limparListeners() {
-        window.removeEventListener("keydown", tratarTeclas);
-        btnZoomIn.removeEventListener("click", onZoomIn);
-        btnZoomOut.removeEventListener("click", onZoomOut);
-        btnFit.removeEventListener("click", onFit);
-        btnReset.removeEventListener("click", onReset);
-        btnFechar.removeEventListener("click", fecharModal);
-        body.removeEventListener("wheel", onWheel);
-        body.removeEventListener("pointerdown", onPointerDown);
-        body.removeEventListener("pointermove", onPointerMove);
-        body.removeEventListener("pointerup", finalizarArrasto);
-        body.removeEventListener("pointercancel", finalizarArrasto);
+        window.removeEventListener("keydown", aoTeclar);
+        window.removeEventListener("resize", aoRedimensionar);
+        body.removeEventListener("wheel", aoRolar);
+        body.removeEventListener("pointerdown", aoIniciarArrasto);
+        body.removeEventListener("pointermove", aoArrastar);
+        body.removeEventListener("pointerup", encerrarArrasto);
+        body.removeEventListener("pointercancel", encerrarArrasto);
     }
+    requestAnimationFrame(ajustar);
 }
 
-/**
- * Envolve os diagramas Mermaid renderizados em contêineres com toolbar de ampliação.
- */
 export function equiparDiagramasMermaidInterativos(container) {
     if (!container) return;
-
-    const diagramas = container.querySelectorAll(".mermaid");
-    diagramas.forEach(diagrama => {
-        const svg = diagrama.querySelector("svg");
-        if (!svg) return;
-
-        let wrapper = diagrama.closest(".mermaid-wrapper");
-        if (!wrapper) {
-            wrapper = document.createElement("div");
-            wrapper.className = "mermaid-wrapper";
-
-            const toolbar = document.createElement("div");
-            toolbar.className = "mermaid-toolbar";
-            toolbar.innerHTML = `
-                <button type="button" class="mermaid-btn btn-explorar" title="Abrir em tela cheia com zoom e navegação">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>ampliar</span>
-                </button>
-            `;
-
-            const viewport = document.createElement("div");
-            viewport.className = "mermaid-viewport";
-
-            diagrama.parentNode.insertBefore(wrapper, diagrama);
-            viewport.appendChild(diagrama);
-            wrapper.appendChild(toolbar);
-            wrapper.appendChild(viewport);
-
-            toolbar.querySelector(".btn-explorar").addEventListener("click", () => {
-                const svgAtual = diagrama.querySelector("svg");
-                if (svgAtual) abrirModalExploradorMermaid(svgAtual);
-            });
-        }
+    container.querySelectorAll(".mermaid").forEach(diagrama => {
+        if (!diagrama.querySelector("svg") || diagrama.closest(".mermaid-wrapper")) return;
+        const wrapper = document.createElement("div");
+        wrapper.className = "mermaid-wrapper";
+        const toolbar = document.createElement("div");
+        toolbar.className = "mermaid-toolbar";
+        toolbar.innerHTML = `<button type="button" class="mermaid-btn btn-explorar" title="Abrir em tela cheia com zoom e navegação"><span>ampliar</span></button>`;
+        const viewport = document.createElement("div");
+        viewport.className = "mermaid-viewport";
+        diagrama.parentNode.insertBefore(wrapper, diagrama);
+        viewport.appendChild(diagrama);
+        wrapper.append(toolbar, viewport);
+        toolbar.querySelector(".btn-explorar").addEventListener("click", () => abrirModalExploradorMermaid(diagrama.dataset.mermaidSource));
     });
 }
 
-/**
- * Executa a renderização dos diagramas Mermaid presentes no container fornecido.
- * Aguarda as fontes Archivo estarem carregadas para que a medição de nós seja exata.
- */
 export async function renderizarDiagramasMermaid(container) {
     if (typeof mermaid === "undefined" || !container) return;
-
-    if (document.fonts && document.fonts.ready) {
-        try { await document.fonts.ready; } catch (_) {}
-    }
-
+    await aguardarFontes();
     configurarMermaid();
-
     const diagramas = container.querySelectorAll(".mermaid");
     diagramas.forEach(diagrama => {
         const codigo = diagrama.dataset.mermaidSource || diagrama.textContent;
@@ -414,11 +221,10 @@ export async function renderizarDiagramasMermaid(container) {
         diagrama.removeAttribute("data-processed");
         diagrama.textContent = codigo;
     });
-
     try {
         await mermaid.run({ nodes: diagramas });
         equiparDiagramasMermaidInterativos(container);
-    } catch (err) {
-        console.error("Erro ao renderizar Mermaid:", err);
+    } catch (erro) {
+        console.error("Erro ao renderizar Mermaid:", erro);
     }
 }

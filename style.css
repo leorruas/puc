@@ -1308,18 +1308,6 @@ mark:not(.highlight) code {
     max-width: none;
 }
 
-.mermaid svg text,
-.mermaid svg .nodeLabel,
-.mermaid svg .edgeLabel {
-    font-family: 'Archivo', sans-serif !important;
-    color: var(--text);
-    fill: var(--text);
-}
-
-.mermaid svg foreignObject {
-    overflow: visible !important;
-}
-
 .mermaid .node rect,
 .mermaid .node polygon,
 .mermaid .node circle,
@@ -1367,7 +1355,6 @@ mark:not(.highlight) code {
 .mermaid .cluster .cluster-label text,
 .mermaid .cluster text {
     font-weight: 600 !important;
-    font-size: 13px !important;
     letter-spacing: 0.02em !important;
     color: var(--muted) !important;
     fill: var(--muted) !important;
