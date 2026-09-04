@@ -2,6 +2,13 @@
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
 
+## 2026-09-04
+
+* **Auditoria e refinamento da regra de proibição de ASCII art**:
+  - Auditoria realizada na diretriz de diagramas e ASCII art em `AGENTS.md` e consolidação em `.obsidian/vault_rules.md`.
+  - Esclarecida a fronteira entre diagramas estruturais/conceituais (onde Mermaid nativo e tabelas Markdown são estritamente obrigatórios) e árvores de diretórios/arquivos de projeto (`tree`), autorizadas exclusivamente em blocos de código (`text` ou `bash`).
+  - Alinhamento pleno com a regra de *sentence case* editorial (`Proibição de diagramas em ASCII art`).
+
 ## 2026-09-02
 
 * **Revisão funcional do vault e harmonização de regras**:
