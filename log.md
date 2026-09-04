@@ -4,6 +4,11 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ## 2026-09-04
 
+* **Harmonização de regras e aplicação de sentence case editorial**:
+  - Harmonização normativa entre `AGENTS.md` (regra 3), `.obsidian/vault_rules.md` (regras 1 e 2) e `.agents/rules/artigos.md` (regra 4), estabelecendo o sentence case editorial como padrão obrigatório para toda redação gerada no vault (títulos H1 a H6, rótulos em negrito antes de dois-pontos, microtítulos, itens de lista, tabelas e subgraphs Mermaid).
+  - Preservação estrita das exceções legítimas: nomes próprios, marcas e produtos (`GitHub`, `Azure App Service`, `Visual Studio`), siglas e acrônimos (`C#`, `SQL`, `UML`, `CRUD`, `SOLID`, `TAD`, `POO`), referências ABNT, termos de código e transcrições literais de reuniões.
+  - Correção editorial e remoção de Title Case em notas de reuniões de acompanhamento do projeto (`05`, `06`, `07` e resumo `00`), na Aula Inaugural e em artigos da disciplina de Programação Modular (`02`, `03`, `04`, `05`, `06`, `07`, `09` e `13`).
+  - Preservação integral dos destaques de estudo do usuário (`==texto==`) e remoção de emojis residuais.
 * **Auditoria e refinamento da regra de proibição de ASCII art**:
   - Auditoria realizada na diretriz de diagramas e ASCII art em `AGENTS.md` e consolidação em `.obsidian/vault_rules.md`.
   - Esclarecida a fronteira entre diagramas estruturais/conceituais (onde Mermaid nativo e tabelas Markdown são estritamente obrigatórios) e árvores de diretórios/arquivos de projeto (`tree`), autorizadas exclusivamente em blocos de código (`text` ou `bash`).
