@@ -9,9 +9,10 @@ Este arquivo registra o histórico de criações, modificações, edições e re
   - Formalizada a separação estrita de responsabilidades: Markdown define conteúdo e semântica; Mermaid define a representação gráfica; `js/mermaid.js` gerencia renderização, temas, classes semânticas, wrapper, toolbar e o botão `ampliar` com modal interativo (*fit*, zoom e pan).
   - Proibição absoluta de visualizações alternativas (SVG manual, conversão para imagens, screenshots, HTML customizado ou scripts na nota).
   - Instituído o critério obrigatório de aceite pré-commit (`renderiza → sem erro → ampliar aparece → explorador abre → fechar → abrir novamente`) e a regra de que qualquer falha de Mermaid (`Syntax error in text` ou diagrama quebrado) é regressão bloqueante.
-* **Auditoria completa de Mermaid no artigo `07. Modelo de entidades e relacionamentos estendido`**:
-  - Inspeção e validação de todos os 4 blocos Mermaid do artigo 07 (Diagrama 1: Banco e Agência com entidade fraca; Diagrama 2: Funcionário e Projeto com atributo `Função` no relacionamento; Diagrama 3: Relacionamento ternário de alocação de pessoal; Diagrama 4: Critério de decisão entre ternário e binários).
-  - Garantida a compatibilidade estrita da sintaxe com a engine Mermaid do app web, preservando a baseline funcional de `js/mermaid.js`.
+* **Revisão da sintaxe Mermaid no artigo `07. Modelo de entidades e relacionamentos estendido`**:
+  - Diagnóstico do erro léxico (`Syntax error in text`) no primeiro diagrama do artigo 07: remoção de formas instáveis (`[["..."]]` para entidade fraca e `[Total]` dentro de rótulo de aresta com colchetes) e adoção de sintaxe padrão e robusta com retângulo simples `Agencia["AGENCIA<br>(entidade fraca)"]`, preservando a semântica conceitual e os atributos.
+  - Revisão estática de sintaxe dos demais diagramas (Diagrama 2: Funcionário/Projeto com `Função`; Diagrama 3: Relacionamento ternário; Diagrama 4: Critério de decisão).
+  - Diferenciação expressa no log entre revisão estática de código e validação operacional em tempo de execução no leitor web.
 
 ## 2026-09-04
 
