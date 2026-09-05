@@ -2,6 +2,14 @@
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
 
+## 2026-09-05
+
+* **Formalização da compatibilidade obrigatória com o explorador Mermaid do app**:
+  - Atualização da Regra 9 em `AGENTS.md` e inclusão da Regra 10 em `.obsidian/vault_rules.md`, estabelecendo a compatibilidade mandatória de todo diagrama Mermaid com o pipeline do leitor web (`js/mermaid.js` e `script.js`).
+  - Formalizada a separação estrita de responsabilidades: Markdown define conteúdo e semântica; Mermaid define a representação gráfica; `js/mermaid.js` gerencia renderização, temas, classes semânticas, wrapper, toolbar e o botão `ampliar` com modal interativo (*fit*, zoom e pan).
+  - Proibição absoluta de visualizações alternativas (SVG manual, conversão para imagens, screenshots, HTML customizado ou scripts na nota).
+  - Definido o botão `ampliar` como comportamento padrão e universal para diagramas grandes ou pequenos, e estabelecido o protocolo de validação obrigatória pré-commit no leitor web.
+
 ## 2026-09-04
 
 * **Harmonização de regras e aplicação de sentence case editorial**:

@@ -93,6 +93,29 @@
  - **Proibição de diagramas em ASCII art:** Diagramas conceituais, pirâmides, caixas relacionais ou fluxos desenhados com caracteres de texto (`+---+`, `| |`, `----->`) são expressamente proibidos. Toda representação estrutural, arquitetural, relacional ou comportamental deve utilizar o tipo Mermaid nativo adequado ou tabelas nativas Markdown. Árvores de diretórios e arquivos de projeto (`tree`) são permitidas exclusivamente dentro de blocos de código (`text` ou `bash`).
  - **Anotação de cardinalidades e papéis sobre as linhas:** Em fluxogramas e modelos conceituais, especificações de cardinalidade `(min, max)` e papéis devem ser posicionados sobre as linhas de conexão (`---|"(min, max)"|`).
  - **Sintaxe padronizada e quebra suave de linhas:** Rótulos em `flowchart` devem ser delimitados por aspas duplas `Node["Texto<br>Conciso"]` para evitar quebras por pontuação.
+ - **Compatibilidade obrigatória com o explorador Mermaid do app:**
+   - Todo diagrama Mermaid criado ou editado no vault deve utilizar o pipeline Mermaid padrão do leitor web (`js/mermaid.js` e `script.js`).
+   - O leitor web possui um pipeline automatizado que identifica os elementos `.mermaid`, renderiza o código, preserva o código-fonte em `data-mermaid-source`, envolve o diagrama em `.mermaid-wrapper`, insere automaticamente a toolbar com o botão `ampliar` e disponibiliza o explorador interativo em tela cheia com fit (*ajustar*), zoom e pan por arraste.
+   - Todo diagrama produzido para o vault deve permanecer 100% compatível com esse mecanismo.
+ - **Separação estrita de responsabilidades e proibição de visualizações alternativas:**
+   - Ao redigir notas Markdown, utilizar exclusivamente o bloco fenced padrão ` ```mermaid ` com sintaxe Mermaid válida, delegando a renderização e a interatividade integralmente ao app.
+   - É expressamente proibido: escrever SVG manualmente, converter Mermaid para imagens ou screenshots, criar wrappers HTML manuais para envolver o diagrama, criar botões ou toolbars manuais de ampliação na nota, criar `<div class="mermaid">` manual fora do fluxo Markdown, injetar scripts na nota ou reproduzir no corpo do artigo a lógica existente em `js/mermaid.js`.
+   - *Separação de papéis:*
+     - **Markdown:** conteúdo, semântica e texto do diagrama;
+     - **Mermaid:** representação gráfica e topologia visual;
+     - **`js/mermaid.js`:** renderização no DOM, temas claro/escuro, estilização semântica, wrapper, toolbar, botão `ampliar`, modal de exploração, ajuste de tela (*fit*), zoom e pan.
+ - **O botão `ampliar` como comportamento padrão e universal:**
+   - Todo diagrama Mermaid exibido no app deve receber automaticamente o botão `ampliar`. O autor da nota não precisa nem deve implementar essa funcionalidade individualmente.
+   - A disponibilidade do explorador é universal e consistente: mesmo diagramas pequenos ou atômicos devem permanecer compatíveis com o explorador (não cabe ao autor supor que um diagrama "não precisa" de ampliação; a decisão de ampliar é do usuário).
+   - Se um diagrama novo aparecer no app sem o botão `ampliar`, isso deve ser tratado como **regressão ou incompatibilidade de integração**, exigindo investigação e correção imediata.
+ - **Protocolo de validação obrigatória pré-commit:**
+   - A tarefa não está concluída apenas porque o bloco Mermaid funciona no Obsidian ou porque a sintaxe parece válida: deve-se validar no leitor web antes de qualquer commit.
+   - Verificar ativamente no app:
+     1. O diagrama renderiza sem erros no leitor;
+     2. O wrapper padrão (`.mermaid-wrapper`) e a toolbar são injetados;
+     3. O botão `ampliar` está visível e funcional;
+     4. O modal do explorador abre corretamente ao clicar em `ampliar`;
+     5. O diagrama renderizado no explorador corresponde fielmente ao diagrama incorporado na nota.
 
 ## Links e navegação sequencial
 
