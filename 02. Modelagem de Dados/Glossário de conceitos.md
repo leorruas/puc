@@ -15,6 +15,7 @@ relacionados:
   - "[[04. Níveis do sgbd e etapas do projeto de banco de dados]]"
   - "[[05. Modelagem de entidades e tipos de atributos]]"
   - "[[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]"
+  - "[[07. Modelo de entidades e relacionamentos estendido]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -27,17 +28,18 @@ relacionados:
 
 * [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
-* [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
-* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
-* [[#E|E]]: [[#Entidade|Entidade]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
-* [[#G|G]]: [[#Grau de Relacionamento|Grau de Relacionamento]]
+* [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
+* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
+* [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
+* [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
+* [[#H|H]]: [[#Herança de Atributos|Herança de Atributos]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
-* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
+* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
 * [[#P|P]]: [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
-* [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
-* [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]]
+* [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
+* [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
 * [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
@@ -148,9 +150,13 @@ relacionados:
 * **Definição formal:** (*Foreign Key*) Um atributo ou conjunto de atributos em uma tabela que faz referência direta à chave primária (PK) de outra tabela, estabelecendo e assegurando um vínculo relacional entre os registros.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Chave parcial (Discriminador)
+* **Definição formal:** Atributo de uma entidade fraca que, isoladamente, não garante unicidade global, mas permite distinguir de forma única as instâncias subordinadas à mesma entidade forte. Representado por sublinhado tracejado no DER de Chen.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Chave primária (PK)
 * **Definição formal:** (*Primary Key*) Um identificador único e irredutível escolhido para individualizar de forma inequívoca cada tupla dentro de uma tabela relacional (`NOT NULL` e `UNIQUE`).
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
 
 ### Conhecimento
 * **Definição formal:** A integração de informações contextualizadas com regras de negócio, experiência humana e heurísticas, capacitando a tomada de decisões estratégicas.
@@ -183,7 +189,11 @@ relacionados:
 
 ### Diagrama Entidade-Relacionamento (DER)
 * **Definição formal:** Notação gráfica e formal criada por Peter Chen em 1976 para representar o modelo conceitual de dados por meio de entidades, relacionamentos e atributos.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
+
+### Disjunção (Disjointness)
+* **Definição formal:** Restrição em especializações do MER Estendido que define se uma entidade genérica pode pertencer a apenas uma subclasse (`d` - disjunta) ou a várias simultaneamente (`o` - sobreposição).
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### DML (Data Manipulation Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para manipular e operar as instâncias de dados dentro das tabelas existentes (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).
@@ -206,6 +216,18 @@ relacionados:
 * **Definição formal:** Qualquer objeto, ser, conceito ou evento do mundo real com existência distinta e sobre o qual o sistema necessita armazenar dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
 
+### Entidade Fraca (Dependente)
+* **Definição formal:** Entidade que não possui atributos suficientes para formar uma chave primária própria e cuja identificação depende compulsoriamente da chave primária de uma entidade forte proprietária através de um relacionamento identificador. Representada por retângulo duplo no DER de Chen.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
+### Entidade Forte (Regular)
+* **Definição formal:** Entidade autossuficiente que possui chave primária própria e existe independentemente de qualquer outra entidade no modelo de dados. Representada por retângulo simples.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]]
+
+### Especialização
+* **Definição formal:** O processo de definir um conjunto de subclasses a partir de uma entidade genérica (superclasse), estabelecendo atributos e relacionamentos específicos para cada subgrupo.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Esquema (Schema / Intensão)
 * **Definição formal:** A descrição ou projeto estrutural global do banco de dados, incluindo definições de tabelas, colunas, tipos e restrições. É estável e raramente sofre alterações ao longo do tempo.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
@@ -226,9 +248,21 @@ relacionados:
 
 ## G
 
+### Generalização
+* **Definição formal:** O processo de abstração que unifica entidades com características em comum em uma superclasse genérica de mais alto nível.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Grau de Relacionamento
 * **Definição formal:** O número de tipos de entidades participantes em um determinado relacionamento (unário = 1, binário = 2, ternário = 3, N-ário = N).
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
+
+---
+
+## H
+
+### Herança de Atributos
+* **Definição formal:** Propriedade do MER Estendido pela qual as subclasses especializadas herdam automaticamente todos os atributos e relacionamentos definidos em sua superclasse genérica.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ---
 
@@ -270,6 +304,10 @@ relacionados:
 * **Definição formal:** As transformações automáticas executadas pelo SGBD para converter solicitações expressas em esquemas externos para comandos no esquema conceitual e, finalmente, em leituras/escritas físicas no esquema interno.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
+### MER Estendido (EER)
+* **Definição formal:** Extensão do modelo entidade-relacionamento tradicional que incorpora abstrações avançadas como subclasses/superclasses, especialização, generalização, herança de atributos, entidades fracas e uniões de categorias.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Mini-mundo (Universo de discurso)
 * **Definição formal:** A parte ou recorte específico do mundo real cujos dados e processos são de interesse direto para uma organização e que serão modelados e gerenciados pelo Sistema de Banco de Dados.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
@@ -280,7 +318,7 @@ relacionados:
 
 ### Modelo conceitual
 * **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Modelo físico
 * **Definição formal:** A especificação técnica de mais baixo nível, detalhando como os dados são implementados e alocados no hardware e no SGBD específico.
@@ -320,7 +358,7 @@ relacionados:
 
 ### Participação Total (Restrição de Existência)
 * **Definição formal:** Restrição estrutural que estabelece que toda instância de uma entidade depende obrigatoriamente de sua participação no relacionamento para existir (cardinalidade mínima = 1, representada por linha dupla no DER de Chen).
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Perda de atualização (Lost update)
 * **Definição formal:** Falha crítica de concorrência que ocorre quando duas transações leem o mesmo registro simultaneamente e ambas gravam alterações, fazendo com que a última sobrescreva a primeira.
@@ -359,15 +397,19 @@ relacionados:
 
 ### Relacionamento Binário
 * **Definição formal:** Relacionamento que conecta exatamente duas entidades distintas do modelo conceitual.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
+
+### Relacionamento Identificador
+* **Definição formal:** Relacionamento especial no qual uma entidade fraca se associa à sua entidade forte proprietária para obter a chave de identificação. Representado por um losango duplo no DER de Chen.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Relacionamento Muitos para Muitos (N:M)
 * **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias ocorrências da entidade B, e vice-versa.
 * **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 
 ### Relacionamento Ternário
-* **Definição formal:** Relacionamento que conecta simultaneamente três entidades distintas para completar a semântica da associação.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Definição formal:** Relacionamento que conecta simultaneamente três entidades distintas para completar a semântica da associação de forma atômica.
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Relacionamento Um para Muitos (1:N)
 * **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias da entidade B, mas cada ocorrência de B associa-se a no máximo uma de A.
@@ -388,6 +430,10 @@ relacionados:
 ### Sistema Gerenciador de Banco de Dados (SGBD)
 * **Definição formal:** (*DBMS*) O software de sistema responsável por gerenciar, controlar, proteger, consultar e manter bancos de dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+
+### Sobreposição (Overlap)
+* **Definição formal:** Restrição em especializações do MER Estendido que permite que uma mesma ocorrência da superclasse pertença a múltiplas subclasses simultaneamente (`o`).
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ---
 
@@ -423,5 +469,6 @@ relacionados:
 * **Voltar ao artigo 04:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 * **Voltar ao artigo 05:** [[05. Modelagem de entidades e tipos de atributos]]
 * **Voltar ao artigo 06:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Voltar ao artigo 07:** [[07. Modelo de entidades e relacionamentos estendido]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
