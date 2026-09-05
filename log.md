@@ -4,11 +4,14 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ## 2026-09-05
 
-* **Formalização da compatibilidade obrigatória com o explorador Mermaid do app**:
-  - Atualização da Regra 9 em `AGENTS.md` e inclusão da Regra 10 em `.obsidian/vault_rules.md`, estabelecendo a compatibilidade mandatória de todo diagrama Mermaid com o pipeline do leitor web (`js/mermaid.js` e `script.js`).
+* **Formalização da compatibilidade obrigatória com o explorador Mermaid e política de integridade**:
+  - Atualização da Regra 9 em `AGENTS.md` e da Regra 10 em `.obsidian/vault_rules.md`, estabelecendo a compatibilidade mandatória de todo diagrama Mermaid com o pipeline do leitor web (`js/mermaid.js` e `script.js`).
   - Formalizada a separação estrita de responsabilidades: Markdown define conteúdo e semântica; Mermaid define a representação gráfica; `js/mermaid.js` gerencia renderização, temas, classes semânticas, wrapper, toolbar e o botão `ampliar` com modal interativo (*fit*, zoom e pan).
   - Proibição absoluta de visualizações alternativas (SVG manual, conversão para imagens, screenshots, HTML customizado ou scripts na nota).
-  - Definido o botão `ampliar` como comportamento padrão e universal para diagramas grandes ou pequenos, e estabelecido o protocolo de validação obrigatória pré-commit no leitor web.
+  - Instituído o critério obrigatório de aceite pré-commit (`renderiza → sem erro → ampliar aparece → explorador abre → fechar → abrir novamente`) e a regra de que qualquer falha de Mermaid (`Syntax error in text` ou diagrama quebrado) é regressão bloqueante.
+* **Auditoria completa de Mermaid no artigo `07. Modelo de entidades e relacionamentos estendido`**:
+  - Inspeção e validação de todos os 4 blocos Mermaid do artigo 07 (Diagrama 1: Banco e Agência com entidade fraca; Diagrama 2: Funcionário e Projeto com atributo `Função` no relacionamento; Diagrama 3: Relacionamento ternário de alocação de pessoal; Diagrama 4: Critério de decisão entre ternário e binários).
+  - Garantida a compatibilidade estrita da sintaxe com a engine Mermaid do app web, preservando a baseline funcional de `js/mermaid.js`.
 
 ## 2026-09-04
 

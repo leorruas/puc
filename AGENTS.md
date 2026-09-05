@@ -108,14 +108,32 @@
    - Todo diagrama Mermaid exibido no app deve receber automaticamente o botão `ampliar`. O autor da nota não precisa nem deve implementar essa funcionalidade individualmente.
    - A disponibilidade do explorador é universal e consistente: mesmo diagramas pequenos ou atômicos devem permanecer compatíveis com o explorador (não cabe ao autor supor que um diagrama "não precisa" de ampliação; a decisão de ampliar é do usuário).
    - Se um diagrama novo aparecer no app sem o botão `ampliar`, isso deve ser tratado como **regressão ou incompatibilidade de integração**, exigindo investigação e correção imediata.
- - **Protocolo de validação obrigatória pré-commit:**
-   - A tarefa não está concluída apenas porque o bloco Mermaid funciona no Obsidian ou porque a sintaxe parece válida: deve-se validar no leitor web antes de qualquer commit.
-   - Verificar ativamente no app:
-     1. O diagrama renderiza sem erros no leitor;
-     2. O wrapper padrão (`.mermaid-wrapper`) e a toolbar são injetados;
-     3. O botão `ampliar` está visível e funcional;
-     4. O modal do explorador abre corretamente ao clicar em `ampliar`;
-     5. O diagrama renderizado no explorador corresponde fielmente ao diagrama incorporado na nota.
+ - **Protocolo de validação obrigatória e critério de aceite pré-commit:**
+   - **Integridade obrigatória de Mermaid:** Um bloco Mermaid não é considerado concluído apenas porque foi escrito em Markdown. Todo Mermaid criado ou modificado deve ser efetivamente renderizado e validado antes do commit. É terminantemente proibido concluir uma alteração deixando no leitor web:
+     - `Syntax error in text`;
+     - Erro de parsing Mermaid;
+     - Diagrama parcialmente renderizado;
+     - Bloco Mermaid apresentado como código por falha de renderização;
+     - SVG de erro gerado pelo Mermaid;
+     - Diagrama sem o wrapper/interatividade padrão.
+   - **Compatibilidade de versão:** A sintaxe deve ser compatível com a versão Mermaid efetivamente utilizada pelo app. Nunca presumir que uma sintaxe encontrada em documentação externa ou memória do modelo é aceita pela versão instalada.
+   - **Critério obrigatório de aceite para cada Mermaid novo ou alterado:**
+     1. Abrir a nota no leitor web;
+     2. Confirmar que o Mermaid renderiza sem erro;
+     3. Confirmar que nenhum `Syntax error in text` aparece;
+     4. Confirmar que labels, arestas, cardinalidades e relações esperadas estão presentes;
+     5. Confirmar que o botão `ampliar` aparece;
+     6. Abrir `ampliar`;
+     7. Confirmar que o explorador renderiza o mesmo diagrama;
+     8. Testar fechar e abrir novamente.
+     *Somente após cumprir todos esses passos considerar o Mermaid válido.*
+   - **Falha de Mermaid é regressão bloqueante:** Se um Mermaid novo ou modificado produzir erro de sintaxe, NÃO fazer commit da alteração como concluída. Corrigir primeiro a sintaxe. Não remover o diagrama simplesmente para fazer o erro desaparecer quando ele possuir função didática relevante. Não substituir automaticamente Mermaid por ASCII art, imagem ou HTML.
+   - **Separar erro de conteúdo de erro do app:**
+     - Se o código Mermaid for sintaticamente inválido, corrigir a nota Markdown;
+     - Se o código for válido mas o pipeline não o renderizar, investigar `js/mermaid.js` (apenas com autorização prévia e comprovação);
+     - Se renderizar mas não receber `ampliar`, tratar como regressão de integração;
+     - Não modificar simultaneamente conteúdo e infraestrutura sem primeiro identificar qual camada causou o problema.
+   - **Regra de não regressão:** Qualquer tarefa que altere Mermaid deve terminar com o ciclo completo de verificação: `renderiza → ampliar aparece → explorador abre → fechar → abrir novamente`. Falha em qualquer etapa significa que a tarefa ainda não está concluída.
 
 ## Links e navegação sequencial
 
