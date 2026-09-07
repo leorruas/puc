@@ -2,6 +2,13 @@
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
 
+## 2026-09-07
+
+* **Gatilho obrigatório para o mapa de aprendizagem do semestre**:
+  - Incluída no `AGENTS.md` a Regra 8.1, exigindo a revisão do impacto transversal de toda nota criada ou editada antes do commit.
+  - Quando houver mudança de progresso, evidência de domínio, lacuna, prioridade de revisão ou ponte interdisciplinar, o arquivo [[00. Geral/Mapa de aprendizagem do semestre.md|Mapa de aprendizagem do semestre]] deve ser atualizado no mesmo conjunto de alterações.
+  - A diretriz operacional correspondente foi adicionada a `.obsidian/vault_rules.md`, preservando o compromisso de registrar apenas estados sustentados por evidências reais do vault.
+
 ## 2026-09-05
 
 * **Formalização da compatibilidade obrigatória com o explorador Mermaid e política de integridade**:

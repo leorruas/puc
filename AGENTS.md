@@ -64,6 +64,12 @@
    1. Atualizar ou criar a nota correspondente em `00. Sintaxe Multilinguagem/` com o comparativo multilinguagem (C#, Java, Python, JS), explicação linha por linha e analogia intuitiva (Feynman).
    2. **Interlinkagem exaustiva bidirecional:** Incluir links internos explícitos na nota da disciplina apontando diretamente para as notas de `00. Sintaxe Multilinguagem/` relevantes, e vice-versa (adicionar os tópicos das disciplinas na seção de `relacionados` e no corpo do texto do guia de sintaxe).
 
+8.1 **Gatilho de atualização do mapa de aprendizagem do semestre:**
+ - O arquivo `00. Geral/Mapa de aprendizagem do semestre.md` é a fonte transversal de verdade sobre progresso, pontes interdisciplinares, prioridades de revisão e evidências reais de aprendizado.
+ - Ao criar ou editar uma nota, revisar obrigatoriamente se a alteração modifica o estado de estudo de uma matéria, introduz uma dependência ou ponte interdisciplinar relevante, altera uma prioridade de revisão, registra uma evidência prática de domínio ou expõe uma lacuna importante.
+ - Se houver impacto, atualizar o Mapa de aprendizagem do semestre no mesmo conjunto de alterações, incluindo apenas informação sustentada pelo conteúdo e pelas evidências do vault. É proibido elevar artificialmente o nível de domínio ou registrar progresso sem evidência.
+ - Se não houver impacto transversal, o mapa não precisa ser alterado; a revisão do gatilho continua obrigatória antes do commit.
+
 ## Diretrizes para diagramas Mermaid
 
 9. **Arquitetura visual e cognitiva para diagramas Mermaid:**
@@ -224,7 +230,6 @@
 21. **Distinção editorial entre conteúdo da PUC e complementação didática:**
  - As notas devem manter clareza editorial sobre a origem do conhecimento, permitindo identificar com sobriedade quando uma informação é proveniente da ementa e aulas da PUC Minas, quando é complementação técnica/aprofundamento externo ou quando se trata de metáfora pedagógica (Técnica de Feynman).
  - Essa distinção deve ser feita de forma elegante e limpa, utilizando o parágrafo de `> **Contexto:**` no início da nota, cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
-
 
 
 
