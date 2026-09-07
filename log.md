@@ -4,6 +4,14 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ## 2026-09-07
 
+* **Engenharia de Requisitos — autores e referências consolidados**:
+  - Adicionado ao resumo o quadro de autores, métodos e normas centrais, com ligações para as notas em que cada contribuição é estudada.
+  - Registradas no resumo as referências de Wiegers e Beatty e da ISO/IEC/IEEE 29148.
+  - Incluídas as referências que faltavam nas notas de alinhamento com negócios, conceito de requisito, critérios de qualidade e técnicas de elicitação.
+  - A alteração é bibliográfica e não muda evidências de aprendizagem; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
+
+## 2026-09-07
+
 * **Design de Interação — autores e referências consolidados**:
   - Adicionado ao resumo da disciplina o quadro de autores, grupos e normas que fundamentam os métodos estudados, com vínculo para as notas correspondentes.
   - Incluídas as referências formais de Alan Cooper e das normas ISO 9241-11/210 na nota de modelagem de usuário.
