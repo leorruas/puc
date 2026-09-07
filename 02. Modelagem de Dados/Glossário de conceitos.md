@@ -192,7 +192,8 @@ relacionados:
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Disjunção (Disjointness)
-* **Definição formal:** Restrição em especializações do MER Estendido que define se uma entidade genérica pode pertencer a apenas uma subclasse (`d` - disjunta) ou a várias simultaneamente (`o` - sobreposição).
+* **Definição formal:** Restrição de uma especialização do MER Estendido em que uma ocorrência do supertipo pode pertencer a no máximo um dos subtipos daquela especialização. É representada por `d`.
+* **Modelo mental:** Responde à pergunta: "pode estar em mais de um subtipo ao mesmo tempo?" Na disjunção, não.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### DML (Data Manipulation Language)
@@ -225,7 +226,8 @@ relacionados:
 * **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Especialização
-* **Definição formal:** O processo de definir um conjunto de subclasses a partir de uma entidade genérica (superclasse), estabelecendo atributos e relacionamentos específicos para cada subgrupo.
+* **Definição formal:** Processo que parte de um supertipo e define subtipos mais específicos, capazes de herdar atributos e relacionamentos gerais e acrescentar propriedades próprias.
+* **Modelo mental:** Movimento do geral para o específico: `VEÍCULO` → `CARRO` e `CAMINHÃO`.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Esquema (Schema / Intensão)
@@ -249,7 +251,8 @@ relacionados:
 ## G
 
 ### Generalização
-* **Definição formal:** O processo de abstração que unifica entidades com características em comum em uma superclasse genérica de mais alto nível.
+* **Definição formal:** Processo de abstração que identifica características comuns em tipos específicos e as reúne em um supertipo mais geral.
+* **Modelo mental:** Movimento do específico para o geral: `CARRO` + `CAMINHÃO` → `VEÍCULO`.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Grau de Relacionamento
@@ -260,8 +263,8 @@ relacionados:
 
 ## H
 
-### Herança de Atributos
-* **Definição formal:** Propriedade do MER Estendido pela qual as subclasses especializadas herdam automaticamente todos os atributos e relacionamentos definidos em sua superclasse genérica.
+### Herança de atributos e relacionamentos
+* **Definição formal:** Propriedade do MER Estendido pela qual uma ocorrência de um subtipo recebe os atributos e relacionamentos definidos no supertipo e pode acrescentar propriedades específicas.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ---
@@ -352,6 +355,11 @@ relacionados:
 
 ## P
 
+### Parcialidade em especializações
+* **Definição formal:** Restrição de completude em que podem existir ocorrências do supertipo que não pertencem a nenhum dos subtipos apresentados. Na notação estudada, é indicada por linha simples.
+* **Modelo mental:** Responde à pergunta: "toda ocorrência precisa entrar em alguma das categorias?" Na parcialidade, não.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Participação Parcial
 * **Definição formal:** Restrição estrutural que indica que nem todas as instâncias de uma entidade precisam participar de um relacionamento (cardinalidade mínima = 0, representada por linha simples no DER de Chen).
 * **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
@@ -431,8 +439,17 @@ relacionados:
 * **Definição formal:** (*DBMS*) O software de sistema responsável por gerenciar, controlar, proteger, consultar e manter bancos de dados.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
+### Subtipo
+* **Definição formal:** Tipo de entidade mais específico que representa um subconjunto das ocorrências de um supertipo, herdando sua estrutura geral e podendo acrescentar atributos e relacionamentos próprios.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
+### Supertipo
+* **Definição formal:** Tipo de entidade mais geral que concentra atributos e relacionamentos compartilhados por dois ou mais subtipos.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+
 ### Sobreposição (Overlap)
-* **Definição formal:** Restrição em especializações do MER Estendido que permite que uma mesma ocorrência da superclasse pertença a múltiplas subclasses simultaneamente (`o`).
+* **Definição formal:** Restrição de uma especialização do MER Estendido que permite que uma mesma ocorrência do supertipo pertença simultaneamente a vários subtipos. É representada por `o`.
+* **Modelo mental:** Responde à pergunta: "pode estar em mais de um subtipo ao mesmo tempo?" Na sobreposição, sim.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ---
