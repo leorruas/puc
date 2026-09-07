@@ -613,6 +613,19 @@ function renderizarNavegacaoGlossario(grupos) {
     artigoCorpo.prepend(navegacao);
 }
 
+function prepararTabelasResponsivas() {
+    if (!artigoCorpo) return;
+
+    artigoCorpo.querySelectorAll("table").forEach(tabela => {
+        if (tabela.closest(".table-scroll")) return;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "table-scroll";
+        tabela.parentNode.insertBefore(wrapper, tabela);
+        wrapper.appendChild(tabela);
+    });
+}
+
 function encontrarAlvoDaBuscaNoArtigo(termos) {
     if (!termos?.length || !artigoCorpo) return null;
 
@@ -704,6 +717,7 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca
     processarLinksObsidian();
     processarCalloutsObsidian();
     renderizarNavegacaoGlossario(indiceGlossario?.grupos);
+    prepararTabelasResponsivas();
 
     artigoCorpo.querySelectorAll('li input[type="checkbox"]').forEach(checkbox => {
         const li = checkbox.parentElement;
