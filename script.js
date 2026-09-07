@@ -1368,6 +1368,19 @@ function buscarArtigoPorCaminho(nomeOuCaminho) {
     const limpo = normalizar(nomeOuCaminho);
     const limpoApenasNome = limpo.split("/").pop().trim();
 
+    // Links relativos do Obsidian devem preferir o arquivo da matéria aberta.
+    // Isso evita que nomes repetidos, como "Glossário de conceitos", apontem
+    // para a primeira disciplina encontrada no vault.
+    const artigoDaMateriaAtual = artigoAtual?.categoria
+        ? todosOsArtigos.find(a => {
+            const caminhoSemExtensao = normalizar(a.sourcePath || a.path);
+            const nomeArquivo = normalizar((a.sourcePath || a.path).split("/").pop());
+            return a.categoria === artigoAtual.categoria &&
+                (nomeArquivo === limpoApenasNome || caminhoSemExtensao === limpo);
+        })
+        : null;
+    if (artigoDaMateriaAtual) return artigoDaMateriaAtual;
+
     return todosOsArtigos.find(a => {
         const caminhoSemExtensao = normalizar(a.sourcePath || a.path);
         const nomeArquivo = normalizar((a.sourcePath || a.path).split("/").pop());
