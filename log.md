@@ -4,6 +4,14 @@ Este arquivo registra o histórico de criações, modificações, edições e re
 
 ## 2026-09-07
 
+* **Design de Interação — autores e referências consolidados**:
+  - Adicionado ao resumo da disciplina o quadro de autores, grupos e normas que fundamentam os métodos estudados, com vínculo para as notas correspondentes.
+  - Incluídas as referências formais de Alan Cooper e das normas ISO 9241-11/210 na nota de modelagem de usuário.
+  - Incluída a referência de Charles S. Peirce na nota de projeto de ícones, que usa sua classificação semiótica.
+  - A alteração é bibliográfica e não muda evidências de aprendizagem; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
+
+## 2026-09-07
+
 * **Gatilho obrigatório para o mapa de aprendizagem do semestre**:
   - Incluída no `AGENTS.md` a Regra 8.1, exigindo a revisão do impacto transversal de toda nota criada ou editada antes do commit.
   - Quando houver mudança de progresso, evidência de domínio, lacuna, prioridade de revisão ou ponte interdisciplinar, o arquivo [[00. Geral/Mapa de aprendizagem do semestre.md|Mapa de aprendizagem do semestre]] deve ser atualizado no mesmo conjunto de alterações.
