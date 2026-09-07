@@ -977,15 +977,17 @@ html body .artigo-corpo h6 {
 
 /* Tabelas */
 .artigo-corpo table {
-    display: block;
+    display: table;
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-collapse: collapse;
+    max-width: 100%;
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 24px 0;
     font-size: 0.9rem;
     border: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .artigo-corpo th {
@@ -995,7 +997,8 @@ html body .artigo-corpo h6 {
     background-color: var(--accent-blue-alpha-05);
     border-bottom: 2px solid var(--accent-blue);
     font-weight: 600;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .artigo-corpo td {
@@ -1003,6 +1006,7 @@ html body .artigo-corpo h6 {
     border-bottom: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
     color: var(--text);
     font-size: 0.92rem;
+    overflow-wrap: anywhere;
 }
 
 .artigo-corpo tr:hover td {
