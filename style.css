@@ -976,18 +976,27 @@ html body .artigo-corpo h6 {
 }
 
 /* Tabelas */
-.artigo-corpo table {
-    display: table;
+.artigo-corpo .table-scroll {
     width: 100%;
     max-width: 100%;
+    margin: 24px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+}
+
+.artigo-corpo table {
+    display: table;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
     table-layout: auto;
     border-collapse: separate;
     border-spacing: 0;
-    margin: 24px 0;
+    margin: 0;
     font-size: 0.9rem;
     border: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
     border-radius: 8px;
-    overflow: hidden;
 }
 
 .artigo-corpo th {
@@ -998,7 +1007,8 @@ html body .artigo-corpo h6 {
     border-bottom: 2px solid var(--accent-blue);
     font-weight: 600;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .artigo-corpo td {
@@ -1006,7 +1016,8 @@ html body .artigo-corpo h6 {
     border-bottom: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
     color: var(--text);
     font-size: 0.92rem;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .artigo-corpo tr:hover td {
@@ -1894,7 +1905,8 @@ header, main { max-width: 1240px; padding: 0 32px; box-sizing: border-box; }
     .artigo-corpo p { font-size: 1rem; line-height: 1.65; }
     .artigo-corpo h2 { margin-top: 28px; font-size: 1.32rem; }
     .artigo-corpo h3 { font-size: 1.12rem; }
-    .artigo-corpo table { margin: 20px 0; font-size: .82rem; }
+    .artigo-corpo .table-scroll { margin: 20px 0; }
+    .artigo-corpo table { font-size: .82rem; }
     .artigo-corpo th, .artigo-corpo td { padding: 9px 10px; }
     .artigo-corpo pre { margin: 16px 0; padding: 14px; overflow-x: auto; }
     .glossario-navegacao { margin-bottom: 26px; }
