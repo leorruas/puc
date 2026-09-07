@@ -32,15 +32,15 @@ relacionados:
 * [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
-* [[#H|H]]: [[#Herança de Atributos|Herança de Atributos]]
+* [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
 * [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
-* [[#P|P]]: [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
+* [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
-* [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
-* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Transação|Transação]]
+* [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
+* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -463,6 +463,11 @@ relacionados:
 ### Tipo de Entidade (Entity Type)
 * **Definição formal:** O esquema descritivo formal que define a estrutura e o conjunto de atributos comuns compartilhados por um grupo de entidades similares (análogo a uma Classe na POO).
 * **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+
+### Totalidade em especializações
+* **Definição formal:** Restrição de completude em que toda ocorrência do supertipo precisa pertencer a pelo menos um dos subtipos da especialização. Na notação estudada, é indicada por linha dupla.
+* **Modelo mental:** Responde à pergunta: "toda ocorrência precisa entrar em alguma das categorias?" Na totalidade, sim.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
 
 ### Transação
 * **Definição formal:** Uma unidade lógica de processamento que inclui uma ou mais operações de acesso ao banco de dados executadas sob as garantias ACID.
