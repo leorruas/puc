@@ -74,6 +74,8 @@ const arquivosFallback = [
     "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
     "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
     "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md",
+    "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md",
+    "02. Modelagem de Dados/09. Integridade referencial e chave estrangeira.md",
     "02. Modelagem de Dados/Glossário de conceitos.md",
     "02. Modelagem de Dados/Prompts de Estudo (LLM).md",
     "03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md",
