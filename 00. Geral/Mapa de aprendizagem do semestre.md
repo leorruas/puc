@@ -44,7 +44,7 @@ Abaixo está o panorama transversal das disciplinas com base na diferenciação 
 | ID | Disciplina | Módulo representativo | Cobertura no vault | Progresso da disciplina | Estado de aprendizagem | Evidências de aprendizagem |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `01` | **[[01. Programacao Modular/00. Programação modular - Resumo\|Programação Modular]]** | Unidades 1, 2 e 3 (Fundamentos, Polimorfismo, SOLID e GoF) | Extensa (24 artigos e catálogo TAD) | Concluída (Unidades 1 a 3) | **Compreendido** | Domínio do modelo mental, simuladores com correção taxonômica, exemplos compilados em C# e aplicação de invariantes. |
-| `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo\|Modelagem de Dados]]** | Módulos 1 e 2 (ANSI/SPARC, MER conceitual e cardinalidades) | Inicial (6 artigos) | Em andamento (Módulo 2) | **Em estudo** | Prática da técnica de leitura de cardinalidades e anotações de aula integradas; aguardando consolidação em exercícios práticos. |
+| `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo\|Modelagem de Dados]]** | Módulos 1 a 3 (ANSI/SPARC, MER conceitual, modelo relacional, chaves e mapeamento) | Extensa (10 artigos) | Em andamento (Módulo 3) | **Em estudo** | Anotações de aula integradas sobre cardinalidades, PK/FK, integridade e passagem do DER para relações; dúvidas atuais concentradas no mapeamento de atributos multivalorados e entidades fracas. |
 | `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo\|Manipulação de Dados SQL]]** | DDL, DML, consultas relacionais e junções | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
 | `04` | **[[04. Algoritmos e Estruturas de Dados/00. Algoritmos e Estruturas de Dados - Resumo\|Algoritmos e Estruturas de Dados]]** | Complexidade assintótica (Big O) e vetores | Básica (Arrays em C#) | Em andamento inicial | **Em estudo** | Testes atômicos com arrays em C# e compilação local; aguardando estruturas dinâmicas e análise de complexidade. |
 | `05` | **[[05. Desenvolvimento Web Back-End/00. Desenvolvimento Web Back-End - Resumo\|Desenvolvimento Web Back-End]]** | Arquitetura MVC, APIs REST e autenticação | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
@@ -132,7 +132,7 @@ flowchart LR
 Espaço reservado para documentar conceitos onde houve dúvida teórica, erro em simulador ou apontamento em reunião de orientação:
 
 ### Tópicos sob atenção ativa
-1. **Modelagem de dados:** Prática contínua da técnica de fixar um lado da relação e perguntar a cardinalidade máxima e mínima ao outro lado (evitar leitura invertida no DER de Chen).
+1. **Modelagem de dados:** Consolidar duas operações que exigem raciocínio diferente: leitura correta de cardinalidades no DER e transformação do DER em esquema relacional, especialmente a distinção entre atributo multivalorado e entidade fraca e a formação da PK composta da entidade fraca.
 2. **Engenharia de requisitos vs. código:** Garantir que os limites de `«include»` e `«extend»` definidos nos casos de uso estejam estritamente refletidos nas sub-rotinas e fluxos condicionais da implementação do projeto integrador.
 3. **Padrões de projeto GoF:** Revisitar periodicamente a matriz bidimensional (escopo de classe vs. objeto cruzado com propósito criacional, estrutural e comportamental) antes dos simuladores globais.
 
