@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css?v=mermaid-style-v6">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
@@ -101,7 +100,44 @@
         </div>
     </main>
 
-    <script type="module" src="script.js?v=mermaid-style-v6"></script>
+    <script>
+        (function () {
+            function suportaLeitorModerno() {
+                try {
+                    new Function("var item = { filho: { valor: 1 } }; return item?.filho?.valor;");
+                    new Function("return /(?<!a)b/.test('b');");
+                    return true;
+                } catch (erro) {
+                    return false;
+                }
+            }
+
+            function carregarScript(src, tipo, aoCarregar) {
+                var script = document.createElement("script");
+                script.src = src;
+                if (tipo) script.type = tipo;
+                if (aoCarregar) script.onload = aoCarregar;
+                document.body.appendChild(script);
+            }
+
+            function carregarCss(href) {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = href;
+                document.head.appendChild(link);
+            }
+
+            if (suportaLeitorModerno()) {
+                carregarScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", null, function () {
+                    carregarScript("script.js?v=ipad-mini-v1", "module");
+                });
+            } else {
+                document.documentElement.className += " legacy-ios12";
+                carregarCss("compat-ios12.css?v=ipad-mini-v1");
+                carregarScript("legacy-ios12.js?v=ipad-mini-v1");
+            }
+        }());
+    </script>
 </body>
 
 </html>

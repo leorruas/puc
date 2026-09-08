@@ -2,6 +2,15 @@
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
 
+## 2026-09-08
+
+* **Compatibilidade progressiva para iPad mini e Safari/iOS 12**:
+  - O leitor moderno agora é carregado de forma condicional; navegadores atuais mantêm o mesmo `script.js` modular e o Mermaid interativo.
+  - Adicionado um leitor de compatibilidade para navegadores sem módulos, como o Safari do iPad mini 2: catálogo, busca por título/matéria, navegação entre notas, tema claro/escuro e leitura de Markdown continuam disponíveis.
+  - A folha de compatibilidade foi isolada em `compat-ios12.css`; usa exclusivamente os tokens azul, fundo, texto e contraste já definidos no PUC, sem importar a identidade cromática do repositório Programação.
+  - Para esse navegador legado, blocos Mermaid mostram o código-fonte de forma rolável e explícita, em vez de produzir um diagrama quebrado.
+  - A alteração é de acesso e apresentação, sem impacto em evidências de aprendizagem; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
+
 ## 2026-09-07
 
 * **Engenharia de Requisitos — autores e referências consolidados**:
