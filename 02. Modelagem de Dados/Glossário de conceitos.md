@@ -16,6 +16,8 @@ relacionados:
   - "[[05. Modelagem de entidades e tipos de atributos]]"
   - "[[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]"
   - "[[07. Modelo de entidades e relacionamentos estendido]]"
+  - "[[08. Conceitos do modelo relacional e chave primária]]"
+  - "[[09. Integridade referencial e chave estrangeira]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -26,14 +28,14 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Ações referenciais|Ações referenciais]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
 * [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
 * [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
 * [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
-* [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade referencial|Integridade referencial]]
+* [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
 * [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
@@ -51,6 +53,11 @@ relacionados:
 * **Definição formal:** O processo de ocultar detalhes operacionais e físicos de baixo nível sobre como os dados são armazenados na máquina, expondo apenas as estruturas essenciais e a semântica necessária para usuários e aplicações.
 * **Modelo mental / Feynman:** É como o painel de um automóvel. O motorista só precisa enxergar o velocímetro, o marcador de combustível e os pedais, sem precisar saber a quantidade de injeção eletrônica de combustível ocorrendo no motor a cada segundo.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+
+### Ações referenciais
+* **Definição formal:** Comportamentos definidos para preservar a integridade referencial quando uma chave referenciada é alterada ou excluída, como `RESTRICT`/`NO ACTION`, `CASCADE`, `SET NULL` e `SET DEFAULT`.
+* **Modelo mental:** Respondem à pergunta: "o que deve acontecer com as tuplas filhas se a chave pai mudar ou desaparecer?"
+* **Artigo correspondente:** [[09. Integridade referencial e chave estrangeira]]
 
 ### Administrador de Banco de Dados (DBA)
 * **Definição formal:** (*Database Administrator*) O profissional responsável pela infraestrutura técnica, desempenho físico (*tuning*), segurança operacional, políticas de backup/restore, alta disponibilidade e integridade física do SGBD e servidores.
@@ -147,8 +154,9 @@ relacionados:
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
 
 ### Chave estrangeira (FK)
-* **Definição formal:** (*Foreign Key*) Um atributo ou conjunto de atributos em uma tabela que faz referência direta à chave primária (PK) de outra tabela, estabelecendo e assegurando um vínculo relacional entre os registros.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
+* **Definição formal:** (*Foreign Key*) Atributo ou conjunto de atributos de uma relação cujos valores referenciam uma chave identificadora de outra relação (ou da própria relação). Quando não nula, a FK deve corresponder a um valor válido da chave referenciada.
+* **Modelo mental:** A PK identifica "quem é" a tupla na relação de origem; a FK leva esse identificador para outra relação para dizer "a quem esta tupla se refere".
+* **Artigo correspondente:** [[09. Integridade referencial e chave estrangeira]]
 
 ### Chave parcial (Discriminador)
 * **Definição formal:** Atributo de uma entidade fraca que, isoladamente, não garante unicidade global, mas permite distinguir de forma única as instâncias subordinadas à mesma entidade forte. Representado por sublinhado tracejado no DER de Chen.
@@ -287,9 +295,22 @@ relacionados:
 * **Definição formal:** O conjunto real e factual de dados armazenados no banco de dados em um momento específico no tempo. Muda dinamicamente a cada transação DML.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
+### Integridade de chave
+* **Definição formal:** Restrição que exige unicidade dos valores de uma chave candidata; duas tuplas distintas não podem compartilhar a mesma combinação de valores de uma chave.
+* **Artigo correspondente:** [[08. Conceitos do modelo relacional e chave primária]], [[09. Integridade referencial e chave estrangeira]]
+
+### Integridade de domínio
+* **Definição formal:** Restrição que exige que cada valor armazenado pertença ao domínio admitido pelo atributo, incluindo tipo, formato, faixa e demais regras lógicas aplicáveis.
+* **Artigo correspondente:** [[08. Conceitos do modelo relacional e chave primária]], [[09. Integridade referencial e chave estrangeira]]
+
+### Integridade de entidade
+* **Definição formal:** Regra segundo a qual nenhum componente da chave primária de uma relação pode ser nulo, pois cada tupla precisa possuir identidade definida.
+* **Artigo correspondente:** [[09. Integridade referencial e chave estrangeira]]
+
 ### Integridade referencial
-* **Definição formal:** Regra fundamental de consistência relacional que estabelece que o valor de uma chave estrangeira em uma tabela deve corresponder a uma chave primária válida existente na tabela pai.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
+* **Definição formal:** Regra de consistência segundo a qual cada valor não nulo de uma chave estrangeira deve corresponder a um valor existente da chave referenciada.
+* **Modelo mental:** Uma referência não pode apontar para uma tupla que não existe.
+* **Artigo correspondente:** [[09. Integridade referencial e chave estrangeira]]
 
 ---
 
@@ -492,5 +513,7 @@ relacionados:
 * **Voltar ao artigo 05:** [[05. Modelagem de entidades e tipos de atributos]]
 * **Voltar ao artigo 06:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
 * **Voltar ao artigo 07:** [[07. Modelo de entidades e relacionamentos estendido]]
+* **Voltar ao artigo 08:** [[08. Conceitos do modelo relacional e chave primária]]
+* **Voltar ao artigo 09:** [[09. Integridade referencial e chave estrangeira]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
