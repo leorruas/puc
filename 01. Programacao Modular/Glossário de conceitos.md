@@ -68,7 +68,7 @@ relacionados:
 | **07** | [[#7. Qualidade de Código (Code Quality)\|Qualidade de código]] | Atendimento a fatores externos e internos. | A **longevidade do software** | ISO/IEC 25010, Código limpo |
 | **08** | [[#8. Declaração em Computação (Declaration / Declarar)\|Declaração]] | Avisar ao compilador a existência e tipo de um item. | A **reserva de identidade** | `double saldo;`, `void Sacar();` |
 | **09** | [[#9. Assinatura de Método (Method Signature)\|Assinatura]] | Nome do método + lista de tipos dos parâmetros. | O **identificador único** | `Sacar(double)` |
-| **10** | [[#10. Semântica de Referência (Reference Semantics)\|Semântica de referência]] | Variável armazena endereço de memória do *Heap*. | O **controle remoto** | `Conta c2 = c1;` |
+| **10** | [[#10. Semântica de Referência (Reference Semantics)\|Semântica de referência]] | Variável contém referência gerenciada ao objeto. | O **controle remoto** | `Conta c2 = c1;` |
 | **11** | [[#11. Coletor de Lixo (Garbage Collector - GC)\|Coletor de lixo (*GC*)]] | Limpeza automática de instâncias órfãs da RAM. | A **reciclagem de memória** | Motor de GC do .NET / CLR |
 | **12** | [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)\|Parâmetro vs. argumento]] | Parâmetro é o molde na assinatura; argumento é o valor enviado. | O **molde vs. dado real** | `(double v)` vs `(150.00)` |
 | **13** | [[#13. GOTO (Salto Incondicional)\|`GOTO`]] | Salto arbitrário descontinuado na estruturação. | O **fluxo desordenado (evitar)** | `goto Rotulo;` |
@@ -234,11 +234,11 @@ Na Engenharia de Software, a **Assinatura de um Método** é a impressão digita
 
 ## 10. Semântica de Referência (*Reference Semantics*)
 
-A **Semântica de Referência** é o modelo de gerenciamento de dados em linguagens como C# e Java no qual uma variável associada a uma classe **não contém os dados do objeto em si**, mas sim um **ponteiro / endereço de memória** que aponta para o local no *Heap* onde o objeto físico foi construído.
+A **Semântica de Referência** é o modelo de gerenciamento de dados em linguagens como C# e Java no qual uma variável associada a uma classe **não contém os dados do objeto em si**, mas sim um **referência gerenciada** ao objeto. A identidade não depende de endereço fixo: o GC pode mover o objeto e atualizar as referências.
 
 * **Analogia de Feynman:** O **controle remoto da televisão**. Se você der o seu controle remoto extra para um amigo (`Conta c2 = c1;`), vocês agora têm dois controles diferentes, mas **ambos controlam a exata mesma televisão na sala**. Se o seu amigo mudar de canal (`c2.Depositar(100)`), você imediatamente verá o novo saldo na sua tela (`c1.ObterSaldo()`).
 * **Diferença para Tipos de Valor (*Value Semantics*):** Tipos primitivos (`int a = 10; int b = a;`) criam uma **cópia independente** do valor (como fotocopiar uma folha de papel: rabiscar a cópia não altera o original).
-* **Conexão com Construtores:** O operador `new` aciona o construtor, constrói a televisão na memória *Heap* e devolve a frequência/endereço de rádio para ser gravada na variável de referência.
+* **Conexão com Construtores:** O operador `new` aciona o construtor, constrói a televisão na memória *Heap* e produz a referência gerenciada atribuída à variável.
 
 ---
 
@@ -246,7 +246,7 @@ A **Semântica de Referência** é o modelo de gerenciamento de dados em linguag
 
 O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente de execução (*runtime* do .NET CLR ou Java JVM) responsável pelo **gerenciamento automático de memória**. Ele monitora a memória *Heap*, identifica objetos que não podem mais ser alcançados por nenhuma variável de referência do programa e desaloca esse espaço automaticamente.
 
-* **Analogia de Feynman:** O **caminhão de reciclagem da cidade**. Enquanto você estiver usando um móvel na sua casa (tiver uma referência na *Stack* apontando para ele), ele permanece seguro. No momento em que você corta a conexão (`conta = null;` ou a variável local sai de escopo), aquele móvel se torna "lixo órfão". O caminhão de reciclagem passa periodicamente em segundo plano, recolhe o móvel e libera o espaço para novas compras (`new`), impedindo o entupimento da casa (**vazamentos de memória / *Memory Leaks***).
+* **Analogia de Feynman:** O **caminhão de reciclagem da cidade**. Enquanto você estiver usando um móvel na sua casa (tiver uma referência na *Stack* apontando para ele), ele permanece seguro. Cortar uma conexão (`conta = null;`) só torna o objeto coletável se nenhum outro caminho das raízes do GC o alcançar. O caminhão de reciclagem passa periodicamente em segundo plano, recolhe o móvel e libera o espaço para novas compras (`new`), permitindo reutilizar o espaço. Referências desnecessariamente retidas ainda podem causar vazamentos de memória.
 * **Ciclo de Vida Complementar:** O **Construtor** é a maternidade que dá a vida ao objeto; o **Garbage Collector** é o serviço de limpeza que encerra o ciclo de vida e recupera a memória RAM.
 
 ---
@@ -288,13 +288,13 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 Um **membro estático (*Static Member*)** é definido formalmente como um componente de uma classe com **tempo de vida global** e **escopo local (delimitado à classe)**. São atributos ou métodos que são comuns a todos os objetos de uma classe. Quando declaramos um atributo ou método estático, ele passa a ser um **membro de classe**, sendo compartilhado por todos os objetos daquela classe.
 
-* **Definição técnica:** Ao contrário dos membros de instância (que são duplicados a cada chamada de `new`), existe **uma única cópia do membro estático para todo o ciclo de vida da aplicação**. Ele é alocado na área de metadados da classe quando o tipo é carregado pela primeira vez pelo *runtime* (.NET CLR ou JVM). Ele permanece vivo durante toda a execução (*tempo de vida global*), mas sob as regras de encapsulamento da classe (*escopo local*).
+* **Definição técnica:** campos de instância têm armazenamento por objeto; o código dos métodos não é copiado por instância. Um campo estático tem armazenamento associado ao tipo carregado, não dentro dos metadados descritivos. Tipos genéricos fechados e contextos de carregamento podem ter estado estático separado.
 * **As 4 formas de membros estáticos:**
   1. **Atributo estático (*static field*):** Variável única compartilhada por todos os objetos (ex.: `private static int _contador;`).
-  2. **Método estático (*static method*):** Operação pura ou utilitária que não depende de estado de instância e não possui acesso ao ponteiro `this` (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
+  2. **Método estático (*static method*):** Operação sem `this`, que pode ter efeitos e acessar instâncias por referências explícitas (ex.: `Math.Sqrt(x)` ou `Conta.ObterTotalContas()`).
   3. **Propriedade estática (*static property*):** Getter/setter de escopo de classe com proteção de regras globais (ex.: `Conta.TaxaGlobal`).
   4. **Construtor estático (*static constructor*):** Bloco executado uma única vez automaticamente antes do primeiro acesso à classe para preparar dados globais.
-* **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (membro de instância). No entanto, o ar-condicionado é único para a sala inteira (membro estático). Se o professor alterar a temperatura para 19°C, **todos os alunos na sala sentem a mudança simultaneamente**, porque o recurso é compartilhado no nível da sala.
+* **Analogia de Feynman:** O **ar-condicionado ou a iluminação da sala de aula**. Cada aluno sentado na carteira possui seu próprio caderno individual (membro de instância). No entanto, o ar-condicionado é único para a sala inteira (membro estático). Se o professor alterar a temperatura para 19°C, **o ajuste vale para a sala inteira; em programas concorrentes, sincronização é uma questão adicional**, porque o recurso é compartilhado no nível da sala.
 * **Conexão direta com compartilhamento de estado ([[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)|Artigo 09]]):** Usados para geradores sequenciais de identificadores (IDs), contadores de objetos ativos, constantes matemáticas (`Math.PI`) e taxas de configuração global.
 
 ---
@@ -349,9 +349,9 @@ O padrão **`IDisposable`** é a interface oficial do ecossistema .NET para **li
 
 Um **Buffer** é uma área temporária de memória RAM utilizada para reter e agrupar dados durante operações de entrada e saída (E/S - *Input/Output*), evitando o custo excessivo de acessar dispositivos físicos lentos (como disco rígido ou rede) a cada caractere individual.
 
-* **O Comando `Flush`:** É a operação de **esvaziamento forçado**, que pega todos os bytes acumulados no buffer da memória RAM e os grava imediatamente no destino físico permanente (o HD ou o socket de rede).
+* **O Comando `Flush`:** É a operação de **esvaziamento forçado**, que pega todos os bytes acumulados no buffer da memória RAM e os encaminha ao destino conforme o contrato da API. Ainda pode haver buffers do sistema operacional; socket não é armazenamento permanente.
 * **Analogia de Feynman:** A **caixa de correspondências da recepção**. As cartas vão sendo guardadas na caixa. Se você fechar a empresa sem que o carteiro faça o recolhimento (*Flush*), as cartas ficam retidas ou são perdidas.
-* **Conexão com Destrutores e `Dispose` ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):** Métodos de encerramento (`Dispose`, `Close` ou destrutores) executam o `Flush()` obrigatório antes de desalocar a memória, garantindo que nenhum arquivo salvo fique pela metade ou corrompido.
+* **Conexão com Destrutores e `Dispose` ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):** O descarte de um escritor como `StreamWriter` descarrega seu buffer; finalizadores não garantem esse trabalho. `Flush` não é, por si só, garantia universal de persistência física nem desaloca o objeto.
 
 ---
 
@@ -361,7 +361,7 @@ Uma **`Thread`** (ou Linha de Execução) é a menor unidade de processamento qu
 
 * **Analogia de Feynman:** As **bocas do fogão de um restaurante**. O restaurante inteiro é o processo. Cada boca acesa cozinhando um prato diferente ao mesmo tempo é uma *thread*. O cozinheiro pode cortar legumes em uma boca enquanto a sopa ferve em outra, tudo dentro da mesma cozinha (mesma memória).
 * **Conexão com Garbage Collector e Destrutores ([[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)|Artigo 10]]):**
-  - O Garbage Collector roda em **threads de segundo plano (*background threads*)** para inspecionar a memória sem congelar a interface do usuário.
+  - O Garbage Collector roda em **threads de segundo plano (*background threads*)** em certos modos, mas fases da coleta ainda suspendem threads da aplicação.
   - O .NET mantém uma *thread* separada chamada **`Finalizer Thread`** encarregada exclusivamente de disparar os destrutores (`~Classe()`) dos objetos órfãos.
 
 ---
@@ -1114,3 +1114,14 @@ Para fixar a diferença de forma intuitiva:
 * **Ver Introdução e Böhm-Jacopini:** [[01. Introdução à programação modular]]
 * **Ver Tipos Abstratos de Dados:** [[03. Tipos abstratos de dados]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
+
+## Complementos de precisão dos artigos 07 a 13
+
+* **Raiz do GC:** referência considerada pelo runtime como ponto de partida para encontrar objetos alcançáveis, incluindo campos estáticos e referências vivas nas threads. Referências cíclicas sem caminho a uma raiz não impedem coleta.
+* **Atomicidade:** uma operação é observada como indivisível no âmbito de seu contrato. `Interlocked.Increment` incrementa um inteiro atomicamente; um `++` comum não oferece essa garantia entre threads.
+* **Visibilidade entre threads:** leituras e escritas precisam respeitar mecanismos de sincronização. `Volatile.Read` fornece uma leitura com as garantias de ordenação previstas pela API, mas não transforma uma sequência de operações em transação.
+* **Imutabilidade profunda:** além de impedir reatribuir uma propriedade ou campo, exige impedir alterações no estado mutável alcançável por ele. `readonly`, `get` e `init` não fornecem essa garantia sozinhos.
+* **`SafeHandle`:** abstração .NET para encapsular handles não gerenciados com descarte e salvaguarda de finalização. Ajuda a evitar finalizadores próprios em classes que apenas utilizam recursos encapsulados.
+* **Estouro verificado (`checked`):** em operações inteiras abrangidas pelo contexto, um resultado fora do intervalo lança `OverflowException`, em vez de continuar com um valor que deu a volta no intervalo.
+
+Essas distinções aprofundam [[07. Atributos e métodos (classes, objetos e definição de membros)]], [[09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento)]], [[10. Destrutores e finalizadores (desalocação de memória e liberação de recursos)]] e [[13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes)]].
