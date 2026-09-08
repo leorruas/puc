@@ -18,6 +18,7 @@ relacionados:
   - "[[07. Modelo de entidades e relacionamentos estendido]]"
   - "[[08. Conceitos do modelo relacional e chave primária]]"
   - "[[09. Integridade referencial e chave estrangeira]]"
+  - "[[10. Mapeamento de entidades e atributos]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -37,7 +38,7 @@ relacionados:
 * [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
 * [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
-* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
+* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mapeamento relacional|Mapeamento relacional]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
 * [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
@@ -99,7 +100,7 @@ relacionados:
 
 ### Atributo Composto
 * **Definição formal:** Atributo formado pela união hierárquica de múltiplos atributos menores e mais simples (ex.: endereço formado por logradouro, número, bairro e CEP).
-* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[10. Mapeamento de entidades e atributos]]
 
 ### Atributo Derivado (Calculado)
 * **Definição formal:** Atributo cujo valor não é persistido fisicamente no disco, mas calculado dinamicamente pelo sistema a partir de atributos armazenados ou funções de sistema (ex.: idade calculada a partir da data de nascimento).
@@ -110,8 +111,8 @@ relacionados:
 * **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
 
 ### Atributo Multivalorado
-* **Definição formal:** Atributo que pode assumir múltiplos valores para a mesma entidade (ex.: múltiplos telefones de contato de um cliente).
-* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
+* **Definição formal:** Atributo que pode assumir múltiplos valores para a mesma entidade (ex.: múltiplos telefones de contato de um cliente). No mapeamento relacional, normalmente origina uma relação própria ligada à entidade proprietária por chave estrangeira.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[10. Mapeamento de entidades e atributos]]
 
 ### Atributo Nulo (Opcional)
 * **Definição formal:** Atributo que aceita a ausência de valor (`NULL`) quando a informação for desconhecida, inexistente ou não aplicável para determinada instância.
@@ -159,8 +160,8 @@ relacionados:
 * **Artigo correspondente:** [[09. Integridade referencial e chave estrangeira]]
 
 ### Chave parcial (Discriminador)
-* **Definição formal:** Atributo de uma entidade fraca que, isoladamente, não garante unicidade global, mas permite distinguir de forma única as instâncias subordinadas à mesma entidade forte. Representado por sublinhado tracejado no DER de Chen.
-* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+* **Definição formal:** Atributo de uma entidade fraca que, isoladamente, não garante unicidade global, mas permite distinguir de forma única as instâncias subordinadas à mesma entidade forte. Representado por sublinhado tracejado no DER de Chen. No mapeamento relacional, combina-se com a PK da entidade proprietária para formar a PK da relação fraca.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]], [[10. Mapeamento de entidades e atributos]]
 
 ### Chave primária (PK)
 * **Definição formal:** (*Primary Key*) Um identificador único e irredutível escolhido para individualizar de forma inequívoca cada tupla dentro de uma tabela relacional (`NOT NULL` e `UNIQUE`).
@@ -226,12 +227,12 @@ relacionados:
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
 
 ### Entidade Fraca (Dependente)
-* **Definição formal:** Entidade que não possui atributos suficientes para formar uma chave primária própria e cuja identificação depende compulsoriamente da chave primária de uma entidade forte proprietária através de um relacionamento identificador. Representada por retângulo duplo no DER de Chen.
-* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
+* **Definição formal:** Entidade que não possui atributos suficientes para formar uma chave primária completa e independente e cuja identificação depende da chave primária de uma entidade forte proprietária através de um relacionamento identificador. Representada por retângulo duplo no DER de Chen. No modelo relacional, a PK da proprietária entra como FK e participa da PK composta da relação fraca.
+* **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]], [[10. Mapeamento de entidades e atributos]]
 
 ### Entidade Forte (Regular)
-* **Definição formal:** Entidade autossuficiente que possui chave primária própria e existe independentemente de qualquer outra entidade no modelo de dados. Representada por retângulo simples.
-* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]]
+* **Definição formal:** Entidade cuja identificação pode ser estabelecida por uma chave própria, sem depender da chave de outra entidade para completar sua identidade. Representada por retângulo simples.
+* **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]], [[10. Mapeamento de entidades e atributos]]
 
 ### Especialização
 * **Definição formal:** Processo que parte de um supertipo e define subtipos mais específicos, capazes de herdar atributos e relacionamentos gerais e acrescentar propriedades próprias.
@@ -328,6 +329,11 @@ relacionados:
 * **Definição formal:** As transformações automáticas executadas pelo SGBD para converter solicitações expressas em esquemas externos para comandos no esquema conceitual e, finalmente, em leituras/escritas físicas no esquema interno.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
+### Mapeamento relacional
+* **Definição formal:** Conjunto de regras de projeto lógico que transforma elementos do MER/DER em relações, atributos, chaves primárias e chaves estrangeiras, preservando no modelo relacional a semântica definida no modelo conceitual.
+* **Modelo mental:** É a tradução entre duas linguagens de representação: do desenho conceitual do domínio para a estrutura formal de relações e chaves.
+* **Artigo correspondente:** [[10. Mapeamento de entidades e atributos]]
+
 ### MER Estendido (EER)
 * **Definição formal:** Extensão do modelo entidade-relacionamento tradicional que incorpora abstrações avançadas como subclasses/superclasses, especialização, generalização, herança de atributos, entidades fracas e uniões de categorias.
 * **Artigo correspondente:** [[07. Modelo de entidades e relacionamentos estendido]]
@@ -349,8 +355,8 @@ relacionados:
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
 ### Modelo lógico
-* **Definição formal:** A representação intermediária dos dados adaptada a um paradigma de banco de dados específico (geralmente o modelo relacional).
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+* **Definição formal:** A representação intermediária dos dados adaptada a um paradigma de banco de dados específico, como o modelo relacional, ainda antes das decisões próprias de um produto de SGBD.
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[10. Mapeamento de entidades e atributos]]
 
 ### Modelo relacional
 * **Definição formal:** Modelo formal de banco de dados introduzido por Edgar F. Codd em 1970, baseado na teoria matemática dos conjuntos, onde todos os dados são representados na forma de relações (tabelas).
@@ -404,9 +410,9 @@ relacionados:
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
 ### Projeto Lógico
-* **Definição formal:** A segunda etapa do projeto de banco de dados, responsável por transformar o modelo conceitual em um esquema relacional estruturado (tabelas, colunas, PKs, FKs) e aplicar regras de normalização.
+* **Definição formal:** A segunda etapa do projeto de banco de dados, responsável por transformar o modelo conceitual em um esquema adaptado ao paradigma escolhido, como um esquema relacional estruturado em relações, atributos, PKs e FKs, além de aplicar regras de normalização.
 * **Participantes:** Projetistas de Banco de Dados, Arquitetos de Software e Desenvolvedores.
-* **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+* **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[10. Mapeamento de entidades e atributos]]
 
 ### Propriedades ACID
 * **Definição formal:** Conjunto de quatro propriedades fundamentais que garantem a confiabilidade de transações em um SGBD: Atomicidade, Consistência, Isolamento e Durabilidade.
