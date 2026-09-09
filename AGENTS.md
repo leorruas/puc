@@ -52,6 +52,7 @@
  - Uma quebra de parágrafo deve indicar **mudança real de ideia, função discursiva ou etapa do raciocínio**, e não apenas servir como recurso visual de espaçamento.
  - É proibido o padrão editorial de sequência de parágrafos de uma única frase quando essas frases formam um mesmo argumento. Nesses casos, consolidá-las em um único parágrafo com progressão lógica.
  - Listas continuam adequadas quando houver enumeração real, comparação de itens, procedimento, requisitos ou elementos que precisem ser consultados separadamente. Não usar listas apenas para evitar construir um parágrafo.
+ - A seção **Pontos que costumam gerar confusão** é uma exceção editorial deliberada: deve ser apresentada como **lista de itens**, com uma confusão por bullet. Cada item começa com a formulação equivocada ou distinção principal em negrito e pode trazer uma explicação curta na mesma linha.
  - Blocos de código, tabelas, citações, fórmulas e diagramas Mermaid permanecem visualmente separados da prosa. Os parágrafos imediatamente antes e depois desses elementos devem continuar sintaticamente completos.
  - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
 
