@@ -1,28 +1,31 @@
 # Prompts de estudo (LLM) - programação modular
 
-Use estes templates de prompt prontos com seu LLM (ChatGPT, Gemini, Claude, etc.) para sanar dúvidas, gerar exemplos práticos e exercitar seu conhecimento nesta disciplina.
+Os prompts desta disciplina usam o próprio vault como referência de escopo. Como a matéria está consolidada, simulados e revisões devem acompanhar a cobertura real das notas atuais, em vez de depender de listas manuais de tópicos que podem ficar desatualizadas.
 
 ---
 
-### Explicar conceitos complexos
+## Tutor de conceitos
 
 ```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o resumo `00. Programação modular - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Aja como um professor sênior de Engenharia de Software e Programação Modular. Explique o conceito de [CONCEITO] de forma intuitiva, aplicando a Técnica de Feynman com analogias do mundo real, demonstrando exemplos de código em C# (trechos atômicos e exemplo completo integrado) e destacando os erros comuns cometidos por desenvolvedores.
+Explique [CONCEITO] com a técnica de Feynman. Comece pelo modelo mental mais simples, depois mostre a mecânica em C# e finalize com as nuances técnicas registradas no vault. Diferencie explicitamente regra da linguagem, modelo didático, detalhe de implementação do runtime e consequência prática de design quando essa distinção for relevante. Use um exemplo atômico e, se necessário, um exemplo integrado. Aponte as confusões mais comuns e as notas relacionadas.
 ```
 
 ---
 
-### Modularizador e refatorador de código
+## Revisor e refatorador de código
 
 ```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o resumo `00. Programação modular - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Aja como um especialista em Refatoração e Arquitetura de Software. Analise o código a seguir e proponha uma refatoração completa aplicando os princípios da Programação Modular e SOLID:
-1. Identifique violações de coesão, alto acoplamento, invariantes desprotegidos ou quebra de responsabilidade única.
-2. Separe em classes e sub-rotinas bem delimitadas com modificadores de acesso corretos.
-3. Demonstre o código refatorado limpo, compilável e idiomático em C#.
+Analise o código abaixo a partir dos princípios cobertos na disciplina. Identifique problemas de coesão, acoplamento, encapsulamento, invariantes, herança, polimorfismo, generics, coleções, delegates/eventos, SOLID ou padrões de projeto somente quando esses conceitos forem realmente pertinentes. Não force um padrão de projeto onde uma solução simples basta.
+
+Para cada problema:
+1. explique o risco ou a limitação;
+2. aponte a nota do vault que fundamenta a análise;
+3. proponha uma refatoração;
+4. mostre o código C# resultante de forma compilável e idiomática.
 
 Código:
 [INSIRA O CÓDIGO AQUI]
@@ -30,88 +33,49 @@ Código:
 
 ---
 
-### Simulador de prova abrangente (todas as unidades)
+## Simulador abrangente da disciplina
 
 ```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o resumo `00. Programação modular - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Aja como um examinador de nível acadêmico sênior em Engenharia de Software e Programação Modular da PUC Minas. Gere um simulador de prova composto por 5 questões inéditas de múltipla escolha cobrindo os 24 tópicos da disciplina:
+Gere um simulado de 10 questões inéditas de múltipla escolha com 4 alternativas plausíveis. Use a cobertura atual do resumo e dos artigos como matriz de conteúdo, distribuindo as questões entre:
+- Unidade 1: artigos 01 a 14;
+- Unidade 2: artigos 15 a 22, incluindo o artigo 18A sobre interfaces;
+- Unidade 3: artigos 23 e 24.
 
-- Unidade 1: Motivação e Teorema de Böhm-Jacopini; funções e procedimentos (conexão com include da UML); Tipos Abstratos de Dados (TADs); visão histórica de POO (Alan Kay) e acoplamento; fatores externos e internos de qualidade (Bertrand Meyer); atributos e métodos; construtores e invariantes; membros estáticos e propriedades; gerenciamento de memória (GC, IDisposable e using); ocultação da informação (David Parnas); modificadores de acesso e métodos de acesso; namespaces e modularização em larga escala (conexão com diagrama de pacotes).
-- Unidade 2: Herança (generalização/especialização); ordem de inicialização de construtores com base; sobreposição de métodos (virtual, override, new e despacho dinâmico em vtable); classes abstratas e interfaces; classes seladas (sealed e otimizações JIT); tipos genéricos (generics, type safety e constraints); coleções genéricas (List, Dictionary, HashSet, Queue, Stack e Big-O); delegates, expressões lambda e eventos (Publisher-Subscriber).
-- Unidade 3: Princípios SOLID de design orientado a objetos (SoC de Dijkstra, SRP, OCP, LSP, ISP e DIP com composição); padrões de projeto (catálogo GoF dos 23 padrões, matriz bidimensional de escopo de classe vs. objeto cruzado com criacional, estrutural e comportamental, delegação e composição).
-
-Regras obrigatórias do simulador:
-1. Cada questão deve possuir 4 alternativas (A, B, C, D) com distratores tecnicamente plausíveis e conceituais.
-2. As questões devem focar em raciocínio arquitetural, predição de comportamento de código e diagnóstico de qualidade.
-3. Não forneça o gabarito imediatamente; aguarde o usuário responder item a item ou todas juntas.
+Priorize raciocínio sobre comportamento de código, contratos, encapsulamento, despacho, escolhas de design e distinções conceituais. Não transforme detalhes de runtime em definições da linguagem. Não forneça o gabarito antes de eu responder.
 ```
 
 ---
 
-### Simulador de prova por unidade temático
+## Simulador por unidade
 
-#### Unidade 1: Fundamentos, modularização e encapsulamento
 ```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o resumo `00. Programação modular - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
-- Diferença entre funções (expressão) e procedimentos (comando) e a conexão com «include» na UML.
-- Teorema de Böhm-Jacopini e eliminação de fluxos desestruturados (GOTO).
-- TADs, encapsulamento e ocultação da informação de David Parnas (isolamento de decisões voláteis).
-- Construtores, garantia de invariantes de classe e ciclo de vida de objetos (GC vs IDisposable).
-- Namespaces, file-scoped namespaces e correspondência com o Diagrama de Pacotes da UML.
-
-Aguarde minhas respostas antes de corrigir.
-```
-
-#### Unidade 2: Herança, polimorfismo e generics
-```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
-
-Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
-- Ordem de execução de construtores em hierarquias com base(...).
-- Despacho dinâmico, tabelas virtuais (vtable), virtual/override vs ocultação com new.
-- Classes abstratas (Template Method) vs Interfaces puras e classes seladas (sealed).
-- Generics no .NET: reificação em tempo de execução, type safety, constraints e coleções genéricas com análise assintótica Big-O.
-- Delegates, expressões lambda (closures) e desacoplamento com eventos (Publisher-Subscriber).
-
-Aguarde minhas respostas antes de corrigir.
-```
-
-#### Unidade 3: Princípios SOLID e padrões de projeto GoF
-```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
-
-Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
-- Separação de preocupações (SoC de Dijkstra) e os 5 princípios SOLID (SRP, OCP, LSP, ISP e DIP).
-- Princípio da Inversão de Dependência (DIP) e a heurística de preferir composição a herança.
-- Catálogo dos 23 padrões GoF: matriz bidimensional de classificação (escopo de classe vs. escopo de objeto cruzado com criacional, estrutural e comportamental).
-- Mecanismos de delegação, reaproveitamento caixa-preta (*black-box*) e desacoplamento dinâmico.
-
-Aguarde minhas respostas antes de corrigir.
+Quero estudar a [UNIDADE 1 / UNIDADE 2 / UNIDADE 3]. Consulte no resumo quais artigos pertencem a essa unidade e gere 6 questões de múltipla escolha cobrindo proporcionalmente a cobertura real dessas notas. Use distratores tecnicamente plausíveis e espere minhas respostas antes de corrigir.
 ```
 
 ---
 
-### Parâmetros de feedback e diagnóstico pedagógico de erros
+## Correção e diagnóstico pedagógico de erros
 
 ```text
-Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o resumo `00. Programação modular - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Com base nas respostas fornecidas pelo aluno, realize a correção e o diagnóstico pedagógico estruturado da seguinte forma:
+Corrija minhas respostas usando esta estrutura:
 
-1. Tabela com o gabarito oficial (sua resposta vs. resposta correta vs. status).
-2. Diagnóstico individual de cada questão:
-   - Resumo da regra teórica e arquitetural central testada.
-   - Análise do erro cometido pelo aluno (classifique a falha em uma das 6 categorias fundamentais:
-     1. Erro conceitual: incompreensão do conceito, teoria, invariante ou regra estrutural;
-     2. Erro terminológico: confusão de jargões, termos técnicos, nomenclaturas formais ou padrões;
-     3. Erro de interpretação/leitura: leitura precipitada ou desatenção a restrições e premissas do enunciado;
-     4. Erro de sintaxe, notação ou leitura de código/modelo: engano na mecânica de linguagem, notação, despacho, execução ou representação formal;
-     5. Distração / desatenção: equívoco em conceito já dominado, sem lacuna estrutural de aprendizado).
-   - Justificativa do porquê o distrator assinalado é falso ou incompleto.
-   - Justificativa completa do porquê a alternativa correta é a única rigorosamente verdadeira.
-3. Plano de ação e revisão: indique quais tópicos e notas da disciplina o aluno deve revisitar para sanar as lacunas identificadas.
+1. Tabela com questão, minha resposta, resposta correta e status.
+2. Diagnóstico de cada erro, classificando-o em apenas uma das cinco categorias:
+   - erro conceitual;
+   - erro terminológico;
+   - erro de interpretação/leitura;
+   - erro de sintaxe, notação ou leitura de código/modelo;
+   - distração/desatenção.
+3. Explique por que meu distrator é falso ou incompleto e por que a alternativa correta é rigorosamente verdadeira.
+4. Diferencie, quando necessário, regra do C#, modelo didático e detalhe do runtime.
+5. Indique exatamente quais artigos ou seções do vault devo revisar e proponha uma nova questão curta para testar a lacuna identificada.
+
+Respostas:
+[COLE MINHAS RESPOSTAS]
 ```
-
