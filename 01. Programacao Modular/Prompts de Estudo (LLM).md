@@ -7,6 +7,8 @@ Use estes templates de prompt prontos com seu LLM (ChatGPT, Gemini, Claude, etc.
 ### Explicar conceitos complexos
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um professor sênior de Engenharia de Software e Programação Modular. Explique o conceito de [CONCEITO] de forma intuitiva, aplicando a Técnica de Feynman com analogias do mundo real, demonstrando exemplos de código em C# (trechos atômicos e exemplo completo integrado) e destacando os erros comuns cometidos por desenvolvedores.
 ```
 
@@ -15,6 +17,8 @@ Aja como um professor sênior de Engenharia de Software e Programação Modular.
 ### Modularizador e refatorador de código
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um especialista em Refatoração e Arquitetura de Software. Analise o código a seguir e proponha uma refatoração completa aplicando os princípios da Programação Modular e SOLID:
 1. Identifique violações de coesão, alto acoplamento, invariantes desprotegidos ou quebra de responsabilidade única.
 2. Separe em classes e sub-rotinas bem delimitadas com modificadores de acesso corretos.
@@ -29,6 +33,8 @@ Código:
 ### Simulador de prova abrangente (todas as unidades)
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um examinador de nível acadêmico sênior em Engenharia de Software e Programação Modular da PUC Minas. Gere um simulador de prova composto por 5 questões inéditas de múltipla escolha cobrindo os 24 tópicos da disciplina:
 
 - Unidade 1: Motivação e Teorema de Böhm-Jacopini; funções e procedimentos (conexão com include da UML); Tipos Abstratos de Dados (TADs); visão histórica de POO (Alan Kay) e acoplamento; fatores externos e internos de qualidade (Bertrand Meyer); atributos e métodos; construtores e invariantes; membros estáticos e propriedades; gerenciamento de memória (GC, IDisposable e using); ocultação da informação (David Parnas); modificadores de acesso e métodos de acesso; namespaces e modularização em larga escala (conexão com diagrama de pacotes).
@@ -47,6 +53,8 @@ Regras obrigatórias do simulador:
 
 #### Unidade 1: Fundamentos, modularização e encapsulamento
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
 - Diferença entre funções (expressão) e procedimentos (comando) e a conexão com «include» na UML.
 - Teorema de Böhm-Jacopini e eliminação de fluxos desestruturados (GOTO).
@@ -59,6 +67,8 @@ Aguarde minhas respostas antes de corrigir.
 
 #### Unidade 2: Herança, polimorfismo e generics
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
 - Ordem de execução de construtores em hierarquias com base(...).
 - Despacho dinâmico, tabelas virtuais (vtable), virtual/override vs ocultação com new.
@@ -71,6 +81,8 @@ Aguarde minhas respostas antes de corrigir.
 
 #### Unidade 3: Princípios SOLID e padrões de projeto GoF
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Aja como um examinador acadêmico em Programação Modular. Gere um simulador com 4 questões de múltipla escolha focando exclusivamente em:
 - Separação de preocupações (SoC de Dijkstra) e os 5 princípios SOLID (SRP, OCP, LSP, ISP e DIP).
 - Princípio da Inversão de Dependência (DIP) e a heurística de preferir composição a herança.
@@ -85,6 +97,8 @@ Aguarde minhas respostas antes de corrigir.
 ### Parâmetros de feedback e diagnóstico pedagógico de erros
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `01. Programacao Modular`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Com base nas respostas fornecidas pelo aluno, realize a correção e o diagnóstico pedagógico estruturado da seguinte forma:
 
 1. Tabela com o gabarito oficial (sua resposta vs. resposta correta vs. status).
@@ -94,9 +108,8 @@ Com base nas respostas fornecidas pelo aluno, realize a correção e o diagnóst
      1. Erro conceitual: incompreensão do conceito, teoria, invariante ou regra estrutural;
      2. Erro terminológico: confusão de jargões, termos técnicos, nomenclaturas formais ou padrões;
      3. Erro de interpretação/leitura: leitura precipitada ou desatenção a restrições e premissas do enunciado;
-     4. Erro de aplicação: falha ao empregar a regra teórica na modelagem de um cenário concreto;
-     5. Erro de sintaxe ou leitura de código: engano na mecânica de linguagem, despacho ou execução;
-     6. Distração / desatenção: equívoco em conceito já dominado, sem lacuna estrutural de aprendizado).
+     4. Erro de sintaxe, notação ou leitura de código/modelo: engano na mecânica de linguagem, notação, despacho, execução ou representação formal;
+     5. Distração / desatenção: equívoco em conceito já dominado, sem lacuna estrutural de aprendizado).
    - Justificativa do porquê o distrator assinalado é falso ou incompleto.
    - Justificativa completa do porquê a alternativa correta é a única rigorosamente verdadeira.
 3. Plano de ação e revisão: indique quais tópicos e notas da disciplina o aluno deve revisitar para sanar as lacunas identificadas.
