@@ -1,4 +1,4 @@
-# Prompts de Estudo (LLM) - Engenharia de Requisitos de Software
+# Prompts de estudo (LLM) - Engenharia de Requisitos de Software
 
 Use estes prompts e parâmetros estruturados para estudar, simular provas e receber explicações detalhadas de erros via LLM (ChatGPT, Gemini, Claude, etc.).
 
@@ -9,6 +9,8 @@ Use estes prompts e parâmetros estruturados para estudar, simular provas e rece
 Copie e cole este prompt para iniciar um simulado com questões no nível de prova universitária/concurso:
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `07. Engenharia de Requisitos`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Atue como um Professor Doutor em Engenharia de Software responsável pela disciplina de Engenharia de Requisitos.
 
 Gere um simulado de [NÚMERO, ex: 5] questões de múltipla escolha ou discursivas sobre os temas abaixo.
@@ -35,10 +37,12 @@ Aguarde minhas respostas antes de fornecer o gabarito.
 Após responder ao simulado ou colar uma questão que você errou, use este prompt para a LLM explicar o erro em detalhes:
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `07. Engenharia de Requisitos`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Analise a resposta que eu forneci para a questão abaixo e diagnostique meus erros utilizando a seguinte estrutura obrigatória de feedback:
 
 1. Diagnóstico do Erro:
-   - Tipo de Erro: [Conceitual / Terminológico / Interpretação de Leitura / Aplicação / Sintaxe ou Modelagem de Código / Distração]
+   - Tipo de erro: [Conceitual / Terminológico / Interpretação de leitura / Sintaxe, notação ou leitura de modelo / Distração]
    - Onde errei: Explique exatamente o ponto onde o raciocínio falhou.
 
 2. Explicação da Resposta Correta:
@@ -58,6 +62,8 @@ Minha Resposta: [COLE SUA RESPOSTA AQUI]
 ## 3. Gerador de Casos de Uso e User Stories Detalhadas
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `07. Engenharia de Requisitos`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Com base no seguinte contexto de sistema: [DESCREVA O SISTEMA], gere:
 1. Uma Especificação Textual Completa de Caso de Uso (Fluxo Principal, Fluxos Alternativos e Exceções, Pré-condições e Pós-condições).
 2. Duas Histórias de Usuário (User Stories) no padrão 'Como [papel], Eu quero [ação], Para que [valor]', com Critérios de Aceitação em formato Given/When/Then (Dado/Quando/Então).
@@ -69,6 +75,8 @@ Com base no seguinte contexto de sistema: [DESCREVA O SISTEMA], gere:
 ## 4. Analisador de Diagramas UML (Classes, Pacotes e Casos de Uso)
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `07. Engenharia de Requisitos`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Dado o seguinte cenário de modelagem UML: [DESCREVA AS ENTIDADES OU REGRAS DE NEGÓCIO]
 1. Explique como modelar a relação entre essas entidades usando o Diagrama de Classes (especifique se deve ser Associação, Agregação, Composição ou Herança e justifique a decisão com base na dependência do ciclo de vida).
 2. Indique as multiplicidades em ambas as extremidades.
