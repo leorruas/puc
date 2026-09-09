@@ -20,7 +20,7 @@ relacionados:
   - "[[09. Integridade referencial e chave estrangeira]]"
   - "[[10. Mapeamento de entidades e atributos]]"
   - "[[11. Mapeamento de relacionamentos]]"
-  - "[[12. 1ª e 2ª formas normais]]"
+  - "[[12. 1ª, 2ª e 3ª formas normais]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -34,7 +34,7 @@ relacionados:
 * [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Ações referenciais|Ações referenciais]], [[#Atributo primo|Atributo primo]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
 * [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
-* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência funcional|Dependência funcional]], [[#Dependência parcial|Dependência parcial]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
+* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência funcional|Dependência funcional]], [[#Dependência parcial|Dependência parcial]], [[#Dependência transitiva|Dependência transitiva]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
 * [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
@@ -45,7 +45,7 @@ relacionados:
 * [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Primeira Forma Normal (1FN)|Primeira Forma Normal (1FN)]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
 * [[#S|S]]: [[#Segunda Forma Normal (2FN)|Segunda Forma Normal (2FN)]], [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
-* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
+* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Terceira Forma Normal (3FN)|Terceira Forma Normal (3FN)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -75,7 +75,7 @@ relacionados:
 ### Anomalia de modificação
 * **Definição formal:** Problema decorrente de redundância ou dependências inadequadas em relações mal projetadas, manifestando-se como anomalias de inserção, atualização ou exclusão.
 * **Modelo mental:** Uma operação sobre um fato obriga a alterar, criar ou apagar indevidamente outro fato.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Arquitetura ANSI/SPARC
 * **Definição formal:** Padrão arquitetural tripartite para sistemas de bancos de dados proposto pelo comitê ANSI/X3/SPARC em 1975, que divide o sistema em três níveis de esquemas: externo (visões do usuário), conceitual (estrutura lógica global e regras de negócio) e interno/físico (alocação e estruturas de arquivos).
@@ -91,7 +91,7 @@ relacionados:
 
 ### Atributo primo
 * **Definição formal:** Atributo que participa de pelo menos uma chave candidata de uma relação. O conceito é importante na formulação formal das formas normais.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Atributo Armazenado (Base)
 * **Definição formal:** Atributo cujo valor é gravado fisicamente nas tabelas do banco de dados, pois não pode ser deduzido a partir de nenhuma outra informação existente.
@@ -202,12 +202,17 @@ relacionados:
 ### Dependência funcional
 * **Definição formal:** Relação lógica entre conjuntos de atributos representada por `X → Y`, indicando que cada valor de X determina no máximo um valor correspondente de Y em uma relação válida.
 * **Modelo mental:** Se conheço X, a regra do domínio permite determinar univocamente Y.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Dependência parcial
 * **Definição formal:** Dependência funcional em que um atributo não-primo depende apenas de um subconjunto próprio de uma chave candidata composta, e não da chave inteira.
 * **Modelo mental:** O atributo está "pendurado" em apenas uma parte da chave composta.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
+
+### Dependência transitiva
+* **Definição formal:** Dependência em cadeia na qual uma chave determina um atributo intermediário e esse atributo determina outro, como `CPF → Dept_Cod → Dept_Nome`.
+* **Modelo mental:** O atributo final depende da chave "por intermédio" de outro atributo.
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Dependência lógica e física
 * **Definição formal:** Acoplamento indesejável presente nos sistemas de arquivos legados, onde qualquer alteração no formato de gravação exigia a reescrita de todos os programas consumidores.
@@ -386,7 +391,7 @@ relacionados:
 ### Normalização
 * **Definição formal:** Processo sistemático de análise e decomposição de relações com base em chaves e dependências funcionais para reduzir redundância estrutural e anomalias de inserção, atualização e exclusão.
 * **Modelo mental:** Um teste de qualidade do esquema que pergunta se cada fato está armazenado na relação determinada pela chave da qual ele realmente depende.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Nível de Visão (Externo)
 * **Definição formal:** O nível de abstração do SGBD voltado para atender às necessidades individuais de diferentes usuários e aplicações, disponibilizando janelas customizadas (*views*) e ocultando dados irrelevantes ou sensíveis.
@@ -424,7 +429,7 @@ relacionados:
 ### Primeira Forma Normal (1FN)
 * **Definição formal:** Forma normal que, na abordagem didática da disciplina, exige valores atômicos em cada posição da relação e ausência de grupos repetitivos ou atributos multivalorados armazenados em uma única célula.
 * **Modelo mental:** Uma posição da tabela deve representar um único valor do domínio.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Projeto Conceitual
 * **Definição formal:** A primeira etapa do projeto de banco de dados, responsável por produzir um esquema semântico abstrato (MER/DER) a partir dos requisitos do mini-mundo, com independência total de SGBD.
@@ -451,7 +456,7 @@ relacionados:
 
 ### Redundância de dados
 * **Definição formal:** A repetição desnecessária do mesmo fato em múltiplas tuplas ou relações, aumentando o risco de inconsistência e de anomalias de atualização.
-* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Relacionamento
 * **Definição formal:** Associação semântica e lógica entre duas ou mais entidades do modelo de dados.
@@ -488,7 +493,7 @@ relacionados:
 ### Segunda Forma Normal (2FN)
 * **Definição formal:** Uma relação está na 2FN quando está na 1FN e todo atributo não-primo depende funcionalmente da chave candidata inteira, sem dependências parciais de subconjuntos próprios de chaves compostas.
 * **Modelo mental:** Se a chave é composta, nenhum atributo não-chave deve depender só de um pedaço dela.
-* **Artigo correspondente:** [[12. 1ª e 2ª formas normais]]
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Sistema de Banco de Dados (SBD)
 * **Definição formal:** O ecossistema integrado completo composto pelo Banco de Dados, o SGBD, as aplicações clientes, o hardware e a comunidade de usuários.
@@ -523,6 +528,11 @@ relacionados:
 ### TCL (Transaction Control Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para gerenciar a execução atômica e consistente de transações no banco de dados (`COMMIT`, `ROLLBACK`, `SAVEPOINT`).
 * **Artigo correspondente:** [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]]
+
+### Terceira Forma Normal (3FN)
+* **Definição formal:** Forma normal em que, além de satisfazer a 2FN, as dependências funcionais não triviais não deixam atributos não-primos transitivamente dependentes de chaves candidatas. Na formulação formal, para toda dependência `X → A`, X deve ser superchave ou A deve ser atributo primo.
+* **Modelo mental:** Depois de garantir que os atributos dependem da chave inteira, verificamos se algum atributo não-chave depende de outro atributo não-chave.
+* **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
 ### Tipo de Entidade (Entity Type)
 * **Definição formal:** O esquema descritivo formal que define a estrutura e o conjunto de atributos comuns compartilhados por um grupo de entidades similares (análogo a uma Classe na POO).
@@ -560,6 +570,6 @@ relacionados:
 * **Voltar ao artigo 09:** [[09. Integridade referencial e chave estrangeira]]
 * **Voltar ao artigo 10:** [[10. Mapeamento de entidades e atributos]]
 * **Voltar ao artigo 11:** [[11. Mapeamento de relacionamentos]]
-* **Voltar ao artigo 12:** [[12. 1ª e 2ª formas normais]]
+* **Voltar ao artigo 12:** [[12. 1ª, 2ª e 3ª formas normais]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
