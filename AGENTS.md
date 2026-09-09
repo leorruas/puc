@@ -161,13 +161,19 @@
 ## Revisão de conteúdo e prompts de estudo
 
 11. **Parâmetros de feedback e diagnóstico pedagógico de erros:**
- - Estrutura padronizada nos prompts de estudo para a LLM explicar erros com base em 6 dimensões taxonômicas:
-   1. **Erro conceitual:** incompreensão do princípio teórico, invariante ou regra estrutural.
+ - Estrutura padronizada nos prompts de estudo para a LLM explicar erros com base em 5 dimensões taxonômicas:
+   1. **Erro conceitual:** incompreensão do princípio teórico, invariante, dependência ou regra estrutural.
    2. **Erro terminológico:** confusão de nomenclaturas formais, padrões de mercado ou termos técnicos.
-   3. **Erro de interpretação/leitura:** leitura incorreta ou desatenção aos requisitos e premissas do enunciado/cenário.
-   4. **Erro de aplicação:** falha ao traduzir a teoria em modelagem ou na escolha de projeto.
-   5. **Erro de sintaxe ou leitura de código:** engano na mecânica de linguagem, despacho ou execução.
-   6. **Distração / desatenção:** equívoco circunstancial quando a fundamentação teórica já estava dominada.
+   3. **Erro de interpretação/leitura:** leitura incorreta ou desatenção aos requisitos, premissas e restrições do enunciado/cenário.
+   4. **Erro de sintaxe, notação ou leitura de código/modelo:** engano na mecânica de linguagem, notação, diagrama, despacho, execução ou representação formal.
+   5. **Distração / desatenção:** equívoco circunstancial quando a fundamentação teórica já estava dominada.
+
+11.1 **Prompts de estudo ancorados no vault:**
+ - Todo arquivo `Prompts de Estudo (LLM).md` deve instruir explicitamente a LLM a consultar o repositório `leorruas/puc` e a pasta da própria disciplina antes de responder.
+ - A referência mínima obrigatória é: resumo `00.`, artigos numerados disponíveis e `Glossário de conceitos.md` quando existir. O vault define o **escopo efetivamente estudado na disciplina** e deve ser a fonte primária para simulados, correções e revisões.
+ - Conhecimento externo pode complementar ou corrigir tecnicamente o vault, mas deve ser identificado como complemento. Quando houver divergência, explicar a diferença sem substituir silenciosamente o conteúdo esperado na disciplina.
+ - Ao corrigir respostas, apontar sempre que possível quais notas ou seções do vault devem ser revisitadas.
+ - Quando uma disciplina for consolidada ou concluída, revisar também seu arquivo de prompts no mesmo ciclo: remover listas de tópicos desatualizadas, fazer os simuladores cobrirem a cobertura real do vault e garantir que os prompts continuem autossuficientes.
 
 ## Preservação de marcações de estudo do usuário
 
