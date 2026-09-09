@@ -22,6 +22,7 @@ relacionados:
   - "[[11. Mapeamento de relacionamentos]]"
   - "[[12. 1ª, 2ª e 3ª formas normais]]"
   - "[[13. Bancos de dados não-relacionais]]"
+  - "[[14. Segurança de banco de dados]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -32,21 +33,21 @@ relacionados:
 
 ## Índice alfabético
 
-* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Ações referenciais|Ações referenciais]], [[#Atributo primo|Atributo primo]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
+* [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Autenticação|Autenticação]], [[#Autorização|Autorização]], [[#Ações referenciais|Ações referenciais]], [[#Atributo primo|Atributo primo]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
 * [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]], [[#Banco de dados orientado a objetos|Banco de dados orientado a objetos]]
-* [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
-* [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência funcional|Dependência funcional]], [[#Dependência parcial|Dependência parcial]], [[#Dependência transitiva|Dependência transitiva]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
+* [[#C|C]]: [[#Confidencialidade|Confidencialidade]], [[#Controle de acesso discricionário (DAC)|Controle de acesso discricionário (DAC)]], [[#Controle de acesso obrigatório (MAC)|Controle de acesso obrigatório (MAC)]], [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
+* [[#D|D]]: [[#Disponibilidade|Disponibilidade]], [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência funcional|Dependência funcional]], [[#Dependência parcial|Dependência parcial]], [[#Dependência transitiva|Dependência transitiva]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
 * [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
-* [[#I|I]]: [[#Identificador de objeto (OID)|Identificador de objeto (OID)]], [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
-* [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
+* [[#I|I]]: [[#Integridade em segurança|Integridade em segurança]], [[#Identificador de objeto (OID)|Identificador de objeto (OID)]], [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
+* [[#L|L]]: [[#LGPD|LGPD]], [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
 * [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Modelo de rede|Modelo de rede]], [[#Modelo hierárquico|Modelo hierárquico]], [[#Mapeamento relacional|Mapeamento relacional]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
 * [[#N|N]]: [[#NoSQL|NoSQL]], [[#Normalização|Normalização]], [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
-* [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Primeira Forma Normal (1FN)|Primeira Forma Normal (1FN)]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
+* [[#P|P]]: [[#Princípio do menor privilégio|Princípio do menor privilégio]], [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Primeira Forma Normal (1FN)|Primeira Forma Normal (1FN)]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
 * [[#S|S]]: [[#Segunda Forma Normal (2FN)|Segunda Forma Normal (2FN)]], [[#SQL|SQL]], [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
-* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#Tipo chave-valor|Tipo chave-valor]], [[#Tipo documento|Tipo documento]], [[#Tipo grafo|Tipo grafo]], [[#Tipo wide-column|Tipo wide-column]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Terceira Forma Normal (3FN)|Terceira Forma Normal (3FN)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
+* [[#T|T]]: [[#Trilha de auditoria|Trilha de auditoria]], [[#Tabela associativa|Tabela associativa]], [[#Tipo chave-valor|Tipo chave-valor]], [[#Tipo documento|Tipo documento]], [[#Tipo grafo|Tipo grafo]], [[#Tipo wide-column|Tipo wide-column]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Terceira Forma Normal (3FN)|Terceira Forma Normal (3FN)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -85,6 +86,16 @@ relacionados:
 ### Atores do banco de dados
 * **Definição formal:** A comunidade de pessoas e papéis que interagem direta ou indiretamente com o banco de dados: Administrador de Banco de Dados (DBA), Administrador de Dados (AD), Projetistas, Desenvolvedores de Software e Usuários Finais (operacionais e gerenciais).
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]], [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
+
+### Autenticação
+* **Definição formal:** Processo de verificar a identidade apresentada por um usuário, serviço ou processo.
+* **Modelo mental:** Responde à pergunta "quem é você?".
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
+### Autorização
+* **Definição formal:** Processo de determinar quais recursos e operações uma identidade autenticada pode acessar ou executar.
+* **Modelo mental:** Responde à pergunta "o que você pode fazer?".
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
 
 ### Atributo
 * **Definição formal:** Propriedade, característica ou elemento descritivo associado a uma entidade ou a um relacionamento.
@@ -180,6 +191,19 @@ relacionados:
 * **Definição formal:** (*Primary Key*) Um identificador único e irredutível escolhido para individualizar de forma inequívoca cada tupla dentro de uma tabela relacional (`NOT NULL` e `UNIQUE`).
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[05. Modelagem de entidades e tipos de atributos]]
 
+### Confidencialidade
+* **Definição formal:** Objetivo de segurança que restringe a revelação de informações a pessoas, sistemas e processos autorizados.
+* **Modelo mental:** Quem pode ver este dado?
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
+### Controle de acesso discricionário (DAC)
+* **Definição formal:** Modelo em que privilégios podem ser concedidos e revogados por sujeitos autorizados conforme regras do sistema.
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
+### Controle de acesso obrigatório (MAC)
+* **Definição formal:** Modelo em que o acesso é determinado por uma política central e classificações que usuários individuais não podem simplesmente alterar.
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
 ### Conhecimento
 * **Definição formal:** A integração de informações contextualizadas com regras de negócio, experiência humana e heurísticas, capacitando a tomada de decisões estratégicas.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
@@ -191,6 +215,11 @@ relacionados:
 ---
 
 ## D
+
+### Disponibilidade
+* **Definição formal:** Objetivo de segurança que garante acesso a dados e serviços por usuários e sistemas autorizados quando necessário.
+* **Modelo mental:** Quem tem autorização consegue acessar quando precisa?
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
 
 ### Dado
 * **Definição formal:** Um valor ou registro atômico e bruto, desprovido de contexto, semântica ou interpretação inerente.
@@ -329,6 +358,11 @@ relacionados:
 * **Definição formal:** O conjunto real e factual de dados armazenados no banco de dados em um momento específico no tempo. Muda dinamicamente a cada transação DML.
 * **Artigo correspondente:** [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
 
+### Integridade em segurança
+* **Definição formal:** Objetivo de segurança voltado a preservar correção, consistência e legitimidade dos dados, impedindo ou detectando modificações indevidas.
+* **Modelo mental:** Quem pode alterar e como sabemos que a informação continua confiável?
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
 ### Integridade de chave
 * **Definição formal:** Restrição que exige unicidade dos valores de uma chave candidata; duas tuplas distintas não podem compartilhar a mesma combinação de valores de uma chave.
 * **Artigo correspondente:** [[08. Conceitos do modelo relacional e chave primária]], [[09. Integridade referencial e chave estrangeira]]
@@ -349,6 +383,10 @@ relacionados:
 ---
 
 ## L
+
+### LGPD
+* **Definição formal:** Lei nº 13.709/2018, que regula o tratamento de dados pessoais no Brasil e protege direitos fundamentais de liberdade, privacidade e livre desenvolvimento da personalidade.
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
 
 ### Levantamento de Requisitos de Dados
 * **Definição formal:** A etapa inicial do ciclo de vida de desenvolvimento de banco de dados na qual analistas e projetistas coletam, filtram e documentam as necessidades de informação e processos dos diferentes perfis de usuários (operacionais, analistas e gestores).
@@ -432,6 +470,10 @@ relacionados:
 ---
 
 ## P
+
+### Princípio do menor privilégio
+* **Definição formal:** Regra de segurança segundo a qual cada usuário, serviço ou processo deve receber apenas os privilégios necessários para sua função.
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
 
 ### Parcialidade em especializações
 * **Definição formal:** Restrição de completude em que podem existir ocorrências do supertipo que não pertencem a nenhum dos subtipos apresentados. Na notação estudada, é indicada por linha simples.
@@ -549,6 +591,11 @@ relacionados:
 
 ## T
 
+### Trilha de auditoria
+* **Definição formal:** Registro de eventos relevantes para reconstruir ações realizadas no sistema, como usuário, horário, operação e objeto afetado.
+* **Modelo mental:** Quem fez o quê e quando?
+* **Artigo correspondente:** [[14. Segurança de banco de dados]]
+
 ### Tabela associativa
 * **Definição formal:** Relação criada no mapeamento de um relacionamento N:N ou N-ário para armazenar as chaves estrangeiras das entidades participantes e os atributos próprios do relacionamento.
 * **Modelo mental:** O relacionamento deixa de ser apenas uma linha no DER e ganha uma tabela capaz de registrar cada combinação válida entre os participantes.
@@ -617,5 +664,6 @@ relacionados:
 * **Voltar ao artigo 11:** [[11. Mapeamento de relacionamentos]]
 * **Voltar ao artigo 12:** [[12. 1ª, 2ª e 3ª formas normais]]
 * **Voltar ao artigo 13:** [[13. Bancos de dados não-relacionais]]
+* **Voltar ao artigo 14:** [[14. Segurança de banco de dados]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
