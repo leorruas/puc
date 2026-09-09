@@ -21,6 +21,7 @@ relacionados:
   - "[[10. Mapeamento de entidades e atributos]]"
   - "[[11. Mapeamento de relacionamentos]]"
   - "[[12. 1ª, 2ª e 3ª formas normais]]"
+  - "[[13. Bancos de dados não-relacionais]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -32,20 +33,20 @@ relacionados:
 ## Índice alfabético
 
 * [[#A|A]]: [[#Abstração de dados|Abstração de dados]], [[#Ações referenciais|Ações referenciais]], [[#Atributo primo|Atributo primo]], [[#Administrador de Banco de Dados (DBA)|Administrador de Banco de Dados (DBA)]], [[#Administrador de Dados (AD)|Administrador de Dados (AD)]], [[#Anomalia de modificação|Anomalia de modificação]], [[#Arquitetura ANSI/SPARC|Arquitetura ANSI/SPARC]], [[#Atores do banco de dados|Atores do banco de dados]], [[#Atributo|Atributo]], [[#Atributo Armazenado (Base)|Atributo Armazenado (Base)]], [[#Atributo Chave (Identificador)|Atributo Chave (Identificador)]], [[#Atributo Complexo|Atributo Complexo]], [[#Atributo Composto|Atributo Composto]], [[#Atributo Derivado (Calculado)|Atributo Derivado (Calculado)]], [[#Atributo Monovalorado (Univalorado)|Atributo Monovalorado (Univalorado)]], [[#Atributo Multivalorado|Atributo Multivalorado]], [[#Atributo Nulo (Opcional)|Atributo Nulo (Opcional)]], [[#Atributo Obrigatório|Atributo Obrigatório]], [[#Atributo Simples (Atômico)|Atributo Simples (Atômico)]], [[#Autorrelacionamento|Autorrelacionamento]]
-* [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]]
+* [[#B|B]]: [[#Banco de Dados (BD) / Base de dados|Banco de Dados (BD) / Base de dados]], [[#Banco de dados orientado a objetos|Banco de dados orientado a objetos]]
 * [[#C|C]]: [[#Cardinalidade Máxima|Cardinalidade Máxima]], [[#Cardinalidade Mínima|Cardinalidade Mínima]], [[#Catálogo do sistema (Dicionário de dados)|Catálogo do sistema (Dicionário de dados)]], [[#Chave estrangeira (FK)|Chave estrangeira (FK)]], [[#Chave parcial (Discriminador)|Chave parcial (Discriminador)]], [[#Chave primária (PK)|Chave primária (PK)]], [[#Conhecimento|Conhecimento]], [[#Conjunto de Entidades (Entity Set)|Conjunto de Entidades (Entity Set)]]
 * [[#D|D]]: [[#Dado|Dado]], [[#DCL (Data Control Language)|DCL (Data Control Language)]], [[#DDL (Data Definition Language)|DDL (Data Definition Language)]], [[#Dependência funcional|Dependência funcional]], [[#Dependência parcial|Dependência parcial]], [[#Dependência transitiva|Dependência transitiva]], [[#Dependência lógica e física|Dependência lógica e física]], [[#Diagrama Entidade-Relacionamento (DER)|Diagrama Entidade-Relacionamento (DER)]], [[#Disjunção (Disjointness)|Disjunção (Disjointness)]], [[#DML (Data Manipulation Language)|DML (Data Manipulation Language)]], [[#DML Não Procedural (Declarativa)|DML Não Procedural (Declarativa)]], [[#DML Procedural (Navegacional)|DML Procedural (Navegacional)]]
 * [[#E|E]]: [[#Entidade|Entidade]], [[#Entidade Fraca (Dependente)|Entidade Fraca (Dependente)]], [[#Entidade Forte (Regular)|Entidade Forte (Regular)]], [[#Especialização|Especialização]], [[#Esquema (Schema / Intensão)|Esquema (Schema / Intensão)]], [[#Esquema conceitual|Esquema conceitual]], [[#Esquema externo (Visão)|Esquema externo (Visão)]], [[#Esquema interno (Físico)|Esquema interno (Físico)]]
 * [[#G|G]]: [[#Generalização|Generalização]], [[#Grau de Relacionamento|Grau de Relacionamento]]
 * [[#H|H]]: [[#Herança de atributos e relacionamentos|Herança de atributos e relacionamentos]]
-* [[#I|I]]: [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
+* [[#I|I]]: [[#Identificador de objeto (OID)|Identificador de objeto (OID)]], [[#Independência física de dados|Independência física de dados]], [[#Independência lógica de dados|Independência lógica de dados]], [[#Informação|Informação]], [[#Instância (Instance / Estado / Extensão)|Instância (Instance / Estado / Extensão)]], [[#Integridade de chave|Integridade de chave]], [[#Integridade de domínio|Integridade de domínio]], [[#Integridade de entidade|Integridade de entidade]], [[#Integridade referencial|Integridade referencial]]
 * [[#L|L]]: [[#Levantamento de Requisitos de Dados|Levantamento de Requisitos de Dados]]
-* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Mapeamento relacional|Mapeamento relacional]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
-* [[#N|N]]: [[#Normalização|Normalização]], [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
+* [[#M|M]]: [[#Mapeamento entre níveis|Mapeamento entre níveis]], [[#Modelo de rede|Modelo de rede]], [[#Modelo hierárquico|Modelo hierárquico]], [[#Mapeamento relacional|Mapeamento relacional]], [[#MER Estendido (EER)|MER Estendido (EER)]], [[#Mini-mundo (Universo de discurso)|Mini-mundo (Universo de discurso)]], [[#Modelagem de dados|Modelagem de dados]], [[#Modelo conceitual|Modelo conceitual]], [[#Modelo físico|Modelo físico]], [[#Modelo lógico|Modelo lógico]], [[#Modelo relacional|Modelo relacional]]
+* [[#N|N]]: [[#NoSQL|NoSQL]], [[#Normalização|Normalização]], [[#Nível de Visão (Externo)|Nível de Visão (Externo)]], [[#Nível Físico (Interno)|Nível Físico (Interno)]], [[#Nível Lógico (Conceitual)|Nível Lógico (Conceitual)]]
 * [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Primeira Forma Normal (1FN)|Primeira Forma Normal (1FN)]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
-* [[#S|S]]: [[#Segunda Forma Normal (2FN)|Segunda Forma Normal (2FN)]], [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
-* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Terceira Forma Normal (3FN)|Terceira Forma Normal (3FN)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
+* [[#S|S]]: [[#Segunda Forma Normal (2FN)|Segunda Forma Normal (2FN)]], [[#SQL|SQL]], [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
+* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#Tipo chave-valor|Tipo chave-valor]], [[#Tipo documento|Tipo documento]], [[#Tipo grafo|Tipo grafo]], [[#Tipo wide-column|Tipo wide-column]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Terceira Forma Normal (3FN)|Terceira Forma Normal (3FN)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -140,6 +141,11 @@ relacionados:
 ---
 
 ## B
+
+### Banco de dados orientado a objetos
+* **Definição formal:** SGBD cujo modelo principal representa dados como objetos com identidade própria, tipos/classes, atributos complexos, referências e, conforme o produto, herança e encapsulamento.
+* **Modelo mental:** Em vez de converter necessariamente objetos em linhas e FKs, o banco pode persistir diretamente a estrutura de objetos e suas referências.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
 
 ### Banco de Dados (BD) / Base de dados
 * **Definição formal:** (*Database*) Coleção estruturada, integrada e logicamente coerente de dados correlacionados e persistentes que modelam e representam entidades e eventos de um domínio do mundo real (*mini-mundo*).
@@ -302,6 +308,11 @@ relacionados:
 
 ## I
 
+### Identificador de objeto (OID)
+* **Definição formal:** Identificador fornecido pelo sistema para preservar a identidade de um objeto independentemente dos valores de seus atributos.
+* **Modelo mental:** O objeto continua sendo o mesmo mesmo que seus dados mudem.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
 ### Independência física de dados
 * **Definição formal:** Capacidade de modificar as estruturas do nível interno/físico (discos, índices, partições) sem alterar o nível conceitual ou o código SQL das aplicações.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]]
@@ -368,6 +379,14 @@ relacionados:
 * **Definição formal:** O conjunto sistemático de conceitos, técnicas, processos e notações gráficas utilizados para abstrair, estruturar, definir e documentar os requisitos de dados e as regras de negócio de um domínio.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]]
 
+### Modelo hierárquico
+* **Definição formal:** Modelo de dados que organiza registros em uma estrutura de árvore, na qual cada filho possui no máximo um pai e relações 1:N são representadas naturalmente.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
+### Modelo de rede
+* **Definição formal:** Modelo de dados navegacional em que registros podem participar de múltiplas ligações, historicamente associado ao CODASYL e a conjuntos proprietário-membro.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
 ### Modelo conceitual
 * **Definição formal:** A representação abstrata de mais alto nível dos dados de um sistema, focada exclusivamente nas regras de negócio e no que existe no mundo real.
 * **Artigo correspondente:** [[01. Introdução à modelagem de dados e sua importância]], [[04. Níveis do sgbd e etapas do projeto de banco de dados]], [[05. Modelagem de entidades e tipos de atributos]], [[07. Modelo de entidades e relacionamentos estendido]]
@@ -387,6 +406,11 @@ relacionados:
 ---
 
 ## N
+
+### NoSQL
+* **Definição formal:** Rótulo amplo para famílias de bancos que não usam o modelo relacional clássico como único paradigma principal, incluindo chave-valor, documentos, wide-column e grafos.
+* **Modelo mental:** Não é um único modelo concorrente do relacional, mas um conjunto de modelos especializados.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
 
 ### Normalização
 * **Definição formal:** Processo sistemático de análise e decomposição de relações com base em chaves e dependências funcionais para reduzir redundância estrutural e anomalias de inserção, atualização e exclusão.
@@ -495,6 +519,11 @@ relacionados:
 * **Modelo mental:** Se a chave é composta, nenhum atributo não-chave deve depender só de um pedaço dela.
 * **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
+### SQL
+* **Definição formal:** (*Structured Query Language*) Linguagem padronizada e predominantemente declarativa para definição, consulta, manipulação e controle de dados em SGBDs relacionais.
+* **Modelo mental:** Dizemos ao SGBD qual resultado queremos; o otimizador escolhe como executar a consulta.
+* **Artigo correspondente:** [[03. Linguagens de banco de dados (ddl e dml) e perfis profissionais]], [[13. Bancos de dados não-relacionais]]
+
 ### Sistema de Banco de Dados (SBD)
 * **Definição formal:** O ecossistema integrado completo composto pelo Banco de Dados, o SGBD, as aplicações clientes, o hardware e a comunidade de usuários.
 * **Artigo correspondente:** [[02. Abordagem de arquivos vs. abordagem de banco de dados]]
@@ -534,6 +563,22 @@ relacionados:
 * **Modelo mental:** Depois de garantir que os atributos dependem da chave inteira, verificamos se algum atributo não-chave depende de outro atributo não-chave.
 * **Artigo correspondente:** [[12. 1ª, 2ª e 3ª formas normais]]
 
+### Tipo chave-valor
+* **Definição formal:** Modelo NoSQL em que cada valor é armazenado e recuperado por uma chave associada.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
+### Tipo documento
+* **Definição formal:** Modelo NoSQL que armazena registros em documentos autocontidos, frequentemente semelhantes a JSON, com estrutura flexível, arrays e objetos aninhados.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
+### Tipo grafo
+* **Definição formal:** Modelo de banco que representa dados por nós e relacionamentos por arestas, podendo ambos possuir propriedades.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
+### Tipo wide-column
+* **Definição formal:** Modelo NoSQL baseado em linhas esparsas e famílias de colunas, frequentemente projetado para distribuição horizontal em grande escala.
+* **Artigo correspondente:** [[13. Bancos de dados não-relacionais]]
+
 ### Tipo de Entidade (Entity Type)
 * **Definição formal:** O esquema descritivo formal que define a estrutura e o conjunto de atributos comuns compartilhados por um grupo de entidades similares (análogo a uma Classe na POO).
 * **Artigo correspondente:** [[05. Modelagem de entidades e tipos de atributos]]
@@ -571,5 +616,6 @@ relacionados:
 * **Voltar ao artigo 10:** [[10. Mapeamento de entidades e atributos]]
 * **Voltar ao artigo 11:** [[11. Mapeamento de relacionamentos]]
 * **Voltar ao artigo 12:** [[12. 1ª, 2ª e 3ª formas normais]]
+* **Voltar ao artigo 13:** [[13. Bancos de dados não-relacionais]]
 * **Resumo da disciplina:** [[00. Modelagem de Dados - Resumo]]
 * **Índice geral do vault:** [[index.md|Página Inicial do Vault]]
