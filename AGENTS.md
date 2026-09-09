@@ -47,6 +47,14 @@
 5. **Explicabilidade prática via técnica de Feynman:**
  - Toda explicação técnica ou conceitual deve empregar a **Técnica de Feynman**: usar linguagem simples, analogias intuitivas do mundo real e explicações passo a passo, desconstruindo a complexidade sem perder o rigor técnico.
 
+5.1 **Parágrafos coesos e economia de quebras de linha:**
+ - A prosa dos artigos deve ser escrita em **parágrafos completos e coesos**, agrupando frases que desenvolvem a mesma ideia. Evitar transformar cada frase, oração explicativa ou transição em um parágrafo separado.
+ - Uma quebra de parágrafo deve indicar **mudança real de ideia, função discursiva ou etapa do raciocínio**, e não apenas servir como recurso visual de espaçamento.
+ - É proibido o padrão editorial de sequência de parágrafos de uma única frase quando essas frases formam um mesmo argumento. Nesses casos, consolidá-las em um único parágrafo com progressão lógica.
+ - Listas continuam adequadas quando houver enumeração real, comparação de itens, procedimento, requisitos ou elementos que precisem ser consultados separadamente. Não usar listas apenas para evitar construir um parágrafo.
+ - Blocos de código, tabelas, citações, fórmulas e diagramas Mermaid permanecem visualmente separados da prosa. Os parágrafos imediatamente antes e depois desses elementos devem continuar sintaticamente completos.
+ - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
+
 ## Organização e numeração de arquivos
 
 6. **Padronização dos arquivos de resumo, consolidação bibliográfica e autores citados:**
