@@ -1,4 +1,4 @@
-# Prompts de Estudo (LLM) - Design de Interação
+# Prompts de estudo (LLM) - Design de Interação
 
 Use estes prompts e parâmetros estruturados para estudar, simular provas e receber explicações detalhadas de erros via LLM (ChatGPT, Gemini, Claude, etc.).
 
@@ -9,6 +9,8 @@ Use estes prompts e parâmetros estruturados para estudar, simular provas e rece
 Copie e cole este prompt para iniciar um simulado com questões no nível de prova universitária/concurso:
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `08. Design de Interacao`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Atue como um Professor Doutor em Interação Humano-Computador (IHC) e Design de Interação.
 
 Gere um simulado de [NÚMERO, ex: 5] questões de múltipla escolha ou discursivas sobre os temas abaixo.
@@ -36,10 +38,12 @@ Aguarde minhas respostas antes de fornecer o gabarito.
 Após responder ao simulado ou colar uma questão que você errou, use este prompt para a LLM explicar o erro em detalhes:
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `08. Design de Interacao`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Analise a resposta que eu forneci para a questão abaixo e diagnostique meus erros utilizando a seguinte estrutura obrigatória de feedback:
 
 1. Diagnóstico do Erro:
-   - Tipo de Erro: [Conceitual / Terminológico / Interpretação de Leitura / Aplicação (Heurística/Diretriz) / Confusão Teórica (Cognitiva vs Semiótica) / Distração]
+   - Tipo de erro: [Conceitual / Terminológico / Interpretação de leitura / Sintaxe, notação ou leitura de modelo / Distração]
    - Onde errei: Explique exatamente o ponto onde o raciocínio falhou.
 
 2. Explicação da Resposta Correta:
@@ -59,6 +63,8 @@ Minha Resposta: [COLE SUA RESPOSTA AQUI]
 ## 3. Analisador Heurístico e Semiótico de Interface
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `08. Design de Interacao`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Analise o seguinte fluxo ou tela de sistema: [DESCREVA A TELA OU FLUXO].
 1. Identifique 3 problemas de usabilidade com base nas 10 Heurísticas de Nielsen.
 2. Identifique 1 falha de comunicabilidade sob a perspectiva da Engenharia Semiótica (ruptura na metacomunicação designer-usuário).
@@ -70,6 +76,8 @@ Analise o seguinte fluxo ou tela de sistema: [DESCREVA A TELA OU FLUXO].
 ## 4. Planejador de Avaliação de Sistemas Interativos
 
 ```text
+Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `08. Design de Interacao`. Leia primeiro o arquivo de resumo `00.`, depois os artigos numerados relevantes e o `Glossário de conceitos.md` quando existir. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize explicitamente a diferença. Se você não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique quais notas do vault devem ser revisitadas.
+
 Para um sistema interativo do tipo [DESCREVA O SISTEMA], preciso planejar uma avaliação.
 1. Qual método de inspeção (Heurística, Percurso Cognitivo ou MIS) é mais adequado para a fase inicial e por quê?
 2. Qual método empírico ou por investigação (Teste de Usabilidade formal ou Escala SUS) deve ser aplicado na fase final e como recrutar os participantes?
