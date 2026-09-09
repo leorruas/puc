@@ -79,6 +79,7 @@ const arquivosFallback = [
     "02. Modelagem de Dados/10. Mapeamento de entidades e atributos.md",
     "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md",
     "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+    "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md",
     "02. Modelagem de Dados/Glossário de conceitos.md",
     "02. Modelagem de Dados/Prompts de Estudo (LLM).md",
     "03. Manipulacao de Dados SQL/03. Manipulacao de Dados SQL - Resumo.md",
