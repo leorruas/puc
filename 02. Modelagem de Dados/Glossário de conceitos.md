@@ -19,6 +19,7 @@ relacionados:
   - "[[08. Conceitos do modelo relacional e chave primária]]"
   - "[[09. Integridade referencial e chave estrangeira]]"
   - "[[10. Mapeamento de entidades e atributos]]"
+  - "[[11. Mapeamento de relacionamentos]]"
 ---
 
 # Glossário de conceitos: modelagem e projeto de bancos de dados
@@ -43,7 +44,7 @@ relacionados:
 * [[#P|P]]: [[#Parcialidade em especializações|Parcialidade em especializações]], [[#Participação Parcial|Participação Parcial]], [[#Participação Total (Restrição de Existência)|Participação Total (Restrição de Existência)]], [[#Perda de atualização (Lost update)|Perda de atualização (Lost update)]], [[#Projeto Conceitual|Projeto Conceitual]], [[#Projeto Físico|Projeto Físico]], [[#Projeto Lógico|Projeto Lógico]], [[#Propriedades ACID|Propriedades ACID]]
 * [[#R|R]]: [[#Redundância de dados|Redundância de dados]], [[#Relacionamento|Relacionamento]], [[#Relacionamento Binário|Relacionamento Binário]], [[#Relacionamento Identificador|Relacionamento Identificador]], [[#Relacionamento Muitos para Muitos (N:M)|Relacionamento Muitos para Muitos (N:M)]], [[#Relacionamento Ternário|Relacionamento Ternário]], [[#Relacionamento Um para Muitos (1:N)|Relacionamento Um para Muitos (1:N)]], [[#Relacionamento Um para Um (1:1)|Relacionamento Um para Um (1:1)]]
 * [[#S|S]]: [[#Sistema de Banco de Dados (SBD)|Sistema de Banco de Dados (SBD)]], [[#Sistema Gerenciador de Banco de Dados (SGBD)|Sistema Gerenciador de Banco de Dados (SGBD)]], [[#Subtipo|Subtipo]], [[#Supertipo|Supertipo]], [[#Sobreposição (Overlap)|Sobreposição (Overlap)]]
-* [[#T|T]]: [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
+* [[#T|T]]: [[#Tabela associativa|Tabela associativa]], [[#TCL (Transaction Control Language)|TCL (Transaction Control Language)]], [[#Tipo de Entidade (Entity Type)|Tipo de Entidade (Entity Type)]], [[#Totalidade em especializações|Totalidade em especializações]], [[#Transação|Transação]]
 * [[#V|V]]: [[#Visão (View)|Visão (View)]]
 
 ---
@@ -332,7 +333,7 @@ relacionados:
 ### Mapeamento relacional
 * **Definição formal:** Conjunto de regras de projeto lógico que transforma elementos do MER/DER em relações, atributos, chaves primárias e chaves estrangeiras, preservando no modelo relacional a semântica definida no modelo conceitual.
 * **Modelo mental:** É a tradução entre duas linguagens de representação: do desenho conceitual do domínio para a estrutura formal de relações e chaves.
-* **Artigo correspondente:** [[10. Mapeamento de entidades e atributos]]
+* **Artigo correspondente:** [[10. Mapeamento de entidades e atributos]], [[11. Mapeamento de relacionamentos]]
 
 ### MER Estendido (EER)
 * **Definição formal:** Extensão do modelo entidade-relacionamento tradicional que incorpora abstrações avançadas como subclasses/superclasses, especialização, generalização, herança de atributos, entidades fracas e uniões de categorias.
@@ -440,19 +441,19 @@ relacionados:
 
 ### Relacionamento Muitos para Muitos (N:M)
 * **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias ocorrências da entidade B, e vice-versa.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[11. Mapeamento de relacionamentos]]
 
 ### Relacionamento Ternário
 * **Definição formal:** Relacionamento que conecta simultaneamente três entidades distintas para completar a semântica da associação de forma atômica.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[07. Modelo de entidades e relacionamentos estendido]], [[11. Mapeamento de relacionamentos]]
 
 ### Relacionamento Um para Muitos (1:N)
 * **Definição formal:** Mapeamento de cardinalidade máxima no qual uma ocorrência da entidade A pode associar-se a várias da entidade B, mas cada ocorrência de B associa-se a no máximo uma de A.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[11. Mapeamento de relacionamentos]]
 
 ### Relacionamento Um para Um (1:1)
 * **Definição formal:** Mapeamento de cardinalidade máxima no qual cada ocorrência da entidade A associa-se a no máximo uma ocorrência de B, e vice-versa.
-* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]]
+* **Artigo correspondente:** [[06. Modelagem de relacionamentos, cardinalidade e restrições de participação]], [[11. Mapeamento de relacionamentos]]
 
 ---
 
@@ -482,6 +483,11 @@ relacionados:
 ---
 
 ## T
+
+### Tabela associativa
+* **Definição formal:** Relação criada no mapeamento de um relacionamento N:N ou N-ário para armazenar as chaves estrangeiras das entidades participantes e os atributos próprios do relacionamento.
+* **Modelo mental:** O relacionamento deixa de ser apenas uma linha no DER e ganha uma tabela capaz de registrar cada combinação válida entre os participantes.
+* **Artigo correspondente:** [[11. Mapeamento de relacionamentos]]
 
 ### TCL (Transaction Control Language)
 * **Definição formal:** Subconjunto da linguagem SQL utilizado para gerenciar a execução atômica e consistente de transações no banco de dados (`COMMIT`, `ROLLBACK`, `SAVEPOINT`).
