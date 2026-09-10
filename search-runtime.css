@@ -15,6 +15,14 @@
     opacity: 0.65;
 }
 
+.busca-ranqueada-secao {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    opacity: 0.72;
+}
+
 .busca-ranqueada-motivos {
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +42,41 @@
     opacity: 0.58;
 }
 
+.busca-secao + .busca-secao {
+    margin-top: 2.4rem;
+}
+
+.busca-secao-cabecalho {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 0.65rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.busca-secao-cabecalho h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+}
+
+.busca-secao-cabecalho span {
+    font-size: 0.76rem;
+    opacity: 0.55;
+}
+
+.busca-secao-relacionada {
+    opacity: 0.88;
+}
+
+.busca-secao-relacionada .resultado-item {
+    opacity: 0.9;
+}
+
 @media (max-width: 720px) {
     .busca-ranqueada-motivos {
         margin-top: 0.45rem;
@@ -42,5 +85,9 @@
     .busca-ranqueada-badge {
         min-height: 1.35rem;
         font-size: 0.68rem;
+    }
+
+    .busca-secao + .busca-secao {
+        margin-top: 2rem;
     }
 }
