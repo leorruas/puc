@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - search-v3
     paths:
       - "**/*.md"
       - "index.html"
@@ -12,7 +11,6 @@ on:
       - "search-runtime.js"
       - "search-runtime.css"
       - "scripts/build-search-index.mjs"
-      - "scripts/apply-search-v3-patch.mjs"
       - ".github/workflows/build-search-index.yml"
   workflow_dispatch:
 
@@ -37,10 +35,6 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Aplicar migração search v3
-        if: ${{ hashFiles('scripts/apply-search-v3-patch.mjs') != '' }}
-        run: node scripts/apply-search-v3-patch.mjs
-
       - name: Validar JavaScript
         run: |
           node --check search-runtime.js
@@ -50,15 +44,15 @@ jobs:
       - name: Gerar índice
         run: node scripts/build-search-index.mjs
 
-      - name: Salvar arquivos atualizados
+      - name: Salvar índice atualizado
         shell: bash
         run: |
-          git add script.js index.html search-index.json
+          git add search-index.json
           if git diff --cached --quiet; then
-            echo "Busca já está atualizada."
+            echo "Índice já está atualizado."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: aplica search v3 [skip ci]"
+          git commit -m "chore: atualiza índice de busca [skip ci]"
           git push
