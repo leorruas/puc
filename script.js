@@ -66,62 +66,77 @@ function rotaDoArtigo(artigo) {
     return `#/${encodeURIComponent(artigo.categoria)}/${encodeURIComponent(artigo.titulo)}`;
 }
 
-// Carrega os arquivos e busca o conteúdo de cada um
+// Carrega o catálogo pelo índice e o conteúdo das notas sob demanda
+function caminhoRawDoArtigo(sourcePath) {
+    const caminhoCodificado = String(sourcePath || "")
+        .split("/")
+        .map(segmento => encodeURIComponent(segmento))
+        .join("/");
+    return `https://raw.githubusercontent.com/leorruas/puc/main/${caminhoCodificado}`;
+}
+
 async function carregarTodosOsArtigos() {
     inicializarTema();
-    const lista = await obterListaDeArquivos();
+    let indiceBusca = null;
 
-    // Promessas paralelas para ler o conteúdo Markdown de cada arquivo
-    const promessas = lista.map(async (item) => {
-        try {
-            const res = await fetch(item.path, { cache: "no-cache" });
-            if (!res.ok) return null;
-            const texto = await res.text();
-            
-            const caminhoDecodificado = decodeURI(item.path);
-            const partes = caminhoDecodificado.replace("./", "").split("/");
-            const categoria = item.categoria || (partes.length > 1 ? partes[0] : "00. Geral");
-
-            return {
-                titulo: item.titulo,
-                path: item.path,
-                sourcePath: item.sourcePath || item.path,
-                categoria: categoria,
-                conteudo: texto
-            };
-        } catch (e) {
-            console.error(`Erro ao carregar ${item.path}:`, e);
-            return null;
+    try {
+        if (window.PUC_SEARCH_INDEX_PROMISE) {
+            indiceBusca = await window.PUC_SEARCH_INDEX_PROMISE;
         }
-    });
+    } catch (erro) {
+        console.warn("Índice otimizado indisponível; carregando catálogo pelo fallback.", erro);
+    }
 
-    const resultados = await Promise.all(promessas);
-    todosOsArtigos = resultados.filter(artigo => artigo !== null);
+    if (indiceBusca?.articles?.length) {
+        todosOsArtigos = indiceBusca.articles.map(item => ({
+            titulo: item.fileTitle || item.title,
+            path: caminhoRawDoArtigo(item.sourcePath),
+            sourcePath: item.sourcePath,
+            categoria: item.category,
+            conteudo: null
+        }));
+    } else {
+        const lista = await obterListaDeArquivos();
+        const promessas = lista.map(async (item) => {
+            try {
+                const res = await fetch(item.path, { cache: "no-cache" });
+                if (!res.ok) return null;
+                const texto = await res.text();
+                const caminhoDecodificado = decodeURI(item.path);
+                const partes = caminhoDecodificado.replace("./", "").split("/");
+                const categoria = item.categoria || (partes.length > 1 ? partes[0] : "00. Geral");
+
+                return {
+                    titulo: item.titulo,
+                    path: item.path,
+                    sourcePath: item.sourcePath || item.path,
+                    categoria,
+                    conteudo: texto
+                };
+            } catch (e) {
+                console.error(`Erro ao carregar ${item.path}:`, e);
+                return null;
+            }
+        });
+        const resultados = await Promise.all(promessas);
+        todosOsArtigos = resultados.filter(artigo => artigo !== null);
+    }
+
     indiceDeBuscaPronto = true;
-
-    // Organiza artigos em estrutura de pasta para as matérias
     todasAsPastas = {};
     todosOsArtigos.forEach(artigo => {
-        if (!todasAsPastas[artigo.categoria]) {
-            todasAsPastas[artigo.categoria] = [];
-        }
+        if (!todasAsPastas[artigo.categoria]) todasAsPastas[artigo.categoria] = [];
         todasAsPastas[artigo.categoria].push(artigo);
     });
 
-    // Ordena os artigos dentro de cada matéria pelo caminho e numeração real
     Object.values(todasAsPastas).forEach(artigos => {
         artigos.sort((a, b) => {
-            return (a.sourcePath || a.path).localeCompare(b.sourcePath || b.path, "pt-BR", { numeric: true, sensitivity: 'base' });
+            return (a.sourcePath || a.path).localeCompare(b.sourcePath || b.path, "pt-BR", { numeric: true, sensitivity: "base" });
         });
     });
 
-    // Renderiza a grade suíça de matérias na página inicial
     renderizarPastas();
-
-    // Se a página for carregada com rota no Hash, abre a rota correspondente
-    if (window.location.hash) {
-        tratarHashNavegacao();
-    }
+    if (window.location.hash) tratarHashNavegacao();
 }
 
 // Renderiza a Grade Suíça de Matérias na Home
@@ -643,7 +658,7 @@ function encontrarAlvoDaBuscaNoArtigo(termos) {
 }
 
 // Leitor de Artigos com Suporte Suíço
-function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = []) {
+async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = [], secaoBusca = "") {
     divResultados.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
@@ -656,6 +671,18 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca
                       categoria: "00. Geral",
                       conteudo: conteudoMarkdown
                   };
+
+    if (!conteudoMarkdown && artigoAtual.path) {
+        try {
+            const resposta = await fetch(artigoAtual.path, { cache: "no-cache" });
+            if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+            conteudoMarkdown = await resposta.text();
+            artigoAtual.conteudo = conteudoMarkdown;
+        } catch (erro) {
+            console.error(`Erro ao carregar ${artigoAtual.sourcePath || artigoAtual.path}:`, erro);
+            conteudoMarkdown = "# Conteúdo indisponível\n\nNão foi possível carregar esta nota agora.";
+        }
+    }
 
     artigoTitulo.textContent = limparNomeTitulo(artigoAtual.titulo);
 
@@ -769,7 +796,10 @@ function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca
     leitorDeArtigo.classList.remove("escondido");
 
     const alvoDaBusca = encontrarAlvoDaBuscaNoArtigo(termosBusca);
-    if (alvoDaBusca) {
+    if (secaoBusca) {
+        window.setTimeout(() => scrollParaHeading(secaoBusca), 80);
+        window.setTimeout(() => scrollParaHeading(secaoBusca), 220);
+    } else if (alvoDaBusca) {
         window.setTimeout(() => alvoDaBusca.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
     } else {
         rolarAoTopo();
@@ -1349,15 +1379,11 @@ function navegarParaLinkObsidian(destino, atualizarHash = true) {
     const encontrado = buscarArtigoPorCaminho(nomeArtigo);
 
     if (encontrado) {
-        abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash);
-        if (hashSecao) {
-            setTimeout(() => {
-                scrollParaHeading(hashSecao);
-            }, 250);
-            setTimeout(() => {
-                scrollParaHeading(hashSecao);
-            }, 500);
-        }
+        abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash, [], hashSecao).then(() => {
+            if (!hashSecao) return;
+            setTimeout(() => scrollParaHeading(hashSecao), 120);
+            setTimeout(() => scrollParaHeading(hashSecao), 320);
+        });
     }
 }
 
@@ -1607,7 +1633,15 @@ function tratarHashNavegacao() {
             a.titulo.toLowerCase() === nomeArtigo.toLowerCase()
         );
         if (artigo) {
-            abrirArtigo(artigo.titulo, artigo.conteudo, false);
+            const contextoBusca = window.PUC_SEARCH_PENDING;
+            window.PUC_SEARCH_PENDING = null;
+            abrirArtigo(
+                artigo.titulo,
+                artigo.conteudo,
+                false,
+                contextoBusca?.terms || [],
+                contextoBusca?.heading || ""
+            );
             return;
         }
     }
