@@ -23,6 +23,17 @@ function retirarAspas(valor = "") {
   return valor.trim().replace(/^['"]|['"]$/g, "");
 }
 
+function normalizar(valor = "") {
+  return String(valor)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\\/g, "/")
+    .replace(/\.md$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function extrairFrontmatter(markdown) {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\s*/);
   return match ? match[1] : "";
@@ -81,13 +92,28 @@ function limparMarkdown(markdown) {
     .trim();
 }
 
-function extrairHeadings(markdown) {
+function limparHeading(texto) {
+  return texto
+    .replace(/\s+#+\s*$/, "")
+    .replace(/[*_`~=]/g, "")
+    .trim();
+}
+
+function extrairHeadingData(markdown) {
   return markdown
     .split(/\r?\n/)
-    .map(linha => linha.match(/^#{1,6}\s+(.+)$/))
+    .map(linha => linha.match(/^(#{1,6})\s+(.+)$/))
     .filter(Boolean)
-    .map(match => match[1].replace(/[*_`~=]/g, "").trim())
-    .filter(Boolean);
+    .map(match => ({ level: match[1].length, text: limparHeading(match[2]) }))
+    .filter(item => item.text);
+}
+
+function limparReferenciaWiki(valor) {
+  let referencia = String(valor || "").trim();
+  const wiki = referencia.match(/^\[\[([\s\S]+)\]\]$/);
+  if (wiki) referencia = wiki[1];
+  referencia = referencia.split("|")[0].split("#")[0].trim();
+  return referencia.replace(/^\.\//, "").replace(/\.md$/i, "").trim();
 }
 
 const artigos = listarMarkdowns(raiz)
@@ -97,6 +123,7 @@ const artigos = listarMarkdowns(raiz)
     const frontmatter = extrairFrontmatter(markdown);
     const nomeArquivo = path.basename(sourcePath, ".md");
     const categoria = sourcePath.includes("/") ? sourcePath.split("/")[0] : "00. Geral";
+    const headingData = extrairHeadingData(markdown);
 
     return {
       title: extrairCampoTexto(frontmatter, "title") || nomeArquivo,
@@ -105,19 +132,70 @@ const artigos = listarMarkdowns(raiz)
       sourcePath,
       tags: extrairLista(frontmatter, "tags"),
       aliases: extrairLista(frontmatter, "aliases"),
-      headings: extrairHeadings(markdown),
-      plainText: limparMarkdown(markdown),
-      markdown
+      headings: headingData.map(item => item.text),
+      headingData,
+      relatedRaw: extrairLista(frontmatter, "relacionados"),
+      plainText: limparMarkdown(markdown)
     };
   })
   .sort((a, b) => a.sourcePath.localeCompare(b.sourcePath, "pt-BR", { numeric: true, sensitivity: "base" }));
 
+const porCaminho = new Map();
+const porNome = new Map();
+
+for (const artigo of artigos) {
+  porCaminho.set(normalizar(artigo.sourcePath), artigo);
+  porCaminho.set(normalizar(artigo.sourcePath.replace(/\.md$/i, "")), artigo);
+
+  const chavesNome = [artigo.fileTitle, artigo.title].map(normalizar).filter(Boolean);
+  for (const chave of chavesNome) {
+    if (!porNome.has(chave)) porNome.set(chave, []);
+    porNome.get(chave).push(artigo);
+  }
+}
+
+function resolverRelacionado(origem, referenciaBruta) {
+  const referencia = limparReferenciaWiki(referenciaBruta);
+  if (!referencia) return null;
+
+  const porPath = porCaminho.get(normalizar(referencia));
+  if (porPath) return porPath;
+
+  const nome = normalizar(referencia.split("/").pop());
+  const candidatos = porNome.get(nome) || [];
+  if (candidatos.length === 1) return candidatos[0];
+
+  const mesmaCategoria = candidatos.find(item => item.category === origem.category);
+  return mesmaCategoria || candidatos[0] || null;
+}
+
+for (const artigo of artigos) {
+  artigo.related = [...new Set(
+    artigo.relatedRaw
+      .map(referencia => resolverRelacionado(artigo, referencia))
+      .filter(Boolean)
+      .map(item => item.sourcePath)
+  )];
+  artigo.backlinks = [];
+  delete artigo.relatedRaw;
+}
+
+const porSourcePath = new Map(artigos.map(artigo => [artigo.sourcePath, artigo]));
+for (const artigo of artigos) {
+  for (const destino of artigo.related) {
+    const relacionado = porSourcePath.get(destino);
+    if (relacionado && !relacionado.backlinks.includes(artigo.sourcePath)) {
+      relacionado.backlinks.push(artigo.sourcePath);
+    }
+  }
+}
+
 const indice = {
-  version: 2,
+  version: 3,
   generatedAt: new Date().toISOString(),
   articleCount: artigos.length,
   articles: artigos
 };
 
 fs.writeFileSync(path.join(raiz, "search-index.json"), JSON.stringify(indice));
-console.log(`Índice de busca gerado com ${artigos.length} artigos.`);
+console.log(`Índice de busca v3 gerado com ${artigos.length} artigos.`);
