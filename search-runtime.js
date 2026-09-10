@@ -19,8 +19,20 @@
         ["llm", "large language model", "modelo de linguagem"],
         ["rag", "retrieval augmented generation", "geracao aumentada por recuperacao"],
         ["crud", "create read update delete"],
-        ["rest", "representational state transfer"]
+        ["rest", "representational state transfer"],
+        ["fifo", "first in first out", "fila"],
+        ["lifo", "last in first out", "pilha"],
+        ["big o", "notacao assintotica", "complexidade assintotica"]
     ];
+
+    var stopwords = {
+        "a": true, "o": true, "as": true, "os": true, "de": true, "da": true, "do": true,
+        "das": true, "dos": true, "e": true, "em": true, "no": true, "na": true, "nos": true,
+        "nas": true, "um": true, "uma": true, "uns": true, "umas": true, "para": true, "por": true,
+        "com": true, "que": true, "qual": true, "quais": true, "como": true, "quando": true,
+        "onde": true, "entre": true, "sobre": true, "porque": true, "pra": true, "ao": true,
+        "aos": true, "diferenca": true
+    };
 
     function normalizar(valor) {
         var texto = String(valor || "").toLowerCase();
@@ -29,11 +41,13 @@
     }
 
     function termosDaConsulta(consulta) {
-        return normalizar(consulta)
+        var todos = normalizar(consulta)
             .replace(/[^a-z0-9#]+/g, " ")
             .trim()
             .split(/\s+/)
             .filter(function (termo) { return termo.length > 0; });
+        var tecnicos = todos.filter(function (termo) { return !stopwords[termo]; });
+        return tecnicos.length ? tecnicos : todos;
     }
 
     function unicos(lista) {
@@ -58,23 +72,116 @@
         return unicos(expansoes);
     }
 
-    function contem(texto, termo) {
-        return termo && normalizar(texto).indexOf(termo) !== -1;
-    }
-
     function prepararArtigo(artigo) {
-        artigo._busca = artigo._busca || {
+        if (artigo._busca) return artigo._busca;
+        var headings = artigo.headings || [];
+        artigo._busca = {
             title: normalizar(artigo.title || artigo.fileTitle),
             category: normalizar(artigo.category),
             tags: normalizar((artigo.tags || []).join(" ")),
             aliases: normalizar((artigo.aliases || []).join(" ")),
-            headings: normalizar((artigo.headings || []).join(" ")),
-            body: normalizar(artigo.plainText || "")
+            headings: normalizar(headings.join(" ")),
+            body: normalizar(artigo.plainText || ""),
+            tokensFuzzy: unicos(
+                normalizar([
+                    artigo.title || artigo.fileTitle,
+                    (artigo.tags || []).join(" "),
+                    (artigo.aliases || []).join(" "),
+                    headings.join(" ")
+                ].join(" "))
+                    .replace(/[^a-z0-9#]+/g, " ")
+                    .split(/\s+/)
+                    .filter(function (item) { return item.length >= 3; })
+            )
         };
         return artigo._busca;
     }
 
-    function pontuarArtigo(artigo, consulta) {
+    function distanciaEdicao(a, b, limite) {
+        a = normalizar(a);
+        b = normalizar(b);
+        if (a === b) return 0;
+        if (Math.abs(a.length - b.length) > limite) return limite + 1;
+
+        var anterior = [];
+        var atual = [];
+        var i;
+        var j;
+        for (j = 0; j <= b.length; j += 1) anterior[j] = j;
+
+        for (i = 1; i <= a.length; i += 1) {
+            atual[0] = i;
+            var menorLinha = atual[0];
+            for (j = 1; j <= b.length; j += 1) {
+                var custo = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+                atual[j] = Math.min(
+                    anterior[j] + 1,
+                    atual[j - 1] + 1,
+                    anterior[j - 1] + custo
+                );
+                if (atual[j] < menorLinha) menorLinha = atual[j];
+            }
+            if (menorLinha > limite) return limite + 1;
+            var troca = anterior;
+            anterior = atual;
+            atual = troca;
+        }
+        return anterior[b.length];
+    }
+
+    function matchFuzzy(termo, artigo) {
+        if (!termo || termo.length < 4) return null;
+        var limite = termo.length >= 8 ? 2 : 1;
+        var tokens = prepararArtigo(artigo).tokensFuzzy;
+        var melhor = null;
+        for (var i = 0; i < tokens.length; i += 1) {
+            var candidato = tokens[i];
+            if (Math.abs(candidato.length - termo.length) > limite) continue;
+            var distancia = distanciaEdicao(termo, candidato, limite);
+            if (distancia <= limite && (!melhor || distancia < melhor.distance)) {
+                melhor = { token: candidato, distance: distancia };
+                if (distancia === 1) break;
+            }
+        }
+        return melhor;
+    }
+
+    function pontuarHeading(texto, consulta, termos, expansoes, usarFuzzy, artigo) {
+        var heading = normalizar(texto);
+        var frase = normalizar(consulta);
+        var score = 0;
+        if (frase.length > 1 && heading.indexOf(frase) !== -1) score += 60;
+        termos.forEach(function (termo) {
+            if (heading.indexOf(termo) !== -1) score += 16;
+        });
+        expansoes.forEach(function (termo) {
+            if (termos.indexOf(termo) === -1 && heading.indexOf(termo) !== -1) score += 9;
+        });
+        if (usarFuzzy && score === 0 && artigo) {
+            termos.forEach(function (termo) {
+                var match = matchFuzzy(termo, artigo);
+                if (match && heading.indexOf(match.token) !== -1) score += 6;
+            });
+        }
+        return score;
+    }
+
+    function melhorHeading(artigo, consulta, usarFuzzy) {
+        var headingData = artigo.headingData || (artigo.headings || []).map(function (texto) {
+            return { level: 2, text: texto };
+        });
+        var termos = termosDaConsulta(consulta);
+        var expansoes = expansoesParaConsulta(consulta, termos);
+        var melhor = null;
+        headingData.forEach(function (item) {
+            if (!item || !item.text || item.level === 1) return;
+            var score = pontuarHeading(item.text, consulta, termos, expansoes, usarFuzzy, artigo);
+            if (score > 0 && (!melhor || score > melhor.score)) melhor = { text: item.text, score: score };
+        });
+        return melhor && melhor.score >= 9 ? melhor.text : "";
+    }
+
+    function pontuarArtigo(artigo, consulta, usarFuzzy) {
         var campos = prepararArtigo(artigo);
         var frase = normalizar(consulta);
         var termos = termosDaConsulta(consulta);
@@ -82,21 +189,21 @@
         var score = 0;
         var razoes = {};
         var termosEncontrados = 0;
+        var fuzzyEncontrados = 0;
+        var fraseForte = false;
 
-        function registrar(campo, pontos, razao) {
-            if (campo) {
-                score += pontos;
-                razoes[razao] = true;
-                return true;
-            }
-            return false;
+        function registrar(condicao, pontos, razao) {
+            if (!condicao) return false;
+            score += pontos;
+            razoes[razao] = true;
+            return true;
         }
 
-        registrar(campos.title === frase, 180, "título");
-        registrar(frase.length > 1 && campos.title.indexOf(frase) !== -1, 120, "título");
-        registrar(frase.length > 1 && campos.tags.indexOf(frase) !== -1, 85, "tag");
-        registrar(frase.length > 1 && campos.aliases.indexOf(frase) !== -1, 80, "alias");
-        registrar(frase.length > 1 && campos.headings.indexOf(frase) !== -1, 70, "seção");
+        if (registrar(campos.title === frase, 180, "título")) fraseForte = true;
+        if (registrar(frase.length > 1 && campos.title.indexOf(frase) !== -1, 120, "título")) fraseForte = true;
+        if (registrar(frase.length > 1 && campos.tags.indexOf(frase) !== -1, 85, "tag")) fraseForte = true;
+        if (registrar(frase.length > 1 && campos.aliases.indexOf(frase) !== -1, 80, "alias")) fraseForte = true;
+        if (registrar(frase.length > 1 && campos.headings.indexOf(frase) !== -1, 70, "seção")) fraseForte = true;
         registrar(frase.length > 1 && campos.category.indexOf(frase) !== -1, 50, "matéria");
         registrar(frase.length > 2 && campos.body.indexOf(frase) !== -1, 35, "conteúdo");
 
@@ -108,7 +215,16 @@
             if (registrar(campos.headings.indexOf(termo) !== -1, 22, "seção")) achou = true;
             if (registrar(campos.category.indexOf(termo) !== -1, 12, "matéria")) achou = true;
             if (registrar(campos.body.indexOf(termo) !== -1, 6, "conteúdo")) achou = true;
-            if (achou) termosEncontrados += 1;
+            if (achou) {
+                termosEncontrados += 1;
+            } else if (usarFuzzy) {
+                var aproximado = matchFuzzy(termo, artigo);
+                if (aproximado) {
+                    score += aproximado.distance === 1 ? 18 : 10;
+                    fuzzyEncontrados += 1;
+                    razoes["termo aproximado"] = true;
+                }
+            }
         });
 
         expansoes.forEach(function (termo) {
@@ -120,24 +236,81 @@
             registrar(campos.body.indexOf(termo) !== -1, 4, "conceito relacionado");
         });
 
-        var cobertura = termos.length ? termosEncontrados / termos.length : 0;
+        var cobertura = termos.length ? (termosEncontrados + fuzzyEncontrados) / termos.length : 0;
         score += cobertura * 40;
         if (termos.length > 1 && cobertura < 1) score *= 0.55 + (0.45 * cobertura);
 
         return {
             article: artigo,
+            directScore: score,
+            graphScore: 0,
             score: score,
             coverage: cobertura,
-            reasons: Object.keys(razoes)
+            reasons: Object.keys(razoes),
+            strongPhrase: fraseForte,
+            bestHeading: melhorHeading(artigo, consulta, usarFuzzy)
         };
+    }
+
+    function mapaResultados(resultados) {
+        var mapa = {};
+        resultados.forEach(function (resultado) {
+            mapa[normalizar(resultado.article.sourcePath)] = resultado;
+        });
+        return mapa;
+    }
+
+    function aplicarGrafo(resultados) {
+        var mapa = mapaResultados(resultados);
+        var sementes = resultados
+            .filter(function (resultado) { return resultado.directScore >= 30; })
+            .sort(function (a, b) { return b.directScore - a.directScore; })
+            .slice(0, 5);
+
+        sementes.forEach(function (semente, indiceSemente) {
+            var peso = Math.max(8, 22 - (indiceSemente * 3));
+            var origem = semente.article;
+            (origem.related || []).forEach(function (path) {
+                var alvo = mapa[normalizar(path)];
+                if (!alvo || alvo === semente) return;
+                alvo.graphScore += peso;
+                if (alvo.reasons.indexOf("nota relacionada") === -1) alvo.reasons.push("nota relacionada");
+            });
+            (origem.backlinks || []).forEach(function (path) {
+                var alvo = mapa[normalizar(path)];
+                if (!alvo || alvo === semente) return;
+                alvo.graphScore += Math.max(6, peso - 6);
+                if (alvo.reasons.indexOf("conexão no vault") === -1) alvo.reasons.push("conexão no vault");
+            });
+        });
+
+        resultados.forEach(function (resultado) {
+            resultado.score = resultado.directScore + resultado.graphScore;
+            var umTermo = termosDaConsulta(window.PUC_SEARCH_LAST_QUERY || "").length <= 1;
+            resultado.kind = (
+                resultado.directScore >= 28 &&
+                (umTermo || resultado.coverage >= 0.5 || resultado.strongPhrase || resultado.reasons.indexOf("termo aproximado") !== -1)
+            ) ? "direct" : "related";
+        });
     }
 
     function ranquear(consulta) {
         if (!indice || !indice.articles) return [];
-        return indice.articles
-            .map(function (artigo) { return pontuarArtigo(artigo, consulta); })
+        window.PUC_SEARCH_LAST_QUERY = consulta;
+
+        var base = indice.articles.map(function (artigo) { return pontuarArtigo(artigo, consulta, false); });
+        var fortes = base.filter(function (resultado) { return resultado.directScore >= 28; });
+        var usarFuzzy = fortes.length < 3;
+        var resultados = usarFuzzy
+            ? indice.articles.map(function (artigo) { return pontuarArtigo(artigo, consulta, true); })
+            : base;
+
+        aplicarGrafo(resultados);
+
+        return resultados
             .filter(function (resultado) { return resultado.score >= 8; })
             .sort(function (a, b) {
+                if (a.kind !== b.kind) return a.kind === "direct" ? -1 : 1;
                 if (b.score !== a.score) return b.score - a.score;
                 if (b.coverage !== a.coverage) return b.coverage - a.coverage;
                 return String(a.article.title || a.article.fileTitle).localeCompare(String(b.article.title || b.article.fileTitle), "pt-BR", { numeric: true });
@@ -160,7 +333,8 @@
     function trechoRelevante(artigo, consulta) {
         var texto = String(artigo.plainText || "");
         var textoNormalizado = normalizar(texto);
-        var candidatos = termosDaConsulta(consulta).concat(expansoesParaConsulta(consulta, termosDaConsulta(consulta)));
+        var termos = termosDaConsulta(consulta);
+        var candidatos = termos.concat(expansoesParaConsulta(consulta, termos));
         var posicao = -1;
         var termoAchado = "";
 
@@ -212,7 +386,32 @@
         if (explorar) explorar.classList.remove("escondido");
     }
 
-    function abrirResultado(artigo) {
+    function rolarParaSecaoLegado(heading) {
+        if (!heading) return;
+        var alvoNormalizado = normalizar(heading);
+        var tentativas = [120, 320, 650];
+        tentativas.forEach(function (tempo) {
+            window.setTimeout(function () {
+                var headings = document.querySelectorAll("#artigo-corpo h1, #artigo-corpo h2, #artigo-corpo h3, #artigo-corpo h4, #artigo-corpo h5, #artigo-corpo h6");
+                for (var i = 0; i < headings.length; i += 1) {
+                    if (normalizar(headings[i].textContent) === alvoNormalizado) {
+                        headings[i].scrollIntoView(true);
+                        return;
+                    }
+                }
+            }, tempo);
+        });
+    }
+
+    function abrirResultado(resultado, consulta) {
+        var artigo = resultado.article;
+        var contextoBusca = {
+            sourcePath: artigo.sourcePath,
+            terms: termosDaConsulta(consulta),
+            heading: resultado.bestHeading || ""
+        };
+        window.PUC_SEARCH_PENDING = contextoBusca;
+
         var moderno = suportaLeitorModerno();
         if (moderno) {
             var rota = "#/" + encodeURIComponent(artigo.category) + "/" + encodeURIComponent(artigo.fileTitle || artigo.title);
@@ -239,9 +438,83 @@
         for (var i = 0; i < botoes.length; i += 1) {
             if (botoes[i].getAttribute("data-caminho") === artigo.sourcePath) {
                 botoes[i].click();
+                rolarParaSecaoLegado(contextoBusca.heading);
                 break;
             }
         }
+    }
+
+    function criarTituloSecao(texto, quantidade) {
+        var cabecalho = document.createElement("div");
+        cabecalho.className = "busca-secao-cabecalho";
+        var titulo = document.createElement("h3");
+        titulo.textContent = texto;
+        var total = document.createElement("span");
+        total.textContent = String(quantidade);
+        cabecalho.appendChild(titulo);
+        cabecalho.appendChild(total);
+        return cabecalho;
+    }
+
+    function criarListaResultados(resultados, termo, inicioNumero) {
+        var lista = document.createElement("div");
+        lista.className = "resultados-lista busca-ranqueada-lista";
+
+        resultados.forEach(function (resultado, indiceResultado) {
+            var artigo = resultado.article;
+            var card = document.createElement("a");
+            card.className = "resultado-item busca-ranqueada-item";
+            card.href = "#/" + encodeURIComponent(artigo.category) + "/" + encodeURIComponent(artigo.fileTitle || artigo.title);
+
+            var numero = document.createElement("span");
+            numero.className = "resultado-numero";
+            var numeroReal = inicioNumero + indiceResultado + 1;
+            numero.textContent = String(numeroReal).padStart ? String(numeroReal).padStart(2, "0") : (numeroReal < 10 ? "0" : "") + String(numeroReal);
+
+            var conteudo = document.createElement("span");
+            conteudo.className = "resultado-conteudo";
+
+            var meta = document.createElement("span");
+            meta.className = "busca-ranqueada-meta";
+            meta.textContent = nomeLimpo(artigo.category);
+
+            var titulo = document.createElement("strong");
+            titulo.textContent = nomeLimpo(artigo.fileTitle || artigo.title);
+
+            var secao = document.createElement("span");
+            secao.className = "busca-ranqueada-secao";
+            if (resultado.bestHeading) secao.textContent = "em “" + resultado.bestHeading + "”";
+
+            var trecho = document.createElement("span");
+            trecho.className = "resultado-trecho";
+            trecho.textContent = trechoRelevante(artigo, termo);
+
+            var motivos = document.createElement("span");
+            motivos.className = "busca-ranqueada-motivos";
+            resultado.reasons.slice(0, 4).forEach(function (razao) {
+                var badge = document.createElement("span");
+                badge.className = "busca-ranqueada-badge";
+                badge.textContent = razao;
+                motivos.appendChild(badge);
+            });
+
+            conteudo.appendChild(meta);
+            conteudo.appendChild(titulo);
+            if (resultado.bestHeading) conteudo.appendChild(secao);
+            conteudo.appendChild(trecho);
+            conteudo.appendChild(motivos);
+            card.appendChild(numero);
+            card.appendChild(conteudo);
+
+            card.addEventListener("click", function (evento) {
+                if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.button === 1) return;
+                evento.preventDefault();
+                abrirResultado(resultado, termo);
+            });
+            lista.appendChild(card);
+        });
+
+        return lista;
     }
 
     function renderizarBusca(consulta) {
@@ -275,71 +548,37 @@
             return;
         }
 
-        var ranqueados = ranquear(termo).slice(0, 60);
+        var ranqueados = ranquear(termo);
+        var diretos = ranqueados.filter(function (resultado) { return resultado.kind === "direct"; }).slice(0, 12);
+        var relacionados = ranqueados.filter(function (resultado) { return resultado.kind !== "direct"; }).slice(0, 8);
         container.innerHTML = "";
 
-        if (!ranqueados.length) {
+        if (!diretos.length && !relacionados.length) {
             container.innerHTML = '<p class="mensagem-busca">nenhum resultado relevante para <strong>“' + escaparHtml(termo) + '”</strong>.</p>';
             return;
         }
 
         var resumo = document.createElement("p");
         resumo.className = "resumo-busca";
-        resumo.textContent = ranqueados.length + (ranqueados.length === 1 ? " resultado relevante" : " resultados relevantes") + " para “" + termo + "”";
+        var totalVisivel = diretos.length + relacionados.length;
+        resumo.textContent = totalVisivel + (totalVisivel === 1 ? " resultado útil" : " resultados úteis") + " para “" + termo + "”";
         container.appendChild(resumo);
 
-        var lista = document.createElement("div");
-        lista.className = "resultados-lista busca-ranqueada-lista";
+        if (diretos.length) {
+            var secaoDiretos = document.createElement("section");
+            secaoDiretos.className = "busca-secao busca-secao-direta";
+            secaoDiretos.appendChild(criarTituloSecao("resultados diretos", diretos.length));
+            secaoDiretos.appendChild(criarListaResultados(diretos, termo, 0));
+            container.appendChild(secaoDiretos);
+        }
 
-        ranqueados.forEach(function (resultado, indiceResultado) {
-            var artigo = resultado.article;
-            var card = document.createElement("a");
-            card.className = "resultado-item busca-ranqueada-item";
-            card.href = "#/" + encodeURIComponent(artigo.category) + "/" + encodeURIComponent(artigo.fileTitle || artigo.title);
-
-            var numero = document.createElement("span");
-            numero.className = "resultado-numero";
-            numero.textContent = String(indiceResultado + 1).padStart ? String(indiceResultado + 1).padStart(2, "0") : (indiceResultado + 1 < 10 ? "0" : "") + String(indiceResultado + 1);
-
-            var conteudo = document.createElement("span");
-            conteudo.className = "resultado-conteudo";
-
-            var meta = document.createElement("span");
-            meta.className = "busca-ranqueada-meta";
-            meta.textContent = nomeLimpo(artigo.category);
-
-            var titulo = document.createElement("strong");
-            titulo.textContent = nomeLimpo(artigo.fileTitle || artigo.title);
-
-            var trecho = document.createElement("span");
-            trecho.className = "resultado-trecho";
-            trecho.textContent = trechoRelevante(artigo, termo);
-
-            var motivos = document.createElement("span");
-            motivos.className = "busca-ranqueada-motivos";
-            resultado.reasons.slice(0, 4).forEach(function (razao) {
-                var badge = document.createElement("span");
-                badge.className = "busca-ranqueada-badge";
-                badge.textContent = razao;
-                motivos.appendChild(badge);
-            });
-
-            conteudo.appendChild(meta);
-            conteudo.appendChild(titulo);
-            conteudo.appendChild(trecho);
-            conteudo.appendChild(motivos);
-            card.appendChild(numero);
-            card.appendChild(conteudo);
-
-            card.addEventListener("click", function (evento) {
-                if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.button === 1) return;
-                evento.preventDefault();
-                abrirResultado(artigo);
-            });
-            lista.appendChild(card);
-        });
-
-        container.appendChild(lista);
+        if (relacionados.length) {
+            var secaoRelacionados = document.createElement("section");
+            secaoRelacionados.className = "busca-secao busca-secao-relacionada";
+            secaoRelacionados.appendChild(criarTituloSecao("explorar também", relacionados.length));
+            secaoRelacionados.appendChild(criarListaResultados(relacionados, termo, diretos.length));
+            container.appendChild(secaoRelacionados);
+        }
     }
 
     function suportaLeitorModerno() {
@@ -366,14 +605,8 @@
     if (buscaMain) buscaMain.addEventListener("input", aoDigitar, true);
     if (buscaNav) buscaNav.addEventListener("input", aoDigitar, true);
 
-    function mapaPorCaminho(artigos) {
-        var mapa = {};
-        artigos.forEach(function (artigo) { mapa[normalizar(artigo.sourcePath)] = artigo; });
-        return mapa;
-    }
-
     var promessaIndice = fetchNativo
-        ? fetchNativo("search-index.json?v=search-v2", { cache: "no-cache" })
+        ? fetchNativo("search-index.json?v=search-v3", { cache: "no-cache" })
             .then(function (resposta) {
                 if (!resposta.ok) throw new Error("Índice indisponível");
                 return resposta.json();
@@ -391,46 +624,4 @@
 
     window.PUC_SEARCH_INDEX_PROMISE = promessaIndice;
     window.PUC_SEARCH = { rank: ranquear, normalize: normalizar };
-
-    if (fetchNativo && window.Response) {
-        window.fetch = function (entrada, opcoes) {
-            var url = typeof entrada === "string" ? entrada : (entrada && entrada.url ? entrada.url : "");
-            var ehArvore = /api\.github\.com\/repos\/leorruas\/puc\/git\/trees\/main\?recursive=1/.test(url);
-            var prefixoRaw = "https://raw.githubusercontent.com/leorruas/puc/main/";
-            var ehMarkdownRaw = url.indexOf(prefixoRaw) === 0 && /\.md(?:\?|$)/i.test(url);
-
-            if (!ehArvore && !ehMarkdownRaw) return fetchNativo(entrada, opcoes);
-
-            return promessaIndice.then(function (dados) {
-                if (!dados || !dados.articles) return fetchNativo(entrada, opcoes);
-
-                if (ehArvore) {
-                    var arvore = dados.articles.map(function (artigo) {
-                        return { path: artigo.sourcePath, type: "blob" };
-                    });
-                    return new Response(JSON.stringify({ tree: arvore }), {
-                        status: 200,
-                        headers: { "Content-Type": "application/json" }
-                    });
-                }
-
-                var caminhoCodificado = url.slice(prefixoRaw.length).split("?")[0];
-                var caminho;
-                try {
-                    caminho = caminhoCodificado.split("/").map(decodeURIComponent).join("/");
-                } catch (erro) {
-                    caminho = caminhoCodificado;
-                }
-                var mapa = mapaPorCaminho(dados.articles);
-                var artigo = mapa[normalizar(caminho)];
-                if (!artigo) return fetchNativo(entrada, opcoes);
-                return new Response(artigo.markdown || "", {
-                    status: 200,
-                    headers: { "Content-Type": "text/markdown; charset=utf-8" }
-                });
-            }).catch(function () {
-                return fetchNativo(entrada, opcoes);
-            });
-        };
-    }
 }());
