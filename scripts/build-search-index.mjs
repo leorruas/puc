@@ -192,7 +192,6 @@ for (const artigo of artigos) {
 
 const indice = {
   version: 3,
-  generatedAt: new Date().toISOString(),
   articleCount: artigos.length,
   articles: artigos
 };
