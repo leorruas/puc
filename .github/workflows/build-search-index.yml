@@ -7,6 +7,8 @@ on:
       - search-v2-implementation
     paths:
       - "**/*.md"
+      - "index.html"
+      - "search-runtime.js"
       - "scripts/build-search-index.mjs"
       - ".github/workflows/build-search-index.yml"
   workflow_dispatch:
@@ -30,7 +32,12 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
+
+      - name: Validar JavaScript
+        run: |
+          node --check search-runtime.js
+          node --check scripts/build-search-index.mjs
 
       - name: Gerar índice
         run: node scripts/build-search-index.mjs
