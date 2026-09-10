@@ -1,0 +1,49 @@
+name: Atualizar índice de busca
+
+on:
+  push:
+    branches:
+      - main
+      - search-v2-implementation
+    paths:
+      - "**/*.md"
+      - "scripts/build-search-index.mjs"
+      - ".github/workflows/build-search-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: search-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Gerar índice
+        run: node scripts/build-search-index.mjs
+
+      - name: Salvar índice atualizado
+        shell: bash
+        run: |
+          git add search-index.json
+          if git diff --cached --quiet; then
+            echo "Índice já está atualizado."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: atualiza índice de busca [skip ci]"
+          git push
