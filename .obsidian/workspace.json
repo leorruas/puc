@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
+                "file": "00. Inbox/web-backend 01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05. Modelagem de entidades e tipos de atributos"
+              "title": "web-backend 01"
             }
           }
         ]
@@ -187,11 +187,22 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/03-09-2026.md",
+    "index.md",
+    "design-qa.md",
+    "AGENTS.md",
+    "Leornardo Ruas.pdf",
+    "log.md",
+    "me.md",
+    "Screenshot 2026-09-19 at 17.09.27.png",
+    "00. Inbox/web-backend 01.md",
+    "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
     "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
     "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md",
     "06. Projeto - Aplicacao Interativa/00 – Projeto de fato.md",
@@ -210,23 +221,14 @@
     "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
     "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
     "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
-    "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
-    "00. Sintaxe Multilinguagem/10. Manipulação e representação de datas e horários (DateTime, fusos e formatos).md",
-    "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
-    "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md",
-    "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
-    "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md",
     "06. Projeto - Aplicacao Interativa/Cronograma Semanal - Eixo 2.pdf",
     "scratch_gen_pdf.py",
     "cronograma_temp.tex",
-    "06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo.md",
-    "01. Programacao Modular/06. Fatores internos de qualidade de software.md",
     "00. Sintaxe Multilinguagem",
     "00. Geral/Sintaxe Multilinguagem",
     "scratch_rosilane.txt",
     "00. Inbox/Reunião Inicial Turma 5 - Divisão Grupos e Definição de Horários.vtt",
     "00. Geral",
-    "scratch_parsed.txt",
-    "00. Inbox/Aula Inaugural - Veteranos - 202602.vtt"
+    "scratch_parsed.txt"
   ]
 }
