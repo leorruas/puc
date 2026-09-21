@@ -1,9 +1,10 @@
 ## 2026-09-21
 
-* **Desenvolvimento Web Back-End 01 — incorporação de material visual da aula**:
-  - Incorporada ao artigo [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor|Arquitetura de software e cliente-servidor]] a imagem `Screenshot 2026-09-19 at 17.09.27.png`, registrada durante a aula e associada ao trecho sobre arquitetura cliente-servidor.
+* **Desenvolvimento Web Back-End 01 — uso de material visual como fonte de apoio**:
+  - Removida a incorporação direta do screenshot da aula no artigo [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor|Arquitetura de software e cliente-servidor]].
+  - Imagens e demais arquivos da inbox devem ser tratados como fontes de apoio para leitura, interpretação e enriquecimento dos artigos, sendo incorporados visualmente apenas quando isso acrescentar valor didático.
   - O conteúdo em elaboração do artigo 02 não foi alterado.
-  - A alteração complementa o material de estudo sem mudar o estado de aprendizagem da disciplina; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
+  - A alteração é editorial e não muda o estado de aprendizagem da disciplina; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
 
 # Log de alterações do vault
 
