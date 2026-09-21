@@ -1,5 +1,14 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End — correção do glossário**:
+  - Corrigida a quebra de tabela introduzida na expansão do glossário após o artigo 03.
+  - Separados os conceitos em duas seções: “Cliente, servidor e comunicação Web” e “Aplicações Web e renderização”.
+  - Refinadas definições de endereço IP, porta, TCP, conteúdo estático, DOM, AJAX, SSR, SSG, hidratação e SEO para maior precisão e consistência com o artigo 03.
+  - Mantidos os wikilinks protegidos com `\|` nas tabelas.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração corrige organização e precisão conceitual sem mudar o estado de estudo da disciplina.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 03 — links das referências complementares**:
   - Adicionados links diretos para MDN Web Docs, web.dev, Google Search Central, documentação do Next.js e Microsoft Learn na seção de referências do artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]].
   - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é apenas bibliográfica.
