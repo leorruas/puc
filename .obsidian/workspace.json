@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/web-backend 03.md",
+                "file": "00. Inbox/03-09-2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "web-backend 03"
+              "title": "03-09-2026"
             }
           }
         ]
@@ -193,6 +193,7 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/web-backend 03.md",
     "Screenshot 2026-09-21 at 15.02.23.png",
     "Screenshot 2026-09-21 at 15.00.53.png",
     "05. Desenvolvimento Web Back-End/Glossário de conceitos.md",
@@ -200,7 +201,6 @@
     "Screenshot 2026-09-21 at 14.49.04.png",
     "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md",
     "00. Inbox/web-backend 02.md",
-    "00. Inbox/web-backend 03.md",
     "00. Inbox/web-backend 01.md",
     "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md",
     "00. Inbox/03-09-2026.md",
