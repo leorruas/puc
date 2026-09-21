@@ -1,5 +1,13 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End — criação do glossário de conceitos**:
+  - Criado [[05. Desenvolvimento Web Back-End/Glossário de conceitos|Glossário de conceitos]] com os termos efetivamente estudados nos artigos 01 e 02.
+  - Organizados conceitos de arquitetura, cliente-servidor, HTTP, características arquiteturais, segurança e trade-offs, com links para os artigos correspondentes.
+  - Registradas separadamente as simplificações didáticas usadas pela PUC sobre escalabilidade cliente-servidor e vantagens iniciais da arquitetura monolítica.
+  - Atualizado o resumo da disciplina para incluir o glossário como material de apoio. O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração organiza conteúdo já estudado sem acrescentar nova evidência de domínio.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 02 — estilos arquiteturais**:
   - Criado o artigo [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor|Estilos arquiteturais: camadas, monolítico e cliente-servidor]], consolidando arquitetura em camadas, distinção entre *layers* e *tiers*, escalabilidade cliente-servidor e arquitetura monolítica.
   - Registrado o gabarito da PUC para a questão sobre os três estilos: I e III verdadeiras e II falsa.
