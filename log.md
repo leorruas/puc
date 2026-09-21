@@ -1,5 +1,11 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End 03 — links das referências complementares**:
+  - Adicionados links diretos para MDN Web Docs, web.dev, Google Search Central, documentação do Next.js e Microsoft Learn na seção de referências do artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]].
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é apenas bibliográfica.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 03 — diagramas da aula convertidos para Mermaid**:
   - Incorporada ao artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]] a leitura dos dois diagramas enviados pelo estudante: aplicação Web tradicional e SPA.
   - Criados dois diagramas Mermaid compactos, preservando a separação client-side/server-side e os fluxos centrais apresentados na aula.
