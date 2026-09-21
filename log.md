@@ -1,3 +1,10 @@
+## 2026-09-21
+
+* **Desenvolvimento Web Back-End 01 — incorporação de material visual da aula**:
+  - Incorporada ao artigo [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor|Arquitetura de software e cliente-servidor]] a imagem `Screenshot 2026-09-19 at 17.09.27.png`, registrada durante a aula e associada ao trecho sobre arquitetura cliente-servidor.
+  - O conteúdo em elaboração do artigo 02 não foi alterado.
+  - A alteração complementa o material de estudo sem mudar o estado de aprendizagem da disciplina; o Mapa de aprendizagem do semestre foi revisado e permanece inalterado.
+
 # Log de alterações do vault
 
 Este arquivo registra o histórico de criações, modificações, edições e reorganizações estruturais realizadas no vault em **ordem cronológica decrescente (mais recente no topo)**.
