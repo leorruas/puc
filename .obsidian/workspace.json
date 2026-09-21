@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/web-backend 01.md",
+                "file": "00. Inbox/web-backend 02.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "web-backend 01"
+              "title": "web-backend 02"
             }
           }
         ]
@@ -193,6 +193,8 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/web-backend 01.md",
+    "00. Inbox/web-backend 02.md",
     "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md",
     "00. Inbox/03-09-2026.md",
     "index.md",
@@ -202,7 +204,6 @@
     "log.md",
     "me.md",
     "Screenshot 2026-09-19 at 17.09.27.png",
-    "00. Inbox/web-backend 01.md",
     "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
     "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
     "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md",
@@ -220,7 +221,6 @@
     "00. Sintaxe Multilinguagem/11. Herança, superclasses e subclasses (sintaxe comparada e extensibilidade).md",
     "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
     "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
-    "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
     "06. Projeto - Aplicacao Interativa/Cronograma Semanal - Eixo 2.pdf",
     "scratch_gen_pdf.py",
     "cronograma_temp.tex",
