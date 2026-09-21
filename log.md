@@ -1,5 +1,15 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End 03 — diagramas da aula convertidos para Mermaid**:
+  - Incorporada ao artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]] a leitura dos dois diagramas enviados pelo estudante: aplicação Web tradicional e SPA.
+  - Criados dois diagramas Mermaid compactos, preservando a separação client-side/server-side e os fluxos centrais apresentados na aula.
+  - No fluxo tradicional, explicitados navegador, servidor Web, servidor de aplicação, arquivos/templates e banco de dados.
+  - No fluxo SPA, explicitados carregamento inicial, atualização do DOM/componentes e chamadas assíncronas a Web APIs.
+  - Registrada a ressalva de que AJAX é a técnica/conceito de comunicação assíncrona, não uma tecnologia obrigatória, e de que JSON é um formato comum, mas não exclusivo.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda visualmente conteúdo já estudado.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 03 — comparação visual entre SSR e SPA/CSR**:
   - Expandida a seção de SSR no artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]] para explicar por que o carregamento inicial pode ser mais rápido quando o HTML é produzido no servidor.
   - Adicionado diagrama Mermaid comparando, passo a passo, o carregamento inicial de uma SPA com CSR e de uma aplicação com SSR.
