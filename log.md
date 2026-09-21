@@ -1,5 +1,13 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End 03 — comparação visual entre SSR e SPA/CSR**:
+  - Expandida a seção de SSR no artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]] para explicar por que o carregamento inicial pode ser mais rápido quando o HTML é produzido no servidor.
+  - Adicionado diagrama Mermaid comparando, passo a passo, o carregamento inicial de uma SPA com CSR e de uma aplicação com SSR.
+  - Registrada a ressalva de que “SSR é muito mais rápido que SPA” não é uma regra universal; a vantagem depende da carga do servidor, tamanho dos bundles, cache, rede, dispositivo e implementação.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda um conceito já registrado sem mudar o estado da disciplina.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 03 — tipos de aplicações Web e renderização**:
   - Criado o artigo [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização|Tipos de aplicações Web e estratégias de renderização]] a partir do arquivo de estudo `web-backend 03.md`.
   - O material da página da PUC foi usado apenas como referência de conteúdo: os trechos foram reestruturados e reescritos em linguagem própria para evitar reprodução literal no vault público.
