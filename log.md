@@ -1,5 +1,13 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End 02 — estilos arquiteturais**:
+  - Criado o artigo [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor|Estilos arquiteturais: camadas, monolítico e cliente-servidor]], consolidando arquitetura em camadas, distinção entre *layers* e *tiers*, escalabilidade cliente-servidor e arquitetura monolítica.
+  - Registrado o gabarito da PUC para a questão sobre os três estilos: I e III verdadeiras e II falsa.
+  - Incluída ressalva técnica de que monolítico e arquitetura em camadas não são categorias mutuamente exclusivas e de que a facilidade de teste atribuída ao monólito é contextual.
+  - Atualizado o resumo da disciplina e o Mapa de aprendizagem do semestre: Desenvolvimento Web Back-End passa de “Ainda não estudado” para “Em estudo”, com dois artigos de cobertura inicial.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End 01 — uso de material visual como fonte de apoio**:
   - Removida a incorporação direta do screenshot da aula no artigo [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor|Arquitetura de software e cliente-servidor]].
   - Imagens e demais arquivos da inbox devem ser tratados como fontes de apoio para leitura, interpretação e enriquecimento dos artigos, sendo incorporados visualmente apenas quando isso acrescentar valor didático.
