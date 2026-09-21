@@ -1,5 +1,15 @@
 ## 2026-09-21
 
+* **Desenvolvimento Web Back-End 04 — linguagens back-end e PHP**:
+  - Criado o artigo [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP|Linguagens de programação back-end e PHP]] a partir do arquivo de estudo `web-backend 04.md`.
+  - O conteúdo copiado da página da PUC foi usado apenas como base conceitual e reescrito em linguagem própria.
+  - Consolidados PHP, processamento server-side, GET/POST, templates Web, Apache/MySQL/PHP e pilha WAMP.
+  - Refinadas as anotações sobre script versus linguagem de programação, compilação versus interpretação, modelos híbridos e tipagem estática versus dinâmica.
+  - Corrigidos pontos conceituais das notas: PHP significa “PHP: Hypertext Preprocessor”; código interpretado não implica código-fonte visível ao usuário; portabilidade não decorre de tipagem dinâmica; servidor Web não se limita a servir arquivos.
+  - Atualizados o resumo, o glossário e o Mapa de aprendizagem do semestre, mantendo a disciplina no estado “Em estudo”.
+
+## 2026-09-21
+
 * **Desenvolvimento Web Back-End — correção do glossário**:
   - Corrigida a quebra de tabela introduzida na expansão do glossário após o artigo 03.
   - Separados os conceitos em duas seções: “Cliente, servidor e comunicação Web” e “Aplicações Web e renderização”.
