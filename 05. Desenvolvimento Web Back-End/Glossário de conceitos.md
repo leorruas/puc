@@ -58,6 +58,23 @@ Quando a forma como a PUC apresenta um conceito simplifica uma distinção técn
 | **API** | Interface que expõe operações ou dados para serem utilizados por outro software. | Em SPAs, o backend frequentemente fornece dados por APIs enquanto o cliente decide como apresentá-los. | [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização\|Artigo 03]] |
 | **SEO** | Conjunto de práticas para favorecer descoberta, rastreamento, indexação e compreensão de páginas por mecanismos de busca. | CSR pode exigir cuidados adicionais; SSR e pré-renderização podem tornar o conteúdo inicial mais diretamente acessível aos rastreadores. | [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização\|Artigo 03]] |
 
+## Linguagens, execução e PHP
+
+| Conceito | Definição curta | Distinção ou observação | Onde aparece |
+| --- | --- | --- | --- |
+| **PHP** | Linguagem de programação de propósito geral muito usada no desenvolvimento Web server-side. | O nome oficial é PHP: Hypertext Preprocessor. Pode ser incorporada em HTML e gerar conteúdo dinâmico. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Linguagem de script** | Linguagem usada em contextos em que programas são executados por um runtime ou ambiente hospedeiro. | “Script” descreve principalmente um modo histórico de uso e execução; não significa que a linguagem deixe de ser uma linguagem de programação. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Compilação** | Tradução do código-fonte para outra representação antes da execução. | A saída pode ser código de máquina ou código intermediário. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Interpretação** | Execução do programa por um runtime que lê e processa suas instruções durante a execução. | Linguagens modernas podem combinar interpretação e compilação. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **JIT** | Compilação realizada durante a execução do programa. | É uma estratégia híbrida comum em runtimes modernos, como JVM, .NET e motores JavaScript. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Tipagem estática** | Sistema em que tipos são verificados principalmente antes da execução. | C# e Java são exemplos estudados. Não é sinônimo de “tipagem forte”. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Tipagem dinâmica** | Sistema em que tipos dos valores são determinados e verificados principalmente durante a execução. | PHP e JavaScript são exemplos estudados. Não significa ausência de tipos. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Coerção de tipos** | Conversão automática ou implícita de um valor de um tipo para outro em determinado contexto. | PHP realiza coerções em vários contextos; isso é diferente de simplesmente dizer que a linguagem é “dinâmica”. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Servidor Web** | Software que recebe requisições HTTP e produz ou encaminha respostas. | Apache é um exemplo. Pode servir arquivos estáticos ou encaminhar a execução para uma aplicação dinâmica. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Runtime** | Ambiente responsável por executar um programa e fornecer serviços necessários durante sua execução. | No PHP, executa o código server-side; no .NET, o runtime executa aplicações C#. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **WAMP** | Pilha de desenvolvimento formada por Windows, Apache, MySQL e PHP. | Reúne componentes diferentes em um ambiente local; é específica do ecossistema Windows. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **Template Web** | Estrutura de interface que combina marcação fixa com pontos preenchidos dinamicamente. | Pode conter valores, loops e condições, mas regras de negócio excessivas no template prejudicam a separação de responsabilidades. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+
 ## Características arquiteturais
 
 | Conceito | Definição curta | Distinção ou observação | Onde aparece |
