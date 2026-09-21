@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/web-backend 03.md",
+                "file": "00. Inbox/web-backend 04.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "web-backend 03"
+              "title": "web-backend 04"
             }
           }
         ]
@@ -193,11 +193,12 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/web-backend 03.md",
+    "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md",
     "Screenshot 2026-09-21 at 14.51.51.png",
     "Screenshot 2026-09-21 at 14.49.04.png",
     "Screenshot 2026-09-19 at 17.09.27.png",
     "00. Inbox/web-backend 04.md",
-    "00. Inbox/web-backend 03.md",
     "00. Inbox 1/web-backend 03.md",
     "00. Inbox 1/web-backend 02.md",
     "00. Inbox 1/web-backend 01.md",
