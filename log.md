@@ -1,5 +1,13 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 04 — correção do contexto exibido no app**:
+  - Removido o blockquote usado apenas para enfatizar que “linguagem de script” também é linguagem de programação; a ideia agora aparece integrada ao parágrafo.
+  - Reescrita a introdução da seção para eliminar metadiscurso desnecessário sobre a aula.
+  - Corrigido o leitor Web para usar no cabeçalho “Contexto” somente blocos explicitamente marcados com `> **Contexto:**`, evitando que qualquer citação comum do artigo seja promovida indevidamente a contexto.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial e de navegação.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 06 — definição de DTO**:
   - Adicionada no artigo 06 a definição de DTO (`Data Transfer Object`) logo após sua primeira ocorrência.
   - Incluído exemplo simples de `CriarPessoaDto` para distinguir objeto de transporte de entidade persistida.
