@@ -1,5 +1,12 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 05 — remoção de metadiscurso**:
+  - Removidas formulações como “a aula destaca”, “a disciplina apresenta”, “citado na aula” e referências desnecessárias ao professor quando o conteúdo podia ser explicado diretamente.
+  - Mantidas referências à transcrição apenas onde a origem é relevante para distinguir reconstrução didática de reprodução literal.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End — controller e handler no glossário**:
   - Adicionado o termo `Handler` ao glossário da disciplina.
   - Refinada a definição de `Controller` para explicitar sua relação com MVC e distingui-lo de `handler`, que é um termo mais genérico para o código que trata uma requisição, evento ou mensagem.
