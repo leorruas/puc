@@ -1,5 +1,13 @@
 ## 2026-09-22
 
+* **Diretriz editorial — prosa didática direta**:
+  - Adicionada ao `AGENTS.md` a regra de evitar metadiscurso desnecessário sobre a origem do conteúdo em artigos, como “citados na aula estão”, “a aula destaca” e “nas anotações aparecem”.
+  - Atribuições explícitas à PUC, aula, professor ou fonte ficam reservadas para casos em que a origem realmente altera a interpretação do conteúdo.
+  - Ajustada no artigo [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional|Frameworks Web, MVC e mapeamento objeto-relacional]] a frase “Entre os recursos citados na aula estão” para uma formulação didática direta.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é editorial.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 05 — exemplo completo do tutorial de ORM**:
   - Incorporado ao final do artigo [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional|Frameworks Web, MVC e mapeamento objeto-relacional]] um exemplo consolidado baseado na transcrição `17_Mapeamento Objeto-Relacional Orm-Português.txt`.
   - Reconstruído em um único bloco o fluxo completo demonstrado no vídeo: entidades `Genero` e `Filme`, relacionamento 1:N, `ApplicationContext`, `DbSet<T>`, configuração SQL Server, inserção de gênero e filme e `SaveChanges()`.
