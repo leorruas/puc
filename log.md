@@ -1,5 +1,12 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End — controller e handler no glossário**:
+  - Adicionado o termo `Handler` ao glossário da disciplina.
+  - Refinada a definição de `Controller` para explicitar sua relação com MVC e distingui-lo de `handler`, que é um termo mais genérico para o código que trata uma requisição, evento ou mensagem.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração consolida terminologia já presente no artigo 05.
+
+## 2026-09-22
+
 * **Diretriz editorial — prosa didática direta**:
   - Adicionada ao `AGENTS.md` a regra de evitar metadiscurso desnecessário sobre a origem do conteúdo em artigos, como “citados na aula estão”, “a aula destaca” e “nas anotações aparecem”.
   - Atribuições explícitas à PUC, aula, professor ou fonte ficam reservadas para casos em que a origem realmente altera a interpretação do conteúdo.
