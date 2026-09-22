@@ -56,6 +56,12 @@
  - Blocos de código, tabelas, citações, fórmulas e diagramas Mermaid permanecem visualmente separados da prosa. Os parágrafos imediatamente antes e depois desses elementos devem continuar sintaticamente completos.
  - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
 
+### 5.2 Prosa didática direta, sem metadiscurso desnecessário sobre a fonte
+ - Ao transformar anotações, aulas, transcrições ou materiais da PUC em artigo, escrever o conteúdo diretamente como explicação didática. Evitar frases de bastidor como `"citados na aula estão"`, `"a aula destaca"`, `"nas anotações aparecem"`, `"o professor fala sobre"`, `"o material apresenta"` ou equivalentes quando a origem já estiver implícita no contexto da nota.
+ - Preferir formulações diretas, por exemplo: `"Frameworks Web costumam oferecer autenticação, roteamento e validação."` em vez de `"Entre os recursos citados na aula estão autenticação, roteamento e validação."`
+ - Mencionar explicitamente a PUC, a aula, o professor ou a fonte apenas quando a atribuição for semanticamente importante: divergência entre simplificação didática e uso técnico, interpretação de gabarito, citação literal curta, contextualização histórica ou distinção entre conteúdo do curso e aprofundamento externo.
+ - O artigo final deve soar como material de estudo consolidado, não como relato de como a aula foi transcrita ou de onde cada frase veio.
+
 ## Organização e numeração de arquivos
 
 6. **Padronização dos arquivos de resumo, consolidação bibliográfica e autores citados:**
