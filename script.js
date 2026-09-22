@@ -241,7 +241,7 @@ function abrirDisciplina(categoria, atualizarRota = true) {
         acao.addEventListener("click", (event) => {
             if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
             event.preventDefault();
-            abrirArtigo(artigo.titulo, artigo.conteudo);
+            abrirArtigo(artigo.titulo, artigo.conteudo, true, [], "", artigo);
         });
 
         disciplinaAcoes.appendChild(acao);
@@ -487,7 +487,7 @@ function exibirResultados(artigos, termo = "", termos = []) {
                     if (event.metaKey || event.ctrlKey || event.shiftKey || event.button === 1) return;
                     event.preventDefault();
                     const abrirNaOcorrencia = !contemTodosOsTermos(artigo.titulo, listaTermos);
-                    abrirArtigo(artigo.titulo, artigo.conteudo, true, abrirNaOcorrencia ? listaTermos : []);
+                    abrirArtigo(artigo.titulo, artigo.conteudo, true, abrirNaOcorrencia ? listaTermos : [], "", artigo);
                 });
 
                 subCardsContainer.appendChild(card);
@@ -658,13 +658,17 @@ function encontrarAlvoDaBuscaNoArtigo(termos) {
 }
 
 // Leitor de Artigos com Suporte Suíço
-async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = [], secaoBusca = "") {
+async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = [], secaoBusca = "", artigoReferencia = null) {
     divResultados.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
     document.getElementById("explorar-disciplinas")?.classList.add("escondido");
 
-    artigoAtual = todosOsArtigos.find(a => a.titulo === titulo && a.conteudo === conteudoMarkdown) ||
+    // Quando o chamador já conhece o item exato do catálogo, preserve essa
+    // referência. Títulos como "Glossário de conceitos" se repetem entre
+    // disciplinas e não podem ser resolvidos apenas pelo título.
+    artigoAtual = artigoReferencia ||
+                  todosOsArtigos.find(a => a.titulo === titulo && a.conteudo === conteudoMarkdown) ||
                   todosOsArtigos.find(a => a.titulo === titulo) || {
                       titulo: titulo,
                       path: `./${titulo}.md`,
@@ -1146,7 +1150,7 @@ function renderizarBotoesNavegacao(artigoAtual) {
         cardPrev.addEventListener("click", (e) => {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
             e.preventDefault();
-            abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo);
+            abrirArtigo(artigoAnterior.titulo, artigoAnterior.conteudo, true, [], "", artigoAnterior);
         });
         grid.appendChild(cardPrev);
     } else {
@@ -1166,7 +1170,7 @@ function renderizarBotoesNavegacao(artigoAtual) {
         cardNext.addEventListener("click", (e) => {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
             e.preventDefault();
-            abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo);
+            abrirArtigo(artigoProximo.titulo, artigoProximo.conteudo, true, [], "", artigoProximo);
         });
         grid.appendChild(cardNext);
     } else {
@@ -1379,7 +1383,7 @@ function navegarParaLinkObsidian(destino, atualizarHash = true) {
     const encontrado = buscarArtigoPorCaminho(nomeArtigo);
 
     if (encontrado) {
-        abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash, [], hashSecao).then(() => {
+        abrirArtigo(encontrado.titulo, encontrado.conteudo, atualizarHash, [], hashSecao, encontrado).then(() => {
             if (!hashSecao) return;
             setTimeout(() => scrollParaHeading(hashSecao), 120);
             setTimeout(() => scrollParaHeading(hashSecao), 320);
@@ -1640,7 +1644,8 @@ function tratarHashNavegacao() {
                 artigo.conteudo,
                 false,
                 contextoBusca?.terms || [],
-                contextoBusca?.heading || ""
+                contextoBusca?.heading || "",
+                artigo
             );
             return;
         }
