@@ -1,5 +1,16 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 06 — Model, validação, DI e persistência no ASP.NET Core MVC**:
+  - Criado o artigo [[05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC|Model, validação e persistência no ASP.NET Core MVC]] a partir da leitura direta das imagens de estudo registradas entre 14:17 e 17:02.
+  - Organizado o fluxo Model → Data Annotations → `ApplicationDbContext` → registro no contêiner → injeção no controller → consulta pelo `DbSet` → banco.
+  - Explicados `DbContextOptions`, `DbSet<Pessoa>`, `IdentityDbContext`, `readonly`, injeção por construtor, connection strings, `appsettings.json`, migrations e `Find/FindAsync`.
+  - Registrada a diferença entre o padrão antigo com `Startup.ConfigureServices` e o padrão atual com `Program.cs`.
+  - Corrigida tecnicamente a interpretação de `DataType.EmailAddress`: ele fornece metadados, enquanto `EmailAddress` é o atributo destinado à validação do formato.
+  - Registrado que a connection string com SQL Server LocalDB é específica do Windows e não funciona diretamente no macOS.
+  - Atualizados o artigo 05 com navegação para o próximo artigo, o resumo da disciplina, o glossário e o Mapa de aprendizagem do semestre; Desenvolvimento Web Back-End permanece “Em estudo”.
+
+## 2026-09-22
+
 * **Leitor Web — correção de links para arquivos com títulos repetidos**:
   - Corrigida a navegação de notas com nomes repetidos entre disciplinas, como `Glossário de conceitos`.
   - `abrirArtigo()` agora pode receber a referência exata do artigo do catálogo, evitando que um conteúdo ainda não carregado seja reidentificado apenas pelo título e abra a primeira ocorrência encontrada no vault.
