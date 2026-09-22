@@ -75,6 +75,31 @@ Quando a forma como a PUC apresenta um conceito simplifica uma distinção técn
 | **WAMP** | Pilha de desenvolvimento formada por Windows, Apache, MySQL e PHP. | Reúne componentes diferentes em um ambiente local; é específica do ecossistema Windows. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
 | **Template Web** | Estrutura de interface que combina marcação fixa com pontos preenchidos dinamicamente. | Pode conter valores, loops e condições, mas regras de negócio excessivas no template prejudicam a separação de responsabilidades. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
 
+## Frameworks Web, MVC e persistência
+
+| Conceito | Definição curta | Distinção ou observação | Onde aparece |
+| --- | --- | --- | --- |
+| **Framework Web** | Estrutura reutilizável de componentes, convenções e mecanismos para desenvolver aplicações Web. | Não é apenas uma biblioteca: normalmente define parte do fluxo e da organização da aplicação. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Server-centric** | Abordagem em que grande parte do processamento da aplicação ocorre no servidor. | Pode gerar views, controlar rotas, sessão e acesso a dados no server-side. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Browser-centric** | Abordagem em que grande parte da lógica de interface e estado executa no navegador. | Pode combinar-se com SSR ou outros mecanismos server-side em arquiteturas híbridas. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Framework horizontal** | Framework voltado a problemas reutilizáveis em muitos domínios. | Exemplos de problemas: roteamento, autenticação, validação e persistência. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Framework vertical** | Framework ou extensão orientada a necessidades de um domínio específico. | Pode incorporar conceitos próprios de áreas como comércio eletrônico, saúde ou finanças. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **MVC** | Padrão que separa a aplicação em Model, View e Controller. | Busca separar estado/regras, apresentação e coordenação das requisições. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Model** | Parte do MVC relacionada a dados, estado e regras do domínio. | Não significa obrigatoriamente uma tabela de banco de dados. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **View** | Parte do MVC responsável pela apresentação ao usuário. | No ASP.NET Core MVC, Razor é um mecanismo usado para criar views. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Controller** | Componente que recebe a requisição, coordena o processamento e seleciona a resposta apropriada. | Já havia aparecido no artigo 03; aqui é contextualizado dentro do padrão MVC. | [[05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização\|Artigo 03]] e [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Razor** | Sintaxe e mecanismo de views/templates do ecossistema ASP.NET Core. | Permite combinar HTML com código C# para produzir conteúdo dinâmico. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Roteamento** | Mecanismo que associa uma requisição ou URL a uma parte da aplicação capaz de processá-la. | Faz a ponte entre endereço/ação solicitada e controller, handler ou endpoint. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Scaffolding** | Geração automatizada de uma estrutura inicial de código a partir de modelos e templates. | Pode gerar CRUD, controllers e views, mas o resultado precisa ser revisado e adaptado. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **ORM** | Técnica de mapeamento entre modelos orientados a objetos e estruturas de bancos relacionais. | Reduz SQL escrito manualmente, mas não elimina SQL nem o modelo relacional. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Impedância objeto-relacional** | Diferença estrutural entre a representação por objetos e a representação por tabelas relacionais. | Objetos usam referências e coleções; bancos relacionais usam tabelas, linhas e chaves. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Entity Framework Core** | ORM do ecossistema .NET para acesso e persistência de dados. | Mapeia entidades .NET para provedores de banco e gera operações de consulta e persistência. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Propriedade de navegação** | Propriedade de uma entidade usada para acessar entidades relacionadas no modelo de objetos. | Pode ser referência única ou coleção, como `ICollection<Filme>`. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **DbContext** | Classe central do EF Core que coordena consultas, rastreamento de entidades e persistência. | Atua como unidade de trabalho entre o modelo em objetos e o banco. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **DbSet<T>** | Conjunto de entidades de determinado tipo exposto por um `DbContext`. | Não é literalmente a tabela, embora normalmente participe do mapeamento para uma estrutura persistida. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Migration** | Registro versionado de mudanças no modelo que precisam ser aplicadas ao esquema do banco. | No EF Core, `dotnet ef migrations add` cria a migration e `dotnet ef database update` a aplica. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+| **Provider do EF Core** | Pacote que conecta o EF Core a um mecanismo específico de banco de dados. | Exemplos estudados: SQL Server e SQLite. | [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional\|Artigo 05]] |
+
 ## Características arquiteturais
 
 | Conceito | Definição curta | Distinção ou observação | Onde aparece |
@@ -127,4 +152,4 @@ Alguns exercícios usam simplificações adequadas ao nível introdutório da di
 
 ## Termos ainda não consolidados
 
-O glossário não antecipa tópicos apenas porque costumam aparecer em cursos de back-end. Conceitos como API REST, endpoint, middleware, rota, ORM, autenticação por token e outros serão adicionados quando efetivamente aparecerem nas aulas, exercícios ou artigos da disciplina.
+O glossário não antecipa tópicos apenas porque costumam aparecer em cursos de back-end. Conceitos como API REST, endpoint, middleware, autenticação por token e outros serão adicionados quando efetivamente aparecerem nas aulas, exercícios ou artigos da disciplina.
