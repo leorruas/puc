@@ -1,5 +1,12 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 05 — relação com frameworks de negócios movida para a introdução**:
+  - A comparação entre frameworks de software e frameworks de negócios/Service Design foi incorporada à introdução do artigo, onde funciona melhor como ponte conceitual inicial.
+  - Removida a seção isolada para evitar fragmentação e repetição.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é apenas estrutural/editorial.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 05 — remoção de metadiscurso**:
   - Removidas formulações como “a aula destaca”, “a disciplina apresenta”, “citado na aula” e referências desnecessárias ao professor quando o conteúdo podia ser explicado diretamente.
   - Mantidas referências à transcrição apenas onde a origem é relevante para distinguir reconstrução didática de reprodução literal.
