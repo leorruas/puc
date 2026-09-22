@@ -1,3 +1,11 @@
+## 2026-09-22
+
+* **Desenvolvimento Web Back-End 04 — correção de escopo editorial**:
+  - Reestruturado o artigo [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP|Linguagens de programação back-end]] para refletir o escopo real da aula: características gerais de linguagens e ambientes back-end, com PHP como estudo de caso principal.
+  - Adicionada uma seção explícita sobre o papel geral de qualquer linguagem server-side e uma tabela com os eixos apresentados na aula: modelo de execução, tipagem, portabilidade, integração Web, acesso a dados e templates.
+  - Mantidos PHP, C# e ASP.NET Core MVC apenas nos papéis sustentados pelo material: PHP como foco da sessão, C# como contraste em tipagem/execução e ASP.NET Core MVC/Razor como conteúdo posterior anunciado pela disciplina.
+  - Atualizado o resumo da disciplina. O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração corrige o enquadramento do artigo sem mudar o estado de aprendizagem.
+
 ## 2026-09-21
 
 * **Desenvolvimento Web Back-End 04 — linguagens back-end e PHP**:
