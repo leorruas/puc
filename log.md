@@ -1,5 +1,11 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 05 — ajuste editorial em scaffolding**:
+  - Removida a formulação “citada na aula” da seção de scaffolding, mantendo a explicação direta do conceito.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas editorial.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 05 — relação com frameworks de negócios movida para a introdução**:
   - A comparação entre frameworks de software e frameworks de negócios/Service Design foi incorporada à introdução do artigo, onde funciona melhor como ponte conceitual inicial.
   - Removida a seção isolada para evitar fragmentação e repetição.
