@@ -1,5 +1,14 @@
 ## 2026-09-22
 
+* **Leitor Web — correção de links para arquivos com títulos repetidos**:
+  - Corrigida a navegação de notas com nomes repetidos entre disciplinas, como `Glossário de conceitos`.
+  - `abrirArtigo()` agora pode receber a referência exata do artigo do catálogo, evitando que um conteúdo ainda não carregado seja reidentificado apenas pelo título e abra a primeira ocorrência encontrada no vault.
+  - Atualizados os acessos pela lista da disciplina, busca, navegação anterior/próximo, wikilinks e rotas diretas para preservar a referência exata do artigo.
+  - Qualificados explicitamente no resumo de Desenvolvimento Web Back-End os links para `Glossário de conceitos` e `Prompts de Estudo (LLM)`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a correção afeta apenas navegação do leitor.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End — migrations no glossário**:
   - Refinada a entrada de `Migration` para `Migrations`, deixando explícito que representam um histórico versionado de alterações do modelo refletidas no esquema do banco.
   - Mantida a distinção entre criar uma migration e aplicar migrations pendentes com `database update`.
