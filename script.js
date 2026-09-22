@@ -817,8 +817,9 @@ function processarContextoArtigo(conteudoMarkdown) {
     const contextoEl = document.getElementById("artigo-contexto");
     if (!contextoEl) return;
 
-    const matchContexto = conteudoMarkdown.match(/^>\s*\*\*Contexto:\*\*\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m) ||
-                          conteudoMarkdown.match(/^>\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m);
+    // Só blocos explicitamente marcados como "Contexto" devem alimentar
+    // o cabeçalho contextual. Blockquotes comuns no corpo do artigo não são contexto.
+    const matchContexto = conteudoMarkdown.match(/^>\s*\*\*Contexto:\*\*\s*([^\n\r]+(?:\n>[^\n\r]+)*)/m);
 
     if (matchContexto && matchContexto[1]) {
         let textoContexto = matchContexto[1].replace(/\n>/g, ' ').trim();
