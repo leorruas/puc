@@ -1,5 +1,11 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 05 — ajuste editorial em Razor**:
+  - Removida a correção explícita de grafia no título e no texto da seção sobre Razor, mantendo apenas a explicação do conceito.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas editorial.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 05 — frameworks Web, MVC e ORM**:
   - Criado o artigo [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional|Frameworks Web, MVC e mapeamento objeto-relacional]] a partir do arquivo de estudo `web-backend 05.md`.
   - Consolidados conceito de framework Web, abordagens server-centric/browser-centric, frameworks horizontais/verticais, benefícios, trade-offs, MVC, Razor, roteamento, scaffolding e sessões.
