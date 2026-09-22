@@ -1,5 +1,13 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 06 — definição de contexto no EF Core**:
+  - Adicionada uma seção antes de `ApplicationDbContext` explicando que contexto não é o banco de dados, mas o objeto do EF Core que coordena o trabalho da aplicação com o banco.
+  - Incluída comparação direta entre banco de dados, `DbContext`, `ApplicationDbContext`, `DbSet<T>`, connection string e provider.
+  - Acrescentado ao glossário o termo `Contexto de dados` e refinada a definição de `DbContext`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda um conceito já coberto no artigo 06.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 06 — Model, validação, DI e persistência no ASP.NET Core MVC**:
   - Criado o artigo [[05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC|Model, validação e persistência no ASP.NET Core MVC]] a partir da leitura direta das imagens de estudo registradas entre 14:17 e 17:02.
   - Organizado o fluxo Model → Data Annotations → `ApplicationDbContext` → registro no contêiner → injeção no controller → consulta pelo `DbSet` → banco.
