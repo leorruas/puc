@@ -1,5 +1,13 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 06 — definição de DTO**:
+  - Adicionada no artigo 06 a definição de DTO (`Data Transfer Object`) logo após sua primeira ocorrência.
+  - Incluído exemplo simples de `CriarPessoaDto` para distinguir objeto de transporte de entidade persistida.
+  - Adicionado DTO ao glossário da disciplina, deixando explícito que não precisa ser uma tabela nem ser mapeado pelo EF Core.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança apenas esclarece terminologia já usada no artigo.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 06 — definição de contexto no EF Core**:
   - Adicionada uma seção antes de `ApplicationDbContext` explicando que contexto não é o banco de dados, mas o objeto do EF Core que coordena o trabalho da aplicação com o banco.
   - Incluída comparação direta entre banco de dados, `DbContext`, `ApplicationDbContext`, `DbSet<T>`, connection string e provider.
