@@ -1,5 +1,15 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End 05 — frameworks Web, MVC e ORM**:
+  - Criado o artigo [[05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional|Frameworks Web, MVC e mapeamento objeto-relacional]] a partir do arquivo de estudo `web-backend 05.md`.
+  - Consolidados conceito de framework Web, abordagens server-centric/browser-centric, frameworks horizontais/verticais, benefícios, trade-offs, MVC, Razor, roteamento, scaffolding e sessões.
+  - Corrigida a sigla OMR para ORM e aprofundada a impedância objeto-relacional, distinguindo objetos, propriedades de navegação, chaves estrangeiras e tabelas.
+  - Reconstruído de forma autoral o exemplo Genero–Filme, sem reproduzir o tutorial em vídeo, explicando `ICollection<Filme>`, `DbContext`, `DbSet<T>` e migrations.
+  - Adicionado caminho equivalente para macOS com .NET CLI e EF Core; registrado que SSMS é somente Windows e que VS Code com extensão MSSQL oferece suporte atual ao macOS.
+  - Atualizados o resumo, o glossário e o Mapa de aprendizagem do semestre, mantendo Desenvolvimento Web Back-End em “Em estudo”.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 04 — correção de escopo editorial**:
   - Reestruturado o artigo [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP|Linguagens de programação back-end]] para refletir o escopo real da aula: características gerais de linguagens e ambientes back-end, com PHP como estudo de caso principal.
   - Adicionada uma seção explícita sobre o papel geral de qualquer linguagem server-side e uma tabela com os eixos apresentados na aula: modelo de execução, tipagem, portabilidade, integração Web, acesso a dados e templates.
