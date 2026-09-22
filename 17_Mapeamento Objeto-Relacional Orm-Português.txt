@@ -1,0 +1,127 @@
+Olá querido aluno querida aluna. Seja bem vindo a mais uma aula onde nessa aula eu gostaria de falar com vocês um pouquinho sobre o uso ou mapeamento objeto relacional. Mas procurámos não há vídeo aqui. Procure no Google na hora e me pareceu logicamente no site da Wikipédia com os conhecimentos e informações do que vinha a ser usado em meu mapeamento objeto relacional ORM do inglês. é uma técnica de julgamento utilizada para reduzir a impedância da programação orientada a objeto utilizado lesando bancos de dados relacionais. As tabelas do banco de dados são apresentadas através de classes e os registros de cada tabela são representado como instância de classe correspondentes ou Aqui estão as palavras importantes sendo separado na infância imensa a impedância dos dados. Trabalhou com bancos de dados alguns anos atrás não tínhamos essas tecnologias nós somos chamados de existem ainda nessa tecnologia as chamadas tecnologias de acesso a dados ou por exemplo rotineiro não estamos ao lado da net ou nós temos ali drivers para me conectar ao banco de dados é uma tecnologia de acesso a dados bem permite fazer consultas SQL e manipular informação através das consultas relacionais. Eu vou utilizar o modelo relacional usa nas séries O próprio SQL para recuperar informação onde nós trabalhamos com o mapeamento e permite o objeto relacional. Ele vai fazer essa impedância ou seja ele é a tradução do que é objeto para o modelo relacional. Porque se você for analisar o objeto e o modelo relacional não tem o mesmo funcionamento baseado no conjunto meteoritos com o conjuntos relacionado com o nosso banco de dados relacional é objeto de um amor pelo URI uma organização uma abstração completamente diferente. Então quando utilizam tecnologia aí meu objetivo fazer essa impedância dos dados. Você consegue trabalhar apenas com um objeto e o time vai fazer essa conversão. Essa tradução Essa impedância de forma natural ele vai fazer isso para você se não me preocupo com isso. Observe que o segundo parágrafo era o seguinte com essa técnica o programador não precisa se preocupar com os comandos e em linguagem que ele irá usar uma interface de programação simples e faz todo o trabalho de persistência. Isso é fantástico não sei se vocês têm alguma experiência em colocar banco de dados em uma aplicação. A forma trabalhosa que era feito isso alguns anos atrás e com um errinho se torna muito simples e fácil. O que ele vai trazer essa capacidade para o programador é que você não precisa mais seu programa usar nada disso que ele inclusive uso pode ser feito usando o key ou observe que só o tratamento tem explicação teórica. Você procura na internet se vai comprar vários sites falando a mesma coisa eu gostaria de fazer com vocês uma apresentação mais prática do que venceu em empresas enxergarem essas vantagens ele será utilizado em vários prêmios Webby otimizar e durante o curso outras algo que. Para isso vou utilizar aqui o ente o tremor que é o ânimo da Microsoft. Ele criou o site de documentação da Microsoft e tem a documentação do e-mail que a definição é primo porque ele é ótimo mapear ou relacionar o objeto numa tradução vídeo máquina máquina e mapeamento objeto relacional e permite que os desenvolvedores de dot NET trabalhem com um banco de dados ano objetos documentos. Você não vai trabalhar com SQL como dados para si só com objetos e eliminando assim a necessidade da maioria do código de acesso a dados. Isso é vantajoso é bom para ficar claro sem utilização no no Cartola essa teoria eu quero fazer um exemplo prático. Vocês. Para isso eu vou utilizar aqui. Hobbies ou estudos estarem na minha máquina hoje tudo 2019 ou criar um projeto bem simples só para focar na parte da IBM colocar um banco de dados e mostrar para vocês a utilização e as possibilidades que eu tenho em utilizar um alien ou eu vou ficar aqui em criar um novo projeto. Eu vou criar este projeto como uma aplicação de console botnet corre doutrina de coelho pode rodar inclusive no Linux ou mesmo no Linux e vai funcionar também. Eu vou dar um próximo aqui. O que chamou a complicação vou colocar na minha área de trabalho depois eu publico esse corte para vocês. Vou chamar aqui de.
+
+Exemplo um exemplo usando o anime eu vou mandar criar um projeto para mim console apliques.
+
+Então eu vou fazer um exemplo bem simples se não ficar preocupado em agredir negócio em dados não. Mas aqui eu não vou ter. Por aqui minha aplicação console aplicação vai estar funcionando.
+
+Abriu em. O famoso Lord Tenet é uma aplicação console e periquito. Ele quero mostrar um exemplo o game da Microsoft. Vamos lá tem que fazer. Ele deu alguns passos a serem seguidos para poder trabalhar com MP coisas que eu preciso fazer e adicionar às bibliotecas noite ocorre na minha aplicação. Eu vou vim aqui olho na pastinha da minha solução no meu projeto botão direito vou procurar aqui olha o gerenciador de pacotes no BET. Ao clicar sobre ele e aqui ele me dá a opção de adicionar mais pastas pacotes de pendências aí no meu projeto vou procurar o pacote Microsoft indique.
+
+Quando no pacote Microsoft afirmou que aqui tá na hora de instalar. Vou colocar aqui no procurar e procurar na internet. A Microsoft afirmou que corre. Eu não quero esse. Quero outro eu SQL. Eu cresci aqui. Microsoft recorda outro SQL que eu vou usar o SQL Server. Por quê. Vou pedir para instalar. Esse pacote aqui o da Monkey.
+
+Para mim e para a corte no meu projeto.
+
+Então ele afirmou que vai fazer essa impedância dos dados para poder facilitar o gerenciamento da persistência dos dados da multiplicação. Nós temos que separar as ações para pressionar para mim o projeto e a lei do assinante aponta ele. Vou colocar tudo também que nós precisamos nos comandos aqui no lado direito da Migration. A data base desses comandos aqui para poder criar Migration no meu banco de dados que é preciso estudar e fazer o gerenciamento de direção de banco de dados. Ao colocar aqui esse pacote também causaria.
+
+Possui.
+
+Ele vai se tornar para mim os pacotes também. Ok foi accionado com sucesso. Não vou fechar aqui. Não preciso mais. Sabe que aqui se você observar já adicionou no lugar a Spinelli. Microsoft afirmou ontem que ele sempre. A Microsoft confirmou corte ponto e eu vou ocupar esse Janeiro para ficar mais visível. Olhando para a equipe de poder no como implementar tão pequena aplicação só para exemplificar a utilização de banco de dados e a facilidade com em praça por nosso trabalho vou criar duas classes. Não estou preocupado com esse negócio. Vou usar aquele famoso exemplo de filme gênero para ficar bem simples. Por exemplo Buckley inclusive com relacionamento porém que vou criar duas tabelas no meu banco de dados e olhar para um relacionamento por aqui para mostrar como é que é simples eu vou criar uma classe que eu vou chamar de gênero. Essa classe gênero coloca com. é uma classe de competição. Eu vou colocar aqui duas propriedades para ele colocar o próprio habitat. é um atalho para poder colocar propriedades e por mais simples vão criando aqui uma classe do tipo gênero local com mais de. Eu vou colocar uma outra propriedade aqui do tipo string. Eu vou chamar aqui de descrição vai ser a descrição do gênero terror suspense e ficção científica etc. Vou criar uma outra classe aqui os filmes. Coloca.
+
+O filme ele vai ter boas propriedades também local mais praia. Vou colocar aqui o IPTU.
+
+O tipo. Sutil.
+
+Bom. Além desses dois atributos propriedades do filme eu vou colocar também ele possui propriedade era um herói de. Porque eu tenho um relacionamento com meu filme ou sei um gênero e assim o gênero está associado a vários filmes e pode estar associado a vários. Então eu criei uma classe normal aqui para poder fazer utilização do meu banco de dados observa. Eu teria que implementar um banco de dados com essas características e etc aqueles onde utilizar o tipo Playmobil. Então para isso eu vou estudar aqui algumas anotações.
+
+Vou falar aqui disse. Esse atributo aí é a chave que ele vai pedir para adicionar até porque sou naquilo que sou Noblat para mim. Vou falar também que site também achado e coloco aqui no.
+
+Então com uma sugestão não comprei um jogo da Microsoft vou ter exemplos mais detalhados sobre essas características que eu coloquei no peixe que esse atributo é chave então ao criar a tabela o moleque vai criar para mim de forma automática. Ele vai colocar esse campo a chave e que ele auto incrimina. Essa propriedade está dizendo tudo isso
+
+é algo que incrementa 2x2. Aí eu tenho que fazer também aquela associação porque isso aqui é um monopólio que. Defini. Esse campo aqui ele é uma. Aqui as informações. E deu apoio aqui. Só aqui. A biblioteca pode utilizar essa palavra chave para que podem utilizar neste campo especial.
+
+Na minha classe esta propriedade ele vai associando de forma única e ritual uma propriedade polaca do tipo gênero. Gostos aqui se eu quiser recuperar um determinado filme já Praga. A informação e descrição do gênero por exemplo isso está associado por isso a edição de Annecy o que tem que é uma string. Ele recebe aqui.
+
+Uma votação de Dilma por aqui androide. E esse gênero que Vitória está a fazer nosso sucesso. Eu tenho que o meu filme possui um gênero e o gene associado a uma coleção e. Eles vão colocar uma outra propriedade minha casa como sua verdade habitual esta coleção não está aparecendo. A opção para completá la permite colocar ainda a experiência para utilizar essa coleção por aqui.
+
+Quanto.
+
+Ontem coloquei esse System. Agora posso usar aqui. Eu quero usar o spray Collection ali é uma coleção poderia usar lista também virtual lista aí eu vou publicar para vocês. Uma documentação para facilitar a utilização desses veículos eu coloco aqui então. E cada gene associado pode estar associado a uma coleção de filmes um ou mais. Deram mais de um na verdade isso pode estar vazia. Chamar de filme que o nome não tem problema não não precisamos do próprio nome aqui para facilitar essa relação. Eu falo os filmes relacionados de gênero e o gênero aqui está associado a esse filme e. Já coloquei a classe do crime que permitem às classes de dados implementar agora a minha classe. Digo isso da aplicação à classe de contexto ela é responsável por dar o start no crime ou configurar crime afirmou que eu tenho esses objetos e esse banco de dados faz o resto para mim e vou criar aqui uma classe.
+
+Vou chamar de.
+
+A política para o conflito ação e ela tem que andar de bike com.
+
+Aqui está vermelhinho que eu preciso adicionar minha referência para esse bebê cúbico um bebê com seu contexto do banco de dados que eu tenho essas informações eu preciso implementar aqui eu preciso colocar duas propriedades as minhas tabelas álbuns se tornar as minhas tabelas. Eu coloco que o BB 7 é um conjunto de dados M7 e ser do gênero.
+
+Eu tenho um outro bebê 7 e um outro um grupo de dados vai ser o meu filme.
+
+Os dois.
+
+Objetos que eu vou mapear no meu banco de dados e coloco isso na minha conta para poder identificar esses objetos sobretudo cumprir o mandato dado. Além desses dois componentes aqui eu preciso implementar. Sobre escrita no metro de configuração doente por e-mail e não vou colocar aqui porque tenho medo de.
+
+Obras 3D. Método 1 1 p.
+
+Esse método aqui ele já pertence ao meu bebê com um pequeno aumento para poder configurar a minha aplicação poderão receber um.
+
+Temos um parâmetro bi cúbicos óptimo de.
+
+O objeto que comparam.
+
+E as configurações aqui vou fazer um exemplo bem simples. Muita coisa não se pode configurar relacionamentos e relacionamento usando Cascata para deletar ou não em várias configurações de banco de dados se consegue fazer nesse momento sobre escrever nos metros de bico porque eu só vou saber escrever esse método de integração para poder falar com o banco de dados que eu vou utilizar para essa aplicação. Vou colocar aqui que meu olhos.
+
+Eu usei.
+
+Eu vou passar as configurações pois quero ser aqui para que a minha conexão tio estrada e ela serve. Vou utilizar aqui. Vai ser local buscar gols ao meu ver parece o meu servidor local a do Banco de que eu vou te levar é o meu SQL Server Express levando ele criar um data bem espremido vai criar não existe ainda o chamado de regime.
+
+Seu nome do meu banco de dados. A conexão aqui. O colocar para fazer aquela conexão. O próprio Windows deixa.
+
+Nem um pouquinho só para tentar visualizar tudo na tela. Nada melhor que um biombo do palanque levamos ao SQL certo. O segredo do BC local gosto de usar o meu SQL Server Express. O abre aqui hoje está ali me SQL Server Express. Eu estou usando o ele segue no estúdio para poder visualizar aqui as informações. O meu banco de dados é que eu serei todos os meus dados apagar todos os testes que eu tinha feito aqui no Brasil. Não tem nada que atualizando. Não existe nenhum banco de dados na minha máquina está expresso em. E aqui eu mandei técnico para a conhecida estante de meu banco de dados para criar uma novidade chamada em uma conexão usando credenciais do Windows. Com isso pronto as configurações que eu tenho do meu banco de dados. Eu criei. Aqui as mesas dos meus dois objetos uma de higiene outra de filme e configurem um país só isto está pronto graças que ele tem do banco de dados o que muitas vezes tinha muito trabalho de fazer no ar botnet mandar comandos SQL grite bom nisso desta vez não precisa fazer isso. Eu tenho que fazer agora e falar pro meu primo ou criar o banco de dados antes de começar a usá lo. Para isto vim aqui em ferramentas aqui no meu.
+
+Gerenciador de pacotes e ativo teu console gerenciador de pacotes. Aqui estão alguns comandos. Ele pode fazer uso Migration SQL gerenciamento das versões que eu tenho do meu banco de dados e como a área de Migration.
+
+Então não para colocar aqui ou MDB como está o Barcelona amigo. O Banco da National Migration. O que é daqui. Por isso ele não vai criar o banco de dados. Ele vai criar para mim o arquivo de uma igreja. Vou abrir o gerenciador de projeto.
+
+Solução.
+
+Observe que ele criou aqui no meu projeto uma pastinha chamada Migration. Colocou aqui o código que ele vai utilizar para criar o banco de dados. Eu não preciso fazer nada já configurou aqui olha as propriedades índice disso tudo aqui nesse arquivo relacionamento porém que já configurou para mim todos os dados que eu preciso para criar o banco de dados. Ocorre que para mim deve ter escolhido após por exemplo colocou aqui para deletar esse relacionamento porém que estava em. Ou depois esse comando eu preciso mandei ele criar uma entidade não para criar novamente no meu banco de dados e mandar colonizar. Não tem nenhum banco de dados aqui. Eu preciso simplesmente preciso simplesmente. E aqui novamente no console ao comando updates.
+
+Esse comando da PM está bem. Ele vai criar o banco de dados para mim com acordos definições que já foram passadas via código Gurupi objeto não precisa de tempo definiu se Campos. Eu consigo peixes de ele tipo de dados. E definir quais são as operações que eu quero utilizar nesse relacionamento principalmente o banco de dados que vão por.
+
+Aqui.
+
+Ele segue.
+
+O parque eólico é um problema do Windows que é a batalha para investir novamente. Vamos tentar rodá lo vou pedir bens.
+
+Então agora ele veio o próprio primo ou melhor já que mandou fazer a aplicação eu com sucesso. Agora não espere ser menos de estudos ou mandar atualizar aqui para verificar se ele criou o banco de dados. Para mim foi criado o banco chamou hein. Não sabia que na tabelinha de tabelas parte tinha as tabelas tem uma tabela de filme tabela de filme ela possui o Campo de título e o um select aqui e o botão direito selecionado.
+
+Conexão.
+
+Novamente.
+
+Desconectar é o único que uma boa amigos.
+
+Apenas.
+
+E aí o seu nome belezinha lixo que depois de alguma conexão com o técnico novamente funcionou. Está funcionando aqui. Selecionei filmes Selecta que em geral não entrou no nada do gênero que é a mesma coisa não NET. Por enquanto não tem nada aqui no meu banco de dados. Mas observe. Eu criei meu banco de dados. Figurinhas minhas tabelas uma foto em que um pouco de cor é ideal para fazer na impedância objeto relacional no trabalho somente com objetos com classes ou listas. Toda a manipulação do banco de dados fica a cargo do primo ou inimigo utilizado ou para exemplificar aqui no meu código vou fazer então a criação de um objeto do tipo engenheiro para listar eles inclusive pela utilização de.
+
+Usar a variável de contexto em que o contexto que exprime ou eu preciso usar ele para fazer a inserção de dados para dizer que não haverá ONG vai receber. Neil Application conta que se.
+
+O que usa essa variável com sua declaração variar de.
+
+Mil.
+
+O gênero na descrição não colocar.
+
+Aqui então o gênero o coloca aqui meu.
+
+Que a conta desponta ele tem dois objetos dois de 17 um do gênero um filme eu posso vir para DD. Mandar esse dinheiro.
+
+Observe que para mim a lista aquela tabela de gênero é simplesmente uma lista a um gênero de gênero com hábito de criar um gênero aqui no meu complexo.
+
+Outros.
+
+No banco de dados Paulo semelhantes aos de copiar e colar aqui um lobo eu me coloco em um novo variado. Eu me.
+
+Meu filme tem.
+
+Aqui. Ou.
+
+Além do título ele tem também o gênero local gênero gênero Edi E O PODER PARA ELE VAI SER em gênero oco.
+
+é interessante nessa primeira linha que eu queria variar do gênero e coloquei uma descrição para ele e mandei ele inserir no banco de dados a partir do que ele vai ser e ele bem preenche a informação daí até então não tem porque ele é auto incremento banco de dados. Mas assim que ele passar dessa linha de código já vai colocar o áudio para ministro objeto e eu estou usando esse objeto para passar o site para esse período e aqui vou mandar inserir no banco de dados que progrediu.
+
+Em Sergipe insere no banco de dados e ao produto muitas vezes aquele desafio de colocar banco de dados em uma aplicação anônimo ou o caminho escolhido. Nós criamos a aplicação que cria o banco de dados. Toda estrutura baseado nos objetos da aplicação você fazer uma igreja gerenciamento de versão com poucas linhas de código eu trabalho o meu banco de dados como se fosse uma lista local vamos executar aqui para ver se a funcionar corretamente ele executa a aplicação.
+
+Não é mostrado a mensagem de alguém ou peixe aqui em janeiro ou agora no meu banco de dados. E executar que a consulta na tabela de gênero na tabela de filmes que você vê aqui na tabela de gêneros é fazer a execução do código. Observe que olhe e já tem a opção 1 fantasia do gênero um fantasma de serie e a aplicação tem aqui. O filme que estava vazio mandei executar em que o áudio do filme um de volta do futuro. E hoje eu consigo trabalhar e gerenciar essas informações para muito simples na minha aplicação é preocupar muito com esse contexto de banco de dados era pouco trabalhoso por desenvolvedor gerenciar o banco de dados e fazer Migration. As versões as estruturas de tabelas colunas recursos simples eram muito simples usando aí
+
+o mapeamento objeto relacional. Espero que tenha ficado claro para vocês e os orcs web utilizam muito essa tecnologia para facilitar o desenvolvimento da aplicação e que você só se preocupou com a rede de negócios de gerenciamento de dados no mundo com a persistência dos dados. O que é bom para que eu gostava e aprendido um pouquinho mais aí sobre as origens. Um abraço até a próxima vitrola.
