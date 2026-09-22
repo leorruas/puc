@@ -1,5 +1,12 @@
 ## 2026-09-22
 
+* **Desenvolvimento Web Back-End — migrations no glossário**:
+  - Refinada a entrada de `Migration` para `Migrations`, deixando explícito que representam um histórico versionado de alterações do modelo refletidas no esquema do banco.
+  - Mantida a distinção entre criar uma migration e aplicar migrations pendentes com `database update`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração apenas consolida terminologia já estudada.
+
+## 2026-09-22
+
 * **Desenvolvimento Web Back-End 05 — ajuste editorial em scaffolding**:
   - Removida a formulação “citada na aula” da seção de scaffolding, mantendo a explicação direta do conceito.
   - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas editorial.
