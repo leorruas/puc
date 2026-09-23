@@ -1,5 +1,11 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — link para configuração do contexto no artigo 06**:
+  - A seção `OnConfiguring e injeção de dependência` agora aponta diretamente para a seção do artigo 06 que aprofunda `ApplicationDbContext`, `DbContextOptions<TContext>`, `AddDbContext`, `Program.cs` e a injeção do contexto no Controller.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração apenas melhora a navegação entre conteúdos já consolidados.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — convenção de chave estrangeira no EF Core**:
   - A seção de relacionamento 1:N agora explicita qual convenção permite ao EF Core associar `Genero` e `GeneroId`.
   - Diferenciados `Filme.GeneroId` como propriedade que armazena a FK e `Genero.Id` como expressão de acesso à chave primária do objeto relacionado.
