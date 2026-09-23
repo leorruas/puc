@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 06 — reorganização e remoção de redundâncias**:
+  - Reestruturado integralmente o artigo `Model, validação e persistência no ASP.NET Core MVC` para separar o que pertence ao artigo 05 do que é específico da integração em ASP.NET Core MVC.
+  - Removidas as reexplicações extensas de `DbContext`, `DbSet<T>` e migrations; esses conceitos agora apontam para as seções canônicas do artigo 05.
+  - O artigo 06 passou a se concentrar no fluxo `Model → ApplicationDbContext → Program.cs → injeção de dependência → Controller → consulta/persistência → resposta MVC`.
+  - Reorganizados Model, DTO, Data Annotations, `ApplicationDbContext`, `DbContextOptions<TContext>`, Identity, registro com `AddDbContext`, connection string, uso pelo Controller e comparação `Startup.cs`/`Program.cs`.
+  - Mantido um exemplo integrado único para mostrar como os arquivos se conectam, acompanhado de um diagrama de fluxo.
+  - Atualizado o resumo da disciplina e revisados os deep links do glossário; `DbContext` e contexto de dados agora apontam ao artigo 05 como explicação canônica, enquanto conceitos específicos do artigo 06 apontam para suas novas seções.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança reorganiza e consolida conteúdo já coberto sem alterar evidências ou prioridades de aprendizagem.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — tutorial de EF Core no Visual Studio Code no macOS**:
   - A antiga seção operacional de macOS foi transformada em um tutorial completo de configuração do ambiente no Visual Studio Code.
   - O passo a passo cobre instalação do C# Dev Kit e do .NET SDK, criação de projeto, instalação de `dotnet-ef`, provider SQLite e `Microsoft.EntityFrameworkCore.Design`, configuração de `UseSqlite`, criação/aplicação de migration e execução com `dotnet run`.
