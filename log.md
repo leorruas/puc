@@ -1,5 +1,14 @@
 ## 2026-09-23
 
+* **Vault — navegação sequencial delegada ao app**:
+  - Removidas dos artigos 02 a 06 de Desenvolvimento Web Back-End as linhas `Artigo anterior` e `Próximo artigo` que duplicavam os controles já renderizados pelo leitor Web ao final da nota.
+  - Atualizada a Regra 10 em `AGENTS.md`: a navegação sequencial passa a ser responsabilidade do app e não deve ser repetida no Markdown.
+  - Ajustada a regra de contexto para manter `> **Contexto:**` logo após o H1, sem referência a links de navegação inline.
+  - Adicionada a mesma proibição de duplicação em `.obsidian/vault_rules.md`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial e de navegação.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 03 — reorganização conceitual e continuidade**:
   - Reestruturado o artigo em uma progressão clara: base da comunicação Web; definição de renderização; modelos de navegação MPA/SPA; estratégias CSR/SSR/SSG; combinação dos dois eixos; APIs e contexto histórico.
   - Removidas referências à PUC e formulações de bastidor, mantendo apenas explicações conceituais.
