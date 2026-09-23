@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — aprofundamento de `DbSet<T>`**:
+  - Reescrita a seção para definir `DbSet<T>` como ponto de acesso tipado do `DbContext` às entidades de um determinado tipo.
+  - Diferenciado explicitamente de lista em memória e de estado do React: `DbSet<T>` é uma origem consultável, e os objetos só são materializados quando a consulta é executada.
+  - Incluído o fluxo `DbSet<Filme> → consulta → banco → objetos Filme em memória`.
+  - Explicado o papel de `Find`, `Add`, `Remove` e `SaveChanges()`, distinguindo alteração do estado rastreado de execução efetiva do SQL.
+  - Reforçada a distinção entre `DbSet<T>` no modelo de objetos do EF Core e tabela no modelo relacional.
+  - Atualizada a definição do glossário, preservando deep link para a seção específica.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda um conceito já estudado sem mudar o estado global da disciplina.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — aprofundamento de `DbContext`**:
   - Reescrita a seção de `DbContext` para explicá-lo como sessão/unidade de trabalho do EF Core com o modelo persistente, e não apenas como uma “mesa de trabalho” entre código e banco.
   - Separadas quatro responsabilidades: conhecer o modelo, servir de ponto de entrada para consultas, rastrear entidades e coordenar a persistência em `SaveChanges()`.
