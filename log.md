@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — seção de macOS movida para o final**:
+  - A seção `Ambiente e ferramentas no macOS` foi movida para depois da consolidação conceitual do artigo.
+  - O fluxo principal agora segue: frameworks → MVC → ORM → EF Core → exemplo completo → integração das três partes → ambiente macOS.
+  - As seções foram renumeradas para preservar a sequência lógica: o exemplo completo passa a ser a seção 5, a integração a seção 6 e macOS a seção 7.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas de organização editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — leitura da assinatura de `OnConfiguring`**:
   - Comentada diretamente no código a assinatura `protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)`.
   - Explicado o papel de `protected`, `override` e `void`, além da função de `OnConfiguring` como ponto de configuração do ciclo de vida do `DbContext`.
