@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 02 — integração completa dos estilos arquiteturais da nota de estudo**:
+  - Revisada a nota `web-backend 02` e identificado que o artigo 02 cobria apenas monolítico, camadas e cliente-servidor, deixando de fora estilos presentes nas anotações.
+  - O artigo foi ampliado com arquitetura baseada em plugins/microkernel, pipes and filters e peer-to-peer, além de fat client, camadas abertas/fechadas e a noção de contexto + problema + solução para leitura de estilos arquiteturais.
+  - Incluído aprofundamento técnico para preencher duas lacunas registradas nas anotações: significado de ETL e motivo pelo qual compiladores são exemplo de pipes and filters.
+  - Adicionada comparação final entre os estilos e atualizados os pontos de confusão.
+  - O glossário recebeu as novas definições fundamentais.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração completa a cobertura do conteúdo estudado sem alterar o estado global da disciplina.
+
+## 2026-09-23
+
 * **Vault — navegação sequencial delegada ao app**:
   - Removidas dos artigos 02 a 06 de Desenvolvimento Web Back-End as linhas `Artigo anterior` e `Próximo artigo` que duplicavam os controles já renderizados pelo leitor Web ao final da nota.
   - Atualizada a Regra 10 em `AGENTS.md`: a navegação sequencial passa a ser responsabilidade do app e não deve ser repetida no Markdown.
