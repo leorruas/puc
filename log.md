@@ -1,5 +1,18 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End — bônus de Razor como 05.1 e comparação de ORMs**:
+  - Renomeado o artigo bônus de Razor de `07.` para `05.1.`, posicionando-o conceitualmente logo após o artigo 05 e antes da integração do artigo 06.
+  - Atualizados os links no artigo 05, resumo, glossário e referência multilinguagem de templates; o arquivo antigo `07.` foi removido.
+  - Criada a nota transversal `00. Sintaxe Multilinguagem/17. ORM e mapeamento objeto-relacional em C# e JavaScript-TypeScript.md`.
+  - Explicitado que React não possui ORM próprio: em aplicações React tradicionais, o ORM fica no backend JavaScript/TypeScript, com exemplos como Prisma, TypeORM e Sequelize.
+  - Comparados EF Core, Prisma, TypeORM e Sequelize em termos de entidades, relações, consultas, persistência e migrations, sem tratar suas APIs como equivalentes exatas.
+  - A nota também diferencia convenção e configuração explícita de relacionamentos: no exemplo `Genero`/`GeneroId`, EF Core consegue inferir a FK por convenção, portanto `[ForeignKey(nameof(GeneroId))]` é redundante e aparece apenas para tornar o vínculo explícito.
+  - O artigo 05 passou a referenciar diretamente essa comparação, e a nota multilinguagem aponta de volta para a relação 1:N estudada no artigo 05.
+  - O índice de Sintaxe Multilinguagem e a entrada `ORM` do glossário foram atualizados.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois as mudanças reorganizam material de apoio e ampliam conexões sem alterar evidências ou prioridades globais.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End — artigo bônus de Razor na prática**:
   - Criado `07. Bônus - Razor na prática no ASP.NET Core MVC.md` ao final da sequência da disciplina.
   - O artigo esclarece quando Razor tende a aparecer nos projetos: aplicações ASP.NET Core MVC com Views renderizadas no servidor; projetos apenas de API podem não usar Razor na camada de apresentação.
