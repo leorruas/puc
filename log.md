@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — Model, Controller e regras de negócio no MVC**:
+  - Aprofundada a separação entre regra de negócio e coordenação da requisição.
+  - Incluído exemplo de `ContaBancaria.Sacar()` para mostrar uma regra pertencente ao próprio Model de domínio e um Controller que apenas localiza a entidade, chama a operação, persiste e escolhe a resposta.
+  - Explicitado que Model não é apenas uma classe com propriedades nem sinônimo de tabela: pode encapsular estado, comportamento e invariantes.
+  - Acrescentada a distinção entre regras que pertencem a uma entidade e casos de uso que coordenam várias entidades/serviços, introduzindo o papel de serviço de aplicação.
+  - Adicionada tabela de responsabilidades entre Controller, Model de domínio, serviço/camada de aplicação, `DbContext` e View.
+  - Atualizado o glossário com definições aprofundadas de Model e Controller e novas entradas para regra de negócio e serviço de aplicação, com deep links.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda conceitos já presentes no artigo sem mudar o estado global da disciplina.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — por que distinguir frameworks horizontais e verticais**:
   - A seção foi ampliada para explicar que a distinção serve para identificar qual nível de conhecimento está sendo reutilizado: infraestrutura técnica genérica ou estruturas próprias de um domínio.
   - Incluídos exemplos de uso horizontal com ASP.NET Core, Django e Laravel e exemplos verticais em comércio eletrônico, CMS/publicação, saúde e educação.
