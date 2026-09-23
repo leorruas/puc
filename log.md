@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — convenção de chave estrangeira no EF Core**:
+  - A seção de relacionamento 1:N agora explicita qual convenção permite ao EF Core associar `Genero` e `GeneroId`.
+  - Diferenciados `Filme.GeneroId` como propriedade que armazena a FK e `Genero.Id` como expressão de acesso à chave primária do objeto relacionado.
+  - Incluídos exemplos com e sem `[ForeignKey]`, mostrando que `GeneroId` dispensa o atributo quando segue a convenção e que nomes como `CodigoDoGenero` podem exigir configuração explícita.
+  - Mantida a observação de que `[ForeignKey(nameof(GeneroId))]` no exemplo completo é redundante e serve apenas para explicitar o vínculo.
+  - O glossário ganhou entradas para convenção de chave estrangeira no EF Core e `[ForeignKey]`, com deep links para a explicação.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda uma convenção já presente no conteúdo.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End — bônus de Razor como 05.1 e comparação de ORMs**:
   - Renomeado o artigo bônus de Razor de `07.` para `05.1.`, posicionando-o conceitualmente logo após o artigo 05 e antes da integração do artigo 06.
   - Atualizados os links no artigo 05, resumo, glossário e referência multilinguagem de templates; o arquivo antigo `07.` foi removido.
