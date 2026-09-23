@@ -47,12 +47,36 @@ jobs:
       - name: Salvar índice atualizado
         shell: bash
         run: |
-          git add search-index.json
-          if git diff --cached --quiet; then
-            echo "Índice já está atualizado."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: atualiza índice de busca [skip ci]"
-          git push
+
+          # Outro commit pode chegar à main enquanto este job está executando.
+          # Nesse caso, atualiza para a ponta mais recente, regenera o índice
+          # e tenta novamente em vez de falhar com non-fast-forward.
+          for tentativa in 1 2 3; do
+            echo "Tentativa $tentativa de 3"
+
+            git fetch origin main
+            git reset --hard origin/main
+
+            node scripts/build-search-index.mjs
+            git add search-index.json
+
+            if git diff --cached --quiet; then
+              echo "Índice já está atualizado."
+              exit 0
+            fi
+
+            git commit -m "chore: atualiza índice de busca [skip ci]"
+
+            if git push origin HEAD:main; then
+              echo "Índice atualizado com sucesso."
+              exit 0
+            fi
+
+            echo "A branch main avançou durante o job; regenerando a partir da versão mais recente."
+            sleep $((tentativa * 2))
+          done
+
+          echo "Não foi possível atualizar o índice após 3 tentativas."
+          exit 1
