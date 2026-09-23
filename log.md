@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 03 — reorganização conceitual e continuidade**:
+  - Reestruturado o artigo em uma progressão clara: base da comunicação Web; definição de renderização; modelos de navegação MPA/SPA; estratégias CSR/SSR/SSG; combinação dos dois eixos; APIs e contexto histórico.
+  - Removidas referências à PUC e formulações de bastidor, mantendo apenas explicações conceituais.
+  - Reforçada a distinção central entre MPA/SPA, que descrevem navegação, e CSR/SSR/SSG, que descrevem onde ou quando a renderização ocorre.
+  - Mantidas as definições de DOM, templates, topologia, AJAX/Fetch, hidratação, SEO e Web 2.0 dentro de uma hierarquia mais coerente.
+  - Restaurados os links sequenciais entre os artigos 02, 03 e 04.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança reorganiza conteúdo já coberto sem alterar o estado de aprendizagem.
+
+## 2026-09-23
+
 * **App — correção de concorrência na atualização do índice de busca**:
   - Investigado o erro do workflow `Atualizar índice de busca`: o passo `Salvar índice atualizado` falhou com `non-fast-forward` porque a branch `main` recebeu outro commit entre o checkout do job e o `git push`.
   - O workflow agora busca a ponta mais recente de `main`, regenera `search-index.json` sobre esse estado e tenta o push novamente.
