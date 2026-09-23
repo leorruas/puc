@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — reorganização de frameworks, MVC e ORM**:
+  - Reestruturado o artigo em uma progressão explícita de três níveis: framework Web como infraestrutura reutilizável; MVC como padrão de organização de responsabilidades; ORM como ponte entre objetos e bancos relacionais.
+  - Mantido o conteúdo existente sobre biblioteca versus framework, server-centric/browser-centric, frameworks horizontais/verticais, Service Design, Razor, roteamento, scaffolding, impedância objeto-relacional, Entity Framework Core, relacionamento 1:N, `ICollection<T>`, `DbContext`, `DbSet<T>`, configuração, migrations e ambiente macOS.
+  - O bloco de Entity Framework Core foi reorganizado para apresentar primeiro o conceito e depois relacionamento, contexto, conjuntos de entidades, configuração e migrations.
+  - Preservado integralmente o exemplo consolidado de gênero e filme, incluindo código, comandos de migration, pacotes e explicação do fluxo de persistência.
+  - Removido metadiscurso residual sobre transcrição de vídeo e acrescentada uma consolidação final explicando como framework, MVC e ORM se complementam sem serem sinônimos.
+  - O resumo da disciplina foi alinhado à nova hierarquia.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração reorganiza conteúdo já estudado sem mudar o estado global de aprendizagem.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 04 — reorganização com PHP como eixo principal**:
   - Reestruturado o artigo para colocar PHP no centro da progressão didática, preservando o conteúdo já existente sobre execução server-side, formulários, linguagem de script, compilação/interpretação, tipagem, servidor Web, runtime, WAMP, templates, desempenho e portabilidade.
   - A explicação agora parte de PHP e do fluxo de uma aplicação PHP para, só depois, comparar outros ecossistemas back-end.
