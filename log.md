@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — definição técnica de Razor**:
+  - A seção de Razor foi expandida para defini-lo como sintaxe de marcação do ASP.NET Core que combina HTML e C# em arquivos `.cshtml`.
+  - Explicitado o papel do caractere `@`, o fluxo Controller → View/Razor → HTML e o fato de que o navegador recebe o HTML resultante, não o código C# da view.
+  - Diferenciado Razor de MVC e de frameworks front-end como React e Vue.
+  - Registrado que a sintaxe Razor também aparece em Razor Pages e Blazor, embora o modelo de execução possa ser diferente do MVC server-side.
+  - Atualizada a entrada do glossário com a definição mais precisa e deep link direto para a seção `#Razor`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda um conceito já coberto.
+
+## 2026-09-23
+
 * **Glossários — deep links para a seção conceitual correspondente**:
   - Tornado obrigatório que entradas novas ou revisadas de `Glossário de conceitos.md` apontem para a seção específica em que o conceito é definido, usando âncora de cabeçalho, em vez de linkar apenas a raiz do artigo.
   - Quando não houver cabeçalho próprio, deve-se usar a seção semanticamente mais próxima; conceitos substantivos podem ganhar subseção dedicada quando isso melhorar a estrutura do artigo.
