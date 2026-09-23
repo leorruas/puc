@@ -45,7 +45,7 @@ Abaixo está o panorama transversal das disciplinas com base na diferenciação 
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `01` | **[[01. Programacao Modular/00. Programação modular - Resumo\|Programação Modular]]** | Unidades 1, 2 e 3 (Fundamentos, Polimorfismo, SOLID e GoF) | Extensa (24 artigos e catálogo TAD) | Concluída (Unidades 1 a 3) | **Compreendido** | Domínio do modelo mental, simuladores com correção taxonômica, exemplos compilados em C# e aplicação de invariantes. |
 | `02` | **[[02. Modelagem de Dados/00. Modelagem de Dados - Resumo\|Modelagem de Dados]]** | Módulos 1 a 6 (fundamentos, MER, modelo relacional, normalização, NoSQL e segurança) | Extensa (14 artigos) | Concluída (Módulos 1 a 6) | **Em estudo** | Cobertura integral consolidada no vault, incluindo exercícios e correções sobre 1FN/2FN; próxima evidência necessária para elevar o estado é desempenho consistente em simuladores globais da disciplina. |
-| `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo\|Manipulação de Dados SQL]]** | DDL, DML, consultas relacionais e junções | Ementa/Prompts | Cronograma futuro | **Ainda não estudado** | Disciplina ainda não iniciada na rotina de estudos. |
+| `03` | **[[03. Manipulacao de Dados SQL/00. Manipulacao de Dados SQL - Resumo\|Manipulação de dados com SQL]]** | Fundamentos de SQL, estrutura relacional e SGBDs | Inicial (2 artigos + glossário) | Em andamento inicial | **Em estudo** | Artigos 01 e 02 consolidados: linguagem declarativa, DDL/DML/DQL/DCL, estrutura relacional, SGBD, cliente-servidor e distinção entre domínio relacional e domínio da aplicação. |
 | `04` | **[[04. Algoritmos e Estruturas de Dados/00. Algoritmos e Estruturas de Dados - Resumo\|Algoritmos e Estruturas de Dados]]** | Complexidade assintótica (Big O) e vetores | Básica (Arrays em C#) | Em andamento inicial | **Em estudo** | Testes atômicos com arrays em C# e compilação local; aguardando estruturas dinâmicas e análise de complexidade. |
 | `05` | **[[05. Desenvolvimento Web Back-End/00. Desenvolvimento Web Back-End - Resumo\|Desenvolvimento Web Back-End]]** | Arquitetura, renderização, frameworks, MVC e persistência | Inicial (6 artigos + 1 bônus + glossário) | Em andamento inicial | **Em estudo** | Cobertura ampliada do fluxo ASP.NET Core MVC: Model e Data Annotations → DI/`DbContext` → roteamento → Controller/action → GET/POST → model binding/`ModelState` → persistência ou resposta, incluindo antiforgery e overposting. O estado permanece **Em estudo** por ainda faltar evidência prática integrada. |
 | `06` | **[[06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo\|Projeto: Aplicação Interativa]]** | Etapas 01 (Concepção) e 02 (Arquitetura e Modelagem) | Robusta (Resumos e 6 reuniões transcritas) | Em andamento (Etapa 02) | **Em estudo** | Etapa 01 entregue (ODS 4, 3 CRUDs e casos de uso validados); Etapa 02 em refinamento final (fluxos por perfil, wireframes, planos de teste e preparação da POC/deploy). |
@@ -76,6 +76,7 @@ flowchart TD
     subgraph S2 ["2. Engenharia e Implementação de Software"]
         POO["Programação Modular<br>(Classes, SOLID e contratos)"]:::core
         SubRot["Modularização Funcional<br>(Funções puras e «include»)<br>Tratamento de Exceções («extend»)"]:::component
+        SQLFund["Manipulação de dados SQL<br>(Linguagem, relações e SGBDs)"]:::data
         BDProj["Persistência Relacional<br>(Esquema físico SQL Server)"]:::data
         UIProj["Interface com o Usuário<br>(Telas e wireframes interativos)"]:::component
     end
@@ -89,7 +90,8 @@ flowchart TD
     Req -->|"Decomposição de fluxo"| SubRot
 
     MER -->|"Mapeamento objeto-relacional"| POO
-    MER -->|"DDL e integridade referencial"| BDProj
+    MER -->|"Estrutura relacional"| SQLFund
+    SQLFund -->|"Implementação no SGBD"| BDProj
 
     IHC -->|"Diretrizes de usabilidade"| UIProj
 
