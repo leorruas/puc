@@ -1,5 +1,12 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — link específico para Modelagem de Dados**:
+  - Substituído o link genérico para o resumo de Modelagem de Dados por um deep link direto para `11. Mapeamento de relacionamentos → 6. Mapeamento de relacionamento 1:N`.
+  - A conexão passa a apontar exatamente para a regra relacional que explica a cardinalidade e a posição da chave estrangeira no lado N.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança apenas melhora a precisão da interlinkagem.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — ressalva sobre `ICollection<Filme>`**:
   - Corrigido o diagrama conceitual de ORM para representar uma única coleção `ICollection<Filme>` ligada a múltiplos objetos `Filme`, em vez de repetir o rótulo da coleção em duas arestas.
   - Acrescentada a ressalva de cardinalidade: a propriedade `Filmes` é única e pode conter zero, um ou vários objetos `Filme`; os dois objetos do diagrama são apenas exemplos de elementos da mesma coleção.
