@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **App — correção de concorrência na atualização do índice de busca**:
+  - Investigado o erro do workflow `Atualizar índice de busca`: o passo `Salvar índice atualizado` falhou com `non-fast-forward` porque a branch `main` recebeu outro commit entre o checkout do job e o `git push`.
+  - O workflow agora busca a ponta mais recente de `main`, regenera `search-index.json` sobre esse estado e tenta o push novamente.
+  - Adicionado retry de até três tentativas para lidar com novas alterações concorrentes sem publicar um índice baseado em uma versão antiga do repositório.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é de infraestrutura do leitor.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 02 — definição de arquitetura monolítica**:
   - Reescrita a abertura da seção sobre arquitetura monolítica para definir explicitamente o conceito antes de discutir deploy e coexistência com camadas.
   - Incluída a distinção de que monolítico se refere principalmente à fronteira de execução e implantação, e não à ausência de organização interna.
