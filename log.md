@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — `string.Empty`, coleção vazia e `null!` no exemplo de entidades**:
+  - Comentado diretamente no código de `Genero` e `Filme` por que strings não anuláveis são inicializadas com `string.Empty`.
+  - Explicado que `new List<Filme>()` cria uma coleção real e vazia, permitindo representar zero filmes sem usar `null`.
+  - Explicado que `GeneroId` é um `int`, cujo valor padrão é 0 antes de outra atribuição.
+  - Detalhado `null!`: `null` continua sendo o valor inicial real e `!` apenas suprime o aviso do compilador de nullable reference types; ele não cria o objeto nem impede `NullReferenceException`.
+  - Acrescentada uma síntese distinguindo inicialização com valor real de supressão de aviso de nulabilidade.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda a leitura do mesmo exemplo já estudado.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — aprofundamento de `DbSet<T>`**:
   - Reescrita a seção para definir `DbSet<T>` como ponto de acesso tipado do `DbContext` às entidades de um determinado tipo.
   - Diferenciado explicitamente de lista em memória e de estado do React: `DbSet<T>` é uma origem consultável, e os objetos só são materializados quando a consulta é executada.
