@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End — padronização dos blocos de contexto**:
+  - Adicionados blocos explícitos `> **Contexto:**` aos artigos 01 a 05, que ainda não possuíam esse elemento; o artigo 06 já estava padronizado.
+  - Os contextos resumem o escopo conceitual de cada nota sem mencionar aula, professor, material ou prova.
+  - A padronização também garante que o leitor Web consiga exibir corretamente o cabeçalho contextual, já que o parser passou a reconhecer apenas blocos explicitamente marcados como `Contexto`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 02 — remoção de enquadramento de prova/PUC**:
   - Removida a seção dedicada ao exercício, ao gabarito e às afirmações da PUC.
   - O artigo agora permanece inteiramente conceitual, explicando layers, tiers, cliente-servidor, monólito, escalabilidade e trade-offs sem referência a prova ou instituição.
