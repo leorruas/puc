@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 02 — definição de arquitetura monolítica**:
+  - Reescrita a abertura da seção sobre arquitetura monolítica para definir explicitamente o conceito antes de discutir deploy e coexistência com camadas.
+  - Incluída a distinção de que monolítico se refere principalmente à fronteira de execução e implantação, e não à ausência de organização interna.
+  - Adicionada uma analogia de prédio único dividido em cômodos para reforçar que módulos e camadas podem existir dentro de um monólito.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda apenas a clareza de um conceito já coberto.
+
+## 2026-09-23
+
 * **Vault — contexto obrigatório em artigos didáticos**:
   - Tornado obrigatório o bloco `> **Contexto:**` em toda nota de conteúdo didático numerada.
   - Definida a posição do bloco imediatamente após o H1 e antes da navegação sequencial e do corpo do artigo.
