@@ -1,5 +1,19 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 06 — fluxo HTTP, Controllers, actions e segurança de formulários**:
+  - O conteúdo complementar foi reorganizado por conceitos, em vez de reproduzir a sequência original: Controller como orquestrador, actions, roteamento, GET/POST, model binding, `ModelState`, consulta/persistência, respostas HTTP e proteção de formulários.
+  - A seção 6 foi transformada em `Controller: da requisição HTTP à resposta`, com subseções para distinguir Controller de action e mostrar o padrão `{controller}/{action}/{id?}`.
+  - Incluído o fluxo `GET /Pessoas/Details/5 → roteamento → PessoasController → Details(5)` e a separação entre `Create` GET, que abre o formulário, e `Create` POST, que recebe e processa os dados.
+  - Model binding e `ModelState` foram conectados às Data Annotations e aos formulários Razor do bônus 05.1.
+  - Adicionados `[ValidateAntiForgeryToken]`, antiforgery token, `[Bind]` e overposting, distinguindo proteção contra requisições forjadas de limitação das propriedades aceitas pelo binding.
+  - O exemplo integrado de `PessoasController` agora contém `Index`, `Details` e `Create` GET/POST, com consulta, validação, persistência e redirecionamento.
+  - Scaffolding foi mantido como referência ao artigo 05, evitando duplicar sua definição.
+  - Glossário atualizado com Action MVC, Model binding, ModelState, Antiforgery token e Overposting; GET, POST e Controller também ganharam conexões para o artigo 06.
+  - O resumo da disciplina foi sincronizado.
+  - O Mapa de aprendizagem foi atualizado materialmente: a evidência de Web Back-End agora registra o fluxo ASP.NET Core MVC completo, mantendo o estado **Em estudo** por ainda faltar evidência prática integrada.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 06 — classe, propriedade, tipo e Data Annotations**:
   - A seção de Data Annotations agora começa distinguindo classe, propriedade, tipo e metadados.
   - Explicado que a classe modela uma entidade/objeto; propriedades representam seus dados; tipos como `string` e `int` definem os valores aceitos; Data Annotations acrescentam regras e metadados.
