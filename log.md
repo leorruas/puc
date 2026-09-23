@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 06 — classe, propriedade, tipo e Data Annotations**:
+  - A seção de Data Annotations agora começa distinguindo classe, propriedade, tipo e metadados.
+  - Explicado que a classe modela uma entidade/objeto; propriedades representam seus dados; tipos como `string` e `int` definem os valores aceitos; Data Annotations acrescentam regras e metadados.
+  - Diferenciado o termo técnico `Attribute` em C# de propriedade da classe, evitando a ambiguidade do termo “atributo” em português.
+  - Incluídos exemplos de argumentos posicionais e nomeados em Attributes, como `[MaxLength(100)]`, `[Display(Name = ...)]` e `[Required(ErrorMessage = ...)]`.
+  - Atualizados glossário e resumo da disciplina com essas distinções.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda a compreensão sintática e conceitual de um tópico já coberto.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — `ForeignKey` com string ou `nameof`**:
   - Acrescentado que `[ForeignKey("GeneroId")]` e `[ForeignKey(nameof(GeneroId))]` são formas válidas de indicar a mesma propriedade.
   - Explicado por que `nameof(GeneroId)` costuma ser preferível: o compilador verifica o símbolo e ferramentas de refatoração acompanham renomeações, enquanto `"GeneroId"` é apenas texto.
