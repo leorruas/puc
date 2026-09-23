@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — aprofundamento de `DbContext`**:
+  - Reescrita a seção de `DbContext` para explicá-lo como sessão/unidade de trabalho do EF Core com o modelo persistente, e não apenas como uma “mesa de trabalho” entre código e banco.
+  - Separadas quatro responsabilidades: conhecer o modelo, servir de ponto de entrada para consultas, rastrear entidades e coordenar a persistência em `SaveChanges()`.
+  - Diferenciados explicitamente `DbContext` (classe-base do EF Core), `AppDbContext`/`ApplicationDbContext` (subclasse da aplicação) e `_context` (instância usada pelo código).
+  - Incluído um fluxo passo a passo de `Find` → alteração do objeto → rastreamento → `SaveChanges` → `UPDATE`.
+  - Diferenciado `DbContext` de Controller, banco de dados, connection string, conexão SQL e `DbSet<T>`.
+  - Atualizada a definição correspondente no glossário, preservando os deep links para os artigos 05 e 06.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda um conceito já estudado sem alterar o estado global da disciplina.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — link específico para Modelagem de Dados**:
   - Substituído o link genérico para o resumo de Modelagem de Dados por um deep link direto para `11. Mapeamento de relacionamentos → 6. Mapeamento de relacionamento 1:N`.
   - A conexão passa a apontar exatamente para a regra relacional que explica a cardinalidade e a posição da chave estrangeira no lado N.
