@@ -1,5 +1,14 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End — deep links em todo o glossário**:
+  - Aplicada retroativamente a regra de deep links a todas as entradas do `Glossário de conceitos.md` da disciplina.
+  - Cada referência interna de Web Back-End agora aponta para a seção semanticamente correspondente do artigo, em vez de abrir apenas a raiz da nota.
+  - Conceitos compartilhados por mais de um artigo, como cliente-servidor, escalabilidade, Model, Controller e `DbContext`, mantêm múltiplas referências, cada uma direcionada à seção pertinente.
+  - Foram preservados os rótulos e o escape `\|` exigido para wikilinks dentro de tabelas.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração melhora navegação e precisão editorial sem mudar evidências de aprendizagem.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — definição técnica de Razor**:
   - A seção de Razor foi expandida para defini-lo como sintaxe de marcação do ASP.NET Core que combina HTML e C# em arquivos `.cshtml`.
   - Explicitado o papel do caractere `@`, o fluxo Controller → View/Razor → HTML e o fato de que o navegador recebe o HTML resultante, não o código C# da view.
