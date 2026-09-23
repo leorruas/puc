@@ -1,3 +1,12 @@
+## 2026-09-23
+
+* **Desenvolvimento Web Back-End — revisão editorial dos artigos 01 a 06**:
+  - Revisados os seis artigos para remover referências narrativas desnecessárias a “a aula”, “o professor”, “as anotações” e “o material”.
+  - As explicações agora entram diretamente nos conceitos, sem relatar a origem de cada ponto.
+  - Mantidas referências explícitas à PUC apenas onde são semanticamente necessárias para interpretar gabaritos ou enquadramentos específicos de prova.
+  - Preservadas ressalvas técnicas que distinguem simplificações introdutórias de definições mais amplas.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração é editorial.
+
 ## 2026-09-22
 
 * **Desenvolvimento Web Back-End 04 — correção do contexto exibido no app**:
