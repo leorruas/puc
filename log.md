@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 02 — reorganização conceitual e hierarquia**:
+  - Reestruturado o artigo para separar explicitamente as dimensões de organização lógica, implantação, comunicação e agrupamento da aplicação.
+  - A progressão agora parte de `layers` e `tiers`, avança para cliente-servidor e escalabilidade, depois para arquitetura monolítica e termina mostrando como os conceitos coexistem.
+  - Incluído um exemplo integrado em Mermaid com cliente-servidor, layers, monólito e tiers na mesma aplicação.
+  - Definido `deploy` no próprio fluxo do texto e reduzidas repetições sobre monólito versus camadas.
+  - O exercício da PUC foi mantido em uma seção própria, separado da explicação conceitual, com a ressalva técnica sobre a afirmação III.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a cobertura conceitual e o estado de aprendizagem não mudaram.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 01 — continuidade na seção sobre respostas HTTP**:
   - Removida a abertura solta “Não. Essa afirmação, se tomada literalmente, está errada.”.
   - A seção agora começa diretamente pela ideia de que uma resposta HTTP não precisa conter uma página completa com HTML, CSS e JavaScript.
