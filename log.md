@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Glossário Web Back-End — definição técnica de hidratação**:
+  - A definição de hidratação foi aprofundada para explicitar a reconstrução, no cliente, da árvore de componentes/estado correspondente ao HTML renderizado no servidor e sua vinculação aos nós DOM já existentes.
+  - Diferenciada hidratação de uma renderização completa do zero: o HTML inicial é reaproveitado e recebe eventos, estado e comportamento.
+  - Incluída a noção de *hydration mismatch* quando o markup esperado no cliente diverge do HTML produzido no servidor.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda apenas a precisão terminológica.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — reorganização de frameworks, MVC e ORM**:
   - Reestruturado o artigo em uma progressão explícita de três níveis: framework Web como infraestrutura reutilizável; MVC como padrão de organização de responsabilidades; ORM como ponte entre objetos e bancos relacionais.
   - Mantido o conteúdo existente sobre biblioteca versus framework, server-centric/browser-centric, frameworks horizontais/verticais, Service Design, Razor, roteamento, scaffolding, impedância objeto-relacional, Entity Framework Core, relacionamento 1:N, `ICollection<T>`, `DbContext`, `DbSet<T>`, configuração, migrations e ambiente macOS.
