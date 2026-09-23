@@ -1,5 +1,11 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 01 — clareza na separação entre organização e implantação**:
+  - Reescrita a frase que contrastava separação “lógica” e “física”, substituindo-a por uma explicação mais direta entre organização do software e distribuição na implantação.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End — revisão editorial dos artigos 01 a 06**:
   - Revisados os seis artigos para remover referências narrativas desnecessárias a “a aula”, “o professor”, “as anotações” e “o material”.
   - As explicações agora entram diretamente nos conceitos, sem relatar a origem de cada ponto.
