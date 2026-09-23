@@ -1,5 +1,14 @@
 ## 2026-09-23
 
+* **Glossários — deep links para a seção conceitual correspondente**:
+  - Tornado obrigatório que entradas novas ou revisadas de `Glossário de conceitos.md` apontem para a seção específica em que o conceito é definido, usando âncora de cabeçalho, em vez de linkar apenas a raiz do artigo.
+  - Quando não houver cabeçalho próprio, deve-se usar a seção semanticamente mais próxima; conceitos substantivos podem ganhar subseção dedicada quando isso melhorar a estrutura do artigo.
+  - A regra foi registrada em `AGENTS.md` e `.obsidian/vault_rules.md`, preservando o escape de `\|` em wikilinks dentro de tabelas.
+  - Aplicação imediata ao conceito de hidratação: criada a subseção `Hidratação` no artigo 03 e atualizado o glossário para apontar diretamente para ela.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é estrutural/editorial.
+
+## 2026-09-23
+
 * **Glossário Web Back-End — definição técnica de hidratação**:
   - A definição de hidratação foi aprofundada para explicitar a reconstrução, no cliente, da árvore de componentes/estado correspondente ao HTML renderizado no servidor e sua vinculação aos nós DOM já existentes.
   - Diferenciada hidratação de uma renderização completa do zero: o HTML inicial é reaproveitado e recebe eventos, estado e comportamento.
