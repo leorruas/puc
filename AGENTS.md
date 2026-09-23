@@ -75,6 +75,9 @@
 
 8. **Manutenção contínua e interlinkagem exaustiva de sintaxe multilinguagem:**
  - Sempre que novos conceitos, termos técnicos ou definições fundamentais forem introduzidos na disciplina, o arquivo `Glossário de conceitos.md` do diretório da matéria deve ser obrigatoriamente atualizado.
+ - **Deep link obrigatório no glossário:** Sempre que uma entrada de glossário for criada ou revisada, o link de referência deve apontar para a **seção específica em que o conceito é definido ou explicado**, usando âncora de cabeçalho no formato `[[caminho/arquivo#Seção|rótulo]]`, em vez de apontar apenas para a raiz do artigo.
+ - Se o conceito ainda não possuir cabeçalho próprio, usar o cabeçalho semanticamente mais preciso. Quando o conceito for substantivo o suficiente para justificar uma entrada própria no glossário e a estrutura do artigo se beneficiar disso, criar uma subseção dedicada e apontar o glossário diretamente para ela.
+ - Em tabelas Markdown do glossário, preservar a regra de escape do separador do wikilink: `\|`.
  - Sempre que um novo trecho de código ou construção de linguagem for apresentado em qualquer nota de disciplina, deve-se obrigatoriamente:
    1. Atualizar ou criar a nota correspondente em `00. Sintaxe Multilinguagem/` com o comparativo multilinguagem (C#, Java, Python, JS), explicação linha por linha e analogia intuitiva (Feynman).
    2. **Interlinkagem exaustiva bidirecional:** Incluir links internos explícitos na nota da disciplina apontando diretamente para as notas de `00. Sintaxe Multilinguagem/` relevantes, e vice-versa (adicionar os tópicos das disciplinas na seção de `relacionados` e no corpo do texto do guia de sintaxe).
