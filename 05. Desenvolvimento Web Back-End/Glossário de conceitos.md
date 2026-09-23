@@ -83,6 +83,8 @@ Quando a forma como a PUC apresenta um conceito simplifica uma distinção técn
 | **Runtime** | Ambiente responsável por executar um programa e fornecer serviços necessários durante sua execução. | No PHP, executa o código server-side; no .NET, o runtime executa aplicações C#. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
 | **WAMP** | Pilha de desenvolvimento formada por Windows, Apache, MySQL e PHP. | Reúne componentes diferentes em um ambiente local; é específica do ecossistema Windows. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
 | **Template Web** | Estrutura de interface que combina marcação fixa com pontos preenchidos dinamicamente. | Pode conter valores, loops e condições, mas regras de negócio excessivas no template prejudicam a separação de responsabilidades. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **GET** | Método HTTP usado para solicitar um recurso e que pode transportar parâmetros na URL. | Em PHP, parâmetros da query string podem ser acessados por `$_GET`. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
+| **POST** | Método HTTP usado para enviar dados ao servidor no corpo da requisição. | Em formulários PHP, os dados enviados dessa forma podem ser acessados por `$_POST`. | [[05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP\|Artigo 04]] |
 
 ## Frameworks Web, MVC e persistência
 
