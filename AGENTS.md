@@ -250,7 +250,10 @@
 
 21. **Distinção editorial entre conteúdo da PUC e complementação didática:**
  - As notas devem manter clareza editorial sobre a origem do conhecimento, permitindo identificar com sobriedade quando uma informação é proveniente da ementa e aulas da PUC Minas, quando é complementação técnica/aprofundamento externo ou quando se trata de metáfora pedagógica (Técnica de Feynman).
- - Essa distinção deve ser feita de forma elegante e limpa, utilizando o parágrafo de `> **Contexto:**` no início da nota, cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
+ - **Contexto obrigatório em artigos didáticos:** Toda nota de conteúdo didático numerada deve conter, imediatamente após o título H1 (e após o frontmatter, quando existir), um parágrafo no formato `> **Contexto:** ...`.
+ - O bloco de contexto deve resumir em 1 parágrafo o escopo, a função didática e as principais conexões da nota, sem reproduzir o texto de abertura nem usar metadiscurso como “a aula apresenta”, “o professor explica”, “o material mostra” ou equivalentes.
+ - O bloco `> **Contexto:**` é parte estrutural obrigatória do artigo e deve existir antes dos links de navegação sequencial (`Artigo anterior` / `Próximo artigo`) e antes do corpo principal.
+ - Outras distinções editoriais podem ser feitas com cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
 
 
 

@@ -17,7 +17,7 @@ Quando a forma como a PUC apresenta um conceito simplifica uma distinção técn
 | **Layer** | Camada lógica usada para separar responsabilidades do software. | Responde principalmente a “como o software está organizado?”. | [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor\|Artigo 02]] |
 | **Tier** | Separação física ou de implantação entre partes do sistema. | Responde principalmente a “onde essa parte está executando?”. Várias layers podem existir em um único tier. | [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor\|Artigo 02]] |
 | **Arquitetura monolítica** | Organização em que a aplicação é agrupada e implantada como uma unidade principal. | Um monólito pode ser internamente modular e organizado em camadas. | [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor\|Artigo 02]] |
-| **Deploy** | Processo de disponibilizar uma versão do software em um ambiente de execução. | A PUC trata a simplicidade inicial de deploy como uma vantagem do monólito. | [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor\|Artigo 02]] |
+| **Deploy** | Processo de disponibilizar uma versão do software em um ambiente de execução. | Em aplicações monolíticas, o deploy costuma envolver uma unidade principal de aplicação. | [[05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor\|Artigo 02]] |
 | **Modularidade** | Organização do sistema em partes com responsabilidades bem delimitadas. | Ajuda a reduzir dependências desnecessárias e facilitar evolução. | [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor\|Artigo 01]] |
 | **Acoplamento** | Grau de dependência entre partes de um sistema. | Dependências excessivas tendem a dificultar alterações e testes. Relaciona-se diretamente a [[01. Programacao Modular/04. Programação orientada a objetos e acoplamento\|Programação Modular]]. | [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor\|Artigo 01]] |
 
@@ -150,15 +150,15 @@ Quando a forma como a PUC apresenta um conceito simplifica uma distinção técn
 | **Segurança versus desempenho** | Exemplo de trade-off em que mecanismos de proteção acrescentam processamento ou armazenamento. | A solução não é remover segurança, mas equilibrar requisitos e recursos. | [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor\|Artigo 01]] |
 | **Disponibilidade versus custo** | Exemplo de trade-off em que redundância aumenta tolerância a falhas, mas também aumenta infraestrutura e operação. | Mostra que maior qualidade arquitetural frequentemente possui custo associado. | [[05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor\|Artigo 01]] |
 
-## Como a PUC está tratando alguns conceitos
+## Ressalvas conceituais
 
-Alguns exercícios usam simplificações adequadas ao nível introdutório da disciplina, mas que não devem ser transformadas em regras universais.
+Algumas simplificações introdutórias não devem ser transformadas em regras universais.
 
-**Cliente-servidor e escalabilidade:** a PUC considera falsa a ideia de que uma arquitetura cliente-servidor é altamente escalável apenas porque muitos clientes podem se conectar a um único servidor. O ponto central é que esse servidor pode se tornar um gargalo.
+**Cliente-servidor e escalabilidade:** muitos clientes conectados a um único servidor não tornam o sistema automaticamente escalável; esse servidor pode se tornar um gargalo.
 
-**Monolítico e facilidade de teste/deploy:** a PUC considera como vantagem do monólito a simplicidade inicial de teste e implantação. Tecnicamente, essa vantagem depende do tamanho, da organização e do estágio do sistema.
+**Monolítico e facilidade de teste/deploy:** a simplicidade inicial de teste e implantação pode ser uma vantagem em aplicações menores, mas depende do tamanho, da organização e do estágio do sistema.
 
-**Monolítico versus camadas:** o exercício os compara como alternativas, mas os conceitos podem coexistir. Uma aplicação monolítica pode ser organizada internamente em layers.
+**Monolítico versus camadas:** os conceitos podem coexistir. Uma aplicação monolítica pode ser organizada internamente em layers.
 
 ## Termos ainda não consolidados
 

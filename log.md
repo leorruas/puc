@@ -1,5 +1,41 @@
 ## 2026-09-23
 
+* **Vault — contexto obrigatório em artigos didáticos**:
+  - Tornado obrigatório o bloco `> **Contexto:**` em toda nota de conteúdo didático numerada.
+  - Definida a posição do bloco imediatamente após o H1 e antes da navegação sequencial e do corpo do artigo.
+  - O contexto deve resumir escopo, função didática e conexões principais em um único parágrafo, sem metadiscurso sobre aula, professor ou material.
+  - A regra foi registrada tanto em `AGENTS.md` quanto em `.obsidian/vault_rules.md`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é normativa/editorial.
+
+## 2026-09-23
+
+* **Desenvolvimento Web Back-End — padronização dos blocos de contexto**:
+  - Adicionados blocos explícitos `> **Contexto:**` aos artigos 01 a 05, que ainda não possuíam esse elemento; o artigo 06 já estava padronizado.
+  - Os contextos resumem o escopo conceitual de cada nota sem mencionar aula, professor, material ou prova.
+  - A padronização também garante que o leitor Web consiga exibir corretamente o cabeçalho contextual, já que o parser passou a reconhecer apenas blocos explicitamente marcados como `Contexto`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-23
+
+* **Desenvolvimento Web Back-End 02 — remoção de enquadramento de prova/PUC**:
+  - Removida a seção dedicada ao exercício, ao gabarito e às afirmações da PUC.
+  - O artigo agora permanece inteiramente conceitual, explicando layers, tiers, cliente-servidor, monólito, escalabilidade e trade-offs sem referência a prova ou instituição.
+  - Ajustadas frases residuais que ainda tratavam conceitos como “afirmações” de exercício.
+  - O glossário também foi neutralizado: a entrada de deploy e a seção de ressalvas conceituais deixaram de mencionar a PUC.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-23
+
+* **Desenvolvimento Web Back-End 02 — reorganização conceitual e hierarquia**:
+  - Reestruturado o artigo para separar explicitamente as dimensões de organização lógica, implantação, comunicação e agrupamento da aplicação.
+  - A progressão agora parte de `layers` e `tiers`, avança para cliente-servidor e escalabilidade, depois para arquitetura monolítica e termina mostrando como os conceitos coexistem.
+  - Incluído um exemplo integrado em Mermaid com cliente-servidor, layers, monólito e tiers na mesma aplicação.
+  - Definido `deploy` no próprio fluxo do texto e reduzidas repetições sobre monólito versus camadas.
+  - O exercício da PUC foi mantido em uma seção própria, separado da explicação conceitual, com a ressalva técnica sobre a afirmação III.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a cobertura conceitual e o estado de aprendizagem não mudaram.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 01 — continuidade na seção sobre respostas HTTP**:
   - Removida a abertura solta “Não. Essa afirmação, se tomada literalmente, está errada.”.
   - A seção agora começa diretamente pela ideia de que uma resposta HTTP não precisa conter uma página completa com HTML, CSS e JavaScript.
