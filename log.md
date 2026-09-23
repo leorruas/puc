@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — `ForeignKey` com string ou `nameof`**:
+  - Acrescentado que `[ForeignKey("GeneroId")]` e `[ForeignKey(nameof(GeneroId))]` são formas válidas de indicar a mesma propriedade.
+  - Explicado por que `nameof(GeneroId)` costuma ser preferível: o compilador verifica o símbolo e ferramentas de refatoração acompanham renomeações, enquanto `"GeneroId"` é apenas texto.
+  - Atualizada a entrada `[ForeignKey]` no glossário.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança apenas esclarece a sintaxe de um conceito já coberto.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — link para configuração do contexto no artigo 06**:
   - A seção `OnConfiguring e injeção de dependência` agora aponta diretamente para a seção do artigo 06 que aprofunda `ApplicationDbContext`, `DbContextOptions<TContext>`, `AddDbContext`, `Program.cs` e a injeção do contexto no Controller.
   - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração apenas melhora a navegação entre conteúdos já consolidados.
