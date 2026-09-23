@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 03 — definição explícita de AJAX**:
+  - Expandida a seção de requisições assíncronas com a definição de AJAX (*Asynchronous JavaScript and XML*).
+  - Esclarecido que AJAX não é linguagem, biblioteca ou protocolo, mas uma abordagem para fazer requisições em segundo plano e atualizar partes da página sem recarregamento completo.
+  - Explicado que XML não é obrigatório e que hoje Fetch API e JSON são combinações comuns nesse mesmo padrão.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança esclarece um conceito já coberto.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 02 — integração completa dos estilos arquiteturais da nota de estudo**:
   - Revisada a nota `web-backend 02` e identificado que o artigo 02 cobria apenas monolítico, camadas e cliente-servidor, deixando de fora estilos presentes nas anotações.
   - O artigo foi ampliado com arquitetura baseada em plugins/microkernel, pipes and filters e peer-to-peer, além de fat client, camadas abertas/fechadas e a noção de contexto + problema + solução para leitura de estilos arquiteturais.
