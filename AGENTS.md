@@ -158,11 +158,10 @@
 
 ## Links e navegação sequencial
 
-10. **Encadeamento estrito de links de navegação e rolagem ao topo:**
- - Ao criar uma nova nota de tópico (`N. md`), é obrigatório verificar a nota imediatamente anterior (`N-1. md`) e atualizar ambas:
-   - Na nota anterior (`N-1`), incluir/atualizar o link `**Próximo artigo:** [[N. Nome da Nova Nota]]`.
-   - Na nova nota (`N`), incluir o link `**Artigo anterior:** [[N-1. Nome da Nota Anterior]]`.
- - Todas as notas de conteúdo de uma disciplina devem manter a cadeia completa e ininterrupta de navegação sequencial (`Artigo anterior` e `Próximo artigo`).
+10. **Navegação sequencial gerenciada pelo app e rolagem ao topo:**
+ - A navegação entre artigo anterior e próximo artigo é responsabilidade do leitor Web e aparece automaticamente ao final do artigo.
+ - **Não inserir no Markdown** linhas do tipo `**Artigo anterior:** ...` ou `**Próximo artigo:** ...`, pois isso duplica a navegação já fornecida pelo app.
+ - A ordem sequencial dos artigos deve continuar correta pela numeração e pelo índice/manifesto usados pelo leitor.
  - **Rolagem obrigatória ao topo:** Toda transição de artigo via links internos (`[[...]]`), botões de navegação, cards ou menus deve reposicionar o leitor obrigatoriamente no **topo exato da tela (`scroll(0, 0)`)**, garantindo que o início da leitura nunca fique cortado no meio do documento.
 
 ## Revisão de conteúdo e prompts de estudo
@@ -252,7 +251,7 @@
  - As notas devem manter clareza editorial sobre a origem do conhecimento, permitindo identificar com sobriedade quando uma informação é proveniente da ementa e aulas da PUC Minas, quando é complementação técnica/aprofundamento externo ou quando se trata de metáfora pedagógica (Técnica de Feynman).
  - **Contexto obrigatório em artigos didáticos:** Toda nota de conteúdo didático numerada deve conter, imediatamente após o título H1 (e após o frontmatter, quando existir), um parágrafo no formato `> **Contexto:** ...`.
  - O bloco de contexto deve resumir em 1 parágrafo o escopo, a função didática e as principais conexões da nota, sem reproduzir o texto de abertura nem usar metadiscurso como “a aula apresenta”, “o professor explica”, “o material mostra” ou equivalentes.
- - O bloco `> **Contexto:**` é parte estrutural obrigatória do artigo e deve existir antes dos links de navegação sequencial (`Artigo anterior` / `Próximo artigo`) e antes do corpo principal.
+ - O bloco `> **Contexto:**` é parte estrutural obrigatória do artigo e deve existir imediatamente após o H1, antes do corpo principal.
  - Outras distinções editoriais podem ser feitas com cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
 
 
