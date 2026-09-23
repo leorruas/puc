@@ -1,5 +1,32 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 03 — definição explícita de AJAX**:
+  - Expandida a seção de requisições assíncronas com a definição de AJAX (*Asynchronous JavaScript and XML*).
+  - Esclarecido que AJAX não é linguagem, biblioteca ou protocolo, mas uma abordagem para fazer requisições em segundo plano e atualizar partes da página sem recarregamento completo.
+  - Explicado que XML não é obrigatório e que hoje Fetch API e JSON são combinações comuns nesse mesmo padrão.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança esclarece um conceito já coberto.
+
+## 2026-09-23
+
+* **Desenvolvimento Web Back-End 02 — integração completa dos estilos arquiteturais da nota de estudo**:
+  - Revisada a nota `web-backend 02` e identificado que o artigo 02 cobria apenas monolítico, camadas e cliente-servidor, deixando de fora estilos presentes nas anotações.
+  - O artigo foi ampliado com arquitetura baseada em plugins/microkernel, pipes and filters e peer-to-peer, além de fat client, camadas abertas/fechadas e a noção de contexto + problema + solução para leitura de estilos arquiteturais.
+  - Incluído aprofundamento técnico para preencher duas lacunas registradas nas anotações: significado de ETL e motivo pelo qual compiladores são exemplo de pipes and filters.
+  - Adicionada comparação final entre os estilos e atualizados os pontos de confusão.
+  - O glossário recebeu as novas definições fundamentais.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração completa a cobertura do conteúdo estudado sem alterar o estado global da disciplina.
+
+## 2026-09-23
+
+* **Vault — navegação sequencial delegada ao app**:
+  - Removidas dos artigos 02 a 06 de Desenvolvimento Web Back-End as linhas `Artigo anterior` e `Próximo artigo` que duplicavam os controles já renderizados pelo leitor Web ao final da nota.
+  - Atualizada a Regra 10 em `AGENTS.md`: a navegação sequencial passa a ser responsabilidade do app e não deve ser repetida no Markdown.
+  - Ajustada a regra de contexto para manter `> **Contexto:**` logo após o H1, sem referência a links de navegação inline.
+  - Adicionada a mesma proibição de duplicação em `.obsidian/vault_rules.md`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial e de navegação.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 03 — reorganização conceitual e continuidade**:
   - Reestruturado o artigo em uma progressão clara: base da comunicação Web; definição de renderização; modelos de navegação MPA/SPA; estratégias CSR/SSR/SSG; combinação dos dois eixos; APIs e contexto histórico.
   - Removidas referências à PUC e formulações de bastidor, mantendo apenas explicações conceituais.
