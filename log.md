@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 01 — hierarquia, continuidade e definição de domínio**:
+  - Reorganizado o artigo em quatro blocos hierárquicos: fundamentos de arquitetura; cliente-servidor na Web; estilos e características arquiteturais; conexões e consolidação.
+  - Rebaixados subtópicos para níveis de heading coerentes, reduzindo a sensação de sequência plana de seções independentes.
+  - Adicionadas transições entre os blocos para explicitar a progressão do geral para o concreto.
+  - Incluída a definição de **domínio** como área de problema, com conceitos, regras, operações e restrições, distinguindo domínio de banco de dados, framework e arquitetura.
+  - A definição de domínio também foi adicionada ao glossário.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança melhora organização e clareza sem alterar o estado de aprendizagem.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 01 — clareza na separação entre organização e implantação**:
   - Reescrita a frase que contrastava separação “lógica” e “física”, substituindo-a por uma explicação mais direta entre organização do software e distribuição na implantação.
   - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é apenas editorial.
