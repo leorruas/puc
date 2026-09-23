@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — por que distinguir frameworks horizontais e verticais**:
+  - A seção foi ampliada para explicar que a distinção serve para identificar qual nível de conhecimento está sendo reutilizado: infraestrutura técnica genérica ou estruturas próprias de um domínio.
+  - Incluídos exemplos de uso horizontal com ASP.NET Core, Django e Laravel e exemplos verticais em comércio eletrônico, CMS/publicação, saúde e educação.
+  - Acrescentada comparação entre liberdade de modelagem, quantidade de trabalho específico do domínio e acoplamento às abstrações do framework.
+  - Explicitado que um ecossistema pode combinar núcleo horizontal e módulos verticais, evitando tratar a classificação como taxonomia rígida.
+  - Atualizadas as entradas correspondentes do glossário com a distinção ampliada e deep link para a seção.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda um conceito já coberto.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 06 — reorganização e remoção de redundâncias**:
   - Reestruturado integralmente o artigo `Model, validação e persistência no ASP.NET Core MVC` para separar o que pertence ao artigo 05 do que é específico da integração em ASP.NET Core MVC.
   - Removidas as reexplicações extensas de `DbContext`, `DbSet<T>` e migrations; esses conceitos agora apontam para as seções canônicas do artigo 05.
