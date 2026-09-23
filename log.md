@@ -1,5 +1,14 @@
 ## 2026-09-23
 
+* **Vault — contexto obrigatório em artigos didáticos**:
+  - Tornado obrigatório o bloco `> **Contexto:**` em toda nota de conteúdo didático numerada.
+  - Definida a posição do bloco imediatamente após o H1 e antes da navegação sequencial e do corpo do artigo.
+  - O contexto deve resumir escopo, função didática e conexões principais em um único parágrafo, sem metadiscurso sobre aula, professor ou material.
+  - A regra foi registrada tanto em `AGENTS.md` quanto em `.obsidian/vault_rules.md`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é normativa/editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End — padronização dos blocos de contexto**:
   - Adicionados blocos explícitos `> **Contexto:**` aos artigos 01 a 05, que ainda não possuíam esse elemento; o artigo 06 já estava padronizado.
   - Os contextos resumem o escopo conceitual de cada nota sem mencionar aula, professor, material ou prova.
