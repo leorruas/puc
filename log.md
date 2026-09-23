@@ -1,5 +1,12 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 01 — continuidade na seção sobre respostas HTTP**:
+  - Removida a abertura solta “Não. Essa afirmação, se tomada literalmente, está errada.”.
+  - A seção agora começa diretamente pela ideia de que uma resposta HTTP não precisa conter uma página completa com HTML, CSS e JavaScript.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 01 — hierarquia, continuidade e definição de domínio**:
   - Reorganizado o artigo em quatro blocos hierárquicos: fundamentos de arquitetura; cliente-servidor na Web; estilos e características arquiteturais; conexões e consolidação.
   - Rebaixados subtópicos para níveis de heading coerentes, reduzindo a sensação de sequência plana de seções independentes.
