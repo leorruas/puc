@@ -1,5 +1,17 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End — artigo bônus de Razor na prática**:
+  - Criado `07. Bônus - Razor na prática no ASP.NET Core MVC.md` ao final da sequência da disciplina.
+  - O artigo esclarece quando Razor tende a aparecer nos projetos: aplicações ASP.NET Core MVC com Views renderizadas no servidor; projetos apenas de API podem não usar Razor na camada de apresentação.
+  - Incluídos estrutura típica de pastas, arquivos `.cshtml`, uso de `@`, diferença entre `@model` e `Model`, condicionais, `foreach`, Tag Helpers, formulários, validação, Layout, Partial Views e fluxo Controller → View → HTML.
+  - Explicitada a fronteira entre lógica de apresentação e regras de negócio/acesso a dados dentro de Views.
+  - O artigo 05 agora referencia diretamente o bônus a partir da seção conceitual de Razor.
+  - O resumo da disciplina foi atualizado com o artigo 07 e o glossário ganhou `@model`, Tag Helper, Layout Razor e Partial View, além de um segundo deep link de Razor para a parte prática.
+  - Criada a referência transversal `00. Sintaxe Multilinguagem/16. Templates server-side e sintaxe incorporada (Razor e PHP).md`, com comparação de inserção de valores, blocos, condições e repetições em Razor e PHP; o índice multilinguagem e o artigo 04 foram interligados.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois o artigo bônus acrescenta material de apoio e prática sem alterar evidências ou prioridades globais.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — Model, Controller e regras de negócio no MVC**:
   - Aprofundada a separação entre regra de negócio e coordenação da requisição.
   - Incluído exemplo de `ContaBancaria.Sacar()` para mostrar uma regra pertencente ao próprio Model de domínio e um Controller que apenas localiza a entidade, chama a operação, persiste e escolhe a resposta.
