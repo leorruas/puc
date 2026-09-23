@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 04 — reorganização com PHP como eixo principal**:
+  - Reestruturado o artigo para colocar PHP no centro da progressão didática, preservando o conteúdo já existente sobre execução server-side, formulários, linguagem de script, compilação/interpretação, tipagem, servidor Web, runtime, WAMP, templates, desempenho e portabilidade.
+  - A explicação agora parte de PHP e do fluxo de uma aplicação PHP para, só depois, comparar outros ecossistemas back-end.
+  - Removido metadiscurso residual e ajustado o H1 para `Linguagens de programação back-end e PHP`.
+  - O resumo da disciplina foi alinhado à nova hierarquia e ao foco efetivo do artigo.
+  - Adicionados `GET` e `POST` ao glossário, com a relação com `$_GET` e `$_POST`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a revisão reorganiza e esclarece conteúdo já estudado.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 03 — definição explícita de AJAX**:
   - Expandida a seção de requisições assíncronas com a definição de AJAX (*Asynchronous JavaScript and XML*).
   - Esclarecido que AJAX não é linguagem, biblioteca ou protocolo, mas uma abordagem para fazer requisições em segundo plano e atualizar partes da página sem recarregamento completo.
