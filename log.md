@@ -1,5 +1,13 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — ressalva sobre `ICollection<Filme>`**:
+  - Corrigido o diagrama conceitual de ORM para representar uma única coleção `ICollection<Filme>` ligada a múltiplos objetos `Filme`, em vez de repetir o rótulo da coleção em duas arestas.
+  - Acrescentada a ressalva de cardinalidade: a propriedade `Filmes` é única e pode conter zero, um ou vários objetos `Filme`; os dois objetos do diagrama são apenas exemplos de elementos da mesma coleção.
+  - Mantida a distinção entre propriedade de navegação e chave estrangeira `Filme.GeneroId`.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança apenas corrige a representação de um conceito já coberto.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End — deep links em todo o glossário**:
   - Aplicada retroativamente a regra de deep links a todas as entradas do `Glossário de conceitos.md` da disciplina.
   - Cada referência interna de Web Back-End agora aponta para a seção semanticamente correspondente do artigo, em vez de abrir apenas a raiz da nota.
