@@ -1,5 +1,14 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 02 — remoção de enquadramento de prova/PUC**:
+  - Removida a seção dedicada ao exercício, ao gabarito e às afirmações da PUC.
+  - O artigo agora permanece inteiramente conceitual, explicando layers, tiers, cliente-servidor, monólito, escalabilidade e trade-offs sem referência a prova ou instituição.
+  - Ajustadas frases residuais que ainda tratavam conceitos como “afirmações” de exercício.
+  - O glossário também foi neutralizado: a entrada de deploy e a seção de ressalvas conceituais deixaram de mencionar a PUC.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança é editorial.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 02 — reorganização conceitual e hierarquia**:
   - Reestruturado o artigo para separar explicitamente as dimensões de organização lógica, implantação, comunicação e agrupamento da aplicação.
   - A progressão agora parte de `layers` e `tiers`, avança para cliente-servidor e escalabilidade, depois para arquitetura monolítica e termina mostrando como os conceitos coexistem.
