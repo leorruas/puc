@@ -1,5 +1,12 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End — ordem do resumo após o bônus 05.1**:
+  - O mapa de conteúdo do resumo foi reordenado para refletir a numeração conceitual: artigo 05 → bônus 05.1 de Razor → artigo 06.
+  - O conteúdo do artigo 06 permanece sincronizado com o novo fluxo de Controllers, actions, model binding, validação e segurança.
+  - O Mapa de aprendizagem foi revisado e permanece com a atualização material já registrada para Web Back-End.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 06 — fluxo HTTP, Controllers, actions e segurança de formulários**:
   - O conteúdo complementar foi reorganizado por conceitos, em vez de reproduzir a sequência original: Controller como orquestrador, actions, roteamento, GET/POST, model binding, `ModelState`, consulta/persistência, respostas HTTP e proteção de formulários.
   - A seção 6 foi transformada em `Controller: da requisição HTTP à resposta`, com subseções para distinguir Controller de action e mostrar o padrão `{controller}/{action}/{id?}`.
