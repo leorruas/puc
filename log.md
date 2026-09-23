@@ -1,5 +1,15 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — leitura da assinatura de `OnConfiguring`**:
+  - Comentada diretamente no código a assinatura `protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)`.
+  - Explicado o papel de `protected`, `override` e `void`, além da função de `OnConfiguring` como ponto de configuração do ciclo de vida do `DbContext`.
+  - Diferenciados `DbContextOptionsBuilder` como tipo do parâmetro e `optionsBuilder` como variável recebida pelo método.
+  - Comentado o papel de `UseSqlServer(...)` na seleção do provider e no uso da connection string.
+  - Adicionados `DbContextOptionsBuilder` e `OnConfiguring` ao glossário, com deep links para a seção específica do artigo 05.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a alteração aprofunda a leitura sintática e conceitual de um exemplo já estudado.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — `string.Empty`, coleção vazia e `null!` no exemplo de entidades**:
   - Comentado diretamente no código de `Genero` e `Filme` por que strings não anuláveis são inicializadas com `string.Empty`.
   - Explicado que `new List<Filme>()` cria uma coleção real e vazia, permitindo representar zero filmes sem usar `null`.
