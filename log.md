@@ -1,5 +1,16 @@
 ## 2026-09-23
 
+* **Desenvolvimento Web Back-End 05 — tutorial de EF Core no Visual Studio Code no macOS**:
+  - A antiga seção operacional de macOS foi transformada em um tutorial completo de configuração do ambiente no Visual Studio Code.
+  - O passo a passo cobre instalação do C# Dev Kit e do .NET SDK, criação de projeto, instalação de `dotnet-ef`, provider SQLite e `Microsoft.EntityFrameworkCore.Design`, configuração de `UseSqlite`, criação/aplicação de migration e execução com `dotnet run`.
+  - SQLite passou a ser o caminho principal do tutorial por exigir menos infraestrutura local no macOS; SQL Server permanece como alternativa com o provider correspondente e a extensão MSSQL.
+  - Acrescentado checklist final de instalação e referências oficiais da Microsoft/VS Code.
+  - O glossário foi expandido com `.NET SDK`, `C# Dev Kit`, `NuGet`, `dotnet-ef` e `SQLite`, todos com deep links para as seções específicas do tutorial; o deep link de provider do EF Core também foi atualizado.
+  - O artigo 06 teve o link antigo de macOS corrigido para apontar ao novo tutorial e o resumo da disciplina foi sincronizado.
+  - O Mapa de aprendizagem do semestre foi revisado e permanece inalterado, pois a mudança aprofunda a configuração prática sem alterar evidências, dependências ou prioridades globais.
+
+## 2026-09-23
+
 * **Desenvolvimento Web Back-End 05 — seção de macOS movida para o final**:
   - A seção `Ambiente e ferramentas no macOS` foi movida para depois da consolidação conceitual do artigo.
   - O fluxo principal agora segue: frameworks → MVC → ORM → EF Core → exemplo completo → integração das três partes → ambiente macOS.
