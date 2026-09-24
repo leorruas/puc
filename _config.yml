@@ -7,7 +7,7 @@ exclude:
   - "00. Inbox"
   - "01. Programacao Modular"
   - "02. Modelagem de Dados"
-  - "03. Manipulacao de Dados SQL"
+  - "03. Manipulação de Dados SQL"
   - "04. Algoritmos e Estruturas de Dados"
   - "05. Desenvolvimento Web Back-End"
   - "06. Projeto - Aplicacao Interativa"
