@@ -66,6 +66,12 @@
 
 6. **Padronização dos arquivos de resumo, consolidação bibliográfica e autores citados:**
  - O arquivo principal de resumo de qualquer disciplina deve obrigatoriamente utilizar o prefixo `00.` (ex.: `00. Design de Interacao - Resumo.md`, `00. Engenharia de Requisitos - Resumo.md`, `00. Programação modular - Resumo.md`).
+ - Todo resumo novo ou reestruturado deve seguir o template canônico em `.github/Template - Resumo de disciplina.md`.
+ - **Mapa de conteúdo compacto e plano:** A seção `## Mapa de conteúdo` funciona como navegação e visão geral, não como sumário detalhado dos artigos. Cada artigo deve ocupar **uma única entrada de lista**, no formato `- [x] [[artigo|rótulo]] — síntese curta`.
+ - **Proibição de sublistas no mapa:** Não criar listas aninhadas de tópicos abaixo de cada artigo no mapa de conteúdo. O detalhamento pertence ao artigo, ao glossário e, quando necessário, à seção `Pontos centrais até agora`. Isso evita blocos visualmente desproporcionais no leitor Web.
+ - A síntese após cada link do mapa deve caber, em regra, em **uma linha editorial curta**, reunindo apenas os 2 a 4 conceitos centrais do artigo. Não reproduzir títulos de seções, listas de comandos ou inventários extensos.
+ - Quando a disciplina possuir módulos ou unidades reais, eles podem ser usados apenas como agrupadores simples no mapa; os artigos continuam sendo entradas planas, sem cascatas de subtópicos.
+ - Um artigo só pode aparecer no mapa quando o arquivo correspondente existir no repositório. O checkbox deve refletir o estado real de estudo, sem antecipar artigos futuros.
  - **Consolidação obrigatória de bibliografia:** O arquivo de resumo `00.` deve conter obrigatoriamente a seção completa e consolidada de **Referências bibliográficas** (Bibliografia Básica e Complementar em normas ABNT com links de acesso), centralizando todas as referências mencionadas nos artigos individuais da matéria.
  - **Quadro histórico obrigatório de autores citados com links da Wikipedia:** O arquivo de resumo `00.` deve conter obrigatoriamente a seção **Autores e pioneiros citados na disciplina**, apresentada em formato de tabela Markdown contendo o nome do autor, sua contribuição central para a matéria, os artigos relacionados na disciplina e o link direto para seu perfil biográfico na Wikipedia.
 
