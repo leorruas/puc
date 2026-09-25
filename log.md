@@ -1,5 +1,15 @@
 ## 2026-09-25
 
+* **Manipulação de dados com SQL: encerramento da disciplina e prompts de revisão**:
+  - A disciplina foi marcada como **Concluída** no índice e no Mapa de aprendizagem, com cobertura consolidada em 13 artigos + glossário.
+  - O estado de aprendizagem permanece **Em estudo**, pois a conclusão do conteúdo não equivale automaticamente a domínio; a próxima evidência prevista é desempenho em simuladores globais e prática de SQL.
+  - O resumo deixou de usar linguagem provisória como “até agora” e passou a registrar os 13 artigos como matriz completa da disciplina.
+  - `Prompts de Estudo (LLM).md` foi reestruturado para revisão final baseada no vault: tutor de dúvidas, simulado abrangente, treinador prático, leitor/corretor de consultas, diagnóstico pedagógico e revisão adaptativa para prova.
+  - Removido o foco genérico em otimização de queries, índices e performance, pois esses tópicos não fazem parte do escopo consolidado da disciplina.
+  - Todos os prompts exigem consulta ao resumo, artigos e glossário da pasta e distinguem conceitos SQL gerais de particularidades de SGBDs quando necessário.
+
+## 2026-09-25
+
 * **Manipulação de dados com SQL: card inicial e correção do glossário**:
   - Corrigida em `js/vault.js` a chave da disciplina de `03. Manipulacao de Dados SQL` para o nome real da pasta, `03. Manipulação de Dados SQL`, restaurando a descrição do card na página inicial e os caminhos de fallback associados.
   - Atualizada a descrição curta do card para refletir o conteúdo efetivamente estudado: DDL, DML, consultas, joins, transações e controle de privilégios.
