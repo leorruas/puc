@@ -19,6 +19,7 @@
     var buscaMain = document.getElementById("main-search-input");
     var buscaNav = document.getElementById("nav-search-input");
     var temaBtn = document.getElementById("theme-toggle");
+    var navIndice = document.getElementById("nav-link-pastas");
 
     function mostrar(elemento) { if (elemento) elemento.classList.remove("escondido"); }
     function esconder(elemento) { if (elemento) elemento.classList.add("escondido"); }
@@ -28,6 +29,21 @@
     function tituloDo(caminho) { return caminho.split("/").pop().replace(/\.md$/i, ""); }
     function urlDo(caminho) { return "https://raw.githubusercontent.com/leorruas/puc/main/" + caminho.split("/").map(encodeURIComponent).join("/"); }
     function escaparHtml(valor) { return String(valor || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#39;"); }
+
+    function atualizarLinkIndice(categoria) {
+        if (!navIndice) return;
+        if (categoria) {
+            navIndice.textContent = "índice da matéria";
+            navIndice.setAttribute("href", "#");
+            navIndice.setAttribute("data-categoria", categoria);
+            navIndice.setAttribute("aria-label", "Abrir índice de " + nomeLimpo(categoria));
+            return;
+        }
+        navIndice.textContent = "índice";
+        navIndice.setAttribute("href", "#explorar-disciplinas");
+        navIndice.removeAttribute("data-categoria");
+        navIndice.setAttribute("aria-label", "Abrir índice de matérias");
+    }
 
     function aplicarTema(tema, salvar) {
         document.documentElement.setAttribute("data-theme", tema);
@@ -71,6 +87,7 @@
 
     function abrirHome() {
         categoriaAtual = null;
+        atualizarLinkIndice(null);
         mostrar(inicio); mostrar(orientacoes); mostrar(explorar);
         esconder(resultados); esconder(leitorDisciplina); esconder(leitorArtigo);
         montarHome(); rolarTopo();
@@ -78,6 +95,7 @@
 
     function abrirCategoria(categoria) {
         var lista = (artigosPorCategoria[categoria] || []).slice().sort(function (a, b) { return a.titulo.localeCompare(b.titulo); });
+        atualizarLinkIndice(null);
         var caixa = document.createElement("div"), i, botao;
         categoriaAtual = categoria;
         esconder(inicio); esconder(orientacoes); esconder(explorar); esconder(resultados); esconder(leitorArtigo); mostrar(leitorDisciplina);
@@ -137,6 +155,7 @@
         for (i = 0; i < artigos.length; i += 1) if (artigos[i].caminho === caminho) { item = artigos[i]; break; }
         if (!item) return;
         categoriaAtual = item.categoria;
+        atualizarLinkIndice(item.categoria);
         esconder(inicio); esconder(orientacoes); esconder(explorar); esconder(resultados); esconder(leitorDisciplina); mostrar(leitorArtigo);
         artigoTitulo.textContent = nomeLimpo(item.titulo);
         breadcrumbs.innerHTML = '<a href="#" id="legacy-inicio">início</a> / <a href="#" id="legacy-categoria">' + escaparHtml(nomeLimpo(item.categoria)) + "</a>";
@@ -154,6 +173,7 @@
 
     function buscar(termo) {
         var texto = String(termo || "").toLowerCase(), lista, i, botao;
+        atualizarLinkIndice(null);
         if (buscaMain && buscaMain.value !== termo) buscaMain.value = termo;
         if (buscaNav && buscaNav.value !== termo) buscaNav.value = termo;
         if (!texto) { abrirHome(); return; }
@@ -186,5 +206,18 @@
     document.getElementById("btn-voltar").onclick = function () { abrirCategoria(categoriaAtual); };
     document.getElementById("btn-voltar-disciplina").onclick = abrirHome;
     document.getElementById("nav-logo").onclick = abrirHome;
+    if (navIndice) {
+        navIndice.onclick = function (evento) {
+            var categoria;
+            evento.preventDefault();
+            categoria = navIndice.getAttribute("data-categoria");
+            if (categoria) {
+                abrirCategoria(categoria);
+            } else {
+                abrirHome();
+                if (explorar && explorar.scrollIntoView) explorar.scrollIntoView();
+            }
+        };
+    }
     iniciarTema(); carregarCatalogo();
 }());
