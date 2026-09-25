@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE.md",
+                "file": "00. Inbox/unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE"
+              "title": "unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING"
             }
           }
         ]
@@ -191,8 +191,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "decabc597b2ba14f",
+  "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
+    "00. Inbox/unidade 02 - 08 - FUNÇÕES AGREGADAS.md",
+    "00. Inbox/unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING.md",
+    "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+    "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
+    "00. Inbox/unidade 02 - 07 - OPERADORES.md",
+    "03. Manipulação de Dados SQL/06. Comando SELECT.md",
+    "00. Inbox/unidade 02 - 06 - COMANDO SELECT.md",
+    "00. Inbox/unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE.md",
+    "00. Inbox/web-backend 05.md",
+    "00. Inbox/web-backend 01.md",
     "03. Manipulação de Dados SQL/05. Comandos INSERT, UPDATE e DELETE.md",
     "06. Projeto - Aplicacao Interativa/11. Pendências e inconsistências da documentação do projeto.md",
     "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md",
@@ -207,11 +218,8 @@
     "00. Sintaxe Multilinguagem/17. ORM e mapeamento objeto-relacional em C# e JavaScript-TypeScript.md",
     "00. Sintaxe Multilinguagem/16. Templates server-side e sintaxe incorporada (Razor e PHP).md",
     "00. Inbox/web-backend 06.md",
-    "00. Inbox/unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE.md",
     "00. Inbox/web-backend 04.md",
     "00. Inbox/web-backend 03.md",
-    "00. Inbox/web-backend 02.md",
-    "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
     "Screenshot 2026-09-22 at 17.00.39.png",
@@ -222,15 +230,7 @@
     "Screenshot 2026-09-22 at 16.55.22.png",
     "Screenshot 2026-09-22 at 16.48.55.png",
     "Screenshot 2026-09-22 at 16.48.39.png",
-    "00. Inbox/web-backend 05.md",
     "Untitled.canvas",
-    "04. Algoritmos e Estruturas de Dados/00. Algoritmos e Estruturas de Dados - Resumo.md",
-    "05. Desenvolvimento Web Back-End/Prompts de Estudo (LLM).md",
-    "05. Desenvolvimento Web Back-End/Glossário de conceitos.md",
-    "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
-    "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md",
-    "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md",
-    "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md",
     "17_Mapeamento Objeto-Relacional Orm-Português.txt",
     "00. Inbox 1/reuninão17-09-2026.vtt",
     "00. Inbox 1/reunião-03-9-2026.vtt",
