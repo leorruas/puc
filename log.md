@@ -1,5 +1,16 @@
 ## 2026-09-25
 
+* **Manipulação de dados com SQL: ACID incorporado ao glossário da própria disciplina**:
+  - Corrigida a inconsistência entre o artigo 12 e o glossário de SQL: o artigo já desenvolvia ACID, mas o glossário registrava apenas atomicidade.
+  - Adicionadas entradas para Propriedades ACID, consistência transacional, isolamento, durabilidade, autocommit e log de transações, todas com deep links para o artigo 12.
+  - Mantida a conexão interdisciplinar com Modelagem de Dados, mas o artigo 12 agora deixa claro que ACID também pertence ao conteúdo efetivamente estudado em Manipulação de Dados SQL.
+  - Corrigido o deep link de `Gerenciador de transações`, que ainda apontava para um título antigo da seção do artigo 12.
+  - Normalizados os escapes de wikilinks do glossário para uma única barra antes do separador `|`.
+  - Atualizado o resumo da disciplina para incluir ACID e log transacional na síntese do artigo 12.
+  - O Mapa de aprendizagem foi revisado e permanece inalterado, pois a correção consolida conteúdo já estudado sem alterar o estado de aprendizagem.
+
+## 2026-09-25
+
 * **Manipulação de dados com SQL: encerramento da disciplina e prompts de revisão**:
   - A disciplina foi marcada como **Concluída** no índice e no Mapa de aprendizagem, com cobertura consolidada em 13 artigos + glossário.
   - O estado de aprendizagem permanece **Em estudo**, pois a conclusão do conteúdo não equivale automaticamente a domínio; a próxima evidência prevista é desempenho em simuladores globais e prática de SQL.
