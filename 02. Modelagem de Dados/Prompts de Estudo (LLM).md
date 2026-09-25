@@ -9,7 +9,7 @@ A disciplina está consolidada em 14 artigos. Os prompts abaixo devem usar o vau
 ```text
 Antes de responder, consulte o vault no repositório GitHub `leorruas/puc`, pasta `02. Modelagem de Dados`. Leia primeiro o resumo `00. Modelagem de Dados - Resumo.md`, depois os artigos numerados relevantes e o `Glossário de conceitos.md`. Use o vault como fonte primária para delimitar o conteúdo efetivamente estudado. Se precisar complementar ou corrigir algo com conhecimento externo, sinalize a diferença. Se não tiver acesso ao repositório, diga isso e peça as notas relevantes em vez de fingir que consultou o vault. Ao corrigir ou recomendar revisão, indique as notas do vault que devem ser revisitadas.
 
-Explique minha dúvida sobre [CONCEITO OU TRECHO] usando primeiro a formulação adotada nas notas da disciplina. Reconstrua o conceito passo a passo, mostre um exemplo mínimo e contraste com conceitos próximos que costumam gerar confusão. Se minha anotação estiver tecnicamente imprecisa, corrija-a sem apagar o modelo didático usado na aula.
+Explique minha dúvida sobre [CONCEITO OU TRECHO] usando primeiro a formulação adotada nas notas da disciplina. Reconstrua o conceito passo a passo, mostre um exemplo mínimo e contraste com conceitos próximos que costumam gerar confusão. Se minha anotação estiver tecnicamente imprecisa, corrija-a sem apagar o modelo didático já consolidado nas notas.
 ```
 
 ---
