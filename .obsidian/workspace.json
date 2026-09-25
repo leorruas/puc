@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "51cdb240dd29791b",
+            "id": "95875d37ef4a6eef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
+                "file": "03. Manipulação de Dados SQL/06. Comando SELECT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unidade 02 - 13 - COMANDOS GRANT E REVOKE"
+              "title": "06. Comando SELECT"
             }
           }
         ]
@@ -191,11 +191,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "decabc597b2ba14f",
+  "active": "95875d37ef4a6eef",
   "lastOpenFiles": [
+    "03. Manipulação de Dados SQL/05. Comandos INSERT, UPDATE e DELETE.md",
+    "03. Manipulação de Dados SQL/04. Alteração e remoção de tabelas.md",
+    "03. Manipulação de Dados SQL/03. Comando CREATE TABLE.md",
+    "03. Manipulação de Dados SQL/02. Bancos de dados relacionais e SGBDs.md",
+    "03. Manipulação de Dados SQL/01. O que é SQL.md",
+    "03. Manipulação de Dados SQL/00. Manipulação de Dados SQL - Resumo.md",
+    "AGENTS.md",
+    "Screenshot 2026-09-22 at 17.00.25.png",
+    "Screenshot 2026-09-22 at 15.25.04.png",
+    "Screenshot 2026-09-21 at 15.00.53.png",
+    "00. Inbox/unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE.md",
+    "00. Inbox/web-backend 06.md",
+    "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
     "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
     "00. Inbox/unidade 02 - 12 - TRANSAÇÃO EM BANCO DE DADOS E PROPRIEDADES ACID.md",
-    "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
     "01. Programacao Modular/19. Classes e membros selados (sealed).md",
     "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md",
     "01. Programacao Modular/Glossário de conceitos.md",
@@ -208,28 +220,16 @@
     "00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md",
     "00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md",
     "00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md",
-    "03. Manipulação de Dados SQL/01. O que é SQL.md",
     "07. Engenharia de Requisitos/Prompts de Estudo (LLM).md",
     "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
     "Pasted image 20260925172641.png",
-    "00. Inbox/unidade 02 - 11 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
-    "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
-    "00. Sintaxe Multilinguagem/19. Consultas dependentes, any e all em coleções.md",
-    "00. Inbox/unidade 02 - 10 - CLÁUSULA JOIN.md",
-    "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
-    "00. Sintaxe Multilinguagem/18. Junção, união e eliminação de duplicidades em coleções.md",
     "Pasted image 20260925134331.png",
     "Pasted image 20260925134312.png",
     "Pasted image 20260925134252.png",
     "Pasted image 20260925134204.png",
-    "00. Inbox/unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING.md",
-    "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
     "03. Manipulação de Dados SQL",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
-    "Screenshot 2026-09-22 at 17.00.39.png",
-    "Screenshot 2026-09-22 at 17.00.25.png",
-    "Screenshot 2026-09-22 at 16.58.36.png",
     "Untitled.canvas",
     "17_Mapeamento Objeto-Relacional Orm-Português.txt",
     "00. Inbox 1/reuninão17-09-2026.vtt",
