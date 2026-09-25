@@ -68,5 +68,5 @@ Este glossário reúne os conceitos já efetivamente estudados em Manipulação 
 | **`LIKE`** | Predicado usado para procurar padrões em valores textuais. | Os curingas `%` e `_` recebem significado especial com `LIKE`. | [[07. Operadores e condições em consultas SQL#9. `LIKE`: procurar padrões em texto\|Artigo 07]] |
 | **`%` em `LIKE`** | Curinga que representa nenhuma, uma ou várias posições em um padrão textual. | Difere de `_`, que representa exatamente uma posição. | [[07. Operadores e condições em consultas SQL#9. `LIKE`: procurar padrões em texto\|Artigo 07]] |
 | **`_` em `LIKE`** | Curinga que representa exatamente um caractere em um padrão textual. | Não representa uma sequência de tamanho variável. | [[07. Operadores e condições em consultas SQL#9. `LIKE`: procurar padrões em texto\|Artigo 07]] |
-| **`DESC`** | Palavra-chave usada em `ORDER BY` para solicitar ordenação decrescente. | Sem `DESC`, a aula apresenta a ordenação crescente como comportamento padrão. | [[07. Operadores e condições em consultas SQL#2. Comparação e ordenação são coisas diferentes\|Artigo 07]] |
+| **`DESC`** | Palavra-chave usada em `ORDER BY` para solicitar ordenação decrescente. | Sem `DESC`, `ORDER BY` usa ordenação crescente por padrão. | [[07. Operadores e condições em consultas SQL#2. Comparação e ordenação são coisas diferentes\|Artigo 07]] |
 
