@@ -2,7 +2,7 @@
 
 Este glossário reúne os termos que já apareceram no estudo de Desenvolvimento Web Back-End. Ele deve crescer junto com a disciplina: conceitos só entram aqui depois de aparecerem nas aulas, exercícios ou artigos do vault.
 
-Quando a forma como a PUC apresenta um conceito simplifica uma distinção técnica importante, a observação é registrada explicitamente para separar **o que a disciplina espera na prova** de **como o conceito costuma ser tratado tecnicamente**.
+Quando uma simplificação didática ocultar uma distinção técnica importante, o glossário registra a **precisão conceitual necessária** e separa claramente os sentidos envolvidos.
 
 ## Arquitetura e organização do sistema
 
