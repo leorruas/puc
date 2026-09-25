@@ -66,6 +66,24 @@ function rotaDoArtigo(artigo) {
     return `#/${encodeURIComponent(artigo.categoria)}/${encodeURIComponent(artigo.titulo)}`;
 }
 
+function atualizarLinkIndiceDaMateria(categoria = "") {
+    const linkIndice = document.getElementById("nav-link-pastas");
+    if (!linkIndice) return;
+
+    if (categoria) {
+        linkIndice.textContent = "índice da matéria";
+        linkIndice.href = obterRotaCategoria(categoria);
+        linkIndice.dataset.categoria = categoria;
+        linkIndice.setAttribute("aria-label", `Abrir índice de ${limparNomeCategoria(categoria)}`);
+        return;
+    }
+
+    linkIndice.textContent = "índice";
+    linkIndice.href = "#explorar-disciplinas";
+    delete linkIndice.dataset.categoria;
+    linkIndice.setAttribute("aria-label", "Abrir índice de matérias");
+}
+
 // Carrega o catálogo pelo índice e o conteúdo das notas sob demanda
 function caminhoRawDoArtigo(sourcePath) {
     const caminhoCodificado = String(sourcePath || "")
@@ -195,6 +213,7 @@ function abrirDisciplina(categoria, atualizarRota = true) {
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
     document.getElementById("explorar-disciplinas")?.classList.add("escondido");
     artigoAtual = null;
+    atualizarLinkIndiceDaMateria("");
 
     if (atualizarRota && window.location.hash !== obterRotaCategoria(categoria)) {
         history.pushState({ categoria: categoria }, "", obterRotaCategoria(categoria));
@@ -291,6 +310,7 @@ function criarIndiceNormalizado(texto = "") {
 function filtrarArtigos(termoBusca) {
     leitorDeDisciplina.classList.add("escondido");
     leitorDeArtigo.classList.add("escondido");
+    atualizarLinkIndiceDaMateria("");
 
     if (!termoBusca || termoBusca.trim() === "") {
         divResultados.classList.add("escondido");
@@ -675,6 +695,8 @@ async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termo
                       categoria: "00. Geral",
                       conteudo: conteudoMarkdown
                   };
+
+    atualizarLinkIndiceDaMateria(artigoAtual.categoria);
 
     if (!conteudoMarkdown && artigoAtual.path) {
         try {
@@ -1502,6 +1524,7 @@ function voltarParaHome(atualizarHash = true) {
     leitorDeArtigo.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
     divResultados.classList.add("escondido");
+    atualizarLinkIndiceDaMateria("");
     document.getElementById("orientacoes-iniciais")?.classList.remove("escondido");
     document.getElementById("explorar-disciplinas")?.classList.remove("escondido");
 
@@ -1595,7 +1618,15 @@ if (mainTitle) {
 const navLinkPastas = document.getElementById("nav-link-pastas");
 if (navLinkPastas) {
     navLinkPastas.addEventListener("click", (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
         e.preventDefault();
+
+        const categoria = navLinkPastas.dataset.categoria;
+        if (categoria) {
+            abrirDisciplina(categoria, true);
+            return;
+        }
+
         voltarParaHome(true);
         const pastasContainer = document.getElementById("explorar-disciplinas");
         if (pastasContainer) {
