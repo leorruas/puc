@@ -1,5 +1,35 @@
 ## 2026-09-25
 
+* **Manipulação de dados com SQL: ACID incorporado ao glossário da própria disciplina**:
+  - Corrigida a inconsistência entre o artigo 12 e o glossário de SQL: o artigo já desenvolvia ACID, mas o glossário registrava apenas atomicidade.
+  - Adicionadas entradas para Propriedades ACID, consistência transacional, isolamento, durabilidade, autocommit e log de transações, todas com deep links para o artigo 12.
+  - Mantida a conexão interdisciplinar com Modelagem de Dados, mas o artigo 12 agora deixa claro que ACID também pertence ao conteúdo efetivamente estudado em Manipulação de Dados SQL.
+  - Corrigido o deep link de `Gerenciador de transações`, que ainda apontava para um título antigo da seção do artigo 12.
+  - Normalizados os escapes de wikilinks do glossário para uma única barra antes do separador `|`.
+  - Atualizado o resumo da disciplina para incluir ACID e log transacional na síntese do artigo 12.
+  - O Mapa de aprendizagem foi revisado e permanece inalterado, pois a correção consolida conteúdo já estudado sem alterar o estado de aprendizagem.
+
+## 2026-09-25
+
+* **Manipulação de dados com SQL: encerramento da disciplina e prompts de revisão**:
+  - A disciplina foi marcada como **Concluída** no índice e no Mapa de aprendizagem, com cobertura consolidada em 13 artigos + glossário.
+  - O estado de aprendizagem permanece **Em estudo**, pois a conclusão do conteúdo não equivale automaticamente a domínio; a próxima evidência prevista é desempenho em simuladores globais e prática de SQL.
+  - O resumo deixou de usar linguagem provisória como “até agora” e passou a registrar os 13 artigos como matriz completa da disciplina.
+  - `Prompts de Estudo (LLM).md` foi reestruturado para revisão final baseada no vault: tutor de dúvidas, simulado abrangente, treinador prático, leitor/corretor de consultas, diagnóstico pedagógico e revisão adaptativa para prova.
+  - Removido o foco genérico em otimização de queries, índices e performance, pois esses tópicos não fazem parte do escopo consolidado da disciplina.
+  - Todos os prompts exigem consulta ao resumo, artigos e glossário da pasta e distinguem conceitos SQL gerais de particularidades de SGBDs quando necessário.
+
+## 2026-09-25
+
+* **Manipulação de dados com SQL: card inicial e correção do glossário**:
+  - Corrigida em `js/vault.js` a chave da disciplina de `03. Manipulacao de Dados SQL` para o nome real da pasta, `03. Manipulação de Dados SQL`, restaurando a descrição do card na página inicial e os caminhos de fallback associados.
+  - Atualizada a descrição curta do card para refletir o conteúdo efetivamente estudado: DDL, DML, consultas, joins, transações e controle de privilégios.
+  - Corrigida a tabela de `Glossário de conceitos.md`: removidas linhas vazias que interrompiam a tabela e escapados os separadores `|` de wikilinks que estavam sendo interpretados como novas colunas.
+  - Atualizada a entrada de SQL em `index.md`, incluindo transações/DCL no foco temático e atalho para o glossário.
+  - O Mapa de aprendizagem foi revisado e permanece inalterado, pois a correção é de navegação e apresentação e não muda o estado de aprendizagem.
+
+## 2026-09-25
+
 * **Manipulação de dados com SQL 13: `GRANT`, `REVOKE` e controle de privilégios**:
   - Criado `13. Comandos GRANT e REVOKE.md` a partir do conteúdo da unidade 02 sobre DCL e autorização.
   - Diferenciadas autenticação e autorização e conectados `GRANT`/`REVOKE` ao princípio do menor privilégio.
