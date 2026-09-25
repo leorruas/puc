@@ -76,5 +76,5 @@ Este glossário reúne os conceitos já efetivamente estudados em Manipulação 
 | **`MAX(coluna)`** | Função agregada que retorna o maior valor não nulo de uma coluna. | Pode ser combinada com `WHERE` para restringir o conjunto analisado. | [[08. Funções agregadas e cálculos em SQL#7. `MAX`: encontrar o maior valor\|Artigo 08]] |
 | **`MIN(coluna)`** | Função agregada que retorna o menor valor não nulo de uma coluna. | Funciona de forma análoga a `MAX`, procurando o extremo inferior. | [[08. Funções agregadas e cálculos em SQL#8. `MIN`: encontrar o menor valor\|Artigo 08]] |
 | **`SUM(coluna)`** | Função agregada que soma os valores não nulos de uma coluna. | Pode ser aplicada ao conjunto filtrado por `WHERE`. | [[08. Funções agregadas e cálculos em SQL#9. `SUM`: somar valores\|Artigo 08]] |
-| **Alias** | Nome alternativo atribuído a uma coluna ou expressão no resultado de uma consulta. | Muda a apresentação do resultado, não o nome da coluna armazenada na tabela. | [[08. Funções agregadas e cálculos em SQL#3. Alias: dar um nome mais claro ao resultado\|Artigo 08]] |
+| **Alias** | Nome temporário atribuído a uma coluna ou expressão no resultado de uma consulta. | Não cria nem renomeia uma coluna da tabela; apenas rotula o resultado daquela query. | [[08. Funções agregadas e cálculos em SQL#3. Alias: dar um nome mais claro ao resultado\|Artigo 08]] |
 
