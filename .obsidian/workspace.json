@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07. Engenharia de Requisitos/Prompts de Estudo (LLM).md",
+                "file": "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Prompts de Estudo (LLM)"
+              "title": "unidade 02 - 13 - COMANDOS GRANT E REVOKE"
             }
           }
         ]
@@ -191,10 +191,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "decabc597b2ba14f",
+  "active": "51cdb240dd29791b",
   "lastOpenFiles": [
-    "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
     "00. Inbox/unidade 02 - 12 - TRANSAÇÃO EM BANCO DE DADOS E PROPRIEDADES ACID.md",
+    "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
+    "01. Programacao Modular/19. Classes e membros selados (sealed).md",
+    "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md",
+    "01. Programacao Modular/Glossário de conceitos.md",
+    "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
+    "01. Programacao Modular/02. Funções e procedimentos.md",
+    "01. Programacao Modular/01. Introdução à programação modular.md",
+    "01. Programacao Modular/00. Programação modular - Resumo.md",
+    "00. Sintaxe Multilinguagem/04. Sub-rotinas (funções e procedimentos).md",
+    "00. Sintaxe Multilinguagem/02. Estruturas condicionais (if, else, switch).md",
+    "00. Sintaxe Multilinguagem/01. Variáveis, tipos e atribuição.md",
+    "00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice.md",
+    "00. Sintaxe Multilinguagem/00. Evolução das linguagens e genealogia do C (C, C++, Java, C#, JS, Python).md",
+    "03. Manipulação de Dados SQL/01. O que é SQL.md",
+    "07. Engenharia de Requisitos/Prompts de Estudo (LLM).md",
+    "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
     "Pasted image 20260925172641.png",
     "00. Inbox/unidade 02 - 11 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
     "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
@@ -209,21 +224,6 @@
     "00. Inbox/unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING.md",
     "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
     "00. Inbox/unidade 02 - 08 - FUNÇÕES AGREGADAS.md",
-    "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
-    "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
-    "00. Inbox/unidade 02 - 07 - OPERADORES.md",
-    "03. Manipulação de Dados SQL/06. Comando SELECT.md",
-    "00. Inbox/unidade 02 - 06 - COMANDO SELECT.md",
-    "00. Inbox/unidade 02 - 05 - COMANDOS INSERT, UPDATE e DELETE.md",
-    "00. Inbox/web-backend 05.md",
-    "00. Inbox/web-backend 01.md",
-    "03. Manipulação de Dados SQL/05. Comandos INSERT, UPDATE e DELETE.md",
-    "06. Projeto - Aplicacao Interativa/11. Pendências e inconsistências da documentação do projeto.md",
-    "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md",
-    "03. Manipulação de Dados SQL/Prompts de Estudo (LLM).md",
-    "03. Manipulação de Dados SQL/Glossário de conceitos.md",
-    "03. Manipulação de Dados SQL/04. Alteração e remoção de tabelas.md",
-    "03. Manipulação de Dados SQL/03. Comando CREATE TABLE.md",
     "03. Manipulação de Dados SQL",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
