@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
+                "file": "00. Inbox/unidade 02 - 11 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO"
+              "title": "unidade 02 - 11 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO"
             }
           }
         ]
@@ -193,8 +193,10 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+    "00. Sintaxe Multilinguagem/19. Consultas dependentes, any e all em coleções.md",
     "00. Inbox/unidade 02 - 10 - CLÁUSULA JOIN.md",
-    "00. Inbox/unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
+    "00. Inbox/unidade 02 - 11 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
     "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
     "00. Sintaxe Multilinguagem/18. Junção, união e eliminação de duplicidades em coleções.md",
     "Pasted image 20260925134331.png",
@@ -221,9 +223,7 @@
     "03. Manipulação de Dados SQL/03. Comando CREATE TABLE.md",
     "03. Manipulação de Dados SQL/02. Bancos de dados relacionais e SGBDs.md",
     "03. Manipulação de Dados SQL/01. O que é SQL.md",
-    "03. Manipulação de Dados SQL/00. Manipulação de Dados SQL - Resumo.md",
     "03. Manipulação de Dados SQL",
-    "00. Sintaxe Multilinguagem/17. ORM e mapeamento objeto-relacional em C# e JavaScript-TypeScript.md",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
     "Screenshot 2026-09-22 at 17.00.39.png",
