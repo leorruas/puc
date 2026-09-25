@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/unidade 02 - 10 - CLÁUSULA JOIN.md",
+                "file": "00. Inbox/unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unidade 02 - 10 - CLÁUSULA JOIN"
+              "title": "unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO"
             }
           }
         ]
@@ -193,6 +193,8 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/unidade 02 - 10 - CLÁUSULA JOIN.md",
+    "00. Inbox/unidade 02 - 10 - CONSULTAS ANINHADAS SEM E COM CORRELAÇÃO.md",
     "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
     "00. Sintaxe Multilinguagem/18. Junção, união e eliminação de duplicidades em coleções.md",
     "Pasted image 20260925134331.png",
@@ -200,7 +202,6 @@
     "Pasted image 20260925134252.png",
     "Pasted image 20260925134204.png",
     "00. Inbox/unidade 02 - 09 - CLÁUSULAS GROUP BY E HAVING.md",
-    "00. Inbox/unidade 02 - 10 - CLÁUSULA JOIN.md",
     "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
     "00. Inbox/unidade 02 - 08 - FUNÇÕES AGREGADAS.md",
     "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
@@ -223,7 +224,6 @@
     "03. Manipulação de Dados SQL/00. Manipulação de Dados SQL - Resumo.md",
     "03. Manipulação de Dados SQL",
     "00. Sintaxe Multilinguagem/17. ORM e mapeamento objeto-relacional em C# e JavaScript-TypeScript.md",
-    "00. Sintaxe Multilinguagem/16. Templates server-side e sintaxe incorporada (Razor e PHP).md",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
     "Screenshot 2026-09-22 at 17.00.39.png",
