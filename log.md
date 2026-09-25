@@ -1,5 +1,14 @@
 ## 2026-09-25
 
+* **Manipulação de dados com SQL: card inicial e correção do glossário**:
+  - Corrigida em `js/vault.js` a chave da disciplina de `03. Manipulacao de Dados SQL` para o nome real da pasta, `03. Manipulação de Dados SQL`, restaurando a descrição do card na página inicial e os caminhos de fallback associados.
+  - Atualizada a descrição curta do card para refletir o conteúdo efetivamente estudado: DDL, DML, consultas, joins, transações e controle de privilégios.
+  - Corrigida a tabela de `Glossário de conceitos.md`: removidas linhas vazias que interrompiam a tabela e escapados os separadores `|` de wikilinks que estavam sendo interpretados como novas colunas.
+  - Atualizada a entrada de SQL em `index.md`, incluindo transações/DCL no foco temático e atalho para o glossário.
+  - O Mapa de aprendizagem foi revisado e permanece inalterado, pois a correção é de navegação e apresentação e não muda o estado de aprendizagem.
+
+## 2026-09-25
+
 * **Manipulação de dados com SQL 13: `GRANT`, `REVOKE` e controle de privilégios**:
   - Criado `13. Comandos GRANT e REVOKE.md` a partir do conteúdo da unidade 02 sobre DCL e autorização.
   - Diferenciadas autenticação e autorização e conectados `GRANT`/`REVOKE` ao princípio do menor privilégio.
