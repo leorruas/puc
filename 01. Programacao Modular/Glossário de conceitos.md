@@ -25,33 +25,33 @@ relacionados:
 
 ## Índice temático
 
-### 1. Estrutura básica e orientação a objetos (POO)
-* [[#1. Tipo (Type)|1. Tipo (*Type*)]] • [[#2. Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#4. Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#5. Estado (State)|5. Estado (*State*)]] • [[#6. Método (Method)|6. Método (*Method*)]]
-* [[#22. Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#23. Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#24. Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#25. Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#26. Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#44. Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
-* [[#46. Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#47. Sobreposição e sobrescrita de método (Method Overriding / Override)|47. Sobreposição e sobrescrita (`override`)]] • [[#48. Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
-* [[#50. Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#52. Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#53. Método ToString (String Representation Method)|53. Método `ToString()`]]
-* [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
-* [[#57. Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#58. Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
-* [[#62. Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#63. Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#64. Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
-* [[#65. Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#66. Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#68. Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#69. Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#70. Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#74. Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]] • [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)|75. Enganchar e desenganchar (*Hook / Unhook*)]]
+### Estrutura básica e orientação a objetos (POO)
+* [[#Tipo (Type)|1. Tipo (*Type*)]] • [[#Operação (Operation / Method)|2. Operação (*Operation*)]] • [[#Atributo (Attribute / Field)|4. Atributo (*Attribute*)]] • [[#Estado (State)|5. Estado (*State*)]] • [[#Método (Method)|6. Método (*Method*)]]
+* [[#Encapsulamento (Encapsulation)|22. Encapsulamento (*Encapsulation*)]] • [[#Herança (Inheritance)|23. Herança (*Inheritance*)]] • [[#Polimorfismo (Polymorphism)|24. Polimorfismo (*Polymorphism*)]] • [[#Interface (Interface / Contrato de Serviço)|25. Interface (*Interface*)]] • [[#Implementação (Implementation / Mecânica Interna)|26. Implementação (*Implementation*)]] • [[#Subtipagem (Subtyping / Subtype Polymorphism)|44. Subtipagem (*Subtyping*)]]
+* [[#Método virtual (Virtual Method)|46. Método virtual (`virtual`)]] • [[#Sobreposição e sobrescrita de método (Method Overriding / Override)|47. Sobreposição e sobrescrita (`override`)]] • [[#Palavra-chave base (Base Keyword)|48. Palavra-chave `base`]] • [[#Modificador new e ocultação de membro (Member Shadowing / New Modifier)|49. Modificador `new` (*shadowing*)]]
+* [[#Vinculação antecipada (Early Binding / Static Binding)|50. Vinculação antecipada (*Early binding*)]] • [[#Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)|51. Vinculação tardia (*Late binding*)]] • [[#Referência polimórfica (Polymorphic Reference)|52. Referência polimórfica]] • [[#Método ToString (String Representation Method)|53. Método `ToString()`]]
+* [[#Tabela de métodos virtuais (Virtual Method Table - vtable)|54. Tabela de métodos virtuais (*vtable*)]] • [[#Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)|55. Polimorfismo dinâmico vs. estático]] • [[#Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)|56. Superclasse vs. interface]]
+* [[#Classe abstrata (Abstract Class)|57. Classe abstrata (`abstract class`)]] • [[#Método abstrato (Abstract Method)|58. Método abstrato (`abstract method`)]] • [[#Palavra-chave abstract (Abstract Keyword / Modificador abstract)|59. Palavra-chave `abstract`]]
+* [[#Classe selada (Sealed Class / Final Class)|62. Classe selada (`sealed class`)]] • [[#Membro selado (Sealed Member / Sealed Override)|63. Membro selado (`sealed override`)]] • [[#Instanciação e instanciar (Instantiation / Object Creation)|64. Instanciação e instanciar (`new`)]]
+* [[#Tipos genéricos (Generics / Parametric Polymorphism)|65. Tipos genéricos (`Generics`)]] • [[#Segurança de tipos (Type Safety)|66. Segurança de tipos (*Type safety*)]] • [[#Conjuntos disjuntos em tipos (Disjoint Sets in Types)|67. Conjuntos disjuntos em tipos]] • [[#Função de hashing e código hash (Hash Function & Hash Code)|68. Função de hashing e código hash (`GetHashCode`)]] • [[#Exceção de coerção inválida (InvalidCastException)|69. Exceção de coerção inválida (`InvalidCastException`)]] • [[#Tupla (Tuple / ValueTuple)|70. Tupla (`Tuple / ValueTuple`)]] • [[#Delegação e delegate (Delegate / Type-Safe Function Pointer)|71. Delegação e *delegate*]] • [[#Expressão lambda e função anônima (Lambda Expression & Anonymous Function)|72. Expressões lambda (`=>`)]] • [[#Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)|73. Eventos (`event`)]] • [[#Função de retorno e callback (Callback / Callback Function)|74. Função de retorno (*Callback*)]] • [[#Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)|75. Enganchar e desenganchar (*Hook / Unhook*)]]
 
-### 2. Modularidade e arquitetura de software
-* [[#3. Módulo (Module)|3. Módulo (*Module*)]] • [[#27. Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#28. Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#29. Independência funcional (Functional Independence)|29. Independência funcional]] • [[#76. Princípios SOLID de design orientado a objetos (SOLID Principles)|76. Princípios SOLID]] • [[#77. Separação de preocupações (Separation of Concerns - SoC)|77. Separação de preocupações (*SoC*)]] • [[#78. Padrões de projeto (Design Patterns / GoF Patterns)|78. Padrões de projeto (*Design Patterns*)]]
-* [[#39. Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#40. Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#45. Problema do diamante (The Diamond Problem)|45. Problema do diamante]] • [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)|61. Anti-padrão Yo-Yo]]
+### Modularidade e arquitetura de software
+* [[#Módulo (Module)|3. Módulo (*Module*)]] • [[#Coesão (Cohesion)|27. Coesão (*Cohesion*)]] • [[#Princípio da caixa preta (Black Box Principle)|28. Princípio da caixa preta (*Black box*)]] • [[#Independência funcional (Functional Independence)|29. Independência funcional]] • [[#Princípios SOLID de design orientado a objetos (SOLID Principles)|76. Princípios SOLID]] • [[#Separação de preocupações (Separation of Concerns - SoC)|77. Separação de preocupações (*SoC*)]] • [[#Padrões de projeto (Design Patterns / GoF Patterns)|78. Padrões de projeto (*Design Patterns*)]]
+* [[#Espaço de nomes (Namespace)|39. Espaço de nomes (*Namespace*)]] • [[#Classe parcial (Partial Class)|40. Classe parcial (*Partial class*)]] • [[#Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)|41. Biblioteca de vínculo dinâmico (DLL / *Assembly*)]] • [[#Problema do diamante (The Diamond Problem)|45. Problema do diamante]] • [[#Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)|61. Anti-padrão Yo-Yo]]
 
-### 3. Memória, ciclo de vida e concorrência
-* [[#10. Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#11. Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#18. Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
-* [[#19. Padrão Dispose e IDisposable (Deterministic Cleanup)|19. Padrão `Dispose` e `IDisposable`]] • [[#20. Buffer e descarregamento de dados (Buffer & Flush)|20. Buffer e *flush*]] • [[#21. Thread (Linha de execução / Fluxo concorrente)|21. *Thread* e concorrência]]
-* [[#60. Ponteiro (Pointer / vptr / Memory Pointer)|60. Ponteiro (*Pointer / vptr*)]]
+### Memória, ciclo de vida e concorrência
+* [[#Semântica de Referência (Reference Semantics)|10. Semântica de referência]] • [[#Coletor de Lixo (Garbage Collector - GC)|11. Coletor de lixo (*GC*)]] • [[#Destrutor e Finalizador (Destructor & Finalizer)|18. Destrutor e finalizador]]
+* [[#Padrão Dispose e IDisposable (Deterministic Cleanup)|19. Padrão `Dispose` e `IDisposable`]] • [[#Buffer e descarregamento de dados (Buffer & Flush)|20. Buffer e *flush*]] • [[#Thread (Linha de execução / Fluxo concorrente)|21. *Thread* e concorrência]]
+* [[#Ponteiro (Pointer / vptr / Memory Pointer)|60. Ponteiro (*Pointer / vptr*)]]
 
-### 4. Recursos de linguagem, sintaxe e C#
-* [[#8. Declaração em Computação (Declaration / Declarar)|8. Declaração]] • [[#9. Assinatura de Método (Method Signature)|9. Assinatura de método]] • [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)|12. Parâmetro vs. argumento]] • [[#13. GOTO (Salto Incondicional)|13. `GOTO`]] • [[#15. Membro estático (Static Member)|15. Membro estático (`static`)]]
-* [[#16. Propriedades (Properties & Auto-Properties)|16. Propriedades]] • [[#17. Escopo (Scope)|17. Escopo]] • [[#31. Métodos de acesso ou getters (Accessors / Getters)|31. *Getters*]] • [[#32. Métodos modificadores ou setters (Mutators / Setters)|32. *Setters*]] • [[#33. Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)|33. Convenções de nomenclatura]]
-* [[#34. Propriedade (Property)|34. Propriedades avançadas]] • [[#35. Princípio DRY (Don't Repeat Yourself)|35. Princípio DRY]] • [[#36. Código boilerplate (Boilerplate Code)|36. Código *boilerplate*]] • [[#37. Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)|37. Expressões lambda (`=>`)]]
-* [[#38. Paradigma funcional (Functional Programming Paradigm)|38. Paradigma funcional]] • [[#42. Compilador Roslyn (.NET Compiler Platform)|42. Compilador Roslyn]] • [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)|43. ORM & Entity Framework]]
+### Recursos de linguagem, sintaxe e C#
+* [[#Declaração em Computação (Declaration / Declarar)|8. Declaração]] • [[#Assinatura de Método (Method Signature)|9. Assinatura de método]] • [[#Parâmetro vs. Argumento (Parameter vs. Argument)|12. Parâmetro vs. argumento]] • [[#GOTO (Salto Incondicional)|13. `GOTO`]] • [[#Membro estático (Static Member)|15. Membro estático (`static`)]]
+* [[#Propriedades (Properties & Auto-Properties)|16. Propriedades]] • [[#Escopo (Scope)|17. Escopo]] • [[#Métodos de acesso ou getters (Accessors / Getters)|31. *Getters*]] • [[#Métodos modificadores ou setters (Mutators / Setters)|32. *Setters*]] • [[#Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)|33. Convenções de nomenclatura]]
+* [[#Propriedade (Property)|34. Propriedades avançadas]] • [[#Princípio DRY (Don't Repeat Yourself)|35. Princípio DRY]] • [[#Código boilerplate (Boilerplate Code)|36. Código *boilerplate*]] • [[#Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)|37. Expressões lambda (`=>`)]]
+* [[#Paradigma funcional (Functional Programming Paradigm)|38. Paradigma funcional]] • [[#Compilador Roslyn (.NET Compiler Platform)|42. Compilador Roslyn]] • [[#Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)|43. ORM & Entity Framework]]
 
-### 5. Qualidade e engenharia de software
-* [[#7. Qualidade de Código (Code Quality)|7. Qualidade de código]] • [[#14. Robustez (Robustness)|14. Robustez (*Robustness*)]] • [[#30. Regra prática ou heurística (Rule of Thumb)|30. Regra prática / Heurística]]
+### Qualidade e engenharia de software
+* [[#Qualidade de Código (Code Quality)|7. Qualidade de código]] • [[#Robustez (Robustness)|14. Robustez (*Robustness*)]] • [[#Regra prática ou heurística (Rule of Thumb)|30. Regra prática / Heurística]]
 
 ---
 
@@ -59,88 +59,88 @@ relacionados:
 
 | ID | Termo | Definição simplificada | O que representa? | Exemplo no código / Teoria |
 | :---: | :--- | :--- | :--- | :--- |
-| **01** | [[#1. Tipo (Type)\|Tipo (*Type*)]] | Conjunto de valores e operações válidas sobre eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
-| **02** | [[#2. Operação (Operation / Method)\|Operação (*Operation*)]] | Sub-rotina que executa cálculos ou altera estado. | O **comportamento executável** | `Sacar()`, `CalcularDV()` |
-| **03** | [[#3. Módulo (Module)\|Módulo (*Module*)]] | Unidade de organização física ou lógica do código. | O **container de fronteira** | Arquivo `.cs`, `class`, pacote |
-| **04** | [[#4. Atributo (Attribute / Field)\|Atributo (*Field*)]] | Variável interna que armazena os dados do objeto. | Os **dados estruturais** | `private double _saldo;` |
-| **05** | [[#5. Estado (State)\|Estado (*State*)]] | Valores de todos os atributos em um dado instante. | A **fotografia do objeto** | `_saldo = 500.00;` |
-| **06** | [[#6. Método (Method)\|Método (*Method*)]] | Função ou procedimento pertencente a uma classe. | A **ação vinculada ao dado** | `public void Depositar(...)` |
-| **07** | [[#7. Qualidade de Código (Code Quality)\|Qualidade de código]] | Atendimento a fatores externos e internos. | A **longevidade do software** | ISO/IEC 25010, Código limpo |
-| **08** | [[#8. Declaração em Computação (Declaration / Declarar)\|Declaração]] | Avisar ao compilador a existência e tipo de um item. | A **reserva de identidade** | `double saldo;`, `void Sacar();` |
-| **09** | [[#9. Assinatura de Método (Method Signature)\|Assinatura]] | Nome do método + lista de tipos dos parâmetros. | O **identificador único** | `Sacar(double)` |
-| **10** | [[#10. Semântica de Referência (Reference Semantics)\|Semântica de referência]] | Variável contém referência gerenciada ao objeto. | O **controle remoto** | `Conta c2 = c1;` |
-| **11** | [[#11. Coletor de Lixo (Garbage Collector - GC)\|Coletor de lixo (*GC*)]] | Limpeza automática de instâncias órfãs da RAM. | A **reciclagem de memória** | Motor de GC do .NET / CLR |
-| **12** | [[#12. Parâmetro vs. Argumento (Parameter vs. Argument)\|Parâmetro vs. argumento]] | Parâmetro é o molde na assinatura; argumento é o valor enviado. | O **molde vs. dado real** | `(double v)` vs `(150.00)` |
-| **13** | [[#13. GOTO (Salto Incondicional)\|`GOTO`]] | Salto arbitrário descontinuado na estruturação. | O **fluxo desordenado (evitar)** | `goto Rotulo;` |
-| **14** | [[#14. Robustez (Robustness)\|Robustez (*Robustness*)]] | Capacidade de reagir a erros sem travar o sistema. | A **segurança a imprevistos** | `try / catch`, validação de dados |
-| **15** | [[#15. Membro estático (Static Member)\|Membro estático]] | Atributo ou método que pertence à classe, não ao objeto. | O **dado compartilhado global** | `static int TotalContas;` |
-| **16** | [[#16. Propriedades (Properties & Auto-Properties)\|Propriedades]] | Encapsulamento elegante de leitura e escrita. | A **fachada inteligente com get/set** | `public double Saldo { get; }` |
-| **17** | [[#17. Escopo (Scope)\|Escopo (*Scope*)]] | Região do código onde um identificador é visível. | A **fronteira de visibilidade** | Bloco `{ }`, classe, método |
-| **18** | [[#18. Destrutor e Finalizador (Destructor & Finalizer)\|Destrutor (*Finalizer*)]] | Método especial invocado antes do GC coletar o objeto. | A **limpeza final de recursos** | `~ContaCorrente() { ... }` |
-| **19** | [[#19. Padrão Dispose e IDisposable (Deterministic Cleanup)\|Padrão `Dispose`]] | Liberação determinística e imediata de recursos nativos. | A **devolução manual expressa** | `using (var f = new FileStream)` |
-| **20** | [[#20. Buffer e descarregamento de dados (Buffer & Flush)\|Buffer & flush]] | Acúmulo temporário em RAM e descarregamento no disco. | O **lote de transferência** | `stream.Flush();` |
-| **21** | [[#21. Thread (Linha de execução / Fluxo concorrente)\|*Thread* / Concorrência]] | Sequência linear de execução concorrente de tarefas. | A **linha de produção paralela** | `Thread`, `Task`, async/await |
-| **22** | [[#22. Encapsulamento (Encapsulation)\|Encapsulamento]] | Ocultação de detalhes internos e proteção de dados. | A **cápsula blindada** | Atributos `private`, métodos `public` |
-| **23** | [[#23. Herança (Inheritance)\|Herança]] | Reaproveitamento e extensão de membros entre classes. | A **relação pai-filho (*is-a*)** | `class Poupanca : Conta` |
-| **24** | [[#24. Polimorfismo (Polymorphism)\|Polimorfismo]] | Capacidade de tratar objetos distintos via contrato comum. | As **múltiplas formas de resposta** | `virtual` / `override` |
-| **25** | [[#25. Interface (Interface / Contrato de Serviço)\|Interface (*Contrato*)]] | Conjunto de assinaturas públicas sem implementação. | O **contrato de serviço** | `interface IConta { void Sacar(); }` |
-| **26** | [[#26. Implementação (Implementation / Mecânica Interna)\|Implementação]] | O código concreto dentro do corpo dos métodos. | O **"como faz" interno** | Corpo das funções `{ ... }` |
-| **27** | [[#27. Coesão (Cohesion)\|Coesão (*Cohesion*)]] | Grau em que os membros da classe têm foco único. | O **foco e propósito único** | Alta coesão (Princípio SRP) |
-| **28** | [[#28. Princípio da caixa preta (Black Box Principle)\|Caixa preta]] | Uso de um componente conhecendo apenas sua entrada/saída. | O **isolamento instrumental** | Usar API sem ler código-fonte |
-| **29** | [[#29. Independência funcional (Functional Independence)\|Independência funcional]] | Módulo opera com autonomia e dependências mínimas. | O **desacoplamento operacional** | Módulos autossuficientes |
-| **30** | [[#30. Regra prática ou heurística (Rule of Thumb)\|Regra prática / Heurística]] | Diretriz empírica consagrada para tomada de decisão. | O **guia de boas práticas** | "Prefira composição a herança" |
-| **31** | [[#31. Métodos de acesso ou getters (Accessors / Getters)\|*Getters*]] | Métodos ou blocos que leem valores sem alterar estado. | A **consulta segura de dados** | `public double GetSaldo()` |
-| **32** | [[#32. Métodos modificadores ou setters (Mutators / Setters)\|*Setters*]] | Métodos ou blocos que alteram estado com validação. | A **modificação controlada** | `public void SetSaldo(double v)` |
-| **33** | [[#33. Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)\|Convenções de nomes]] | Padrões de escrita de identificadores (`PascalCase`, `_camelCase`). | A **legibilidade padronizada** | `_saldoPrivado`, `MetodoPublico` |
-| **34** | [[#34. Propriedade (Property)\|Propriedade]] | Estrutura de C# que encapsula getters e setters como campo. | O **acesso idiomático com regras** | `public int Idade { get; set; }` |
-| **35** | [[#35. Princípio DRY (Don't Repeat Yourself)\|Princípio DRY]] | Eliminação de duplicação lógica no sistema. | A **fonte única de verdade** | Centralizar validações e cálculos |
-| **36** | [[#36. Código boilerplate (Boilerplate Code)\|Código *boilerplate*]] | Código repetitivo e burocrático necessário pela sintaxe. | A **burocracia sintática** | Getters e setters manuais longos |
-| **37** | [[#37. Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)\|Expressões lambda (`=>`)]] | Sintaxe compacta de função anônima ou corpo conciso. | A **flecha expressiva direta** | `public double Saldo => _saldo;` |
-| **38** | [[#38. Paradigma funcional (Functional Programming Paradigm)\|Paradigma funcional]] | Foco em funções puras, imutabilidade e sem efeitos colaterais. | O **cálculo matemático puro** | LINQ (`Select`, `Where`), Imutabilidade |
-| **39** | [[#39. Espaço de nomes (Namespace)\|*Namespace*]] | Escopo hierárquico para organizar classes e evitar colisões. | As **pastas lógicas do projeto** | `namespace MeuApp.Dominio.Contas;` |
-| **40** | [[#40. Classe parcial (Partial Class)\|Classe parcial (`partial`)]] | Divisão da declaração de uma classe em múltiplos arquivos. | A **classe em múltiplos arquivos** | `partial class ContaCorrente` |
-| **41** | [[#41. Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)\|DLL / *Assembly*]] | Unidade binária compilada reutilizável entre projetos. | O **pacote compilado de entrega** | `Dominio.dll`, Pacotes NuGet |
-| **42** | [[#42. Compilador Roslyn (.NET Compiler Platform)\|Compilador Roslyn]] | Compilador modular como serviço do .NET e C#. | O **motor analítico de código** | Análise estática, refatoração de IDE |
-| **43** | [[#43. Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
-| **44** | [[#44. Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
-| **45** | [[#45. Problema do diamante (The Diamond Problem)\|Problema do diamante]] | Ambiguidade fatal de herança múltipla de classes em grafo losango. | A **ordem contraditória dos pais** | `class D : B, C` com conflito de métodos |
-| **46** | [[#46. Método virtual (Virtual Method)\|Método virtual (`virtual`)]] | Método que autoriza e convida subclasses a redefinirem seu comportamento. | A **abertura de contrato extensível** | `public virtual void Sacar()` |
-| **47** | [[#47. Sobreposição e sobrescrita de método (Method Overriding / Override)\|Sobreposição / Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
-| **48** | [[#48. Palavra-chave base (Base Keyword)\|Palavra-chave `base`]] | Referência direta aos construtores e métodos da superclasse imediata. | O **acesso à linhagem ancestral** | `: base(...)`, `base.Sacar()` |
-| **49** | [[#49. Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
-| **50** | [[#50. Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
-| **51** | [[#51. Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
-| **52** | [[#52. Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
-| **53** | [[#53. Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
-| **54** | [[#54. Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
-| **55** | [[#55. Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)\|Polimorfismo dinâmico vs. estático]] | Dicotomia entre resolução em tempo de compilação (*early binding*) vs. execução (*late binding*). | A **decisão antecipada vs. tardia** | Sobrecarga vs. `virtual`/`override` |
-| **56** | [[#56. Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)\|Superclasse vs. interface]] | Contraste entre herança rígida ("é um" + estado) e implementação de contratos ("capaz de" sem estado). | A **árvore genealógica vs. habilitação** | `class B : A` vs. `class B : IContrato` |
-| **57** | [[#57. Classe abstrata (Abstract Class)\|Classe abstrata (`abstract`)]] | Superclasse incompleta que proíbe instanciação direta (`new`) e serve de molde comum. | O **molde de chassi sem lataria** | `public abstract class Forma` |
-| **58** | [[#58. Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
-| **59** | [[#59. Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
-| **60** | [[#60. Ponteiro (Pointer / vptr / Memory Pointer)\|Ponteiro (*Pointer / vptr*)]] | Endereço numérico exato na RAM que aponta para objetos, *vtables* ou rotinas de código. | O **papel com o endereço da casa** | `vptr`, referências de memória, ponteiros de função |
-| **61** | [[#61. Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)\|Anti-padrão Yo-Yo]] | Hierarquia de herança excessivamente profunda que fragmenta o entendimento do código. | A **caça ao tesouro subindo e descendo escadas** | `A -> B -> C -> D -> E` com métodos espalhados |
-| **62** | [[#62. Classe selada (Sealed Class / Final Class)\|Classe selada (`sealed`)]] | Classe cuja herança é terminantemente proibida pelo compilador por segurança e performance. | A **embalagem de remédio lacrada** | `public sealed class Cripto` |
-| **63** | [[#63. Membro selado (Sealed Member / Sealed Override)\|Membro selado (`sealed override`)]] | Método sobrescrito cuja cadeia de novas sobreposições por subclasses foi encerrada. | A **cláusula pétrea constitucional** | `public sealed override void Taxa()` |
-| **64** | [[#64. Instanciação e instanciar (Instantiation / Object Creation)\|Instanciação / Instanciar]] | Ato de alocar memória no *Heap* e criar um objeto vivo a partir do molde de uma classe. | O **nascimento físico do objeto na RAM** | `Conta c = new Conta();` |
-| **65** | [[#65. Tipos genéricos (Generics / Parametric Polymorphism)\|Tipos genéricos (*Generics*)]] | Parametrização de tipos com `<T>` para criar classes e coleções reutilizáveis e homogêneas. | A **gaveta organizadora com divisórias ajustáveis** | `class Pilha<T>`, `List<Conta>` |
-| **66** | [[#66. Segurança de tipos (Type Safety)\|Segurança de tipos (*Type Safety*)]] | Garantia em tempo de compilação de que uma operação só é executada em tipos compatíveis. | A **catraca eletrônica infalível na compilação** | Erros de *cast* viram erros de build |
-| **67** | [[#67. Conjuntos disjuntos em tipos (Disjoint Sets in Types)\|Conjuntos disjuntos em tipos]] | Domínios matemáticos sem elementos em comum ($A \cap B = \emptyset$) blindados pelo compilador. | As **duas trilhas de trem paralelas que nunca se cruzam** | `Dictionary<TKey, TValue>` |
-| **68** | [[#68. Função de hashing e código hash (Hash Function & Hash Code)\|Função de hashing (*GetHashCode*)]] | Algoritmo determinístico que mapeia objetos para inteiros de 32 bits para busca $O(1)$. | O **guarda-volumes com 100 mil armários numerados** | `public override int GetHashCode()` |
-| **69** | [[#69. Exceção de coerção inválida (InvalidCastException)\|Exceção de *cast* inválido]] | Erro fatal de *runtime* lançado ao forçar a conversão entre tipos incompatíveis. | O **plugue elétrico forçado na marreta que queima a máquina** | `(ContaCorrente)lista[0]` |
-| **70** | [[#70. Tupla (Tuple / ValueTuple)\|Tupla (*Tuple / ValueTuple*)]] | Estrutura genérica leve e heterogênea para agrupar múltiplos valores fortemente tipados. | O **porta-copos duplo do carro** | `(string, int)`, `Tuple<T1, T2>` |
-| **71** | [[#71. Delegação e delegate (Delegate / Type-Safe Function Pointer)\|Delegação (*Delegate*)]] | Tipo de referência que encapsula métodos com assinatura e retorno definidos com segurança. | A **procuração registrada em cartório** | `public delegate void Notificador()` |
-| **72** | [[#72. Expressão lambda e função anônima (Lambda Expression & Anonymous Function)\|Expressão lambda (`=>`)]] | Sintaxe compacta de função anônima descartável definida no ponto de uso. | O **bilhete Post-it de instruções rápidas** | `(a, b) => a + b` |
-| **73** | [[#73. Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)\|Evento (`event`)]] | Encapsulamento seguro de delegate que restringe o disparo à classe emissora. | A **torre de rádio e os ouvintes sintonizados** | `public event EventHandler Aprovado;` |
-| **74** | [[#74. Função de retorno e callback (Callback / Callback Function)\|Função de retorno (*Callback*)]] | Função passada como parâmetro para ser invocada ao término de uma rotina ou evento. | O **telefone deixado com a oficina mecânica** | `void Baixar(Action<byte[]> callback)` |
-| **75** | [[#75. Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)\|Enganchar / Desenganchar]] | Inscrição (`+=`) ou cancelamento (`-=`) de funções e manipuladores de eventos em tempo de execução. | O **engate de reboque do carro** | `botao.Click += OnClick; botao.Click -= OnClick;` |
-| **76** | [[#76. Princípios SOLID de design orientado a objetos (SOLID Principles)\|Princípios SOLID]] | Cinco heurísticas de design (SRP, OCP, LSP, ISP, DIP) para combater a degradação de código. | A **caixa de ferramentas com encaixes padronizados** | `interface`, Injeção de dependência |
-| **77** | [[#77. Separação de preocupações (Separation of Concerns - SoC)\|Separação de preocupações (*SoC*)]] | Decomposição do software em seções onde cada uma trata de um único aspecto de forma isolada. | A **divisão setorial de um hospital moderno** | Arquitetura em camadas, SRP |
-| **78** | [[#78. Padrões de projeto (Design Patterns / GoF Patterns)\|Padrões de projeto (*GoF*)]] | Soluções conceituais reutilizáveis divididas em Criacionais, Estruturais e Comportamentais. | A **planta estrutural de uma ponte pênsil** | `Singleton`, `Strategy`, `Adapter` |
+| **01** | [[#Tipo (Type)\|Tipo (*Type*)]] | Conjunto de valores e operações válidas sobre eles. | O **conceito/definição** do dado | `int`, `string`, `class Conta` |
+| **02** | [[#Operação (Operation / Method)\|Operação (*Operation*)]] | Sub-rotina que executa cálculos ou altera estado. | O **comportamento executável** | `Sacar()`, `CalcularDV()` |
+| **03** | [[#Módulo (Module)\|Módulo (*Module*)]] | Unidade de organização física ou lógica do código. | O **container de fronteira** | Arquivo `.cs`, `class`, pacote |
+| **04** | [[#Atributo (Attribute / Field)\|Atributo (*Field*)]] | Variável interna que armazena os dados do objeto. | Os **dados estruturais** | `private double _saldo;` |
+| **05** | [[#Estado (State)\|Estado (*State*)]] | Valores de todos os atributos em um dado instante. | A **fotografia do objeto** | `_saldo = 500.00;` |
+| **06** | [[#Método (Method)\|Método (*Method*)]] | Função ou procedimento pertencente a uma classe. | A **ação vinculada ao dado** | `public void Depositar(...)` |
+| **07** | [[#Qualidade de Código (Code Quality)\|Qualidade de código]] | Atendimento a fatores externos e internos. | A **longevidade do software** | ISO/IEC 25010, Código limpo |
+| **08** | [[#Declaração em Computação (Declaration / Declarar)\|Declaração]] | Avisar ao compilador a existência e tipo de um item. | A **reserva de identidade** | `double saldo;`, `void Sacar();` |
+| **09** | [[#Assinatura de Método (Method Signature)\|Assinatura]] | Nome do método + lista de tipos dos parâmetros. | O **identificador único** | `Sacar(double)` |
+| **10** | [[#Semântica de Referência (Reference Semantics)\|Semântica de referência]] | Variável contém referência gerenciada ao objeto. | O **controle remoto** | `Conta c2 = c1;` |
+| **11** | [[#Coletor de Lixo (Garbage Collector - GC)\|Coletor de lixo (*GC*)]] | Limpeza automática de instâncias órfãs da RAM. | A **reciclagem de memória** | Motor de GC do .NET / CLR |
+| **12** | [[#Parâmetro vs. Argumento (Parameter vs. Argument)\|Parâmetro vs. argumento]] | Parâmetro é o molde na assinatura; argumento é o valor enviado. | O **molde vs. dado real** | `(double v)` vs `(150.00)` |
+| **13** | [[#GOTO (Salto Incondicional)\|`GOTO`]] | Salto arbitrário descontinuado na estruturação. | O **fluxo desordenado (evitar)** | `goto Rotulo;` |
+| **14** | [[#Robustez (Robustness)\|Robustez (*Robustness*)]] | Capacidade de reagir a erros sem travar o sistema. | A **segurança a imprevistos** | `try / catch`, validação de dados |
+| **15** | [[#Membro estático (Static Member)\|Membro estático]] | Atributo ou método que pertence à classe, não ao objeto. | O **dado compartilhado global** | `static int TotalContas;` |
+| **16** | [[#Propriedades (Properties & Auto-Properties)\|Propriedades]] | Encapsulamento elegante de leitura e escrita. | A **fachada inteligente com get/set** | `public double Saldo { get; }` |
+| **17** | [[#Escopo (Scope)\|Escopo (*Scope*)]] | Região do código onde um identificador é visível. | A **fronteira de visibilidade** | Bloco `{ }`, classe, método |
+| **18** | [[#Destrutor e Finalizador (Destructor & Finalizer)\|Destrutor (*Finalizer*)]] | Método especial invocado antes do GC coletar o objeto. | A **limpeza final de recursos** | `~ContaCorrente() { ... }` |
+| **19** | [[#Padrão Dispose e IDisposable (Deterministic Cleanup)\|Padrão `Dispose`]] | Liberação determinística e imediata de recursos nativos. | A **devolução manual expressa** | `using (var f = new FileStream)` |
+| **20** | [[#Buffer e descarregamento de dados (Buffer & Flush)\|Buffer & flush]] | Acúmulo temporário em RAM e descarregamento no disco. | O **lote de transferência** | `stream.Flush();` |
+| **21** | [[#Thread (Linha de execução / Fluxo concorrente)\|*Thread* / Concorrência]] | Sequência linear de execução concorrente de tarefas. | A **linha de produção paralela** | `Thread`, `Task`, async/await |
+| **22** | [[#Encapsulamento (Encapsulation)\|Encapsulamento]] | Ocultação de detalhes internos e proteção de dados. | A **cápsula blindada** | Atributos `private`, métodos `public` |
+| **23** | [[#Herança (Inheritance)\|Herança]] | Reaproveitamento e extensão de membros entre classes. | A **relação pai-filho (*is-a*)** | `class Poupanca : Conta` |
+| **24** | [[#Polimorfismo (Polymorphism)\|Polimorfismo]] | Capacidade de tratar objetos distintos via contrato comum. | As **múltiplas formas de resposta** | `virtual` / `override` |
+| **25** | [[#Interface (Interface / Contrato de Serviço)\|Interface (*Contrato*)]] | Conjunto de assinaturas públicas sem implementação. | O **contrato de serviço** | `interface IConta { void Sacar(); }` |
+| **26** | [[#Implementação (Implementation / Mecânica Interna)\|Implementação]] | O código concreto dentro do corpo dos métodos. | O **"como faz" interno** | Corpo das funções `{ ... }` |
+| **27** | [[#Coesão (Cohesion)\|Coesão (*Cohesion*)]] | Grau em que os membros da classe têm foco único. | O **foco e propósito único** | Alta coesão (Princípio SRP) |
+| **28** | [[#Princípio da caixa preta (Black Box Principle)\|Caixa preta]] | Uso de um componente conhecendo apenas sua entrada/saída. | O **isolamento instrumental** | Usar API sem ler código-fonte |
+| **29** | [[#Independência funcional (Functional Independence)\|Independência funcional]] | Módulo opera com autonomia e dependências mínimas. | O **desacoplamento operacional** | Módulos autossuficientes |
+| **30** | [[#Regra prática ou heurística (Rule of Thumb)\|Regra prática / Heurística]] | Diretriz empírica consagrada para tomada de decisão. | O **guia de boas práticas** | "Prefira composição a herança" |
+| **31** | [[#Métodos de acesso ou getters (Accessors / Getters)\|*Getters*]] | Métodos ou blocos que leem valores sem alterar estado. | A **consulta segura de dados** | `public double GetSaldo()` |
+| **32** | [[#Métodos modificadores ou setters (Mutators / Setters)\|*Setters*]] | Métodos ou blocos que alteram estado com validação. | A **modificação controlada** | `public void SetSaldo(double v)` |
+| **33** | [[#Convenções de nomenclatura (Naming Conventions: camelCase e PascalCase)\|Convenções de nomes]] | Padrões de escrita de identificadores (`PascalCase`, `_camelCase`). | A **legibilidade padronizada** | `_saldoPrivado`, `MetodoPublico` |
+| **34** | [[#Propriedade (Property)\|Propriedade]] | Estrutura de C# que encapsula getters e setters como campo. | O **acesso idiomático com regras** | `public int Idade { get; set; }` |
+| **35** | [[#Princípio DRY (Don't Repeat Yourself)\|Princípio DRY]] | Eliminação de duplicação lógica no sistema. | A **fonte única de verdade** | Centralizar validações e cálculos |
+| **36** | [[#Código boilerplate (Boilerplate Code)\|Código *boilerplate*]] | Código repetitivo e burocrático necessário pela sintaxe. | A **burocracia sintática** | Getters e setters manuais longos |
+| **37** | [[#Expressão lambda e membros com corpo de expressão (Lambda Expressions & Expression-Bodied Members)\|Expressões lambda (`=>`)]] | Sintaxe compacta de função anônima ou corpo conciso. | A **flecha expressiva direta** | `public double Saldo => _saldo;` |
+| **38** | [[#Paradigma funcional (Functional Programming Paradigm)\|Paradigma funcional]] | Foco em funções puras, imutabilidade e sem efeitos colaterais. | O **cálculo matemático puro** | LINQ (`Select`, `Where`), Imutabilidade |
+| **39** | [[#Espaço de nomes (Namespace)\|*Namespace*]] | Escopo hierárquico para organizar classes e evitar colisões. | As **pastas lógicas do projeto** | `namespace MeuApp.Dominio.Contas;` |
+| **40** | [[#Classe parcial (Partial Class)\|Classe parcial (`partial`)]] | Divisão da declaração de uma classe em múltiplos arquivos. | A **classe em múltiplos arquivos** | `partial class ContaCorrente` |
+| **41** | [[#Biblioteca de vínculo dinâmico (Dynamic Link Library - DLL / Assembly)\|DLL / *Assembly*]] | Unidade binária compilada reutilizável entre projetos. | O **pacote compilado de entrega** | `Dominio.dll`, Pacotes NuGet |
+| **42** | [[#Compilador Roslyn (.NET Compiler Platform)\|Compilador Roslyn]] | Compilador modular como serviço do .NET e C#. | O **motor analítico de código** | Análise estática, refatoração de IDE |
+| **43** | [[#Mapeador objeto-relacional e Entity Framework (ORM & Entity Framework)\|ORM & Entity Framework]] | Tradução automática entre objetos em memória e tabelas SQL. | A **ponte memória-banco de dados** | `DbSet<Cliente>`, mapeamento LINQ-SQL |
+| **44** | [[#Subtipagem (Subtyping / Subtype Polymorphism)\|Subtipagem]] | Compatibilidade semântica onde subtipo substitui supertipo ($S <: T$). | A **tomada universal compatível** | `Funcionario f = new Gerente();` |
+| **45** | [[#Problema do diamante (The Diamond Problem)\|Problema do diamante]] | Ambiguidade fatal de herança múltipla de classes em grafo losango. | A **ordem contraditória dos pais** | `class D : B, C` com conflito de métodos |
+| **46** | [[#Método virtual (Virtual Method)\|Método virtual (`virtual`)]] | Método que autoriza e convida subclasses a redefinirem seu comportamento. | A **abertura de contrato extensível** | `public virtual void Sacar()` |
+| **47** | [[#Sobreposição e sobrescrita de método (Method Overriding / Override)\|Sobreposição / Sobrescrita (`override`)]] | Redefinição polimórfica especializada na subclasse via despacho dinâmico. | A **especialização polimórfica** | `public override void Sacar()` |
+| **48** | [[#Palavra-chave base (Base Keyword)\|Palavra-chave `base`]] | Referência direta aos construtores e métodos da superclasse imediata. | O **acesso à linhagem ancestral** | `: base(...)`, `base.Sacar()` |
+| **49** | [[#Modificador new e ocultação de membro (Member Shadowing / New Modifier)\|Modificador `new` (*shadowing*)]] | Ocultação estática e não-polimórfica de membro ancestral de mesmo nome. | O **cartaz sobreposto no mural** | `new public void Sacar()` |
+| **50** | [[#Vinculação antecipada (Early Binding / Static Binding)\|Vinculação antecipada (*Early binding*)]] | Associação estática entre chamada e endereço de memória em tempo de compilação. | O **salto direto de compilação** | Métodos comuns, estáticos ou `new` |
+| **51** | [[#Vinculação tardia e despacho dinâmico (Late Binding & Dynamic Dispatch)\|Vinculação tardia (*Late binding*)]] | Decisão do método executado em tempo de execução via tabela virtual (*vtable*). | A **resolução dinâmica em runtime** | `virtual` e `override` (`callvirt`) |
+| **52** | [[#Referência polimórfica (Polymorphic Reference)\|Referência polimórfica]] | Variável cujo tipo declarado é um ancestral genérico que aponta para qualquer subtipo. | O **crachá universal de visitante** | `Animal a = new Cachorro();` |
+| **53** | [[#Método ToString (String Representation Method)\|Método `ToString()`]] | Método virtual universal herdado de `object` para representação textual customizada. | O **crachá de identidade pessoal** | `public override string ToString()` |
+| **54** | [[#Tabela de métodos virtuais (Virtual Method Table - vtable)\|Tabela de métodos virtuais (*vtable*)]] | Estrutura interna de ponteiros de função que viabiliza o despacho dinâmico. | O **catálogo de ramais dinâmicos** | Tabela interna do .NET / CLR |
+| **55** | [[#Polimorfismo dinâmico vs. polimorfismo estático (Dynamic vs. Static Polymorphism)\|Polimorfismo dinâmico vs. estático]] | Dicotomia entre resolução em tempo de compilação (*early binding*) vs. execução (*late binding*). | A **decisão antecipada vs. tardia** | Sobrecarga vs. `virtual`/`override` |
+| **56** | [[#Superclasse vs. interface (Superclass vs. Interface / Inheritance vs. Interface)\|Superclasse vs. interface]] | Contraste entre herança rígida ("é um" + estado) e implementação de contratos ("capaz de" sem estado). | A **árvore genealógica vs. habilitação** | `class B : A` vs. `class B : IContrato` |
+| **57** | [[#Classe abstrata (Abstract Class)\|Classe abstrata (`abstract`)]] | Superclasse incompleta que proíbe instanciação direta (`new`) e serve de molde comum. | O **molde de chassi sem lataria** | `public abstract class Forma` |
+| **58** | [[#Método abstrato (Abstract Method)\|Método abstrato (`abstract`)]] | Assinatura sem corpo dentro de classe abstrata que impõe implementação com `override`. | A **cláusula de formulário obrigatória** | `public abstract double Area();` |
+| **59** | [[#Palavra-chave abstract (Abstract Keyword / Modificador abstract)\|Palavra-chave `abstract`]] | Modificador reservado de linguagem que indica incompletude proposital e impõe herança. | A **etiqueta "rascunho de engenharia"** | `abstract class`, `abstract void` |
+| **60** | [[#Ponteiro (Pointer / vptr / Memory Pointer)\|Ponteiro (*Pointer / vptr*)]] | Endereço numérico exato na RAM que aponta para objetos, *vtables* ou rotinas de código. | O **papel com o endereço da casa** | `vptr`, referências de memória, ponteiros de função |
+| **61** | [[#Anti-padrão Yo-Yo (Yo-Yo Anti-pattern / Yo-Yo Problem)\|Anti-padrão Yo-Yo]] | Hierarquia de herança excessivamente profunda que fragmenta o entendimento do código. | A **caça ao tesouro subindo e descendo escadas** | `A -> B -> C -> D -> E` com métodos espalhados |
+| **62** | [[#Classe selada (Sealed Class / Final Class)\|Classe selada (`sealed`)]] | Classe cuja herança é terminantemente proibida pelo compilador por segurança e performance. | A **embalagem de remédio lacrada** | `public sealed class Cripto` |
+| **63** | [[#Membro selado (Sealed Member / Sealed Override)\|Membro selado (`sealed override`)]] | Método sobrescrito cuja cadeia de novas sobreposições por subclasses foi encerrada. | A **cláusula pétrea constitucional** | `public sealed override void Taxa()` |
+| **64** | [[#Instanciação e instanciar (Instantiation / Object Creation)\|Instanciação / Instanciar]] | Ato de alocar memória no *Heap* e criar um objeto vivo a partir do molde de uma classe. | O **nascimento físico do objeto na RAM** | `Conta c = new Conta();` |
+| **65** | [[#Tipos genéricos (Generics / Parametric Polymorphism)\|Tipos genéricos (*Generics*)]] | Parametrização de tipos com `<T>` para criar classes e coleções reutilizáveis e homogêneas. | A **gaveta organizadora com divisórias ajustáveis** | `class Pilha<T>`, `List<Conta>` |
+| **66** | [[#Segurança de tipos (Type Safety)\|Segurança de tipos (*Type Safety*)]] | Garantia em tempo de compilação de que uma operação só é executada em tipos compatíveis. | A **catraca eletrônica infalível na compilação** | Erros de *cast* viram erros de build |
+| **67** | [[#Conjuntos disjuntos em tipos (Disjoint Sets in Types)\|Conjuntos disjuntos em tipos]] | Domínios matemáticos sem elementos em comum ($A \cap B = \emptyset$) blindados pelo compilador. | As **duas trilhas de trem paralelas que nunca se cruzam** | `Dictionary<TKey, TValue>` |
+| **68** | [[#Função de hashing e código hash (Hash Function & Hash Code)\|Função de hashing (*GetHashCode*)]] | Algoritmo determinístico que mapeia objetos para inteiros de 32 bits para busca $O(1)$. | O **guarda-volumes com 100 mil armários numerados** | `public override int GetHashCode()` |
+| **69** | [[#Exceção de coerção inválida (InvalidCastException)\|Exceção de *cast* inválido]] | Erro fatal de *runtime* lançado ao forçar a conversão entre tipos incompatíveis. | O **plugue elétrico forçado na marreta que queima a máquina** | `(ContaCorrente)lista[0]` |
+| **70** | [[#Tupla (Tuple / ValueTuple)\|Tupla (*Tuple / ValueTuple*)]] | Estrutura genérica leve e heterogênea para agrupar múltiplos valores fortemente tipados. | O **porta-copos duplo do carro** | `(string, int)`, `Tuple<T1, T2>` |
+| **71** | [[#Delegação e delegate (Delegate / Type-Safe Function Pointer)\|Delegação (*Delegate*)]] | Tipo de referência que encapsula métodos com assinatura e retorno definidos com segurança. | A **procuração registrada em cartório** | `public delegate void Notificador()` |
+| **72** | [[#Expressão lambda e função anônima (Lambda Expression & Anonymous Function)\|Expressão lambda (`=>`)]] | Sintaxe compacta de função anônima descartável definida no ponto de uso. | O **bilhete Post-it de instruções rápidas** | `(a, b) => a + b` |
+| **73** | [[#Evento e publicador/assinante (Event & Publisher-Subscriber Pattern)\|Evento (`event`)]] | Encapsulamento seguro de delegate que restringe o disparo à classe emissora. | A **torre de rádio e os ouvintes sintonizados** | `public event EventHandler Aprovado;` |
+| **74** | [[#Função de retorno e callback (Callback / Callback Function)\|Função de retorno (*Callback*)]] | Função passada como parâmetro para ser invocada ao término de uma rotina ou evento. | O **telefone deixado com a oficina mecânica** | `void Baixar(Action<byte[]> callback)` |
+| **75** | [[#Enganchar e desenganchar (Hook & Unhook / Event Subscription & Unsubscription)\|Enganchar / Desenganchar]] | Inscrição (`+=`) ou cancelamento (`-=`) de funções e manipuladores de eventos em tempo de execução. | O **engate de reboque do carro** | `botao.Click += OnClick; botao.Click -= OnClick;` |
+| **76** | [[#Princípios SOLID de design orientado a objetos (SOLID Principles)\|Princípios SOLID]] | Cinco heurísticas de design (SRP, OCP, LSP, ISP, DIP) para combater a degradação de código. | A **caixa de ferramentas com encaixes padronizados** | `interface`, Injeção de dependência |
+| **77** | [[#Separação de preocupações (Separation of Concerns - SoC)\|Separação de preocupações (*SoC*)]] | Decomposição do software em seções onde cada uma trata de um único aspecto de forma isolada. | A **divisão setorial de um hospital moderno** | Arquitetura em camadas, SRP |
+| **78** | [[#Padrões de projeto (Design Patterns / GoF Patterns)\|Padrões de projeto (*GoF*)]] | Soluções conceituais reutilizáveis divididas em Criacionais, Estruturais e Comportamentais. | A **planta estrutural de uma ponte pênsil** | `Singleton`, `Strategy`, `Adapter` |
 
 ---
 
-## 1. Tipo (*Type*)
+## Tipo (*Type*)
 
 Na Ciência da Computação (e na teoria dos conjuntos), um **Tipo** define o **espaço de valores permitidos** e quais regras/operações podem ser executadas sobre eles.
 
@@ -150,17 +150,17 @@ Na Ciência da Computação (e na teoria dos conjuntos), um **Tipo** define o **
 
 ---
 
-## 2. Operação (*Operation / Method*)
+## Operação (*Operation / Method*)
 
 Uma **Operação** é a abstração executável (uma função ou um procedimento) responsável por processar entradas, realizar cálculos ou modificar o estado dos dados.
 
 * **Abstração de expressão (Função):** Mapeia entradas em um resultado de saída sem que o usuário precise se preocupar com como isso é feito (ex.: `GetSaldo()`, `CalcularPrimeiroDigito()`).
 * **Abstração de comando (Procedimento):** Agrupa tarefas repetitivas em blocos de comando isolados sem obrigatoriedade de retorno de valor (ex.: `Depositar(200)`, `ExibirMenu()`).
-* **Ponte interdisciplinar com Engenharia de Requisitos:** Na modelagem de Casos de Uso da UML ([[07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md#3.3 Relacionamento de inclusão («include»)|«include»]]), a extração de uma rotina compartilhada por múltiplos casos de uso (como validação de CPF ou autenticação) é o equivalente conceitual exato da chamada de uma função/procedimento no código.
+* **Ponte interdisciplinar com Engenharia de Requisitos:** Na modelagem de Casos de Uso da UML ([[07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md#Relacionamento de inclusão («include»)|«include»]]), a extração de uma rotina compartilhada por múltiplos casos de uso (como validação de CPF ou autenticação) é o equivalente conceitual exato da chamada de uma função/procedimento no código.
 
 ---
 
-## 3. Módulo (*Module*)
+## Módulo (*Module*)
 
 Um **Módulo** é a unidade de fronteira e organização do código. É o invólucro que agrupa funções, variáveis e tipos relacionados em uma entidade delimitada.
 
@@ -170,7 +170,7 @@ Um **Módulo** é a unidade de fronteira e organização do código. É o invól
 
 ---
 
-## 4. Atributo (*Attribute / Field*)
+## Atributo (*Attribute / Field*)
 
 Um **Atributo** (também chamado de campo ou variável de instância) é onde o estado interno é efetivamente armazenado na memória.
 
@@ -179,7 +179,7 @@ Um **Atributo** (também chamado de campo ou variável de instância) é onde o 
 
 ---
 
-## 5. Estado (*State*)
+## Estado (*State*)
 
 O **Estado** de um objeto é a **configuração exata de valores que seus atributos possuem em um determinado instante de tempo**.
 
@@ -188,7 +188,7 @@ O **Estado** de um objeto é a **configuração exata de valores que seus atribu
 
 ---
 
-## 6. Método (*Method*)
+## Método (*Method*)
 
 Um **Método** é uma sub-rotina (função ou procedimento) declarada dentro do escopo de uma classe que define o **comportamento** dos objetos daquele tipo.
 
@@ -197,13 +197,13 @@ Um **Método** é uma sub-rotina (função ou procedimento) declarada dentro do 
 
 ---
 
-## 7. Qualidade de Código (*Code Quality*)
+## Qualidade de Código (*Code Quality*)
 
 A **Qualidade de Código** mede o equilíbrio entre a satisfação das necessidades do usuário (**Fatores Externos** como Corretude e Robustez) e a sustentabilidade técnica da arquitetura para a equipe de engenharia (**Fatores Internos** como Legibilidade, Baixo Acoplamento e Modularidade).
 
 ---
 
-## 8. Declaração em Computação (*Declaration / Declarar*)
+## Declaração em Computação (*Declaration / Declarar*)
 
 Na Ciência da Computação, **Declarar** é o ato formal de **apresentar um identificador ao compilador/interpretador**, especificando seu **nome** e seu **tipo de dado**, antes que ele possa ser utilizado pelo programa.
 
@@ -216,7 +216,7 @@ Na Ciência da Computação, **Declarar** é o ato formal de **apresentar um ide
 
 ---
 
-## 9. Assinatura de Método (*Method Signature*)
+## Assinatura de Método (*Method Signature*)
 
 Na Engenharia de Software, a **Assinatura de um Método** é a impressão digital única (*fingerprint*) que o compilador utiliza para diferenciar uma sub-rotina de todas as outras dentro de uma classe.
 
@@ -232,7 +232,7 @@ Na Engenharia de Software, a **Assinatura de um Método** é a impressão digita
 
 ---
 
-## 10. Semântica de Referência (*Reference Semantics*)
+## Semântica de Referência (*Reference Semantics*)
 
 A **Semântica de Referência** é o modelo de gerenciamento de dados em linguagens como C# e Java no qual uma variável associada a uma classe **não contém os dados do objeto em si**, mas sim um **referência gerenciada** ao objeto. A identidade não depende de endereço fixo: o GC pode mover o objeto e atualizar as referências.
 
@@ -242,7 +242,7 @@ A **Semântica de Referência** é o modelo de gerenciamento de dados em linguag
 
 ---
 
-## 11. Coletor de Lixo (*Garbage Collector - GC*)
+## Coletor de Lixo (*Garbage Collector - GC*)
 
 O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente de execução (*runtime* do .NET CLR ou Java JVM) responsável pelo **gerenciamento automático de memória**. Ele monitora a memória *Heap*, identifica objetos que não podem mais ser alcançados por nenhuma variável de referência do programa e desaloca esse espaço automaticamente.
 
@@ -251,7 +251,7 @@ O **Coletor de Lixo (*Garbage Collector*)** é um componente interno do ambiente
 
 ---
 
-## 12. Parâmetro vs. Argumento (*Parameter vs. Argument*)
+## Parâmetro vs. Argumento (*Parameter vs. Argument*)
 
 Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de Software e na Teoria das Linguagens há uma distinção formal muito clara:
 
@@ -264,7 +264,7 @@ Embora no dia a dia muitos usem esses termos como sinônimos, na Engenharia de S
 
 ---
 
-## 13. `GOTO` (Salto Incondicional)
+## `GOTO` (Salto Incondicional)
 
 A instrução **`GOTO`** é um comando primitivo de desvio incondicional no fluxo de execução que faz a CPU saltar diretamente para qualquer linha marcada por um rótulo no programa.
 
@@ -273,7 +273,7 @@ A instrução **`GOTO`** é um comando primitivo de desvio incondicional no flux
 
 ---
 
-## 14. Robustez (*Robustness*)
+## Robustez (*Robustness*)
 
 A **Robustez** é o fator externo de qualidade de software que mede a capacidade de um sistema computacional **reagir de maneira segura e controlada diante de condições anormais, entradas inválidas ou falhas de ambiente**, sem travar inesperadamente (*crash*) e sem corromper seus dados.
 
@@ -284,7 +284,7 @@ A **Robustez** é o fator externo de qualidade de software que mede a capacidade
 
 ---
 
-## 15. Membro estático (*Static Member*)
+## Membro estático (*Static Member*)
 
 Um **membro estático (*Static Member*)** é definido formalmente como um componente de uma classe com **tempo de vida global** e **escopo local (delimitado à classe)**. São atributos ou métodos que são comuns a todos os objetos de uma classe. Quando declaramos um atributo ou método estático, ele passa a ser um **membro de classe**, sendo compartilhado por todos os objetos daquela classe.
 
@@ -299,7 +299,7 @@ Um **membro estático (*Static Member*)** é definido formalmente como um compon
 
 ---
 
-## 16. Propriedades (*Properties & Auto-Properties*)
+## Propriedades (*Properties & Auto-Properties*)
 
 Uma **Propriedade** é um membro de primeira classe em C# que fornece um mecanismo flexível para ler, gravar ou computar o valor de um campo privado, combinando a **sintaxe simples de um atributo público** com a **segurança e encapsulamento de métodos assessores (`get` e `set`)**.
 
@@ -308,7 +308,7 @@ Uma **Propriedade** é um membro de primeira classe em C# que fornece um mecanis
 
 ---
 
-## 17. Escopo (*Scope*)
+## Escopo (*Scope*)
 
 O **Escopo** é a região do código-fonte onde um determinado identificador (variável, parâmetro, atributo ou método) é **visível, acessível e válido**. Ele determina a **fronteira de visibilidade** e o **tempo de vida** dos dados na memória.
 
@@ -326,7 +326,7 @@ O **Escopo** é a região do código-fonte onde um determinado identificador (va
 
 ---
 
-## 18. Destrutor e Finalizador (*Destructor & Finalizer*)
+## Destrutor e Finalizador (*Destructor & Finalizer*)
 
 O **Destrutor** (denotado em C# como `~NomeDaClasse()`) é um método especial executado automaticamente pelo Coletor de Lixo (*Garbage Collector*) antes de um objeto órfão ser desalocado fisicamente da memória *Heap*.
 
@@ -336,7 +336,7 @@ O **Destrutor** (denotado em C# como `~NomeDaClasse()`) é um método especial e
 
 ---
 
-## 19. Padrão `Dispose` e `IDisposable` (*Deterministic Cleanup*)
+## Padrão `Dispose` e `IDisposable` (*Deterministic Cleanup*)
 
 O padrão **`IDisposable`** é a interface oficial do ecossistema .NET para **liberação imediata e determinística de recursos não gerenciados** (arquivos abertos, conexões de banco de dados, portas de rede e dispositivos de hardware).
 
@@ -345,7 +345,7 @@ O padrão **`IDisposable`** é a interface oficial do ecossistema .NET para **li
 
 ---
 
-## 20. Buffer e descarregamento de dados (*Buffer & Flush*)
+## Buffer e descarregamento de dados (*Buffer & Flush*)
 
 Um **Buffer** é uma área temporária de memória RAM utilizada para reter e agrupar dados durante operações de entrada e saída (E/S - *Input/Output*), evitando o custo excessivo de acessar dispositivos físicos lentos (como disco rígido ou rede) a cada caractere individual.
 
@@ -355,7 +355,7 @@ Um **Buffer** é uma área temporária de memória RAM utilizada para reter e ag
 
 ---
 
-## 21. *Thread* (Linha de execução / Fluxo concorrente)
+## *Thread* (Linha de execução / Fluxo concorrente)
 
 Uma **`Thread`** (ou Linha de Execução) é a menor unidade de processamento que pode ser agendada e executada por um Sistema Operacional dentro de um processo. Enquanto processos possuem espaços de memória isolados, múltiplas *threads* dentro do mesmo processo compartilham a mesma memória *Heap*.
 
@@ -366,7 +366,7 @@ Uma **`Thread`** (ou Linha de Execução) é a menor unidade de processamento qu
 
 ---
 
-## 22. Encapsulamento (*Encapsulation*)
+## Encapsulamento (*Encapsulation*)
 
 O **Encapsulamento** é o mecanismo fundamental da Orientação a Objetos que agrupa dados (atributos) e os comportamentos que operam sobre esses dados (métodos) dentro de uma mesma unidade lógica (a Classe), restringindo o acesso direto ao estado interno por meio de modificadores de visibilidade (`private`, `protected`, `public`).
 
@@ -375,7 +375,7 @@ O **Encapsulamento** é o mecanismo fundamental da Orientação a Objetos que ag
 
 ---
 
-## 23. Herança (*Inheritance*)
+## Herança (*Inheritance*)
 
 A **Herança** é o mecanismo de reutilização e extensão estrutural em POO pelo qual uma nova classe (**classe derivada / subclasse**) adquire todos os atributos, métodos e propriedades de uma classe existente (**classe base / superclasse**), podendo adicionar novas funcionalidades ou especializar comportamentos existentes.
 
@@ -384,7 +384,7 @@ A **Herança** é o mecanismo de reutilização e extensão estrutural em POO pe
 
 ---
 
-## 24. Polimorfismo (*Polymorphism*)
+## Polimorfismo (*Polymorphism*)
 
 O **Polimorfismo** (do grego *"muitas formas"*) é o princípio em POO que permite que objetos de diferentes classes derivadas sejam tratados uniformemente através da interface da sua classe base ou interface comum, executando comportamentos específicos e customizados em tempo de execução (*Dynamic Dispatch / Late Binding*).
 
@@ -403,7 +403,7 @@ O **Polimorfismo** (do grego *"muitas formas"*) é o princípio em POO que permi
 
 ---
 
-## 26. Implementação (*Implementation / Mecânica Interna*)
+## Implementação (*Implementation / Mecânica Interna*)
 
 A **Implementação** é o conjunto de código-fonte concreto, algoritmos, estruturas de dados internas (`arrays`, `dicionários`) e detalhes de infraestrutura que realizam as operações prometidas pela interface.
 
@@ -413,7 +413,7 @@ A **Implementação** é o conjunto de código-fonte concreto, algoritmos, estru
 
 ---
 
-## 27. Coesão (*Cohesion*)
+## Coesão (*Cohesion*)
 
 A **Coesão** é a medida do grau em que todos os atributos, métodos e responsabilidades dentro de um único módulo estão **fortemente relacionados, focados e alinhados a um único propósito conceitual**.
 
@@ -423,7 +423,7 @@ A **Coesão** é a medida do grau em que todos os atributos, métodos e responsa
 
 ---
 
-## 28. Princípio da caixa preta (*Black Box Principle*)
+## Princípio da caixa preta (*Black Box Principle*)
 
 O **Princípio da Caixa Preta** estabelece que um módulo de software deve consistir em um conjunto de comandos com uma **função bem definida**, operando de forma o **mais independente possível** em relação ao restante do sistema.
 
@@ -433,7 +433,7 @@ O **Princípio da Caixa Preta** estabelece que um módulo de software deve consi
 
 ---
 
-## 29. Independência funcional (*Functional Independence*)
+## Independência funcional (*Functional Independence*)
 
 A **Independência Funcional** é o critério de projeto que determina que cada módulo de um sistema deve **cuidar de uma função específica**, servindo a um propósito exclusivo, delimitado e coeso no domínio do problema.
 
@@ -443,7 +443,7 @@ A **Independência Funcional** é o critério de projeto que determina que cada 
 
 ---
 
-## 30. Regra prática ou heurística (*Rule of Thumb*)
+## Regra prática ou heurística (*Rule of Thumb*)
 
 Uma **Regra Prática (*Rule of Thumb*)** é uma diretriz empírica, heurística ou princípio orientador baseado na experiência acumulada da engenharia de software que ajuda o desenvolvedor a tomar decisões arquiteturais rápidas e seguras sem precisar deduzir fórmulas matemáticas complexas.
 
@@ -453,7 +453,7 @@ Uma **Regra Prática (*Rule of Thumb*)** é uma diretriz empírica, heurística 
 
 ---
 
-## 31. Métodos de acesso ou getters (*Accessors / Getters*)
+## Métodos de acesso ou getters (*Accessors / Getters*)
 
 Um **Método de Acesso (*Getter*)** é uma sub-rotina pública ou bloco de propriedade (`get`) cujo único objetivo é **recuperar e retornar o valor** de um atributo privado de um objeto sem expor a variável diretamente para manipulação externa.
 
@@ -463,7 +463,7 @@ Um **Método de Acesso (*Getter*)** é uma sub-rotina pública ou bloco de propr
 
 ---
 
-## 32. Métodos modificadores ou setters (*Mutators / Setters*)
+## Métodos modificadores ou setters (*Mutators / Setters*)
 
 Um **Método Modificador (*Setter*)** é uma sub-rotina pública ou bloco de propriedade (`set`) cujo objetivo é **atribuir ou alterar o valor** de um atributo privado, atuando como um filtro obrigatório de validação de regras de negócio e invariantes.
 
@@ -473,7 +473,7 @@ Um **Método Modificador (*Setter*)** é uma sub-rotina pública ou bloco de pro
 
 ---
 
-## 33. Convenções de nomenclatura (*Naming Conventions: camelCase e PascalCase*)
+## Convenções de nomenclatura (*Naming Conventions: camelCase e PascalCase*)
 
 As **Convenções de Nomenclatura** são regras e padrões de estilo adotados pela comunidade e fabricantes de linguagens para formatar os nomes de identificadores no código (classes, métodos, variáveis, parâmetros e propriedades).
 
@@ -484,7 +484,7 @@ As **Convenções de Nomenclatura** são regras e padrões de estilo adotados pe
 
 ---
 
-## 34. Propriedade (*Property*)
+## Propriedade (*Property*)
 
 Uma **Propriedade (*Property*)** é um membro de primeira classe em linguagens modernas (como C# e Python) que atua como uma **máscara inteligente sobre o estado do objeto**, combinando a sintaxe limpa e direta de acesso a um campo (`objeto.Saldo = 100`) com a segurança, validação e encapsulamento de métodos (`get` e `set`).
 
@@ -496,7 +496,7 @@ Uma **Propriedade (*Property*)** é um membro de primeira classe em linguagens m
 
 ---
 
-## 35. Princípio DRY (*Don't Repeat Yourself*)
+## Princípio DRY (*Don't Repeat Yourself*)
 
 Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programmer*, o princípio **DRY (*Don't Repeat Yourself* — Não Se Repita)** afirma que:
 > *"Cada pedaço de conhecimento ou lógica no sistema deve ter uma representação única, não ambígua e definitiva dentro do código."*
@@ -512,7 +512,7 @@ Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programm
 
 ---
 
-## 36. Código boilerplate (*Boilerplate Code*)
+## Código boilerplate (*Boilerplate Code*)
 
 **Código *Boilerplate*** (literalmente "chapa de caldeira") refere-se a trechos de código padronizados, repetitivos e verbosos que precisam ser incluídos em vários lugares com pouca ou nenhuma alteração apenas para satisfazer as exigências de sintaxe ou cerimônias da linguagem de programação, sem agregar valor imediato à regra de negócio.
 
@@ -524,7 +524,7 @@ Formulado por Andy Hunt e Dave Thomas no livro clássico *The Pragmatic Programm
 
 ---
 
-## 37. Expressão lambda e membros com corpo de expressão (*Lambda Expressions & Expression-Bodied Members*)
+## Expressão lambda e membros com corpo de expressão (*Lambda Expressions & Expression-Bodied Members*)
 
 Uma **Expressão Lambda** é uma forma ultra compacta e anônima de escrever funções e operações no código usando o operador seta **`=>`** (lê-se *"vai para"* ou *"resulta em"*), inspirada diretamente no Cálculo Lambda ($\lambda$) de Alonzo Church (1930).
 
@@ -536,7 +536,7 @@ Uma **Expressão Lambda** é uma forma ultra compacta e anônima de escrever fun
 
 ---
 
-## 38. Paradigma funcional (*Functional Programming Paradigm*)
+## Paradigma funcional (*Functional Programming Paradigm*)
 
 O **Paradigma Funcional** é um estilo de programação que trata a computação como a **avaliação de funções matemáticas puras**, evitando estados mutáveis e efeitos colaterais (*side effects*).
 
@@ -547,7 +547,7 @@ O **Paradigma Funcional** é um estilo de programação que trata a computação
 
 ---
 
-## 39. Espaço de nomes (*Namespace*)
+## Espaço de nomes (*Namespace*)
 
 Um **Espaço de Nomes (*Namespace*)** é um contêiner lógico de nível superior que agrupa tipos correlacionados (classes, interfaces, structs, enums e delegates) sob um domínio nomeado unificado, prevenindo conflitos de identificadores em sistemas de larga escala.
 
@@ -557,7 +557,7 @@ Um **Espaço de Nomes (*Namespace*)** é um contêiner lógico de nível superio
 
 ---
 
-## 40. Classe parcial (*Partial Class*)
+## Classe parcial (*Partial Class*)
 
 Uma **Classe Parcial (*Partial Class*)** é um recurso de linguagem que permite dividir a declaração de uma única classe, interface ou struct em **múltiplos arquivos físicos separados (`.cs`)**, mantendo a unidade lógica indivisível no binário final compilado.
 
@@ -568,7 +568,7 @@ Uma **Classe Parcial (*Partial Class*)** é um recurso de linguagem que permite 
 
 ---
 
-## 41. Biblioteca de vínculo dinâmico (*Dynamic Link Library - DLL / Assembly*)
+## Biblioteca de vínculo dinâmico (*Dynamic Link Library - DLL / Assembly*)
 
 Uma **DLL (*Dynamic Link Library* — Biblioteca de Vínculo Dinâmico)**, conhecida no ecossistema .NET como um **Assembly gerenciado (`.dll`)**, é um pacote de código executável compilado (em formato IL / Intermediate Language) que contém classes, tipos, namespaces e recursos que podem ser **compartilhados e carregados dinamicamente na memória por múltiplos programas simultaneamente**.
 
@@ -579,7 +579,7 @@ Uma **DLL (*Dynamic Link Library* — Biblioteca de Vínculo Dinâmico)**, conhe
 
 ---
 
-## 42. Compilador Roslyn (*.NET Compiler Platform*)
+## Compilador Roslyn (*.NET Compiler Platform*)
 
 O **Roslyn** (nome oficial: *.NET Compiler Platform*) é o compilador oficial e de código aberto da Microsoft para as linguagens C# e Visual Basic .NET. 
 
@@ -592,7 +592,7 @@ O **Roslyn** (nome oficial: *.NET Compiler Platform*) é o compilador oficial e 
 
 ---
 
-## 43. Mapeador objeto-relacional e Entity Framework (*ORM & Entity Framework*)
+## Mapeador objeto-relacional e Entity Framework (*ORM & Entity Framework*)
 
 O **Entity Framework (EF / EF Core)** é o principal framework de **Mapeamento Objeto-Relacional (ORM — *Object-Relational Mapping*)** do ecossistema .NET. Ele atua como uma ponte automática entre o mundo da **Orientação a Objetos na memória** (classes C#, objetos e coleções) e o mundo dos **Bancos de Dados Relacionais no disco** (tabelas SQL, linhas, colunas e chaves estrangeiras).
 
@@ -606,7 +606,7 @@ O **Entity Framework (EF / EF Core)** é o principal framework de **Mapeamento O
 
 ---
 
-## 44. Subtipagem (*Subtyping / Subtype Polymorphism*)
+## Subtipagem (*Subtyping / Subtype Polymorphism*)
 
 A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fundamental dos sistemas de tipos segundo a qual um tipo derivado $S$ (**subtipo**) pode ser utilizado em qualquer contexto que espere um tipo mais geral $T$ (**supertipo**), denotado formalmente como $S <: T$.
 
@@ -619,7 +619,7 @@ A **Subtipagem** (ou *Polimorfismo de Inclusão*) é a propriedade teórica fund
 
 ---
 
-## 45. Problema do diamante (*The Diamond Problem*)
+## Problema do diamante (*The Diamond Problem*)
 
 O **problema do diamante** é uma anomalia e ambiguidade semântica clássica que ocorre em linguagens orientadas a objetos que suportam **herança múltipla de classes**. Ele se manifesta quando duas classes $B$ e $C$ herdam de uma mesma classe ancestral $A$, e uma quarta classe $D$ herda simultaneamente de $B$ e $C$. Se $B$ e $C$ sobrescreverem um método herdado de $A$, o compilador é incapaz de determinar qual das duas implementações a classe $D$ deve executar.
 
@@ -633,7 +633,7 @@ O **problema do diamante** é uma anomalia e ambiguidade semântica clássica qu
 
 ---
 
-## 46. Método virtual (*Virtual Method*)
+## Método virtual (*Virtual Method*)
 
 Um **método virtual** é uma operação declarada na classe base com o modificador **`virtual`**, concedendo autorização e permissão explícita para que qualquer classe derivada redefina ou especifique o seu comportamento em tempo de execução via polimorfismo dinâmico.
 
@@ -643,7 +643,7 @@ Um **método virtual** é uma operação declarada na classe base com o modifica
 
 ---
 
-## 47. Sobreposição e sobrescrita de método (*Method Overriding / Override*)
+## Sobreposição e sobrescrita de método (*Method Overriding / Override*)
 
 A **sobreposição de método** (sinônimo formal de **sobrescrita de método** ou *method overriding*) é o mecanismo fundamental do polimorfismo de subtipagem pelo qual uma subclasse substitui ou redefine a implementação de um método virtual ou abstrato herdado da superclasse utilizando a palavra-chave **`override`**.
 
@@ -655,7 +655,7 @@ A **sobreposição de método** (sinônimo formal de **sobrescrita de método** 
 
 ---
 
-## 48. Palavra-chave base (*Base Keyword*)
+## Palavra-chave base (*Base Keyword*)
 
 A palavra-chave **`base`** no C# é uma referência explícita aos membros da **superclasse imediata (classe pai)** a partir do interior de uma subclasse (equivalente ao `super` em Java e Python).
 
@@ -667,7 +667,7 @@ A palavra-chave **`base`** no C# é uma referência explícita aos membros da **
 
 ---
 
-## 49. Modificador new e ocultação de membro (*Member Shadowing / New Modifier*)
+## Modificador new e ocultação de membro (*Member Shadowing / New Modifier*)
 
 O modificador **`new`** aplicado a um membro (método, propriedade ou campo) de uma classe filha indica explicitamente ao compilador que aquele membro está **ocultando (*shadowing*)** intencionalmente um membro de mesmo nome da superclasse, sem substituí-lo na tabela virtual (*vtable*).
 
@@ -679,7 +679,7 @@ O modificador **`new`** aplicado a um membro (método, propriedade ou campo) de 
 
 ---
 
-## 50. Vinculação antecipada (*Early Binding / Static Binding*)
+## Vinculação antecipada (*Early Binding / Static Binding*)
 
 A **vinculação antecipada (*early binding*)** é o mecanismo no qual a associação entre a chamada de um método e o endereço de memória do código executável é resolvida **estaticamente em tempo de compilação (*compile-time*)**.
 
@@ -690,7 +690,7 @@ A **vinculação antecipada (*early binding*)** é o mecanismo no qual a associa
 
 ---
 
-## 51. Vinculação tardia e despacho dinâmico (*Late Binding & Dynamic Dispatch*)
+## Vinculação tardia e despacho dinâmico (*Late Binding & Dynamic Dispatch*)
 
 A **vinculação tardia (*late binding*)** é o mecanismo no qual a decisão de qual implementação de método executar é postergada para o **tempo de execução (*runtime*)**, baseando-se no tipo concreto do objeto alocado na memória *Heap*.
 
@@ -701,7 +701,7 @@ A **vinculação tardia (*late binding*)** é o mecanismo no qual a decisão de 
 
 ---
 
-## 52. Referência polimórfica (*Polymorphic Reference*)
+## Referência polimórfica (*Polymorphic Reference*)
 
 Uma **referência polimórfica** é uma variável cujo tipo declarado em tempo de compilação é uma classe ancestral (superclasse) ou interface, mas que aponta no *Heap* para instâncias de diferentes classes filhas derivadas ao longo da execução do programa.
 
@@ -711,7 +711,7 @@ Uma **referência polimórfica** é uma variável cujo tipo declarado em tempo d
 
 ---
 
-## 53. Método ToString (*String Representation Method*)
+## Método ToString (*String Representation Method*)
 
 O **`ToString()`** é o método virtual fundamental herdado por todas as classes a partir da raiz universal **`System.Object`** (no C#), responsável por fornecer uma representação textual significativa do estado de um objeto.
 
@@ -721,7 +721,7 @@ O **`ToString()`** é o método virtual fundamental herdado por todas as classes
 
 ---
 
-## 54. Tabela de métodos virtuais (*Virtual Method Table - vtable*)
+## Tabela de métodos virtuais (*Virtual Method Table - vtable*)
 
 A **tabela de métodos virtuais (*vtable*)** é uma estrutura de dados interna criada e mantida pelo compilador e pelo *runtime* (como a CLR do .NET ou a JVM do Java) para viabilizar o **despacho dinâmico (*dynamic dispatch*)** no polimorfismo de subtipagem.
 
@@ -736,7 +736,7 @@ A **tabela de métodos virtuais (*vtable*)** é uma estrutura de dados interna c
 
 ---
 
-## 55. Polimorfismo dinâmico vs. polimorfismo estático (*Dynamic vs. Static Polymorphism*)
+## Polimorfismo dinâmico vs. polimorfismo estático (*Dynamic vs. Static Polymorphism*)
 
 A dicotomia entre **polimorfismo dinâmico** e **polimorfismo estático** define a temporalidade da tomada de decisão sobre qual código executar:
 
@@ -749,7 +749,7 @@ A dicotomia entre **polimorfismo dinâmico** e **polimorfismo estático** define
 
 ---
 
-## 56. Superclasse vs. interface (*Superclass vs. Interface / Inheritance vs. Interface*)
+## Superclasse vs. interface (*Superclass vs. Interface / Inheritance vs. Interface*)
 
 A distinção entre herdar de uma **superclasse (classe base)** e implementar uma **interface (`interface`)** é um dos eixos arquiteturais mais importantes da POO e da programação modular:
 
@@ -767,7 +767,7 @@ A distinção entre herdar de uma **superclasse (classe base)** e implementar um
 
 ---
 
-## 57. Classe abstrata (*Abstract Class*)
+## Classe abstrata (*Abstract Class*)
 
 Uma **classe abstrata** é uma superclasse declarada com o modificador `abstract` que serve como molde conceitual incompleto, definindo estado comum e contratos arquiteturais para uma família de subclasses, mas cuja **instanciação direta com `new` é estritamente proibida pelo compilador**.
 
@@ -777,7 +777,7 @@ Uma **classe abstrata** é uma superclasse declarada com o modificador `abstract
 
 ---
 
-## 58. Método abstrato (*Abstract Method*)
+## Método abstrato (*Abstract Method*)
 
 Um **método abstrato** é uma assinatura de operação declarada com o modificador `abstract` dentro de uma classe abstrata que **não possui corpo nem implementação `{ ... }`**, terminando com ponto-e-vírgula (`;`).
 
@@ -787,7 +787,7 @@ Um **método abstrato** é uma assinatura de operação declarada com o modifica
 
 ---
 
-## 59. Palavra-chave abstract (*Abstract Keyword / Modificador abstract*)
+## Palavra-chave abstract (*Abstract Keyword / Modificador abstract*)
 
 A **palavra-chave `abstract`** é um modificador de linguagem reservado no C#, Java e C++ utilizado para indicar que uma entidade (classe, método, propriedade ou indexador) possui uma **definição incompleta por projeto** e serve exclusivamente como contrato para derivação em tempo de compilação.
 
@@ -800,7 +800,7 @@ A **palavra-chave `abstract`** é um modificador de linguagem reservado no C#, J
 
 ---
 
-## 60. Ponteiro (*Pointer / vptr / Memory Pointer*)
+## Ponteiro (*Pointer / vptr / Memory Pointer*)
 
 Um **ponteiro** é uma variável de baixo nível cujo valor não é um dado comum (como um número ou texto), mas sim o **endereço numérico exato de uma posição de memória RAM**.
 
@@ -809,11 +809,11 @@ Um **ponteiro** é uma variável de baixo nível cujo valor não é um dado comu
   2. **Ponteiro de método virtual (*vptr*):** Todo objeto polimórfico possui um ponteiro oculto no cabeçalho (*object header*) que aponta diretamente para a tabela de métodos virtuais (*vtable*) de sua classe concreta, permitindo o **despacho dinâmico** em tempo de execução.
   3. **Ponteiros de função:** Endereços de memória onde residem as instruções binárias executáveis dos métodos compilados em código de máquina pela CPU.
 * **Analogia de Feynman:** O **papelzinho com o endereço da casa escrito**. O papel não é a casa física de tijolos; ele apenas contém as coordenadas `"Rua das Flores, nº 123"`. Ter o papel na mão permite que você viaje até lá e encontre a casa instantaneamente.
-* **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (vtable e despacho dinâmico)]] e [[Glossário de conceitos#54. Tabela de métodos virtuais (Virtual Method Table - vtable)|Glossário 54 (vtable)]].
+* **Conexões diretas:** [[17. Sobreposição de métodos (virtual e override)|Artigo 17 (vtable e despacho dinâmico)]] e [[Glossário de conceitos#Tabela de métodos virtuais (Virtual Method Table - vtable)|Glossário 54 (vtable)]].
 
 ---
 
-## 61. Anti-padrão Yo-Yo (*Yo-Yo Anti-pattern / Yo-Yo Problem*)
+## Anti-padrão Yo-Yo (*Yo-Yo Anti-pattern / Yo-Yo Problem*)
 
 O **anti-padrão Yo-Yo** (ou *problema do ioiô*) é uma falha clássica de design arquitetural em Programação Orientada a Objetos que ocorre quando uma hierarquia de herança se torna **excessivamente vertical, profunda e fragmentada em muitas camadas de classes ancestrais e derivadas**.
 
@@ -865,7 +865,7 @@ public class E : D { /* Onde começa e onde termina a lógica afinal?! */ }
 
 ---
 
-## 62. Classe selada (*Sealed Class / Final Class*)
+## Classe selada (*Sealed Class / Final Class*)
 
 Uma **classe selada** (marcada com o modificador **`sealed`** em C# ou `final` em Java) é uma classe completa e concreta cuja **herança é estritamente proibida pelo compilador**.
 
@@ -878,7 +878,7 @@ Uma **classe selada** (marcada com o modificador **`sealed`** em C# ou `final` e
 
 ---
 
-## 63. Membro selado (*Sealed Member / Sealed Override*)
+## Membro selado (*Sealed Member / Sealed Override*)
 
 Um **membro selado** (método ou propriedade marcado com **`sealed override`** em C#) é um membro herdado de uma superclasse que foi sobrescrito pela classe atual e cujo **recurso de novas sobreposições por subclasses futuras foi definitivamente bloqueado**.
 
@@ -888,7 +888,7 @@ Um **membro selado** (método ou propriedade marcado com **`sealed override`** e
 
 ---
 
-## 64. Instanciação e instanciar (*Instantiation / Object Creation*)
+## Instanciação e instanciar (*Instantiation / Object Creation*)
 
 **Instanciar** (do inglês *instantiate*, derivado de *"instance"*) é o ato computacional de **dar vida a um objeto real na memória RAM** a partir da especificação conceitual definida por uma classe ou tipo abstrato de dados (TAD). 
 
@@ -945,7 +945,7 @@ A classe é a **planta arquitetônica desenhada no papel**. Você não pode mora
 
 ---
 
-## 65. Tipos genéricos (*Generics / Parametric Polymorphism*)
+## Tipos genéricos (*Generics / Parametric Polymorphism*)
 
 **Tipos genéricos** (*Generics* ou polimorfismo paramétrico) são um recurso de linguagens tipadas que permite definir classes, interfaces, estruturas e métodos com **parâmetros formais de tipo (`<T>`)**, desacoplando a lógica algorítmica dos tipos concretos de dados que serão armazenados ou processados.
 
@@ -955,7 +955,7 @@ A classe é a **planta arquitetônica desenhada no papel**. Você não pode mora
 
 ---
 
-## 66. Segurança de tipos (*Type Safety*)
+## Segurança de tipos (*Type Safety*)
 
 **Segurança de tipos** (*Type Safety*) é a propriedade arquitetônica e formal de uma linguagem de programação que **impede ou bloqueia erros de tipo antes que o programa seja executado**, garantindo que operações sejam realizadas exclusivamente sobre dados válidos e compatíveis.
 
@@ -965,7 +965,7 @@ A classe é a **planta arquitetônica desenhada no papel**. Você não pode mora
 
 ---
 
-## 67. Conjuntos disjuntos em tipos (*Disjoint Sets in Types*)
+## Conjuntos disjuntos em tipos (*Disjoint Sets in Types*)
 
 Na teoria formal de tipos e na programação orientada a objetos, **conjuntos disjuntos** são domínios matemáticos de valores cuja **interseção é estritamente vazia ($A \cap B = \emptyset$)**, significando que nenhum elemento de um conjunto pode pertencer ao outro.
 
@@ -975,7 +975,7 @@ Na teoria formal de tipos e na programação orientada a objetos, **conjuntos di
 
 ---
 
-## 68. Função de hashing e código hash (*Hash Function & Hash Code*)
+## Função de hashing e código hash (*Hash Function & Hash Code*)
 
 Uma **função de hashing** é um algoritmo matemático determinístico que mapeia dados de tamanho arbitrário (como textos, instâncias de objetos ou registros de banco de dados) para um **número inteiro fixo de 32 bits (*hash code*)**.
 
@@ -986,7 +986,7 @@ Uma **função de hashing** é um algoritmo matemático determinístico que mape
 
 ---
 
-## 69. Exceção de coerção inválida (*InvalidCastException*)
+## Exceção de coerção inválida (*InvalidCastException*)
 
 A **`InvalidCastException`** é uma exceção lançada em tempo de execução (*runtime*) quando o programa tenta forçar a conversão explícita de um tipo de dado para outro incompatível (onde não existe relação de herança ou conversão válida).
 
@@ -996,7 +996,7 @@ A **`InvalidCastException`** é uma exceção lançada em tempo de execução (*
 
 ---
 
-## 70. Tupla (*Tuple / ValueTuple*)
+## Tupla (*Tuple / ValueTuple*)
 
 Uma **tupla** é uma estrutura de dados genérica e heterogênea de tamanho fixo que permite **agrupar múltiplos valores fortemente tipados em uma única unidade lógica**, sem a necessidade de criar formalmente uma nova classe ou estrutura nomeada.
 
@@ -1006,7 +1006,7 @@ Uma **tupla** é uma estrutura de dados genérica e heterogênea de tamanho fixo
 
 ---
 
-## 71. Delegação e delegate (*Delegate / Type-Safe Function Pointer*)
+## Delegação e delegate (*Delegate / Type-Safe Function Pointer*)
 
 Um **delegate** é um **tipo de referência fortemente tipado (*Type-Safe*)** que encapsula a assinatura e o endereço de memória de um ou mais métodos, permitindo que comportamentos sejam tratados como variáveis e passados por parâmetro.
 
@@ -1016,7 +1016,7 @@ Um **delegate** é um **tipo de referência fortemente tipado (*Type-Safe*)** qu
 
 ---
 
-## 72. Expressão lambda e função anônima (*Lambda Expression & Anonymous Function*)
+## Expressão lambda e função anônima (*Lambda Expression & Anonymous Function*)
 
 Uma **expressão lambda** é uma sintaxe compacta baseada no operador **`=>`** para definir blocos de código executáveis e funções anônimas descartáveis no próprio ponto de invocação, sem a necessidade de declarar um método formal na classe.
 
@@ -1026,7 +1026,7 @@ Uma **expressão lambda** é uma sintaxe compacta baseada no operador **`=>`** p
 
 ---
 
-## 73. Evento e publicador/assinante (*Event & Publisher-Subscriber Pattern*)
+## Evento e publicador/assinante (*Event & Publisher-Subscriber Pattern*)
 
 Um **evento (`event`)** é um modificador de segurança que encapsula um delegate, expondo apenas os operadores de inscrição (**`+=`**) e cancelamento (**`-=`**) para o mundo exterior e garantindo que apenas a classe publicadora tenha autoridade para disparar as notificações.
 
@@ -1036,7 +1036,7 @@ Um **evento (`event`)** é um modificador de segurança que encapsula um delegat
 
 ---
 
-## 74. Função de retorno e callback (*Callback / Callback Function*)
+## Função de retorno e callback (*Callback / Callback Function*)
 
 Um **callback** (função de retorno) é uma **função passada como argumento para outro método**, permitindo que o método receptor a invoque ("chame de volta") em um momento posterior para notificar a conclusão de uma tarefa, reportar progresso ou injetar um critério customizado.
 
@@ -1046,7 +1046,7 @@ Um **callback** (função de retorno) é uma **função passada como argumento p
 
 ---
 
-## 75. Enganchar e desenganchar (*Hook & Unhook / Event Subscription & Unsubscription*)
+## Enganchar e desenganchar (*Hook & Unhook / Event Subscription & Unsubscription*)
 
 **Enganchar (*Hook*)** e **desenganchar (*Unhook*)** referem-se ao ato de **inscrever (*attach / `+=`*)** ou **desinscrever (*detach / `-=`*)** um manipulador de evento (*Event Handler*) ou função de retorno na cadeia de execução de um evento ou ponto de extensão de um sistema.
 
@@ -1058,7 +1058,7 @@ Um **callback** (função de retorno) é uma **função passada como argumento p
 
 ---
 
-## 76. Princípios SOLID de design orientado a objetos (*SOLID Principles*)
+## Princípios SOLID de design orientado a objetos (*SOLID Principles*)
 
 Os **Princípios SOLID** formam um conjunto de cinco diretrizes de engenharia de software compiladas por Robert C. Martin (*Uncle Bob*) para combater a **decomposição arquitetural (*Software Rot*)**, promovendo alta coesão, baixo acoplamento, testabilidade e extensibilidade a longo prazo.
 
@@ -1068,7 +1068,7 @@ Os **Princípios SOLID** formam um conjunto de cinco diretrizes de engenharia de
 
 ---
 
-## 77. Separação de preocupações (*Separation of Concerns - SoC*)
+## Separação de preocupações (*Separation of Concerns - SoC*)
 
 A **Separação de Preocupações (*Separation of Concerns - SoC*)** é um meta-princípio formulado por Edsger W. Dijkstra em 1974 que estabelece que um sistema de software deve ser decomposto em partes distintas e sobrepostas o mínimo possível, onde cada parte trata exclusivamente de um único aspecto ou interesse (*concern*).
 
@@ -1078,7 +1078,7 @@ A **Separação de Preocupações (*Separation of Concerns - SoC*)** é um meta-
 
 ---
 
-## 78. Padrões de projeto (*Design Patterns / GoF Patterns*)
+## Padrões de projeto (*Design Patterns / GoF Patterns*)
 
 Um **padrão de projeto (*design pattern*)** é uma **solução conceitual, comprovada e reutilizável para um problema recorrente** no design de software orientado a objetos, catalogada classicamente pela *Gang of Four* (GoF) em 1994.
 

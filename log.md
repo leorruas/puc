@@ -1,3 +1,14 @@
+## 2026-09-25
+
+* **Manipulação de dados com SQL 13: `GRANT`, `REVOKE` e controle de privilégios**:
+  - Criado `13. Comandos GRANT e REVOKE.md` a partir do conteúdo da unidade 02 sobre DCL e autorização.
+  - Diferenciadas autenticação e autorização e conectados `GRANT`/`REVOKE` ao princípio do menor privilégio.
+  - Incorporados os três objetivos de segurança: confidencialidade, integridade e disponibilidade, com ligação ao artigo 14 de Modelagem de Dados.
+  - Explicados `ALL`, `PUBLIC`, a diferença `TO` vs. `FROM`, o vínculo entre privilégio e objeto e a distinção entre revogar uma permissão e remover um usuário.
+  - O exemplo de gerente, vendedor e governança foi reorganizado como política de acesso por responsabilidade.
+  - Resumo e glossário de SQL atualizados, com deep links para DCL, privilégio, `GRANT`, `REVOKE`, `PUBLIC` e autorização.
+  - O Mapa de aprendizagem foi atualizado para registrar 13 artigos de SQL, mantendo o estado **Em estudo**.
+
 ## 2026-09-23
 
 * **Desenvolvimento Web Back-End — ordem do resumo após o bônus 05.1**:
