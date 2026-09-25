@@ -57,12 +57,16 @@
  - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
 
 ### 5.3 Economia estrutural de cabeçalhos e agrupamento conceitual
- - **Cabeçalhos devem representar blocos de raciocínio, não inventários de palavras-chave.** É proibido transformar automaticamente cada operador, comando, método, subtipo ou exemplo em um novo `##`.
- - Preferir uma estrutura de artigo com poucos blocos conceituais amplos, como: modelo mental/fundamento → famílias ou variações do conceito → aplicação e exemplos → prática → pontos de confusão.
- - Recursos irmãos devem ser agrupados na mesma seção sempre que compartilham a mesma pergunta conceitual. Exemplo: `IN`, `NOT IN`, `ANY` e `ALL` podem ficar dentro de uma seção sobre comparação com resultados de subconsultas; `INNER`, `LEFT`, `RIGHT` e `FULL JOIN` podem ficar numa seção comparativa de tipos de junção.
- - Usar **tabelas Markdown, parágrafos, rótulos em negrito e exemplos consecutivos** para diferenças locais. Criar subseção apenas quando houver mudança real de modelo mental, processo, dependência ou função cognitiva.
- - O sumário deve permitir que o estudante enxergue a arquitetura do assunto em poucos blocos. Se a lista de títulos estiver apenas repetindo o vocabulário da aula, agrupar novamente.
- - Não há número rígido de seções, mas artigos introdutórios e intermediários devem, em regra, evitar fragmentação excessiva. A criação de um novo cabeçalho deve responder à pergunta: *“este trecho inaugura uma nova ideia que merece ser localizada separadamente?”*.
+ - **Cabeçalhos devem representar blocos de raciocínio, não inventários de palavras-chave.** É proibido transformar automaticamente cada operador, comando, método, subtipo, exemplo, variação ou etapa curta em um novo `##`.
+ - Preferir uma arquitetura com poucos blocos conceituais amplos, por exemplo: **modelo mental/fundamento → variações do conceito → aplicação prática → síntese e confusões**. Um artigo deve ser escaneável em poucos títulos e, ao mesmo tempo, preservar parágrafos suficientemente desenvolvidos dentro de cada seção.
+ - **Teste obrigatório de fusão:** antes de criar um novo cabeçalho, perguntar se o trecho responde a uma pergunta conceitual realmente nova. Se apenas exemplifica, contrasta ou especializa a seção anterior, deve permanecer nela.
+ - **Seções muito curtas são sinal de fragmentação.** Quando dois ou mais cabeçalhos consecutivos possuem apenas um exemplo, um snippet ou um parágrafo curto cada e compartilham o mesmo modelo mental, fundi-los em uma seção maior.
+ - Recursos irmãos devem ser agrupados sempre que compartilham a mesma função. Exemplo: `COMMIT` e `ROLLBACK` pertencem ao ciclo de encerramento de uma transação; `INNER`, `LEFT`, `RIGHT` e `FULL JOIN` pertencem à comparação de tipos de junção; `IN`, `NOT IN`, `ANY` e `ALL` pertencem à comparação com conjuntos.
+ - Usar **tabelas Markdown, parágrafos, listas curtas, rótulos em negrito e exemplos consecutivos** para diferenças locais. Usar `###` somente quando uma seção `##` realmente contém dois ou mais subproblemas substanciais que merecem navegação própria.
+ - Não criar cabeçalhos apenas para nomear um comando quando ele é uma variante de uma ideia já aberta. O comando pode aparecer em negrito ou em um bloco de código dentro da seção conceitual correspondente.
+ - Evitar numeração mecânica de títulos como `## 1`, `## 2`, `## 3` quando ela apenas transforma a aula em uma sequência de micropassos. Numerar seções somente quando a ordem fizer parte do modelo pedagógico ou ajudar de fato na navegação.
+ - O sumário implícito do artigo deve permitir enxergar a arquitetura do assunto em poucos blocos. Se a lista de títulos estiver apenas repetindo o vocabulário da fonte ou cada detalhe ensinado, agrupar novamente.
+ - Não há limite rígido, mas **artigos introdutórios e intermediários normalmente devem caber em cerca de 4 a 8 seções H2 substantivas, incluindo prática e pontos de confusão**. Ultrapassar isso exige justificativa estrutural clara, não apenas quantidade de subtópicos.
 
 ### 5.2 Prosa didática direta, sem metadiscurso de origem
  - Ao transformar anotações, aulas, transcrições, slides, livros ou outros materiais em artigo, escrever o conteúdo **diretamente como explicação didática consolidada**. A fonte serve de base para a redação, mas não deve aparecer como narrador do texto.
