@@ -56,11 +56,14 @@
  - Blocos de código, tabelas, citações, fórmulas e diagramas Mermaid permanecem visualmente separados da prosa. Os parágrafos imediatamente antes e depois desses elementos devem continuar sintaticamente completos.
  - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
 
-### 5.2 Prosa didática direta, sem metadiscurso desnecessário sobre a fonte
- - Ao transformar anotações, aulas, transcrições ou materiais da PUC em artigo, escrever o conteúdo diretamente como explicação didática. Evitar frases de bastidor como `"citados na aula estão"`, `"a aula destaca"`, `"nas anotações aparecem"`, `"o professor fala sobre"`, `"o material apresenta"` ou equivalentes quando a origem já estiver implícita no contexto da nota.
- - Preferir formulações diretas, por exemplo: `"Frameworks Web costumam oferecer autenticação, roteamento e validação."` em vez de `"Entre os recursos citados na aula estão autenticação, roteamento e validação."`
- - Mencionar explicitamente a PUC, a aula, o professor ou a fonte apenas quando a atribuição for semanticamente importante: divergência entre simplificação didática e uso técnico, interpretação de gabarito, citação literal curta, contextualização histórica ou distinção entre conteúdo do curso e aprofundamento externo.
- - O artigo final deve soar como material de estudo consolidado, não como relato de como a aula foi transcrita ou de onde cada frase veio.
+### 5.2 Prosa didática direta, sem metadiscurso de origem
+ - Ao transformar anotações, aulas, transcrições, slides, livros ou outros materiais em artigo, escrever o conteúdo **diretamente como explicação didática consolidada**. A fonte serve de base para a redação, mas não deve aparecer como narrador do texto.
+ - É proibido no corpo didático usar fórmulas como `"no material da disciplina"`, `"de acordo com o professor"`, `"na aula"`, `"como visto na aula"`, `"a PUC Minas apresenta"`, `"o material apresenta"`, `"o professor explica"`, `"a disciplina mostra"`, `"nesta unidade"`, `"segundo a aula"` ou variantes equivalentes que apenas indiquem de onde o conteúdo veio.
+ - Preferir sempre a formulação direta. Exemplo: `"BETWEEN inclui os limites inferior e superior."` em vez de `"No material da disciplina, BETWEEN é apresentado como inclusivo."`
+ - Quando houver imprecisão, simplificação didática ou erro na fonte, corrigir o conceito **sem transformar a fonte em personagem do artigo**. Usar rótulos objetivos como `"> **Precisão conceitual:** ..."`, explicando diretamente a distinção correta, sem escrever `"a aula erra"`, `"o professor disse"` ou equivalentes.
+ - Atribuições permanecem adequadas apenas quando pertencem ao próprio conteúdo intelectual: autoria de uma teoria, definição historicamente associada a um autor, citação literal curta ou controvérsia em que identificar a posição é semanticamente necessário. Isso não autoriza metadiscurso sobre a origem acadêmica da nota.
+ - Bibliografias, referências e links podem registrar normalmente as fontes utilizadas; essa é a camada adequada para explicitar proveniência.
+ - O artigo final deve soar como um texto autônomo de estudo, sem depender de conhecimento sobre a aula, o professor, a instituição ou o processo de transcrição que o originou.
 
 ## Organização e numeração de arquivos
 
@@ -256,12 +259,13 @@
  - **Proibição de preenchimento artificial:** É terminantemente proibido gerar artigos antecipadamente apenas para preencher pastas, unidades ou ementas de matérias pouco desenvolvidas com conteúdo genérico.
  - **Critério de relevância didática:** O acervo não deve se transformar em enciclopédia genérica. Antes de acrescentar qualquer conteúdo, responder: *"Isso melhora a compreensão de algo que o aluno está estudando no curso de ADS da PUC Minas ou apenas torna a nota maior?"*. Se for apenas expansão enciclopédica desvinculada do momento acadêmico, não deve ser adicionado.
 
-21. **Distinção editorial entre conteúdo da PUC e complementação didática:**
- - As notas devem manter clareza editorial sobre a origem do conhecimento, permitindo identificar com sobriedade quando uma informação é proveniente da ementa e aulas da PUC Minas, quando é complementação técnica/aprofundamento externo ou quando se trata de metáfora pedagógica (Técnica de Feynman).
+21. **Proveniência nas referências, não na voz do artigo:**
+ - A fidelidade às fontes deve ser preservada pelo conteúdo, pelas referências bibliográficas e pelos links de apoio, e não por comentários recorrentes sobre a origem acadêmica de cada explicação.
  - **Contexto obrigatório em artigos didáticos:** Toda nota de conteúdo didático numerada deve conter, imediatamente após o título H1 (e após o frontmatter, quando existir), um parágrafo no formato `> **Contexto:** ...`.
- - O bloco de contexto deve resumir em 1 parágrafo o escopo, a função didática e as principais conexões da nota, sem reproduzir o texto de abertura nem usar metadiscurso como “a aula apresenta”, “o professor explica”, “o material mostra” ou equivalentes.
+ - O bloco de contexto deve resumir em 1 parágrafo o escopo, a função didática e as principais conexões da nota. É proibido usá-lo para dizer que “a aula apresenta”, “o professor explica”, “o material mostra”, “a disciplina aborda”, “a PUC ensina” ou equivalentes.
+ - Quando houver complementação técnica necessária, integrá-la diretamente à explicação sob cabeçalhos objetivos como *Precisão conceitual*, *Ponte conceitual* ou *Aprofundamento técnico*. Não criar oposição narrativa do tipo “curso versus fonte externa” no corpo do texto.
  - O bloco `> **Contexto:**` é parte estrutural obrigatória do artigo e deve existir imediatamente após o H1, antes do corpo principal.
- - Outras distinções editoriais podem ser feitas com cabeçalhos de seção objetivos (ex.: *As analogias de Feynman*, *Ponte conceitual*, *Aprofundamento técnico*) ou notas de rodapé pontuais, evitando sobrecarregar o texto com banners ou avisos repetitivos.
+ - Bibliografias, seções de referências e notas de rodapé pontuais são os locais apropriados para registrar proveniência. O corpo principal deve permanecer autônomo e didático.
 
 
 
