@@ -12,7 +12,7 @@ A Aula Inaugural do 2º semestre de 2026 reuniu os alunos veteranos (incluindo o
 
 ---
 
-## 1. Metodologia: aprendizado baseado em competências (CHA)
+## Metodologia: aprendizado baseado em competências (CHA)
 
 O curso adota o **aprendizado baseado em competências (ABC)** alinhado ao **aprendizado baseado em projetos (PBL)**, estruturado no tripé **CHA**:
 
@@ -22,7 +22,7 @@ O curso adota o **aprendizado baseado em competências (ABC)** alinhado ao **apr
 
 ---
 
-## 2. Estrutura das unidades curriculares do eixo
+## Estrutura das unidades curriculares do eixo
 
 Cada eixo temático do curso é composto por 3 blocos curriculares complementares:
 
@@ -32,7 +32,7 @@ Cada eixo temático do curso é composto por 3 blocos curriculares complementare
 
 ---
 
-## 3. Ciclos de aprendizagem e certificações intermediárias
+## Ciclos de aprendizagem e certificações intermediárias
 
 O curso é dividido em **ciclos de aprendizagem** a cada 2 eixos. Para obter cada certificação, o aluno precisa cumprir todos os requisitos do ciclo:
 
@@ -46,7 +46,7 @@ O curso é dividido em **ciclos de aprendizagem** a cada 2 eixos. Para obter cad
 
 ---
 
-## 4. Canais oficiais de comunicação e rotina
+## Canais oficiais de comunicação e rotina
 
 * **Ambiente virtual (Canvas):** Acesso diário obrigatório. Verifique a caixa de entrada (Inbox) e os avisos (ícone de megafone nas disciplinas de Projeto e "Por Dentro do Curso").
 * **E-mail institucional:** Todos os acessos no Canvas e Microsoft Teams devem ser realizados exclusivamente via conta institucional da PUC Minas.
@@ -57,7 +57,7 @@ O curso é dividido em **ciclos de aprendizagem** a cada 2 eixos. Para obter cad
 
 ---
 
-## 5. Oportunidades, extensão, pesquisa e parcerias
+## Oportunidades, extensão, pesquisa e parcerias
 
 ### Carreiras & incubação
 * **PUC Carreiras:** Portal de vagas de estágio/emprego, auxílio na montagem de currículos e preparação para entrevistas.
@@ -74,7 +74,7 @@ O curso é dividido em **ciclos de aprendizagem** a cada 2 eixos. Para obter cad
 
 ---
 
-## 6. Principais esclarecimentos do Q&A
+## Principais esclarecimentos do Q&A
 
 * **Encontros de monitoria aos sábados:** Não contam como presença/falta obrigatória, mas servem como suporte direto aos alunos para desenvolvimento dos projetos.
 * **Prazos do projeto:** Atentar-se rigorosamente às datas das etapas publicadas nas disciplinas do Canvas.

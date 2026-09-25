@@ -24,7 +24,7 @@ relacionados:
 
 ---
 
-## 1. Critérios objetivos de estado de aprendizagem
+## Critérios objetivos de estado de aprendizagem
 
 Para evitar autoavaliações ilusórias ou avanço artificial, cada tópico ou unidade do curso é classificado com base em evidências verificáveis do vault:
 
@@ -37,7 +37,7 @@ Para evitar autoavaliações ilusórias ou avanço artificial, cada tópico ou u
 
 ---
 
-## 2. Quadro de maturidade e acompanhamento por disciplina
+## Quadro de maturidade e acompanhamento por disciplina
 
 Abaixo está o panorama transversal das disciplinas com base na diferenciação estrita entre cobertura de conteúdo, progresso da disciplina e evidências reais de aprendizagem do estudante:
 
@@ -57,11 +57,11 @@ Abaixo está o panorama transversal das disciplinas com base na diferenciação 
 
 ---
 
-## 3. Matriz transversal de pontes conceituais (Teoria → Modelagem → Código)
+## Matriz transversal de pontes conceituais (Teoria → Modelagem → Código)
 
 A formação técnica do Eixo 2 apoia-se na convergência entre modelagem conceitual, arquitetura de software, persistência relacional e experiência do usuário. Conforme as diretrizes cognitivas do vault, essa relação é organizada em duas camadas complementares:
 
-### 3.1 Visão global integrada: O ecossistema do Eixo 2
+### Visão global integrada: O ecossistema do Eixo 2
 
 O mapa a seguir apresenta a arquitetura sistêmica completa do semestre, conectando a concepção analítica ao código executável e à entrega funcional no Projeto Integrador:
 
@@ -104,7 +104,7 @@ flowchart TD
 
 ---
 
-### 3.2 Detalhamento focal: Subsistemas e pontes específicas
+### Detalhamento focal: Subsistemas e pontes específicas
 
 Para o estudo concentrado de frentes de trabalho pontuais, as relações acima desdobram-se em dois fluxos focais:
 
@@ -129,7 +129,7 @@ flowchart LR
 
 ---
 
-## 4. Registro de pontos críticos e tópicos para revisão
+## Registro de pontos críticos e tópicos para revisão
 
 Espaço reservado para documentar conceitos onde houve dúvida teórica, erro em simulador ou apontamento em reunião de orientação:
 
@@ -140,7 +140,7 @@ Espaço reservado para documentar conceitos onde houve dúvida teórica, erro em
 
 ---
 
-## 5. Navegação e atalhos rápidos
+## Navegação e atalhos rápidos
 * **Página inicial do portal:** [[index.md|Portal Acadêmico PUC Minas]]
 * **Resumo de reuniões do projeto:** [[06. Projeto - Aplicacao Interativa/00. Projeto - Aplicacao Interativa - Resumo|Painel do Projeto Integrador]]
 * **Guia de sintaxe multilinguagem:** [[00. Sintaxe Multilinguagem/00. Guia multilinguagem de sintaxe e praticas - Índice|Índice de Sintaxe]]
