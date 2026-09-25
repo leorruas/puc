@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/web-backend 04.md",
+                "file": "00. Inbox/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "web-backend 04"
+              "title": "Untitled"
             }
           }
         ]
@@ -193,9 +193,11 @@
   },
   "active": "51cdb240dd29791b",
   "lastOpenFiles": [
+    "00. Inbox/web-backend 06.md",
+    "00. Inbox/Untitled.md",
+    "00. Inbox/web-backend 04.md",
     "00. Inbox/web-backend 03.md",
     "00. Inbox/web-backend 02.md",
-    "00. Inbox/web-backend 06.md",
     "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md",
     "Screenshot 2026-09-22 at 17.02.03.png",
     "Screenshot 2026-09-22 at 17.01.42.png",
@@ -220,7 +222,6 @@
     "00. Inbox/web-backend 01.md",
     "17_Mapeamento Objeto-Relacional Orm-Português.txt",
     "05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP.md",
-    "00. Inbox/web-backend 04.md",
     "00. Inbox 1/web-backend 03.md",
     "00. Inbox 1/web-backend 02.md",
     "00. Inbox 1/web-backend 01.md",
@@ -238,7 +239,6 @@
     "index.md",
     "design-qa.md",
     "AGENTS.md",
-    "log.md",
-    "me.md"
+    "log.md"
   ]
 }
