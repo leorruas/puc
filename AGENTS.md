@@ -56,6 +56,14 @@
  - Blocos de código, tabelas, citações, fórmulas e diagramas Mermaid permanecem visualmente separados da prosa. Os parágrafos imediatamente antes e depois desses elementos devem continuar sintaticamente completos.
  - Como referência editorial, preferir parágrafos com múltiplas frases conectadas, sem impor tamanho rígido. Evitar tanto fragmentação excessiva quanto blocos longos que misturem vários conceitos independentes.
 
+### 5.3 Economia estrutural de cabeçalhos e agrupamento conceitual
+ - **Cabeçalhos devem representar blocos de raciocínio, não inventários de palavras-chave.** É proibido transformar automaticamente cada operador, comando, método, subtipo ou exemplo em um novo `##`.
+ - Preferir uma estrutura de artigo com poucos blocos conceituais amplos, como: modelo mental/fundamento → famílias ou variações do conceito → aplicação e exemplos → prática → pontos de confusão.
+ - Recursos irmãos devem ser agrupados na mesma seção sempre que compartilham a mesma pergunta conceitual. Exemplo: `IN`, `NOT IN`, `ANY` e `ALL` podem ficar dentro de uma seção sobre comparação com resultados de subconsultas; `INNER`, `LEFT`, `RIGHT` e `FULL JOIN` podem ficar numa seção comparativa de tipos de junção.
+ - Usar **tabelas Markdown, parágrafos, rótulos em negrito e exemplos consecutivos** para diferenças locais. Criar subseção apenas quando houver mudança real de modelo mental, processo, dependência ou função cognitiva.
+ - O sumário deve permitir que o estudante enxergue a arquitetura do assunto em poucos blocos. Se a lista de títulos estiver apenas repetindo o vocabulário da aula, agrupar novamente.
+ - Não há número rígido de seções, mas artigos introdutórios e intermediários devem, em regra, evitar fragmentação excessiva. A criação de um novo cabeçalho deve responder à pergunta: *“este trecho inaugura uma nova ideia que merece ser localizada separadamente?”*.
+
 ### 5.2 Prosa didática direta, sem metadiscurso de origem
  - Ao transformar anotações, aulas, transcrições, slides, livros ou outros materiais em artigo, escrever o conteúdo **diretamente como explicação didática consolidada**. A fonte serve de base para a redação, mas não deve aparecer como narrador do texto.
  - É proibido no corpo didático usar fórmulas como `"no material da disciplina"`, `"de acordo com o professor"`, `"na aula"`, `"como visto na aula"`, `"a PUC Minas apresenta"`, `"o material apresenta"`, `"o professor explica"`, `"a disciplina mostra"`, `"nesta unidade"`, `"segundo a aula"` ou variantes equivalentes que apenas indiquem de onde o conteúdo veio.
