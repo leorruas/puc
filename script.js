@@ -679,6 +679,11 @@ function encontrarAlvoDaBuscaNoArtigo(termos) {
 
 // Leitor de Artigos com Suporte Suíço
 async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termosBusca = [], secaoBusca = "", artigoReferencia = null) {
+    if (window.PUC_MOSTRAR_TRANSICAO) {
+        window.PUC_MOSTRAR_TRANSICAO();
+        await new Promise(resolve => requestAnimationFrame(resolve));
+    }
+
     divResultados.classList.add("escondido");
     leitorDeDisciplina.classList.add("escondido");
     document.getElementById("orientacoes-iniciais")?.classList.add("escondido");
@@ -832,6 +837,10 @@ async function abrirArtigo(titulo, conteudoMarkdown, atualizarHash = true, termo
         requestAnimationFrame(() => rolarAoTopo());
         setTimeout(rolarAoTopo, 50);
         setTimeout(rolarAoTopo, 150);
+    }
+
+    if (window.PUC_FINALIZAR_TRANSICAO) {
+        window.PUC_FINALIZAR_TRANSICAO();
     }
 }
 
