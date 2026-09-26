@@ -44,6 +44,8 @@
             };
 
             window.PUC_MOSTRAR_TRANSICAO = function () {
+                if (raiz.classList.contains("app-loading")) return;
+
                 var existente = document.getElementById("route-loader");
                 if (existente && existente.parentNode) existente.parentNode.removeChild(existente);
 
