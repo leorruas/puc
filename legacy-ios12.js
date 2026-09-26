@@ -151,6 +151,7 @@
     }
 
     function abrirArtigo(caminho) {
+        if (window.PUC_MOSTRAR_TRANSICAO) window.PUC_MOSTRAR_TRANSICAO();
         var item = null, i;
         for (i = 0; i < artigos.length; i += 1) if (artigos[i].caminho === caminho) { item = artigos[i]; break; }
         if (!item) return;
@@ -168,7 +169,11 @@
         }).then(function (markdown) {
             artigoCorpo.innerHTML = renderizarMarkdown(markdown);
             instalarLinks(); marcarMermaidLegado(); rolarTopo();
-        }).catch(function () { artigoCorpo.innerHTML = '<p class="legacy-status">Não foi possível carregar este artigo neste navegador.</p>'; });
+            if (window.PUC_FINALIZAR_TRANSICAO) window.PUC_FINALIZAR_TRANSICAO();
+        }).catch(function () {
+            artigoCorpo.innerHTML = '<p class="legacy-status">Não foi possível carregar este artigo neste navegador.</p>';
+            if (window.PUC_FINALIZAR_TRANSICAO) window.PUC_FINALIZAR_TRANSICAO();
+        });
     }
 
     function buscar(termo) {
