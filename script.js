@@ -1691,4 +1691,12 @@ window.addEventListener("popstate", () => {
 });
 
 // Inicialização
-carregarTodosOsArtigos();
+carregarTodosOsArtigos()
+    .catch((erro) => {
+        console.error("Erro ao carregar o conteúdo inicial:", erro);
+    })
+    .finally(() => {
+        if (window.PUC_FINALIZAR_CARREGAMENTO) {
+            window.PUC_FINALIZAR_CARREGAMENTO();
+        }
+    });
