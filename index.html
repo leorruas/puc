@@ -43,6 +43,49 @@
                 }, 180);
             };
 
+            window.PUC_MOSTRAR_TRANSICAO = function () {
+                var existente = document.getElementById("route-loader");
+                if (existente && existente.parentNode) existente.parentNode.removeChild(existente);
+
+                var loader = document.createElement("div");
+                loader.id = "route-loader";
+                loader.className = "app-loader";
+                loader.setAttribute("role", "status");
+                loader.setAttribute("aria-label", "Abrindo artigo");
+                loader.innerHTML = '<div class="app-loader__line" aria-hidden="true"></div>';
+                loader.dataset.startedAt = String(Date.now());
+                document.body.appendChild(loader);
+
+                window.PUC_ROUTE_LOADER_FALLBACK = window.setTimeout(function () {
+                    window.PUC_FINALIZAR_TRANSICAO();
+                }, 10000);
+            };
+
+            window.PUC_FINALIZAR_TRANSICAO = function () {
+                var loader = document.getElementById("route-loader");
+                if (!loader) return;
+
+                if (window.PUC_ROUTE_LOADER_FALLBACK) {
+                    clearTimeout(window.PUC_ROUTE_LOADER_FALLBACK);
+                    window.PUC_ROUTE_LOADER_FALLBACK = null;
+                }
+
+                var inicio = Number(loader.dataset.startedAt || Date.now());
+                var restante = Math.max(0, 260 - (Date.now() - inicio));
+
+                window.setTimeout(function () {
+                    loader.classList.add("is-complete");
+
+                    window.setTimeout(function () {
+                        loader.classList.add("is-leaving");
+
+                        window.setTimeout(function () {
+                            if (loader.parentNode) loader.parentNode.removeChild(loader);
+                        }, 220);
+                    }, 140);
+                }, restante);
+            };
+
             window.PUC_LOADER_FALLBACK = window.setTimeout(function () {
                 window.PUC_FINALIZAR_CARREGAMENTO();
             }, 10000);
@@ -54,11 +97,11 @@
             overflow: hidden;
         }
 
-        html.app-loading body > :not(#initial-loader):not(script) {
+        html.app-loading body > :not(.app-loader):not(script) {
             visibility: hidden;
         }
 
-        #initial-loader {
+        .app-loader {
             position: fixed;
             inset: 0;
             z-index: 9999;
@@ -69,11 +112,11 @@
             opacity: 1;
         }
 
-        :root[data-theme="light"] #initial-loader {
+        :root[data-theme="light"] .app-loader {
             background: #f8fafc;
         }
 
-        .initial-loader__line {
+        .app-loader__line {
             width: min(200px, 44vw);
             height: 2px;
             background: #007aff;
@@ -83,16 +126,16 @@
             transition: transform 180ms ease-out;
         }
 
-        :root[data-theme="light"] .initial-loader__line {
+        :root[data-theme="light"] .app-loader__line {
             background: #0056b3;
         }
 
-        #initial-loader.is-complete .initial-loader__line {
+        .app-loader.is-complete .app-loader__line {
             animation: none;
             transform: scaleX(1);
         }
 
-        #initial-loader.is-leaving {
+        .app-loader.is-leaving {
             opacity: 0;
             pointer-events: none;
             transition: opacity 200ms ease;
@@ -106,13 +149,13 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .initial-loader__line {
+            .app-loader__line {
                 animation: none;
                 transform: scaleX(.75);
                 transition: none;
             }
 
-            #initial-loader.is-leaving {
+            .app-loader.is-leaving {
                 transition: none;
             }
         }
@@ -126,8 +169,8 @@
 </head>
 
 <body>
-    <div id="initial-loader" role="status" aria-label="Carregando conteúdo">
-        <div class="initial-loader__line" aria-hidden="true"></div>
+    <div id="initial-loader" class="app-loader" role="status" aria-label="Carregando conteúdo">
+        <div class="app-loader__line" aria-hidden="true"></div>
     </div>
     <nav class="sticky-nav" id="sticky-nav">
         <span class="nav-logo" id="nav-logo">ads • puc minas</span>
@@ -246,12 +289,12 @@
 
             if (suportaLeitorModerno()) {
                 carregarScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", null, function () {
-                    carregarScript("script.js?v=search-v3-loader-v1", "module");
+                    carregarScript("script.js?v=search-v3-loader-v2", "module");
                 });
             } else {
                 document.documentElement.className += " legacy-ios12";
                 carregarCss("compat-ios12.css?v=ipad-mini-v1");
-                carregarScript("legacy-ios12.js?v=ipad-mini-v2");
+                carregarScript("legacy-ios12.js?v=ipad-mini-v3");
             }
         }());
     </script>
