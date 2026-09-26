@@ -197,7 +197,11 @@
                 artigos.push({ caminho: caminho, titulo: tituloDo(caminho), categoria: categoriaDo(caminho) });
             }
             agruparArtigos(); abrirHome();
-        }).catch(function () { if (pastas) pastas.innerHTML = '<p class="legacy-status">Não foi possível carregar o catálogo compatível.</p>'; });
+            if (window.PUC_FINALIZAR_CARREGAMENTO) window.PUC_FINALIZAR_CARREGAMENTO();
+        }).catch(function () {
+            if (pastas) pastas.innerHTML = '<p class="legacy-status">Não foi possível carregar o catálogo compatível.</p>';
+            if (window.PUC_FINALIZAR_CARREGAMENTO) window.PUC_FINALIZAR_CARREGAMENTO();
+        });
     }
 
     if (buscaMain) buscaMain.oninput = function () { buscar(this.value); };
