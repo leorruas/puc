@@ -7,6 +7,8 @@
   - Incorporados `IComparer<T>`, `TrimExcess`, `TryGetValue`, `KeyValuePair<TKey, TValue>`, `SortedDictionary<TKey, TValue>` e o exemplo de dicionário aninhado disciplina → aluno → nota.
   - Os artigos 01, 02 e 03 foram complementados com pontes para `List<T>`, `Queue<T>`/`Stack<T>` e `Dictionary<TKey, TValue>`, preservando o encadeamento pedagógico.
   - Resumo, glossário, guia transversal de tipos genéricos, guia transversal de estruturas de dados e Mapa de aprendizagem foram atualizados. O estado permanece **Em estudo**, pois houve ampliação de cobertura, não nova evidência de domínio.
+  - Explicitada a distinção entre “qualquer tipo” e mistura de tipos em `Dictionary<TKey, TValue>`: `TKey` e `TValue` podem ser escolhidos livremente na declaração, mas a combinação escolhida permanece como contrato da instância.
+
 
 ## 2026-09-25
 
