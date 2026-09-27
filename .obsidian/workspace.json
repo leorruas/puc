@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00. Inbox/algoritmos e estruturas de dados - 02 - 02 - lista linear.md",
+                "file": "00. Inbox/algoritmos e estruturas de dados - 02 - 03 - classes autorreferencais.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "algoritmos e estruturas de dados - 02 - 02 - lista linear"
+              "title": "algoritmos e estruturas de dados - 02 - 03 - classes autorreferencais"
             }
           }
         ]
@@ -191,11 +191,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "decabc597b2ba14f",
+  "active": "95875d37ef4a6eef",
   "lastOpenFiles": [
+    "00. Inbox/algoritmos e estruturas de dados - 02 - 02 - lista linear.md",
+    "00. Inbox/algoritmos e estruturas de dados - 02 - 03 - classes autorreferencais.md",
     "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md",
     "00. Inbox/algoritmos e estruturas de dados - 02 - 01 - introdução.md",
-    "00. Inbox/algoritmos e estruturas de dados - 02 - 02 - lista linear.md",
     "04. Algoritmos e Estruturas de Dados/05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md",
     "Pasted image 20260927171720.png",
     "Pasted image 20260927171700.png",
@@ -223,7 +224,6 @@
     "00. Inbox/web-backend 06.md",
     "00. Inbox/unidade 02 - 13 - COMANDOS GRANT E REVOKE.md",
     "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
-    "00. Inbox/unidade 02 - 12 - TRANSAÇÃO EM BANCO DE DADOS E PROPRIEDADES ACID.md",
     "Pasted image 20260925172641.png",
     "Pasted image 20260925134331.png",
     "Pasted image 20260925134312.png",
