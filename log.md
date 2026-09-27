@@ -6,6 +6,8 @@
   - Adicionados Visual Studio e Replit à bibliografia complementar.
   - Atualizado o quadro de autores citados com Harvey M. Deitel e John Sharp e perfis institucionais confiáveis.
   - Mantidas as referências técnicas específicas do Microsoft Learn já consolidadas no resumo.
+  - O diagrama “Quando usar cada estrutura” passou a incluir também as coleções genéricas, distinguindo `List<T>`, `LinkedList<T>`, `Queue<T>`, `Stack<T>` e `Dictionary<TKey, TValue>` das versões não genéricas e explicitando a decisão entre comportamento da estrutura e contrato de tipo.
+
 
 ## 2026-09-27
 
