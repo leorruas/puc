@@ -6,14 +6,14 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | --- | --- | --- |
 | **ArrayList** | Coleção de `System.Collections` cujo tamanho pode crescer conforme elementos são adicionados. | [[01. ArrayList, referências e operações em coleções#Capacidade e quantidade de elementos|Capacidade e quantidade de elementos]] |
 | **Capacity** | Quantidade de elementos que a `ArrayList` consegue comportar antes de precisar ampliar seu espaço interno. | [[01. ArrayList, referências e operações em coleções#Capacidade e quantidade de elementos|Capacidade e quantidade de elementos]] |
-| **Count** | Quantidade de elementos atualmente armazenados em uma coleção. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Consultando a estrutura sem remover|Queue e Stack: consulta e quantidade]] |
+| **Count** | Quantidade de elementos atualmente armazenados em uma coleção. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Operações em comum entre Queue e Stack|Queue e Stack: operações em comum]] |
 | **foreach** | Estrutura de repetição usada para percorrer os elementos de uma coleção sem controlar manualmente um índice. | [[01. ArrayList, referências e operações em coleções#Percorrendo a coleção com foreach|Percorrendo a coleção com foreach]] |
 | **Add** | Método que insere um objeto ao final da `ArrayList`; em `Hashtable`, insere um par chave–valor. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|ArrayList: inserção]] |
 | **Insert** | Método que insere um objeto em um índice especificado da `ArrayList`. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|Inserção, remoção e consulta]] |
 | **Remove** | Método de remoção cujo significado depende da estrutura; em `ArrayList`, remove a primeira ocorrência do objeto; em `Hashtable`, remove o elemento associado a uma chave. | [[03. Hashtable (chave, valor, hashing e colisões)#Operações principais|Hashtable: operações principais]] |
 | **RemoveAt** | Método que remove o elemento armazenado em um índice específico da `ArrayList`. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|Inserção, remoção e consulta]] |
 | **RemoveRange** | Método que remove uma quantidade de elementos a partir de um índice da `ArrayList`. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|Inserção, remoção e consulta]] |
-| **Clear** | Método que remove todos os elementos armazenados em uma coleção. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Consultando a estrutura sem remover|Queue e Stack: consulta e quantidade]] |
+| **Clear** | Método que remove todos os elementos armazenados em uma coleção. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Operações em comum entre Queue e Stack|Queue e Stack: operações em comum]] |
 | **Contains** | Método que verifica presença de um objeto ou, no caso de `Hashtable`, de uma chave, conforme a estrutura utilizada. | [[03. Hashtable (chave, valor, hashing e colisões)#Operações principais|Hashtable: operações principais]] |
 | **IndexOf** | Método que retorna o índice da primeira ocorrência encontrada em uma `ArrayList`. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|Inserção, remoção e consulta]] |
 | **LastIndexOf** | Método que retorna o índice da última ocorrência encontrada em uma `ArrayList`. | [[01. ArrayList, referências e operações em coleções#Inserção, remoção e consulta|Inserção, remoção e consulta]] |
@@ -35,7 +35,7 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **Dequeue** | Método que remove e retorna o próximo objeto de uma `Queue`. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Inserindo e removendo elementos|Inserindo e removendo elementos]] |
 | **Push** | Método que insere um objeto no topo de uma `Stack`. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Inserindo e removendo elementos|Inserindo e removendo elementos]] |
 | **Pop** | Método que remove e retorna o objeto no topo de uma `Stack`. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Inserindo e removendo elementos|Inserindo e removendo elementos]] |
-| **Peek** | Método que retorna o próximo objeto a ser removido sem removê-lo. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Consultando a estrutura sem remover|Consultando a estrutura sem remover]] |
+| **Peek** | Método que retorna o próximo objeto a ser removido sem removê-lo. | [[02. Queue e Stack (filas, pilhas, FIFO e LIFO)#Operações em comum entre Queue e Stack|Operações em comum entre Queue e Stack]] |
 | **Hashtable** | Estrutura de dicionário ou mapa que associa chaves a valores e usa uma transformação para determinar onde procurar os dados. | [[03. Hashtable (chave, valor, hashing e colisões)#Chave e valor|Chave e valor]] |
 | **Chave** | Identificador usado como ponto de partida para localizar um valor em uma `Hashtable`. | [[03. Hashtable (chave, valor, hashing e colisões)#Chave e valor|Chave e valor]] |
 | **Valor** | Dado associado a uma chave dentro de uma `Hashtable`. | [[03. Hashtable (chave, valor, hashing e colisões)#Chave e valor|Chave e valor]] |
