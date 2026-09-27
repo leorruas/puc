@@ -14,7 +14,7 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **LinkedList<T>** | Lista genérica ligada em que cada elemento pertence a um nó conectado aos nós vizinhos; em .NET, é duplamente ligada. | [[04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)#LinkedList<T> organiza elementos como nós conectados|LinkedList<T>]] |
 | **LinkedListNode<T>** | Nó de `LinkedList<T>` que contém o valor e referências `Next` e `Previous` para os nós vizinhos. | [[04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)#LinkedList<T> organiza elementos como nós conectados|Nós de LinkedList<T>]] |
 | **Dictionary<TKey, TValue>** | Dicionário genérico que associa chaves de tipo `TKey` a valores de tipo `TValue`. | [[04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)#Dictionary<TKey, TValue> tipa separadamente chave e valor|Dictionary<TKey, TValue>]] |
-| **Lista linear** | Lista baseada em armazenamento sequencial, normalmente sobre um array e um controle da quantidade de elementos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
+| **Lista linear** | Lista baseada em armazenamento sequencial, normalmente sobre um array e um controle da quantidade de elementos. | [[06. Lista linear (array, contador, inserção e remoção)#O modelo central: array + contador|Array + contador]] • [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Comparação com lista flexível]] |
 | **Lista flexível** | Lista formada por nós ou células conectados por referências, sem depender de um bloco sequencial de memória. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
 | **Árvore binária** | Estrutura hierárquica de nós em que cada nó pode se relacionar com, no máximo, dois filhos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Árvores binárias]] |
 | **Nó** | Unidade de uma estrutura flexível que armazena um valor e referências usadas para conectá-la a outros elementos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
@@ -33,6 +33,17 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **Função hash** | Transformação que associa uma chave a uma posição da tabela. | [[03. Hashtable (chave, valor, hashing e colisões)#Da chave até uma posição da tabela|Da chave até uma posição da tabela]] |
 | **Colisão** | Situação em que mais de um elemento é direcionado para a mesma posição da tabela. | [[03. Hashtable (chave, valor, hashing e colisões)#Colisões|Colisões]] |
 | **Colisão primária** | Nome usado no conteúdo para a colisão em que a posição calculada para uma nova inserção já está ocupada. | [[03. Hashtable (chave, valor, hashing e colisões)#Colisões|Colisões]] |
+
+## Estado e operações da lista linear
+
+| Conceito | Definição no contexto estudado | Onde revisar |
+| --- | --- | --- |
+| **Contador `n`** | Quantidade de elementos que pertencem logicamente à lista. Se `n = 4`, as posições válidas vão de `0` a `3`. | [[06. Lista linear (array, contador, inserção e remoção)#O modelo central: array + contador|Array + contador]] |
+| **Deslocamento à direita** | Cópia dos elementos para índices maiores para abrir espaço no início ou no meio de uma lista sequencial. | [[06. Lista linear (array, contador, inserção e remoção)#Inserção exige preservar a sequência|Inserção]] |
+| **Deslocamento à esquerda** | Cópia dos elementos posteriores para índices menores depois de uma remoção no início ou no meio. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção fecha o espaço deixado|Remoção]] |
+| **Remoção lógica** | Exclusão de um elemento do intervalo considerado válido pela estrutura, normalmente por ajuste de `n` e reorganização dos elementos. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
+| **Remoção física** | Alteração efetiva do conteúdo armazenado em uma posição de memória. Na lista estudada, um valor antigo pode permanecer fisicamente fora da região `0 .. n - 1` sem pertencer à lista. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
+| **Lixo lógico** | Valor que ainda permanece fisicamente no array, mas está fora da região válida da lista e deixa de fazer parte da estrutura. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
 
 ## Custo e crescimento
 
