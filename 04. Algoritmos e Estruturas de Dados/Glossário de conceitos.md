@@ -19,6 +19,15 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **Árvore binária** | Estrutura hierárquica de nós em que cada nó pode se relacionar com, no máximo, dois filhos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Árvores binárias]] |
 | **Nó** | Unidade de uma estrutura flexível que armazena um valor e referências usadas para conectá-la a outros elementos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
 | **Aresta** | Ligação entre dois nós de uma árvore. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Árvores binárias]] |
+| **Classe autorreferencial** | Classe que possui um atributo capaz de referenciar outro objeto do mesmo tipo da própria classe. | [[07. Classes autorreferenciais e células encadeadas#O que é uma classe autorreferencial|Classe autorreferencial]] |
+| **Célula** | Objeto usado como unidade de uma estrutura flexível, contendo um valor e uma referência para outra célula. | [[07. Classes autorreferenciais e células encadeadas#Uma célula guarda valor e referência|Célula]] |
+
+## Referências em estruturas flexíveis
+
+| Conceito | Definição no contexto estudado | Onde revisar |
+| --- | --- | --- |
+| **`prox`** | Referência armazenada em uma célula para alcançar outra célula do mesmo tipo. | [[07. Classes autorreferenciais e células encadeadas#Uma célula guarda valor e referência|Valor e referência]] |
+| **`null`** | Valor usado para indicar que uma referência não aponta para outro objeto; no exemplo da célula, representa a ausência de uma próxima célula. | [[07. Classes autorreferenciais e células encadeadas#Construtores da célula|Construtores da célula]] |
 
 ## Ordem, estado e organização interna
 
