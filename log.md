@@ -1,5 +1,14 @@
 ## 2026-09-27
 
+* **Algoritmos e estruturas de dados — Unidade 1 concluída e bibliografia oficial consolidada**:
+  - Registrada a conclusão da Unidade 1 no resumo e no Mapa de aprendizagem, preservando o estado **Em estudo** por ainda não haver nova evidência suficiente para classificá-la automaticamente como compreendida.
+  - Adicionadas à bibliografia básica a documentação oficial de C#, a obra de Harvey M. Deitel et al. e a obra de John Sharp fornecidas na bibliografia da unidade.
+  - Adicionados Visual Studio e Replit à bibliografia complementar.
+  - Atualizado o quadro de autores citados com Harvey M. Deitel e John Sharp e perfis institucionais confiáveis.
+  - Mantidas as referências técnicas específicas do Microsoft Learn já consolidadas no resumo.
+
+## 2026-09-27
+
 * **Algoritmos e estruturas de dados 04 — coleções genéricas em C#**:
   - Criado o artigo [[04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)|04. Coleções genéricas em C#]], condensando o conteúdo de classes genéricas em um modelo único: parâmetro de tipo, segurança de tipagem, boxing/unboxing, redução de casts e reutilização.
   - Consolidada a relação entre as estruturas anteriores e suas versões genéricas: `ArrayList` → `List<T>`, `Queue` → `Queue<T>`, `Stack` → `Stack<T>` e `Hashtable` → `Dictionary<TKey, TValue>`.
