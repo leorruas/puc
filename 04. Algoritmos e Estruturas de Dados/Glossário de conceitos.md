@@ -16,7 +16,9 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **Dictionary<TKey, TValue>** | Dicionário genérico que associa chaves de tipo `TKey` a valores de tipo `TValue`. | [[04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)#Dictionary<TKey, TValue> tipa separadamente chave e valor|Dictionary<TKey, TValue>]] |
 | **Lista linear** | Lista baseada em armazenamento sequencial, normalmente sobre um array e um controle da quantidade de elementos. | [[06. Lista linear (array, contador, inserção e remoção)#O modelo central: array + contador|Array + contador]] • [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Comparação com lista flexível]] |
 | **Lista flexível** | Lista formada por nós ou células conectados por referências, sem depender de um bloco sequencial de memória. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
-| **Árvore binária** | Estrutura hierárquica de nós em que cada nó pode se relacionar com, no máximo, dois filhos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Árvores binárias]] |
+| **Árvore binária** | Estrutura hierárquica de nós em que cada nó pode se relacionar com, no máximo, dois filhos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Introdução]] • [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Estrutura]] |
+| **Árvore binária de pesquisa (ABP)** | Árvore binária em que valores menores ficam na subárvore esquerda e valores maiores, na subárvore direita de cada nó. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Árvore binária de pesquisa|ABP]] |
+| **AVL** | Árvore binária de pesquisa que mantém o fator de balanceamento de cada nó em `-1`, `0` ou `1`, aplicando rotações quando necessário. | [[10. Árvores AVL (balanceamento e rotações)#Árvore AVL|Árvore AVL]] |
 | **Nó** | Unidade de uma estrutura flexível que armazena um valor e referências usadas para conectá-la a outros elementos. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Listas lineares e flexíveis|Listas lineares e flexíveis]] |
 | **Aresta** | Ligação entre dois nós de uma árvore. | [[05. Listas lineares e flexíveis, árvores binárias e tabelas hash#Árvores binárias|Árvores binárias]] |
 | **Classe autorreferencial** | Classe que possui um atributo capaz de referenciar outro objeto do mesmo tipo da própria classe. | [[07. Classes autorreferenciais e células encadeadas#O que é uma classe autorreferencial|Classe autorreferencial]] |
@@ -64,6 +66,31 @@ Este glossário reúne os conceitos efetivamente estudados até agora em Algorit
 | **Remoção lógica** | Exclusão de um elemento do intervalo considerado válido pela estrutura, normalmente por ajuste de `n` e reorganização dos elementos. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
 | **Remoção física** | Alteração efetiva do conteúdo armazenado em uma posição de memória. Na lista estudada, um valor antigo pode permanecer fisicamente fora da região `0 .. n - 1` sem pertencer à lista. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
 | **Lixo lógico** | Valor que ainda permanece fisicamente no array, mas está fora da região válida da lista e deixa de fazer parte da estrutura. | [[06. Lista linear (array, contador, inserção e remoção)#Remoção lógica e remoção física|Remoção lógica e física]] |
+
+## Estrutura e percurso de árvores
+
+| Conceito | Definição no contexto estudado | Onde revisar |
+| --- | --- | --- |
+| **Raiz** | Nó inicial da árvore e ponto de partida das operações de pesquisa, inserção e remoção. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Pai** | Nó diretamente acima de outro nó conectado por uma aresta. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Filho** | Nó diretamente abaixo de outro nó conectado por uma aresta. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Nó interno** | Nó que possui pelo menos um filho. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Folha** | Nó sem filhos, também chamado de nó externo. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Subárvore** | Estrutura formada por um nó e todos os seus descendentes. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Vocabulário da árvore]] |
+| **Altura** | Número de arestas no maior caminho entre a raiz de uma árvore ou subárvore e sua folha mais distante. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Estrutura e vocabulário da árvore|Altura]] |
+| **Percurso em ordem** | Visita na sequência esquerda → nó → direita; em uma ABP, apresenta os valores em ordem crescente. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Em ordem ou central|Em ordem]] |
+| **Pré-ordem** | Visita na sequência nó → esquerda → direita. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Pré-ordem ou pré-fixado|Pré-ordem]] |
+| **Pós-ordem** | Visita na sequência esquerda → direita → nó. | [[09. Árvore binária de pesquisa (estrutura, busca e operações)#Pós-ordem ou pós-fixado|Pós-ordem]] |
+
+## Balanceamento de árvores
+
+| Conceito | Definição no contexto estudado | Onde revisar |
+| --- | --- | --- |
+| **Fator de balanceamento** | Diferença `altura da direita - altura da esquerda` usada no material para medir o desnível de um nó. | [[10. Árvores AVL (balanceamento e rotações)#Fator de balanceamento|Fator de balanceamento]] |
+| **Rotação simples à esquerda** | Reorganização aplicada quando existe excesso de altura à direita e o caminho segue a mesma direção. | [[10. Árvores AVL (balanceamento e rotações)#Rotação simples à esquerda|Rotação à esquerda]] |
+| **Rotação simples à direita** | Reorganização aplicada quando existe excesso de altura à esquerda e o caminho segue a mesma direção. | [[10. Árvores AVL (balanceamento e rotações)#Rotação simples à direita|Rotação à direita]] |
+| **Rotação dupla direita-esquerda** | Duas rotações usadas quando o avô está pesado à direita, mas o filho direito está inclinado à esquerda. | [[10. Árvores AVL (balanceamento e rotações)#Rotação dupla direita-esquerda|Direita-esquerda]] |
+| **Rotação dupla esquerda-direita** | Duas rotações usadas quando o avô está pesado à esquerda, mas o filho esquerdo está inclinado à direita. | [[10. Árvores AVL (balanceamento e rotações)#Rotação dupla esquerda-direita|Esquerda-direita]] |
 
 ## Custo e crescimento
 
