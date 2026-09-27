@@ -1,3 +1,13 @@
+## 2026-09-27
+
+* **Algoritmos e estruturas de dados 04 — coleções genéricas em C#**:
+  - Criado o artigo [[04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary)|04. Coleções genéricas em C#]], condensando o conteúdo de classes genéricas em um modelo único: parâmetro de tipo, segurança de tipagem, boxing/unboxing, redução de casts e reutilização.
+  - Consolidada a relação entre as estruturas anteriores e suas versões genéricas: `ArrayList` → `List<T>`, `Queue` → `Queue<T>`, `Stack` → `Stack<T>` e `Hashtable` → `Dictionary<TKey, TValue>`.
+  - `LinkedList<T>` recebeu explicação própria por nós, `First`/`Last`, `LinkedListNode<T>`, inserções antes/depois e remoções nas extremidades, corrigindo a simplificação para o comportamento real de lista duplamente ligada do .NET.
+  - Incorporados `IComparer<T>`, `TrimExcess`, `TryGetValue`, `KeyValuePair<TKey, TValue>`, `SortedDictionary<TKey, TValue>` e o exemplo de dicionário aninhado disciplina → aluno → nota.
+  - Os artigos 01, 02 e 03 foram complementados com pontes para `List<T>`, `Queue<T>`/`Stack<T>` e `Dictionary<TKey, TValue>`, preservando o encadeamento pedagógico.
+  - Resumo, glossário, guia transversal de tipos genéricos, guia transversal de estruturas de dados e Mapa de aprendizagem foram atualizados. O estado permanece **Em estudo**, pois houve ampliação de cobertura, não nova evidência de domínio.
+
 ## 2026-09-25
 
 * **Manipulação de dados com SQL: ACID incorporado ao glossário da própria disciplina**:
