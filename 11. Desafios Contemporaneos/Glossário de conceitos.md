@@ -1,6 +1,6 @@
 # Glossário de conceitos
 
-Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contemporâneo|01]], [[02. Egoísmo, competição e natureza humana|02]] e [[03. Cooperação e solidariedade na constituição do humano|03]]. Cada referência aponta para a seção em que o conceito é explicado.
+Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contemporâneo|01]], [[02. Egoísmo, competição e natureza humana|02]], [[03. Cooperação e solidariedade na constituição do humano|03]] e [[04. Cultura como construção social e conceito antropológico|04]]. Cada referência aponta para a seção em que o conceito é explicado.
 
 | Conceito | Definição para revisão | Onde estudar |
 | --- | --- | --- |
@@ -50,3 +50,14 @@ Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contempo
 | **Mutualismo** | Interação entre organismos de espécies diferentes que traz benefícios a ambos. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
 | **Altruísmo biológico** | Comportamento que aumenta o sucesso reprodutivo de outros organismos com custo reprodutivo para o agente, sem exigir intenção consciente. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
 | **Competição ecológica** | Interação em que organismos sofrem efeitos negativos ao disputar recursos, independentemente de intenção. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
+| **Cultura** | Conjunto de práticas, conhecimentos, valores e significados aprendidos e compartilhados socialmente. | [[04. Cultura como construção social e conceito antropológico#Da ideia de cultivo ao conceito antropológico de cultura\|Artigo 04]] |
+| **Evolucionismo cultural unilinear** | Teoria histórica que ordena povos em supostas etapas universais de desenvolvimento cultural. | [[04. Cultura como construção social e conceito antropológico#Da ideia de cultivo ao conceito antropológico de cultura\|Artigo 04]] |
+| **Determinismo biológico** | Explicação de diferenças sociais por traços biológicos herdados, sem considerar adequadamente processos culturais. | [[04. Cultura como construção social e conceito antropológico#Diversidade cultural e crítica aos determinismos\|Artigo 04]] |
+| **Determinismo geográfico** | Explicação que reduz diferenças culturais aos efeitos do ambiente físico. | [[04. Cultura como construção social e conceito antropológico#Diversidade cultural e crítica aos determinismos\|Artigo 04]] |
+| **Particularismo histórico** | Abordagem associada a Boas que investiga a trajetória singular de cada cultura. | [[04. Cultura como construção social e conceito antropológico#Diversidade cultural e crítica aos determinismos\|Artigo 04]] |
+| **Difusão cultural** | Circulação e transformação de práticas, conhecimentos ou técnicas por contato entre grupos. | [[04. Cultura como construção social e conceito antropológico#Diversidade cultural e crítica aos determinismos\|Artigo 04]] |
+| **Socialização** | Processo de aprendizagem de normas, significados e práticas pela participação em relações e instituições. | [[04. Cultura como construção social e conceito antropológico#Como a cultura orienta comportamentos e significados\|Artigo 04]] |
+| **Descrição densa** | Abordagem interpretativa, associada a Geertz, que busca reconstruir significados de práticas em contexto. | [[04. Cultura como construção social e conceito antropológico#Como a cultura orienta comportamentos e significados\|Artigo 04]] |
+| **Cultura dinâmica** | Entendimento de que práticas e significados culturais são reproduzidos, disputados e transformados no tempo. | [[04. Cultura como construção social e conceito antropológico#Roque Laraia: cultura aprendida, desigual e dinâmica\|Artigo 04]] |
+| **Etnocentrismo** | Julgamento de outras culturas pelos próprios valores tratados como padrão universal. | [[04. Cultura como construção social e conceito antropológico#Etnocentrismo, relativismo cultural e interpretação\|Artigo 04]] |
+| **Relativismo cultural** | Orientação metodológica de compreender práticas e valores no seu contexto antes de emitir julgamentos externos. | [[04. Cultura como construção social e conceito antropológico#Etnocentrismo, relativismo cultural e interpretação\|Artigo 04]] |
