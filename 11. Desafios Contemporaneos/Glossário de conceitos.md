@@ -1,6 +1,6 @@
 # Glossário de conceitos
 
-Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contemporâneo|01]] e [[02. Egoísmo, competição e natureza humana|02]]. Cada referência aponta para a seção em que o conceito é explicado.
+Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contemporâneo|01]], [[02. Egoísmo, competição e natureza humana|02]] e [[03. Cooperação e solidariedade na constituição do humano|03]]. Cada referência aponta para a seção em que o conceito é explicado.
 
 | Conceito | Definição para revisão | Onde estudar |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contempo
 | **Egoísmo psicológico** | Tese descritiva de que todas as ações visam, em última instância, ao benefício de quem age. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
 | **Egoísmo ético** | Tese normativa que identifica a ação moralmente correta com a maximização do interesse próprio. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
 | **Competição** | Disputa por recursos, oportunidades, posições ou reconhecimento. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
-| **Cooperação** | Coordenação de ações para alcançar objetivos ou benefícios compartilhados. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Cooperação** | Coordenação de ações entre indivíduos ou organismos, que pode envolver benefícios recíprocos ou para outros. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação, solidariedade e vida social\|Artigo 03]] |
 | **Burguesia** | Grupo social associado à propriedade privada, aos negócios e à expansão do capitalismo. | [[02. Egoísmo, competição e natureza humana#Burguesia, propriedade e competição na sociedade moderna\|Artigo 02]] |
 | **Concorrência** | Disputa entre agentes econômicos em um mercado. | [[02. Egoísmo, competição e natureza humana#Burguesia, propriedade e competição na sociedade moderna\|Artigo 02]] |
 | **Estado de natureza** | Experimento teórico sobre relações humanas na ausência de autoridade política estabelecida. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
@@ -38,3 +38,15 @@ Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contempo
 | **Seleção natural** | Processo em que características hereditárias associadas ao sucesso reprodutivo relativo tornam-se mais frequentes em certas condições. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
 | **Aptidão evolutiva** | Sucesso reprodutivo relativo em um contexto, não superioridade moral ou força física. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
 | **Darwinismo social** | Correntes que extrapolam ideias evolutivas para justificar hierarquias e desigualdades sociais. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
+| **Solidariedade** | Vínculo de responsabilidade e apoio entre pessoas, com dimensão moral e social. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação, solidariedade e vida social\|Artigo 03]] |
+| **Colaboração** | Trabalho conjunto, frequentemente organizado em torno de uma tarefa compartilhada. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação, solidariedade e vida social\|Artigo 03]] |
+| **Altruísmo** | Ação ou comportamento que beneficia outros, com definições distintas em ética, psicologia e biologia. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação, solidariedade e vida social\|Artigo 03]] |
+| **Linguajear** | Linguagem entendida, em Maturana, como atividade recorrente de coordenação consensual de ações. | [[03. Cooperação e solidariedade na constituição do humano#Maturana: linguagem, convivência e constituição do humano\|Artigo 03]] |
+| **Emocionar** | Dimensão afetiva da ação e da convivência humana na perspectiva de Maturana. | [[03. Cooperação e solidariedade na constituição do humano#Maturana: linguagem, convivência e constituição do humano\|Artigo 03]] |
+| **Conversar** | Entrelaçamento do linguajear com o emocionar, na perspectiva de Maturana. | [[03. Cooperação e solidariedade na constituição do humano#Maturana: linguagem, convivência e constituição do humano\|Artigo 03]] |
+| **Aceitação mútua** | Reconhecimento do outro como legítimo participante da convivência, central na definição de social de Maturana. | [[03. Cooperação e solidariedade na constituição do humano#Maturana: linguagem, convivência e constituição do humano\|Artigo 03]] |
+| **Coordenação consensual de ações** | Ajuste recíproco e reiterado de comportamentos construído nas interações. | [[03. Cooperação e solidariedade na constituição do humano#Maturana: linguagem, convivência e constituição do humano\|Artigo 03]] |
+| **Autopoiese** | Organização autoprodutiva pela qual sistemas vivos produzem e mantêm seus componentes. | [[03. Cooperação e solidariedade na constituição do humano#Autopoiese e o sentido particular de “social”\|Artigo 03]] |
+| **Mutualismo** | Interação entre organismos de espécies diferentes que traz benefícios a ambos. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
+| **Altruísmo biológico** | Comportamento que aumenta o sucesso reprodutivo de outros organismos com custo reprodutivo para o agente, sem exigir intenção consciente. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
+| **Competição ecológica** | Interação em que organismos sofrem efeitos negativos ao disputar recursos, independentemente de intenção. | [[03. Cooperação e solidariedade na constituição do humano#Cooperação e competição na biologia: limites da oposição\|Artigo 03]] |
