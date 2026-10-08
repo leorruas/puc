@@ -14,7 +14,7 @@ export const informacoesDisciplinas = {
     "08. Design de Interacao": { numero: "10", resumo: "experiência do usuário, heurísticas de usabilidade e ihc" },
     "09. Redes de Computadores": { numero: "11", resumo: "arquitetura tcp/ip, camadas, roteamento e protocolos" },
     "10. Lideranca e Competencias": { numero: "12", resumo: "gestão de equipes ágeis, comunicação e liderança" },
-    "11. Desafios Contemporaneos": { numero: "13", resumo: "contemporaneidade, indivíduo, sociedade, consumo e humanismo" }
+    "11. Desafios Contemporaneos": { numero: "13", resumo: "indivíduo, sociedade, consumo, egoísmo, competição e ética" }
 };
 
 // Lista de arquivos Markdown estáticos para fallback de alta disponibilidade offline ou erro de API
@@ -130,6 +130,7 @@ const arquivosFallback = [
     "10. Lideranca e Competencias/Prompts de Estudo (LLM).md",
     "11. Desafios Contemporaneos/00. Desafios Contemporaneos - Resumo.md",
     "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md",
     "11. Desafios Contemporaneos/Glossário de conceitos.md",
     "11. Desafios Contemporaneos/Prompts de Estudo (LLM).md"
 ];
