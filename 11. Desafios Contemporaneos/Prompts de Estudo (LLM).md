@@ -4,7 +4,7 @@ Os comandos abaixo utilizam como referência o conteúdo efetivamente registrado
 
 ## Instrução comum
 
-Antes de responder a qualquer prompt, consulte o repositório GitHub `leorruas/puc`, na pasta `11. Desafios Contemporaneos`. Leia o resumo `00. Desafios Contemporaneos - Resumo.md`, os artigos numerados relevantes e o `Glossário de conceitos.md`. Delimite questões e explicações ao conteúdo efetivamente disponível. Conhecimentos externos podem corrigir ou ampliar uma explicação, mas devem ser identificados. Se não puder acessar o vault, informe a limitação e solicite as notas em vez de alegar leitura. Em correções, aponte os arquivos e, se possível, as seções que merecem revisão.
+Antes de responder a qualquer prompt, consulte o repositório GitHub `leorruas/puc`, na pasta `11. Desafios Contemporaneos`. Leia o resumo `00. Desafios Contemporaneos - Resumo.md`, os artigos numerados relevantes e o `Glossário de conceitos.md`. Delimite questões e explicações ao conteúdo efetivamente disponível. Conhecimentos externos podem corrigir ou ampliar uma explicação, mas devem ser identificados. Quando o vault contiver hipóteses históricas ou teses teóricas discutíveis, diferencie o que os autores defendem da posição empírica mais bem sustentada. Se não puder acessar o vault, informe a limitação e solicite as notas em vez de alegar leitura. Em correções, aponte os arquivos e, se possível, as seções que merecem revisão.
 
 ## Explicação e comparação de conceitos
 
@@ -15,7 +15,7 @@ Atue como professor de sociologia e filosofia com linguagem clara. Explique [CON
 ## Simulado baseado no conteúdo estudado
 
 ```text
-Crie 10 questões inéditas de múltipla escolha com cinco alternativas e apenas uma correta, baseadas somente nos artigos disponíveis da disciplina. Priorize diferenças entre Durkheim, Marx, Weber, Elias e Bourdieu; contemporaneidade; consumo e consumismo; humanismo; egoísmo psicológico e ético; Hobbes, Locke e Rousseau; formação da burguesia; concorrência; seleção natural, darwinismo social e cooperação. Não mostre o gabarito antes das minhas respostas. Distribua a posição das respostas corretas. Ao corrigir, explique o raciocínio e classifique erros como: conceitual, terminológico, interpretação/leitura, sintaxe/notação/leitura de modelo (quando aplicável) ou distração. Aponte a seção exata do vault para revisão.
+Crie 10 questões inéditas de múltipla escolha com cinco alternativas e apenas uma correta, baseadas somente nos artigos disponíveis da disciplina. Priorize diferenças entre Durkheim, Marx, Weber, Elias e Bourdieu; contemporaneidade; consumo e consumismo; humanismo; egoísmo psicológico e ético; Hobbes, Locke e Rousseau; formação da burguesia; concorrência; seleção natural, darwinismo social, cooperação e solidariedade; Maturana, linguagem e emocionar; autopoiese, mutualismo e altruísmo biológico; distinção entre o sentido de competição em Maturana e na ecologia. Não mostre o gabarito antes das minhas respostas. Distribua a posição das respostas corretas. Ao corrigir, explique o raciocínio e classifique erros como: conceitual, terminológico, interpretação/leitura, sintaxe/notação/leitura de modelo (quando aplicável) ou distração. Aponte a seção exata do vault para revisão.
 ```
 
 ## Discussão crítica de afirmações
