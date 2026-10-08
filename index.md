@@ -31,7 +31,7 @@ O acervo do vault é construído de forma incremental, acompanhando as aulas, tr
 | `08` | **[[08. Design de Interacao/00. Design de Interacao - Resumo.md\|Design de Interação]]** | Princípios de IHC, engenharia cognitiva e semiótica, usabilidade, acessibilidade WCAG e SUS | Em estudo | [[08. Design de Interacao/Prompts de Estudo (LLM).md\|Prompts LLM]] |
 | `09` | **[[09. Redes de Computadores/00. Redes de Computadores - Resumo.md\|Fundamentos de Redes de Computadores]]** | Modelos OSI e TCP/IP, endereçamento IP, roteamento, protocolos e segurança | Não iniciado | [[09. Redes de Computadores/Prompts de Estudo (LLM).md\|Prompts LLM]] |
 | `10` | **[[10. Lideranca e Competencias/00. Lideranca e Competencias - Resumo.md\|Competências: Liderança]]** | Desenvolvimento de soft skills, inteligência emocional, trabalho em equipe e resolução de conflitos | Não iniciado | [[10. Lideranca e Competencias/Prompts de Estudo (LLM).md\|Prompts LLM]] |
-| `11` | **[[11. Desafios Contemporaneos/00. Desafios Contemporaneos - Resumo.md\|Desafios Contemporâneos]]** | Contemporaneidade, consumo, humanismo e relação indivíduo-sociedade | Em estudo | [[11. Desafios Contemporaneos/Prompts de Estudo (LLM).md\|Prompts LLM]] • [[11. Desafios Contemporaneos/Glossário de conceitos.md\|Glossário]] |
+| `11` | **[[11. Desafios Contemporaneos/00. Desafios Contemporaneos - Resumo.md\|Desafios Contemporâneos]]** | Contemporaneidade, indivíduo e sociedade, egoísmo e competição | Em estudo | [[11. Desafios Contemporaneos/Prompts de Estudo (LLM).md\|Prompts LLM]] • [[11. Desafios Contemporaneos/Glossário de conceitos.md\|Glossário]] |
 
 ---
 
