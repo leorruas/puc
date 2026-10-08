@@ -1,6 +1,6 @@
 # Glossário de conceitos
 
-Conceitos registrados a partir de [[01. Indivíduo e sociedade no mundo contemporâneo|Indivíduo e sociedade no mundo contemporâneo]]. Cada referência aponta para a seção em que o conceito é explicado.
+Conceitos registrados nos artigos [[01. Indivíduo e sociedade no mundo contemporâneo|01]] e [[02. Egoísmo, competição e natureza humana|02]]. Cada referência aponta para a seção em que o conceito é explicado.
 
 | Conceito | Definição para revisão | Onde estudar |
 | --- | --- | --- |
@@ -22,3 +22,19 @@ Conceitos registrados a partir de [[01. Indivíduo e sociedade no mundo contempo
 | **Habitus** | Sistema de disposições aprendidas socialmente que orienta percepções e práticas, em Bourdieu. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
 | **Campo** | Espaço social de posições, regras e disputas relativamente estruturado, em Bourdieu. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
 | **Capital cultural, social e simbólico** | Recursos ligados a conhecimentos, redes de relações e reconhecimento, relevantes para posições sociais. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
+| **Interesse próprio** | Busca por objetivos e benefícios próprios, sem implicar prejuízo a outras pessoas. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Egoísmo** | Priorizar interesses próprios, mesmo diante de interesses alheios que mereceriam consideração. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Egoísmo psicológico** | Tese descritiva de que todas as ações visam, em última instância, ao benefício de quem age. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Egoísmo ético** | Tese normativa que identifica a ação moralmente correta com a maximização do interesse próprio. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Competição** | Disputa por recursos, oportunidades, posições ou reconhecimento. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Cooperação** | Coordenação de ações para alcançar objetivos ou benefícios compartilhados. | [[02. Egoísmo, competição e natureza humana#Egoísmo, interesse próprio, competição e cooperação\|Artigo 02]] |
+| **Burguesia** | Grupo social associado à propriedade privada, aos negócios e à expansão do capitalismo. | [[02. Egoísmo, competição e natureza humana#Burguesia, propriedade e competição na sociedade moderna\|Artigo 02]] |
+| **Concorrência** | Disputa entre agentes econômicos em um mercado. | [[02. Egoísmo, competição e natureza humana#Burguesia, propriedade e competição na sociedade moderna\|Artigo 02]] |
+| **Estado de natureza** | Experimento teórico sobre relações humanas na ausência de autoridade política estabelecida. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
+| **Contrato social** | Modelo teórico para justificar a formação ou a legitimidade da autoridade política. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
+| **Lei natural** | Para Locke, princípios racionais que orientam o respeito aos direitos antes da constituição do governo civil. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
+| **Amour de soi e pitié** | Em Rousseau, impulsos de autopreservação e de compaixão. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
+| **Amour-propre** | Em Rousseau, busca socialmente desenvolvida por comparação e reconhecimento. | [[02. Egoísmo, competição e natureza humana#Estado de natureza: Hobbes, Locke e Rousseau\|Artigo 02]] |
+| **Seleção natural** | Processo em que características hereditárias associadas ao sucesso reprodutivo relativo tornam-se mais frequentes em certas condições. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
+| **Aptidão evolutiva** | Sucesso reprodutivo relativo em um contexto, não superioridade moral ou força física. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
+| **Darwinismo social** | Correntes que extrapolam ideias evolutivas para justificar hierarquias e desigualdades sociais. | [[02. Egoísmo, competição e natureza humana#Darwin, seleção natural e o problema de naturalizar a competição\|Artigo 02]] |
