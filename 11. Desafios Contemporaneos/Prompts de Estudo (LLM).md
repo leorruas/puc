@@ -15,7 +15,7 @@ Atue como professor de sociologia e filosofia com linguagem clara. Explique [CON
 ## Simulado baseado no conteúdo estudado
 
 ```text
-Crie 10 questões inéditas de múltipla escolha com cinco alternativas e apenas uma correta, baseadas somente nos artigos disponíveis da disciplina. Priorize diferenças entre Durkheim, Marx, Weber, Elias e Bourdieu; contemporaneidade; consumo e consumismo; plasticidade profissional; humanismo; formação histórica da ideia de indivíduo. Não mostre o gabarito antes das minhas respostas. Distribua a posição das respostas corretas. Ao corrigir, explique o raciocínio e classifique erros como: conceitual, terminológico, interpretação/leitura, sintaxe/notação/leitura de modelo (quando aplicável) ou distração. Aponte a seção exata do vault para revisão.
+Crie 10 questões inéditas de múltipla escolha com cinco alternativas e apenas uma correta, baseadas somente nos artigos disponíveis da disciplina. Priorize diferenças entre Durkheim, Marx, Weber, Elias e Bourdieu; contemporaneidade; consumo e consumismo; humanismo; egoísmo psicológico e ético; Hobbes, Locke e Rousseau; formação da burguesia; concorrência; seleção natural, darwinismo social e cooperação. Não mostre o gabarito antes das minhas respostas. Distribua a posição das respostas corretas. Ao corrigir, explique o raciocínio e classifique erros como: conceitual, terminológico, interpretação/leitura, sintaxe/notação/leitura de modelo (quando aplicável) ou distração. Aponte a seção exata do vault para revisão.
 ```
 
 ## Discussão crítica de afirmações
