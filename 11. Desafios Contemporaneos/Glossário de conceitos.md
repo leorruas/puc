@@ -1,0 +1,24 @@
+# Glossário de conceitos
+
+Conceitos registrados a partir de [[01. Indivíduo e sociedade no mundo contemporâneo|Indivíduo e sociedade no mundo contemporâneo]]. Cada referência aponta para a seção em que o conceito é explicado.
+
+| Conceito | Definição para revisão | Onde estudar |
+| --- | --- | --- |
+| **Contemporaneidade** | Recorte histórico e analítico sobre transformações sociais recentes, especialmente nos séculos XX e XXI. | [[01. Indivíduo e sociedade no mundo contemporâneo#Contemporaneidade: transformações e diferentes interpretações\|Artigo 01]] |
+| **Modernidade tardia** | Interpretação que enfatiza o prolongamento e a intensificação de processos da modernidade. | [[01. Indivíduo e sociedade no mundo contemporâneo#Contemporaneidade: transformações e diferentes interpretações\|Artigo 01]] |
+| **Pós-modernidade** | Perspectiva que questiona certas narrativas universais de progresso e razão associadas à modernidade. | [[01. Indivíduo e sociedade no mundo contemporâneo#Contemporaneidade: transformações e diferentes interpretações\|Artigo 01]] |
+| **Hipermodernidade** | Interpretação que destaca a intensificação do consumo, da velocidade e da individualização. | [[01. Indivíduo e sociedade no mundo contemporâneo#Contemporaneidade: transformações e diferentes interpretações\|Artigo 01]] |
+| **Sociedade de consumo** | Organização social e econômica em que comprar e consumir ocupam posição central. | [[01. Indivíduo e sociedade no mundo contemporâneo#Consumo, trabalho e humanismo\|Artigo 01]] |
+| **Consumismo** | Padrão de consumo excessivamente central na identidade, prestígio ou satisfação. | [[01. Indivíduo e sociedade no mundo contemporâneo#Consumo, trabalho e humanismo\|Artigo 01]] |
+| **Plasticidade profissional** | Capacidade de revisar práticas e competências para atuar em contextos de mudança. | [[01. Indivíduo e sociedade no mundo contemporâneo#Consumo, trabalho e humanismo\|Artigo 01]] |
+| **Humanismo** | Orientação ética voltada à dignidade humana, à justiça social e à responsabilidade socioambiental. | [[01. Indivíduo e sociedade no mundo contemporâneo#Consumo, trabalho e humanismo\|Artigo 01]] |
+| **Pólis** | Comunidade política da Grécia antiga, especialmente organizada na cidade-Estado. | [[01. Indivíduo e sociedade no mundo contemporâneo#Da pólis grega à autonomia do indivíduo moderno\|Artigo 01]] |
+| **Zoon politikon** | Expressão aristotélica que caracteriza o ser humano como um ser político e comunitário. | [[01. Indivíduo e sociedade no mundo contemporâneo#Da pólis grega à autonomia do indivíduo moderno\|Artigo 01]] |
+| **Autonomia individual** | Capacidade de orientar escolhas e juízos, valorizada em diversas concepções da modernidade. | [[01. Indivíduo e sociedade no mundo contemporâneo#Da pólis grega à autonomia do indivíduo moderno\|Artigo 01]] |
+| **Fato social** | Padrão coletivo de conduta, pensamento ou sentimento dotado de exterioridade e poder coercitivo, em Durkheim. | [[01. Indivíduo e sociedade no mundo contemporâneo#Três respostas clássicas: Durkheim, Marx e Weber\|Artigo 01]] |
+| **Ação social** | Ação dotada de sentido pelo agente e orientada à conduta de outros, em Weber. | [[01. Indivíduo e sociedade no mundo contemporâneo#Três respostas clássicas: Durkheim, Marx e Weber\|Artigo 01]] |
+| **Classes sociais** | Posições ligadas às relações de produção e às condições materiais, centrais na análise marxiana. | [[01. Indivíduo e sociedade no mundo contemporâneo#Três respostas clássicas: Durkheim, Marx e Weber\|Artigo 01]] |
+| **Configuração ou figuração** | Rede dinâmica de pessoas interdependentes na sociologia de Norbert Elias. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
+| **Habitus** | Sistema de disposições aprendidas socialmente que orienta percepções e práticas, em Bourdieu. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
+| **Campo** | Espaço social de posições, regras e disputas relativamente estruturado, em Bourdieu. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
+| **Capital cultural, social e simbólico** | Recursos ligados a conhecimentos, redes de relações e reconhecimento, relevantes para posições sociais. | [[01. Indivíduo e sociedade no mundo contemporâneo#Elias e Bourdieu: indivíduos formados nas relações que também transformam\|Artigo 01]] |
