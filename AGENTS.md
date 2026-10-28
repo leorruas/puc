@@ -81,6 +81,13 @@
  - Bibliografias, referências e links podem registrar normalmente as fontes utilizadas; essa é a camada adequada para explicitar proveniência.
  - O artigo final deve soar como um texto autônomo de estudo, sem depender de conhecimento sobre a aula, o professor, a instituição ou o processo de transcrição que o originou.
 
+### 5.4 Expansão de siglas e acrônimos na primeira ocorrência
+ - **Toda sigla ou acrônimo técnico relevante deve ser explicado pelo menos uma vez em cada artigo**, na primeira ocorrência significativa do texto. Não pressupor que a definição em outro artigo, glossário, índice ou link seja conhecida pelo leitor.
+ - Usar a sigla seguida de parênteses com o termo por extenso, preferencialmente no idioma original e acompanhado de uma tradução curta em português quando o original for estrangeiro. Exemplo: `SPA (*Single-Page Application*, aplicação de página única)`; `SSR (*Server-Side Rendering*, renderização no servidor)`. Se a expressão por extenso vier antes, indicar a sigla entre parênteses após ela.
+ - **Preservar fluidez editorial:** explicar uma única vez por artigo, antes de utilizar a sigla sem expansão. Se a primeira ocorrência estiver em um título, quadro de contexto ou legenda, garantir a expansão no primeiro trecho explicativo em prosa imediatamente relacionado. Evitar repetição desnecessária em toda menção posterior.
+ - A regra também vale para siglas conhecidas no ambiente técnico, como `API`, `HTTP`, `HTML`, `JSON`, `MVC`, `MPA`, `SPA`, `CSR`, `SSR` e `SSG`. Não expandir identificadores de código, extensões de arquivo ou marcas que **não sejam siglas**; não inventar uma expansão para nomes de protocolos ou produtos sem significado oficial por extenso.
+ - **Verificação pré-commit:** identificar as siglas usadas na prosa de cada artigo criado ou revisado e conferir se cada uma possui explicação clara ao menos uma vez no próprio artigo.
+
 ## Organização e numeração de arquivos
 
 6. **Padronização dos arquivos de resumo, consolidação bibliográfica e autores citados:**
