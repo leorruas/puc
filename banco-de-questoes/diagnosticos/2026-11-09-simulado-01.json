@@ -99,7 +99,7 @@
       "disciplina": "Manipulação de dados SQL",
       "topico": "Ordem lógica do SELECT e relação com filtros e agregação",
       "prioridade": "alta",
-      "estado": "confirmada_por_erro",
+      "estado": "revisado_aguardando_reteste",
       "questoes_evidencia": [
         "SQL-012",
         "SQL-019"
@@ -123,7 +123,13 @@
         }
       ],
       "estrategia_reteste": "Aplicar nova questão com consulta real combinando WHERE, GROUP BY e HAVING, sem repetir SQL-012 ou SQL-019, após intercalar outras matérias.",
-      "criterio_de_superacao": "Dois acertos independentes sem consulta ao material, em questões diferentes que testem ordem lógica e agregação."
+      "criterio_de_superacao": "Dois acertos independentes sem consulta ao material, em questões diferentes que testem ordem lógica e agregação.",
+      "estado_antes_revisao": "confirmada_por_erro",
+      "revisao": {
+        "data": "2026-11-09",
+        "confirmacao": "usuario_informou_ter_revisado_os_artigos_recomendados",
+        "dominio_confirmado": false
+      }
     },
     {
       "id": "LAC-SQL-002",
@@ -131,7 +137,7 @@
       "disciplina": "Manipulação de dados SQL",
       "topico": "Curingas do operador LIKE",
       "prioridade": "media",
-      "estado": "confirmada_por_erro",
+      "estado": "revisado_aguardando_reteste",
       "questoes_evidencia": [
         "SQL-015"
       ],
@@ -146,7 +152,13 @@
         }
       ],
       "estrategia_reteste": "Propor caso novo com padrões como 'An_', 'Ana%' e '%a' e pedir quais valores correspondem.",
-      "criterio_de_superacao": "Dois acertos independentes sem consulta em padrões distintos."
+      "criterio_de_superacao": "Dois acertos independentes sem consulta em padrões distintos.",
+      "estado_antes_revisao": "confirmada_por_erro",
+      "revisao": {
+        "data": "2026-11-09",
+        "confirmacao": "usuario_informou_ter_revisado_os_artigos_recomendados",
+        "dominio_confirmado": false
+      }
     },
     {
       "id": "LAC-SQL-003",
@@ -154,7 +166,7 @@
       "disciplina": "Manipulação de dados SQL",
       "topico": "Categorias de comandos DDL, DML, DCL e TCL",
       "prioridade": "media",
-      "estado": "atencao_por_duvida_previa",
+      "estado": "revisado_aguardando_reteste",
       "questoes_evidencia": [
         "SQL-002"
       ],
@@ -177,7 +189,13 @@
         }
       ],
       "estrategia_reteste": "Cobrar classificação de comandos em cenário concreto, sem fornecer antecipadamente o significado das siglas.",
-      "criterio_de_superacao": "Acertar uma questão inédita sem apoio; exigir outra se houver hesitação."
+      "criterio_de_superacao": "Acertar uma questão inédita sem apoio; exigir outra se houver hesitação.",
+      "estado_antes_revisao": "atencao_por_duvida_previa",
+      "revisao": {
+        "data": "2026-11-09",
+        "confirmacao": "usuario_informou_ter_revisado_os_artigos_recomendados",
+        "dominio_confirmado": false
+      }
     },
     {
       "id": "LAC-AED-001",
@@ -185,7 +203,7 @@
       "disciplina": "Algoritmos e estruturas de dados",
       "topico": "Tabela hash, colisões e estratégias de tratamento",
       "prioridade": "alta",
-      "estado": "confirmada_por_erro_e_duvida",
+      "estado": "revisado_aguardando_reteste",
       "questoes_evidencia": [
         "AED-001 (versão apresentada em chat)"
       ],
@@ -204,7 +222,13 @@
         }
       ],
       "estrategia_reteste": "Usar questões inéditas sobre inserção de duas chaves diferentes no mesmo índice e técnicas de resolução.",
-      "criterio_de_superacao": "Dois acertos sem apoio em cenários distintos que exijam aplicar a resolução de colisões."
+      "criterio_de_superacao": "Dois acertos sem apoio em cenários distintos que exijam aplicar a resolução de colisões.",
+      "estado_antes_revisao": "confirmada_por_erro_e_duvida",
+      "revisao": {
+        "data": "2026-11-09",
+        "confirmacao": "usuario_informou_ter_revisado_os_artigos_recomendados",
+        "dominio_confirmado": false
+      }
     },
     {
       "id": "LAC-MD-001",
@@ -212,7 +236,7 @@
       "disciplina": "Modelagem de dados",
       "topico": "Primeira, segunda e terceira formas normais; dependência funcional parcial",
       "prioridade": "alta",
-      "estado": "confirmada_por_erro",
+      "estado": "revisado_aguardando_reteste",
       "questoes_evidencia": [
         "MD-002 (versão apresentada em chat)"
       ],
@@ -231,7 +255,13 @@
         }
       ],
       "estrategia_reteste": "Oferecer relações com chaves compostas e pedir identificar qual parte da chave determina cada atributo; usar item novo, não reapresentar apenas o gabarito.",
-      "criterio_de_superacao": "Dois acertos autônomos em exemplos distintos de normalização."
+      "criterio_de_superacao": "Dois acertos autônomos em exemplos distintos de normalização.",
+      "estado_antes_revisao": "confirmada_por_erro",
+      "revisao": {
+        "data": "2026-11-09",
+        "confirmacao": "usuario_informou_ter_revisado_os_artigos_recomendados",
+        "dominio_confirmado": false
+      }
     }
   ],
   "orientacoes_proximas_baterias": {
@@ -265,5 +295,19 @@
       "AED-001"
     ],
     "providencia": "Para novo simulado, usar IDs e conteúdo atuais e preservar o enunciado/versão ao registrar cada resposta."
-  }
+  },
+  "eventos": [
+    {
+      "data": "2026-11-09",
+      "tipo": "revisao_concluida_informada",
+      "lacunas": [
+        "LAC-SQL-001",
+        "LAC-SQL-002",
+        "LAC-SQL-003",
+        "LAC-AED-001",
+        "LAC-MD-001"
+      ],
+      "observacao": "Todos os temas da tabela de revisão foram estudados segundo relato do usuário; falta avaliar retenção com questões novas."
+    }
+  ]
 }
