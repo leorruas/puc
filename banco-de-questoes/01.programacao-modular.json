@@ -3,90 +3,2250 @@
     "id": "PM-001",
     "disciplina_id": "01",
     "disciplina": "Programação Modular",
-    "topico": "TAD, abstração e ocultamento de informação",
-    "artigo_origem": "03. Tipos abstratos de dados.md",
+    "topico": "Decomposição modular e limites cognitivos",
+    "artigo_origem": "01. Introdução à programação modular.md",
     "dificuldade": "medio",
-    "enunciado": "Em programação modular orientada a objetos em C#, um Tipo Abstrato de Dados (TAD) define uma estrutura pelos comportamentos e operações que ela suporta publicamente, e não pelos detalhes de sua representação física na memória. Considere uma classe `ContaBancaria` com saldo interno `decimal _saldo`. Para manter fielmente as propriedades de um TAD e garantir a integridade dos dados, qual diretriz de encapsulamento deve ser rigorosamente observada?",
+    "enunciado": "Na engenharia de software e na programação modular, qual é o principal objetivo da decomposição de um sistema complexo em módulos autônomos e bem delimitados?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Permitir leitura e escrita públicas diretas ao campo `_saldo`, confiando que os módulos consumidores farão as validações necessárias antes da alteração.",
+        "texto": "Permitir que o compilador elimine a verificação de tipos em runtime para acelerar a execução.",
         "correta": false,
-        "diagnostico": "Erro conceitual grave: quebra o encapsulamento e a garantia de invariantes ao vazar a representação interna para módulos externos."
+        "diagnostico": "Erro conceitual: compilação estática com verificação de tipos é reforçada pela modularidade, não eliminada."
       },
       {
         "letra": "B",
-        "texto": "Tornar o campo `_saldo` privado e expor apenas métodos com significado de negócio (como `Depositar` e `Sacar`) e propriedades somente-leitura, validando regras e invariantes no próprio TAD.",
+        "texto": "Reduzir a carga cognitiva do desenvolvedor (princípio de Miller: 7 +- 2 elementos), permitindo compreender, testar e manter cada parte isoladamente sem depender do todo simultâneo.",
         "correta": true,
-        "diagnostico": "Correto: o TAD encapsula estado e regras de transição válidas, preservando invariantes e ocultando detalhes de implementação."
+        "diagnostico": "Correto: a decomposição modular permite gerenciar a complexidade respeitando os limites da cognição humana."
       },
       {
         "letra": "C",
-        "texto": "Declarar `_saldo` como protegido (protected) para que qualquer classe externa instanciada possa alterar o saldo livremente em runtime sem usar métodos.",
+        "texto": "Obrigar o uso de variáveis globais para agilizar o compartilhamento de dados na memória RAM.",
         "correta": false,
-        "diagnostico": "Erro terminológico e conceitual: o modificador protected restringe o acesso à classe e suas subclasses, não a consumidores externos em geral, e ainda assim violaria o encapsulamento se permitisse mutação descontrolada."
+        "diagnostico": "Erro conceitual: variáveis globais quebram a modularidade ao gerar acoplamento espúrio e imprevisibilidade."
       },
       {
         "letra": "D",
-        "texto": "Converter `_saldo` em variável global estática compartilhada entre todos os módulos do programa para evitar custo de instanciação.",
+        "texto": "Evitar a divisão de tarefas em equipes ágeis, centralizando toda a lógica em um único arquivo de código-fonte monolítico.",
         "correta": false,
-        "diagnostico": "Erro conceitual: o uso de estado global compartilhado destrói a modularidade, gera acoplamento espúrio e elimina a identidade individual de instâncias de TAD."
+        "diagnostico": "Erro absurdo: modularização viabiliza o trabalho paralelo em equipe e a manutenibilidade do código."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Um TAD funciona como uma máquina de refrigerante: o usuário só interage com botões externos (interface pública) e não tem acesso direto à caixa de moedas ou ao compartimento mecânico (estado privado).",
-      "analise_correta": "A essência de um TAD é definir um contrato operacional público enquanto o estado interno e a implementação física ficam encapsulados. O objeto é o único guardião de suas invariantes.",
+      "modelo_mental": "Dividir um programa em módulos é como organizar uma oficina com gavetas identificadas: em vez de revirar uma pilha caótica de ferramentas, você abre apenas a gaveta necessária para aquele conserto específico.",
+      "analise_correta": "A modularização combate a explosão de complexidade ao dividir o sistema em subsistemas com alta coesão e baixo acoplamento.",
       "distratores": {
-        "A": "Deixar campos mutáveis públicos acopla módulos à estrutura física e permite estados inconsistentes (ex.: saldo negativo sem autorização de limite).",
-        "C": "O modificador protected não abre acesso a qualquer consumidor e herança inadequada para expor campos enfraquece invariantes.",
-        "D": "Variáveis globais introduzem acoplamento de conteúdo (o pior nível de acoplamento na engenharia de software)."
+        "A": "Erro conceitual: compilação estática com verificação de tipos é reforçada pela modularidade, não eliminada.",
+        "C": "Erro conceitual: variáveis globais quebram a modularidade ao gerar acoplamento espúrio e imprevisibilidade.",
+        "D": "Erro absurdo: modularização viabiliza o trabalho paralelo em equipe e a manutenibilidade do código."
       },
-      "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
+      "referencia_vault": "01. Programacao Modular/01. Introdução à programação modular.md"
     }
   },
   {
     "id": "PM-002",
     "disciplina_id": "01",
     "disciplina": "Programação Modular",
-    "topico": "Polimorfismo, dynamic dispatch e substituição de Liskov",
-    "artigo_origem": "17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md",
+    "topico": "Critérios de Meyer para modularidade",
+    "artigo_origem": "01. Introdução à programação modular.md",
     "dificuldade": "dificil",
-    "enunciado": "Considere o polimorfismo por sobreposição (*override*) em linguagens com despacho dinâmico (*dynamic dispatch*) como C#. Ao aplicar o Princípio de Substituição de Liskov (LSP), qual das seguintes alterações em uma subclasse `ContaSalario` derivada de `ContaCorrente` configura uma violação direta do LSP?",
+    "enunciado": "Segundo Bertrand Meyer em seu tratado sobre construção de software orientado a objetos, quais são os cinco critérios fundamentais para avaliar a modularidade de uma arquitetura?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Implementar uma sobreposição do método `Sacar(decimal valor)` que debita a taxa de manutenção padrão definida pela classe base sem alterar as pré-condições.",
-        "correta": false,
-        "diagnostico": "Não viola o LSP: a subclasse honra o contrato e as pré-condições da classe base."
+        "texto": "Decomponibilidade, componibilidade, compreensibilidade, continuidade e proteção modular.",
+        "correta": true,
+        "diagnostico": "Correto: os 5 critérios canônicos de modularidade estabelecidos por Meyer (1988/1997)."
       },
       {
         "letra": "B",
-        "texto": "Adicionar uma nova propriedade de leitura específica de `ContaSalario` como `CnpjEmpregador`, mantendo todos os comportamentos herdados inalterados.",
+        "texto": "Polimorfismo estático, herança múltipla, garbage collection, reflexão e compilação JIT.",
         "correta": false,
-        "diagnostico": "Não viola o LSP: extensão de propriedades sem quebra do comportamento esperado da base é permitida."
+        "diagnostico": "Erro taxonômico: esses itens são recursos de linguagens e runtimes, não critérios conceituais de modularidade de Meyer."
       },
       {
         "letra": "C",
-        "texto": "Sobrescrever o método `Sacar(decimal valor)` para lançar `NotSupportedException` quando chamado em fins de semana, endurecendo uma pré-condição que o cliente de `ContaCorrente` não esperava.",
-        "correta": true,
-        "diagnostico": "Correto: violação direta do LSP (fortalecimento de pré-condições na subclasse impede substituição transparente do tipo base pelo subtipo)."
+        "texto": "Normalização em 1FN, 2FN, 3FN, Boyce-Codd e chave primária composta.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina: essas são formas normais de modelagem de banco de dados relacional."
       },
       {
         "letra": "D",
-        "texto": "Utilizar a palavra-chave `override` em conjunto com a marcação `virtual` declarada no método da classe base.",
+        "texto": "Conexão TCP, enlace Ethernet, roteamento IP, encapsulamento e multiplexação.",
         "correta": false,
-        "diagnostico": "Mecanismo canônico da linguagem C# para despacho dinâmico, não representando violação arquitetural."
+        "diagnostico": "Erro de disciplina: esses são conceitos de arquitetura de redes de computadores."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Se algo parece um pato e faz quack como um pato, mas exige uma bateria em dias de chuva para não travar, ele não pode substituir um pato real sem quebrar as expectativas de quem lida com patos.",
-      "analise_correta": "O LSP estipula que objetos de um subtipo devem poder substituir objetos do supertipo sem violar a correção do programa. Subclasses não podem fortalecer pré-condições nem enfraquecer pós-condições.",
+      "modelo_mental": "Os critérios de Meyer são como normas de engenharia para peças de Lego: você deve poder separar em blocos (decomponibilidade), montar blocos novos (componibilidade), entender cada bloco sozinho (compreensibilidade), trocar um bloco sem quebrar o castelo inteiro (continuidade) e evitar que um defeito em um bloco destrua os outros (proteção).",
+      "analise_correta": "Meyer definiu esses 5 critérios para guiar o design de sistemas modulares verdadeiramente extensíveis e robustos.",
       "distratores": {
-        "A": "Manter ou flexibilizar o comportamento dentro do contrato da base preserva a substituibilidade.",
-        "B": "Adicionar novos métodos ou propriedades complementares é extensão legítima de herança.",
-        "D": "Virtual e override são palavras-chave de C# que viabilizam a vtable e o despacho dinâmico."
+        "B": "Erro taxonômico: esses itens são recursos de linguagens e runtimes, não critérios conceituais de modularidade de Meyer.",
+        "C": "Erro de disciplina: essas são formas normais de modelagem de banco de dados relacional.",
+        "D": "Erro de disciplina: esses são conceitos de arquitetura de redes de computadores."
       },
-      "referencia_vault": "01. Programacao Modular/17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md"
+      "referencia_vault": "01. Programacao Modular/01. Introdução à programação modular.md"
+    }
+  },
+  {
+    "id": "PM-003",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Efeitos colaterais e transparência referencial",
+    "artigo_origem": "02. Funções e procedimentos.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a diferença conceitual e semântica essencial entre um procedimento (procedure) e uma função pura (pure function)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Funções puras sempre alteram o estado de variáveis globais e de banco de dados; procedimentos nunca retornam valores e nunca produzem efeitos colaterais.",
+        "correta": false,
+        "diagnostico": "Erro inverso: funções puras evitam efeitos colaterais; procedimentos atuam via mutação de estado."
+      },
+      {
+        "letra": "B",
+        "texto": "Procedimentos executam sequências de comandos com objetivo primordial de produzir efeitos colaterais de estado; funções puras calculam e retornam um valor dependente exclusivamente de seus parâmetros, com transparência referencial.",
+        "correta": true,
+        "diagnostico": "Correto: procedimentos alteram estados; funções puras preservam a transparência referencial (mesma entrada = mesma saída)."
+      },
+      {
+        "letra": "C",
+        "texto": "Procedimentos são compilados em código de máquina; funções são interpretadas em JavaScript sem otimização.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: procedimentos e funções são compilados de forma idêntica pelo compilador de linguagens modernas como C#."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há nenhuma diferença técnica, tratando-se apenas de preferências estéticas de nomenclatura entre desenvolvedores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: a distinção entre computação orientada a estado (procedural) e transformações de valores (funcional) é basilar na ciência da computação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma função pura é como uma calculadora matemática: você digita 2 + 2 e ela sempre devolve 4 sem alterar nada na sua casa. Um procedimento é como apertar o botão de ligar a cafeteira: não te dá um número, mas altera o mundo real esquentando a água.",
+      "analise_correta": "Funções puras garantem determinismo, testabilidade e paralelização segura, enquanto procedimentos comandam mutações no sistema.",
+      "distratores": {
+        "A": "Erro inverso: funções puras evitam efeitos colaterais; procedimentos atuam via mutação de estado.",
+        "C": "Erro conceitual: procedimentos e funções são compilados de forma idêntica pelo compilador de linguagens modernas como C#.",
+        "D": "Erro conceitual grave: a distinção entre computação orientada a estado (procedural) e transformações de valores (funcional) é basilar na ciência da computação."
+      },
+      "referencia_vault": "01. Programacao Modular/02. Funções e procedimentos.md"
+    }
+  },
+  {
+    "id": "PM-004",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Passagem de parâmetros em C#",
+    "artigo_origem": "02. Funções e procedimentos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, o que ocorre internamente na memória quando uma variável do tipo primitivo int é passada para um método com o modificador ref em comparação com a passagem padrão sem modificador?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na passagem padrão, copia-se o valor contido na variável para a pilha do método chamado; com ref, passa-se o próprio endereço de memória da variável original, permitindo mutação direta.",
+        "correta": true,
+        "diagnostico": "Correto: por padrão tipos de valor são passados por cópia; o modificador ref passa a referência de memória (endereço)."
+      },
+      {
+        "letra": "B",
+        "texto": "Com ref, o runtime aloca o valor na heap gerenciada transformando o int compulsoriamente em um objeto da classe String.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: o modificador ref não realiza boxing em String nem aloca o tipo de valor na heap."
+      },
+      {
+        "letra": "C",
+        "texto": "Sem modificador, qualquer alteração dentro do método reflete automaticamente na variável original do chamador.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: a passagem por valor isola a variável original contra alterações feitas dentro do escopo do método."
+      },
+      {
+        "letra": "D",
+        "texto": "O modificador ref é apenas um comentário decorativo ignorado pelo compilador C# em modo Release.",
+        "correta": false,
+        "diagnostico": "Erro técnico: ref altera a assinatura da instrução IL (emissão de ponteiro gerenciado &)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Passagem por valor é como enviar uma fotocópia de uma folha de caderno: a pessoa pode rabiscar a cópia que o original fica intacto. Passagem por ref é entregar o próprio caderno original na mão da pessoa.",
+      "analise_correta": "C# diferencia passagem de tipos de valor por valor (cópia) e por referência explícita (ponteiro gerenciado via ref, out ou in).",
+      "distratores": {
+        "B": "Erro taxonômico: o modificador ref não realiza boxing em String nem aloca o tipo de valor na heap.",
+        "C": "Erro conceitual: a passagem por valor isola a variável original contra alterações feitas dentro do escopo do método.",
+        "D": "Erro técnico: ref altera a assinatura da instrução IL (emissão de ponteiro gerenciado &)."
+      },
+      "referencia_vault": "01. Programacao Modular/02. Funções e procedimentos.md"
+    }
+  },
+  {
+    "id": "PM-005",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Invariantes de classe e integridade de TAD",
+    "artigo_origem": "03. Tipos abstratos de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "O que caracteriza a invariante de uma classe em um Tipo Abstrato de Dados (TAD)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma condição ou regra de consistência de negócio que deve ser estritamente verdadeira em todo estado estável do objeto (após a conclusão do construtor e de qualquer método público).",
+        "correta": true,
+        "diagnostico": "Correto: a invariante é o contrato interno de sanidade que o objeto se compromete a manter intacto durante todo o seu ciclo de vida."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma variável global estática que nunca pode ter seu valor lido por nenhum módulo externo.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: confunde invariante de integridade com variável estática protegida."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma diretiva do compilador que impede a criação de mais de uma instância da classe na aplicação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: confunde invariante com o padrão Singleton de criação."
+      },
+      {
+        "letra": "D",
+        "texto": "Um método que é executado compulsoriamente a cada milissegundo pelo thread de segundo plano.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: invariantes são asserções lógicas de consistência, não timers de execução de tarefas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A invariante é como a regra biológica da temperatura do corpo humano: o corpo pode suar, tremer ou se alimentar, mas no final de qualquer ação ele precisa manter a temperatura em torno de 36,5°C para continuar vivo.",
+      "analise_correta": "O encapsulamento existe primordialmente para proteger as invariantes de um TAD contra corrupções causadas por clientes externos.",
+      "distratores": {
+        "B": "Erro conceitual: confunde invariante de integridade com variável estática protegida.",
+        "C": "Erro conceitual: confunde invariante com o padrão Singleton de criação.",
+        "D": "Erro conceitual: invariantes são asserções lógicas de consistência, não timers de execução de tarefas."
+      },
+      "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
+    }
+  },
+  {
+    "id": "PM-006",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Vazamento de representação em TADs",
+    "artigo_origem": "03. Tipos abstratos de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma classe C# Agenda que encapsula internamente uma coleção privada List de compromissos, qual implementação de propriedade ou método configura um clássico vazamento de representação (representation exposure)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Expor o método ObterCompromissos() devolvendo uma visão somente-leitura através de AsReadOnly().",
+        "correta": false,
+        "diagnostico": "Boa prática: expõe apenas uma visão somente-leitura, protegendo a coleção interna contra modificações externas."
+      },
+      {
+        "letra": "B",
+        "texto": "Expor uma propriedade pública que devolve a referência direta à lista interna mutável List.",
+        "correta": true,
+        "diagnostico": "Correto: entregar a referência da coleção privada permite que clientes externos façam Clear(), quebrando invariantes sem que a classe saiba."
+      },
+      {
+        "letra": "C",
+        "texto": "Expor o método Adicionar() que valida conflitos de horário antes de inserir o novo compromisso.",
+        "correta": false,
+        "diagnostico": "Comportamento correto de um TAD que protege o estado interno com validações."
+      },
+      {
+        "letra": "D",
+        "texto": "Declarar o campo interno com modificador private readonly.",
+        "correta": false,
+        "diagnostico": "Boa prática: protege a referência interna contra reatribuição acidental."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Entregar a lista privada mutável é como trancar a porta da frente da sua casa com senha eletrônica, mas entregar a chave mestra de todas as portas dos fundos para qualquer estranho na rua.",
+      "analise_correta": "Vazamento de representação ocorre quando referências a objetos mutáveis internos são devolvidas a clientes, permitindo quebrar invariantes sem passar pela API da classe.",
+      "distratores": {
+        "A": "Boa prática: expõe apenas uma visão somente-leitura, protegendo a coleção interna contra modificações externas.",
+        "C": "Comportamento correto de um TAD que protege o estado interno com validações.",
+        "D": "Boa prática: protege a referência interna contra reatribuição acidental."
+      },
+      "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
+    }
+  },
+  {
+    "id": "PM-007",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Acoplamento aferente vs eferente",
+    "artigo_origem": "04. Programação orientada a objetos e acoplamento.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na análise estrutural de acoplamento entre classes e módulos de software, qual é a distinção exata entre acoplamento aferente (Ca) e acoplamento eferente (Ce)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Acoplamento aferente mede quantos módulos externos dependem do módulo em questão; acoplamento eferente mede de quantos módulos externos o módulo em questão depende.",
+        "correta": true,
+        "diagnostico": "Correto: Ca (responsabilidade/centralidade: quem aponta para mim) vs. Ce (instabilidade/dependência: para quem eu aponto)."
+      },
+      {
+        "letra": "B",
+        "texto": "Acoplamento aferente é medido em megabytes de memória consumida; acoplamento eferente é medido em gigahertz da CPU.",
+        "correta": false,
+        "diagnostico": "Erro de categoria: acoplamento é métrica estrutural e relacional de design de software, não consumo de hardware."
+      },
+      {
+        "letra": "C",
+        "texto": "Acoplamento aferente só ocorre em herança de classes; acoplamento eferente só ocorre em polimorfismo de interface.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: ambos aplicam-se a qualquer tipo de dependência de código (composição, parâmetros, retorno, herança)."
+      },
+      {
+        "letra": "D",
+        "texto": "Acoplamento aferente mede o número de bugs de sintaxe; acoplamento eferente mede o tempo de compilação.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: métricas de qualidade de design não se confundem com contagem de erros de compilação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma celebridade: ela tem milhões de seguidores (alto acoplamento aferente - muita gente depende do que ela fala), mas ela segue apenas 3 perfis (baixo acoplamento eferente - ela depende de quase ninguém para viver).",
+      "analise_correta": "As métricas de Robert C. Martin definem estabilidade com base no equilíbrio entre quem depende do módulo e de quem ele depende.",
+      "distratores": {
+        "B": "Erro de categoria: acoplamento é métrica estrutural e relacional de design de software, não consumo de hardware.",
+        "C": "Erro conceitual: ambos aplicam-se a qualquer tipo de dependência de código (composição, parâmetros, retorno, herança).",
+        "D": "Erro taxonômico: métricas de qualidade de design não se confundem com contagem de erros de compilação."
+      },
+      "referencia_vault": "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md"
+    }
+  },
+  {
+    "id": "PM-008",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Acoplamento de conteúdo vs acoplamento de dados",
+    "artigo_origem": "04. Programação orientada a objetos e acoplamento.md",
+    "dificuldade": "medio",
+    "enunciado": "Na taxonomia clássica de tipos de acoplamento (Myers/Page-Jones), qual das seguintes opções representa o tipo de acoplamento mais danoso (pior nível) e qual o mais desejável?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O pior é o acoplamento de dados; o mais desejável é o acoplamento de conteúdo.",
+        "correta": false,
+        "diagnostico": "Erro inverso: acoplamento de dados é o mais limpo e saudável; conteúdo é o pior."
+      },
+      {
+        "letra": "B",
+        "texto": "O pior é o acoplamento de conteúdo (um módulo modifica diretamente dados internos de outro); o mais desejável é o acoplamento de dados (módulos comunicam-se passando apenas parâmetros atômicos necessários).",
+        "correta": true,
+        "diagnostico": "Correto: acoplamento de conteúdo destrói o encapsulamento, enquanto acoplamento de dados promove modularidade estrita."
+      },
+      {
+        "letra": "C",
+        "texto": "O pior é o acoplamento por interface; o mais desejável é o acoplamento por herança múltipla irrestrita.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: acoplamento por interface abstrata é excelente e recomendado na arquitetura de software."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os tipos de acoplamento têm o mesmo impacto na manutenibilidade de um sistema.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o espectro de acoplamento é amplamente documentado como fator crítico na manutenibilidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Acoplamento de conteúdo é como um vizinho entrar na sua cozinha sem bater e mudar os ingredientes da sua receita enquanto você cozinha. Acoplamento de dados é ele tocar a campainha e pedir educadamente uma xícara de açúcar.",
+      "analise_correta": "O acoplamento deve ser minimizado, preferindo passagens de dados explícitas e desacoplamento via contratos.",
+      "distratores": {
+        "A": "Erro inverso: acoplamento de dados é o mais limpo e saudável; conteúdo é o pior.",
+        "C": "Erro conceitual: acoplamento por interface abstrata é excelente e recomendado na arquitetura de software.",
+        "D": "Erro conceitual: o espectro de acoplamento é amplamente documentado como fator crítico na manutenibilidade."
+      },
+      "referencia_vault": "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md"
+    }
+  },
+  {
+    "id": "PM-009",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Fatores externos de Bertrand Meyer",
+    "artigo_origem": "05. Fatores externos de qualidade de software.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo de qualidade de Bertrand Meyer, fatores externos são aqueles perceptíveis diretamente pelos usuários finais do software. Qual dos seguintes pares representa exclusivamente fatores externos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Corretitude e Robustez.",
+        "correta": true,
+        "diagnostico": "Correto: corretitude (fazer exatamente o que foi especificado) e robustez (comportamento adequado sob condições anormais) são qualidades externas primordiais."
+      },
+      {
+        "letra": "B",
+        "texto": "Coesão e Baixo Acoplamento.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: coesão e acoplamento são fatores internos, perceptíveis apenas pelos desenvolvedores que mantêm o código."
+      },
+      {
+        "letra": "C",
+        "texto": "Complexidade Ciclomática e Profundidade da Árvore de Herança.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: métricas de código (métrica de McCabe e DIT) são fatores internos."
+      },
+      {
+        "letra": "D",
+        "texto": "Indentação de código e comentários no cabeçalho.",
+        "correta": false,
+        "diagnostico": "Erro de estilo: formatação de texto e comentários são propriedades internas do código-fonte."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Fatores externos são como a segurança dos freios e a economia de combustível de um carro (o motorista sente no uso); fatores internos são a disposição ordenada dos cabos dentro do motor (só o mecânico vê na revisão).",
+      "analise_correta": "Meyer separa rigorosamente qualidades externas (que justificam o software) e internas (que viabilizam as externas ao longo do tempo).",
+      "distratores": {
+        "B": "Erro conceitual: coesão e acoplamento são fatores internos, perceptíveis apenas pelos desenvolvedores que mantêm o código.",
+        "C": "Erro conceitual: métricas de código (métrica de McCabe e DIT) são fatores internos.",
+        "D": "Erro de estilo: formatação de texto e comentários são propriedades internas do código-fonte."
+      },
+      "referencia_vault": "01. Programacao Modular/05. Fatores externos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-010",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Corretitude vs. Robustez",
+    "artigo_origem": "05. Fatores externos de qualidade de software.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na formalização de Bertrand Meyer, como se diferenciam com precisão matemática os conceitos de Corretitude e Robustez?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Corretitude é a capacidade do software funcionar sob hardware defeituoso; Robustez é a conformidade formal com o manual de design visual.",
+        "correta": false,
+        "diagnostico": "Erro inverso e conceitual sobre especificações e hardware."
+      },
+      {
+        "letra": "B",
+        "texto": "Corretitude é a capacidade de executar exatamente de acordo com a especificação formal sob condições normais previstas; Robustez é a capacidade de reagir adequadamente quando ocorrem condições anormais fora da especificação.",
+        "correta": true,
+        "diagnostico": "Correto: corretitude trata do domínio das entradas especificadas; robustez trata de entradas imprevistas e falhas de ambiente."
+      },
+      {
+        "letra": "C",
+        "texto": "Corretitude só se aplica a linguagens dinâmicas; Robustez só se aplica a linguagens estáticas compiladas.",
+        "correta": false,
+        "diagnostico": "Erro de categoria: conceitos teóricos de engenharia de software independentes de tipagem da linguagem."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas são idênticas e avaliadas unicamente pelo tempo médio de resposta de ping em rede.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina: métrica de rede não define correção lógica de software."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Corretitude é um avião decolar e pousar perfeitamente no dia de céu claro previsto no plano de voo; Robustez é o piloto conseguir planar e pousar com segurança mesmo se um raio atingir uma asa no meio de uma tempestade imprevista.",
+      "analise_correta": "A corretitude exige prova ou teste de aderência contratual; a robustez exige tratamento de exceções, tolerância a falhas e degradação graciosa.",
+      "distratores": {
+        "A": "Erro inverso e conceitual sobre especificações e hardware.",
+        "C": "Erro de categoria: conceitos teóricos de engenharia de software independentes de tipagem da linguagem.",
+        "D": "Erro de disciplina: métrica de rede não define correção lógica de software."
+      },
+      "referencia_vault": "01. Programacao Modular/05. Fatores externos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-011",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Modularidade como viabilizadora de fatores internos",
+    "artigo_origem": "06. Fatores internos de qualidade de software.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a relação fundamental entre os fatores internos de qualidade (como legibilidade, modularidade e testabilidade) e os fatores externos de qualidade de um sistema?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Fatores internos são irrelevantes em projetos comerciais, pois clientes só pagam por interfaces gráficas atraentes.",
+        "correta": false,
+        "diagnostico": "Erro mercadológico grave: código interno de má qualidade torna a evolução inviável e gera falhas externas constantes."
+      },
+      {
+        "letra": "B",
+        "texto": "Fatores internos constituem o meio essencial pelo qual os desenvolvedores conseguem alcançar e sustentar os fatores externos (manutenibilidade, extensibilidade e robustez) a médio e longo prazo.",
+        "correta": true,
+        "diagnostico": "Correto: qualidades internas excelentes são a fundação estrutural para a entrega de qualidades externas duradouras."
+      },
+      {
+        "letra": "C",
+        "texto": "Fatores internos reduzem a performance de execução em runtime porque o processador precisa ler comentários no disco.",
+        "correta": false,
+        "diagnostico": "Erro técnico grosseiro: compiladores removem comentários e otimizam código; legibilidade interna não degrada CPU."
+      },
+      {
+        "letra": "D",
+        "texto": "Fatores internos eliminam a necessidade de testes de regressão automatizados.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: código modular facilita testes automatizados, nunca os elimina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você construir uma casa com tijolos tortos e canos furados escondidos dentro da parede (fatores internos ruins), a pintura bonita da fachada (fator externo) vai desmoronar na primeira chuva forte.",
+      "analise_correta": "A qualidade interna garante que o software não se transforme em uma massa rígida, frágil e imóvel com o passar do tempo.",
+      "distratores": {
+        "A": "Erro mercadológico grave: código interno de má qualidade torna a evolução inviável e gera falhas externas constantes.",
+        "C": "Erro técnico grosseiro: compiladores removem comentários e otimizam código; legibilidade interna não degrada CPU.",
+        "D": "Erro conceitual: código modular facilita testes automatizados, nunca os elimina."
+      },
+      "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-012",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Extensibilidade e Reusabilidade",
+    "artigo_origem": "06. Fatores internos de qualidade de software.md",
+    "dificuldade": "medio",
+    "enunciado": "Dentre os fatores internos descritos na engenharia de software, o que distingue o conceito de Reusabilidade da Extensibilidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Reusabilidade é a capacidade de usar módulos em aplicações distintas para as quais não foram originalmente concebidos; Extensibilidade é a facilidade de adaptar o software a mudanças nas suas próprias especificações.",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica de Meyer entre reaproveitar blocos em novos contextos (reuso) vs. evoluir o mesmo sistema perante novos requisitos (extensão)."
+      },
+      {
+        "letra": "B",
+        "texto": "Reusabilidade exige sempre herança múltipla; Extensibilidade só pode ser atingida com código estático procedural.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: reuso por composição é superior à herança e código procedural prejudica a extensibilidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Reusabilidade mede o consumo de memória RAM; Extensibilidade mede o tamanho do disco rígido.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: confusão entre métricas arquiteturais e dimensões de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há distinção, pois ambos referem-se à velocidade de inicialização do executável.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: velocidade de inicialização é tempo de boot/desempenho, não atributos de design interno."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Reusabilidade é criar uma roda padrão que serve tanto em um carrinho de bebê quanto em um cortador de grama. Extensibilidade é projetar o chassi do carro de modo que você possa acoplar um bagageiro no teto sem precisar serrar a lataria.",
+      "analise_correta": "Módulos modulares de alta coesão possibilitam alto reuso em novas aplicações e fácil extensão através de herança e polimorfismo.",
+      "distratores": {
+        "B": "Erro conceitual: reuso por composição é superior à herança e código procedural prejudica a extensibilidade.",
+        "C": "Erro taxonômico: confusão entre métricas arquiteturais e dimensões de hardware.",
+        "D": "Erro conceitual: velocidade de inicialização é tempo de boot/desempenho, não atributos de design interno."
+      },
+      "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-013",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Estado e comportamento em POO",
+    "artigo_origem": "07. Atributos e métodos (classes, objetos e definição de membros).md",
+    "dificuldade": "facil",
+    "enunciado": "Em programação orientada a objetos em C#, qual é o papel desempenhado pelos atributos (ou campos de instância) e pelos métodos dentro de uma definição de classe?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Atributos representam o estado (dados estruturais) mantido por cada objeto instanciado; métodos representam o comportamento (operações executáveis que manipulam ou consultam esse estado).",
+        "correta": true,
+        "diagnostico": "Correto: uma classe une estado (atributos) e comportamento (métodos) sob um mesmo encapsulamento semântico."
+      },
+      {
+        "letra": "B",
+        "texto": "Atributos definem algoritmos de criptografia; métodos servem exclusivamente para declarar variáveis na pilha de chamadas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: atributos armazenam dados da instância, não são algoritmos executáveis."
+      },
+      {
+        "letra": "C",
+        "texto": "Atributos são compartilhados obrigatoriamente por todos os processos do sistema operacional; métodos são estáticos por padrão.",
+        "correta": false,
+        "diagnostico": "Erro de escopo: atributos de instância pertencem a cada objeto específico na heap do processo."
+      },
+      {
+        "letra": "D",
+        "texto": "Atributos só podem armazenar texto; métodos só podem retornar números decimais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e de tipos: campos aceitam qualquer tipo suportado pelo sistema de tipos da linguagem."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um cachorro tem características como raça, cor e idade (atributos/estado) e sabe latir, correr e abanar o rabo (métodos/comportamento).",
+      "analise_correta": "A união indissociável de dados e rotinas que operam sobre esses dados em uma mesma entidade é a definição fundacional de objeto.",
+      "distratores": {
+        "B": "Erro conceitual: atributos armazenam dados da instância, não são algoritmos executáveis.",
+        "C": "Erro de escopo: atributos de instância pertencem a cada objeto específico na heap do processo.",
+        "D": "Erro conceitual e de tipos: campos aceitam qualquer tipo suportado pelo sistema de tipos da linguagem."
+      },
+      "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
+    }
+  },
+  {
+    "id": "PM-014",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Alocação de objetos e referências em C#",
+    "artigo_origem": "07. Atributos e métodos (classes, objetos e definição de membros).md",
+    "dificuldade": "medio",
+    "enunciado": "Considere o código C#: `Conta c1 = new Conta(); Conta c2 = c1; c2.Saldo = 100;`. O que ocorre com o saldo acessado através da variável `c1` e por qual razão?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`c1.Saldo` permanece zero, pois a atribuição `c2 = c1` cria uma cópia profunda de todos os dados do objeto.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: atribuição de variáveis de referência copia apenas o ponteiro/endereço, não o objeto na heap."
+      },
+      {
+        "letra": "B",
+        "texto": "`c1.Saldo` passa a valer 100, pois `Conta` é um tipo de referência (classe), fazendo com que `c1` e `c2` apontem para a mesmíssima instância alocada na memória heap.",
+        "correta": true,
+        "diagnostico": "Correto: ambas as variáveis na stack contêm o mesmo endereço de memória apontando para o objeto na heap gerenciada."
+      },
+      {
+        "letra": "C",
+        "texto": "O compilador emite um erro de compilação porque em C# é proibido ter duas variáveis referenciando o mesmo objeto.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: aliasing de referências é comportamento nativo e padrão de linguagens orientadas a objetos."
+      },
+      {
+        "letra": "D",
+        "texto": "Ocorre uma violação de acesso à memória (NullReferenceException) durante a atribuição em c2.",
+        "correta": false,
+        "diagnostico": "Erro de execução: `c1` foi instanciado com `new`, logo a referência é válida e não nula."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como duas pessoas segurando cópias da mesma chave da mesma casa: se uma pessoa entra e pinta a sala de azul (`c2.Saldo = 100`), quando a outra entrar na casa com a sua chave (`c1`), verá a sala azul.",
+      "analise_correta": "Classes são tipos por referência alocados na heap gerenciada; variáveis locais armazenam referências que podem compartilhar o mesmo objeto.",
+      "distratores": {
+        "A": "Erro conceitual: atribuição de variáveis de referência copia apenas o ponteiro/endereço, não o objeto na heap.",
+        "C": "Erro conceitual: aliasing de referências é comportamento nativo e padrão de linguagens orientadas a objetos.",
+        "D": "Erro de execução: `c1` foi instanciado com `new`, logo a referência é válida e não nula."
+      },
+      "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
+    }
+  },
+  {
+    "id": "PM-015",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Papel do construtor na garantia de invariantes",
+    "artigo_origem": "08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+    "dificuldade": "medio",
+    "enunciado": "Por que o construtor é considerado o guardião inicial das invariantes de um objeto na programação modular?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o construtor é o único local onde é permitido declarar comandos if e loops while.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: estruturas de controle condicionais e de repetição podem ser utilizadas em qualquer método."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque o construtor garante que nenhum objeto seja colocado em uso no sistema em um estado inicial inválido, incompleto ou inconsistente.",
+        "correta": true,
+        "diagnostico": "Correto: o papel primordial do construtor é estabelecer o estado válido inicial exigido pelas invariantes da classe."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o construtor impede que a coleta de lixo desalavanque o objeto após o encerramento do programa.",
+        "correta": false,
+        "diagnostico": "Erro técnico: gerenciamento de ciclo de vida e coleta de lixo são funções do Garbage Collector do runtime."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o construtor compila o código C# diretamente em instruções binárias do microprocessador.",
+        "correta": false,
+        "diagnostico": "Erro de arquitetura: compilação é tarefa do compilador Roslyn e do JIT do .NET."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O construtor é o controle de qualidade na saída da fábrica de automóveis: o carro só sai para a concessionária se o volante, os freios e o motor estiverem instalados e funcionando perfeitamente.",
+      "analise_correta": "Ao exigir parâmetros mandatórios e validar regras no construtor, eliminam-se objetos anêmicos e estados inconsistentes.",
+      "distratores": {
+        "A": "Erro conceitual: estruturas de controle condicionais e de repetição podem ser utilizadas em qualquer método.",
+        "C": "Erro técnico: gerenciamento de ciclo de vida e coleta de lixo são funções do Garbage Collector do runtime.",
+        "D": "Erro de arquitetura: compilação é tarefa do compilador Roslyn e do JIT do .NET."
+      },
+      "referencia_vault": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-016",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Sobrecarga de construtores e a cláusula : this()",
+    "artigo_origem": "08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, qual é a melhor prática ao implementar sobrecarga de construtores (*constructor chaining*) utilizando a sintaxe `: this(...)`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Duplicar todo o código de validação em cada um dos construtores sobrecarregados para garantir redundância de segurança.",
+        "correta": false,
+        "diagnostico": "Erro de design: duplicação de validações viola o princípio DRY (Don't Repeat Yourself) e gera risco de divergência."
+      },
+      {
+        "letra": "B",
+        "texto": "Fazer com que construtores secundários (com menos parâmetros) deleguem a inicialização para o construtor principal canônico via `: this(...)`, centralizando as validações de invariantes em um único ponto.",
+        "correta": true,
+        "diagnostico": "Correto: o encadeamento de construtores via `: this(...)` centraliza as regras no construtor mais completo."
+      },
+      {
+        "letra": "C",
+        "texto": "Utilizar `: this()` apenas para chamar métodos privados estáticos da classe ancestral.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe e semântica: `: this(...)` invoca construtores da própria instância, não métodos estáticos."
+      },
+      {
+        "letra": "D",
+        "texto": "Declarar todos os construtores com visibilidade privada para que a classe não possa ser instanciada nem por ela mesma.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: construtores puramente privados sem fábricas públicas impedem qualquer uso da classe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O construtor canônico é a receita completa do bolo; os construtores sobrecarregados são atalhos para quem não quer escolher tudo: eles usam valores padrão pré-definidos e chamam a receita principal.",
+      "analise_correta": "Delegar para um construtor centralizado evita inconsistências e garante que nenhuma regra de validação seja esquecida em sobrecargas.",
+      "distratores": {
+        "A": "Erro de design: duplicação de validações viola o princípio DRY (Don't Repeat Yourself) e gera risco de divergência.",
+        "C": "Erro de sintaxe e semântica: `: this(...)` invoca construtores da própria instância, não métodos estáticos.",
+        "D": "Erro conceitual: construtores puramente privados sem fábricas públicas impedem qualquer uso da classe."
+      },
+      "referencia_vault": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-017",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Membros estáticos vs. de instância",
+    "artigo_origem": "09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a diferença fundamental entre um atributo de instância e um atributo estático (`static`) em uma classe C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Atributos de instância pertencem e são replicados para cada objeto criado; atributos estáticos pertencem à própria classe e possuem um único espaço de armazenamento na memória compartilhado por todas as instâncias.",
+        "correta": true,
+        "diagnostico": "Correto: o modificador `static` vincula o membro ao tipo (armazenado na memória do domínio de aplicação) e não a instâncias individuais."
+      },
+      {
+        "letra": "B",
+        "texto": "Atributos estáticos só podem armazenar números negativos; atributos de instância armazenam cadeias de texto.",
+        "correta": false,
+        "diagnostico": "Erro conceitual absurdo: tipos de dados suportados são idênticos em ambos os tipos de membros."
+      },
+      {
+        "letra": "C",
+        "texto": "Atributos estáticos são destruídos assim que um método qualquer termina sua execução.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: variáveis locais da stack morrem ao final do método; atributos estáticos persistem enquanto o domínio de aplicação viver."
+      },
+      {
+        "letra": "D",
+        "texto": "Atributos de instância podem ser acessados diretamente sem instanciar a classe via `Classe.Atributo`.",
+        "correta": false,
+        "diagnostico": "Erro inverso: acesso direto pelo nome da classe é a característica exclusiva de membros estáticos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um atributo de instância é o RG de cada cidadão (cada pessoa tem o seu cartão físico). Um atributo estático é o relógio público na praça da cidade: existe apenas um e todos olham para o mesmo marcador.",
+      "analise_correta": "Campos estáticos representam estado global compartilhado e devem ser usados com extrema parcimônia para evitar acoplamento oculto e problemas de concorrência.",
+      "distratores": {
+        "B": "Erro conceitual absurdo: tipos de dados suportados são idênticos em ambos os tipos de membros.",
+        "C": "Erro taxonômico: variáveis locais da stack morrem ao final do método; atributos estáticos persistem enquanto o domínio de aplicação viver.",
+        "D": "Erro inverso: acesso direto pelo nome da classe é a característica exclusiva de membros estáticos."
+      },
+      "referencia_vault": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-018",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Propriedades estáticas e validação global",
+    "artigo_origem": "09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao utilizar uma propriedade estática com acessores `get` e `set` para gerenciar uma configuração global de sistema, qual risco arquitetural deve ser considerado pelo projetista de software?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O compilador C# emitirá uma exceção de compilação em tempo de execução.",
+        "correta": false,
+        "diagnostico": "Erro de terminologia: compilador opera em tempo de compilação, não tempo de execução."
+      },
+      {
+        "letra": "B",
+        "texto": "Introduzir estado mutável compartilhado globalmente, que prejudica a testabilidade (testes paralelos interferindo uns nos outros) e introduz acoplamento de ambiente indesejado.",
+        "correta": true,
+        "diagnostico": "Correto: estado mutável global compartilhado dificulta testes unitários isolados e cria dependências invisíveis."
+      },
+      {
+        "letra": "C",
+        "texto": "Propriedades estáticas não permitem execução de código de validação dentro de blocos set.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: propriedades estáticas suportam blocos completos de lógica e validação em get e set."
+      },
+      {
+        "letra": "D",
+        "texto": "O consumo de banda da placa de rede será multiplicado exponencialmente.",
+        "correta": false,
+        "diagnostico": "Erro de categoria: consumo de memória local estática não se comunica espontaneamente com a placa de rede."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um estado global mutável é como um quadro de avisos comunitário em uma república de estudantes onde qualquer um pode rabiscar o recado do outro a qualquer hora: ninguém tem certeza de quem alterou o que e quando.",
+      "analise_correta": "Prefira injeção de dependências e objetos de configuração imutáveis em vez de classes estáticas com estado mutável.",
+      "distratores": {
+        "A": "Erro de terminologia: compilador opera em tempo de compilação, não tempo de execução.",
+        "C": "Erro conceitual: propriedades estáticas suportam blocos completos de lógica e validação em get e set.",
+        "D": "Erro de categoria: consumo de memória local estática não se comunica espontaneamente com a placa de rede."
+      },
+      "referencia_vault": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-019",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Gerenciamento de memória gerenciada e o padrão IDisposable",
+    "artigo_origem": "10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
+    "dificuldade": "dificil",
+    "enunciado": "No ecossistema .NET em C#, qual é a recomendação canônica para liberação determinística de recursos não gerenciados (como handles de arquivos, sockets de rede e conexões de banco de dados)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Confiar exclusivamente no finalizador (`~Classe()`), pois ele é executado imediatamente no exato instante em que o objeto sai de escopo.",
+        "correta": false,
+        "diagnostico": "Erro técnico grave: finalizadores são executados de forma não determinística em uma thread secundária de baixa prioridade pelo GC."
+      },
+      {
+        "letra": "B",
+        "texto": "Implementar a interface `IDisposable` com o padrão Dispose e consumir o objeto por meio do bloco `using`, garantindo liberação determinística mesmo em caso de exceções.",
+        "correta": true,
+        "diagnostico": "Correto: a interface IDisposable com a instrução using assegura chamada determinística ao método Dispose() via bloco try-finally gerado pelo compilador."
+      },
+      {
+        "letra": "C",
+        "texto": "Reiniciar a máquina virtual do sistema operacional a cada requisição de cliente para forçar o descarte.",
+        "correta": false,
+        "diagnostico": "Erro absurdo: reinicialização do sistema destruiria a disponibilidade de qualquer aplicação comercial."
+      },
+      {
+        "letra": "D",
+        "texto": "Desativar o coletor de lixo (Garbage Collector) permanentemente através de diretivas de compilação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: desativar o GC causaria exaustão rápida de memória (Memory Leak generalizado)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O GC é como a equipe de limpeza pública que passa na rua em horários indeterminados para recolher o lixo reciclável (memória gerenciada). O Dispose do using é você fechar a torneira de água imediatamente após lavar as mãos para não inundar o banheiro (recurso não gerenciado).",
+      "analise_correta": "Recursos não gerenciados devem ser liberados de forma determinística via IDisposable/using para evitar bloqueios e exaustão de descritores no sistema operacional.",
+      "distratores": {
+        "A": "Erro técnico grave: finalizadores são executados de forma não determinística em uma thread secundária de baixa prioridade pelo GC.",
+        "C": "Erro absurdo: reinicialização do sistema destruiria a disponibilidade de qualquer aplicação comercial.",
+        "D": "Erro conceitual: desativar o GC causaria exaustão rápida de memória (Memory Leak generalizado)."
+      },
+      "referencia_vault": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md"
+    }
+  },
+  {
+    "id": "PM-020",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Funcionamento do Garbage Collector por gerações",
+    "artigo_origem": "10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
+    "dificuldade": "dificil",
+    "enunciado": "Como o Garbage Collector (GC) do .NET organiza os objetos na memória heap gerenciada para otimizar o desempenho de coleta?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ele organiza os objetos em três gerações (Geração 0 para objetos recém-alocados e de vida curta, Geração 1 como zona de transição e Geração 2 para objetos de vida longa).",
+        "correta": true,
+        "diagnostico": "Correto: a hipótese geracional estabelece que a grande maioria dos objetos morre jovem (Geração 0 é limpa rapidamente e com alta frequência)."
+      },
+      {
+        "letra": "B",
+        "texto": "Ele aloca todos os objetos em um disco rígido externo particionado em setores FAT32.",
+        "correta": false,
+        "diagnostico": "Erro de hardware: a heap gerenciada reside na memória RAM volátil do processo."
+      },
+      {
+        "letra": "C",
+        "texto": "Ele utiliza contadores manuais de referência que travam a CPU em todas as atribuições de variáveis.",
+        "correta": false,
+        "diagnostico": "Erro de tecnologia: contadores de referência (ARC) são usados em outros ambientes (como Swift/Objective-C), não no .NET com Mark-and-Sweep geracional."
+      },
+      {
+        "letra": "D",
+        "texto": "Ele realiza a varredura e realocação completa de 100% da memória RAM a cada instrução aritmética executada.",
+        "correta": false,
+        "diagnostico": "Erro de escala: varreduras completas (Gen 2 / Full GC) são raras e custosas, ocorrendo apenas quando necessário."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na triagem de cartas de correspondência: a caixa de entrada imediata (Gen 0) é checada toda hora para descartar panfletos inúteis rapidamente. Documentos importantes que sobrevivem a várias checagens vão para o arquivo definitivo do cofre (Gen 2), que só é reorganizado uma vez por ano.",
+      "analise_correta": "O GC geracional do .NET baseia-se na constatação empírica de que novos objetos têm ciclos de vida curtos, tornando as coletas de Gen 0 ultrarrápidas.",
+      "distratores": {
+        "B": "Erro de hardware: a heap gerenciada reside na memória RAM volátil do processo.",
+        "C": "Erro de tecnologia: contadores de referência (ARC) são usados em outros ambientes (como Swift/Objective-C), não no .NET com Mark-and-Sweep geracional.",
+        "D": "Erro de escala: varreduras completas (Gen 2 / Full GC) são raras e custosas, ocorrendo apenas quando necessário."
+      },
+      "referencia_vault": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md"
+    }
+  },
+  {
+    "id": "PM-021",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Information Hiding de David Parnas",
+    "artigo_origem": "11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
+    "dificuldade": "dificil",
+    "enunciado": "David Parnas (1972) formulou o princípio de ocultamento de informação (Information Hiding). Qual é o critério de decomposição de módulos preconizado por Parnas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Decompor o sistema com base na sequência cronológica dos passos do fluxograma de processamento.",
+        "correta": false,
+        "diagnostico": "Erro histórico e conceitual: decomposição por etapas cronológicas é o modelo clássico procedural que Parnas comprovou ser frágil a mudanças."
+      },
+      {
+        "letra": "B",
+        "texto": "Cada módulo deve encapsular e ocultar uma decisão de design difícil ou propensa a mudanças (como estrutura de dados interna, formato de arquivo ou algoritmo específico), expondo apenas uma interface estável.",
+        "correta": true,
+        "diagnostico": "Correto: o princípio de Parnas postula que segredos de design que podem mudar devem ser confinados dentro de módulos independentes."
+      },
+      {
+        "letra": "C",
+        "texto": "Colocar todo o código em um único arquivo para que o compilador oculte os símbolos dos invasores de rede.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico absurdo: compilação monolítica não tem relação com o princípio arquitetural de Parnas."
+      },
+      {
+        "letra": "D",
+        "texto": "Ocultar o código-fonte de modo que nem a equipe de desenvolvimento saiba quais métodos existem.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: information hiding refere-se a interfaces públicas claras ocultando detalhes internos dos consumidores de código, não ofuscação de equipe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma tomada elétrica na parede: o segredo de como a fiação passa pelo tijolo e qual usina gerou a energia fica oculto atrás do espelho; você só precisa do padrão estável de 3 pinos para ligar seu aparelho.",
+      "analise_correta": "Information hiding isola o impacto de mudanças futuras: se a estrutura interna mudar, nenhum cliente quebrado precisará ser reescrito.",
+      "distratores": {
+        "A": "Erro histórico e conceitual: decomposição por etapas cronológicas é o modelo clássico procedural que Parnas comprovou ser frágil a mudanças.",
+        "C": "Erro taxonômico absurdo: compilação monolítica não tem relação com o princípio arquitetural de Parnas.",
+        "D": "Erro conceitual: information hiding refere-se a interfaces públicas claras ocultando detalhes internos dos consumidores de código, não ofuscação de equipe."
+      },
+      "referencia_vault": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-022",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Encapsulamento vs. Information Hiding",
+    "artigo_origem": "11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
+    "dificuldade": "dificil",
+    "enunciado": "Embora frequentemente usados como sinônimos no jargão cotidiano, qual é a distinção teórica precisa entre Encapsulamento e Ocultamento de Informação (Information Hiding)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Encapsulamento é o mecanismo sintático da linguagem que agrupa dados e métodos e controla visibilidade; Ocultamento de Informação é o princípio arquitetural e heurística de design sobre quais decisões devem ser isoladas.",
+        "correta": true,
+        "diagnostico": "Correto: encapsulamento é o invólucro/mecanismo (técnica de empacotar e proteger membros); information hiding é a estratégia de design que orienta o que esconder."
+      },
+      {
+        "letra": "B",
+        "texto": "Encapsulamento só existe em C++; Information Hiding só existe em bancos de dados relacionais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e geográfico de linguagens."
+      },
+      {
+        "letra": "C",
+        "texto": "Encapsulamento torna todo o código público; Information Hiding impede a compilação do executável.",
+        "correta": false,
+        "diagnostico": "Erro inverso e absurdo."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há distinção teórica nem prática em nenhum livro clássico de computação.",
+        "correta": false,
+        "diagnostico": "Erro histórico: autores como Booch, Meyer e Parnas explicitam a diferença entre técnica de empacotamento e estratégia de isolamento de volatilidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Encapsulamento é a caixa de remédios com tampa plástica e trava de segurança (o mecanismo); Information Hiding é a decisão do médico de colocar a fórmula química complexa dentro da cápsula para você engolir sem precisar entender os compostos moleculares (a estratégia).",
+      "analise_correta": "Encapsulamento provê as ferramentas de barreira (como modificadores de acesso), enquanto information hiding determina onde essas barreiras devem ser erguidas.",
+      "distratores": {
+        "B": "Erro conceitual e geográfico de linguagens.",
+        "C": "Erro inverso e absurdo.",
+        "D": "Erro histórico: autores como Booch, Meyer e Parnas explicitam a diferença entre técnica de empacotamento e estratégia de isolamento de volatilidade."
+      },
+      "referencia_vault": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-023",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Modificadores de acesso em C#",
+    "artigo_origem": "12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
+    "dificuldade": "medio",
+    "enunciado": "Em C#, qual é a restrição de visibilidade imposta pelo modificador de acesso `protected internal` em um membro de classe?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O membro só é visível dentro da própria classe e em nenhuma outra parte do universo.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: isso descreve o modificador `private`."
+      },
+      {
+        "letra": "B",
+        "texto": "O membro é acessível em qualquer classe dentro do mesmo assembly atual OU por tipos derivados (subclasses) mesmo que localizados em outros assemblies externos.",
+        "correta": true,
+        "diagnostico": "Correto: `protected internal` combina união disjuntiva (mesmo assembly OU subclasses em qualquer assembly)."
+      },
+      {
+        "letra": "C",
+        "texto": "O membro só pode ser acessado se a aplicação for executada em ambiente Linux.",
+        "correta": false,
+        "diagnostico": "Erro absurdo: modificadores de acesso são regras do sistema de tipos do CLR, independentes de SO."
+      },
+      {
+        "letra": "D",
+        "texto": "O membro torna-se automaticamente estático e assíncrono.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: visibilidade de membro é ortogonal a ciclo de vida estático ou assincronia."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como uma festa onde entram todos os parentes da família (subclasses onde quer que morem) MAIS todos os moradores da mesma rua (classes do mesmo assembly).",
+      "analise_correta": "C# oferece granularidade fina de modificadores: private, protected, internal, protected internal e private protected.",
+      "distratores": {
+        "A": "Erro conceitual: isso descreve o modificador `private`.",
+        "C": "Erro absurdo: modificadores de acesso são regras do sistema de tipos do CLR, independentes de SO.",
+        "D": "Erro taxonômico: visibilidade de membro é ortogonal a ciclo de vida estático ou assincronia."
+      },
+      "referencia_vault": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-024",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Private protected em C#",
+    "artigo_origem": "12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
+    "dificuldade": "dificil",
+    "enunciado": "Introduzido em versões recentes do C#, qual é o comportamento do modificador `private protected`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O membro é acessível apenas por classes derivadas que estejam localizadas estritamente DENTRO do mesmo assembly (interseção entre protected e internal).",
+        "correta": true,
+        "diagnostico": "Correto: `private protected` representa a interseção (somente subclasses E dentro do mesmo assembly)."
+      },
+      {
+        "letra": "B",
+        "texto": "O membro fica disponível para qualquer classe do sistema sem restrições.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: isso descreve o modificador `public`."
+      },
+      {
+        "letra": "C",
+        "texto": "O membro pode ser lido mas nunca escrito mesmo pela própria classe declarante.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: isso descreve um campo `readonly`."
+      },
+      {
+        "letra": "D",
+        "texto": "O membro é destruído automaticamente a cada 10 segundos pelo coletor de lixo.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: modificadores tratam de regras de compilação/acesso, não temporizadores de descarte."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se `protected internal` é união (família OU vizinhos da rua), `private protected` é interseção estrita: só entram os parentes que moram na mesma casa.",
+      "analise_correta": "Use `private protected` quando você desenvolve uma biblioteca e quer que suas classes internas herdem membros auxiliares sem expô-los para consumidores externos do pacote.",
+      "distratores": {
+        "B": "Erro conceitual: isso descreve o modificador `public`.",
+        "C": "Erro conceitual: isso descreve um campo `readonly`.",
+        "D": "Erro taxonômico: modificadores tratam de regras de compilação/acesso, não temporizadores de descarte."
+      },
+      "referencia_vault": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-025",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Propriedades com get público e set privado",
+    "artigo_origem": "13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
+    "dificuldade": "medio",
+    "enunciado": "Por que declarar uma propriedade como `public decimal Saldo { get; private set; }` é superior a expor um campo público `public decimal Saldo;`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o compilador C# converte a propriedade em um arquivo XML externo gravado no disco.",
+        "correta": false,
+        "diagnostico": "Erro técnico: auto-properties geram um backing field privado em tempo de compilação no IL, sem arquivos XML."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque permite leitura livre por consumidores externos, mas restringe a mutação exclusivamente aos métodos internos da própria classe, permitindo auditar e validar alterações de invariantes.",
+        "correta": true,
+        "diagnostico": "Correto: leitura pública preserva o contrato de consulta, enquanto escrita restrita impede mutações arbitrárias por clientes externos."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque propriedades com get e private set eliminam o uso de memória RAM na execução.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o backing field ocupa normalmente memória na heap gerenciada."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque campos públicos são convertidos automaticamente em código de máquina não seguro (unsafe).",
+        "correta": false,
+        "diagnostico": "Erro de linguagem: campos públicos continuam sendo código gerenciado seguro (safe CLR)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como um relógio de parede no escritório: qualquer cliente ou funcionário pode olhar para o mostrador e ver as horas (get público), mas só o gerente tem a chave para acertar os ponteiros (set privado/interno).",
+      "analise_correta": "Auto-properties com `private set` ou `init` fornecem encapsulamento idiomático e seguro em C#.",
+      "distratores": {
+        "A": "Erro técnico: auto-properties geram um backing field privado em tempo de compilação no IL, sem arquivos XML.",
+        "C": "Erro conceitual: o backing field ocupa normalmente memória na heap gerenciada.",
+        "D": "Erro de linguagem: campos públicos continuam sendo código gerenciado seguro (safe CLR)."
+      },
+      "referencia_vault": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-026",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Propriedades init-only em C#",
+    "artigo_origem": "13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
+    "dificuldade": "dificil",
+    "enunciado": "O modificador de acessor `init` introduzido no C# 9 permite que uma propriedade seja atribuída:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A qualquer momento durante a execução de qualquer método da classe consumidora.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: mutação contínua a qualquer momento é o papel do acessor `set`."
+      },
+      {
+        "letra": "B",
+        "texto": "Apenas durante a inicialização do objeto (no construtor ou por meio de inicializadores de objeto `new Classe { Prop = val }`), tornando o objeto imutável após a conclusão da construção.",
+        "correta": true,
+        "diagnostico": "Correto: `init` garante imutabilidade pós-construção com suporte fluido a object initializers."
+      },
+      {
+        "letra": "C",
+        "texto": "Exclusivamente por meio de reflexão (Reflection) em tempo de execução.",
+        "correta": false,
+        "diagnostico": "Erro técnico: init é recurso de primeira classe da linguagem validado em tempo de compilação pelo Roslyn."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas em noites de lua cheia de acordo com o calendário do servidor.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O acessor init é como moldar um vaso de argila molhada: enquanto a peça está no torno de modelagem (construção), você pode dar a forma que quiser; depois que ela vai ao forno e seca, ninguém mais altera sem quebrar o vaso.",
+      "analise_correta": "Propriedades `init` unem a expressividade dos inicializadores de objeto com a segurança da imutabilidade pós-instanciação.",
+      "distratores": {
+        "A": "Erro conceitual: mutação contínua a qualquer momento é o papel do acessor `set`.",
+        "C": "Erro técnico: init é recurso de primeira classe da linguagem validado em tempo de compilação pelo Roslyn.",
+        "D": "Erro cômico e absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-027",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Resolução de ambiguidades com namespaces",
+    "artigo_origem": "14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+    "dificuldade": "facil",
+    "enunciado": "Em projetos com múltiplas bibliotecas e módulos, qual é a função essencial das diretivas `namespace` em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Impedir que classes tenham mais de 10 linhas de código-fonte.",
+        "correta": false,
+        "diagnostico": "Erro de métrica: namespaces não impõem limites de contagem de linhas físicas de código."
+      },
+      {
+        "letra": "B",
+        "texto": "Organizar logicamente o sistema em escopos hierárquicos e evitar conflitos de nomes (colisões de identificadores) entre classes homônimas de diferentes módulos.",
+        "correta": true,
+        "diagnostico": "Correto: namespaces fornecem espaços de nomes lógicos para desambiguação e modularização hierárquica."
+      },
+      {
+        "letra": "C",
+        "texto": "Traduzir o código C# para linguagem Java em tempo real.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico de linguagens."
+      },
+      {
+        "letra": "D",
+        "texto": "Configurar a velocidade do clock da placa gráfica.",
+        "correta": false,
+        "diagnostico": "Erro de hardware de vídeo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Namespaces são como sobrenomes de pessoas ou códigos de discagem telefônica por cidade: existem muitas pessoas chamadas Maria, mas ao usar o nome completo e o DDD sabemos com exatidão a quem estamos nos referindo.",
+      "analise_correta": "Namespaces modularizam o ecossistema de classes e evitam colisões em projetos corporativos complexos.",
+      "distratores": {
+        "A": "Erro de métrica: namespaces não impõem limites de contagem de linhas físicas de código.",
+        "C": "Erro taxonômico de linguagens.",
+        "D": "Erro de hardware de vídeo."
+      },
+      "referencia_vault": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md"
+    }
+  },
+  {
+    "id": "PM-028",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Partial classes em C#",
+    "artigo_origem": "14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+    "dificuldade": "medio",
+    "enunciado": "Para que serve o modificador `partial` em uma classe C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para dividir a definição de uma mesma classe em dois ou mais arquivos de código-fonte separados, combinados pelo compilador em uma única classe durante a compilação.",
+        "correta": true,
+        "diagnostico": "Correto: `partial class` permite que desenvolvedores ou geradores de código (como designers visuais ou EF Core) dividam o arquivo da mesma classe."
+      },
+      {
+        "letra": "B",
+        "texto": "Para indicar que a classe está com erros de sintaxe e não deve ser compilada.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: código parcial deve ser sintaticamente válido em todas as partes."
+      },
+      {
+        "letra": "C",
+        "texto": "Para criar uma classe que só executa metade de seus métodos.",
+        "correta": false,
+        "diagnostico": "Erro literal e absurdo."
+      },
+      {
+        "letra": "D",
+        "texto": "Para proibir o uso de métodos assíncronos e interfaces.",
+        "correta": false,
+        "diagnostico": "Erro técnico: classes parciais suportam plenamente assincronia, interfaces e atributos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma partial class é como um livro publicado em dois volumes separados para facilitar a leitura na estante, mas que formam exatamente a mesma história contínua quando o leitor junta as partes.",
+      "analise_correta": "Partial classes são muito utilizadas em geradores de código (como Razor, WPF, Windows Forms e EF Core) para separar código gerado de código manual.",
+      "distratores": {
+        "B": "Erro conceitual: código parcial deve ser sintaticamente válido em todas as partes.",
+        "C": "Erro literal e absurdo.",
+        "D": "Erro técnico: classes parciais suportam plenamente assincronia, interfaces e atributos."
+      },
+      "referencia_vault": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md"
+    }
+  },
+  {
+    "id": "PM-029",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Relação é-um vs. tem-um",
+    "artigo_origem": "15. Herança (generalização, especialização e extensibilidade modular).md",
+    "dificuldade": "medio",
+    "enunciado": "Na modelagem orientada a objetos, qual é o critério conceitual fundamental para aplicar Herança em vez de Composição entre duas entidades?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Herança deve modelar estritamente uma relação taxonômica de especialização 'é-um' (onde todo subtipo atende aos contratos do tipo base); Composição deve modelar relações de posse, agregação ou colaboração funcional 'tem-um'.",
+        "correta": true,
+        "diagnostico": "Correto: o princípio basilar da modelagem taxonômica: herança é especialização 'é-um', composição é acoplamento funcional 'tem-um'."
+      },
+      {
+        "letra": "B",
+        "texto": "Herança só deve ser usada para economizar três linhas de código em classes pequenas; Composição é proibida em linguagens modernas.",
+        "correta": false,
+        "diagnostico": "Erro grave de design: reuso cego de código via herança espúria é o antipadrão mais comum em POO."
+      },
+      {
+        "letra": "C",
+        "texto": "Herança cria cópias físicas do banco de dados no computador do usuário; Composição roda apenas na memória cache L1.",
+        "correta": false,
+        "diagnostico": "Erro de hardware e banco de dados."
+      },
+      {
+        "letra": "D",
+        "texto": "Herança só pode ser utilizada se a classe filha tiver menos métodos que a classe pai.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: subclasses tipicamente expandem ou especializam comportamentos do tipo base."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um Carro 'é-um' Veículo (herança legítima); mas um Carro 'tem-um' Motor (composição - o carro não 'é' um motor, ele possui um motor para funcionar).",
+      "analise_correta": "Favorecer composição sobre herança é uma das diretrizes mais importantes de design para evitar hierarquias frágeis e acoplamento rígido.",
+      "distratores": {
+        "B": "Erro grave de design: reuso cego de código via herança espúria é o antipadrão mais comum em POO.",
+        "C": "Erro de hardware e banco de dados.",
+        "D": "Erro conceitual: subclasses tipicamente expandem ou especializam comportamentos do tipo base."
+      },
+      "referencia_vault": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md"
+    }
+  },
+  {
+    "id": "PM-030",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Problema da classe base frágil",
+    "artigo_origem": "15. Herança (generalização, especialização e extensibilidade modular).md",
+    "dificuldade": "dificil",
+    "enunciado": "O que é o clássico 'problema da classe base frágil' (fragile base class problem) na programação orientada a objetos baseada em herança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ocorre quando a classe base é apagada do disco rígido pelo sistema operacional.",
+        "correta": false,
+        "diagnostico": "Erro físico e de arquivo."
+      },
+      {
+        "letra": "B",
+        "texto": "Ocorre quando alterações aparentemente inofensivas no código interno da classe base quebram silenciosamente o comportamento de classes filhas derivadas devido ao acoplamento íntimo de implementação herdada.",
+        "correta": true,
+        "diagnostico": "Correto: definição clássica de fragilidade por herança de implementação: dependências implícitas entre métodos da base quebram os subtipos."
+      },
+      {
+        "letra": "C",
+        "texto": "Ocorre quando uma classe filha tem mais atributos do que o processador pode calcular.",
+        "correta": false,
+        "diagnostico": "Erro de arquitetura de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Ocorre quando a memória RAM quebra fisicamente durante a compilação do executável.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo de hardware."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como puxar uma gaveta de baixo de um armário mal projetado: você só queria pegar uma meia, mas todo o fundo da gaveta de cima desaba porque as prateleiras estavam apoiadas de forma frágil umas nas outras.",
+      "analise_correta": "A herança de implementação cria o acoplamento mais forte possível entre classes; por isso, prefira composição ou interfaces para extensibilidade segura.",
+      "distratores": {
+        "A": "Erro físico e de arquivo.",
+        "C": "Erro de arquitetura de hardware.",
+        "D": "Erro cômico e absurdo de hardware."
+      },
+      "referencia_vault": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md"
+    }
+  },
+  {
+    "id": "PM-031",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Ordem de inicialização em hierarquias de classes",
+    "artigo_origem": "16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, qual é a ordem exata de execução dos construtores quando uma instância de uma subclasse derivada `Cachorro` (que herda de `Animal`) é criada com `new Cachorro()`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Primeiro executa o corpo do construtor de Cachorro e, se sobrar tempo na CPU, executa o construtor de Animal.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: uma classe filha não pode manipular seu estado antes que os alicerces herdados da base existam."
+      },
+      {
+        "letra": "B",
+        "texto": "Primeiro inicializam-se os inicializadores de campos da classe derivada; em seguida, o construtor da classe base (`Animal`) é obrigatoriamente concluído antes que o corpo do construtor de `Cachorro` execute.",
+        "correta": true,
+        "diagnostico": "Correto: o runtime do CLR garante que a base esteja validada e estável antes que o corpo do construtor derivado opere."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos executam simultaneamente em threads paralelas assíncronas sem ordem determinística.",
+        "correta": false,
+        "diagnostico": "Erro de concorrência: a instanciação de um objeto é estritamente síncrona e determinística."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas o construtor de Cachorro executa; construtores de classes base são totalmente ignorados em C#.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o construtor da base é sempre executado (implicitamente via construtor padrão ou explicitamente via `: base(...)`)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Você não pode construir as paredes do segundo andar da casa (construtor da filha) antes de concretar a fundação e o primeiro andar (construtor da base).",
+      "analise_correta": "A cláusula `: base(...)` assegura passagem determinística de argumentos para que a superclasse inicialize suas invariantes com segurança.",
+      "distratores": {
+        "A": "Erro conceitual grave: uma classe filha não pode manipular seu estado antes que os alicerces herdados da base existam.",
+        "C": "Erro de concorrência: a instanciação de um objeto é estritamente síncrona e determinística.",
+        "D": "Erro conceitual: o construtor da base é sempre executado (implicitamente via construtor padrão ou explicitamente via `: base(...)`)."
+      },
+      "referencia_vault": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md"
+    }
+  },
+  {
+    "id": "PM-032",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "A cláusula base(...) e ausência de construtor padrão",
+    "artigo_origem": "16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+    "dificuldade": "dificil",
+    "enunciado": "Se a classe base `Veiculo` possui apenas um construtor explícito parametrizado `public Veiculo(string chassi)` e não define nenhum construtor sem parâmetros, o que acontece com a classe derivada `Carro`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Carro compila normalmente sem construtores porque o C# gera um chassi aleatório em tempo de execução.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: compiladores estáticos não inventam dados de negócio para suprir parâmetros contratuais ausentes."
+      },
+      {
+        "letra": "B",
+        "texto": "Carro não compilará a menos que declare explicitamente um construtor que invoque `: base(chassi)` passando o parâmetro obrigatório exigido pela classe base.",
+        "correta": true,
+        "diagnostico": "Correto: a ausência do construtor padrão na base obriga todas as derivadas a proverem construtores que invoquem explicitamente `: base(...)`."
+      },
+      {
+        "letra": "C",
+        "texto": "O compilador transforma a classe Carro em uma interface pública com métodos virtuais.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: classes não viram interfaces por falha de inicialização."
+      },
+      {
+        "letra": "D",
+        "texto": "O programa executa normalmente mas emite um aviso sonoro no alto-falante da placa-mãe.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se para matricular um aluno na universidade (base) é obrigatório apresentar o CPF, qualquer inscrição específica para o curso de medicina (derivada) tem a obrigação de recolher o CPF e repassá-lo para a matrícula geral.",
+      "analise_correta": "Construtores de classes base garantem que os atributos herdados e suas invariantes nunca fiquem em estado não inicializado.",
+      "distratores": {
+        "A": "Erro conceitual: compiladores estáticos não inventam dados de negócio para suprir parâmetros contratuais ausentes.",
+        "C": "Erro taxonômico: classes não viram interfaces por falha de inicialização.",
+        "D": "Erro cômico e absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md"
+    }
+  },
+  {
+    "id": "PM-033",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Despacho dinâmico e tabela virtual (vtable)",
+    "artigo_origem": "17. Sobreposição de métodos (virtual e override).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, como o runtime (CLR) implementa o mecanismo de sobreposição polimórfica (dynamic dispatch) quando um método marcado como `virtual` na base é sobreposto com `override` na classe derivada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ele faz uma busca no Google durante a execução para saber qual método chamar.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Ele utiliza a tabela de métodos virtuais (vtable / Method Table) do objeto real instanciado na memória heap, despachando a chamada para a implementação mais especializada da classe real, independentemente do tipo da variável de referência.",
+        "correta": true,
+        "diagnostico": "Correto: o ponteiro de tipo na cabeçalho do objeto (Type Handle) aponta para a Method Table do tipo concreto real alocado na heap."
+      },
+      {
+        "letra": "C",
+        "texto": "Ele ignora a classe derivada e sempre executa a versão da classe base para evitar lentidão.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: isso anularia completamente o polimorfismo dinâmico."
+      },
+      {
+        "letra": "D",
+        "texto": "Ele recompila o sistema operacional toda vez que um método virtual é invocado.",
+        "correta": false,
+        "diagnostico": "Erro de escala: tabelas de métodos virtuais são estruturas estáticas de memória resolvidas em tempo constante O(1)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A variável de referência é apenas o crachá genérico 'Funcionário'; mas o objeto real na mesa de trabalho é um 'Cirurgião'. Quando chamamos `operar()`, olhamos para a especialidade real da pessoa concreta sentada na cadeira, não para o rótulo escrito no crachá.",
+      "analise_correta": "Virtual e override habilitam o despacho dinâmico via tabela de métodos virtuais do objeto concreto alocado na heap.",
+      "distratores": {
+        "A": "Erro cômico e absurdo.",
+        "C": "Erro conceitual: isso anularia completamente o polimorfismo dinâmico.",
+        "D": "Erro de escala: tabelas de métodos virtuais são estruturas estáticas de memória resolvidas em tempo constante O(1)."
+      },
+      "referencia_vault": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md"
+    }
+  },
+  {
+    "id": "PM-034",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Override vs. New (method hiding) em C#",
+    "artigo_origem": "17. Sobreposição de métodos (virtual e override).md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a consequência fundamental de declarar um método na subclasse utilizando o modificador `new` (ocultamento de método) em vez de `override` em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Não há nenhuma consequência; `new` e `override` são sinônimos idênticos no IL compilado.",
+        "correta": false,
+        "diagnostico": "Erro técnico: `override` preenche o slot da vtable; `new` cria um método independente com novo slot na tabela."
+      },
+      {
+        "letra": "B",
+        "texto": "Com `new`, o método da base é apenas ocultado estaticamente: se o objeto for acessado por uma referência do tipo base (`Base b = new Filha()`), será chamado o método da classe base e NÃO o da filha, quebrando o despacho dinâmico polimórfico.",
+        "correta": true,
+        "diagnostico": "Correto: method hiding (`new`) desativa o despacho dinâmico polimórfico para referências tipadas na base."
+      },
+      {
+        "letra": "C",
+        "texto": "Com `new`, o método da classe base é apagado da memória e não pode mais ser chamado por ninguém.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o método da base continua perfeitamente acessível via casting ou chamadas de tipo base."
+      },
+      {
+        "letra": "D",
+        "texto": "O modificador `new` força a classe a ser executada em modo não gerenciado com ponteiros C++.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: modificador de membro não altera o modelo de gerenciamento de memória gerenciada do CLR."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar `override` é substituir o chip de comando original por um melhor (qualquer um que aperte o botão aciona o novo). Usar `new` é colar um adesivo por cima do botão: quem olhar por trás (referência da base) continua apertando o botão velho.",
+      "analise_correta": "Evite usar `new` para ocultar métodos em hierarquias polimórficas, pois isso introduz bugs sutis de comportamento dependentes do tipo da variável de referência.",
+      "distratores": {
+        "A": "Erro técnico: `override` preenche o slot da vtable; `new` cria um método independente com novo slot na tabela.",
+        "C": "Erro conceitual: o método da base continua perfeitamente acessível via casting ou chamadas de tipo base.",
+        "D": "Erro taxonômico: modificador de membro não altera o modelo de gerenciamento de memória gerenciada do CLR."
+      },
+      "referencia_vault": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md"
+    }
+  },
+  {
+    "id": "PM-035",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Classes abstratas e instanciação",
+    "artigo_origem": "18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
+    "dificuldade": "medio",
+    "enunciado": "O que caracteriza uma classe abstrata (`abstract class`) em C# e qual é sua principal restrição operacional?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Classes abstratas podem ser instanciadas livremente com o operador new em qualquer método.",
+        "correta": false,
+        "diagnostico": "Erro conceitual básico: classes abstratas são explicitamente impedidas de instanciação direta pelo compilador."
+      },
+      {
+        "letra": "B",
+        "texto": "Classes abstratas não podem ser diretamente instanciadas com new; seu propósito é servir como molde conceitual incompleto e contrato base para que subclasses concretas herdem e implementem seus membros abstratos.",
+        "correta": true,
+        "diagnostico": "Correto: classes abstratas representam abstrações que exigem especialização concreta por subclasses."
+      },
+      {
+        "letra": "C",
+        "texto": "Classes abstratas não podem conter código implementado nem métodos concretos em nenhuma hipótese.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: classes abstratas podem conter estado (atributos), construtores e métodos concretos completamente implementados."
+      },
+      {
+        "letra": "D",
+        "texto": "Classes abstratas só podem ser usadas em programas de console sem interface gráfica.",
+        "correta": false,
+        "diagnostico": "Erro de escopo: classes abstratas são conceitos de POO puros, agnósticos a tipo de interface."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Você não compra um 'Animal' genérico no pet shop: você compra um cachorro, um gato ou um papagaio. O conceito de 'Animal' é abstrato e une o que todos os bichos têm em comum.",
+      "analise_correta": "Classes abstratas compartilham código comum (métodos concretos e estado) e impõem contratos mandatórios (métodos abstratos).",
+      "distratores": {
+        "A": "Erro conceitual básico: classes abstratas são explicitamente impedidas de instanciação direta pelo compilador.",
+        "C": "Erro conceitual: classes abstratas podem conter estado (atributos), construtores e métodos concretos completamente implementados.",
+        "D": "Erro de escopo: classes abstratas são conceitos de POO puros, agnósticos a tipo de interface."
+      },
+      "referencia_vault": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md"
+    }
+  },
+  {
+    "id": "PM-036",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Métodos abstratos em subclasses concretas",
+    "artigo_origem": "18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
+    "dificuldade": "medio",
+    "enunciado": "Se uma classe abstrata `FormaGeometrica` declara um método abstrato `public abstract double CalcularArea();`, o que é compulsoriamente exigido de uma subclasse não-abstrata (concreta) `Retangulo` que herda dessa base?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ela não precisa fazer nada, pois métodos abstratos se implementam sozinhos por inteligência artificial.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Ela é estritamente obrigada a fornecer uma implementação concreta do método utilizando a palavra-chave `override`, sob pena de erro de compilação.",
+        "correta": true,
+        "diagnostico": "Correto: classes concretas devem implementar todos os métodos abstratos herdados para que possam ser instanciadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Ela deve transformar todos os seus atributos em variáveis globais estáticas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual de escopo."
+      },
+      {
+        "letra": "D",
+        "texto": "Ela deve ser deletada do projeto para não causar conflitos de herança.",
+        "correta": false,
+        "diagnostico": "Erro de arquivo absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A classe abstrata assina um contrato com uma cláusula em branco: toda subclasse concreta que herdar esse contrato tem a obrigação jurídica de preencher essa cláusula com sua própria assinatura antes de poder operar.",
+      "analise_correta": "Métodos abstratos não possuem corpo na superclasse (`{}`); o corpo deve ser fornecido via `override` nos subtipos concretos.",
+      "distratores": {
+        "A": "Erro conceitual e absurdo.",
+        "C": "Erro conceitual de escopo.",
+        "D": "Erro de arquivo absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md"
+    }
+  },
+  {
+    "id": "PM-037",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Interfaces vs. Classes Abstratas em C#",
+    "artigo_origem": "18A. Interfaces, contratos e polimorfismo por interface.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na programação modular em C#, qual é a principal flexibilidade arquitetural proporcionada pelo uso de Interfaces (`interface`) em comparação com Classes Abstratas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Interfaces ocupam menos espaço na memória RAM porque não suportam comentários de código.",
+        "correta": false,
+        "diagnostico": "Erro técnico grosseiro."
+      },
+      {
+        "letra": "B",
+        "texto": "C# suporta apenas herança simples de classes (uma classe só pode herdar de uma única classe base, seja ela abstrata ou concreta), mas permite a implementação de múltiplas interfaces por uma mesma classe, viabilizando polimorfismo multifacetado e desacoplamento de papéis.",
+        "correta": true,
+        "diagnostico": "Correto: interfaces viabilizam composição de múltiplos contratos de capacidades (ex.: `IComparable`, `IDisposable`, `IValidatableObject`) contornando a restrição de herança simples."
+      },
+      {
+        "letra": "C",
+        "texto": "Interfaces não podem ser utilizadas como tipo de parâmetros em métodos de controladores Web.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: interfaces são a fundação da injeção de dependências em aplicações modernas."
+      },
+      {
+        "letra": "D",
+        "texto": "Interfaces compilam mais rápido porque são convertidas diretamente em arquivos de áudio MP3.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma pessoa pode ter apenas um pai biológico (herança simples de classe), mas pode ter múltiplos certificados profissionais: carteira de motorista, licença de piloto e diploma de engenheiro (múltiplas interfaces implementadas simultaneamente).",
+      "analise_correta": "Use classes abstratas para compartilhar identidade de domínio e código base; use interfaces para definir contratos de capacidades desacoplados da hierarquia taxonômica.",
+      "distratores": {
+        "A": "Erro técnico grosseiro.",
+        "C": "Erro conceitual: interfaces são a fundação da injeção de dependências em aplicações modernas.",
+        "D": "Erro cômico e absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/18A. Interfaces, contratos e polimorfismo por interface.md"
+    }
+  },
+  {
+    "id": "PM-038",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Implementação explícita de interface em C#",
+    "artigo_origem": "18A. Interfaces, contratos e polimorfismo por interface.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, o que caracteriza a implementação explícita de uma interface (ex.: `void IDisposable.Dispose()`) e qual o seu benefício no design modular?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O método torna-se público para todas as classes do sistema e pode ser chamado sem conversão.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a implementação explícita oculta o método da API direta da classe concreta."
+      },
+      {
+        "letra": "B",
+        "texto": "O método não ganha modificador de acesso público na classe e só pode ser invocado quando o objeto é referenciado explicitamente por meio da interface correspondente, evitando poluir a API pública da classe e resolvendo conflitos entre interfaces homônimas.",
+        "correta": true,
+        "diagnostico": "Correto: resolve colisões de nomes entre interfaces distintas e mantém a superfície pública do objeto limpa."
+      },
+      {
+        "letra": "C",
+        "texto": "O método é executado de forma assíncrona em uma GPU externa de mineração.",
+        "correta": false,
+        "diagnostico": "Erro de hardware de vídeo."
+      },
+      {
+        "letra": "D",
+        "texto": "O método não pode conter linhas de código com mais de 80 caracteres.",
+        "correta": false,
+        "diagnostico": "Erro de estilo cosmético."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como ter um plugue de manutenção oculto atrás de uma tampa técnica: o usuário comum da TV não vê o botão no controle remoto, mas o técnico que conecta o cabo diagnóstico apropriado (referência da interface) consegue acioná-lo perfeitamente.",
+      "analise_correta": "A implementação explícita é uma ferramenta poderosa para segregação de interfaces e preservação de APIs coesas.",
+      "distratores": {
+        "A": "Erro inverso: a implementação explícita oculta o método da API direta da classe concreta.",
+        "C": "Erro de hardware de vídeo.",
+        "D": "Erro de estilo cosmético."
+      },
+      "referencia_vault": "01. Programacao Modular/18A. Interfaces, contratos e polimorfismo por interface.md"
+    }
+  },
+  {
+    "id": "PM-039",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Finalidade do modificador sealed em C#",
+    "artigo_origem": "19. Classes e membros selados (sealed).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é o efeito de aplicar o modificador `sealed` na declaração de uma classe em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A classe não pode ser herdada por nenhuma outra classe no sistema, impedindo que novas subclasses sejam derivadas a partir dela.",
+        "correta": true,
+        "diagnostico": "Correto: `sealed` fecha a hierarquia de herança, garantindo que o comportamento da classe não seja modificado por especialização."
+      },
+      {
+        "letra": "B",
+        "texto": "A classe não pode ser instanciada nem pode ter construtores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: classes seladas são instanciadas normalmente via `new`."
+      },
+      {
+        "letra": "C",
+        "texto": "A classe passa a ser criptografada com chave RSA de 4096 bits.",
+        "correta": false,
+        "diagnostico": "Erro de segurança e criptografia."
+      },
+      {
+        "letra": "D",
+        "texto": "A classe só pode conter métodos estáticos que retornem booleanos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: classes seladas suportam métodos de qualquer tipo de retorno e visibilidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma classe selada é como um documento oficial plastificado e carimbado: você pode ler e tirar fotocópias para usar (instanciar e compor), mas ninguém pode acrescentar novos parágrafos na folha (herdar).",
+      "analise_correta": "Declarar classes como `sealed` previne o problema da classe base frágil e possibilita otimizações de desvirtualização (devirtualization) pelo compilador JIT.",
+      "distratores": {
+        "B": "Erro conceitual: classes seladas são instanciadas normalmente via `new`.",
+        "C": "Erro de segurança e criptografia.",
+        "D": "Erro conceitual: classes seladas suportam métodos de qualquer tipo de retorno e visibilidade."
+      },
+      "referencia_vault": "01. Programacao Modular/19. Classes e membros selados (sealed).md"
+    }
+  },
+  {
+    "id": "PM-040",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Sobrescrita selada de métodos",
+    "artigo_origem": "19. Classes e membros selados (sealed).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, é possível aplicar o modificador `sealed` em um método específico? Em que condição isso é válido?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Não, sealed só pode ser aplicado em variáveis globais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: sealed em métodos é recurso suportado e canônico do C#."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim, em métodos que já estejam realizando uma sobreposição (`override`), indicando que subclasses subsequentes na árvore de herança não poderão mais sobrepor esse método.",
+        "correta": true,
+        "diagnostico": "Correto: a sintaxe `public sealed override void Metodo()` trava a extensibilidade a partir daquele nível da hierarquia."
+      },
+      {
+        "letra": "C",
+        "texto": "Sim, em métodos abstratos para forçar a subclasse a não ter corpo de código.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: métodos abstratos exigem implementação por definição; selar um método abstrato geraria um paradoxo sintático impossível."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas se o método tiver mais de 5 parâmetros inteiros.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como um rei que confirma uma lei antiga do reino e coloca seu selo real final nela: os próximos governadores abaixo dele terão que cumprir a lei exatamente daquela forma, sem autorização para mudar mais nada.",
+      "analise_correta": "Selar um método sobreposto protege um algoritmo contra adulterações em ramificações mais profundas da hierarquia.",
+      "distratores": {
+        "A": "Erro conceitual: sealed em métodos é recurso suportado e canônico do C#.",
+        "C": "Erro conceitual: métodos abstratos exigem implementação por definição; selar um método abstrato geraria um paradoxo sintático impossível.",
+        "D": "Erro de sintaxe absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/19. Classes e membros selados (sealed).md"
+    }
+  },
+  {
+    "id": "PM-041",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Generics e eliminação de boxing/unboxing",
+    "artigo_origem": "20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a grande vantagem de desempenho e confiabilidade ao utilizar coleções genéricas (como `List<int>`) em vez das coleções não genéricas arcaicas (como `ArrayList`) em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Coleções genéricas salvam os dados em arquivos CSV no HD automaticamente.",
+        "correta": false,
+        "diagnostico": "Erro de persistência em arquivo."
+      },
+      {
+        "letra": "B",
+        "texto": "Coleções genéricas garantem segurança de tipos (type safety) em tempo de compilação e eliminam o custo de overhead de boxing e unboxing na manipulação de tipos de valor (structs/primitivos) na memória heap.",
+        "correta": true,
+        "diagnostico": "Correto: generics evitam o empacotamento na heap (boxing) e validação manual de casting, reduzindo pressão no GC e falhas de runtime."
+      },
+      {
+        "letra": "C",
+        "texto": "Coleções genéricas exigem que todos os elementos sejam strings de no máximo 10 letras.",
+        "correta": false,
+        "diagnostico": "Erro conceitual de tipos."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há diferença de desempenho, pois ambas utilizam reflexão dinâmica a cada acesso por índice.",
+        "correta": false,
+        "diagnostico": "Erro técnico grave: `List<T>` compila código especializado em IL nativo com custo zero de reflexão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar ArrayList antigo é como uma caixa de papelão escura onde você joga qualquer coisa embrulhada em plástico (boxing) e para usar precisa rasgar o plástico e adivinhar o que tem dentro (unboxing com risco de quebrar). List<int> é um organizador de moedas sob medida onde só entram moedas de verdade sem embalagem nenhuma.",
+      "analise_correta": "Generics foram introduzidos no C# 2.0 e representam um dos maiores avanços de robustez e eficiência da plataforma .NET.",
+      "distratores": {
+        "A": "Erro de persistência em arquivo.",
+        "C": "Erro conceitual de tipos.",
+        "D": "Erro técnico grave: `List<T>` compila código especializado em IL nativo com custo zero de reflexão."
+      },
+      "referencia_vault": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md"
+    }
+  },
+  {
+    "id": "PM-042",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Restrições de generics (generic constraints)",
+    "artigo_origem": "20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, para que servem as cláusulas `where T : class, new()` na declaração de uma classe genérica `Repositorio<T>`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para impedir que a classe seja compilada em sistemas operacionais de 64 bits.",
+        "correta": false,
+        "diagnostico": "Erro de arquitetura de CPU."
+      },
+      {
+        "letra": "B",
+        "texto": "Para estabelecer restrições de tipo (constraints), exigindo que o parâmetro genérico `T` seja obrigatoriamente um tipo de referência (`class`) e possua um construtor público sem parâmetros (`new()`), permitindo ao repositório instanciar novos objetos do tipo `T`.",
+        "correta": true,
+        "diagnostico": "Correto: constraints informam ao compilador capacidades garantidas pelo tipo genérico, permitindo operações como `new T()`."
+      },
+      {
+        "letra": "C",
+        "texto": "Para forçar que o tipo T seja um arquivo de texto criptografado.",
+        "correta": false,
+        "diagnostico": "Erro conceitual de tipos."
+      },
+      {
+        "letra": "D",
+        "texto": "Para permitir apenas números pares na coleção.",
+        "correta": false,
+        "diagnostico": "Erro de lógica de negócio absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A cláusula where é o edital de uma vaga de emprego: ela avisa que para concorrer à vaga (usar o parâmetro T), o candidato precisa comprovar que é uma pessoa física (class) e que sabe preencher a própria ficha cadastral sozinho (construtor sem parâmetros new()).",
+      "analise_correta": "Restrições genéricas ampliam as operações válidas sobre tipos genéricos preservando a verificação estática do compilador.",
+      "distratores": {
+        "A": "Erro de arquitetura de CPU.",
+        "C": "Erro conceitual de tipos.",
+        "D": "Erro de lógica de negócio absurdo."
+      },
+      "referencia_vault": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md"
+    }
+  },
+  {
+    "id": "PM-043",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "List vs. LinkedList em C#",
+    "artigo_origem": "21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a diferença estrutural e de performance assintótica entre `List<T>` e `LinkedList<T>` em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`List<T>` baseia-se em um array redimensionável com acesso por índice em O(1) e inserção no final amortizada em O(1); `LinkedList<T>` é uma lista duplamente encadeada onde o acesso por índice custa O(N), mas inserções/remoções em nós já referenciados custam O(1).",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica de estruturas de dados: array contíguo vs. nós independentes com ponteiros anterior/próximo."
+      },
+      {
+        "letra": "B",
+        "texto": "`List<T>` só pode armazenar 10 itens; `LinkedList<T>` armazena até 1 bilhão de itens.",
+        "correta": false,
+        "diagnostico": "Erro conceitual de capacidade: ambas crescem dinamicamente conforme a memória disponível."
+      },
+      {
+        "letra": "C",
+        "texto": "`LinkedList<T>` é alocada no disco SSD; `List<T>` é alocada na memória ROM.",
+        "correta": false,
+        "diagnostico": "Erro grosseiro de hardware de armazenamento."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas possuem a mesmíssima estrutura interna de ponteiros encadeados sem diferenças assintóticas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: List é vetor contíguo na heap e LinkedList é lista ligada duplamente encadeada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "List<T> é uma fileira contínua de poltronas numeradas no teatro: você acha a poltrona 42 instantaneamente (O(1)), mas se quiser empurrar alguém no meio, todos para a direita precisam trocar de cadeira. LinkedList<T> é uma roda de ciranda onde cada um dá as mãos para o vizinho: para achar a pessoa 42 você tem que contar um por um desde o início (O(N)), mas para colocar alguém na roda é só soltar as mãos de dois vizinhos e encaixar.",
+      "analise_correta": "A localidade de referência (cache spatial locality) faz `List<T>` ser consideravelmente mais rápida para quase todos os cenários práticos modernos.",
+      "distratores": {
+        "B": "Erro conceitual de capacidade: ambas crescem dinamicamente conforme a memória disponível.",
+        "C": "Erro grosseiro de hardware de armazenamento.",
+        "D": "Erro conceitual grave: List é vetor contíguo na heap e LinkedList é lista ligada duplamente encadeada."
+      },
+      "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
+    }
+  },
+  {
+    "id": "PM-044",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Dictionary e complexidade média de busca",
+    "artigo_origem": "21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a estrutura de dados utilizada internamente pela coleção `Dictionary<TKey, TValue>` em C# e qual o custo computacional médio para busca de elementos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Árvore binária desbalanceada com custo médio de busca O(N^2).",
+        "correta": false,
+        "diagnostico": "Erro conceitual e assintótico."
+      },
+      {
+        "letra": "B",
+        "texto": "Tabela hash interna com vetores de baldes (buckets) e cadeias de entradas, proporcionando complexidade assintótica média de busca, inserção e remoção em tempo constante O(1).",
+        "correta": true,
+        "diagnostico": "Correto: Dictionary é uma tabela hash de alto desempenho com dispersão em buckets."
+      },
+      {
+        "letra": "C",
+        "texto": "Fila sequencial circular com busca em tempo logarítmico O(N!).",
+        "correta": false,
+        "diagnostico": "Erro conceitual: complexidade fatorial não tem relação com dicionários hash."
+      },
+      {
+        "letra": "D",
+        "texto": "Arquivo de banco de dados SQLite embutido em memória RAM.",
+        "correta": false,
+        "diagnostico": "Erro de implementação: Dictionary é uma estrutura nativa do runtime em C#, não um SGBD SQLite embutido."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O dicionário é como a portaria de um condomínio com armários numerados: você diz o número do seu apartamento (chave) e o porteiro vai direto na caixinha correspondente pegar a sua encomenda em um único movimento (O(1)).",
+      "analise_correta": "Dictionary oferece acesso ultraveloz por chave mediante cálculo de hash code, exigindo que a chave implemente adequadamente GetHashCode() e Equals().",
+      "distratores": {
+        "A": "Erro conceitual e assintótico.",
+        "C": "Erro conceitual: complexidade fatorial não tem relação com dicionários hash.",
+        "D": "Erro de implementação: Dictionary é uma estrutura nativa do runtime em C#, não um SGBD SQLite embutido."
+      },
+      "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
+    }
+  },
+  {
+    "id": "PM-045",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Delegates como ponteiros de função com segurança de tipos",
+    "artigo_origem": "22. Delegates, funções anônimas, expressões lambda e eventos em C#.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em C#, o que é tecnicamente um `delegate` e como ele se diferencia de ponteiros de função brutos arcaicos do C/C++?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Um delegate é uma variável global que armazena senhas de usuários em texto plano.",
+        "correta": false,
+        "diagnostico": "Erro de segurança da informação absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Um delegate é um tipo por referência seguro (type-safe) e gerenciado pelo CLR que encapsula a assinatura e a referência de um ou mais métodos, suportando invocação múltipla (multicast) e captura de instâncias associadas.",
+        "correta": true,
+        "diagnostico": "Correto: delegates herdam de `System.MulticastDelegate`, garantindo segurança de tipos na chamada de funções."
+      },
+      {
+        "letra": "C",
+        "texto": "Delegates são instruções de compilação que convertem o programa para execução em placas Arduino.",
+        "correta": false,
+        "diagnostico": "Erro de microcontrolador e plataforma."
+      },
+      {
+        "letra": "D",
+        "texto": "Delegates só aceitam métodos estáticos que não possuam parâmetros.",
+        "correta": false,
+        "diagnostico": "Erro técnico: delegates suportam métodos de instância (mantendo referência a `target`) e métodos estáticos indistintamente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um delegate é como um contrato oficial de procuração: você assina um papel dizendo 'autorizo a execução de qualquer tarefa que tenha esta assinatura específica'. Quem segurar a procuração pode chamar o método sem saber quem o escreveu.",
+      "analise_correta": "Delegates são a fundação dos eventos, do LINQ e da programação funcional idiomática em C#.",
+      "distratores": {
+        "A": "Erro de segurança da informação absurdo.",
+        "C": "Erro de microcontrolador e plataforma.",
+        "D": "Erro técnico: delegates suportam métodos de instância (mantendo referência a `target`) e métodos estáticos indistintamente."
+      },
+      "referencia_vault": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md"
+    }
+  },
+  {
+    "id": "PM-046",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Eventos e o modificador event em C#",
+    "artigo_origem": "22. Delegates, funções anônimas, expressões lambda e eventos em C#.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a proteção essencial proporcionada pela palavra-chave `event` ao encapsular um delegate (ex.: `public event EventHandler AoClicar;`) em uma classe?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ela impede que o evento seja invocado em dias úteis.",
+        "correta": false,
+        "diagnostico": "Erro temporal absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Ela restringe o acesso externo aos operadores de inscrição (`+=`) e desinscrição (`-=`), impedindo que assinantes externos invoquem o evento diretamente ou sobrescrevam/limpem a lista de inscritos com uma atribuição direta (`AoClicar = null`).",
+        "correta": true,
+        "diagnostico": "Correto: o modificador `event` fornece encapsulamento estrito sobre o delegate subjacente, protegendo o publicador contra adulterações externas."
+      },
+      {
+        "letra": "C",
+        "texto": "Ela converte todos os dados do formulário em mensagens SMS enviadas para a operadora telefônica.",
+        "correta": false,
+        "diagnostico": "Erro de telecomunicação cômico."
+      },
+      {
+        "letra": "D",
+        "texto": "Ela força o método de tratamento a ser executado em código binário assembly.",
+        "correta": false,
+        "diagnostico": "Erro de linguagem: event handlers continuam sendo código IL gerenciado."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como uma caixa de sugestões na parede da empresa: qualquer pessoa de fora pode colocar um bilhete (inscrever-se via `+=`) ou tirar o seu próprio bilhete (desinscrever-se via `-=`), mas só o dono da empresa pode abrir a caixa e ler todos os bilhetes em voz alta (invocar o evento).",
+      "analise_correta": "A palavra-chave `event` impede que um consumidor mal-intencionado ou desatento limpe os ouvintes dos outros módulos ou dispare eventos falsos.",
+      "distratores": {
+        "A": "Erro temporal absurdo.",
+        "C": "Erro de telecomunicação cômico.",
+        "D": "Erro de linguagem: event handlers continuam sendo código IL gerenciado."
+      },
+      "referencia_vault": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md"
+    }
+  },
+  {
+    "id": "PM-047",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Princípio da Responsabilidade Única (SRP)",
+    "artigo_origem": "23. Princípios SOLID de design orientado a objetos.md",
+    "dificuldade": "medio",
+    "enunciado": "O Princípio da Responsabilidade Única (SRP), o primeiro do acrônimo SOLID formulado por Robert C. Martin, estabelece que:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Cada classe deve ter apenas uma única linha de código-fonte em seu arquivo.",
+        "correta": false,
+        "diagnostico": "Erro de tamanho de arquivo."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma classe ou módulo deve ter um, e apenas um, motivo para mudar (ou seja, deve ser responsável perante apenas um ator, contexto de negócio ou stakeholder do sistema).",
+        "correta": true,
+        "diagnostico": "Correto: SRP trata de coesão e fronteiras de mudança ligadas aos atores do negócio."
+      },
+      {
+        "letra": "C",
+        "texto": "Cada desenvolvedor só pode criar uma única classe durante todo o projeto de software.",
+        "correta": false,
+        "diagnostico": "Erro organizacional absurdo."
+      },
+      {
+        "letra": "D",
+        "texto": "O sistema deve rodar em apenas um único núcleo de processador para economizar eletricidade.",
+        "correta": false,
+        "diagnostico": "Erro de hardware e consumo de energia."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma caneta esferográfica serve exclusivamente para escrever: ela não tenta ser canivete, lanterna e rádio ao mesmo tempo. Se o design da lanterna precisar mudar, a caneta não quebra.",
+      "analise_correta": "Uma classe que mistura cálculo de regras financeiras com persistência em SQL e renderização em HTML viola o SRP e torna-se um monólito frágil.",
+      "distratores": {
+        "A": "Erro de tamanho de arquivo.",
+        "C": "Erro organizacional absurdo.",
+        "D": "Erro de hardware e consumo de energia."
+      },
+      "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
+    }
+  },
+  {
+    "id": "PM-048",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Princípio Aberto/Fechado (OCP)",
+    "artigo_origem": "23. Princípios SOLID de design orientado a objetos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como o Princípio Aberto/Fechado (OCP) orienta a evolução de módulos de software perante novos requisitos de negócio?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Módulos devem estar abertos para extensão (seu comportamento pode ser estendido com novas regras ou subtipos) e fechados para modificação (seu código-fonte existente e já testado não deve ser adulterado a cada nova variação).",
+        "correta": true,
+        "diagnostico": "Correto: OCP alcança extensibilidade estável utilizando polimorfismo, interfaces e abstrações sem quebrar o código existente."
+      },
+      {
+        "letra": "B",
+        "texto": "O código-fonte deve ser aberto na internet como open source, mas o executável deve ser fechado com senha.",
+        "correta": false,
+        "diagnostico": "Erro jurídico de licenciamento de software."
+      },
+      {
+        "letra": "C",
+        "texto": "Módulos devem abrir portas de rede TCP e fechar conexões UDP para evitar invasões.",
+        "correta": false,
+        "diagnostico": "Erro de protocolo de redes de computadores."
+      },
+      {
+        "letra": "D",
+        "texto": "Classes devem ser abertas durante o horário comercial e fechadas aos domingos e feriados.",
+        "correta": false,
+        "diagnostico": "Erro cômico e absurdo de horário."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no navegador web com suporte a extensões: você instala uma nova extensão para traduzir textos (aberto para extensão) sem precisar mexer nem recompilar o código-fonte original do navegador (fechado para modificação).",
+      "analise_correta": "Implemente OCP substituindo grandes estruturas de `switch/case` sobre tipos por polimorfismo dinâmico e injeção de dependências.",
+      "distratores": {
+        "B": "Erro jurídico de licenciamento de software.",
+        "C": "Erro de protocolo de redes de computadores.",
+        "D": "Erro cômico e absurdo de horário."
+      },
+      "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
+    }
+  },
+  {
+    "id": "PM-049",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Classificação dos padrões GoF",
+    "artigo_origem": "24. Padrões de projeto (design patterns) e o catálogo GoF.md",
+    "dificuldade": "medio",
+    "enunciado": "O catálogo clássico dos 23 padrões de projeto do Gang of Four (GoF) organiza os patterns em três famílias fundamentais com base no seu propósito de design. Quais são essas três famílias?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Padrões Analógicos, Padrões Digitais e Padrões Ópticos.",
+        "correta": false,
+        "diagnostico": "Erro de física e telecomunicações."
+      },
+      {
+        "letra": "B",
+        "texto": "Padrões Criacionais (criação de objetos), Padrões Estruturais (composição de classes e objetos) e Padrões Comportamentais (interação e distribuição de responsabilidades).",
+        "correta": true,
+        "diagnostico": "Correto: a divisão canônica do GoF: Criacionais (ex.: Factory, Singleton, Builder), Estruturais (ex.: Adapter, Composite, Decorator) e Comportamentais (ex.: Strategy, Observer, Command)."
+      },
+      {
+        "letra": "C",
+        "texto": "Padrões Físicos, Padrões Químicos e Padrões Biológicos.",
+        "correta": false,
+        "diagnostico": "Erro de ciências naturais."
+      },
+      {
+        "letra": "D",
+        "texto": "Padrões de Interface Gráfica, Padrões de Servidor e Padrões de Banco de Dados.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico de camadas de software."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Padrões Criacionais são as formas de fundição na fábrica; Padrões Estruturais são as engrenagens e montagens físicas que unem as peças; Padrões Comportamentais são as regras de trânsito que ditam como os carros conversam e se movimentam na rua.",
+      "analise_correta": "Padrões de projeto fornecem vocabulário comum e soluções consagradas para problemas recorrentes de arquitetura orientada a objetos.",
+      "distratores": {
+        "A": "Erro de física e telecomunicações.",
+        "C": "Erro de ciências naturais.",
+        "D": "Erro taxonômico de camadas de software."
+      },
+      "referencia_vault": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md"
+    }
+  },
+  {
+    "id": "PM-050",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Padrão Strategy vs. Padrão Observer",
+    "artigo_origem": "24. Padrões de projeto (design patterns) e o catálogo GoF.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na família de padrões comportamentais do GoF, qual é a distinção de propósito entre o padrão Strategy e o padrão Observer?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Strategy desacopla algoritmos intercambiáveis encapsulando cada variação em classes concretas sob uma interface comum; Observer define uma dependência um-para-muitos onde múltiplos objetos assinantes são notificados automaticamente quando o estado do sujeito observado muda.",
+        "correta": true,
+        "diagnostico": "Correto: Strategy foca na variação algorítmica independente do contexto; Observer foca no mecanismo desacoplado de publicação e assinatura de eventos."
+      },
+      {
+        "letra": "B",
+        "texto": "Strategy só pode ser usado em jogos de tabuleiro; Observer só pode ser usado em telescópios astronômicos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual cômico."
+      },
+      {
+        "letra": "C",
+        "texto": "Strategy é um padrão criacional que substitui o operador new; Observer é um padrão de compressão de arquivos zip.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: nenhum dos dois é criacional ou de compressão."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambos são exatamente idênticos e servem apenas para instanciar classes estáticas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: possuem estruturas e propósitos de interação completamente distintos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Strategy é como escolher a rota do GPS: você pode ir de carro, a pé ou de bicicleta (o objetivo é o mesmo, mas a estratégia de cálculo muda). Observer é como assinar um jornal diário: sempre que a redação (sujeito) imprime uma nova notícia, todos os assinantes (observadores) recebem uma cópia na sua porta.",
+      "analise_correta": "Strategy e Observer são dois dos padrões comportamentais mais utilizados na arquitetura limpa e no desenvolvimento de software modular.",
+      "distratores": {
+        "B": "Erro conceitual cômico.",
+        "C": "Erro taxonômico: nenhum dos dois é criacional ou de compressão.",
+        "D": "Erro conceitual: possuem estruturas e propósitos de interação completamente distintos."
+      },
+      "referencia_vault": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md"
     }
   }
 ]
