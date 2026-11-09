@@ -1,0 +1,92 @@
+[
+  {
+    "id": "REQ-001",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos funcionais vs. não-funcionais",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "medio",
+    "enunciado": "Na Engenharia de Requisitos, a classificação correta entre requisitos funcionais (RF) e não-funcionais (RNF) é vital para o planejamento de testes e arquitetura. Considere a declaração: 'O sistema deve criptografar as senhas dos usuários utilizando o algoritmo BCrypt e responder a 95% das consultas de busca em menos de 2 segundos sob carga de 500 usuários simultâneos'. Como essa declaração se classifica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Trata-se de um conjunto de Requisitos Funcionais, pois descreve ações que o usuário clica diretamente na tela.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: criptografia e tempo de resposta são restrições e qualidades arquiteturais, não interações funcionais de negócio."
+      },
+      {
+        "letra": "B",
+        "texto": "Trata-se de Requisitos Não-Funcionais (RNF) referentes a critérios de segurança (criptografia) e desempenho/eficiência (latência e concorrência).",
+        "correta": true,
+        "diagnostico": "Correto: RNFs definem restrições de qualidade, propriedades do sistema e condições de operação (segurança, desempenho, disponibilidade)."
+      },
+      {
+        "letra": "C",
+        "texto": "Trata-se de um caso de uso abstrato sem valor prático para o projeto de software.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: metas de desempenho e segurança são verificáveis e essenciais para a arquitetura."
+      },
+      {
+        "letra": "D",
+        "texto": "Classifica-se como regra de negócio exclusiva de marketing que não gera impactos na infraestrutura de servidores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: exigências de latência sob concorrência impactam diretamente o dimensionamento da infraestrutura."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o requisito funcional diz 'o que' o sistema faz (ex.: permitir que o passageiro reserve uma passagem), o requisito não-funcional diz 'como' ele faz (com que rapidez, segurança e confiabilidade a reserva é processada).",
+      "analise_correta": "Requisitos funcionais descrevem serviços, entradas e saídas do sistema. Requisitos não-funcionais (RNF) impõem restrições e atributos de qualidade (ISO/IEC 25010) como segurança, usabilidade, eficiência e portabilidade.",
+      "distratores": {
+        "A": "Usuários não 'clicam' em algoritmos de criptografia; são restrições de qualidade do sistema.",
+        "C": "RNFs bem especificados fornecem critérios objetivos de aceitação e testes de estresse.",
+        "D": "Requisitos de desempenho influenciam diretamente a escolha de servidores e banco de dados."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-002",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Casos de Uso UML e relacionamentos include vs. extend",
+    "artigo_origem": "07. Casos de uso - modelagem e relacionamentos include e extend.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em diagramas de casos de uso da UML, a modularização de fluxos de eventos pode utilizar os estereótipos `«include»` e `«extend»`. Qual é a distinção semântica essencial entre esses dois relacionamentos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`«include»` e `«extend»` são termos sinônimos que podem ser intercambiados livremente pelo analista de requisitos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: possuem semânticas de dependência e condicionalidade opostas na UML."
+      },
+      {
+        "letra": "B",
+        "texto": "`«include»` indica inclusão mandatória/obrigatória (o caso base depende obrigatoriamente do caso incluído para se completar); `«extend»` indica extensão condicional ou opcional disparada a partir de um ponto de extensão (*extension point*) sem que o caso base dependa dele.",
+        "correta": true,
+        "diagnostico": "Correto: define com precisão o comportamento padrão UML. Include é obrigatório e compartilhado; extend é condicional e desacoplado do caso de uso base."
+      },
+      {
+        "letra": "C",
+        "texto": "`«extend»` é obrigatório em todos os fluxos e a seta sempre aponta em direção contrária ao ator principal.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: extend é opcional/condicional e a seta aponta do caso de uso de extensão para o caso base."
+      },
+      {
+        "letra": "D",
+        "texto": "`«include»` serve apenas para conectar atores humanos a sistemas legados externos sem casos de uso.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: atores conectam-se a casos de uso por associação; include conecta casos de uso entre si."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em comprar um lanche: pagar é mandatório (`«include»` Pagar Conta no Comprar Lanche); pedir maionese extra só ocorre se você quiser (`«extend»` Adicionar Molho Especial dependendo da condição de escolha).",
+      "analise_correta": "Include modulariza passos comuns e obrigatórios. Extend insere comportamento opcional ou de exceção apenas quando condições específicas no ponto de extensão são satisfeitas.",
+      "distratores": {
+        "A": "Confundir include e extend altera gravemente o escopo e a obrigatoriedade dos fluxos contratuais de software.",
+        "C": "Extend não é obrigatório; é inerentemente condicional.",
+        "D": "Relacionamentos entre atores e casos de uso são associações simples, não includes."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Casos de uso - modelagem e relacionamentos include e extend.md"
+    }
+  }
+]

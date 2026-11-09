@@ -1,0 +1,92 @@
+[
+  {
+    "id": "SQL-001",
+    "disciplina_id": "03",
+    "disciplina": "Manipulação de Dados SQL",
+    "topico": "Agrupamento e filtragem com WHERE vs HAVING",
+    "artigo_origem": "07. Funções agregadas, agrupamento e cláusula HAVING.md",
+    "dificuldade": "medio",
+    "enunciado": "Em consultas SQL envolvendo funções agregadas e particionamento de grupos, qual é a distinção semântica e operacional correta entre as cláusulas `WHERE` e `HAVING`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`WHERE` filtra linhas individuais antes da formação dos grupos e do cálculo de agregações; `HAVING` filtra os grupos já consolidados com base em condições agregadas.",
+        "correta": true,
+        "diagnostico": "Correto: no ciclo de execução lógica do SQL, o WHERE opera sobre tuplas individuais do FROM/JOIN, enquanto HAVING avalia os grupos formados pelo GROUP BY."
+      },
+      {
+        "letra": "B",
+        "texto": "`HAVING` pode substituir `WHERE` em qualquer consulta sem impacto de desempenho, pois o otimizador sempre executa as agregações antes das leituras das linhas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e de desempenho: HAVING não deve ser usado para filtros atômicos de linha, pois atrasa filtros e impede o uso eficaz de índices de filtragem prévia."
+      },
+      {
+        "letra": "C",
+        "texto": "`WHERE` aceita funções agregadas como `COUNT()` e `SUM()`, ao passo que `HAVING` só aceita colunas atômicas simples.",
+        "correta": false,
+        "diagnostico": "Erro inverso: WHERE não aceita funções agregadas diretamente (produz erro de sintaxe); HAVING foi criado exatamente para filtrar agregações."
+      },
+      {
+        "letra": "D",
+        "texto": "`HAVING` é uma instrução da DDL (Data Definition Language) para criação de restrições em tabelas particionadas.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: HAVING pertence à DQL (Data Query Language) ou DML de consulta no comando SELECT."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma seleção esportiva: primeiro você elimina atletas que não têm a idade mínima permitida (WHERE nas fichas individuais); depois você soma os pontos dos times formados e só classifica os times com média superior a 80 pontos (HAVING nos grupos).",
+      "analise_correta": "A ordem lógica de processamento em SQL é: FROM/JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY. Por isso, WHERE descarta linhas antes do agrupamento e HAVING filtra os grupos após a agregação.",
+      "distratores": {
+        "B": "Usar HAVING para condições simples de linha obriga o SGBD a agrupar dados desnecessários antes de filtrar, prejudicando o plano de execução.",
+        "C": "Funções agregadas como SUM(valor) são proibidas no WHERE pois as linhas individuais ainda não foram agrupadas.",
+        "D": "HAVING é cláusula de consulta de dados, não de definição estrutural de tabelas."
+      },
+      "referencia_vault": "03. Manipulação de Dados SQL/07. Funções agregadas, agrupamento e cláusula HAVING.md"
+    }
+  },
+  {
+    "id": "SQL-002",
+    "disciplina_id": "03",
+    "disciplina": "Manipulação de Dados SQL",
+    "topico": "Transações, ACID e controle de concorrência",
+    "artigo_origem": "12. Transações em SQL - integridade e controle de concorrência.md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere o processamento de uma transferência financeira entre contas em um SGBD relacional. O procedimento debita 500 reais da conta A e credita 500 reais na conta B. Se ocorrer uma queda de energia no servidor imediatamente após a instrução de débito e antes do crédito, qual propriedade fundamental do modelo ACID e comando do SGBD garantem que o dinheiro não desapareça?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Durabilidade, garantida pelo comando `GRANT`, que grava o estado em memória RAM não volátil.",
+        "correta": false,
+        "diagnostico": "Erro terminológico e conceitual: GRANT gerencia privilégios (DCL), não recuperação de transação."
+      },
+      {
+        "letra": "B",
+        "texto": "Atomicidade (princípio do tudo ou nada), permitindo que na recuperação o SGBD realize um `ROLLBACK` desfazendo o débito incompleto registrado no log de transações (*write-ahead logging*).",
+        "correta": true,
+        "diagnostico": "Correto: a atomicidade assegura que todas as operações da transação se completam ou nenhuma persiste. O SGBD desfaz passos parciais usando o log."
+      },
+      {
+        "letra": "C",
+        "texto": "Isolamento estrito, que automaticamente converte o crédito em um `COMMIT` implícito na conta destino mesmo sem o comando ser executado.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: isolamento impede interferência entre transações concorrentes; ele jamais pode 'inventar' execuções não ocorridas."
+      },
+      {
+        "letra": "D",
+        "texto": "Consistência de leitura suja (*dirty read*), que permite que terceiros visualizem o saldo alterado provisoriamente.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: leitura suja é uma anomalia de concorrência indesejada, não um mecanismo de proteção de integridade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A transação atômica é como uma cápsula blindada: ou ela chega inteira do outro lado com todas as tarefas concluídas, ou a escotilha é fechada e tudo volta à estaca zero exatamente como estava antes.",
+      "analise_correta": "Atomicidade é a garantia de indivisibilidade. Usando o log transacional (*WAL*), na reinicialização pós-falha o SGBD desfaz (*undo/rollback*) transações incompletas e refaz (*redo*) as que já haviam dado COMMIT.",
+      "distratores": {
+        "A": "Durabilidade garante persistência de transações que já sofreram COMMIT, e GRANT é comando de autorização.",
+        "C": "O SGBD não pode adivinhar operações futuras; transações abortadas devem ser revertidas.",
+        "D": "Dirty read é um nível de isolamento relaxado (Read Uncommitted) que expõe dados não commitados."
+      },
+      "referencia_vault": "03. Manipulação de Dados SQL/12. Transações em SQL - integridade e controle de concorrência.md"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "LID-001",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências",
+    "topico": "Poder formal vs. liderança e influência",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "medio",
+    "enunciado": "Na teoria das organizações e no estudo das relações interpessoais de trabalho, qual é a distinção conceitual essencial entre 'poder formal' (ou autoridade delegada) e 'liderança'?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Poder formal e liderança são sinônimos perfeitos; quem possui cargo de chefia é automaticamente um líder reconhecido pela equipe.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: autoridade formal decorre da hierarquia, enquanto liderança é um processo social de influência legítima."
+      },
+      {
+        "letra": "B",
+        "texto": "O poder formal emana da posição ou cargo hierárquico na estrutura organizacional (capacidade de comando e sanção legal); a liderança é um processo interpessoal e dinâmico de influência que independe de título e gera engajamento voluntário em prol de objetivos comuns.",
+        "correta": true,
+        "diagnostico": "Correto: autoridade formal decorre do organograma institucional, enquanto liderança baseia-se em influência, confiança e credibilidade conquistadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Liderança existe apenas em ambientes militares com ordens coercitivas de cumprimento obrigatório sob pena de detenção.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: coerção é manifestação de poder coercitivo autoritário, não da essência da liderança interpessoal."
+      },
+      {
+        "letra": "D",
+        "texto": "O poder formal só pode ser exercido por algoritmos de inteligência artificial sem intervenção humana.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e anacrônico: poder formal é dimensão humana de governança corporativa e institucional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um chefe nomeado pela diretoria pode fazer você trabalhar porque tem o poder de demitir (autoridade formal do cargo). Um líder faz você querer dar o seu melhor mesmo se ele tiver o mesmo cargo que você (influência e respeito voluntário).",
+      "analise_correta": "A liderança é um fenômeno social de influenciar pessoas para canalizar esforços em direção a metas compartilhadas. Pode haver chefes formais que não lideram e líderes informais sem cargo de chefia.",
+      "distratores": {
+        "A": "Nomear alguém gerente não o transforma automaticamente em líder inspirador.",
+        "C": "Coerção gera submissão obrigatória, não engajamento autêntico.",
+        "D": "Poder formal emana de contratos sociais e governança das instituições humanas."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-002",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências",
+    "topico": "Grid Gerencial de Blake e Mouton",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "dificil",
+    "enunciado": "O Grid Gerencial proposto por Robert Blake e Jane Mouton mapeia o comportamento do líder em duas dimensões ortogonais: 'preocupação com a produção' (eixo X, de 1 a 9) e 'preocupação com as pessoas' (eixo Y, de 1 a 9). Como é denominado o estilo de liderança situado na coordenada (9, 9) e qual é sua característica central?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Gestão Empobrecida (1, 1), caracterizada pelo esforço mínimo para se manter no emprego sem se importar com ninguém.",
+        "correta": false,
+        "diagnostico": "Erro de coordenadas: gestão empobrecida é (1, 1), no extremo oposto da escala."
+      },
+      {
+        "letra": "B",
+        "texto": "Gestão em Equipe (9, 9), caracterizada por alto comprometimento das pessoas com os objetivos da organização, com relações de confiança mútua e busca simultânea pelo alcance de resultados de excelência e satisfação humana.",
+        "correta": true,
+        "diagnostico": "Correto: a liderança em equipe (9, 9) integra a máxima consideração tanto pelas metas produtivas quanto pelo bem-estar e desenvolvimento das pessoas."
+      },
+      {
+        "letra": "C",
+        "texto": "Gestão Clube de Campo (1, 9), onde a produção fabril rígida é maximizada através de punições rigorosas aos operários.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: Clube de Campo (1, 9) foca exclusivamente no conforto das pessoas ignorando a produção; foco cego na produção é Autoridade-Obediência (9, 1)."
+      },
+      {
+        "letra": "D",
+        "texto": "Gestão Meio-Termo (5, 5), que estabelece a rotatividade semanal compulsória dos membros da diretoria executiva.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: meio-termo (5, 5) busca equilíbrio conservador entre metas razoáveis e moral satisfatória."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma tabela de notas de 1 a 9: nota 9 em cuidar das pessoas e nota 9 em bater metas. Em vez de achar que para produzir muito é preciso maltratar a equipe, o líder (9, 9) entende que pessoas valorizadas e motivadas produzem os melhores resultados do mundo.",
+      "analise_correta": "Blake e Mouton defenderam que alta produção e alto respeito às pessoas não são conflitantes, mas sinérgicos na liderança eficaz em equipe (9, 9).",
+      "distratores": {
+        "A": "(1, 1) é a negligência gerencial total.",
+        "C": "(1, 9) negligencia os resultados do negócio em prol de um clima artificialmente amigável.",
+        "D": "(5, 5) acomoda-se na média sem atingir a excelência integrada do (9, 9)."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  }
+]

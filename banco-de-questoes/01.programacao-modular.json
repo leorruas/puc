@@ -1,0 +1,92 @@
+[
+  {
+    "id": "PM-001",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "TAD, abstração e ocultamento de informação",
+    "artigo_origem": "03. Tipos abstratos de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Em programação modular orientada a objetos em C#, um Tipo Abstrato de Dados (TAD) define uma estrutura pelos comportamentos e operações que ela suporta publicamente, e não pelos detalhes de sua representação física na memória. Considere uma classe `ContaBancaria` com saldo interno `decimal _saldo`. Para manter fielmente as propriedades de um TAD e garantir a integridade dos dados, qual diretriz de encapsulamento deve ser rigorosamente observada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Permitir leitura e escrita públicas diretas ao campo `_saldo`, confiando que os módulos consumidores farão as validações necessárias antes da alteração.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: quebra o encapsulamento e a garantia de invariantes ao vazar a representação interna para módulos externos."
+      },
+      {
+        "letra": "B",
+        "texto": "Tornar o campo `_saldo` privado e expor apenas métodos com significado de negócio (como `Depositar` e `Sacar`) e propriedades somente-leitura, validando regras e invariantes no próprio TAD.",
+        "correta": true,
+        "diagnostico": "Correto: o TAD encapsula estado e regras de transição válidas, preservando invariantes e ocultando detalhes de implementação."
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar `_saldo` como protegido (protected) para que qualquer classe externa instanciada possa alterar o saldo livremente em runtime sem usar métodos.",
+        "correta": false,
+        "diagnostico": "Erro terminológico e conceitual: o modificador protected restringe o acesso à classe e suas subclasses, não a consumidores externos em geral, e ainda assim violaria o encapsulamento se permitisse mutação descontrolada."
+      },
+      {
+        "letra": "D",
+        "texto": "Converter `_saldo` em variável global estática compartilhada entre todos os módulos do programa para evitar custo de instanciação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o uso de estado global compartilhado destrói a modularidade, gera acoplamento espúrio e elimina a identidade individual de instâncias de TAD."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um TAD funciona como uma máquina de refrigerante: o usuário só interage com botões externos (interface pública) e não tem acesso direto à caixa de moedas ou ao compartimento mecânico (estado privado).",
+      "analise_correta": "A essência de um TAD é definir um contrato operacional público enquanto o estado interno e a implementação física ficam encapsulados. O objeto é o único guardião de suas invariantes.",
+      "distratores": {
+        "A": "Deixar campos mutáveis públicos acopla módulos à estrutura física e permite estados inconsistentes (ex.: saldo negativo sem autorização de limite).",
+        "C": "O modificador protected não abre acesso a qualquer consumidor e herança inadequada para expor campos enfraquece invariantes.",
+        "D": "Variáveis globais introduzem acoplamento de conteúdo (o pior nível de acoplamento na engenharia de software)."
+      },
+      "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
+    }
+  },
+  {
+    "id": "PM-002",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Polimorfismo, dynamic dispatch e substituição de Liskov",
+    "artigo_origem": "17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere o polimorfismo por sobreposição (*override*) em linguagens com despacho dinâmico (*dynamic dispatch*) como C#. Ao aplicar o Princípio de Substituição de Liskov (LSP), qual das seguintes alterações em uma subclasse `ContaSalario` derivada de `ContaCorrente` configura uma violação direta do LSP?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Implementar uma sobreposição do método `Sacar(decimal valor)` que debita a taxa de manutenção padrão definida pela classe base sem alterar as pré-condições.",
+        "correta": false,
+        "diagnostico": "Não viola o LSP: a subclasse honra o contrato e as pré-condições da classe base."
+      },
+      {
+        "letra": "B",
+        "texto": "Adicionar uma nova propriedade de leitura específica de `ContaSalario` como `CnpjEmpregador`, mantendo todos os comportamentos herdados inalterados.",
+        "correta": false,
+        "diagnostico": "Não viola o LSP: extensão de propriedades sem quebra do comportamento esperado da base é permitida."
+      },
+      {
+        "letra": "C",
+        "texto": "Sobrescrever o método `Sacar(decimal valor)` para lançar `NotSupportedException` quando chamado em fins de semana, endurecendo uma pré-condição que o cliente de `ContaCorrente` não esperava.",
+        "correta": true,
+        "diagnostico": "Correto: violação direta do LSP (fortalecimento de pré-condições na subclasse impede substituição transparente do tipo base pelo subtipo)."
+      },
+      {
+        "letra": "D",
+        "texto": "Utilizar a palavra-chave `override` em conjunto com a marcação `virtual` declarada no método da classe base.",
+        "correta": false,
+        "diagnostico": "Mecanismo canônico da linguagem C# para despacho dinâmico, não representando violação arquitetural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se algo parece um pato e faz quack como um pato, mas exige uma bateria em dias de chuva para não travar, ele não pode substituir um pato real sem quebrar as expectativas de quem lida com patos.",
+      "analise_correta": "O LSP estipula que objetos de um subtipo devem poder substituir objetos do supertipo sem violar a correção do programa. Subclasses não podem fortalecer pré-condições nem enfraquecer pós-condições.",
+      "distratores": {
+        "A": "Manter ou flexibilizar o comportamento dentro do contrato da base preserva a substituibilidade.",
+        "B": "Adicionar novos métodos ou propriedades complementares é extensão legítima de herança.",
+        "D": "Virtual e override são palavras-chave de C# que viabilizam a vtable e o despacho dinâmico."
+      },
+      "referencia_vault": "01. Programacao Modular/17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md"
+    }
+  }
+]

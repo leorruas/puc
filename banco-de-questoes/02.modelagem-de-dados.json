@@ -1,0 +1,92 @@
+[
+  {
+    "id": "MD-001",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Abordagem de arquivos vs. abordagem de banco de dados",
+    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "No início da computação comercial, cada aplicação gerenciava seus próprios arquivos físicos independentes. O advento dos Sistemas de Gerenciamento de Bancos de Dados (SGBD) resolveu os problemas estruturais dessa abordagem arcaica. Qual dos seguintes fenômenos era uma consequência direta e inevitável da abordagem tradicional de processamento de arquivos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Independência lógica de dados garantida automaticamente pelo sistema operacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: arquivos tradicionais possuem alta dependência entre programa e estrutura de dados física."
+      },
+      {
+        "letra": "B",
+        "texto": "Redundância descontrolada e inconsistência de dados dispersos em múltiplos programas com formatos incompatíveis.",
+        "correta": true,
+        "diagnostico": "Correto: sem catálogo centralizado (SGBD), dados de clientes/produtos eram replicados em formatos distintos, gerando anomalias e divergências graves."
+      },
+      {
+        "letra": "C",
+        "texto": "Controle concorrente de transações ACID executado em nível de hardware sem necessidade de software adicional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e anacronismo: transações ACID e controle de concorrência são serviços introduzidos pelos SGBDs relacionais."
+      },
+      {
+        "letra": "D",
+        "texto": "Padronização obrigatória de esquemas conceituais baseados no modelo entidade-relacionamento de Peter Chen.",
+        "correta": false,
+        "diagnostico": "Erro histórico: o modelo ER foi proposto por Peter Chen em 1976 para bancos de dados conceituais, não para sistemas antigos baseados em arquivos de texto/binários."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sistemas baseados em arquivos são como várias secretárias mantendo seus próprios cadernos de telefones de clientes em salas separadas: quando um cliente muda de endereço, uma atualiza e as outras continuam com o dado antigo.",
+      "analise_correta": "A abordagem de arquivos sofria de redundância não controlada, alto acoplamento programa-dados, dificuldade de acesso concorrente e ausência de restrições de integridade centrais.",
+      "distratores": {
+        "A": "A independência lógica e física de dados é justamente uma conquista da arquitetura em 3 níveis dos SGBDs (ANSI/SPARC).",
+        "C": "Sistemas de arquivos convencionais bloqueavam o arquivo inteiro ou causavam corrupção por escrita simultânea desordenada.",
+        "D": "O modelo ER é posterior e visa modelagem de bancos de dados integrados."
+      },
+      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-002",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Normalização de dados e primeira/segunda formas normais",
+    "artigo_origem": "11. Normalização de dados - 1FN, 2FN e 3FN.md",
+    "dificuldade": "dificil",
+    "enunciado": "Durante o processo de normalização de um esquema relacional, uma tabela `ItemPedido(NumPedido, CodProduto, NomeProduto, Quantidade, PrecoUnitario)` possui chave primária composta `(NumPedido, CodProduto)`. Sabendo que `NomeProduto` é determinado unicamente por `CodProduto` e que todos os atributos contêm valores atômicos indivisíveis, qual é o estado de normalização dessa tabela?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A tabela já está na 3FN porque todas as anomalias de exclusão foram eliminadas pelo uso de chave composta.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: chave composta não garante 3FN; pelo contrário, propicia dependência parcial caso atributos dependam de apenas parte da chave."
+      },
+      {
+        "letra": "B",
+        "texto": "A tabela está na 1FN, mas viola a 2FN porque apresenta dependência funcional parcial de um atributo não-chave em relação a parte da chave primária composta.",
+        "correta": true,
+        "diagnostico": "Correto: para estar na 2FN, todo atributo não-chave deve depender da totalidade da chave primária composta. `NomeProduto` depende apenas de `CodProduto`."
+      },
+      {
+        "letra": "C",
+        "texto": "A tabela viola a 1FN devido à presença de múltiplos atributos não-chave na mesma relação relacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: 1FN exige atomicidade de domínios e ausência de grupos repetidores/multivalorados; ter múltiplos atributos é normal."
+      },
+      {
+        "letra": "D",
+        "texto": "A tabela atende à Forma Normal de Boyce-Codd (BCNF), pois toda chave primária é candidata por definição.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: BCNF é uma forma mais restritiva que a 3FN; uma relação que sequer está na 2FN não pode estar em BCNF."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o crachá de identificação de uma entrega exige o código do pedido E o código da peça, o nome da peça não deveria depender do pedido. A peça tem seu próprio nome mesmo antes de qualquer pedido existir.",
+      "analise_correta": "A 2FN exige que a tabela esteja na 1FN e que nenhum atributo não-chave dependa parcialmente de uma chave primária composta. A solução é decompor em `ItemPedido(NumPedido, CodProduto, Quantidade)` e `Produto(CodProduto, NomeProduto, PrecoUnitario)`.",
+      "distratores": {
+        "A": "A dependência funcional parcial causa anomalias de atualização (se o nome mudar, deve ser alterado em cada pedido).",
+        "C": "Valores atômicos cumprem os requisitos da 1FN.",
+        "D": "BCNF exige que todo determinante seja superchave."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Normalização de dados - 1FN, 2FN e 3FN.md"
+    }
+  }
+]

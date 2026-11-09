@@ -1,0 +1,92 @@
+[
+  {
+    "id": "PRJ-001",
+    "disciplina_id": "06",
+    "disciplina": "Projeto - Aplicação Interativa",
+    "topico": "Diretrizes de escopo, ODS 4 e requisitos do projeto",
+    "artigo_origem": "02. Requisitos e diretrizes de escopo do projeto.md",
+    "dificuldade": "medio",
+    "enunciado": "No projeto integrador do Eixo 2 da PUC Minas (Aplicação Interativa conectada ao ODS 4 - Educação de Qualidade), quais são as exigências obrigatórias de arquitetura e modelagem para a validação da aplicação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Construção de uma aplicação estática sem banco de dados, utilizando apenas páginas HTML puras sem controle de acesso ou regras de negócio.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o projeto exige backend estruturado em camadas com banco de dados relacional e CRUDs integrados."
+      },
+      {
+        "letra": "B",
+        "texto": "Desenvolvimento de uma aplicação web interativa com arquitetura MVC/backend, persistência em banco relacional (com no mínimo 3 CRUDs funcionais relacionados), controle de acesso por perfis de usuário e publicação em nuvem (ex.: Azure App Service).",
+        "correta": true,
+        "diagnostico": "Correto: diretrizes oficiais do projeto integrador do semestre com foco prático no ODS 4 e persistência de dados."
+      },
+      {
+        "letra": "C",
+        "texto": "Implementação exclusiva de drivers de baixo nível para sistemas embarcados em linguagem Assembly.",
+        "correta": false,
+        "diagnostico": "Erro de escopo: o projeto tem natureza de desenvolvimento de software web interativo."
+      },
+      {
+        "letra": "D",
+        "texto": "Submissão de um documento teórico sem necessidade de qualquer repositório de código ou protótipo funcional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o projeto é de natureza teórico-prática e exige entregas incrementais com repositório no GitHub."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O projeto integrador é o laboratório onde todas as peças do semestre (banco de dados, requisitos, POO/C#, design e web) se encaixam em uma solução completa hospedada na nuvem.",
+      "analise_correta": "O projeto exige solução funcional orientada ao tema social (ODS 4), com documentação de requisitos, diagramas de arquitetura, CRUDs completos, perfis diferenciados e deploy funcional.",
+      "distratores": {
+        "A": "Páginas estáticas pertencem ao Eixo 1; o Eixo 2 exige backend e banco de dados.",
+        "C": "Assembly é de arquitetura de computadores, distante do escopo web deste semestre.",
+        "D": "Entregas sem código violam os critérios de avaliação prática da PUC Minas."
+      },
+      "referencia_vault": "06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md"
+    }
+  },
+  {
+    "id": "PRJ-002",
+    "disciplina_id": "06",
+    "disciplina": "Projeto - Aplicação Interativa",
+    "topico": "Etapas de desenvolvimento e validação com usuários",
+    "artigo_origem": "03. Cronograma semanal e entregas de etapas.md",
+    "dificuldade": "medio",
+    "enunciado": "No ciclo de entregas das etapas do projeto integrador, qual é a principal finalidade da Etapa 2 (Arquitetura, Modelagem e Planejamento de Testes)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Encerrar o projeto definitivamente sem necessidade de codificar as funcionalidades.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o desenvolvimento do código ocorre nas etapas seguintes (Etapas 3 e 4)."
+      },
+      {
+        "letra": "B",
+        "texto": "Estruturar o projeto conceitual e técnico: modelagem relacional de dados, diagramas de classes e pacotes, fluxos de navegação por perfil, wireframes/mockups e planejamento dos testes de usabilidade e software.",
+        "correta": true,
+        "diagnostico": "Correto: a Etapa 2 estabelece a fundação arquitetural que guiará a implementação nas etapas subsequentes."
+      },
+      {
+        "letra": "C",
+        "texto": "Realizar testes de penetração em servidores de produção já em escala corporativa com milhões de usuários simultâneos.",
+        "correta": false,
+        "diagnostico": "Erro de escopo e cronograma: fora da realidade e momento de concepção/modelagem da disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Registrar a patente da marca do software no órgão governamental de propriedade industrial.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: não faz parte do escopo pedagógico da Etapa 2."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A Etapa 2 é a planta baixa da casa: antes de levantar as paredes e instalar os encanamentos (programação), desenham-se as medidas, as ligações elétricas e os fluxos de circulação.",
+      "analise_correta": "A Etapa 2 conecta Engenharia de Requisitos, Modelagem de Dados e Design de Interação ao plano arquitetural do projeto.",
+      "distratores": {
+        "A": "A modelagem prepara e viabiliza a implementação de código da Etapa 3.",
+        "C": "Testes de carga e penetração de alta escala não pertencem à Etapa 2 de modelagem.",
+        "D": "Patente de marca é aspecto jurídico fora do escopo técnico do projeto acadêmico."
+      },
+      "referencia_vault": "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md"
+    }
+  }
+]

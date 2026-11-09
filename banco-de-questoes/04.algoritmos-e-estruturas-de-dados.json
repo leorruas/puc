@@ -1,0 +1,92 @@
+[
+  {
+    "id": "AED-001",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Tabelas Hash, colisões e complexidade",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma tabela hash (*hash table*) implementada para armazenamento de pares chave-valor, a função de espalhamento (*hash function*) mapeia chaves de domínio amplo em índices de um array interno. O que acontece quando duas chaves distintas geram exatamente o mesmo índice calculado, e qual a estratégia típica para contornar essa situação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ocorre um *overflow* de memória fatal com terminação do processo sem possibilidade de recuperação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: colisões de hash são esperadas e inerentes ao princípio da casa dos pombos; estruturas tratam isso rotineiramente."
+      },
+      {
+        "letra": "B",
+        "texto": "Ocorre uma colisão de hash (*hash collision*), resolvida por técnicas como encadeamento externo (*separate chaining* com listas encadeadas) ou endereçamento aberto (*open addressing*).",
+        "correta": true,
+        "diagnostico": "Correto: colisões são tratadas encadeando elementos no mesmo balde (bucket) ou buscando outro slot livre por sondagem linear/quadrática."
+      },
+      {
+        "letra": "C",
+        "texto": "A tabela sobrescreve compulsoriamente a chave anterior, pois tabelas hash não permitem chaves com valores de hash iguais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: sobrescrita só ocorre quando a mesma chave é reinserida, não quando chaves diferentes colidem no mesmo índice."
+      },
+      {
+        "letra": "D",
+        "texto": "A estrutura converte-se automaticamente em uma árvore B* com complexidade O(N!) para preservar a ordenação sequencial.",
+        "correta": false,
+        "diagnostico": "Erro absurdo e taxonômico: tabelas hash não são ordenadas e O(N!) é complexidade fatorial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em armários numerados de 0 a 9 em um vestiário: se duas pessoas recebem o bilhete para o armário 4 (colisão), podemos colocar uma gaveta com divisórias dentro do armário 4 (encadeamento) ou mandar a segunda pessoa procurar o próximo armário vazio ao lado (endereçamento aberto).",
+      "analise_correta": "Funções hash produzem colisões quando mapeiam domínios maiores para arrays finitos. O encadeamento mantém uma lista dos elementos colidentes no bucket, mantendo custo médio O(1) com fator de carga controlado.",
+      "distratores": {
+        "A": "Colisões são eventos previstos e normais no projeto de tabelas hash.",
+        "C": "Sobrescrita destruiria dados de chaves distintas.",
+        "D": "Tabelas hash não garantem ordem e O(1) médio é sua principal vantagem."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-002",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Árvores Binárias de Busca (ABB) e balanceamento AVL",
+    "artigo_origem": "10. Árvore AVL - conceito, fator de balanceamento e rotações.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma Árvore Binária de Busca (ABB), a inserção desbalanceada de elementos previamente ordenados pode degradar sua altura para N, transformando a busca em O(N). Para evitar isso, a árvore AVL introduz o fator de balanceamento (FB) em cada nó. Como o FB é definido e qual critério desencadeia rotações na árvore?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O FB é a quantidade total de folhas dividida pela raiz; rotações ocorrem quando FB ultrapassa 10.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o fator de balanceamento relaciona a altura das subárvores de cada nó, não a contagem de folhas."
+      },
+      {
+        "letra": "B",
+        "texto": "O FB é a diferença entre a altura da subárvore esquerda e a altura da subárvore direita (ou vice-versa); rotações de rebalanceamento ocorrem quando |FB| > 1 (ou seja, quando FB assume -2 ou +2).",
+        "correta": true,
+        "diagnostico": "Correto: a condição de invariante AVL exige que em todo nó |h_esq - h_dir| <= 1. Se FB atingir 2 ou -2, aplicam-se rotações simples ou duplas."
+      },
+      {
+        "letra": "C",
+        "texto": "O FB mede a profundidade do nó mais raso; qualquer nó com filhos requer rotação simples imediata.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: nós com filhos são a própria essência de árvores binárias; rotação só é necessária quando há desequilíbrio na altura."
+      },
+      {
+        "letra": "D",
+        "texto": "O FB é um índice de busca binária utilizado apenas para desalocar nós na coleta de lixo (garbage collector) do C#.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: FB é um atributo estrutural do algoritmo AVL para manutenção de altura logarítmica O(log N)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma balança de dois pratos em cada bifurcação da árvore: se um prato estiver mais de um nível mais pesado que o outro (|FB| = 2), a balança puxa um cabo e redistribui os pesos (rotação simples ou dupla) para o centro.",
+      "analise_correta": "A árvore AVL garante busca, inserção e remoção em tempo O(log N) no pior caso ao reequilibrar a altura estritamente através de rotações (simples à direita/esquerda ou duplas esquerda-direita/direita-esquerda).",
+      "distratores": {
+        "A": "FB não é média de folhas, mas a diferença direta de altura entre subárvores.",
+        "C": "Uma árvore perfeitamente balanceada possui filhos em todos os nós internos sem precisar de rotações.",
+        "D": "O GC de C# gerencia memória na heap e não conhece regras de balanceamento AVL."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvore AVL - conceito, fator de balanceamento e rotações.md"
+    }
+  }
+]

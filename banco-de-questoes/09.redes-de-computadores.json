@@ -1,0 +1,92 @@
+[
+  {
+    "id": "RED-001",
+    "disciplina_id": "09",
+    "disciplina": "Redes de Computadores",
+    "topico": "Modelo OSI vs. Modelo TCP/IP e encapsulamento",
+    "artigo_origem": "10. Introdução ao modelo de referência OSI e arquitetura em camadas.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo de referência OSI (Open Systems Interconnection) da ISO e na arquitetura TCP/IP da Internet, o tráfego de dados é submetido ao processo de encapsulamento à medida que desce pelas camadas da pilha. Como é denominada a Unidade de Dados de Protocolo (PDU) nas camadas de Transporte, Rede e Enlace, respectivamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Bit, Quadro e Pacote.",
+        "correta": false,
+        "diagnostico": "Erro de ordem: Bit é camada física; Quadro é enlace; Pacote é rede."
+      },
+      {
+        "letra": "B",
+        "texto": "Segmento (ou Datagrama UDP), Pacote (Datagrama IP) e Quadro (*Frame*).",
+        "correta": true,
+        "diagnostico": "Correto: nomenclatura canônica internacional das PDUs no modelo de camadas para Transporte, Rede e Enlace."
+      },
+      {
+        "letra": "C",
+        "texto": "Sinal elétrico, Hertz e Fibra monomodo.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e terminológico: grandezas físicas de meio de transmissão, não PDUs de protocolos."
+      },
+      {
+        "letra": "D",
+        "texto": "URL, Cookie e Header HTTP.",
+        "correta": false,
+        "diagnostico": "Erro de camada: elementos restritos à camada de aplicação da Web."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em caixas postais encaixadas: a mensagem de aplicação entra em uma caixa de Transporte (Segmento com portas TCP), que entra em uma caixa de Rede (Pacote com IPs), que entra em um contêiner de Enlace (Quadro com MACs), transmitido como pulsos elétricos ou luz (Bits) no meio físico.",
+      "analise_correta": "O processo de encapsulamento adiciona cabeçalhos específicos a cada nível: Camada 4 = Segmento (TCP)/Datagrama (UDP); Camada 3 = Pacote/Datagrama IP; Camada 2 = Quadro (Frame); Camada 1 = Bits.",
+      "distratores": {
+        "A": "Inverteu e deslocou a ordem das camadas.",
+        "C": "Hertz e sinais são fenômenos físicos de modulação analógica/digital na camada 1.",
+        "D": "Estruturas de aplicação (camada 7) transportadas dentro do payload."
+      },
+      "referencia_vault": "09. Redes de Computadores/10. Introdução ao modelo de referência OSI e arquitetura em camadas.md"
+    }
+  },
+  {
+    "id": "RED-002",
+    "disciplina_id": "09",
+    "disciplina": "Redes de Computadores",
+    "topico": "Comutação de pacotes, roteamento e nós intermediários",
+    "artigo_origem": "14. Introdução ao modelo TCP-IP e arquitetura da Internet.md",
+    "dificuldade": "dificil",
+    "enunciado": "A arquitetura fundamental da Internet baseia-se na comutação de pacotes sem conexão (*connectionless packet switching*). Qual premissa de projeto proposta por Vint Cerf e Bob Kahn e consolidada na ARPANET explica a resiliência da rede contra falhas em nós intermediários (roteadores)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Toda a inteligência de controle de fluxo e retransmissão de dados foi transferida para os roteadores intermediários centrais, mantendo os computadores das pontas totalmente passivos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: o modelo da Internet adota o princípio fim-a-fim (*end-to-end*), mantendo a inteligência nos hosts e a rede interna simples."
+      },
+      {
+        "letra": "B",
+        "texto": "O princípio ponta a ponta (*end-to-end argument*), no qual os pacotes contêm cabeçalhos com endereço de destino e são roteados de forma autônoma (datagramas), permitindo caminhos alternativos se um roteador cair, enquanto a garantia de integridade e reordenação é delegada aos hosts finais (camada de transporte/TCP).",
+        "correta": true,
+        "diagnostico": "Correto: a inteligência do estado reside nas pontas (hosts), enquanto a malha de roteadores apenas encaminha datagramas pelo melhor caminho disponível."
+      },
+      {
+        "letra": "C",
+        "texto": "A criação de circuitos físicos dedicados e permanentes que travam linhas telefônicas exclusivas para cada chamada na rede mundial.",
+        "correta": false,
+        "diagnostico": "Erro histórico: isso descreve a comutação de circuitos da rede telefônica legada, modelo rejeitado pela Internet por fragilidade contra bombardeios e falhas."
+      },
+      {
+        "letra": "D",
+        "texto": "A exigência de que todos os nós da Internet utilizem o mesmo sistema operacional e relógio de cristal idêntico sem latência.",
+        "correta": false,
+        "diagnostico": "Erro conceitual absurdo: a Internet foi projetada especificamente para interconectar sistemas heterogêneos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de reservar uma linha de trem exclusiva que para se um trilho quebrar (comutação de circuitos), a Internet é como carros individuais com GPS no trânsito (pacotes): se uma avenida for bloqueada, os carros simplesmente viram na próxima esquina e chegam ao destino por outro trajeto.",
+      "analise_correta": "O princípio fim-a-fim (end-to-end) tornou a Internet resiliente, barata e expansível. A rede intermediária (IP) é não confiável (best effort) e descentralizada; os computadores de origem e destino (TCP) cuidam de conferir se tudo chegou em ordem.",
+      "distratores": {
+        "A": "Roteadores no IP são simples e não mantêm estado de sessão para cada conexão de usuário.",
+        "C": "Comutação de circuitos é o oposto da comutação de pacotes.",
+        "D": "A heterogeneidade de hardware e software é a marca do protocolo IP."
+      },
+      "referencia_vault": "09. Redes de Computadores/14. Introdução ao modelo TCP-IP e arquitetura da Internet.md"
+    }
+  }
+]

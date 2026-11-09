@@ -1,0 +1,92 @@
+[
+  {
+    "id": "DI-001",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Engenharia Cognitiva vs. Engenharia Semiótica",
+    "artigo_origem": "02. Construções teóricas da interação humano-computador.md",
+    "dificuldade": "dificil",
+    "enunciado": "No campo da Interação Humano-Computador (IHC), a Engenharia Cognitiva (Donald Norman) e a Engenharia Semiótica (Clarisse de Souza) oferecem modelos teóricos distintos para explicar o fenômeno da interação. Qual é a diferença fundamental entre as visões dessas duas correntes?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Engenharia Cognitiva enxerga a interface como um circuito puramente elétrico de hardware; a Engenharia Semiótica rejeita o uso de computadores por humanos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual absurdo: nenhuma das duas teorias defende tais posições."
+      },
+      {
+        "letra": "B",
+        "texto": "A Engenharia Cognitiva foca no usuário como processador de informação (superação dos golfos de execução e avaliação); a Engenharia Semiótica enxerga a interação como metacomunicação, na qual a interface é a mensagem e o preposto do designer para o usuário.",
+        "correta": true,
+        "diagnostico": "Correto: Norman modela a cognição e as pontes entre intenção física e avaliação mental; Clarisse de Souza conceitua a interface como signo e metacomunicação designer-usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambas consideram que a interface gráfica é um erro conceitual e que sistemas devem operar exclusivamente por linha de comando Unix.",
+        "correta": false,
+        "diagnostico": "Erro histórico: Norman e Clarisse de Souza fundamentam o design de interfaces interativas e gráficas modernas."
+      },
+      {
+        "letra": "D",
+        "texto": "A Engenharia Cognitiva se restringe a testes quantitativos automatizados sem humanos; a Engenharia Semiótica analisa somente a velocidade de conexão em redes de computadores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: IHC estuda a relação humana; redes de computadores é outra disciplina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para Norman, o sistema é uma ferramenta que o usuário tenta manipular (ele aperta um botão e avalia se o resultado atendeu à intenção dele). Para Clarisse de Souza, o sistema é uma carta ou preposto enviado pelo designer: o usuário 'conversa' com as mensagens deixadas pelo criador do software.",
+      "analise_correta": "Norman modela a ação humana em 7 etapas e analisa os Golfos de Execução e Avaliação. Clarisse de Souza formula a teoria da metacomunicação designer-usuário (*'aqui está quem eu sou, o que criei para você fazer e como você pode usar isso'*).",
+      "distratores": {
+        "A": "IHC estuda fatores humanos e cognitivos, não apenas voltagens de circuitos.",
+        "C": "Interfaces gráficas (WIMP e manipulação direta) foram amplamente elucidadas por essas teorias.",
+        "D": "Engenharia cognitiva envolve testes com usuários e psicologia cognitiva aplicada."
+      },
+      "referencia_vault": "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md"
+    }
+  },
+  {
+    "id": "DI-002",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Heurísticas de Nielsen e prevenção de erros",
+    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "dificuldade": "medio",
+    "enunciado": "Durante uma avaliação heurística de um sistema bancário, o especialista constata que, ao tentar realizar um Pix de alto valor, o botão 'Confirmar' não solicita dupla confirmação nem exibe o resumo dos dados do destinatário, executando a transferência irreversível instantaneamente. Qual das 10 Heurísticas de Usabilidade de Jakob Nielsen é violada prioritariamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Correspondência entre o sistema e o mundo real.",
+        "correta": false,
+        "diagnostico": "Embora haja termos bancários, a falha crítica aqui é não impedir uma ação catastrófica e acidental do usuário."
+      },
+      {
+        "letra": "B",
+        "texto": "Prevenção de erros (*Error prevention*), já que um design cuidadoso deve impedir a ocorrência de erros graves antes que eles aconteçam, solicitando confirmação para ações de alto risco.",
+        "correta": true,
+        "diagnostico": "Correto: a heurística 5 (Prevenção de erros) preconiza eliminar condições propensas a falhas ou apresentar aviso e confirmação prévia ao usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "Flexibilidade e eficiência de uso para usuários experientes.",
+        "correta": false,
+        "diagnostico": "Flexibilidade visa atalhos e personalização, mas não às custas de segurança e prevenção de desastres."
+      },
+      {
+        "letra": "D",
+        "texto": "Design estético e minimalista.",
+        "correta": false,
+        "diagnostico": "Design minimalista trata de evitar informações irrelevantes na tela, não de confirmações transacionais essenciais."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Melhor do que uma excelente mensagem de erro explicando que o vaso quebrou é colocar uma cerca protetora em volta do vaso para que ninguém tropece nele (prevenção de erros).",
+      "analise_correta": "Nielsen destaca que prevenir erros é superior a boas mensagens de erro. Em operações financeiras irreversíveis, passos de confirmação e checagem de dados são mandatórios.",
+      "distratores": {
+        "A": "Mundo real diz respeito a metáforas conhecidas (ex.: ícone de carteira ou comprovante).",
+        "C": "Atalhos rápidos para especialistas não eliminam checagens críticas de segurança.",
+        "D": "Estética minimalista foca na carga visual e eliminação de ruídos."
+      },
+      "referencia_vault": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md"
+    }
+  }
+]

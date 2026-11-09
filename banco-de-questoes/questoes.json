@@ -1,0 +1,992 @@
+[
+  {
+    "id": "PM-001",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "TAD, abstração e ocultamento de informação",
+    "artigo_origem": "03. Tipos abstratos de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Em programação modular orientada a objetos em C#, um Tipo Abstrato de Dados (TAD) define uma estrutura pelos comportamentos e operações que ela suporta publicamente, e não pelos detalhes de sua representação física na memória. Considere uma classe `ContaBancaria` com saldo interno `decimal _saldo`. Para manter fielmente as propriedades de um TAD e garantir a integridade dos dados, qual diretriz de encapsulamento deve ser rigorosamente observada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Permitir leitura e escrita públicas diretas ao campo `_saldo`, confiando que os módulos consumidores farão as validações necessárias antes da alteração.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: quebra o encapsulamento e a garantia de invariantes ao vazar a representação interna para módulos externos."
+      },
+      {
+        "letra": "B",
+        "texto": "Tornar o campo `_saldo` privado e expor apenas métodos com significado de negócio (como `Depositar` e `Sacar`) e propriedades somente-leitura, validando regras e invariantes no próprio TAD.",
+        "correta": true,
+        "diagnostico": "Correto: o TAD encapsula estado e regras de transição válidas, preservando invariantes e ocultando detalhes de implementação."
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar `_saldo` como protegido (protected) para que qualquer classe externa instanciada possa alterar o saldo livremente em runtime sem usar métodos.",
+        "correta": false,
+        "diagnostico": "Erro terminológico e conceitual: o modificador protected restringe o acesso à classe e suas subclasses, não a consumidores externos em geral, e ainda assim violaria o encapsulamento se permitisse mutação descontrolada."
+      },
+      {
+        "letra": "D",
+        "texto": "Converter `_saldo` em variável global estática compartilhada entre todos os módulos do programa para evitar custo de instanciação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o uso de estado global compartilhado destrói a modularidade, gera acoplamento espúrio e elimina a identidade individual de instâncias de TAD."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um TAD funciona como uma máquina de refrigerante: o usuário só interage com botões externos (interface pública) e não tem acesso direto à caixa de moedas ou ao compartimento mecânico (estado privado).",
+      "analise_correta": "A essência de um TAD é definir um contrato operacional público enquanto o estado interno e a implementação física ficam encapsulados. O objeto é o único guardião de suas invariantes.",
+      "distratores": {
+        "A": "Deixar campos mutáveis públicos acopla módulos à estrutura física e permite estados inconsistentes (ex.: saldo negativo sem autorização de limite).",
+        "C": "O modificador protected não abre acesso a qualquer consumidor e herança inadequada para expor campos enfraquece invariantes.",
+        "D": "Variáveis globais introduzem acoplamento de conteúdo (o pior nível de acoplamento na engenharia de software)."
+      },
+      "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
+    }
+  },
+  {
+    "id": "PM-002",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Polimorfismo, dynamic dispatch e substituição de Liskov",
+    "artigo_origem": "17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere o polimorfismo por sobreposição (*override*) em linguagens com despacho dinâmico (*dynamic dispatch*) como C#. Ao aplicar o Princípio de Substituição de Liskov (LSP), qual das seguintes alterações em uma subclasse `ContaSalario` derivada de `ContaCorrente` configura uma violação direta do LSP?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Implementar uma sobreposição do método `Sacar(decimal valor)` que debita a taxa de manutenção padrão definida pela classe base sem alterar as pré-condições.",
+        "correta": false,
+        "diagnostico": "Não viola o LSP: a subclasse honra o contrato e as pré-condições da classe base."
+      },
+      {
+        "letra": "B",
+        "texto": "Adicionar uma nova propriedade de leitura específica de `ContaSalario` como `CnpjEmpregador`, mantendo todos os comportamentos herdados inalterados.",
+        "correta": false,
+        "diagnostico": "Não viola o LSP: extensão de propriedades sem quebra do comportamento esperado da base é permitida."
+      },
+      {
+        "letra": "C",
+        "texto": "Sobrescrever o método `Sacar(decimal valor)` para lançar `NotSupportedException` quando chamado em fins de semana, endurecendo uma pré-condição que o cliente de `ContaCorrente` não esperava.",
+        "correta": true,
+        "diagnostico": "Correto: violação direta do LSP (fortalecimento de pré-condições na subclasse impede substituição transparente do tipo base pelo subtipo)."
+      },
+      {
+        "letra": "D",
+        "texto": "Utilizar a palavra-chave `override` em conjunto com a marcação `virtual` declarada no método da classe base.",
+        "correta": false,
+        "diagnostico": "Mecanismo canônico da linguagem C# para despacho dinâmico, não representando violação arquitetural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se algo parece um pato e faz quack como um pato, mas exige uma bateria em dias de chuva para não travar, ele não pode substituir um pato real sem quebrar as expectativas de quem lida com patos.",
+      "analise_correta": "O LSP estipula que objetos de um subtipo devem poder substituir objetos do supertipo sem violar a correção do programa. Subclasses não podem fortalecer pré-condições nem enfraquecer pós-condições.",
+      "distratores": {
+        "A": "Manter ou flexibilizar o comportamento dentro do contrato da base preserva a substituibilidade.",
+        "B": "Adicionar novos métodos ou propriedades complementares é extensão legítima de herança.",
+        "D": "Virtual e override são palavras-chave de C# que viabilizam a vtable e o despacho dinâmico."
+      },
+      "referencia_vault": "01. Programacao Modular/17. Polimorfismo, ligação tardia e o princípio da substituição de Liskov.md"
+    }
+  },
+  {
+    "id": "MD-001",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Abordagem de arquivos vs. abordagem de banco de dados",
+    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "No início da computação comercial, cada aplicação gerenciava seus próprios arquivos físicos independentes. O advento dos Sistemas de Gerenciamento de Bancos de Dados (SGBD) resolveu os problemas estruturais dessa abordagem arcaica. Qual dos seguintes fenômenos era uma consequência direta e inevitável da abordagem tradicional de processamento de arquivos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Independência lógica de dados garantida automaticamente pelo sistema operacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: arquivos tradicionais possuem alta dependência entre programa e estrutura de dados física."
+      },
+      {
+        "letra": "B",
+        "texto": "Redundância descontrolada e inconsistência de dados dispersos em múltiplos programas com formatos incompatíveis.",
+        "correta": true,
+        "diagnostico": "Correto: sem catálogo centralizado (SGBD), dados de clientes/produtos eram replicados em formatos distintos, gerando anomalias e divergências graves."
+      },
+      {
+        "letra": "C",
+        "texto": "Controle concorrente de transações ACID executado em nível de hardware sem necessidade de software adicional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e anacronismo: transações ACID e controle de concorrência são serviços introduzidos pelos SGBDs relacionais."
+      },
+      {
+        "letra": "D",
+        "texto": "Padronização obrigatória de esquemas conceituais baseados no modelo entidade-relacionamento de Peter Chen.",
+        "correta": false,
+        "diagnostico": "Erro histórico: o modelo ER foi proposto por Peter Chen em 1976 para bancos de dados conceituais, não para sistemas antigos baseados em arquivos de texto/binários."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sistemas baseados em arquivos são como várias secretárias mantendo seus próprios cadernos de telefones de clientes em salas separadas: quando um cliente muda de endereço, uma atualiza e as outras continuam com o dado antigo.",
+      "analise_correta": "A abordagem de arquivos sofria de redundância não controlada, alto acoplamento programa-dados, dificuldade de acesso concorrente e ausência de restrições de integridade centrais.",
+      "distratores": {
+        "A": "A independência lógica e física de dados é justamente uma conquista da arquitetura em 3 níveis dos SGBDs (ANSI/SPARC).",
+        "C": "Sistemas de arquivos convencionais bloqueavam o arquivo inteiro ou causavam corrupção por escrita simultânea desordenada.",
+        "D": "O modelo ER é posterior e visa modelagem de bancos de dados integrados."
+      },
+      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-002",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Normalização de dados e primeira/segunda formas normais",
+    "artigo_origem": "11. Normalização de dados - 1FN, 2FN e 3FN.md",
+    "dificuldade": "dificil",
+    "enunciado": "Durante o processo de normalização de um esquema relacional, uma tabela `ItemPedido(NumPedido, CodProduto, NomeProduto, Quantidade, PrecoUnitario)` possui chave primária composta `(NumPedido, CodProduto)`. Sabendo que `NomeProduto` é determinado unicamente por `CodProduto` e que todos os atributos contêm valores atômicos indivisíveis, qual é o estado de normalização dessa tabela?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A tabela já está na 3FN porque todas as anomalias de exclusão foram eliminadas pelo uso de chave composta.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: chave composta não garante 3FN; pelo contrário, propicia dependência parcial caso atributos dependam de apenas parte da chave."
+      },
+      {
+        "letra": "B",
+        "texto": "A tabela está na 1FN, mas viola a 2FN porque apresenta dependência funcional parcial de um atributo não-chave em relação a parte da chave primária composta.",
+        "correta": true,
+        "diagnostico": "Correto: para estar na 2FN, todo atributo não-chave deve depender da totalidade da chave primária composta. `NomeProduto` depende apenas de `CodProduto`."
+      },
+      {
+        "letra": "C",
+        "texto": "A tabela viola a 1FN devido à presença de múltiplos atributos não-chave na mesma relação relacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: 1FN exige atomicidade de domínios e ausência de grupos repetidores/multivalorados; ter múltiplos atributos é normal."
+      },
+      {
+        "letra": "D",
+        "texto": "A tabela atende à Forma Normal de Boyce-Codd (BCNF), pois toda chave primária é candidata por definição.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: BCNF é uma forma mais restritiva que a 3FN; uma relação que sequer está na 2FN não pode estar em BCNF."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o crachá de identificação de uma entrega exige o código do pedido E o código da peça, o nome da peça não deveria depender do pedido. A peça tem seu próprio nome mesmo antes de qualquer pedido existir.",
+      "analise_correta": "A 2FN exige que a tabela esteja na 1FN e que nenhum atributo não-chave dependa parcialmente de uma chave primária composta. A solução é decompor em `ItemPedido(NumPedido, CodProduto, Quantidade)` e `Produto(CodProduto, NomeProduto, PrecoUnitario)`.",
+      "distratores": {
+        "A": "A dependência funcional parcial causa anomalias de atualização (se o nome mudar, deve ser alterado em cada pedido).",
+        "C": "Valores atômicos cumprem os requisitos da 1FN.",
+        "D": "BCNF exige que todo determinante seja superchave."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Normalização de dados - 1FN, 2FN e 3FN.md"
+    }
+  },
+  {
+    "id": "SQL-001",
+    "disciplina_id": "03",
+    "disciplina": "Manipulação de Dados SQL",
+    "topico": "Agrupamento e filtragem com WHERE vs HAVING",
+    "artigo_origem": "07. Funções agregadas, agrupamento e cláusula HAVING.md",
+    "dificuldade": "medio",
+    "enunciado": "Em consultas SQL envolvendo funções agregadas e particionamento de grupos, qual é a distinção semântica e operacional correta entre as cláusulas `WHERE` e `HAVING`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`WHERE` filtra linhas individuais antes da formação dos grupos e do cálculo de agregações; `HAVING` filtra os grupos já consolidados com base em condições agregadas.",
+        "correta": true,
+        "diagnostico": "Correto: no ciclo de execução lógica do SQL, o WHERE opera sobre tuplas individuais do FROM/JOIN, enquanto HAVING avalia os grupos formados pelo GROUP BY."
+      },
+      {
+        "letra": "B",
+        "texto": "`HAVING` pode substituir `WHERE` em qualquer consulta sem impacto de desempenho, pois o otimizador sempre executa as agregações antes das leituras das linhas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e de desempenho: HAVING não deve ser usado para filtros atômicos de linha, pois atrasa filtros e impede o uso eficaz de índices de filtragem prévia."
+      },
+      {
+        "letra": "C",
+        "texto": "`WHERE` aceita funções agregadas como `COUNT()` e `SUM()`, ao passo que `HAVING` só aceita colunas atômicas simples.",
+        "correta": false,
+        "diagnostico": "Erro inverso: WHERE não aceita funções agregadas diretamente (produz erro de sintaxe); HAVING foi criado exatamente para filtrar agregações."
+      },
+      {
+        "letra": "D",
+        "texto": "`HAVING` é uma instrução da DDL (Data Definition Language) para criação de restrições em tabelas particionadas.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: HAVING pertence à DQL (Data Query Language) ou DML de consulta no comando SELECT."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma seleção esportiva: primeiro você elimina atletas que não têm a idade mínima permitida (WHERE nas fichas individuais); depois você soma os pontos dos times formados e só classifica os times com média superior a 80 pontos (HAVING nos grupos).",
+      "analise_correta": "A ordem lógica de processamento em SQL é: FROM/JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY. Por isso, WHERE descarta linhas antes do agrupamento e HAVING filtra os grupos após a agregação.",
+      "distratores": {
+        "B": "Usar HAVING para condições simples de linha obriga o SGBD a agrupar dados desnecessários antes de filtrar, prejudicando o plano de execução.",
+        "C": "Funções agregadas como SUM(valor) são proibidas no WHERE pois as linhas individuais ainda não foram agrupadas.",
+        "D": "HAVING é cláusula de consulta de dados, não de definição estrutural de tabelas."
+      },
+      "referencia_vault": "03. Manipulação de Dados SQL/07. Funções agregadas, agrupamento e cláusula HAVING.md"
+    }
+  },
+  {
+    "id": "SQL-002",
+    "disciplina_id": "03",
+    "disciplina": "Manipulação de Dados SQL",
+    "topico": "Transações, ACID e controle de concorrência",
+    "artigo_origem": "12. Transações em SQL - integridade e controle de concorrência.md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere o processamento de uma transferência financeira entre contas em um SGBD relacional. O procedimento debita 500 reais da conta A e credita 500 reais na conta B. Se ocorrer uma queda de energia no servidor imediatamente após a instrução de débito e antes do crédito, qual propriedade fundamental do modelo ACID e comando do SGBD garantem que o dinheiro não desapareça?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Durabilidade, garantida pelo comando `GRANT`, que grava o estado em memória RAM não volátil.",
+        "correta": false,
+        "diagnostico": "Erro terminológico e conceitual: GRANT gerencia privilégios (DCL), não recuperação de transação."
+      },
+      {
+        "letra": "B",
+        "texto": "Atomicidade (princípio do tudo ou nada), permitindo que na recuperação o SGBD realize um `ROLLBACK` desfazendo o débito incompleto registrado no log de transações (*write-ahead logging*).",
+        "correta": true,
+        "diagnostico": "Correto: a atomicidade assegura que todas as operações da transação se completam ou nenhuma persiste. O SGBD desfaz passos parciais usando o log."
+      },
+      {
+        "letra": "C",
+        "texto": "Isolamento estrito, que automaticamente converte o crédito em um `COMMIT` implícito na conta destino mesmo sem o comando ser executado.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: isolamento impede interferência entre transações concorrentes; ele jamais pode 'inventar' execuções não ocorridas."
+      },
+      {
+        "letra": "D",
+        "texto": "Consistência de leitura suja (*dirty read*), que permite que terceiros visualizem o saldo alterado provisoriamente.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: leitura suja é uma anomalia de concorrência indesejada, não um mecanismo de proteção de integridade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A transação atômica é como uma cápsula blindada: ou ela chega inteira do outro lado com todas as tarefas concluídas, ou a escotilha é fechada e tudo volta à estaca zero exatamente como estava antes.",
+      "analise_correta": "Atomicidade é a garantia de indivisibilidade. Usando o log transacional (*WAL*), na reinicialização pós-falha o SGBD desfaz (*undo/rollback*) transações incompletas e refaz (*redo*) as que já haviam dado COMMIT.",
+      "distratores": {
+        "A": "Durabilidade garante persistência de transações que já sofreram COMMIT, e GRANT é comando de autorização.",
+        "C": "O SGBD não pode adivinhar operações futuras; transações abortadas devem ser revertidas.",
+        "D": "Dirty read é um nível de isolamento relaxado (Read Uncommitted) que expõe dados não commitados."
+      },
+      "referencia_vault": "03. Manipulação de Dados SQL/12. Transações em SQL - integridade e controle de concorrência.md"
+    }
+  },
+  {
+    "id": "AED-001",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Tabelas Hash, colisões e complexidade",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma tabela hash (*hash table*) implementada para armazenamento de pares chave-valor, a função de espalhamento (*hash function*) mapeia chaves de domínio amplo em índices de um array interno. O que acontece quando duas chaves distintas geram exatamente o mesmo índice calculado, e qual a estratégia típica para contornar essa situação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ocorre um *overflow* de memória fatal com terminação do processo sem possibilidade de recuperação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: colisões de hash são esperadas e inerentes ao princípio da casa dos pombos; estruturas tratam isso rotineiramente."
+      },
+      {
+        "letra": "B",
+        "texto": "Ocorre uma colisão de hash (*hash collision*), resolvida por técnicas como encadeamento externo (*separate chaining* com listas encadeadas) ou endereçamento aberto (*open addressing*).",
+        "correta": true,
+        "diagnostico": "Correto: colisões são tratadas encadeando elementos no mesmo balde (bucket) ou buscando outro slot livre por sondagem linear/quadrática."
+      },
+      {
+        "letra": "C",
+        "texto": "A tabela sobrescreve compulsoriamente a chave anterior, pois tabelas hash não permitem chaves com valores de hash iguais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: sobrescrita só ocorre quando a mesma chave é reinserida, não quando chaves diferentes colidem no mesmo índice."
+      },
+      {
+        "letra": "D",
+        "texto": "A estrutura converte-se automaticamente em uma árvore B* com complexidade O(N!) para preservar a ordenação sequencial.",
+        "correta": false,
+        "diagnostico": "Erro absurdo e taxonômico: tabelas hash não são ordenadas e O(N!) é complexidade fatorial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em armários numerados de 0 a 9 em um vestiário: se duas pessoas recebem o bilhete para o armário 4 (colisão), podemos colocar uma gaveta com divisórias dentro do armário 4 (encadeamento) ou mandar a segunda pessoa procurar o próximo armário vazio ao lado (endereçamento aberto).",
+      "analise_correta": "Funções hash produzem colisões quando mapeiam domínios maiores para arrays finitos. O encadeamento mantém uma lista dos elementos colidentes no bucket, mantendo custo médio O(1) com fator de carga controlado.",
+      "distratores": {
+        "A": "Colisões são eventos previstos e normais no projeto de tabelas hash.",
+        "C": "Sobrescrita destruiria dados de chaves distintas.",
+        "D": "Tabelas hash não garantem ordem e O(1) médio é sua principal vantagem."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-002",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Árvores Binárias de Busca (ABB) e balanceamento AVL",
+    "artigo_origem": "10. Árvore AVL - conceito, fator de balanceamento e rotações.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma Árvore Binária de Busca (ABB), a inserção desbalanceada de elementos previamente ordenados pode degradar sua altura para N, transformando a busca em O(N). Para evitar isso, a árvore AVL introduz o fator de balanceamento (FB) em cada nó. Como o FB é definido e qual critério desencadeia rotações na árvore?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O FB é a quantidade total de folhas dividida pela raiz; rotações ocorrem quando FB ultrapassa 10.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o fator de balanceamento relaciona a altura das subárvores de cada nó, não a contagem de folhas."
+      },
+      {
+        "letra": "B",
+        "texto": "O FB é a diferença entre a altura da subárvore esquerda e a altura da subárvore direita (ou vice-versa); rotações de rebalanceamento ocorrem quando |FB| > 1 (ou seja, quando FB assume -2 ou +2).",
+        "correta": true,
+        "diagnostico": "Correto: a condição de invariante AVL exige que em todo nó |h_esq - h_dir| <= 1. Se FB atingir 2 ou -2, aplicam-se rotações simples ou duplas."
+      },
+      {
+        "letra": "C",
+        "texto": "O FB mede a profundidade do nó mais raso; qualquer nó com filhos requer rotação simples imediata.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: nós com filhos são a própria essência de árvores binárias; rotação só é necessária quando há desequilíbrio na altura."
+      },
+      {
+        "letra": "D",
+        "texto": "O FB é um índice de busca binária utilizado apenas para desalocar nós na coleta de lixo (garbage collector) do C#.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: FB é um atributo estrutural do algoritmo AVL para manutenção de altura logarítmica O(log N)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma balança de dois pratos em cada bifurcação da árvore: se um prato estiver mais de um nível mais pesado que o outro (|FB| = 2), a balança puxa um cabo e redistribui os pesos (rotação simples ou dupla) para o centro.",
+      "analise_correta": "A árvore AVL garante busca, inserção e remoção em tempo O(log N) no pior caso ao reequilibrar a altura estritamente através de rotações (simples à direita/esquerda ou duplas esquerda-direita/direita-esquerda).",
+      "distratores": {
+        "A": "FB não é média de folhas, mas a diferença direta de altura entre subárvores.",
+        "C": "Uma árvore perfeitamente balanceada possui filhos em todos os nós internos sem precisar de rotações.",
+        "D": "O GC de C# gerencia memória na heap e não conhece regras de balanceamento AVL."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvore AVL - conceito, fator de balanceamento e rotações.md"
+    }
+  },
+  {
+    "id": "WEB-001",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Padrão arquitetural MVC e separação de responsabilidades",
+    "artigo_origem": "05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+    "dificuldade": "medio",
+    "enunciado": "No padrão arquitetural Model-View-Controller (MVC) adotado no ASP.NET Core, qual é o papel desempenhado pelo Controller ao receber uma requisição HTTP de formulário?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Renderizar diretamente tags HTML no banco de dados e gravar os bytes no log de auditoria do sistema operacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e confusão de camadas: banco de dados não renderiza HTML."
+      },
+      {
+        "letra": "B",
+        "texto": "Intermediar a comunicação: recebe dados da requisição, orquestra as regras de negócio chamando o Model/repositório e seleciona a View apropriada para retorno ao cliente.",
+        "correta": true,
+        "diagnostico": "Correto: o Controller é o maestro do fluxo de requisição/resposta, coordenando Model e View sem acumular regras de negócio pesadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Definir a formatação visual e estilização CSS das páginas em substituição completa aos arquivos Razor e JavaScript.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: apresentação visual é encargo da View (Razor/HTML/CSS)."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituir o protocolo HTTP por sockets UDP de baixa latência para transmissão de arquivos estáticos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: Controllers no ASP.NET Core MVC respondem a rotas no pipeline HTTP padrão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Controller é o garçom do restaurante: ele anota seu pedido (requisição HTTP), leva à cozinha (Model/regras de negócio) e traz o prato decorado (View) até a sua mesa.",
+      "analise_correta": "O padrão MVC separa a lógica de negócios e dados (Model), a interface de usuário (View) e o fluxo de entrada e despacho de respostas (Controller), reduzindo o acoplamento.",
+      "distratores": {
+        "A": "HTML é gerado pela camada de apresentação (View/Razor Engine).",
+        "C": "CSS e estrutura visual pertencem estritamente à View.",
+        "D": "O pipeline de middleware do ASP.NET Core processa HTTP de maneira extensível."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
+    }
+  },
+  {
+    "id": "WEB-002",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Autenticação por Cookies, Claims e RBAC",
+    "artigo_origem": "11. Autenticação e autorização em aplicações Web MVC.md",
+    "dificuldade": "dificil",
+    "enunciado": "No ASP.NET Core MVC, a segurança de rotas administrativas frequentemente utiliza controle de acesso baseado em papéis (RBAC - *Role-Based Access Control*) com cookies de autenticação criptografados. Ao proteger uma ação com o atributo `[Authorize(Roles = \"Admin\")]`, qual é a sequência de validação executada pelo middleware?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O middleware ignora o cookie e força a digitação da senha do banco de dados em um modal básico do navegador a cada clique.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: a sessão autenticada persiste via cookie seguro sem reautenticação contínua."
+      },
+      {
+        "letra": "B",
+        "texto": "Descriptografa o cookie de autenticação, recria a identidade do usuário (`ClaimsPrincipal`) e verifica se entre as Claims há uma declaração de papel (`ClaimTypes.Role`) correspondente a 'Admin'.",
+        "correta": true,
+        "diagnostico": "Correto: o pipeline restaura o ClaimsPrincipal a partir do cookie assinado e o filtro de autorização valida a Claim de papel solicitada."
+      },
+      {
+        "letra": "C",
+        "texto": "Permite acesso imediato a usuários anônimos desde que estes possuam um token JWT expirado armazenado no LocalStorage.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: usuários anônimos ou com tokens expirados são redirecionados para a tela de login (Challenge) ou de acesso negado (Forbidden)."
+      },
+      {
+        "letra": "D",
+        "texto": "Concede acesso apenas caso a rota não possua nenhum Model associado na view de retorno.",
+        "correta": false,
+        "diagnostico": "Erro semântico: autorização é independente de a View conter ou não ViewModel."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O cookie criptografado é como um crachá oficial plastificado e carimbado: a portaria (middleware de autenticação) lê o crachá e verifica as anotações nele (Claims). O segurança da sala VIP (filtro de autorização) só deixa passar quem tiver o carimbo 'Admin'.",
+      "analise_correta": "No ASP.NET Core, Cookies Authentication armazena um ticket criptografado. O middleware restaura o `ClaimsIdentity` e `ClaimsPrincipal`. O atributo `[Authorize(Roles = \"Admin\")]` checa `User.IsInRole(\"Admin\")`.",
+      "distratores": {
+        "A": "Isso descreveria HTTP Basic Auth sem persistência de estado.",
+        "C": "Tokens expirados invalidam a sessão e barram o acesso.",
+        "D": "Modelagem de dados de visualização não tem relação com as regras de permissão."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação e autorização em aplicações Web MVC.md"
+    }
+  },
+  {
+    "id": "PRJ-001",
+    "disciplina_id": "06",
+    "disciplina": "Projeto - Aplicação Interativa",
+    "topico": "Diretrizes de escopo, ODS 4 e requisitos do projeto",
+    "artigo_origem": "02. Requisitos e diretrizes de escopo do projeto.md",
+    "dificuldade": "medio",
+    "enunciado": "No projeto integrador do Eixo 2 da PUC Minas (Aplicação Interativa conectada ao ODS 4 - Educação de Qualidade), quais são as exigências obrigatórias de arquitetura e modelagem para a validação da aplicação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Construção de uma aplicação estática sem banco de dados, utilizando apenas páginas HTML puras sem controle de acesso ou regras de negócio.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o projeto exige backend estruturado em camadas com banco de dados relacional e CRUDs integrados."
+      },
+      {
+        "letra": "B",
+        "texto": "Desenvolvimento de uma aplicação web interativa com arquitetura MVC/backend, persistência em banco relacional (com no mínimo 3 CRUDs funcionais relacionados), controle de acesso por perfis de usuário e publicação em nuvem (ex.: Azure App Service).",
+        "correta": true,
+        "diagnostico": "Correto: diretrizes oficiais do projeto integrador do semestre com foco prático no ODS 4 e persistência de dados."
+      },
+      {
+        "letra": "C",
+        "texto": "Implementação exclusiva de drivers de baixo nível para sistemas embarcados em linguagem Assembly.",
+        "correta": false,
+        "diagnostico": "Erro de escopo: o projeto tem natureza de desenvolvimento de software web interativo."
+      },
+      {
+        "letra": "D",
+        "texto": "Submissão de um documento teórico sem necessidade de qualquer repositório de código ou protótipo funcional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o projeto é de natureza teórico-prática e exige entregas incrementais com repositório no GitHub."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O projeto integrador é o laboratório onde todas as peças do semestre (banco de dados, requisitos, POO/C#, design e web) se encaixam em uma solução completa hospedada na nuvem.",
+      "analise_correta": "O projeto exige solução funcional orientada ao tema social (ODS 4), com documentação de requisitos, diagramas de arquitetura, CRUDs completos, perfis diferenciados e deploy funcional.",
+      "distratores": {
+        "A": "Páginas estáticas pertencem ao Eixo 1; o Eixo 2 exige backend e banco de dados.",
+        "C": "Assembly é de arquitetura de computadores, distante do escopo web deste semestre.",
+        "D": "Entregas sem código violam os critérios de avaliação prática da PUC Minas."
+      },
+      "referencia_vault": "06. Projeto - Aplicacao Interativa/02. Requisitos e diretrizes de escopo do projeto.md"
+    }
+  },
+  {
+    "id": "PRJ-002",
+    "disciplina_id": "06",
+    "disciplina": "Projeto - Aplicação Interativa",
+    "topico": "Etapas de desenvolvimento e validação com usuários",
+    "artigo_origem": "03. Cronograma semanal e entregas de etapas.md",
+    "dificuldade": "medio",
+    "enunciado": "No ciclo de entregas das etapas do projeto integrador, qual é a principal finalidade da Etapa 2 (Arquitetura, Modelagem e Planejamento de Testes)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Encerrar o projeto definitivamente sem necessidade de codificar as funcionalidades.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: o desenvolvimento do código ocorre nas etapas seguintes (Etapas 3 e 4)."
+      },
+      {
+        "letra": "B",
+        "texto": "Estruturar o projeto conceitual e técnico: modelagem relacional de dados, diagramas de classes e pacotes, fluxos de navegação por perfil, wireframes/mockups e planejamento dos testes de usabilidade e software.",
+        "correta": true,
+        "diagnostico": "Correto: a Etapa 2 estabelece a fundação arquitetural que guiará a implementação nas etapas subsequentes."
+      },
+      {
+        "letra": "C",
+        "texto": "Realizar testes de penetração em servidores de produção já em escala corporativa com milhões de usuários simultâneos.",
+        "correta": false,
+        "diagnostico": "Erro de escopo e cronograma: fora da realidade e momento de concepção/modelagem da disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Registrar a patente da marca do software no órgão governamental de propriedade industrial.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: não faz parte do escopo pedagógico da Etapa 2."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A Etapa 2 é a planta baixa da casa: antes de levantar as paredes e instalar os encanamentos (programação), desenham-se as medidas, as ligações elétricas e os fluxos de circulação.",
+      "analise_correta": "A Etapa 2 conecta Engenharia de Requisitos, Modelagem de Dados e Design de Interação ao plano arquitetural do projeto.",
+      "distratores": {
+        "A": "A modelagem prepara e viabiliza a implementação de código da Etapa 3.",
+        "C": "Testes de carga e penetração de alta escala não pertencem à Etapa 2 de modelagem.",
+        "D": "Patente de marca é aspecto jurídico fora do escopo técnico do projeto acadêmico."
+      },
+      "referencia_vault": "06. Projeto - Aplicacao Interativa/03. Cronograma semanal e entregas de etapas.md"
+    }
+  },
+  {
+    "id": "REQ-001",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos funcionais vs. não-funcionais",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "medio",
+    "enunciado": "Na Engenharia de Requisitos, a classificação correta entre requisitos funcionais (RF) e não-funcionais (RNF) é vital para o planejamento de testes e arquitetura. Considere a declaração: 'O sistema deve criptografar as senhas dos usuários utilizando o algoritmo BCrypt e responder a 95% das consultas de busca em menos de 2 segundos sob carga de 500 usuários simultâneos'. Como essa declaração se classifica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Trata-se de um conjunto de Requisitos Funcionais, pois descreve ações que o usuário clica diretamente na tela.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: criptografia e tempo de resposta são restrições e qualidades arquiteturais, não interações funcionais de negócio."
+      },
+      {
+        "letra": "B",
+        "texto": "Trata-se de Requisitos Não-Funcionais (RNF) referentes a critérios de segurança (criptografia) e desempenho/eficiência (latência e concorrência).",
+        "correta": true,
+        "diagnostico": "Correto: RNFs definem restrições de qualidade, propriedades do sistema e condições de operação (segurança, desempenho, disponibilidade)."
+      },
+      {
+        "letra": "C",
+        "texto": "Trata-se de um caso de uso abstrato sem valor prático para o projeto de software.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: metas de desempenho e segurança são verificáveis e essenciais para a arquitetura."
+      },
+      {
+        "letra": "D",
+        "texto": "Classifica-se como regra de negócio exclusiva de marketing que não gera impactos na infraestrutura de servidores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: exigências de latência sob concorrência impactam diretamente o dimensionamento da infraestrutura."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o requisito funcional diz 'o que' o sistema faz (ex.: permitir que o passageiro reserve uma passagem), o requisito não-funcional diz 'como' ele faz (com que rapidez, segurança e confiabilidade a reserva é processada).",
+      "analise_correta": "Requisitos funcionais descrevem serviços, entradas e saídas do sistema. Requisitos não-funcionais (RNF) impõem restrições e atributos de qualidade (ISO/IEC 25010) como segurança, usabilidade, eficiência e portabilidade.",
+      "distratores": {
+        "A": "Usuários não 'clicam' em algoritmos de criptografia; são restrições de qualidade do sistema.",
+        "C": "RNFs bem especificados fornecem critérios objetivos de aceitação e testes de estresse.",
+        "D": "Requisitos de desempenho influenciam diretamente a escolha de servidores e banco de dados."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-002",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Casos de Uso UML e relacionamentos include vs. extend",
+    "artigo_origem": "07. Casos de uso - modelagem e relacionamentos include e extend.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em diagramas de casos de uso da UML, a modularização de fluxos de eventos pode utilizar os estereótipos `«include»` e `«extend»`. Qual é a distinção semântica essencial entre esses dois relacionamentos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`«include»` e `«extend»` são termos sinônimos que podem ser intercambiados livremente pelo analista de requisitos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: possuem semânticas de dependência e condicionalidade opostas na UML."
+      },
+      {
+        "letra": "B",
+        "texto": "`«include»` indica inclusão mandatória/obrigatória (o caso base depende obrigatoriamente do caso incluído para se completar); `«extend»` indica extensão condicional ou opcional disparada a partir de um ponto de extensão (*extension point*) sem que o caso base dependa dele.",
+        "correta": true,
+        "diagnostico": "Correto: define com precisão o comportamento padrão UML. Include é obrigatório e compartilhado; extend é condicional e desacoplado do caso de uso base."
+      },
+      {
+        "letra": "C",
+        "texto": "`«extend»` é obrigatório em todos os fluxos e a seta sempre aponta em direção contrária ao ator principal.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: extend é opcional/condicional e a seta aponta do caso de uso de extensão para o caso base."
+      },
+      {
+        "letra": "D",
+        "texto": "`«include»` serve apenas para conectar atores humanos a sistemas legados externos sem casos de uso.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico: atores conectam-se a casos de uso por associação; include conecta casos de uso entre si."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em comprar um lanche: pagar é mandatório (`«include»` Pagar Conta no Comprar Lanche); pedir maionese extra só ocorre se você quiser (`«extend»` Adicionar Molho Especial dependendo da condição de escolha).",
+      "analise_correta": "Include modulariza passos comuns e obrigatórios. Extend insere comportamento opcional ou de exceção apenas quando condições específicas no ponto de extensão são satisfeitas.",
+      "distratores": {
+        "A": "Confundir include e extend altera gravemente o escopo e a obrigatoriedade dos fluxos contratuais de software.",
+        "C": "Extend não é obrigatório; é inerentemente condicional.",
+        "D": "Relacionamentos entre atores e casos de uso são associações simples, não includes."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Casos de uso - modelagem e relacionamentos include e extend.md"
+    }
+  },
+  {
+    "id": "DI-001",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Engenharia Cognitiva vs. Engenharia Semiótica",
+    "artigo_origem": "02. Construções teóricas da interação humano-computador.md",
+    "dificuldade": "dificil",
+    "enunciado": "No campo da Interação Humano-Computador (IHC), a Engenharia Cognitiva (Donald Norman) e a Engenharia Semiótica (Clarisse de Souza) oferecem modelos teóricos distintos para explicar o fenômeno da interação. Qual é a diferença fundamental entre as visões dessas duas correntes?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Engenharia Cognitiva enxerga a interface como um circuito puramente elétrico de hardware; a Engenharia Semiótica rejeita o uso de computadores por humanos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual absurdo: nenhuma das duas teorias defende tais posições."
+      },
+      {
+        "letra": "B",
+        "texto": "A Engenharia Cognitiva foca no usuário como processador de informação (superação dos golfos de execução e avaliação); a Engenharia Semiótica enxerga a interação como metacomunicação, na qual a interface é a mensagem e o preposto do designer para o usuário.",
+        "correta": true,
+        "diagnostico": "Correto: Norman modela a cognição e as pontes entre intenção física e avaliação mental; Clarisse de Souza conceitua a interface como signo e metacomunicação designer-usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambas consideram que a interface gráfica é um erro conceitual e que sistemas devem operar exclusivamente por linha de comando Unix.",
+        "correta": false,
+        "diagnostico": "Erro histórico: Norman e Clarisse de Souza fundamentam o design de interfaces interativas e gráficas modernas."
+      },
+      {
+        "letra": "D",
+        "texto": "A Engenharia Cognitiva se restringe a testes quantitativos automatizados sem humanos; a Engenharia Semiótica analisa somente a velocidade de conexão em redes de computadores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: IHC estuda a relação humana; redes de computadores é outra disciplina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para Norman, o sistema é uma ferramenta que o usuário tenta manipular (ele aperta um botão e avalia se o resultado atendeu à intenção dele). Para Clarisse de Souza, o sistema é uma carta ou preposto enviado pelo designer: o usuário 'conversa' com as mensagens deixadas pelo criador do software.",
+      "analise_correta": "Norman modela a ação humana em 7 etapas e analisa os Golfos de Execução e Avaliação. Clarisse de Souza formula a teoria da metacomunicação designer-usuário (*'aqui está quem eu sou, o que criei para você fazer e como você pode usar isso'*).",
+      "distratores": {
+        "A": "IHC estuda fatores humanos e cognitivos, não apenas voltagens de circuitos.",
+        "C": "Interfaces gráficas (WIMP e manipulação direta) foram amplamente elucidadas por essas teorias.",
+        "D": "Engenharia cognitiva envolve testes com usuários e psicologia cognitiva aplicada."
+      },
+      "referencia_vault": "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md"
+    }
+  },
+  {
+    "id": "DI-002",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Heurísticas de Nielsen e prevenção de erros",
+    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "dificuldade": "medio",
+    "enunciado": "Durante uma avaliação heurística de um sistema bancário, o especialista constata que, ao tentar realizar um Pix de alto valor, o botão 'Confirmar' não solicita dupla confirmação nem exibe o resumo dos dados do destinatário, executando a transferência irreversível instantaneamente. Qual das 10 Heurísticas de Usabilidade de Jakob Nielsen é violada prioritariamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Correspondência entre o sistema e o mundo real.",
+        "correta": false,
+        "diagnostico": "Embora haja termos bancários, a falha crítica aqui é não impedir uma ação catastrófica e acidental do usuário."
+      },
+      {
+        "letra": "B",
+        "texto": "Prevenção de erros (*Error prevention*), já que um design cuidadoso deve impedir a ocorrência de erros graves antes que eles aconteçam, solicitando confirmação para ações de alto risco.",
+        "correta": true,
+        "diagnostico": "Correto: a heurística 5 (Prevenção de erros) preconiza eliminar condições propensas a falhas ou apresentar aviso e confirmação prévia ao usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "Flexibilidade e eficiência de uso para usuários experientes.",
+        "correta": false,
+        "diagnostico": "Flexibilidade visa atalhos e personalização, mas não às custas de segurança e prevenção de desastres."
+      },
+      {
+        "letra": "D",
+        "texto": "Design estético e minimalista.",
+        "correta": false,
+        "diagnostico": "Design minimalista trata de evitar informações irrelevantes na tela, não de confirmações transacionais essenciais."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Melhor do que uma excelente mensagem de erro explicando que o vaso quebrou é colocar uma cerca protetora em volta do vaso para que ninguém tropece nele (prevenção de erros).",
+      "analise_correta": "Nielsen destaca que prevenir erros é superior a boas mensagens de erro. Em operações financeiras irreversíveis, passos de confirmação e checagem de dados são mandatórios.",
+      "distratores": {
+        "A": "Mundo real diz respeito a metáforas conhecidas (ex.: ícone de carteira ou comprovante).",
+        "C": "Atalhos rápidos para especialistas não eliminam checagens críticas de segurança.",
+        "D": "Estética minimalista foca na carga visual e eliminação de ruídos."
+      },
+      "referencia_vault": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md"
+    }
+  },
+  {
+    "id": "RED-001",
+    "disciplina_id": "09",
+    "disciplina": "Redes de Computadores",
+    "topico": "Modelo OSI vs. Modelo TCP/IP e encapsulamento",
+    "artigo_origem": "10. Introdução ao modelo de referência OSI e arquitetura em camadas.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo de referência OSI (Open Systems Interconnection) da ISO e na arquitetura TCP/IP da Internet, o tráfego de dados é submetido ao processo de encapsulamento à medida que desce pelas camadas da pilha. Como é denominada a Unidade de Dados de Protocolo (PDU) nas camadas de Transporte, Rede e Enlace, respectivamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Bit, Quadro e Pacote.",
+        "correta": false,
+        "diagnostico": "Erro de ordem: Bit é camada física; Quadro é enlace; Pacote é rede."
+      },
+      {
+        "letra": "B",
+        "texto": "Segmento (ou Datagrama UDP), Pacote (Datagrama IP) e Quadro (*Frame*).",
+        "correta": true,
+        "diagnostico": "Correto: nomenclatura canônica internacional das PDUs no modelo de camadas para Transporte, Rede e Enlace."
+      },
+      {
+        "letra": "C",
+        "texto": "Sinal elétrico, Hertz e Fibra monomodo.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e terminológico: grandezas físicas de meio de transmissão, não PDUs de protocolos."
+      },
+      {
+        "letra": "D",
+        "texto": "URL, Cookie e Header HTTP.",
+        "correta": false,
+        "diagnostico": "Erro de camada: elementos restritos à camada de aplicação da Web."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em caixas postais encaixadas: a mensagem de aplicação entra em uma caixa de Transporte (Segmento com portas TCP), que entra em uma caixa de Rede (Pacote com IPs), que entra em um contêiner de Enlace (Quadro com MACs), transmitido como pulsos elétricos ou luz (Bits) no meio físico.",
+      "analise_correta": "O processo de encapsulamento adiciona cabeçalhos específicos a cada nível: Camada 4 = Segmento (TCP)/Datagrama (UDP); Camada 3 = Pacote/Datagrama IP; Camada 2 = Quadro (Frame); Camada 1 = Bits.",
+      "distratores": {
+        "A": "Inverteu e deslocou a ordem das camadas.",
+        "C": "Hertz e sinais são fenômenos físicos de modulação analógica/digital na camada 1.",
+        "D": "Estruturas de aplicação (camada 7) transportadas dentro do payload."
+      },
+      "referencia_vault": "09. Redes de Computadores/10. Introdução ao modelo de referência OSI e arquitetura em camadas.md"
+    }
+  },
+  {
+    "id": "RED-002",
+    "disciplina_id": "09",
+    "disciplina": "Redes de Computadores",
+    "topico": "Comutação de pacotes, roteamento e nós intermediários",
+    "artigo_origem": "14. Introdução ao modelo TCP-IP e arquitetura da Internet.md",
+    "dificuldade": "dificil",
+    "enunciado": "A arquitetura fundamental da Internet baseia-se na comutação de pacotes sem conexão (*connectionless packet switching*). Qual premissa de projeto proposta por Vint Cerf e Bob Kahn e consolidada na ARPANET explica a resiliência da rede contra falhas em nós intermediários (roteadores)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Toda a inteligência de controle de fluxo e retransmissão de dados foi transferida para os roteadores intermediários centrais, mantendo os computadores das pontas totalmente passivos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: o modelo da Internet adota o princípio fim-a-fim (*end-to-end*), mantendo a inteligência nos hosts e a rede interna simples."
+      },
+      {
+        "letra": "B",
+        "texto": "O princípio ponta a ponta (*end-to-end argument*), no qual os pacotes contêm cabeçalhos com endereço de destino e são roteados de forma autônoma (datagramas), permitindo caminhos alternativos se um roteador cair, enquanto a garantia de integridade e reordenação é delegada aos hosts finais (camada de transporte/TCP).",
+        "correta": true,
+        "diagnostico": "Correto: a inteligência do estado reside nas pontas (hosts), enquanto a malha de roteadores apenas encaminha datagramas pelo melhor caminho disponível."
+      },
+      {
+        "letra": "C",
+        "texto": "A criação de circuitos físicos dedicados e permanentes que travam linhas telefônicas exclusivas para cada chamada na rede mundial.",
+        "correta": false,
+        "diagnostico": "Erro histórico: isso descreve a comutação de circuitos da rede telefônica legada, modelo rejeitado pela Internet por fragilidade contra bombardeios e falhas."
+      },
+      {
+        "letra": "D",
+        "texto": "A exigência de que todos os nós da Internet utilizem o mesmo sistema operacional e relógio de cristal idêntico sem latência.",
+        "correta": false,
+        "diagnostico": "Erro conceitual absurdo: a Internet foi projetada especificamente para interconectar sistemas heterogêneos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de reservar uma linha de trem exclusiva que para se um trilho quebrar (comutação de circuitos), a Internet é como carros individuais com GPS no trânsito (pacotes): se uma avenida for bloqueada, os carros simplesmente viram na próxima esquina e chegam ao destino por outro trajeto.",
+      "analise_correta": "O princípio fim-a-fim (end-to-end) tornou a Internet resiliente, barata e expansível. A rede intermediária (IP) é não confiável (best effort) e descentralizada; os computadores de origem e destino (TCP) cuidam de conferir se tudo chegou em ordem.",
+      "distratores": {
+        "A": "Roteadores no IP são simples e não mantêm estado de sessão para cada conexão de usuário.",
+        "C": "Comutação de circuitos é o oposto da comutação de pacotes.",
+        "D": "A heterogeneidade de hardware e software é a marca do protocolo IP."
+      },
+      "referencia_vault": "09. Redes de Computadores/14. Introdução ao modelo TCP-IP e arquitetura da Internet.md"
+    }
+  },
+  {
+    "id": "LID-001",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências",
+    "topico": "Poder formal vs. liderança e influência",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "medio",
+    "enunciado": "Na teoria das organizações e no estudo das relações interpessoais de trabalho, qual é a distinção conceitual essencial entre 'poder formal' (ou autoridade delegada) e 'liderança'?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Poder formal e liderança são sinônimos perfeitos; quem possui cargo de chefia é automaticamente um líder reconhecido pela equipe.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: autoridade formal decorre da hierarquia, enquanto liderança é um processo social de influência legítima."
+      },
+      {
+        "letra": "B",
+        "texto": "O poder formal emana da posição ou cargo hierárquico na estrutura organizacional (capacidade de comando e sanção legal); a liderança é um processo interpessoal e dinâmico de influência que independe de título e gera engajamento voluntário em prol de objetivos comuns.",
+        "correta": true,
+        "diagnostico": "Correto: autoridade formal decorre do organograma institucional, enquanto liderança baseia-se em influência, confiança e credibilidade conquistadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Liderança existe apenas em ambientes militares com ordens coercitivas de cumprimento obrigatório sob pena de detenção.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: coerção é manifestação de poder coercitivo autoritário, não da essência da liderança interpessoal."
+      },
+      {
+        "letra": "D",
+        "texto": "O poder formal só pode ser exercido por algoritmos de inteligência artificial sem intervenção humana.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e anacrônico: poder formal é dimensão humana de governança corporativa e institucional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um chefe nomeado pela diretoria pode fazer você trabalhar porque tem o poder de demitir (autoridade formal do cargo). Um líder faz você querer dar o seu melhor mesmo se ele tiver o mesmo cargo que você (influência e respeito voluntário).",
+      "analise_correta": "A liderança é um fenômeno social de influenciar pessoas para canalizar esforços em direção a metas compartilhadas. Pode haver chefes formais que não lideram e líderes informais sem cargo de chefia.",
+      "distratores": {
+        "A": "Nomear alguém gerente não o transforma automaticamente em líder inspirador.",
+        "C": "Coerção gera submissão obrigatória, não engajamento autêntico.",
+        "D": "Poder formal emana de contratos sociais e governança das instituições humanas."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-002",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências",
+    "topico": "Grid Gerencial de Blake e Mouton",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "dificil",
+    "enunciado": "O Grid Gerencial proposto por Robert Blake e Jane Mouton mapeia o comportamento do líder em duas dimensões ortogonais: 'preocupação com a produção' (eixo X, de 1 a 9) e 'preocupação com as pessoas' (eixo Y, de 1 a 9). Como é denominado o estilo de liderança situado na coordenada (9, 9) e qual é sua característica central?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Gestão Empobrecida (1, 1), caracterizada pelo esforço mínimo para se manter no emprego sem se importar com ninguém.",
+        "correta": false,
+        "diagnostico": "Erro de coordenadas: gestão empobrecida é (1, 1), no extremo oposto da escala."
+      },
+      {
+        "letra": "B",
+        "texto": "Gestão em Equipe (9, 9), caracterizada por alto comprometimento das pessoas com os objetivos da organização, com relações de confiança mútua e busca simultânea pelo alcance de resultados de excelência e satisfação humana.",
+        "correta": true,
+        "diagnostico": "Correto: a liderança em equipe (9, 9) integra a máxima consideração tanto pelas metas produtivas quanto pelo bem-estar e desenvolvimento das pessoas."
+      },
+      {
+        "letra": "C",
+        "texto": "Gestão Clube de Campo (1, 9), onde a produção fabril rígida é maximizada através de punições rigorosas aos operários.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: Clube de Campo (1, 9) foca exclusivamente no conforto das pessoas ignorando a produção; foco cego na produção é Autoridade-Obediência (9, 1)."
+      },
+      {
+        "letra": "D",
+        "texto": "Gestão Meio-Termo (5, 5), que estabelece a rotatividade semanal compulsória dos membros da diretoria executiva.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: meio-termo (5, 5) busca equilíbrio conservador entre metas razoáveis e moral satisfatória."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma tabela de notas de 1 a 9: nota 9 em cuidar das pessoas e nota 9 em bater metas. Em vez de achar que para produzir muito é preciso maltratar a equipe, o líder (9, 9) entende que pessoas valorizadas e motivadas produzem os melhores resultados do mundo.",
+      "analise_correta": "Blake e Mouton defenderam que alta produção e alto respeito às pessoas não são conflitantes, mas sinérgicos na liderança eficaz em equipe (9, 9).",
+      "distratores": {
+        "A": "(1, 1) é a negligência gerencial total.",
+        "C": "(1, 9) negligencia os resultados do negócio em prol de um clima artificialmente amigável.",
+        "D": "(5, 5) acomoda-se na média sem atingir a excelência integrada do (9, 9)."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "DES-001",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos",
+    "topico": "Indivíduo, sociedade e dilema ético contemporâneo",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Nas ciências sociais e na reflexão ética sobre a sociedade contemporânea, como se compreende a relação dialética entre o indivíduo e a coletividade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O indivíduo nasce completamente isolado de qualquer influência cultural, construindo sua identidade sem nenhuma dependência da linguagem ou de instituições sociais.",
+        "correta": false,
+        "diagnostico": "Erro sociológico: a subjetividade humana se constitui na e pela mediação social e pela linguagem."
+      },
+      {
+        "letra": "B",
+        "texto": "Há uma mútua constituição: a sociedade molda normas, valores e linguagem dos indivíduos, enquanto os sujeitos, por meio de sua agência crítica, práticas e escolhas coletivas, reproduzem ou transformam essas mesmas estruturas sociais.",
+        "correta": true,
+        "diagnostico": "Correto: visão dialética contemporânea consolidada na sociologia e antropologia (estruturação e agência social)."
+      },
+      {
+        "letra": "C",
+        "texto": "A sociedade moderna aboliu completamente as desigualdades socioeconômicas através da mecanização robótica.",
+        "correta": false,
+        "diagnostico": "Erro empírico: desigualdades e conflitos contemporâneos persistem e são temas centrais da disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "A cultura é um traço puramente genético determinado pelo tipo sanguíneo sem influência do meio comunitário.",
+        "correta": false,
+        "diagnostico": "Erro antropológico: cultura é construção simbólica e histórica transmitida pelo aprendizado social, não biológica."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no idioma que você fala: você não inventou o português sozinho, aprendeu com a sociedade; mas ao falar e criar gírias ou novas palavras no dia a dia, você ajuda a transformar a própria língua para os próximos falantes.",
+      "analise_correta": "O ser humano é um ser essencialmente social. A individualidade é produto das relações sociais e, ao mesmo tempo, agente capaz de modificar o tecido social em que vive.",
+      "distratores": {
+        "A": "O mito do 'homem isolado' ignora a sociabilidade originária e a linguagem humana.",
+        "C": "Tecnologia não resolveu por si só os desafios éticos, ambientais e distributivos.",
+        "D": "O conceito antropológico de cultura rejeita o determinismo biológico ou racial."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-002",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos",
+    "topico": "Cooperação, solidariedade e antropologia da cultura",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Estudos contemporâneos de antropologia, paleoantropologia e psicologia evolutiva demonstram que, ao contrário da visão reducionista do 'egoísmo puro' ou sobrevivência exclusiva do indivíduo isolado, o diferencial evolutivo da espécie humana decorreu prioritariamente de:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Capacidade extrema de força bruta física individual em combate corpo a corpo contra grandes predadores sem ajuda de terceiros.",
+        "correta": false,
+        "diagnostico": "Erro factual: fisicamente o ser humano primitivo era vulnerável e mais fraco que a maioria dos grandes predadores."
+      },
+      {
+        "letra": "B",
+        "texto": "Capacidades hiperdesenvolvidas de cooperação social, solidariedade intragrupal, compartilhamento altruísta de recursos, transmissão cultural acumulativa e divisão cooperativa de trabalho comunitário.",
+        "correta": true,
+        "diagnostico": "Correto: a inteligência social, a empatia e a cooperação mútua constituem os pilares da sobrevivência e do avanço civilizatório da humanidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Rejeição voluntária ao convívio em grupos familiares, forçando cada bebê a se alimentar sozinho desde o nascimento.",
+        "correta": false,
+        "diagnostico": "Erro biológico: bebês humanos têm longo período de dependência parental e cuidados aloparentais comunitários."
+      },
+      {
+        "letra": "D",
+        "texto": "Eliminação sistemática de todas as manifestações artísticas, rituais e linguísticas dos assentamentos humanos.",
+        "correta": false,
+        "diagnostico": "Erro cultural: a produção simbólica e ritualística fortaleceu os laços de pertencimento e solidariedade social."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um homem sozinho na savana não sobrevivia diante de uma fera; mas uma comunidade cooperando, cuidando dos feridos, compartilhando alimento e ensinando os mais jovens venceu o ambiente mais hostil da Terra.",
+      "analise_correta": "A solidariedade e a colaboração não são fraquezas, mas as maiores vantagens adaptativas da humanidade. O cuidado comunitário com os vulneráveis é a primeira evidência antropológica da civilização.",
+      "distratores": {
+        "A": "A anatomia humana compensou fragilidade física com inteligência social e ferramentas.",
+        "C": "A infância prolongada dos humanos só é viável sob redes sociais densas de cooperação.",
+        "D": "Arte e rituais são expressões essenciais da coesão social comunitária."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  }
+]

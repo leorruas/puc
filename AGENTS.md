@@ -302,5 +302,27 @@
  - O bloco `> **Contexto:**` é parte estrutural obrigatória do artigo e deve existir imediatamente após o H1, antes do corpo principal.
  - Bibliografias, seções de referências e notas de rodapé pontuais são os locais apropriados para registrar proveniência. O corpo principal deve permanecer autônomo e didático.
 
+## Banco de questões e simulação avaliativa
+
+22. **Banco de questões em JSON e protocolo de uso pelo agente:**
+ - **Estrutura e localização:** O banco de questões do vault é estruturado em formato JSON padronizado no diretório `banco-de-questoes/`. Cada disciplina possui seu arquivo dedicado (ex.: `01.programacao-modular.json`, `02.modelagem-de-dados.json`, etc.) e o arquivo `questoes.json` centraliza o catálogo completo consolidado.
+ - **Schema padronizado de questão:** Cada entrada do banco deve conter obrigatoriamente:
+   - `id`: identificador alfanumérico único da questão com prefixo da disciplina (ex.: `PM-001`, `SQL-001`, `AED-001`);
+   - `disciplina_id`: código numérico de dois dígitos da matéria (`01` a `11`);
+   - `disciplina`: nome canônico da disciplina em português;
+   - `topico`: conceito específico avaliado;
+   - `artigo_origem`: nome exato do arquivo Markdown de referência no vault;
+   - `dificuldade`: nível taxonômico (`facil`, `medio` ou `dificil`);
+   - `enunciado`: formulação contextualizada do problema ou cenário prático;
+   - `alternativas`: array de exatamente 4 alternativas (`A`, `B`, `C`, `D`), contendo `letra`, `texto`, booleano `correta` (apenas uma verdadeira) e `diagnostico` preliminar;
+   - `explicacao`: objeto com `modelo_mental` (analogia intuitiva via técnica de Feynman), `analise_correta` (fundamentação técnica rigorosa), `distratores` (desconstrução pedagógica de cada alternativa incorreta) e `referencia_vault` (caminho relativo da nota no vault).
+ - **Protocolo de atuação do agente:**
+   - Sempre que o usuário solicitar simulados, testes de conhecimento, baterias de exercícios ou preparação para provas, o agente deve **consultar prioritariamente o banco de questões em JSON** em `banco-de-questoes/` antes de criar perguntas arbitrárias.
+   - O agente pode selecionar questões existentes filtrando por disciplina, tópico ou nível de dificuldade, ou utilizar a estrutura do banco como matriz taxonômica para gerar novas questões inéditas com o mesmo rigor.
+   - **Espera mandatória de resposta:** O agente nunca deve fornecer o gabarito ou as explicações antes que o usuário envie suas respostas.
+   - **Feedback diagnóstico obrigatório:** Ao corrigir a resposta do usuário, o agente deve utilizar o campo `explicacao` da questão e diagnosticar o erro segundo as 5 dimensões pedagógicas da regra 11 (erro conceitual, terminológico, interpretação/leitura, sintaxe/notação ou distração), indicando explicitamente a nota do vault em `referencia_vault` para revisão imediata.
+ - **Manutenção e expansão contínua:** Ao estudar novos artigos ou aprofundar matérias, novas questões devem ser adicionadas incrementalmente aos respectivos arquivos JSON por disciplina e sincronizadas em `questoes.json`.
+
+
 
 

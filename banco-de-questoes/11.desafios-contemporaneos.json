@@ -1,0 +1,92 @@
+[
+  {
+    "id": "DES-001",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos",
+    "topico": "Indivíduo, sociedade e dilema ético contemporâneo",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Nas ciências sociais e na reflexão ética sobre a sociedade contemporânea, como se compreende a relação dialética entre o indivíduo e a coletividade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O indivíduo nasce completamente isolado de qualquer influência cultural, construindo sua identidade sem nenhuma dependência da linguagem ou de instituições sociais.",
+        "correta": false,
+        "diagnostico": "Erro sociológico: a subjetividade humana se constitui na e pela mediação social e pela linguagem."
+      },
+      {
+        "letra": "B",
+        "texto": "Há uma mútua constituição: a sociedade molda normas, valores e linguagem dos indivíduos, enquanto os sujeitos, por meio de sua agência crítica, práticas e escolhas coletivas, reproduzem ou transformam essas mesmas estruturas sociais.",
+        "correta": true,
+        "diagnostico": "Correto: visão dialética contemporânea consolidada na sociologia e antropologia (estruturação e agência social)."
+      },
+      {
+        "letra": "C",
+        "texto": "A sociedade moderna aboliu completamente as desigualdades socioeconômicas através da mecanização robótica.",
+        "correta": false,
+        "diagnostico": "Erro empírico: desigualdades e conflitos contemporâneos persistem e são temas centrais da disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "A cultura é um traço puramente genético determinado pelo tipo sanguíneo sem influência do meio comunitário.",
+        "correta": false,
+        "diagnostico": "Erro antropológico: cultura é construção simbólica e histórica transmitida pelo aprendizado social, não biológica."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no idioma que você fala: você não inventou o português sozinho, aprendeu com a sociedade; mas ao falar e criar gírias ou novas palavras no dia a dia, você ajuda a transformar a própria língua para os próximos falantes.",
+      "analise_correta": "O ser humano é um ser essencialmente social. A individualidade é produto das relações sociais e, ao mesmo tempo, agente capaz de modificar o tecido social em que vive.",
+      "distratores": {
+        "A": "O mito do 'homem isolado' ignora a sociabilidade originária e a linguagem humana.",
+        "C": "Tecnologia não resolveu por si só os desafios éticos, ambientais e distributivos.",
+        "D": "O conceito antropológico de cultura rejeita o determinismo biológico ou racial."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-002",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos",
+    "topico": "Cooperação, solidariedade e antropologia da cultura",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Estudos contemporâneos de antropologia, paleoantropologia e psicologia evolutiva demonstram que, ao contrário da visão reducionista do 'egoísmo puro' ou sobrevivência exclusiva do indivíduo isolado, o diferencial evolutivo da espécie humana decorreu prioritariamente de:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Capacidade extrema de força bruta física individual em combate corpo a corpo contra grandes predadores sem ajuda de terceiros.",
+        "correta": false,
+        "diagnostico": "Erro factual: fisicamente o ser humano primitivo era vulnerável e mais fraco que a maioria dos grandes predadores."
+      },
+      {
+        "letra": "B",
+        "texto": "Capacidades hiperdesenvolvidas de cooperação social, solidariedade intragrupal, compartilhamento altruísta de recursos, transmissão cultural acumulativa e divisão cooperativa de trabalho comunitário.",
+        "correta": true,
+        "diagnostico": "Correto: a inteligência social, a empatia e a cooperação mútua constituem os pilares da sobrevivência e do avanço civilizatório da humanidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Rejeição voluntária ao convívio em grupos familiares, forçando cada bebê a se alimentar sozinho desde o nascimento.",
+        "correta": false,
+        "diagnostico": "Erro biológico: bebês humanos têm longo período de dependência parental e cuidados aloparentais comunitários."
+      },
+      {
+        "letra": "D",
+        "texto": "Eliminação sistemática de todas as manifestações artísticas, rituais e linguísticas dos assentamentos humanos.",
+        "correta": false,
+        "diagnostico": "Erro cultural: a produção simbólica e ritualística fortaleceu os laços de pertencimento e solidariedade social."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um homem sozinho na savana não sobrevivia diante de uma fera; mas uma comunidade cooperando, cuidando dos feridos, compartilhando alimento e ensinando os mais jovens venceu o ambiente mais hostil da Terra.",
+      "analise_correta": "A solidariedade e a colaboração não são fraquezas, mas as maiores vantagens adaptativas da humanidade. O cuidado comunitário com os vulneráveis é a primeira evidência antropológica da civilização.",
+      "distratores": {
+        "A": "A anatomia humana compensou fragilidade física com inteligência social e ferramentas.",
+        "C": "A infância prolongada dos humanos só é viável sob redes sociais densas de cooperação.",
+        "D": "Arte e rituais são expressões essenciais da coesão social comunitária."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  }
+]

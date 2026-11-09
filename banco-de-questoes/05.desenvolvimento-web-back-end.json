@@ -1,0 +1,92 @@
+[
+  {
+    "id": "WEB-001",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Padrão arquitetural MVC e separação de responsabilidades",
+    "artigo_origem": "05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+    "dificuldade": "medio",
+    "enunciado": "No padrão arquitetural Model-View-Controller (MVC) adotado no ASP.NET Core, qual é o papel desempenhado pelo Controller ao receber uma requisição HTTP de formulário?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Renderizar diretamente tags HTML no banco de dados e gravar os bytes no log de auditoria do sistema operacional.",
+        "correta": false,
+        "diagnostico": "Erro conceitual e confusão de camadas: banco de dados não renderiza HTML."
+      },
+      {
+        "letra": "B",
+        "texto": "Intermediar a comunicação: recebe dados da requisição, orquestra as regras de negócio chamando o Model/repositório e seleciona a View apropriada para retorno ao cliente.",
+        "correta": true,
+        "diagnostico": "Correto: o Controller é o maestro do fluxo de requisição/resposta, coordenando Model e View sem acumular regras de negócio pesadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Definir a formatação visual e estilização CSS das páginas em substituição completa aos arquivos Razor e JavaScript.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: apresentação visual é encargo da View (Razor/HTML/CSS)."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituir o protocolo HTTP por sockets UDP de baixa latência para transmissão de arquivos estáticos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: Controllers no ASP.NET Core MVC respondem a rotas no pipeline HTTP padrão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Controller é o garçom do restaurante: ele anota seu pedido (requisição HTTP), leva à cozinha (Model/regras de negócio) e traz o prato decorado (View) até a sua mesa.",
+      "analise_correta": "O padrão MVC separa a lógica de negócios e dados (Model), a interface de usuário (View) e o fluxo de entrada e despacho de respostas (Controller), reduzindo o acoplamento.",
+      "distratores": {
+        "A": "HTML é gerado pela camada de apresentação (View/Razor Engine).",
+        "C": "CSS e estrutura visual pertencem estritamente à View.",
+        "D": "O pipeline de middleware do ASP.NET Core processa HTTP de maneira extensível."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
+    }
+  },
+  {
+    "id": "WEB-002",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Autenticação por Cookies, Claims e RBAC",
+    "artigo_origem": "11. Autenticação e autorização em aplicações Web MVC.md",
+    "dificuldade": "dificil",
+    "enunciado": "No ASP.NET Core MVC, a segurança de rotas administrativas frequentemente utiliza controle de acesso baseado em papéis (RBAC - *Role-Based Access Control*) com cookies de autenticação criptografados. Ao proteger uma ação com o atributo `[Authorize(Roles = \"Admin\")]`, qual é a sequência de validação executada pelo middleware?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O middleware ignora o cookie e força a digitação da senha do banco de dados em um modal básico do navegador a cada clique.",
+        "correta": false,
+        "diagnostico": "Erro conceitual: a sessão autenticada persiste via cookie seguro sem reautenticação contínua."
+      },
+      {
+        "letra": "B",
+        "texto": "Descriptografa o cookie de autenticação, recria a identidade do usuário (`ClaimsPrincipal`) e verifica se entre as Claims há uma declaração de papel (`ClaimTypes.Role`) correspondente a 'Admin'.",
+        "correta": true,
+        "diagnostico": "Correto: o pipeline restaura o ClaimsPrincipal a partir do cookie assinado e o filtro de autorização valida a Claim de papel solicitada."
+      },
+      {
+        "letra": "C",
+        "texto": "Permite acesso imediato a usuários anônimos desde que estes possuam um token JWT expirado armazenado no LocalStorage.",
+        "correta": false,
+        "diagnostico": "Erro conceitual grave: usuários anônimos ou com tokens expirados são redirecionados para a tela de login (Challenge) ou de acesso negado (Forbidden)."
+      },
+      {
+        "letra": "D",
+        "texto": "Concede acesso apenas caso a rota não possua nenhum Model associado na view de retorno.",
+        "correta": false,
+        "diagnostico": "Erro semântico: autorização é independente de a View conter ou não ViewModel."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O cookie criptografado é como um crachá oficial plastificado e carimbado: a portaria (middleware de autenticação) lê o crachá e verifica as anotações nele (Claims). O segurança da sala VIP (filtro de autorização) só deixa passar quem tiver o carimbo 'Admin'.",
+      "analise_correta": "No ASP.NET Core, Cookies Authentication armazena um ticket criptografado. O middleware restaura o `ClaimsIdentity` e `ClaimsPrincipal`. O atributo `[Authorize(Roles = \"Admin\")]` checa `User.IsInRole(\"Admin\")`.",
+      "distratores": {
+        "A": "Isso descreveria HTTP Basic Auth sem persistência de estado.",
+        "C": "Tokens expirados invalidam a sessão e barram o acesso.",
+        "D": "Modelagem de dados de visualização não tem relação com as regras de permissão."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação e autorização em aplicações Web MVC.md"
+    }
+  }
+]
