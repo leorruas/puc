@@ -341,3 +341,11 @@
 - **Sequência adaptativa:** sem disciplina especificada, alternar matérias e graus de dificuldade entre questões, preferindo as já estudadas, para avaliar retenção transversal. Não limitar a bateria inteira a uma matéria. Quando houver indício de lacuna, registrar provisoriamente na sessão e voltar ao conceito após outras questões, preferencialmente por item diferente que explore o mesmo mecanismo. Ajustar a frequência do tema conforme recorrência e gravidade; não confundir repetição de um gabarito decorado com domínio.
 - **Rastreabilidade e qualidade:** validar os IDs, gabaritos e referências diretamente no banco e verificar se cada artigo indicado existe; não inventar caminhos nem declarar domínio por um acerto isolado. Questionar questões ambíguas ou incorretas, sem penalizar o usuário por falhas do item. Ao fim das dez questões, apresentar um resumo curto dos tópicos para estudar e seus artigos correspondentes, além do link do diagnóstico persistido; confirmar a escrita antes de afirmar que registrou.
 - **Compatibilidade de interface:** em caso de falha na visualização de formulários ou blocos interativos, usar alternativas numeradas em texto simples com código separado, sem prejudicar a continuidade do simulado.
+
+
+### Manutenção de publicações e índice de busca
+
+- Antes de corrigir uma execução do GitHub Actions, verificar o estado da execução, seus jobs e logs. Distinguir falhas de código de execuções canceladas, abandonadas ou que não chegaram a iniciar jobs; não atribuir causa técnica sem evidência.
+- O índice de busca deve ser regenerado quando houver mudança em artigos Markdown indexáveis, no código do site ou no gerador do índice. Mudanças isoladas em `AGENTS.md`, instruções de agentes, registros pessoais e diagnósticos JSON não justificam reconstrução.
+- Quando ocorrerem várias publicações próximas, verificar se uma execução posterior já foi concluída antes de repetir jobs ou introduzir alterações no código. Não refazer execuções abandonadas apenas para eliminar alertas históricos.
+- Após alterações de workflow, conferir a validade da configuração e observar o resultado de uma nova execução. Não declarar uma falha resolvida até existir evidência de sucesso.
