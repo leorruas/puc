@@ -10181,6 +10181,946 @@
     "origem": "banco_sintetico_vault"
   },
   {
+    "id": "WEB-REV-001",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Separação de responsabilidades e arquitetura em camadas",
+    "artigo_origem": "01. Arquitetura de software e cliente-servidor.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma equipe está modernizando um portal de consumo de veículos. Atualmente, a mesma classe recebe requisições HTTP, monta o HTML e executa consultas ao banco, dificultando os testes e a manutenção.\n\nQual decisão arquitetural enfrenta diretamente esse problema?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Concentrar todas as funções em um controlador maior.",
+        "correta": false,
+        "diagnostico": "Incorreto: aumentar a concentração criaria uma classe deus (God Class), piorando o acoplamento."
+      },
+      {
+        "letra": "B",
+        "texto": "Separar apresentação, processamento de requisições e responsabilidades de dados.",
+        "correta": true,
+        "diagnostico": "Correto: separar a apresentação (View/UI), o controle de requisições (Controller) e o acesso aos dados (Model/Repository) aplica o princípio de responsabilidade única (SRP) e a arquitetura em camadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Eliminar as classes de domínio para reduzir arquivos.",
+        "correta": false,
+        "diagnostico": "Incorreto: eliminar classes de domínio destrói a representação do negócio."
+      },
+      {
+        "letra": "D",
+        "texto": "Gerar todo o HTML diretamente em comandos SQL.",
+        "correta": false,
+        "diagnostico": "Incorreto: misturar SQL com HTML viola gravemente a separação de camadas e a segurança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um restaurante organizado: o garçom recebe os pedidos dos clientes (Controller), os cozinheiros preparam o prato seguindo receitas padronizadas (Model) e o prato é servido com uma apresentação bonita à mesa (View). Se o garçom tivesse que cozinhar, lavar e cobrar tudo ao mesmo tempo, a cozinha entraria em colapso.",
+      "analise_correta": "A separação de responsabilidades desacopla os componentes do sistema, facilitando testes unitários isolados, manutenção evolutiva e reuso de lógica de negócio.",
+      "distratores": {
+        "A": "Incorreto: aumentar a concentração criaria uma classe deus (God Class), piorando o acoplamento.",
+        "C": "Incorreto: eliminar classes de domínio destrói a representação do negócio.",
+        "D": "Incorreto: misturar SQL com HTML viola gravemente a separação de camadas e a segurança."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md"
+    }
+  },
+  {
+    "id": "WEB-REV-002",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Fluxo entre camadas no padrão MVC",
+    "artigo_origem": "02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma aplicação MVC registra o consumo de combustível de veículos. Um estudante desenhou o fluxo abaixo para explicar como uma solicitação de cadastro é processada.\n\nFluxo simplificado: Navegador -> Controller -> Model/dados -> View\n\nAo observar o fluxo, qual componente recebe a requisição e coordena a resposta no padrão MVC?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Model, por ser responsável pelo HTML.",
+        "correta": false,
+        "diagnostico": "Incorreto: o Model encapsula regras e dados de negócio, não o HTML."
+      },
+      {
+        "letra": "B",
+        "texto": "View, por executar diretamente a persistência.",
+        "correta": false,
+        "diagnostico": "Incorreto: a View é puramente responsável pela apresentação visual, sem acesso direto a banco de dados."
+      },
+      {
+        "letra": "C",
+        "texto": "Controller, por receber a solicitação e coordenar a interação com modelo e visualização.",
+        "correta": true,
+        "diagnostico": "Correto: no padrão MVC, o Controller é o intermediário que intercepta a requisição HTTP enviada pelo navegador, aciona os Models para processar dados/regras e escolhe a View adequada para renderizar a resposta."
+      },
+      {
+        "letra": "D",
+        "texto": "Banco SQL, por decidir a rota HTTP.",
+        "correta": false,
+        "diagnostico": "Incorreto: o roteamento HTTP é responsabilidade do framework web e do servidor de aplicação, não do SGBD."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Controller é o maestro da orquestra: ele não toca todos os instrumentos sozinho nem senta na plateia; ele recebe a partitura (requisição HTTP), avisa aos músicos quando entrar (Model) e direciona o som harmonioso para o público (View).",
+      "analise_correta": "O ciclo de vida de uma requisição em ASP.NET Core MVC sempre atinge o Controller via middleware de roteamento antes de despachar dados para a View.",
+      "distratores": {
+        "A": "Incorreto: o Model encapsula regras e dados de negócio, não o HTML.",
+        "B": "Incorreto: a View é puramente responsável pela apresentação visual, sem acesso direto a banco de dados.",
+        "D": "Incorreto: o roteamento HTTP é responsabilidade do framework web e do servidor de aplicação, não do SGBD."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md"
+    }
+  },
+  {
+    "id": "WEB-REV-003",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Atualização de páginas em Multi-Page Applications (MPA)",
+    "artigo_origem": "03. Tipos de aplicações Web e estratégias de renderização.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "A intranet de uma instituição usa uma aplicação tradicional: ao abrir um cadastro diferente, o navegador solicita outra página ao servidor e recebe um novo documento HTML.\n\nQual característica descreve a abordagem utilizada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "MPA, com navegação baseada em solicitações e respostas de páginas.",
+        "correta": true,
+        "diagnostico": "Correto: em uma Multi-Page Application (MPA), cada transição de tela ou ação resulta em uma nova requisição HTTP ao servidor, que devolve um documento HTML completo renderizado no back-end (SSR)."
+      },
+      {
+        "letra": "B",
+        "texto": "SPA, pois toda navegação sempre carrega novo HTML do servidor.",
+        "correta": false,
+        "diagnostico": "Incorreto: SPAs (Single-Page Applications) carregam uma única casca HTML inicial e atualizam o conteúdo dinamicamente via JavaScript e APIs JSON, sem recarregar a página inteira."
+      },
+      {
+        "letra": "C",
+        "texto": "Aplicação desktop sem comunicação HTTP.",
+        "correta": false,
+        "diagnostico": "Incorreto: a aplicação opera sobre o navegador e responde via requisições HTTP na intranet."
+      },
+      {
+        "letra": "D",
+        "texto": "Serviço de banco de dados sem interface Web.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se de um sistema web com interface HTML para o usuário."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma MPA é como virar as páginas de um livro físico impresso: para ler o próximo capítulo, você vira a página inteira. Já uma SPA é como uma lousa mágica digital onde você apaga e redesenha só um pedacinho sem trocar o quadro.",
+      "analise_correta": "Aplicações tradicionais em ASP.NET Core MVC operam tipicamente como MPAs com renderização no servidor (Server-Side Rendering), ideais para SEO e compatibilidade universal.",
+      "distratores": {
+        "B": "Incorreto: SPAs (Single-Page Applications) carregam uma única casca HTML inicial e atualizam o conteúdo dinamicamente via JavaScript e APIs JSON, sem recarregar a página inteira.",
+        "C": "Incorreto: a aplicação opera sobre o navegador e responde via requisições HTTP na intranet.",
+        "D": "Incorreto: trata-se de um sistema web com interface HTML para o usuário."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md"
+    }
+  },
+  {
+    "id": "WEB-REV-004",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Geração de resposta HTTP e processamento no servidor",
+    "artigo_origem": "04. Linguagens de programação back-end e PHP.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um sistema de reservas precisa mostrar ao navegador o nome de um cliente que foi recuperado no servidor. O desenvolvedor está escolhendo onde executar a lógica de consulta e preparação dos dados.\n\nEm uma aplicação Web back-end, qual responsabilidade pertence ao processamento no servidor?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Interpretar a requisição e produzir os dados ou conteúdo de resposta.",
+        "correta": true,
+        "diagnostico": "Correto: o servidor back-end processa a requisição do cliente, aplica regras de negócio, consulta bases de dados protegidas e constrói a resposta (em HTML, JSON, etc.) enviada de volta ao navegador."
+      },
+      {
+        "letra": "B",
+        "texto": "Definir exclusivamente a resolução física da tela do usuário.",
+        "correta": false,
+        "diagnostico": "Incorreto: a resolução física da tela depende do hardware e do monitor do cliente."
+      },
+      {
+        "letra": "C",
+        "texto": "Dispensar o protocolo HTTP na comunicação Web.",
+        "correta": false,
+        "diagnostico": "Incorreto: o protocolo HTTP é a espinha dorsal de toda a comunicação entre cliente e servidor web."
+      },
+      {
+        "letra": "D",
+        "texto": "Executar apenas arquivos de imagem sem lógica de aplicação.",
+        "correta": false,
+        "diagnostico": "Incorreto: o back-end executa lógica complexa de processamento, regras de negócio e persistência."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O servidor é o cofre da agência bancária: quando você chega na boca do caixa (navegador) pedindo seu saldo, é lá dentro do cofre protegido que o bancário confere sua conta e entrega o extrato impresso.",
+      "analise_correta": "A arquitetura cliente-servidor distribui o trabalho: o cliente cuida da exibição e interação local; o back-end centraliza a lógica de negócios, a segurança e a integridade dos dados.",
+      "distratores": {
+        "B": "Incorreto: a resolução física da tela depende do hardware e do monitor do cliente.",
+        "C": "Incorreto: o protocolo HTTP é a espinha dorsal de toda a comunicação entre cliente e servidor web.",
+        "D": "Incorreto: o back-end executa lógica complexa de processamento, regras de negócio e persistência."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP.md"
+    }
+  },
+  {
+    "id": "WEB-REV-005",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Papel do ORM (Object-Relational Mapping)",
+    "artigo_origem": "05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Ao desenvolver a persistência de registros de abastecimento, uma equipe quer evitar escrever manualmente todo o mapeamento entre classes C# e tabelas relacionais.\n\nQue recurso de um framework atende a essa necessidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Um editor de imagens.",
+        "correta": false,
+        "diagnostico": "Incorreto: editores de imagem tratam de assets visuais estáticos."
+      },
+      {
+        "letra": "B",
+        "texto": "Um ORM, que faz o mapeamento objeto-relacional.",
+        "correta": true,
+        "diagnostico": "Correto: um ORM (Object-Relational Mapper, como o Entity Framework Core) mapeia classes e propriedades orientadas a objetos diretamente para tabelas e colunas relacionais, gerando comandos SQL automaticamente."
+      },
+      {
+        "letra": "C",
+        "texto": "Um gerenciador de estilos CSS.",
+        "correta": false,
+        "diagnostico": "Incorreto: gerenciadores de CSS cuidam da apresentação e layout front-end."
+      },
+      {
+        "letra": "D",
+        "texto": "Um mecanismo que substitui completamente o banco de dados.",
+        "correta": false,
+        "diagnostico": "Incorreto: o ORM não substitui o banco de dados; ele atua como uma ponte de tradução entre o código da aplicação e o SGBD relacional (ex.: SQL Server)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O ORM é um intérprete juramentado entre dois mundos: no C# você conversa com objetos e listas (`veiculo.Modelo`); no SQL Server o banco conversa com tabelas e colunas relacionais (`INSERT INTO Veiculos`). O ORM traduz um para o outro em tempo real sem você precisar escrever SQL na mão.",
+      "analise_correta": "O Entity Framework Core é o ORM oficial do ecossistema .NET, permitindo consultas fortemente tipadas via LINQ e controle de esquema por Migrations.",
+      "distratores": {
+        "A": "Incorreto: editores de imagem tratam de assets visuais estáticos.",
+        "C": "Incorreto: gerenciadores de CSS cuidam da apresentação e layout front-end.",
+        "D": "Incorreto: o ORM não substitui o banco de dados; ele atua como uma ponte de tradução entre o código da aplicação e o SGBD relacional (ex.: SQL Server)."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
+    }
+  },
+  {
+    "id": "WEB-REV-006",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Injeção de dependência por construtor em ASP.NET Core",
+    "artigo_origem": "05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "No sistema de consumo de veículos, um controlador precisa consultar serviços de negócio. A equipe quer diminuir o acoplamento e facilitar testes com implementações alternativas.\n\n```csharp\npublic class VeiculosController : Controller\n{\n    private readonly IVeiculoServico _servico;\n\n    public VeiculosController(IVeiculoServico servico)\n    {\n        _servico = servico;\n    }\n}\n```\n\nQual conceito é evidenciado pelo recebimento de `IVeiculoServico` no construtor?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Herança múltipla entre controladores.",
+        "correta": false,
+        "diagnostico": "Incorreto: C# não suporta herança múltipla de classes e a classe apenas herda de Controller."
+      },
+      {
+        "letra": "B",
+        "texto": "Injeção de dependência por construtor.",
+        "correta": true,
+        "diagnostico": "Correto: a dependência é declarada como uma interface no construtor e injetada pelo container de Inversão de Controle (IoC) do ASP.NET Core, promovendo baixo acoplamento e permitindo mocks em testes unitários."
+      },
+      {
+        "letra": "C",
+        "texto": "Renderização da View no servidor.",
+        "correta": false,
+        "diagnostico": "Incorreto: a injeção de dependência trata do ciclo de vida e instanciação de serviços, não da renderização visual."
+      },
+      {
+        "letra": "D",
+        "texto": "Criação obrigatória do serviço com new dentro do Controller.",
+        "correta": false,
+        "diagnostico": "Incorreto: instanciar dependências diretamente com `new` gera acoplamento rígido, violando a inversão de dependência (DIP)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de o controlador construir sua própria fábrica de peças dentro da sala (`new`), ele apenas estende a mão e recebe a ferramenta pronta que o container da empresa entrega no início do expediente.",
+      "analise_correta": "No ASP.NET Core, os serviços são registrados no `Program.cs` com tempos de vida `Transient`, `Scoped` ou `Singleton` e resolvidos automaticamente nos construtores dos controllers.",
+      "distratores": {
+        "A": "Incorreto: C# não suporta herança múltipla de classes e a classe apenas herda de Controller.",
+        "C": "Incorreto: a injeção de dependência trata do ciclo de vida e instanciação de serviços, não da renderização visual.",
+        "D": "Incorreto: instanciar dependências diretamente com `new` gera acoplamento rígido, violando a inversão de dependência (DIP)."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
+    }
+  },
+  {
+    "id": "WEB-REV-007",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Controle de versão com Git e GitHub",
+    "artigo_origem": "07. Ambiente de desenvolvimento, Visual Studio e controle de versão no ASP.NET Core MVC.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Três integrantes implementam partes do sistema no Visual Studio Community. Eles precisam registrar alterações e recuperar versões anteriores quando uma modificação provocar regressão.\n\nQual prática prevista no microfundamento atende diretamente a essa necessidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Manter apenas uma cópia local do projeto.",
+        "correta": false,
+        "diagnostico": "Incorreto: cópias locais isoladas não oferecem histórico compartilhado nem rastreabilidade."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar Git e hospedar o repositório no GitHub.",
+        "correta": true,
+        "diagnostico": "Correto: o Git é o sistema de controle de versão distribuído que registra cada commit de alteração, e o GitHub centraliza o repositório em nuvem para colaboração em equipe."
+      },
+      {
+        "letra": "C",
+        "texto": "Salvar imagens das telas no banco SQL.",
+        "correta": false,
+        "diagnostico": "Incorreto: capturas de tela não gravam código-fonte nem permitem reversão funcional."
+      },
+      {
+        "letra": "D",
+        "texto": "Desativar o histórico de alterações para reduzir conflitos.",
+        "correta": false,
+        "diagnostico": "Incorreto: o histórico é a ferramenta primordial para diagnosticar falhas e reverter regressões."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Git é uma máquina do tempo do seu código: a cada commit você salva um ponto de restauração confiável; se algo quebrar amanhã, você volta para a versão que funcionava com um simples comando.",
+      "analise_correta": "O uso de Git com branches e commits semânticos no GitHub é uma competência fundamental de engenharia exigida em todas as etapas práticas da PUC Minas.",
+      "distratores": {
+        "A": "Incorreto: cópias locais isoladas não oferecem histórico compartilhado nem rastreabilidade.",
+        "C": "Incorreto: capturas de tela não gravam código-fonte nem permitem reversão funcional.",
+        "D": "Incorreto: o histórico é a ferramenta primordial para diagnosticar falhas e reverter regressões."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/07. Ambiente de desenvolvimento, Visual Studio e controle de versão no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-008",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Modelo de dados (Model) e propriedades em C#",
+    "artigo_origem": "06. Model, validação e persistência no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma aplicação MVC precisa representar veículos cadastrados e guardar seus identificadores e modelos. O estudante deve escolher uma definição adequada para a classe de domínio.\n\n```csharp\npublic class Veiculo\n{\n    public int Id { get; set; }\n    public string Modelo { get; set; } = \"\";\n}\n```\n\nConsiderando o trecho, qual interpretação é correta?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Id e Modelo são propriedades do modelo Veiculo.",
+        "correta": true,
+        "diagnostico": "Correto: Id e Modelo são propriedades automáticas públicas da classe C# `Veiculo`, que atua como modelo de dados (Model) da aplicação."
+      },
+      {
+        "letra": "B",
+        "texto": "O código define diretamente uma tabela SQL por meio de CREATE TABLE.",
+        "correta": false,
+        "diagnostico": "Incorreto: o código é C# puro; a tabela SQL é gerada posteriormente pelo ORM por meio de Migrations."
+      },
+      {
+        "letra": "C",
+        "texto": "O código cria uma View Razor para listar veículos.",
+        "correta": false,
+        "diagnostico": "Incorreto: Views Razor possuem extensão `.cshtml` e combinam HTML com sintaxe Razor."
+      },
+      {
+        "letra": "D",
+        "texto": "A classe contém uma action de Controller que recebe HTTP.",
+        "correta": false,
+        "diagnostico": "Incorreto: actions de controller são métodos públicos que retornam `IActionResult` dentro de classes derivadas de `Controller`."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma classe Model é como a ficha cadastral em papel da concessionária: ela lista quais campos existem (número de série e modelo do carro) para que o sistema saiba como organizar essas informações.",
+      "analise_correta": "No Entity Framework Core, uma propriedade chamada `Id` ou `<NomeClasse>Id` é reconhecida automaticamente por convenção como chave primária da entidade.",
+      "distratores": {
+        "B": "Incorreto: o código é C# puro; a tabela SQL é gerada posteriormente pelo ORM por meio de Migrations.",
+        "C": "Incorreto: Views Razor possuem extensão `.cshtml` e combinam HTML com sintaxe Razor.",
+        "D": "Incorreto: actions de controller são métodos públicos que retornam `IActionResult` dentro de classes derivadas de `Controller`."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-009",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Retorno de View com passagem de Model na action",
+    "artigo_origem": "08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma equipe precisa exibir a página de listagem de veículos. O controller recupera os registros do contexto e deve passá-los à View correspondente.\n\n```csharp\npublic IActionResult Index()\n{\n    var lista = _context.Veiculos.ToList();\n    return ______;\n}\n```\n\nQual expressão completa corretamente a action para renderizar a View com a lista?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "RedirectToAction(\"Index\");",
+        "correta": false,
+        "diagnostico": "Incorreto: RedirectToAction causaria um redirecionamento HTTP que chamaria a action novamente, gerando loop infinito."
+      },
+      {
+        "letra": "B",
+        "texto": "View(lista);",
+        "correta": true,
+        "diagnostico": "Correto: `return View(lista);` renderiza a View associada à action (Views/Veiculos/Index.cshtml) passando a coleção de veículos como modelo tipado (`@model IEnumerable<Veiculo>`)."
+      },
+      {
+        "letra": "C",
+        "texto": "NotFound();",
+        "correta": false,
+        "diagnostico": "Incorreto: NotFound retorna o status HTTP 404 de recurso não encontrado."
+      },
+      {
+        "letra": "D",
+        "texto": "Content(\"Lista não disponível\");",
+        "correta": false,
+        "diagnostico": "Incorreto: Content retorna texto simples puro sem renderizar o template HTML da View."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Executar `return View(lista);` é como o garçom pegar a bandeja montada na cozinha com todos os pratos (`lista`) e levar até a mesa decorada (`View`) para o cliente saborear.",
+      "analise_correta": "O método auxiliar `View(model)` do Controller empacota os dados no `ViewData.Model`, permitindo que a View Razor itere sobre os dados via `@foreach`.",
+      "distratores": {
+        "A": "Incorreto: RedirectToAction causaria um redirecionamento HTTP que chamaria a action novamente, gerando loop infinito.",
+        "C": "Incorreto: NotFound retorna o status HTTP 404 de recurso não encontrado.",
+        "D": "Incorreto: Content retorna texto simples puro sem renderizar o template HTML da View."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-010",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Consulta de registros com LINQ (FirstOrDefault)",
+    "artigo_origem": "08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Na tela de detalhes de um veículo, o usuário informa um identificador. A action precisa recuperar o registro correspondente, ou obter null quando ele não existir.\n\n```csharp\npublic IActionResult Detalhes(int id)\n{\n    var veiculo = _context.Veiculos\n        .________(v => v.Id == id);\n    if (veiculo == null) return NotFound();\n    return View(veiculo);\n}\n```\n\nQual método completa a consulta conforme o comportamento desejado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Add",
+        "correta": false,
+        "diagnostico": "Incorreto: Add adiciona uma nova entidade ao contexto para inserção."
+      },
+      {
+        "letra": "B",
+        "texto": "FirstOrDefault",
+        "correta": true,
+        "diagnostico": "Correto: `FirstOrDefault(v => v.Id == id)` executa a consulta LINQ retornando o primeiro elemento que satisfaz a condição lambda ou `null` caso nenhum registro seja encontrado."
+      },
+      {
+        "letra": "C",
+        "texto": "SaveChanges",
+        "correta": false,
+        "diagnostico": "Incorreto: SaveChanges grava alterações pendentes no banco de dados."
+      },
+      {
+        "letra": "D",
+        "texto": "Remove",
+        "correta": false,
+        "diagnostico": "Incorreto: Remove marca a entidade para exclusão no banco."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "FirstOrDefault é como pedir para a recepcionista procurar no fichário o primeiro prontuário com aquele número: se encontrar, ela entrega a pasta; se não existir nenhum, ela volta de mãos vazias (`null`).",
+      "analise_correta": "No Entity Framework Core, métodos LINQ como `FirstOrDefault()` ou `FirstOrDefaultAsync()` traduzem a expressão lambda para uma cláusula SQL com `TOP(1)` e `WHERE`.",
+      "distratores": {
+        "A": "Incorreto: Add adiciona uma nova entidade ao contexto para inserção.",
+        "C": "Incorreto: SaveChanges grava alterações pendentes no banco de dados.",
+        "D": "Incorreto: Remove marca a entidade para exclusão no banco."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-011",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Persistência transacional com DbContext.SaveChanges()",
+    "artigo_origem": "06. Model, validação e persistência no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Na funcionalidade de cadastro, o programador adiciona um objeto Veiculo ao contexto do banco, mas percebe que a informação ainda não foi efetivamente gravada.\n\n```csharp\nvar veiculo = new Veiculo { Modelo = \"Sedan\" };\n_context.Veiculos.Add(veiculo);\n// Falta persistir a alteração\n```\n\nQual chamada deve ser executada para gravar a inclusão no banco usando o contexto?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "_context.SaveChanges();",
+        "correta": true,
+        "diagnostico": "Correto: o método `_context.SaveChanges()` aplica o padrão Unit of Work, abrindo a transação no banco, executando os comandos SQL gerados (`INSERT`) e persistindo as alterações no banco de dados."
+      },
+      {
+        "letra": "B",
+        "texto": "_context.Veiculos.ToList();",
+        "correta": false,
+        "diagnostico": "Incorreto: ToList() apenas executa uma consulta de leitura SELECT no banco."
+      },
+      {
+        "letra": "C",
+        "texto": "return View();",
+        "correta": false,
+        "diagnostico": "Incorreto: return View() renderiza uma tela no navegador sem interagir com a persistência do banco."
+      },
+      {
+        "letra": "D",
+        "texto": "_context.Veiculos.Find(veiculo.Id);",
+        "correta": false,
+        "diagnostico": "Incorreto: Find() realiza uma busca por chave primária."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Chamar `Add(veiculo)` é como colocar uma carta dentro do envelope e fechar; chamar `SaveChanges()` é como jogar a carta na caixa dos correios para ser enviada de verdade.",
+      "analise_correta": "O Entity Framework rastreia os estados das entidades (Added, Modified, Deleted) e só efetiva as alterações no banco ao chamar `SaveChanges()` ou `SaveChangesAsync()`.",
+      "distratores": {
+        "B": "Incorreto: ToList() apenas executa uma consulta de leitura SELECT no banco.",
+        "C": "Incorreto: return View() renderiza uma tela no navegador sem interagir com a persistência do banco.",
+        "D": "Incorreto: Find() realiza uma busca por chave primária."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-012",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Exclusão de registros com DbContext.Remove() e SaveChanges()",
+    "artigo_origem": "08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um desenvolvedor implementa a exclusão de veículos, mas, após localizar o registro, só chama SaveChanges. O item continua na tabela porque não foi marcado para remoção.\n\n```csharp\nvar veiculo = _context.Veiculos.Find(id);\nif (veiculo == null) return NotFound();\n\n// Uma instrução é necessária aqui\n_context.SaveChanges();\n```\n\nQual instrução deve ser inserida antes de SaveChanges para efetivar a exclusão?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "_context.Veiculos.Add(veiculo);",
+        "correta": false,
+        "diagnostico": "Incorreto: Add tentaria reinserir a entidade já existente."
+      },
+      {
+        "letra": "B",
+        "texto": "_context.Veiculos.Remove(veiculo);",
+        "correta": true,
+        "diagnostico": "Correto: `_context.Veiculos.Remove(veiculo);` altera o estado da entidade no Change Tracker para `EntityState.Deleted`, permitindo que o `SaveChanges()` gere e execute o comando `DELETE FROM Veiculos WHERE Id = @id`."
+      },
+      {
+        "letra": "C",
+        "texto": "_context.Veiculos.ToList();",
+        "correta": false,
+        "diagnostico": "Incorreto: ToList() apenas lê dados sem alterar o estado da entidade rastreada."
+      },
+      {
+        "letra": "D",
+        "texto": "return View(veiculo);",
+        "correta": false,
+        "diagnostico": "Incorreto: return View(veiculo) cancelaria a exclusão e apenas renderizaria a página."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você quer jogar um arquivo fora, primeiro precisa arrastar o arquivo para a lixeira (`Remove`) e depois esvaziar a lixeira (`SaveChanges`). Se você só esvaziar a lixeira sem colocar o arquivo lá dentro, nada é apagado.",
+      "analise_correta": "O Entity Framework exige explicitamente a transição de estado da entidade antes de persistir a remoção no banco relacional.",
+      "distratores": {
+        "A": "Incorreto: Add tentaria reinserir a entidade já existente.",
+        "C": "Incorreto: ToList() apenas lê dados sem alterar o estado da entidade rastreada.",
+        "D": "Incorreto: return View(veiculo) cancelaria a exclusão e apenas renderizaria a página."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-013",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Relacionamentos entre modelos: chave estrangeira e propriedade de navegação",
+    "artigo_origem": "09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "A aplicação, inicialmente limitada ao cadastro de veículos, passou a registrar vários abastecimentos para cada veículo. O programador precisa representar o vínculo entre Abastecimento e Veiculo.\n\n```csharp\npublic class Abastecimento\n{\n    public int Id { get; set; }\n    public int VeiculoId { get; set; }\n    public Veiculo Veiculo { get; set; }\n}\n```\n\nQual interpretação melhor descreve os dois últimos membros da classe?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ambos são controladores para o mesmo endpoint.",
+        "correta": false,
+        "diagnostico": "Incorreto: propriedades de modelos não são controladores web."
+      },
+      {
+        "letra": "B",
+        "texto": "VeiculoId pode representar a chave estrangeira e Veiculo a propriedade de navegação.",
+        "correta": true,
+        "diagnostico": "Correto: em modelos do Entity Framework Core, `VeiculoId` é a propriedade escalar de chave estrangeira (FK) que se conecta à tabela referenciada, enquanto `Veiculo` é a propriedade de navegação orientada a objetos que permite carregar os dados do veículo associado."
+      },
+      {
+        "letra": "C",
+        "texto": "VeiculoId necessariamente guarda o nome textual do veículo.",
+        "correta": false,
+        "diagnostico": "Incorreto: VeiculoId é um inteiro (`int`) que armazena a chave primária numérica do veículo."
+      },
+      {
+        "letra": "D",
+        "texto": "Veiculo representa uma View Razor, não um objeto relacionado.",
+        "correta": false,
+        "diagnostico": "Incorreto: Veiculo é uma referência de classe de domínio C#, não um arquivo de visualização."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma certidão de casamento: o número do documento da pessoa é a chave estrangeira (`VeiculoId`), enquanto a própria pessoa ao seu lado de carne e osso é a propriedade de navegação (`Veiculo`). Com o número você acha no arquivo; com a pessoa você conversa diretamente.",
+      "analise_correta": "As propriedades de navegação viabilizam o carregamento adiantado (Eager Loading) de dados relacionados utilizando o método `.Include(a => a.Veiculo)`.",
+      "distratores": {
+        "A": "Incorreto: propriedades de modelos não são controladores web.",
+        "C": "Incorreto: VeiculoId é um inteiro (`int`) que armazena a chave primária numérica do veículo.",
+        "D": "Incorreto: Veiculo é uma referência de classe de domínio C#, não um arquivo de visualização."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-014",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Mapeamento de rotas convencionais no ASP.NET Core MVC",
+    "artigo_origem": "08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um usuário acessa a URL `/Veiculos/Detalhes/8` em uma aplicação ASP.NET Core MVC com roteamento convencional por controller, action e id.\n\n```csharp\npublic IActionResult Detalhes(int id)\n{\n    return View();\n}\n```\n\nConsiderando a rota indicada, que valor deve ser associado ao parâmetro id da action?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "0",
+        "correta": false,
+        "diagnostico": "Incorreto: 0 seria o valor padrão caso o parâmetro não fosse localizado."
+      },
+      {
+        "letra": "B",
+        "texto": "8",
+        "correta": true,
+        "diagnostico": "Correto: no padrão de rota convencional `{controller=Home}/{action=Index}/{id?}`, o primeiro segmento (`Veiculos`) mapeia o `VeiculosController`, o segundo (`Detalhes`) a action `Detalhes()`, e o terceiro (`8`) é automaticamente convertido para o parâmetro inteiro `id = 8`."
+      },
+      {
+        "letra": "C",
+        "texto": "\"Detalhes\"",
+        "correta": false,
+        "diagnostico": "Incorreto: \"Detalhes\" é o nome da action no segundo segmento."
+      },
+      {
+        "letra": "D",
+        "texto": "\"Veiculos\"",
+        "correta": false,
+        "diagnostico": "Incorreto: \"Veiculos\" é o nome do controller no primeiro segmento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A rota convencional é como o endereço de uma carta: \"Rua Veículos (Controller), Casa Detalhes (Action), Número 8 (id)\". O carteiro entrega a correspondência diretamente na porta do morador número 8.",
+      "analise_correta": "O mecanismo de Model Binding do ASP.NET Core extrai automaticamente valores da rota, query string e corpo da requisição para injetar nos parâmetros das actions.",
+      "distratores": {
+        "A": "Incorreto: 0 seria o valor padrão caso o parâmetro não fosse localizado.",
+        "C": "Incorreto: \"Detalhes\" é o nome da action no segundo segmento.",
+        "D": "Incorreto: \"Veiculos\" é o nome do controller no primeiro segmento."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-015",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Separação entre View e Controller (refatoração arquitetural)",
+    "artigo_origem": "05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em uma revisão de código, a equipe encontra a lógica de persistência SQL diretamente na marcação HTML de uma View. O projeto se tornou difícil de testar e alterar.\n\nQual refatoração está mais alinhada à organização MVC estudada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Manter toda a persistência na View para reduzir arquivos.",
+        "correta": false,
+        "diagnostico": "Incorreto: misturar SQL com visualização viola o padrão MVC e compromete segurança e manutenção."
+      },
+      {
+        "letra": "B",
+        "texto": "Transferir a lógica de processamento para componentes apropriados, preservando a View para apresentação.",
+        "correta": true,
+        "diagnostico": "Correto: o padrão MVC exige que a View limite-se à exibição e formatação dos dados recebidos, transferindo o processamento, persistência e regras para Controllers, Services e Repositórios."
+      },
+      {
+        "letra": "C",
+        "texto": "Mover a marcação visual para as tabelas do banco.",
+        "correta": false,
+        "diagnostico": "Incorreto: bancos relacionais armazenam dados, não templates de renderização visual."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituir o Controller por um arquivo CSS.",
+        "correta": false,
+        "diagnostico": "Incorreto: CSS é folha de estilos de apresentação, incapaz de controlar requisições de aplicação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Colocar consultas SQL dentro do HTML é como guardar a caixa de ferramentas pesada e graxa de motor dentro da vitrine de doces da confeitaria: a vitrine (View) deve exibir apenas os doces prontos; a graxa e as máquinas ficam isoladas na oficina (Back-End).",
+      "analise_correta": "Uma View desprovida de lógica de acesso a dados torna-se leve, segura contra injeções SQL acidentais e passível de redesign sem afetar as regras de negócio.",
+      "distratores": {
+        "A": "Incorreto: misturar SQL com visualização viola o padrão MVC e compromete segurança e manutenção.",
+        "C": "Incorreto: bancos relacionais armazenam dados, não templates de renderização visual.",
+        "D": "Incorreto: CSS é folha de estilos de apresentação, incapaz de controlar requisições de aplicação."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
+    }
+  },
+  {
+    "id": "WEB-REV-016",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Armazenamento seguro de senhas e funções de hash criptográfico",
+    "artigo_origem": "10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Ao construir o módulo de contas, um estudante propõe gravar as senhas digitadas exatamente como foram recebidas. Outro integrante alerta para os riscos caso o banco seja exposto.\n\nQual alteração melhora a proteção das credenciais armazenadas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Salvar senha em texto puro para facilitar recuperação.",
+        "correta": false,
+        "diagnostico": "Incorreto: texto puro expõe imediatamente todas as senhas dos usuários caso haja vazamento do banco."
+      },
+      {
+        "letra": "B",
+        "texto": "Aplicar mecanismo apropriado de hash de senhas no gerenciamento de usuários.",
+        "correta": true,
+        "diagnostico": "Correto: senhas nunca devem ser salvas em texto puro; deve-se aplicar uma função de hash criptográfico irreversível e lenta (como PBKDF2 ou BCrypt) com salt aleatório, garantindo que mesmo com o banco exposto a senha original não seja revelada."
+      },
+      {
+        "letra": "C",
+        "texto": "Mostrar a senha no HTML para permitir conferência.",
+        "correta": false,
+        "diagnostico": "Incorreto: exibir senhas na interface visual expõe as credenciais a terceiros."
+      },
+      {
+        "letra": "D",
+        "texto": "Enviar a senha pela URL em toda requisição.",
+        "correta": false,
+        "diagnostico": "Incorreto: enviar senhas por query string na URL grava as credenciais em logs de servidores e histórico do navegador."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O hash de senha é como um triturador de carne de via única: você coloca um bife (senha) e sai carne moída (hash). Quando a pessoa digita a senha no login, você mói de novo e confere se a carne moída é idêntica; mas se um ladrão roubar o banco, ele só encontra carne moída e não consegue reconstruir o bife original.",
+      "analise_correta": "O ASP.NET Core Identity implementa por padrão o `PasswordHasher<TUser>` com PBKDF2 e derivação HMAC-SHA256 com salt individual de 128 bits.",
+      "distratores": {
+        "A": "Incorreto: texto puro expõe imediatamente todas as senhas dos usuários caso haja vazamento do banco.",
+        "C": "Incorreto: exibir senhas na interface visual expõe as credenciais a terceiros.",
+        "D": "Incorreto: enviar senhas por query string na URL grava as credenciais em logs de servidores e histórico do navegador."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-017",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Segurança e gerenciamento de usuários com ASP.NET Core Identity",
+    "artigo_origem": "11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma aplicação de gestão de consumo precisa registrar usuários, permitir login e manter informações de autenticação durante a navegação. A equipe considera o uso de recursos integrados do ASP.NET Core.\n\nQual componente atende diretamente a essas necessidades?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "ASP.NET Core Identity.",
+        "correta": true,
+        "diagnostico": "Correto: o ASP.NET Core Identity é a biblioteca oficial e integrada de segurança que fornece gerenciamento completo de usuários, senhas com hash, autenticação baseada em cookies, claims, recuperação de conta e controle de perfis."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma View apenas com CSS.",
+        "correta": false,
+        "diagnostico": "Incorreto: arquivos CSS cuidam exclusivamente de estilo e layout visual."
+      },
+      {
+        "letra": "C",
+        "texto": "A classe StringBuilder.",
+        "correta": false,
+        "diagnostico": "Incorreto: StringBuilder é um utilitário de manipulação de cadeias de caracteres em memória."
+      },
+      {
+        "letra": "D",
+        "texto": "A instrução SQL ORDER BY.",
+        "correta": false,
+        "diagnostico": "Incorreto: ORDER BY é uma cláusula SQL de ordenação de consultas em tabelas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O ASP.NET Core Identity é a portaria eletrônica completa de um condomínio fechado: ele cadastra moradores, emite crachás codificados (cookies), confere a impressão digital no portão e sabe exatamente quem pode entrar em qual bloco.",
+      "analise_correta": "O Identity integra-se nativamente com o Entity Framework Core via `IdentityDbContext`, gerando automaticamente as tabelas `AspNetUsers`, `AspNetRoles` e afins.",
+      "distratores": {
+        "B": "Incorreto: arquivos CSS cuidam exclusivamente de estilo e layout visual.",
+        "C": "Incorreto: StringBuilder é um utilitário de manipulação de cadeias de caracteres em memória.",
+        "D": "Incorreto: ORDER BY é uma cláusula SQL de ordenação de consultas em tabelas."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-018",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Distinção fundamental entre Autenticação e Autorização",
+    "artigo_origem": "12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "No portal de veículos, Carla entra com credenciais válidas. Ao tentar acessar um relatório restrito a administradores, recebe uma resposta de acesso negado.\n\nQual explicação diferencia corretamente as duas verificações?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Carla não foi autenticada, mas foi autorizada para o relatório.",
+        "correta": false,
+        "diagnostico": "Incorreto: Carla foi autenticada com sucesso (suas credenciais eram válidas), mas sua conta não possuía a autorização exigida."
+      },
+      {
+        "letra": "B",
+        "texto": "Autenticação verificou sua identidade; autorização negou uma operação sem permissão.",
+        "correta": true,
+        "diagnostico": "Correto: **Autenticação** responde *\"Quem é você?\"* (verificação de identidade via login e senha); **Autorização** responde *\"O que você tem permissão para fazer?\"* (verificação de papéis, perfis ou direitos sobre um recurso específico)."
+      },
+      {
+        "letra": "C",
+        "texto": "Autorização valida somente o formato da senha, não permissões.",
+        "correta": false,
+        "diagnostico": "Incorreto: formato de senha é validação cadastral, não autorização de acesso a recursos."
+      },
+      {
+        "letra": "D",
+        "texto": "Autenticação e autorização são necessariamente o mesmo procedimento.",
+        "correta": false,
+        "diagnostico": "Incorreto: são etapas de segurança distintas e consecutivas (primeiro autentica-se, depois autoriza-se)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um aeroporto: conferir seu passaporte no guichê de entrada para provar quem você é é **Autenticação**; conferir se sua passagem permite entrar na cabine do piloto ou na sala VIP é **Autorização**. Ter o passaporte válido não dá permissão para pilotar o avião!",
+      "analise_correta": "No ASP.NET Core, a autenticação produz uma `ClaimsPrincipal` (`User`), enquanto a autorização inspeciona os atributos `[Authorize]` e as regras de roles e policies.",
+      "distratores": {
+        "A": "Incorreto: Carla foi autenticada com sucesso (suas credenciais eram válidas), mas sua conta não possuía a autorização exigida.",
+        "C": "Incorreto: formato de senha é validação cadastral, não autorização de acesso a recursos.",
+        "D": "Incorreto: são etapas de segurança distintas e consecutivas (primeiro autentica-se, depois autoriza-se)."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-019",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Proteção de actions e controladores com o atributo [Authorize]",
+    "artigo_origem": "12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "A equipe deseja impedir que pessoas não autenticadas acessem a lista de veículos. O projeto usa autenticação configurada com ASP.NET Core Identity.\n\n```csharp\npublic class VeiculosController : Controller\n{\n    [________]\n    public IActionResult Index()\n    {\n        return View();\n    }\n}\n```\n\nQual atributo deve substituir a lacuna para exigir autenticação na action?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "AllowAnonymous",
+        "correta": false,
+        "diagnostico": "Incorreto: `[AllowAnonymous]` libera o acesso público anônimo, desativando restrições de autorização."
+      },
+      {
+        "letra": "B",
+        "texto": "Authorize",
+        "correta": true,
+        "diagnostico": "Correto: o atributo `[Authorize]` exige que a requisição seja realizada por um usuário autenticado; caso contrário, o middleware redireciona automaticamente o visitante para a tela de login."
+      },
+      {
+        "letra": "C",
+        "texto": "HttpGet(\"publico\")",
+        "correta": false,
+        "diagnostico": "Incorreto: HttpGet apenas restringe o método HTTP da rota."
+      },
+      {
+        "letra": "D",
+        "texto": "ValidateAntiForgeryToken",
+        "correta": false,
+        "diagnostico": "Incorreto: ValidateAntiForgeryToken protege contra ataques de falsificação de requisição entre sites (CSRF), mas não exige autenticação de usuário por si só."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O atributo `[Authorize]` é a fechadura eletrônica da porta da sala: sem o crachá de login autenticado, a porta não abre e o sistema te manda direto para a recepção (tela de login) para se identificar.",
+      "analise_correta": "O atributo `[Authorize]` pode ser aplicado em nível de action individual ou em nível de classe controladora inteira, e suporta restrição por papéis como `[Authorize(Roles = \"Admin\")]`.",
+      "distratores": {
+        "A": "Incorreto: `[AllowAnonymous]` libera o acesso público anônimo, desativando restrições de autorização.",
+        "C": "Incorreto: HttpGet apenas restringe o método HTTP da rota.",
+        "D": "Incorreto: ValidateAntiForgeryToken protege contra ataques de falsificação de requisição entre sites (CSRF), mas não exige autenticação de usuário por si só."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md"
+    }
+  },
+  {
+    "id": "WEB-REV-020",
+    "disciplina_id": "05",
+    "disciplina": "Desenvolvimento Web Back-End",
+    "topico": "Acesso aos dados do usuário autenticado via HttpContext.User.Identity",
+    "artigo_origem": "11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma funcionalidade precisa exibir uma mensagem de boas-vindas ao usuário que já realizou login na aplicação MVC. O controller deve consultar informações da identidade atual.\n\n```csharp\npublic IActionResult Inicio()\n{\n    var nome = User.Identity?.Name;\n    return View(model: nome);\n}\n```\n\nQual interpretação é compatível com esse trecho?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A propriedade consulta o usuário associado à requisição atual.",
+        "correta": true,
+        "diagnostico": "Correto: a propriedade `User` (do tipo ClaimsPrincipal herdada da classe Controller) representa a identidade criptograficamente verificada vinculada à requisição HTTP atual, permitindo ler o nome do usuário logado via `User.Identity?.Name`."
+      },
+      {
+        "letra": "B",
+        "texto": "A propriedade cria automaticamente um novo usuário no banco.",
+        "correta": false,
+        "diagnostico": "Incorreto: ler a propriedade de identidade é uma operação de consulta em memória, sem criação de registros no banco de dados."
+      },
+      {
+        "letra": "C",
+        "texto": "A propriedade exclui todas as sessões da aplicação.",
+        "correta": false,
+        "diagnostico": "Incorreto: não encerra sessões nem afeta outros usuários."
+      },
+      {
+        "letra": "D",
+        "texto": "O código determina o identificador de cada veículo cadastrado.",
+        "correta": false,
+        "diagnostico": "Incorreto: a propriedade trata da identidade do usuário logado, não dos veículos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "`User.Identity.Name` é como o crachá pendurado no peito do visitante que acabou de passar pela catraca: o recepcionista só bate o olho no crachá e diz *\"Bom dia, Leonardo!\"*, sem precisar fazer uma nova entrevista cadastral do zero.",
+      "analise_correta": "Os dados de `User.Identity` são preenchidos pelo middleware de autenticação a partir do ticket descriptografado do cookie de autenticação enviado no cabeçalho HTTP.",
+      "distratores": {
+        "B": "Incorreto: ler a propriedade de identidade é uma operação de consulta em memória, sem criação de registros no banco de dados.",
+        "C": "Incorreto: não encerra sessões nem afeta outros usuários.",
+        "D": "Incorreto: a propriedade trata da identidade do usuário logado, não dos veículos."
+      },
+      "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
+    }
+  },
+  {
     "id": "WEB-001",
     "disciplina_id": "05",
     "disciplina": "Desenvolvimento Web Back-End",
@@ -10223,7 +11163,9 @@
         "D": "Erro físico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-002",
@@ -10268,7 +11210,9 @@
         "D": "Erro: em P2P (*Peer-to-Peer*) os papéis são simétricos, mas em Cliente-Servidor são distintos."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-003",
@@ -10313,7 +11257,9 @@
         "D": "Erro de tradução (*state* = estado de memória/sessão)."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-004",
@@ -10358,7 +11304,9 @@
         "D": "Erro: no ASP.NET Core MVC, uma Action de cadastro costuma ter `[HttpGet]` para exibir a tela vazia e `[HttpPost]` para receber e salvar os dados preenchidos."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-005",
@@ -10403,7 +11351,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-006",
@@ -10448,7 +11398,9 @@
         "D": "Erro de superengenharia (*overengineering*)."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-007",
@@ -10493,7 +11445,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-008",
@@ -10538,7 +11492,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-009",
@@ -10583,7 +11539,9 @@
         "D": "Erro gravíssimo de segurança."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-010",
@@ -10628,7 +11586,9 @@
         "D": "Erro absurdo."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-011",
@@ -10673,7 +11633,9 @@
         "D": "Erro arquitetural."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-012",
@@ -10718,7 +11680,9 @@
         "D": "Erro: misturar tudo viola a separação de responsabilidades."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-013",
@@ -10763,7 +11727,9 @@
         "D": "Erro de front-end."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-014",
@@ -10808,7 +11774,9 @@
         "D": "Erro de sintaxe."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-015",
@@ -10853,7 +11821,9 @@
         "D": "Erro de camada."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-016",
@@ -10898,7 +11868,9 @@
         "D": "Erro de camada."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-017",
@@ -10943,7 +11915,9 @@
         "D": "Erro de paradigma."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-018",
@@ -10988,7 +11962,9 @@
         "D": "Erro: um `DbContext` possui tantos `DbSet<T>` quantas forem as entidades/tabelas do domínio."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-019",
@@ -11033,7 +12009,9 @@
         "D": "Erro de tradução."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-020",
@@ -11078,7 +12056,9 @@
         "D": "Erro crítico: no pipeline do ASP.NET Core, a ordem dos middlewares importa (ex.: `UseAuthentication()` DEVE vir obrigatoriamente ANTES de `UseAuthorization()`)."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/07. Ambiente de desenvolvimento, Visual Studio e controle de versão no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-021",
@@ -11123,7 +12103,9 @@
         "D": "Erro grave de segurança: nunca se deve excluir ou alterar dados via requisição `GET`, pois um simples link ou pré-carregamento do navegador dispararia exclusões acidentais."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-022",
@@ -11168,7 +12150,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-023",
@@ -11213,7 +12197,9 @@
         "D": "Erro destrutivo."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-024",
@@ -11258,7 +12244,9 @@
         "D": "Erro: relacionamento 1:N é associação/composição (`tem-vários`), não herança (`é-um`)."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-025",
@@ -11303,7 +12291,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-026",
@@ -11348,7 +12338,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-027",
@@ -11393,7 +12385,9 @@
         "D": "Erro: o EF Core mapeia `enum` para colunas `INT` nativamente."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-028",
@@ -11438,7 +12432,9 @@
         "D": "Erro de domínio."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-029",
@@ -11483,7 +12479,9 @@
         "D": "Erro inverso: `SignOutAsync()` destrói o cookie para realizar o **Logout**."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-030",
@@ -11528,7 +12526,9 @@
         "D": "Erro: verifica especificamente a Claim `ClaimTypes.Role`."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-031",
@@ -11573,7 +12573,9 @@
         "D": "Erro grave."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-032",
@@ -11618,7 +12620,9 @@
         "D": "Erro de autenticação."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-033",
@@ -11663,7 +12667,9 @@
         "D": "Erro terminológico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-034",
@@ -11708,7 +12714,9 @@
         "D": "Erro determinístico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-035",
@@ -11753,7 +12761,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-036",
@@ -11798,7 +12808,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/07. Ambiente de desenvolvimento, Visual Studio e controle de versão no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-037",
@@ -11843,7 +12855,9 @@
         "D": "Erro de POO."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-038",
@@ -11888,7 +12902,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-039",
@@ -11933,7 +12949,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-040",
@@ -11978,7 +12996,9 @@
         "D": "Erro de execução."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-041",
@@ -12023,7 +13043,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-042",
@@ -12068,7 +13090,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05.1. Bônus - Razor na prática no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-043",
@@ -12113,7 +13137,9 @@
         "D": "Erro de hardware."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-044",
@@ -12158,7 +13184,9 @@
         "D": "Erro: pintar de branco no CSS permite selecionar com o mouse ou ler no Inspecionar Elemento."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-045",
@@ -12203,7 +13231,9 @@
         "D": "Erro catastrófico de segurança."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-046",
@@ -12248,7 +13278,9 @@
         "D": "Erro de negócio."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-047",
@@ -12293,7 +13325,9 @@
         "D": "Erro de sintaxe: `?.` é o operador de acesso condicional nulo (*null-conditional operator*) estudado na Sintaxe Multilinguagem."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-048",
@@ -12338,7 +13372,9 @@
         "D": "Erro de negócio."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-049",
@@ -12383,7 +13419,9 @@
         "D": "Erro de usabilidade."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "WEB-050",
@@ -12428,7 +13466,9 @@
         "D": "Erro de ordem do pipeline."
       },
       "referencia_vault": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PRJ-001",
