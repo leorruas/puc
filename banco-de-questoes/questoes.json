@@ -1,5 +1,1180 @@
 [
   {
+    "id": "PM-REV-001",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Programação modular e gerenciamento da complexidade",
+    "artigo_origem": "01. Introdução à programação modular.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma instituição está substituindo um sistema acadêmico monolítico. No planejamento, a equipe identifica três funcionalidades que evoluem em ritmos diferentes: cadastro de estudantes, matrículas e emissão de relatórios. O coordenador deseja que mudanças em relatórios não exijam reescrever o cadastro.\n\nComando: Considerando esse objetivo de organização e manutenção, qual abordagem de desenvolvimento deve ser adotada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Eliminação das interfaces entre componentes.",
+        "correta": false,
+        "diagnostico": "Incorreto: interfaces bem definidas sao essenciais para desacoplar modulos."
+      },
+      {
+        "letra": "B",
+        "texto": "Concentração de todas as operações em um único procedimento extenso.",
+        "correta": false,
+        "diagnostico": "Incorreto: concentrar operacoes em bloco unico gera monolitos dificeis de testar e manter."
+      },
+      {
+        "letra": "C",
+        "texto": "Programação modular, com decomposição em componentes coesos.",
+        "correta": true,
+        "diagnostico": "Correto: a programacao modular divide o sistema em partes menores (modulos), cada qual com alta coesao e baixo acoplamento, permitindo manutencoes isoladas e evolucao independente."
+      },
+      {
+        "letra": "D",
+        "texto": "Duplicação integral do código em cada funcionalidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: duplicacao de codigo viola o principio DRY (Dont Repeat Yourself) e gera inconsistencias."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em blocos de montar Lego ou componentes de um computador: se a placa de video estragar ou precisar de um upgrade, voce troca apenas ela sem precisar soldar uma nova placa-mae ou jogar fora o monitor.",
+      "analise_correta": "A decomposicao modular (proposta pioneiramente por Parnas e Dijkstra) estabelece que modulos devem encapsular decisoes de projeto independentes, minimizando o impacto de mudancas atraves de interfaces estaveis.",
+      "distratores": {
+        "A": "Incorreto: interfaces bem definidas sao essenciais para desacoplar modulos.",
+        "B": "Incorreto: concentrar operacoes em bloco unico gera monolitos dificeis de testar e manter.",
+        "D": "Incorreto: duplicacao de codigo viola o principio DRY (Dont Repeat Yourself) e gera inconsistencias."
+      },
+      "referencia_vault": "01. Programacao Modular/01. Introdução à programação modular.md"
+    }
+  },
+  {
+    "id": "PM-REV-002",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Fatores externos de qualidade de software",
+    "artigo_origem": "05. Fatores externos de qualidade de software.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Depois de implantar um aplicativo de atendimento, uma escola pergunta aos usuários se as funções estão corretas e se as tarefas podem ser realizadas de maneira satisfatória. Os avaliadores não têm acesso ao código-fonte; observam apenas o comportamento do produto durante seu uso.\n\nComando: A partir dessa forma de avaliação, qual grupo de fatores de qualidade está sendo considerado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Internos, por examinarem a organização do código-fonte.",
+        "correta": false,
+        "diagnostico": "Incorreto: fatores internos dizem respeito a arquitetura e elegancia do codigo, invisiveis ao usuario final."
+      },
+      {
+        "letra": "B",
+        "texto": "Exclusivamente sintáticos, por dependerem do compilador.",
+        "correta": false,
+        "diagnostico": "Incorreto: aspectos sintaticos sao verificados em compilacao, nao na experiencia de operacao do usuario."
+      },
+      {
+        "letra": "C",
+        "texto": "De infraestrutura, sem relação com a qualidade do software.",
+        "correta": false,
+        "diagnostico": "Incorreto: corretude e usabilidade sao fatores centrais de qualidade do software."
+      },
+      {
+        "letra": "D",
+        "texto": "Externos, por serem percebidos por quem utiliza o produto.",
+        "correta": true,
+        "diagnostico": "Correto: fatores externos (conforme Bertrand Meyer) sao aqueles diretamente perceptiveis pelos usuarios no uso do sistema (ex.: corretude, robustez, facilidade de uso, eficiencia perceptivel)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "E como avaliar um carro fazendo um test-drive: o motorista avalia o conforto dos bancos, o ar-condicionado e a firmeza dos freios (fatores externos), mesmo sem entender nada de como os pistoes foram usinados na fabrica (fatores internos).",
+      "analise_correta": "A distincao de Meyer enfatiza que os fatores internos (modularidade, legibilidade) sao os meios necessarios para alcancar os fatores externos (confiabilidade, manutenibilidade para o usuario final).",
+      "distratores": {
+        "A": "Incorreto: fatores internos dizem respeito a arquitetura e elegancia do codigo, invisiveis ao usuario final.",
+        "B": "Incorreto: aspectos sintaticos sao verificados em compilacao, nao na experiencia de operacao do usuario.",
+        "C": "Incorreto: corretude e usabilidade sao fatores centrais de qualidade do software."
+      },
+      "referencia_vault": "01. Programacao Modular/05. Fatores externos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-REV-003",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Legibilidade, modularidade e manutenibilidade",
+    "artigo_origem": "06. Fatores internos de qualidade de software.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma empresa recebe um sistema cuja manutenção leva semanas, embora as mudanças solicitadas sejam pequenas. A análise técnica revela métodos extensos, responsabilidades misturadas e nomes pouco expressivos. A equipe decide refatorar o código antes de ampliar as funcionalidades.\n\nComando: Quais fatores de qualidade são diretamente priorizados por essa decisão?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Apenas aparência visual e satisfação do usuário.",
+        "correta": false,
+        "diagnostico": "Incorreto: aparencia visual e fator externo de interface com o usuario."
+      },
+      {
+        "letra": "B",
+        "texto": "Escalabilidade geográfica e largura de banda.",
+        "correta": false,
+        "diagnostico": "Incorreto: escalabilidade geografica refere-se a infraestrutura de telecomunicacoes e distribuicao."
+      },
+      {
+        "letra": "C",
+        "texto": "Fatores internos como legibilidade, modularidade e manutenibilidade.",
+        "correta": true,
+        "diagnostico": "Correto: refatorar metodos longos, separar responsabilidades e melhorar nomenclatura atacam diretamente os fatores internos de qualidade (legibilidade, modularidade, testabilidade e manutenibilidade)."
+      },
+      {
+        "letra": "D",
+        "texto": "Privacidade de rede e transmissão de pacotes.",
+        "correta": false,
+        "diagnostico": "Incorreto: privacidade de rede e protocolo de seguranca de comunicacao."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na fiaçao eletrica dentro da parede de uma casa: se os fios estiverem todos emaranhados e sem etiquetas, o eletricista gasta horas para consertar uma simples tomada. Arrumar a fiacao e refatorar os fatores internos para facilitar reparos futuros.",
+      "analise_correta": "Os fatores internos de qualidade sao avaliados pela equipe de engenharia e afetam diretamente a velocidade de entrega (*time-to-market*) e a taxa de insercao de bugs em manutenções corretivas e evolutivas.",
+      "distratores": {
+        "A": "Incorreto: aparencia visual e fator externo de interface com o usuario.",
+        "B": "Incorreto: escalabilidade geografica refere-se a infraestrutura de telecomunicacoes e distribuicao.",
+        "D": "Incorreto: privacidade de rede e protocolo de seguranca de comunicacao."
+      },
+      "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-REV-004",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Coesão, dependências e manutenibilidade",
+    "artigo_origem": "06. Fatores internos de qualidade de software.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Em um sistema de pagamentos, os módulos de emissão de comprovantes e cálculo de taxas foram criados por equipes diferentes. Apesar disso, ambos dependem de detalhes internos um do outro: alterar uma regra de cálculo exige modificar também o módulo de comprovantes. A equipe busca reduzir esse efeito em cascata.\n\nComando: Qual intervenção de projeto é a mais adequada para melhorar a qualidade interna do sistema?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Substituir nomes descritivos por abreviações para diminuir o tamanho do código.",
+        "correta": false,
+        "diagnostico": "Incorreto: abreviacoes obscuras prejudicam a legibilidade sem resolver acoplamento."
+      },
+      {
+        "letra": "B",
+        "texto": "Aumentar o compartilhamento de detalhes internos para facilitar alterações simultâneas.",
+        "correta": false,
+        "diagnostico": "Incorreto: expor detalhes internos aumenta ainda mais o acoplamento nocivo."
+      },
+      {
+        "letra": "C",
+        "texto": "Definir responsabilidades mais claras e reduzir dependências desnecessárias entre módulos.",
+        "correta": true,
+        "diagnostico": "Correto: delimitar fronteiras claras de responsabilidade (alta coesao) e reduzir o acoplamento entre os modulos elimina efeitos colaterais em cascata."
+      },
+      {
+        "letra": "D",
+        "texto": "Reunir todos os módulos em uma única classe sem divisão de responsabilidades.",
+        "correta": false,
+        "diagnostico": "Incorreto: agrupar tudo em classe monolitica cria a antipattern God Class."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você mudar a tomada da sua sala de dois pinos para o padrao novo de tres pinos, a TV continua funcionando normalmente atraves do plugue padronizado (interface), sem você precisar abrir a TV e trocar seus circuitos internos.",
+      "analise_correta": "O principio de baixo acoplamento e alta coesao garante que cada modulo tenha um unico proposito bem definido e se comunique exclusivamente por contratos estaveis de interface, prevenindo mudancas em cascata.",
+      "distratores": {
+        "A": "Incorreto: abreviacoes obscuras prejudicam a legibilidade sem resolver acoplamento.",
+        "B": "Incorreto: expor detalhes internos aumenta ainda mais o acoplamento nocivo.",
+        "D": "Incorreto: agrupar tudo em classe monolitica cria a antipattern God Class."
+      },
+      "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
+    }
+  },
+  {
+    "id": "PM-REV-005",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Classes, objetos, atributos e métodos",
+    "artigo_origem": "07. Atributos e métodos (classes, objetos e definição de membros).md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma loja está informatizando seu estoque. Ao observar as regras de negócio, os desenvolvedores identificam que cada produto possui descrição, preço e quantidade disponível, além de uma operação para verificar se ainda pode ser vendido. Essas informações serão representadas por uma classe Produto.\n\nComando: Na modelagem orientada a objetos, como esses elementos devem ser classificados?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Descrição, preço e quantidade são atributos; verificar estoque é método.",
+        "correta": true,
+        "diagnostico": "Correto: atributos sao variaveis que armazenam o estado do objeto (descricao, preco, quantidade), enquanto metodos sao funcoes/procedimentos que definem o comportamento (verificarEstoque)."
+      },
+      {
+        "letra": "B",
+        "texto": "Descrição e preço são métodos; verificar estoque é atributo.",
+        "correta": false,
+        "diagnostico": "Incorreto: caracteristicas estruturais de dados sao atributos, nao metodos."
+      },
+      {
+        "letra": "C",
+        "texto": "A classe Produto é um único valor numérico sem comportamento.",
+        "correta": false,
+        "diagnostico": "Incorreto: uma classe e um molde completo que engloba dados e metodos de comportamento."
+      },
+      {
+        "letra": "D",
+        "texto": "Cada produto é obrigatoriamente uma classe diferente.",
+        "correta": false,
+        "diagnostico": "Incorreto: produtos individuais sao instancias (objetos) de uma unica classe generica Produto."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um carro: a cor, a placa e o nivel de combustivel sao os atributos; dar partida, acelerar e frear sao os metodos.",
+      "analise_correta": "Em linguagens orientadas a objetos como C# e Java, classes atuam como tipos definidos pelo usuario, estruturando estado em campos/propriedades e operacoes em membros de metodo.",
+      "distratores": {
+        "B": "Incorreto: caracteristicas estruturais de dados sao atributos, nao metodos.",
+        "C": "Incorreto: uma classe e um molde completo que engloba dados e metodos de comportamento.",
+        "D": "Incorreto: produtos individuais sao instancias (objetos) de uma unica classe generica Produto."
+      },
+      "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
+    }
+  },
+  {
+    "id": "PM-REV-006",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Identidade, estado e comportamento dos objetos",
+    "artigo_origem": "07. Atributos e métodos (classes, objetos e definição de membros).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Em um sistema de almoxarifado, dois registros de produtos têm a mesma descrição e o mesmo preço, mas correspondem a unidades cadastradas separadamente. Durante os testes, um estudante conclui que valores iguais significam que os objetos são a mesma instância.\n\nComando: Qual afirmação corrige essa interpretação sobre estado e identidade dos objetos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Objetos podem compartilhar valores de atributos e continuar sendo instâncias distintas.",
+        "correta": true,
+        "diagnostico": "Correto: a identidade de um objeto independe de seu estado; dois objetos alocados em posicoes distintas na memoria heap continuam sendo entidades individuais, mesmo que todos os seus atributos possuam valores identicos."
+      },
+      {
+        "letra": "B",
+        "texto": "Métodos definem a identidade, e atributos não podem armazenar estado.",
+        "correta": false,
+        "diagnostico": "Incorreto: a identidade e determinada pelo endereco ou referencia do objeto em memoria, e atributos sao exatamente o que armazena estado."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma classe não pode gerar mais de uma instância.",
+        "correta": false,
+        "diagnostico": "Incorreto: uma classe pode gerar infinitas instancias distintas em memoria."
+      },
+      {
+        "letra": "D",
+        "texto": "Objetos com o mesmo estado possuem necessariamente a mesma identidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde igualdade de conteudo (valor de estado) com igualdade de referencia (identidade de instancia)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em gemeos univitelinos: eles tem o mesmo sobrenome, a mesma altura e a mesma cor de olhos (mesmo estado), mas continuam sendo duas pessoas fisicas diferentes com CPFs e certidoes de nascimento separadas (identidades distintas).",
+      "analise_correta": "Em C#, o operador `==` em tipos de referencia compara a identidade (enderecos de memoria por padrao), enquanto o metodo `.Equals()` pode ser sobrescrito para comparar equivalencia de estado de negocio.",
+      "distratores": {
+        "B": "Incorreto: a identidade e determinada pelo endereco ou referencia do objeto em memoria, e atributos sao exatamente o que armazena estado.",
+        "C": "Incorreto: uma classe pode gerar infinitas instancias distintas em memoria.",
+        "D": "Incorreto: confunde igualdade de conteudo (valor de estado) com igualdade de referencia (identidade de instancia)."
+      },
+      "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
+    }
+  },
+  {
+    "id": "PM-REV-007",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Construtores e inicialização de atributos",
+    "artigo_origem": "08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: O sistema de uma papelaria apresenta falhas porque alguns objetos Produto são criados sem descrição ou com valores iniciais inválidos. A equipe estabelece que essas condições devem ser verificadas no momento da criação de cada objeto, antes de seu uso pelas demais funcionalidades.\n\nComando: Qual recurso de programação orientada a objetos atende diretamente a essa necessidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Namespace que define a ordem de criação dos objetos.",
+        "correta": false,
+        "diagnostico": "Incorreto: namespaces organizam escopo de nomes de tipos, sem executar logica de instanciacao."
+      },
+      {
+        "letra": "B",
+        "texto": "Destrutor que é executado antes da criação do objeto.",
+        "correta": false,
+        "diagnostico": "Incorreto: destrutores sao executados ao final do ciclo de vida do objeto para liberacao de recursos, nunca antes da criacao."
+      },
+      {
+        "letra": "C",
+        "texto": "Método estático que altera todas as instâncias indiscriminadamente.",
+        "correta": false,
+        "diagnostico": "Incorreto: metodos estaticos nao sao disparados automaticamente na alocacao de uma nova instancia."
+      },
+      {
+        "letra": "D",
+        "texto": "Construtor que recebe e valida os dados necessários à inicialização.",
+        "correta": true,
+        "diagnostico": "Correto: o construtor e o metodo especial invocado no ato da instanciacao (`new`), sendo o local ideal para receber parametros obrigatorios, aplicar validacoes e garantir que o objeto nasca em estado valido (invariante de classe)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "E como a certidao de nascimento no cartorio: o bebe so sai registrado se os pais informarem nome e data validos; o cartorio nao deixa criar um registro em branco.",
+      "analise_correta": "O construtor garante o principio de invariante de classe: nenhum objeto deve existir na memoria em estado inconsistente ou sem inicializacao de membros essenciais.",
+      "distratores": {
+        "A": "Incorreto: namespaces organizam escopo de nomes de tipos, sem executar logica de instanciacao.",
+        "B": "Incorreto: destrutores sao executados ao final do ciclo de vida do objeto para liberacao de recursos, nunca antes da criacao.",
+        "C": "Incorreto: metodos estaticos nao sao disparados automaticamente na alocacao de uma nova instancia."
+      },
+      "referencia_vault": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-REV-008",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Membros estáticos e membros de instância",
+    "artigo_origem": "09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma aplicação de monitoramento cria centenas de objetos de uma mesma classe durante sua execução. O responsável técnico precisa exibir um indicador geral com a quantidade de objetos criados, e esse valor deve ser único para a classe, não um contador independente em cada instância.\n\nComando: Qual implementação é compatível com esse requisito?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Substituir o contador por um destrutor sem estado compartilhado.",
+        "correta": false,
+        "diagnostico": "Incorreto: destrutores nao gerenciam contagem compartilhada persistente."
+      },
+      {
+        "letra": "B",
+        "texto": "Declarar um membro estático da classe para armazenar o contador.",
+        "correta": true,
+        "diagnostico": "Correto: membros estaticos (`static`) pertencem a propria classe e sao compartilhados por todas as instancias daquele tipo, mantendo uma copia unica na memoria para a contagem global."
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar o contador como variável local em cada método de consulta.",
+        "correta": false,
+        "diagnostico": "Incorreto: variaveis locais sao destruidas assim que o metodo finaliza sua execucao."
+      },
+      {
+        "letra": "D",
+        "texto": "Copiar o contador para cada instância sem sincronizar os valores.",
+        "correta": false,
+        "diagnostico": "Incorreto: campos de instancia mantem copias isoladas em cada objeto, impedindo um acumulador global."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um predio com 50 apartamentos: a caixa de correspondencia na portaria e compartilhada por todo o condominio (estatica), enquanto a geladeira dentro de cada apartamento pertence apenas aquela casa (de instancia).",
+      "analise_correta": "Campos estaticos sao alocados uma unica vez na area de metadados da CLR quando a classe e carregada, permanecendo acessiveis sem necessidade de referenciar uma instancia especifica (`Classe.Contador`).",
+      "distratores": {
+        "A": "Incorreto: destrutores nao gerenciam contagem compartilhada persistente.",
+        "C": "Incorreto: variaveis locais sao destruidas assim que o metodo finaliza sua execucao.",
+        "D": "Incorreto: campos de instancia mantem copias isoladas em cada objeto, impedindo um acumulador global."
+      },
+      "referencia_vault": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-REV-009",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Destrutores e gerenciamento de memória no C#",
+    "artigo_origem": "10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Ao investigar o consumo de memória de uma aplicação C#, a equipe observa que alguns objetos deixaram de ser referenciados após o encerramento de operações. Um desenvolvedor afirma que a memória de cada objeto é necessariamente liberada no instante exato em que a última referência desaparece.\n\nComando: Considerando o gerenciamento de memória em C#, qual conclusão é tecnicamente adequada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O programador precisa chamar diretamente o destrutor em toda remoção de referência.",
+        "correta": false,
+        "diagnostico": "Incorreto: em C#, o desenvolvedor nao pode invocar destrutores/finalizadores manualmente."
+      },
+      {
+        "letra": "B",
+        "texto": "O destrutor substitui a execução automática do coletor de lixo.",
+        "correta": false,
+        "diagnostico": "Incorreto: o Garbage Collector e quem gerencia a chamada de finalizadores na fila de finalizacao."
+      },
+      {
+        "letra": "C",
+        "texto": "O coletor de lixo pode liberar objetos não alcançáveis em momento posterior.",
+        "correta": true,
+        "diagnostico": "Correto: o gerenciamento de memoria gerenciada no .NET e nao deterministico; o Garbage Collector (GC) roda periodicamente em momentos oportunos para coletar objetos inalcançaveis, sem garantia de liberacao instantanea."
+      },
+      {
+        "letra": "D",
+        "texto": "A memória é sempre liberada no mesmo instante em que sai do escopo.",
+        "correta": false,
+        "diagnostico": "Incorreto: desalocacao imediata ao sair do escopo e caracteristica de ponteiros manuais (C++) ou RAII estrito, nao da memoria gerenciada do C#."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no caminhao de lixo do bairro: quando voce joga uma casca de banana na lixeira da calcada, o caminhao nao passa imediatamente naquele segundo; ele passa na rota programada dele mais tarde para recolher tudo de uma vez.",
+      "analise_correta": "O coletor de lixo do C# opera por geracoes (Gen 0, 1 e 2). Para recursos nao gerenciados que exigem liberacao deterministica (arquivos, sockets), deve-se implementar o padrao `IDisposable` com o bloco `using`.",
+      "distratores": {
+        "A": "Incorreto: em C#, o desenvolvedor nao pode invocar destrutores/finalizadores manualmente.",
+        "B": "Incorreto: o Garbage Collector e quem gerencia a chamada de finalizadores na fila de finalizacao.",
+        "D": "Incorreto: desalocacao imediata ao sair do escopo e caracteristica de ponteiros manuais (C++) ou RAII estrito, nao da memoria gerenciada do C#."
+      },
+      "referencia_vault": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md"
+    }
+  },
+  {
+    "id": "PM-REV-010",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Ocultação da informação e encapsulamento",
+    "artigo_origem": "11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Em um sistema bancário didático, uma alteração direta no campo saldo permitiu registrar um valor inconsistente, sem verificar as regras de negócio. Para impedir novas ocorrências, a equipe decidiu restringir a exposição do estado interno e disponibilizar operações controladas para as alterações.\n\nComando: Que princípio orienta essa decisão de projeto?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Herança múltipla de atributos.",
+        "correta": false,
+        "diagnostico": "Incorreto: heranca multipla trata de derivacao de classes e nem e suportada para classes concretas em C#."
+      },
+      {
+        "letra": "B",
+        "texto": "Instanciação de classes abstratas.",
+        "correta": false,
+        "diagnostico": "Incorreto: classes abstratas nao podem ser instanciadas diretamente."
+      },
+      {
+        "letra": "C",
+        "texto": "Encapsulamento e ocultação da informação.",
+        "correta": true,
+        "diagnostico": "Correto: o principio de encapsulamento e ocultacao da informacao (*information hiding*) determina que o estado interno do objeto deve ser protegido contra manipulacoes externas diretas, expondo apenas metodos ou propriedades seguras."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituição de métodos virtuais.",
+        "correta": false,
+        "diagnostico": "Incorreto: substituicao de metodos virtuais refere-se a polimorfismo dinamico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um caixa eletronico de banco: você nao abre a gaveta do cofre com uma chave de fenda para pegar as notas com a mao; você usa o teclado e a tela (interface publica), e a maquina confere sua senha e seu saldo antes de soltar o dinheiro.",
+      "analise_correta": "David Parnas formulou a ocultacao da informacao para assegurar que detalhes volateis de implementacao e regras de consistencia interna fiquem ocultos atras de contratos estaveis.",
+      "distratores": {
+        "A": "Incorreto: heranca multipla trata de derivacao de classes e nem e suportada para classes concretas em C#.",
+        "B": "Incorreto: classes abstratas nao podem ser instanciadas diretamente.",
+        "D": "Incorreto: substituicao de metodos virtuais refere-se a polimorfismo dinamico."
+      },
+      "referencia_vault": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-REV-011",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Modificadores de acesso em C# (private)",
+    "artigo_origem": "12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Durante a revisão de uma classe Conta em C#, percebeu-se que qualquer outra classe do projeto poderia atribuir um valor ao campo saldo. A nova regra exige que apenas os métodos definidos na própria classe Conta tenham acesso direto a esse campo.\n\nComando: Qual modificador de acesso deve ser aplicado ao campo para atender à regra?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "public.",
+        "correta": false,
+        "diagnostico": "Incorreto: `public` torna o campo acessivel a qualquer classe externa."
+      },
+      {
+        "letra": "B",
+        "texto": "protected, que proíbe acesso também nas subclasses.",
+        "correta": false,
+        "diagnostico": "Incorreto: `protected` permite acesso pelas subclasses derivadas."
+      },
+      {
+        "letra": "C",
+        "texto": "internal, que equivale a acesso exclusivo na classe.",
+        "correta": false,
+        "diagnostico": "Incorreto: `internal` permite acesso a qualquer classe dentro do mesmo assembly/projeto."
+      },
+      {
+        "letra": "D",
+        "texto": "private.",
+        "correta": true,
+        "diagnostico": "Correto: o modificador `private` restringe a visibilidade do membro estritamente ao escopo interno do corpo da propria classe onde foi declarado."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no seu diario pessoal: so você mesmo tem permissao de ler e escrever nele (private). Se você colocasse em uma mesa aberta na praca, qualquer pessoa poderia mexer (public).",
+      "analise_correta": "Em C#, o nivel de acesso padrao para membros de classe e `private`, forcando o desenvolvedor a declarar explicitamente qualquer exposicao publica controlada.",
+      "distratores": {
+        "A": "Incorreto: `public` torna o campo acessivel a qualquer classe externa.",
+        "B": "Incorreto: `protected` permite acesso pelas subclasses derivadas.",
+        "C": "Incorreto: `internal` permite acesso a qualquer classe dentro do mesmo assembly/projeto."
+      },
+      "referencia_vault": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md"
+    }
+  },
+  {
+    "id": "PM-REV-012",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Getters, setters e validação em propriedades",
+    "artigo_origem": "13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma aplicação controla o estoque de medicamentos e exige que a quantidade cadastrada nunca seja negativa. O valor precisa continuar disponível para consulta, mas toda atualização deve passar por uma verificação antes de ser aceita.\n\nComando: Qual estratégia de implementação de propriedade melhor garante essa regra?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Usar acesso controlado e validar o novo valor no setter.",
+        "correta": true,
+        "diagnostico": "Correto: em C#, propriedades com assessor `set` permitem interceptar a atribuicao, validar se o `value` atende a regra de negocio (ex.: `value >= 0`) e rejeitar alteracoes inconsistentes."
+      },
+      {
+        "letra": "B",
+        "texto": "Permitir atualização do valor somente no destrutor.",
+        "correta": false,
+        "diagnostico": "Incorreto: destrutores nao sao chamados em operacoes de negocio do estoque."
+      },
+      {
+        "letra": "C",
+        "texto": "Guardar a quantidade exclusivamente em um membro estático compartilhado.",
+        "correta": false,
+        "diagnostico": "Incorreto: membro estatico compartilharia a mesma quantidade entre todos os remedios da farmacia."
+      },
+      {
+        "letra": "D",
+        "texto": "Tornar o campo público e aceitar qualquer alteração.",
+        "correta": false,
+        "diagnostico": "Incorreto: campo publico permite que qualquer codigo atribua valores negativos livremente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "E como a catraca de um onibus: qualquer um pode olhar para ver se a catraca esta livre (getter), mas para passar para o outro lado, a catraca exige que voce passe um cartao com saldo valido (setter com validacao).",
+      "analise_correta": "Propriedades encapsulam campos de suporte (*backing fields*), oferecendo a aparencia sintatica de campo direto com o poder de execucao de metodos de validacao de invariantes.",
+      "distratores": {
+        "B": "Incorreto: destrutores nao sao chamados em operacoes de negocio do estoque.",
+        "C": "Incorreto: membro estatico compartilharia a mesma quantidade entre todos os remedios da farmacia.",
+        "D": "Incorreto: campo publico permite que qualquer codigo atribua valores negativos livremente."
+      },
+      "referencia_vault": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md"
+    }
+  },
+  {
+    "id": "PM-REV-013",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Namespaces e classes parciais",
+    "artigo_origem": "14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma equipe mantém uma aplicação C# com dezenas de classes. Para evitar conflitos de nomes, pretende agrupá-las por áreas funcionais; além disso, quer dividir a implementação de uma classe extensa em dois arquivos, mantendo uma única definição lógica da classe.\n\nComando: Quais recursos da linguagem atendem, respectivamente, a essas duas necessidades?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Modificadores sealed e override.",
+        "correta": false,
+        "diagnostico": "Incorreto: sealed e override tratam de heranca e polimorfismo."
+      },
+      {
+        "letra": "B",
+        "texto": "Delegates e destrutores.",
+        "correta": false,
+        "diagnostico": "Incorreto: delegates e destrutores tratam de ponteiros de funcao e desalocacao de recursos."
+      },
+      {
+        "letra": "C",
+        "texto": "Namespaces e declaração partial.",
+        "correta": true,
+        "diagnostico": "Correto: `namespaces` criam espacos de nomes hierarquicos que evitam colisoes de nomes, e o modificador `partial` permite que a definicao de uma classe seja fracionada em multiplos arquivos de codigo-fonte compilados como uma unica unidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Construtores e métodos abstratos.",
+        "correta": false,
+        "diagnostico": "Incorreto: construtores inicializam dados e metodos abstratos definem contratos nao implementados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O namespace e como o sobrenome de uma familia para nao confundir o \"Joao da Silva\" com o \"Joao Santos\"; a classe partial e como escrever um capitulo de um livro em duas folhas de papel diferentes, mas que continuam formando o mesmo capitulo.",
+      "analise_correta": "Classes parciais (`partial class`) sao amplamente utilizadas em geradores de codigo (.NET Windows Forms, WPF e Entity Framework) para separar o codigo gerado por ferramentas da logica manual do desenvolvedor.",
+      "distratores": {
+        "A": "Incorreto: sealed e override tratam de heranca e polimorfismo.",
+        "B": "Incorreto: delegates e destrutores tratam de ponteiros de funcao e desalocacao de recursos.",
+        "D": "Incorreto: construtores inicializam dados e metodos abstratos definem contratos nao implementados."
+      },
+      "referencia_vault": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md"
+    }
+  },
+  {
+    "id": "PM-REV-014",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Generalização, especialização e herança",
+    "artigo_origem": "15. Herança (generalização, especialização e extensibilidade modular).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma locadora mantém objetos Carro e Motocicleta. Ambos possuem modelo e ano, mas cada tipo também apresenta operações específicas. Na revisão do projeto, identificou-se duplicação dos atributos comuns e decidiu-se criar uma classe Veiculo para reuni-los.\n\nComando: Como essa decisão deve ser interpretada em termos de generalização, especialização e herança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Veiculo generaliza Carro e Motocicleta, que o especializam.",
+        "correta": true,
+        "diagnostico": "Correto: `Veiculo` atua como a classe-base mais geral (generalizacao), enquanto `Carro` e `Motocicleta` sao classes derivadas que herdam os atributos comuns e acrescentam caracteristicas particulares (especializacao)."
+      },
+      {
+        "letra": "B",
+        "texto": "Veiculo é uma instância de Carro.",
+        "correta": false,
+        "diagnostico": "Incorreto: Veiculo e uma classe conceitual mais ampla, nao um objeto/instancia."
+      },
+      {
+        "letra": "C",
+        "texto": "Cada veículo deve duplicar os atributos sem compartilhar uma classe-base.",
+        "correta": false,
+        "diagnostico": "Incorreto: a duplicacao foi eliminada intencionalmente pela heranca."
+      },
+      {
+        "letra": "D",
+        "texto": "Carro e Motocicleta são métodos de Veiculo.",
+        "correta": false,
+        "diagnostico": "Incorreto: Carro e Motocicleta sao tipos/classes, nao funcoes executaveis."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na biologia, \"Animal\" generaliza \"Cachorro\" e \"Passaro\"; \"Cachorro\" especializa \"Animal\", herdando a condicao de respirar e ter celulas, mas acrescentando a habilidade exclusiva de latir.",
+      "analise_correta": "A heranca implementa a relacao \"e-um\" (*is-a*), permitindo que subclasses reutilizem codigo da superclasse e sejam tratadas polimorficamente por meio da referencia da classe-base.",
+      "distratores": {
+        "B": "Incorreto: Veiculo e uma classe conceitual mais ampla, nao um objeto/instancia.",
+        "C": "Incorreto: a duplicacao foi eliminada intencionalmente pela heranca.",
+        "D": "Incorreto: Carro e Motocicleta sao tipos/classes, nao funcoes executaveis."
+      },
+      "referencia_vault": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md"
+    }
+  },
+  {
+    "id": "PM-REV-015",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Construtores de subclasses e chamada a base",
+    "artigo_origem": "16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Um sistema de recursos humanos define a classe Funcionario com um construtor responsável por receber e validar o nome. A classe Gerente herda Funcionario e acrescenta o setor de atuação. Ao criar um Gerente, é necessário inicializar corretamente os dados herdados e os dados específicos.\n\nComando: Qual estratégia de construção deve ser empregada em C# para aproveitar a inicialização da classe-base?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ignorar o construtor da classe-base, que jamais é executado.",
+        "correta": false,
+        "diagnostico": "Incorreto: o construtor da classe-base e sempre executado obrigatoriamente antes do corpo da classe derivada."
+      },
+      {
+        "letra": "B",
+        "texto": "Chamar manualmente o destrutor da classe-base.",
+        "correta": false,
+        "diagnostico": "Incorreto: destrutores desalocam objetos, nao inicializando membros."
+      },
+      {
+        "letra": "C",
+        "texto": "Encaminhar o nome ao construtor da classe-base usando base(...).",
+        "correta": true,
+        "diagnostico": "Correto: a palavra-chave `: base(nome)` na declaracao do construtor da subclasse repassa explicitamente os argumentos necessarios para o construtor correspondente da classe-base."
+      },
+      {
+        "letra": "D",
+        "texto": "Tornar todos os atributos herdados estáticos.",
+        "correta": false,
+        "diagnostico": "Incorreto: atributos estaticos compartilhariam o mesmo nome entre todos os gerentes da empresa."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na construcao de um sobrado: antes de erguer as paredes do segundo andar (classe filha Gerente), os pedreiros precisam assentar a fundacao e as paredes do primeiro andar (classe-base Funcionario).",
+      "analise_correta": "Em C#, se a superclasse nao tiver um construtor padrao sem parametros, a classe filha e sintaticamente obrigada a declarar a chamada explicita `: base(...)` em seus construtores.",
+      "distratores": {
+        "A": "Incorreto: o construtor da classe-base e sempre executado obrigatoriamente antes do corpo da classe derivada.",
+        "B": "Incorreto: destrutores desalocam objetos, nao inicializando membros.",
+        "D": "Incorreto: atributos estaticos compartilhariam o mesmo nome entre todos os gerentes da empresa."
+      },
+      "referencia_vault": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md"
+    }
+  },
+  {
+    "id": "PM-REV-016",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Polimorfismo; virtual e override",
+    "artigo_origem": "17. Sobreposição de métodos (virtual e override).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma empresa produz relatórios comuns e financeiros. A classe Relatorio já disponibiliza o método virtual Gerar(), mas o relatório financeiro precisa adaptar a geração ao seu formato, mantendo o comportamento polimórfico previsto pela hierarquia.\n\nComando: Qual recurso permite à subclasse fornecer essa implementação específica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Substituir a classe derivada por uma variável local.",
+        "correta": false,
+        "diagnostico": "Incorreto: variaveis locais nao herdam nem sobrescrevem metodos polimorficos."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar sealed na classe-base para permitir novas sobrescritas.",
+        "correta": false,
+        "diagnostico": "Incorreto: `sealed` bloqueia a sobrescrita, impedindo novas especializacoes."
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar Gerar() como private static na classe-base.",
+        "correta": false,
+        "diagnostico": "Incorreto: metodos privados e estaticos nao podem ser virtuais nem participam de polimorfismo dinamico."
+      },
+      {
+        "letra": "D",
+        "texto": "Implementar Gerar() na classe derivada com override.",
+        "correta": true,
+        "diagnostico": "Correto: o par `virtual` (na classe-base) e `override` (na classe derivada) viabiliza o polimorfismo por sobrescrita dinamica, fazendo com que a chamada em tempo de execucao invoque o comportamento da classe concreta."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no comando \"tocar som\" de um instrumento musical: o instrumento base tem a intencao (virtual), mas a flauta assopra (override) e o tambor bate (override). Quem ouve a musica apenas manda o instrumento tocar.",
+      "analise_correta": "A ligacao tardia (*late binding*) utiliza a tabela de metodos virtuais (vtable) da CLR para despachar a chamada ao metodo sobrescrito pelo tipo real da instancia alocada na memoria heap.",
+      "distratores": {
+        "A": "Incorreto: variaveis locais nao herdam nem sobrescrevem metodos polimorficos.",
+        "B": "Incorreto: `sealed` bloqueia a sobrescrita, impedindo novas especializacoes.",
+        "C": "Incorreto: metodos privados e estaticos nao podem ser virtuais nem participam de polimorfismo dinamico."
+      },
+      "referencia_vault": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md"
+    }
+  },
+  {
+    "id": "PM-REV-017",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Classes e métodos abstratos",
+    "artigo_origem": "18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma aplicação gráfica trabalha com círculos e retângulos. Todas as formas devem oferecer a operação CalcularArea(), mas a regra do cálculo depende do tipo concreto. A equipe quer definir um contrato comum e impedir a criação de objetos de uma forma genérica sem implementação.\n\nComando: Qual modelagem atende simultaneamente a essas condições?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Delegate sem método associado.",
+        "correta": false,
+        "diagnostico": "Incorreto: delegates desacoplam chamadas de funcao mas nao representam hierarquias de classes graficas."
+      },
+      {
+        "letra": "B",
+        "texto": "Classe abstrata com método abstrato.",
+        "correta": true,
+        "diagnostico": "Correto: uma classe abstrata (`abstract class`) nao pode ser instanciada diretamente e pode conter metodos abstratos (`abstract method`) sem corpo, forcando todas as subclasses concretas a implementarem o metodo."
+      },
+      {
+        "letra": "C",
+        "texto": "Classe sealed com método estático.",
+        "correta": false,
+        "diagnostico": "Incorreto: classes seladas proíbem heranca, impedindo que circulos e retangulos derivem dela."
+      },
+      {
+        "letra": "D",
+        "texto": "Classe comum com todos os atributos públicos.",
+        "correta": false,
+        "diagnostico": "Incorreto: classe comum permitiria instanciar uma \"Forma\" vazia sem formulas de area conhecidas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na ideia generica de \"Documento Oficial\": nao existe um documento que seja apenas \"documento\"; ele precisa ser algo concreto como um RG, CNH ou Passaporte. O conceito e abstrato, mas exige campos concretos.",
+      "analise_correta": "Classes abstratas servem como raizes de hierarquias polimorficas quando certos comportamentos conceituais sao obrigatorios mas nao possuem implementacao logica comum na base.",
+      "distratores": {
+        "A": "Incorreto: delegates desacoplam chamadas de funcao mas nao representam hierarquias de classes graficas.",
+        "C": "Incorreto: classes seladas proíbem heranca, impedindo que circulos e retangulos derivem dela.",
+        "D": "Incorreto: classe comum permitiria instanciar uma \"Forma\" vazia sem formulas de area conhecidas."
+      },
+      "referencia_vault": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md"
+    }
+  },
+  {
+    "id": "PM-REV-018",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Classes sealed e membros sealed override",
+    "artigo_origem": "19. Classes e membros selados (sealed).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma biblioteca de componentes C# contém uma classe cuja lógica foi concluída e verificada. Seus mantenedores não desejam permitir que outros desenvolvedores criem subclasses para modificar ou ampliar o comportamento dessa classe.\n\nComando: Qual recurso da linguagem expressa diretamente essa restrição de herança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Declarar a classe como abstract.",
+        "correta": false,
+        "diagnostico": "Incorreto: `abstract` forca a criacao de subclasses para que a classe possa ser usada."
+      },
+      {
+        "letra": "B",
+        "texto": "Marcar apenas todos os campos como public.",
+        "correta": false,
+        "diagnostico": "Incorreto: campos publicos expositivos quebram o encapsulamento sem impedir derivacao."
+      },
+      {
+        "letra": "C",
+        "texto": "Declarar todos os métodos como virtual.",
+        "correta": false,
+        "diagnostico": "Incorreto: metodos virtuais convidam expressamente a sobrescrita por heranca."
+      },
+      {
+        "letra": "D",
+        "texto": "Declarar a classe como sealed.",
+        "correta": true,
+        "diagnostico": "Correto: a palavra-chave `sealed` em C# impede que outras classes herdem daquela classe, garantindo a imutabilidade do design e permitindo otimizacoes de compilacao (como *devirtualization*)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "E como passar lacre de seguranca inviolavel em uma caixa de encomendas: uma vez selada (sealed), ninguem mais pode abrir para embutir coisas novas la dentro.",
+      "analise_correta": "Classes como `System.String` no .NET sao declaradas como `sealed` por razoes criticas de seguranca e desempenho, evitando que subclasses subvertam operacoes fundamentais de texto.",
+      "distratores": {
+        "A": "Incorreto: `abstract` forca a criacao de subclasses para que a classe possa ser usada.",
+        "B": "Incorreto: campos publicos expositivos quebram o encapsulamento sem impedir derivacao.",
+        "C": "Incorreto: metodos virtuais convidam expressamente a sobrescrita por heranca."
+      },
+      "referencia_vault": "01. Programacao Modular/19. Classes e membros selados (sealed).md"
+    }
+  },
+  {
+    "id": "PM-REV-019",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Tipos genéricos e polimorfismo paramétrico",
+    "artigo_origem": "20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Três módulos de uma aplicação utilizam repositórios para armazenar produtos, clientes e pedidos. As operações são praticamente idênticas, mas a equipe quer evitar três implementações copiadas e, ao mesmo tempo, manter a verificação de tipos em tempo de compilação.\n\nComando: Qual solução de programação atende melhor a esses requisitos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Definir uma classe genérica Repositorio<T> com tipo parametrizado.",
+        "correta": true,
+        "diagnostico": "Correto: tipos genericos (*generics*) permitem parametrizar classes e metodos com um tipo `T`, viabilizando maximo reuso de codigo de logica comum com seguranca estatica de tipos (*type safety*) e sem custo de *boxing/unboxing*."
+      },
+      {
+        "letra": "B",
+        "texto": "Converter todos os elementos em valores numéricos arbitrários.",
+        "correta": false,
+        "diagnostico": "Incorreto: conversao para inteiros perde semantica, seguranca e orientacao a objetos."
+      },
+      {
+        "letra": "C",
+        "texto": "Usar exclusivamente campos string para todo tipo de dado.",
+        "correta": false,
+        "diagnostico": "Incorreto: transformar tudo em string perde tipagem e exige conversoes manuais perigosas."
+      },
+      {
+        "letra": "D",
+        "texto": "Duplicar manualmente as operações em três classes sem parametrização.",
+        "correta": false,
+        "diagnostico": "Incorreto: duplicacao manual viola principios de manutencao e reaproveitamento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma forma de bolo: a forma tem o mesmo desenho e funcao, mas você pode despejar massa de chocolate, cenoura ou fuba (`Forma<Chocolate>`, `Forma<Cenoura>`), sem precisar inventar uma forma mecanica diferente para cada receita.",
+      "analise_correta": "Os Generics do C# preservam a informacao do tipo real em tempo de execucao (reificacao de tipos na CLR), proporcionando alto desempenho com verificacao estrita em tempo de compilacao.",
+      "distratores": {
+        "B": "Incorreto: conversao para inteiros perde semantica, seguranca e orientacao a objetos.",
+        "C": "Incorreto: transformar tudo em string perde tipagem e exige conversoes manuais perigosas.",
+        "D": "Incorreto: duplicacao manual viola principios de manutencao e reaproveitamento."
+      },
+      "referencia_vault": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md"
+    }
+  },
+  {
+    "id": "PM-REV-020",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Listas e operações em coleções",
+    "artigo_origem": "21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Um pequeno comércio começou a desenvolver seu sistema de estoque. A quantidade de produtos cadastrados varia ao longo do tempo e o programa precisa inserir, consultar e remover objetos Produto sem criar manualmente um campo para cada registro.\n\nComando: Qual estrutura estudada em C# é apropriada para esse armazenamento?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma classe sealed sem qualquer armazenamento.",
+        "correta": false,
+        "diagnostico": "Incorreto: classe vazia nao armazena dados dinamicos."
+      },
+      {
+        "letra": "B",
+        "texto": "Um construtor de Produto usado como banco de dados.",
+        "correta": false,
+        "diagnostico": "Incorreto: construtor instancia um unico objeto, nao atuando como colecao de multiplos itens."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma propriedade booleana sem objetos associados.",
+        "correta": false,
+        "diagnostico": "Incorreto: tipo booleano so armazena true ou false."
+      },
+      {
+        "letra": "D",
+        "texto": "Uma coleção, como List<Produto>.",
+        "correta": true,
+        "diagnostico": "Correto: `List<Produto>` e uma colecao generica dinamica baseada em array redimensionavel que permite adicionar (`Add`), remover (`Remove`) e iterar sobre uma quantidade variavel de elementos com tipagem estrita."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma pasta sanfonada: você pode colocar uma ficha de produto hoje, adicionar mais dez amanha e tirar duas depois; a pasta expande e encolhe conforme a necessidade.",
+      "analise_correta": "Diferente de arrays primitivos de tamanho fixo, `List<T>` encapsula a realocacao de capacidade automaticamente conforme o numero de elementos ultrapassa o limite interno.",
+      "distratores": {
+        "A": "Incorreto: classe vazia nao armazena dados dinamicos.",
+        "B": "Incorreto: construtor instancia um unico objeto, nao atuando como colecao de multiplos itens.",
+        "C": "Incorreto: tipo booleano so armazena true ou false."
+      },
+      "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
+    }
+  },
+  {
+    "id": "PM-REV-021",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Dicionários e coleções genéricas",
+    "artigo_origem": "21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma plataforma comercial realiza milhares de consultas de produtos por um código inteiro único. A implementação atual percorre uma lista inteira até encontrar cada código, aumentando o trabalho necessário à medida que o catálogo cresce. A equipe quer associar diretamente cada código ao respectivo objeto.\n\nComando: Qual estrutura de dados se ajusta melhor a essa necessidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Um Dictionary<int, Produto> com código como chave.",
+        "correta": true,
+        "diagnostico": "Correto: o `Dictionary<TKey, TValue>` implementa uma tabela hash onde a chave (`int`) e mapeada diretamente para o valor (`Produto`), proporcionando busca quase instantanea em complexidade media O(1)."
+      },
+      {
+        "letra": "B",
+        "texto": "Um array de tamanho zero com referências para todos os produtos.",
+        "correta": false,
+        "diagnostico": "Incorreto: array de tamanho zero nao armazena nenhum item."
+      },
+      {
+        "letra": "C",
+        "texto": "Um delegate que armazena todos os produtos em uma variável.",
+        "correta": false,
+        "diagnostico": "Incorreto: delegates sao ponteiros para metodos, nao estruturas de armazenamento de catalogos."
+      },
+      {
+        "letra": "D",
+        "texto": "Uma lista sem nenhum índice de consulta.",
+        "correta": false,
+        "diagnostico": "Incorreto: listas nao indexadas exigem busca linear O(n), exatamente o problema de lentidao que se quer resolver."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um armario de correios com escaninhos numerados: em vez de revirar uma pilha de 10.000 cartas para achar a sua, você vai direto no escaninho com o numero do seu apartamento (chave) e pega a sua encomenda na hora (O(1)).",
+      "analise_correta": "O dicionario utiliza funcoes hash internas para computar o indice do balde (*bucket*) correspondente a chave, eliminando a necessidade de varredura sequencial elemento por elemento.",
+      "distratores": {
+        "B": "Incorreto: array de tamanho zero nao armazena nenhum item.",
+        "C": "Incorreto: delegates sao ponteiros para metodos, nao estruturas de armazenamento de catalogos.",
+        "D": "Incorreto: listas nao indexadas exigem busca linear O(n), exatamente o problema de lentidao que se quer resolver."
+      },
+      "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
+    }
+  },
+  {
+    "id": "PM-REV-022",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Delegates, lambda e eventos",
+    "artigo_origem": "22. Delegates, funções anônimas, expressões lambda e eventos em C#.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Em uma aplicação de pedidos, a conclusão de uma compra deve acionar rotinas distintas: registrar uma notificação, atualizar a interface e enviar uma mensagem. O componente que finaliza a compra não deve conhecer diretamente a implementação de cada rotina interessada.\n\nComando: Qual mecanismo da linguagem C# permite organizar essa comunicação desacoplada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Um namespace que executa métodos automaticamente.",
+        "correta": false,
+        "diagnostico": "Incorreto: namespaces organizam nomes, nao disparando fluxos reativos em runtime."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma classe sealed que proíbe qualquer comunicação entre objetos.",
+        "correta": false,
+        "diagnostico": "Incorreto: classe selada impede heranca, nao tendo relacao com envio de mensagens assincronas ou desacopladas."
+      },
+      {
+        "letra": "C",
+        "texto": "Um evento associado a delegates, com tratadores que podem usar lambdas.",
+        "correta": true,
+        "diagnostico": "Correto: o padrao de eventos (`event`) baseado em delegates do C# implementa o padrao Observer, permitindo que multiplos assinantes se cadastrem para serem notificados quando a acao ocorrer sem acoplamento direto."
+      },
+      {
+        "letra": "D",
+        "texto": "Um construtor privado chamado após cada clique.",
+        "correta": false,
+        "diagnostico": "Incorreto: construtor privado impede a instanciacao livre por outras classes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no sino de uma igreja: o sineiro apenas puxa a corda e faz o sino tocar (evento). Os moradores da vila escutam o sino e cada um faz o que precisa (um vai para a missa, outro olha o relogio), sem o sineiro precisar bater de porta em porta.",
+      "analise_correta": "O modificador `event` protege o delegate subjacente, permitindo que clientes externos utilizem apenas os operadores de inscricao `+=` e desinscricao `-=`, garantindo o encapsulamento da lista de disparos.",
+      "distratores": {
+        "A": "Incorreto: namespaces organizam nomes, nao disparando fluxos reativos em runtime.",
+        "B": "Incorreto: classe selada impede heranca, nao tendo relacao com envio de mensagens assincronas ou desacopladas.",
+        "D": "Incorreto: construtor privado impede a instanciacao livre por outras classes."
+      },
+      "referencia_vault": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md"
+    }
+  },
+  {
+    "id": "PM-REV-023",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "SOLID: princípio da responsabilidade única (SRP)",
+    "artigo_origem": "23. Princípios SOLID de design orientado a objetos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma classe de um sistema universitário cadastra estudantes, produz relatórios e envia mensagens automáticas. Após algumas atualizações, a equipe percebe que mudanças em qualquer uma dessas funções exigem alterar e testar toda a classe, mesmo quando as demais funções não mudaram.\n\nComando: Qual princípio SOLID orienta a reorganização dessas responsabilidades?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Princípio da segregação de interfaces, pois todos os atributos devem ser públicos.",
+        "correta": false,
+        "diagnostico": "Incorreto: ISP trata de dividir interfaces extensas em interfaces especificas menores."
+      },
+      {
+        "letra": "B",
+        "texto": "Princípio da substituição de Liskov, pois todas as atividades formam hierarquias.",
+        "correta": false,
+        "diagnostico": "Incorreto: LSP assegura que subclasses possam substituir superclasses sem quebrar o programa."
+      },
+      {
+        "letra": "C",
+        "texto": "Princípio da responsabilidade única, por concentrar em cada classe um motivo principal de mudança.",
+        "correta": true,
+        "diagnostico": "Correto: o Principio da Responsabilidade Unica (SRP - *Single Responsibility Principle*) afirma que \"uma classe deve ter um, e apenas um, motivo para mudar\", recomendando separar cadastro, relatorios e mensageria em classes distintas."
+      },
+      {
+        "letra": "D",
+        "texto": "Princípio da inversão de dependência, que exige uma única classe para o sistema.",
+        "correta": false,
+        "diagnostico": "Incorreto: DIP prega depender de abstracoes, nao unificar tudo em uma classe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em um canivete suico que tem faca, tesoura, lanterna e secador de cabelo: se o secador de cabelo queimar, você tem que mandar o canivete inteiro para o conserto e fica sem a faca para cozinhar.",
+      "analise_correta": "Robert C. Martin define responsabilidade como um \"eixo de mudanca\". Classes com multiplas responsabilidades acumulam alto acoplamento e sofrem de fragilidade sob manutencoes corriqueiras.",
+      "distratores": {
+        "A": "Incorreto: ISP trata de dividir interfaces extensas em interfaces especificas menores.",
+        "B": "Incorreto: LSP assegura que subclasses possam substituir superclasses sem quebrar o programa.",
+        "D": "Incorreto: DIP prega depender de abstracoes, nao unificar tudo em uma classe."
+      },
+      "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
+    }
+  },
+  {
+    "id": "PM-REV-024",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "SOLID: princípio aberto/fechado (OCP)",
+    "artigo_origem": "23. Princípios SOLID de design orientado a objetos.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Uma loja virtual oferece descontos para diferentes perfis de clientes. Hoje, cada nova campanha exige alterar uma longa sequência de condições dentro do método central de cálculo. A equipe deseja incorporar novas políticas de desconto sem precisar modificar continuamente esse método já testado.\n\nComando: Qual decisão de projeto melhor aplica o princípio aberto/fechado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Modificar obrigatoriamente a classe central a cada novo tipo, sem abstração.",
+        "correta": false,
+        "diagnostico": "Incorreto: modificar continuamente codigo estavel quebra a premissa de fechamento para modificacao."
+      },
+      {
+        "letra": "B",
+        "texto": "Permitir incluir novas estratégias de desconto por extensão, evitando modificar o código central já estabilizado.",
+        "correta": true,
+        "diagnostico": "Correto: o Principio Aberto/Fechado (OCP - *Open/Closed Principle*) preconiza que entidades de software devem estar abertas para extensao (adicionar novos descontos via polimorfismo ou padrao Strategy), mas fechadas para modificacao (preservando o nucleo testado intacto)."
+      },
+      {
+        "letra": "C",
+        "texto": "Eliminar interfaces e colocar todas as regras em um único método estático.",
+        "correta": false,
+        "diagnostico": "Incorreto: metodos estaticos com condicionais acumuladas sao a causa do problema."
+      },
+      {
+        "letra": "D",
+        "texto": "Tornar todas as regras privadas e copiar a sequência de condicionais para cada módulo.",
+        "correta": false,
+        "diagnostico": "Incorreto: copiar blocos condicionais agrava drasticamente a duplicacao de regras."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na porta USB do seu computador: ela esta fechada para modificacao (ninguem abre o computador com chave de fenda para soldar novos fios), mas esta totalmente aberta para extensao (voce pode conectar teclado, mouse, pendrive ou caixa de som nova).",
+      "analise_correta": "Bertrand Meyer e Martin destacam que o OCP e alcancado principalmente pelo uso de interfaces ou classes abstratas (como a aplicacao do padrao de projeto Strategy).",
+      "distratores": {
+        "A": "Incorreto: modificar continuamente codigo estavel quebra a premissa de fechamento para modificacao.",
+        "C": "Incorreto: metodos estaticos com condicionais acumuladas sao a causa do problema.",
+        "D": "Incorreto: copiar blocos condicionais agrava drasticamente a duplicacao de regras."
+      },
+      "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
+    }
+  },
+  {
+    "id": "PM-REV-025",
+    "disciplina_id": "01",
+    "disciplina": "Programação Modular",
+    "topico": "Padrões de projeto e suas categorias (GoF)",
+    "artigo_origem": "24. Padrões de projeto (design patterns) e o catálogo GoF.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Contexto: Durante a evolução de um sistema de vendas, os desenvolvedores encontram problemas recorrentes na criação de objetos, na organização de relações entre classes e na comunicação entre componentes. Em vez de propor uma solução inédita a cada ocorrência, buscam alternativas de projeto documentadas e reutilizáveis.\n\nComando: Como devem ser caracterizadas essas soluções recorrentes no desenvolvimento orientado a objetos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "São trechos de código obrigatórios e idênticos em toda linguagem.",
+        "correta": false,
+        "diagnostico": "Incorreto: padroes de projeto nao sao receitas de copia e cola de codigo engessado, mas solucoes conceituais adaptadas ao contexto."
+      },
+      {
+        "letra": "B",
+        "texto": "São padrões de projeto que descrevem soluções recorrentes, incluindo categorias criacionais, estruturais e comportamentais.",
+        "correta": true,
+        "diagnostico": "Correto: padroes de projeto (*design patterns*, catalogados pelo GoF - Gang of Four) sao solucoes comprovadas e consolidadas para problemas recorrentes de design de software, categorizados em Criacionais (Factory, Singleton), Estruturais (Adapter, Composite) e Comportamentais (Observer, Strategy)."
+      },
+      {
+        "letra": "C",
+        "texto": "São recursos exclusivos do compilador que substituem princípios de projeto.",
+        "correta": false,
+        "diagnostico": "Incorreto: padroes de projeto sao arquiteturais e conceituais, nao instrucoes proprietarias do compilador."
+      },
+      {
+        "letra": "D",
+        "texto": "São regras que dispensam análise das necessidades do sistema.",
+        "correta": false,
+        "diagnostico": "Incorreto: a aplicacao de um padrao exige avaliacao cuidadosa para evitar superengenharia desnecessaria (*overengineering*)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense nas jogadas ensaiadas no futebol ou nas aberturas no xadrez: grandes mestres nao inventam movimentos do zero a cada jogo; eles conhecem padroes testados e aprovados ao longo de decadas para resolver situacoes tipicas.",
+      "analise_correta": "Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides estabeleceram um vocabulario comum indispensavel para a engenharia de software atraves do catalogo dos 23 padroes GoF.",
+      "distratores": {
+        "A": "Incorreto: padroes de projeto nao sao receitas de copia e cola de codigo engessado, mas solucoes conceituais adaptadas ao contexto.",
+        "C": "Incorreto: padroes de projeto sao arquiteturais e conceituais, nao instrucoes proprietarias do compilador.",
+        "D": "Incorreto: a aplicacao de um padrao exige avaliacao cuidadosa para evitar superengenharia desnecessaria (*overengineering*)."
+      },
+      "referencia_vault": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md"
+    }
+  },
+  {
     "id": "PM-001",
     "disciplina_id": "01",
     "disciplina": "Programação Modular",
@@ -42,7 +1217,9 @@
         "D": "Erro absurdo: modularização viabiliza o trabalho paralelo em equipe e a manutenibilidade do código."
       },
       "referencia_vault": "01. Programacao Modular/01. Introdução à programação modular.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-002",
@@ -87,7 +1264,9 @@
         "D": "Erro de disciplina: esses são conceitos de arquitetura de redes de computadores."
       },
       "referencia_vault": "01. Programacao Modular/01. Introdução à programação modular.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-003",
@@ -132,7 +1311,9 @@
         "D": "Erro conceitual grave: a distinção entre computação orientada a estado (procedural) e transformações de valores (funcional) é basilar na ciência da computação."
       },
       "referencia_vault": "01. Programacao Modular/02. Funções e procedimentos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-004",
@@ -177,7 +1358,9 @@
         "D": "Erro técnico: ref altera a assinatura da instrução IL (emissão de ponteiro gerenciado &)."
       },
       "referencia_vault": "01. Programacao Modular/02. Funções e procedimentos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-005",
@@ -222,7 +1405,9 @@
         "D": "Erro conceitual: invariantes são asserções lógicas de consistência, não timers de execução de tarefas."
       },
       "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-006",
@@ -267,7 +1452,9 @@
         "D": "Boa prática: protege a referência interna contra reatribuição acidental."
       },
       "referencia_vault": "01. Programacao Modular/03. Tipos abstratos de dados.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-007",
@@ -312,7 +1499,9 @@
         "D": "Erro taxonômico: métricas de qualidade de design não se confundem com contagem de erros de compilação."
       },
       "referencia_vault": "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-008",
@@ -357,7 +1546,9 @@
         "D": "Erro conceitual: o espectro de acoplamento é amplamente documentado como fator crítico na manutenibilidade."
       },
       "referencia_vault": "01. Programacao Modular/04. Programação orientada a objetos e acoplamento.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-009",
@@ -402,7 +1593,9 @@
         "D": "Erro de estilo: formatação de texto e comentários são propriedades internas do código-fonte."
       },
       "referencia_vault": "01. Programacao Modular/05. Fatores externos de qualidade de software.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-010",
@@ -447,7 +1640,9 @@
         "D": "Erro de disciplina: métrica de rede não define correção lógica de software."
       },
       "referencia_vault": "01. Programacao Modular/05. Fatores externos de qualidade de software.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-011",
@@ -492,7 +1687,9 @@
         "D": "Erro conceitual: código modular facilita testes automatizados, nunca os elimina."
       },
       "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-012",
@@ -537,7 +1734,9 @@
         "D": "Erro conceitual: velocidade de inicialização é tempo de boot/desempenho, não atributos de design interno."
       },
       "referencia_vault": "01. Programacao Modular/06. Fatores internos de qualidade de software.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-013",
@@ -582,7 +1781,9 @@
         "D": "Erro conceitual e de tipos: campos aceitam qualquer tipo suportado pelo sistema de tipos da linguagem."
       },
       "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-014",
@@ -627,7 +1828,9 @@
         "D": "Erro de execução: `c1` foi instanciado com `new`, logo a referência é válida e não nula."
       },
       "referencia_vault": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-015",
@@ -672,7 +1875,9 @@
         "D": "Erro de arquitetura: compilação é tarefa do compilador Roslyn e do JIT do .NET."
       },
       "referencia_vault": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-016",
@@ -717,7 +1922,9 @@
         "D": "Erro conceitual: construtores puramente privados sem fábricas públicas impedem qualquer uso da classe."
       },
       "referencia_vault": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-017",
@@ -762,7 +1969,9 @@
         "D": "Erro inverso: acesso direto pelo nome da classe é a característica exclusiva de membros estáticos."
       },
       "referencia_vault": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-018",
@@ -807,7 +2016,9 @@
         "D": "Erro de categoria: consumo de memória local estática não se comunica espontaneamente com a placa de rede."
       },
       "referencia_vault": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-019",
@@ -852,7 +2063,9 @@
         "D": "Erro conceitual: desativar o GC causaria exaustão rápida de memória (Memory Leak generalizado)."
       },
       "referencia_vault": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-020",
@@ -897,7 +2110,9 @@
         "D": "Erro de escala: varreduras completas (Gen 2 / Full GC) são raras e custosas, ocorrendo apenas quando necessário."
       },
       "referencia_vault": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-021",
@@ -942,7 +2157,9 @@
         "D": "Erro conceitual: information hiding refere-se a interfaces públicas claras ocultando detalhes internos dos consumidores de código, não ofuscação de equipe."
       },
       "referencia_vault": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-022",
@@ -987,7 +2204,9 @@
         "D": "Erro histórico: autores como Booch, Meyer e Parnas explicitam a diferença entre técnica de empacotamento e estratégia de isolamento de volatilidade."
       },
       "referencia_vault": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-023",
@@ -1032,7 +2251,9 @@
         "D": "Erro taxonômico: visibilidade de membro é ortogonal a ciclo de vida estático ou assincronia."
       },
       "referencia_vault": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-024",
@@ -1077,7 +2298,9 @@
         "D": "Erro taxonômico: modificadores tratam de regras de compilação/acesso, não temporizadores de descarte."
       },
       "referencia_vault": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-025",
@@ -1122,7 +2345,9 @@
         "D": "Erro de linguagem: campos públicos continuam sendo código gerenciado seguro (safe CLR)."
       },
       "referencia_vault": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-026",
@@ -1167,7 +2392,9 @@
         "D": "Erro cômico e absurdo."
       },
       "referencia_vault": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-027",
@@ -1212,7 +2439,9 @@
         "D": "Erro de hardware de vídeo."
       },
       "referencia_vault": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-028",
@@ -1257,7 +2486,9 @@
         "D": "Erro técnico: classes parciais suportam plenamente assincronia, interfaces e atributos."
       },
       "referencia_vault": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-029",
@@ -1302,7 +2533,9 @@
         "D": "Erro conceitual: subclasses tipicamente expandem ou especializam comportamentos do tipo base."
       },
       "referencia_vault": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-030",
@@ -1347,7 +2580,9 @@
         "D": "Erro cômico e absurdo de hardware."
       },
       "referencia_vault": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-031",
@@ -1392,7 +2627,9 @@
         "D": "Erro conceitual: o construtor da base é sempre executado (implicitamente via construtor padrão ou explicitamente via `: base(...)`)."
       },
       "referencia_vault": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-032",
@@ -1437,7 +2674,9 @@
         "D": "Erro cômico e absurdo."
       },
       "referencia_vault": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-033",
@@ -1482,7 +2721,9 @@
         "D": "Erro de escala: tabelas de métodos virtuais são estruturas estáticas de memória resolvidas em tempo constante O(1)."
       },
       "referencia_vault": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-034",
@@ -1527,7 +2768,9 @@
         "D": "Erro taxonômico: modificador de membro não altera o modelo de gerenciamento de memória gerenciada do CLR."
       },
       "referencia_vault": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-035",
@@ -1572,7 +2815,9 @@
         "D": "Erro de escopo: classes abstratas são conceitos de POO puros, agnósticos a tipo de interface."
       },
       "referencia_vault": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-036",
@@ -1617,7 +2862,9 @@
         "D": "Erro de arquivo absurdo."
       },
       "referencia_vault": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-037",
@@ -1662,7 +2909,9 @@
         "D": "Erro cômico e absurdo."
       },
       "referencia_vault": "01. Programacao Modular/18A. Interfaces, contratos e polimorfismo por interface.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-038",
@@ -1707,7 +2956,9 @@
         "D": "Erro de estilo cosmético."
       },
       "referencia_vault": "01. Programacao Modular/18A. Interfaces, contratos e polimorfismo por interface.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-039",
@@ -1752,7 +3003,9 @@
         "D": "Erro conceitual: classes seladas suportam métodos de qualquer tipo de retorno e visibilidade."
       },
       "referencia_vault": "01. Programacao Modular/19. Classes e membros selados (sealed).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-040",
@@ -1797,7 +3050,9 @@
         "D": "Erro de sintaxe absurdo."
       },
       "referencia_vault": "01. Programacao Modular/19. Classes e membros selados (sealed).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-041",
@@ -1842,7 +3097,9 @@
         "D": "Erro técnico grave: `List<T>` compila código especializado em IL nativo com custo zero de reflexão."
       },
       "referencia_vault": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-042",
@@ -1887,7 +3144,9 @@
         "D": "Erro de lógica de negócio absurdo."
       },
       "referencia_vault": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-043",
@@ -1932,7 +3191,9 @@
         "D": "Erro conceitual grave: List é vetor contíguo na heap e LinkedList é lista ligada duplamente encadeada."
       },
       "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-044",
@@ -1977,7 +3238,9 @@
         "D": "Erro de implementação: Dictionary é uma estrutura nativa do runtime em C#, não um SGBD SQLite embutido."
       },
       "referencia_vault": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-045",
@@ -2022,7 +3285,9 @@
         "D": "Erro técnico: delegates suportam métodos de instância (mantendo referência a `target`) e métodos estáticos indistintamente."
       },
       "referencia_vault": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-046",
@@ -2067,7 +3332,9 @@
         "D": "Erro de linguagem: event handlers continuam sendo código IL gerenciado."
       },
       "referencia_vault": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-047",
@@ -2112,7 +3379,9 @@
         "D": "Erro de hardware e consumo de energia."
       },
       "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-048",
@@ -2157,7 +3426,9 @@
         "D": "Erro cômico e absurdo de horário."
       },
       "referencia_vault": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-049",
@@ -2202,7 +3473,9 @@
         "D": "Erro taxonômico de camadas de software."
       },
       "referencia_vault": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "PM-050",
@@ -2247,7 +3520,9 @@
         "D": "Erro conceitual: possuem estruturas e propósitos de interação completamente distintos."
       },
       "referencia_vault": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "MD-REV-001",
