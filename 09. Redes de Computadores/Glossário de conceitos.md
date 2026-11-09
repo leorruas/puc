@@ -243,6 +243,19 @@ Este glossário reúne a terminologia fundamental e os conceitos consolidados na
 | **Espaço do núcleo (*Kernel Space*)** | Área de memória do sistema operacional onde residem e executam as camadas de transporte e internet. | Garante alto desempenho e isolamento para pilhas de protocolos TCP/IP pré-instaladas no Windows/Linux. | [[09. Redes de Computadores/14. Introdução ao modelo TCP-IP e arquitetura da Internet#Implementação física da pilha nos computadores modernos\|Artigo 14 — kernel space]] |
 | **Espaço do usuário (*User Space*)** | Área de memória operacional onde executam os programas e protocolos da camada de aplicação do usuário. | Onde rodam clientes e servidores como navegadores web, servidores HTTP e clientes de correio. | [[09. Redes de Computadores/14. Introdução ao modelo TCP-IP e arquitetura da Internet#Implementação física da pilha nos computadores modernos\|Artigo 14 — user space]] |
 
+## Camada de interface e análise com Wireshark
+
+| Conceito | Definição curta | Distinção ou observação | Onde aparece |
+| --- | --- | --- | --- |
+| **Abstração da interface** | Capacidade da camada de interface de isolar as camadas superiores dos detalhes de hardware físico da rede. | Permite que o protocolo IP opere de maneira idêntica sobre cabos de par trançado, Wi-Fi ou fibras ópticas. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#A camada de interface: abstração física e serviço não orientado à conexão\|Artigo 15 — abstração da interface]] |
+| **Wireshark** | Ferramenta livre de monitoramento, captura e análise detalhada de pacotes e protocolos em redes. | Captura dados em modo promíscuo na placa de rede e decodifica campos de PDUs automaticamente. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#Monitoramento prático de tráfego com o Wireshark\|Artigo 15 — Wireshark]] |
+| **Quadro Ethernet II** | Formato industrial mais comum de PDU na camada de enlace e interface com a rede. | Composto por 6 bytes de MAC destino, 6 bytes de MAC origem, 2 bytes de EtherType e payload de até 1500 bytes. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#Anatomia do quadro Ethernet e o papel do campo EtherType\|Artigo 15 — quadro Ethernet II]] |
+| **EtherType** | Campo de 2 bytes no cabeçalho Ethernet II que identifica o protocolo encapsulado na carga útil. | O código `0x0800` especifica IPv4, `0x0806` especifica ARP e `0x86DD` especifica IPv6. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#Anatomia do quadro Ethernet e o papel do campo EtherType\|Artigo 15 — EtherType]] |
+| **Interrupção de hardware** | Sinal elétrico emitido pela placa de rede para a CPU notificando a chegada de um novo quadro. | Instruído pelo EtherType para disparar o processo ou rotina do kernel correspondente ao protocolo de rede. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#Anatomia do quadro Ethernet e o papel do campo EtherType\|Artigo 15 — interrupção de hardware]] |
+| **Ping** | Utilitário diagnóstico de rede que envia mensagens ICMP de solicitação de eco para testar conectividade. | Depende compulsoriamente de resolução DNS prévia caso o parâmetro fornecido seja um nome de domínio. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#O experimento do ping e a resolução prévia de nomes por DNS\|Artigo 15 — ping]] |
+| **Modo promíscuo (Wireshark)** | Configuração operacional da placa de rede que instrui o driver a capturar todos os quadros do enlace. | Permite ao analisador inspecionar mensagens trafegadas no canal mesmo que não destinadas ao seu próprio MAC. | [[09. Redes de Computadores/15. Camada de interface do modelo TCP-IP e análise com Wireshark#Monitoramento prático de tráfego com o Wireshark\|Artigo 15 — modo promíscuo]] |
+
+
 
 
 
