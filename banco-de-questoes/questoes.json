@@ -15721,6 +15721,1181 @@
     }
   },
   {
+    "id": "REQ-REV-001",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Conceito de requisito e engenharia de requisitos",
+    "artigo_origem": "03. O conceito de requisito de software - definição, níveis e características.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Ao iniciar um sistema de agendamento, a equipe registra a necessidade de permitir que pacientes marquem consultas. Qual interpretação corresponde ao conceito de requisito apresentado na engenharia de requisitos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "É uma característica que o produto deve possuir para ser aceito.",
+        "correta": true,
+        "diagnostico": "Correto: um requisito expressa uma condição, capacidade ou propriedade que um sistema deve possuir para resolver um problema do usuário ou satisfazer a um contrato."
+      },
+      {
+        "letra": "B",
+        "texto": "É somente um teste executado após a entrega do software.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde requisito com caso de teste de aceitação final."
+      },
+      {
+        "letra": "C",
+        "texto": "É uma decisão de programação que não precisa ser discutida com usuários.",
+        "correta": false,
+        "diagnostico": "Incorreto: requisitos derivam primordialmente das necessidades dos stakeholders de negócio, e não de decisões isoladas de código."
+      },
+      {
+        "letra": "D",
+        "texto": "É exclusivamente o código necessário para implementar uma tela.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde a especificação do problema com o código de implementação da interface gráfica."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no requisito como a planta e memorial descritivo de um imóvel: ele define o que o edifício precisa oferecer (número de quartos, acessibilidade) para ser entregue e aceito pelo morador.",
+      "analise_correta": "Na engenharia de software (IEEE 610.12 e Sommerville), requisito é a declaração de um serviço que o sistema deve fornecer ou de uma restrição sob a qual deve operar.",
+      "distratores": {
+        "B": "Incorreto: confunde requisito com caso de teste de aceitação final.",
+        "C": "Incorreto: requisitos derivam primordialmente das necessidades dos stakeholders de negócio, e não de decisões isoladas de código.",
+        "D": "Incorreto: confunde a especificação do problema com o código de implementação da interface gráfica."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
+    }
+  },
+  {
+    "id": "REQ-REV-002",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Critérios de qualidade de requisitos (completude)",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Uma especificação afirma apenas: \"o sistema deve calcular descontos\", sem detalhar regras, faixas percentuais ou condições aplicáveis. Qual critério de qualidade foi violado prioritariamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Rastreabilidade, porque a origem do cálculo não foi anotada.",
+        "correta": false,
+        "diagnostico": "Incorreto: a rastreabilidade vincula o requisito a fontes ou artefatos derivados, não sendo a causa da omissão das regras."
+      },
+      {
+        "letra": "B",
+        "texto": "Prioridade, porque todos os descontos deveriam ser urgentes.",
+        "correta": false,
+        "diagnostico": "Incorreto: prioridade é atributo de planejamento e alocação de esforço, não da integridade do conteúdo textual."
+      },
+      {
+        "letra": "C",
+        "texto": "Completude, porque a necessidade não foi descrita integralmente.",
+        "correta": true,
+        "diagnostico": "Correto: o critério de completude exige que o requisito contenha todas as informações necessárias para seu entendimento e implementação inequívoca, sem lacunas de regras essenciais."
+      },
+      {
+        "letra": "D",
+        "texto": "Tecnologia, porque a linguagem de programação precisa constar no texto.",
+        "correta": false,
+        "diagnostico": "Incorreto: requisitos funcionais de software devem ser agnósticos à linguagem de programação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se uma receita de bolo diz apenas \"adicione açúcar\" sem dizer a quantidade nem quando colocar, a receita está incompleta, gerando bolos completamente diferentes dependendo de quem cozinhar.",
+      "analise_correta": "A completude (*completeness*) garante que todas as entradas, saídas, variações, exceções e regras de negócio pertinentes estejam documentadas na especificação.",
+      "distratores": {
+        "A": "Incorreto: a rastreabilidade vincula o requisito a fontes ou artefatos derivados, não sendo a causa da omissão das regras.",
+        "B": "Incorreto: prioridade é atributo de planejamento e alocação de esforço, não da integridade do conteúdo textual.",
+        "D": "Incorreto: requisitos funcionais de software devem ser agnósticos à linguagem de programação."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-REV-003",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Critérios de qualidade de requisitos (rastreabilidade)",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em uma auditoria, os analistas precisam demonstrar de qual solicitação de usuário surgiu determinada funcionalidade e quais testes verificam seu funcionamento. Qual característica de qualidade atende diretamente a essa necessidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Exequibilidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: exequibilidade diz respeito à viabilidade técnica e financeira da construção."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambiguidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambiguidade é um defeito semântico de múltiplos sentidos, não uma qualidade desejada."
+      },
+      {
+        "letra": "C",
+        "texto": "Concisão.",
+        "correta": false,
+        "diagnostico": "Incorreto: concisão é a brevidade do texto, sem relação com vínculos entre artefatos de ciclo de vida."
+      },
+      {
+        "letra": "D",
+        "texto": "Rastreabilidade.",
+        "correta": true,
+        "diagnostico": "Correto: a rastreabilidade (*traceability*) permite seguir o ciclo de vida de um requisito em ambas as direções (para trás até a necessidade de origem e para a frente até código e testes)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como o código de rastreio de uma encomenda internacional: você consegue ver de onde ela partiu, em quais galpões foi triada e qual transportadora realizou a entrega final.",
+      "analise_correta": "A matriz de rastreabilidade vincula objetivos de negócio, requisitos de usuário, modelos UML, código-fonte e casos de teste, viabilizando análises de impacto precisas.",
+      "distratores": {
+        "A": "Incorreto: exequibilidade diz respeito à viabilidade técnica e financeira da construção.",
+        "B": "Incorreto: ambiguidade é um defeito semântico de múltiplos sentidos, não uma qualidade desejada.",
+        "C": "Incorreto: concisão é a brevidade do texto, sem relação com vínculos entre artefatos de ciclo de vida."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-REV-004",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Critérios de qualidade de requisitos (exequibilidade)",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um cliente solicita que o sistema identifique fraudes financeiras com precisão de 100% em tempo real, sem falsos positivos, usando apenas um computador doméstico comum. Ao demonstrar a impossibilidade física e computacional dessa demanda, a equipe avalia qual atributo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Verificabilidade exclusiva por código.",
+        "correta": false,
+        "diagnostico": "Incorreto: verificabilidade é a capacidade de testar o requisito, não a viabilidade de sua realização com os recursos dados."
+      },
+      {
+        "letra": "B",
+        "texto": "Rastreabilidade com o banco de dados.",
+        "correta": false,
+        "diagnostico": "Incorreto: rastreabilidade conecta artefatos, não avaliando se a demanda é tecnicamente realizável."
+      },
+      {
+        "letra": "C",
+        "texto": "Modularidade da documentação.",
+        "correta": false,
+        "diagnostico": "Incorreto: modularidade diz respeito à decomposição documental ou de código."
+      },
+      {
+        "letra": "D",
+        "texto": "Exequibilidade da necessidade proposta.",
+        "correta": true,
+        "diagnostico": "Correto: exequibilidade (viabilidade) avalia se o requisito pode ser construído dentro das restrições reais de tecnologia, orçamento, infraestrutura e prazos disponíveis."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como pedir para construir um foguete espacial tripulado utilizando apenas peças de bicicleta e madeira: a proposta é fisicamente inexequível com os recursos exigidos.",
+      "analise_correta": "Um requisito inatingível ou fantasioso deve ser negociado e readequado durante a análise de viabilidade, antes de comprometer o escopo formal do projeto.",
+      "distratores": {
+        "A": "Incorreto: verificabilidade é a capacidade de testar o requisito, não a viabilidade de sua realização com os recursos dados.",
+        "B": "Incorreto: rastreabilidade conecta artefatos, não avaliando se a demanda é tecnicamente realizável.",
+        "C": "Incorreto: modularidade diz respeito à decomposição documental ou de código."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-REV-005",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Classificação de requisitos (funcional vs. não-funcional)",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Identifique a sentença que representa um requisito funcional em um sistema acadêmico:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O banco de dados deve utilizar criptografia AES de 256 bits.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se de um requisito não-funcional de segurança."
+      },
+      {
+        "letra": "B",
+        "texto": "O estudante poderá consultar suas notas por disciplina.",
+        "correta": true,
+        "diagnostico": "Correto: expressa uma funcionalidade, ação ou serviço direto prestado pelo sistema ao usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "O tempo de resposta deve ser inferior a dois segundos.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se de um requisito não-funcional de desempenho."
+      },
+      {
+        "letra": "D",
+        "texto": "A interface precisa seguir o padrão visual corporativo da instituição.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se de um requisito não-funcional de usabilidade e identidade visual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O requisito funcional responde a \"o que o sistema faz quando o usuário clica?\", enquanto o não-funcional responde a \"sob quais critérios de qualidade ou restrições ele faz?\".",
+      "analise_correta": "Requisitos funcionais definem os fluxos operacionais, regras de transformação e serviços que satisfazem as necessidades de uso dos atores.",
+      "distratores": {
+        "A": "Incorreto: trata-se de um requisito não-funcional de segurança.",
+        "C": "Incorreto: trata-se de um requisito não-funcional de desempenho.",
+        "D": "Incorreto: trata-se de um requisito não-funcional de usabilidade e identidade visual."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-006",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos não-funcionais e métricas mensuráveis",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Para um sistema de comércio eletrônico, a equipe precisa redigir uma restrição de desempenho mensurável e testável. Qual formulação cumpre adequadamente o papel de requisito não-funcional?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O sistema deverá ser rápido e agradável ao usuário.",
+        "correta": false,
+        "diagnostico": "Incorreto: termos como \"rápido\" e \"agradável\" são vagos, subjetivos e intestáveis."
+      },
+      {
+        "letra": "B",
+        "texto": "A consulta de pedido deverá responder em até três segundos nas condições de uso especificadas.",
+        "correta": true,
+        "diagnostico": "Correto: estipula uma métrica objetiva, quantificável e passível de verificação experimental em testes de carga."
+      },
+      {
+        "letra": "C",
+        "texto": "O cliente poderá cadastrar itens no carrinho de compras.",
+        "correta": false,
+        "diagnostico": "Incorreto: expressa um requisito funcional de negócio (adicionar itens ao carrinho)."
+      },
+      {
+        "letra": "D",
+        "texto": "Sempre que possível, o sistema processará relatórios em pouco tempo.",
+        "correta": false,
+        "diagnostico": "Incorreto: \"sempre que possível\" e \"pouco tempo\" são qualificadores ambíguos que impedem validação rigorosa."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de dizer \"o carro esportivo deve correr muito\", a especificação técnica diz \"o carro deve atingir 100 km/h em até 3,5 segundos com carga padrão\".",
+      "analise_correta": "Requisitos não-funcionais mensuráveis evitam disputas contratuais porque fornecem critérios binários ou faixas numéricas de aceitação nos testes de desempenho.",
+      "distratores": {
+        "A": "Incorreto: termos como \"rápido\" e \"agradável\" são vagos, subjetivos e intestáveis.",
+        "C": "Incorreto: expressa um requisito funcional de negócio (adicionar itens ao carrinho).",
+        "D": "Incorreto: \"sempre que possível\" e \"pouco tempo\" são qualificadores ambíguos que impedem validação rigorosa."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-007",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Processo e macroatividades da engenharia de requisitos",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Qual sequência reflete adequadamente a transição de fases típica das atividades de engenharia de requisitos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Deploy em produção → codificação rápida → escrita dos manuais.",
+        "correta": false,
+        "diagnostico": "Incorreto: fases tardias de ciclo de vida operacional não compõem a engenharia de requisitos."
+      },
+      {
+        "letra": "B",
+        "texto": "Homologação final → testes unitários → definição do escopo.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte testes finais antes de conceber o escopo."
+      },
+      {
+        "letra": "C",
+        "texto": "Elicitação → modelagem → verificação e validação.",
+        "correta": true,
+        "diagnostico": "Correto: o ciclo clássico de requisitos envolve descobrir as necessidades (elicitação), representá-las em modelos e textos (modelagem/especificação) e atestar sua correção e valor (verificação e validação)."
+      },
+      {
+        "letra": "D",
+        "texto": "Refatoração de arquitetura → compilação → levantamento inicial.",
+        "correta": false,
+        "diagnostico": "Incorreto: compilação e refatoração arquitetural são atividades posteriores de construção de código."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Primeiro você conversa com os clientes para colher as ideias (elicitação), depois desenha os diagramas e plantas (modelagem) e, por fim, confere se o projeto bate com as normas e o que o cliente pediu (V&V).",
+      "analise_correta": "Essas atividades não são estritamente em cascata; em ambientes ágeis ocorrem iterativa e incrementalmente, mantendo a mesma relação de precedência lógica.",
+      "distratores": {
+        "A": "Incorreto: fases tardias de ciclo de vida operacional não compõem a engenharia de requisitos.",
+        "B": "Incorreto: inverte testes finais antes de conceber o escopo.",
+        "D": "Incorreto: compilação e refatoração arquitetural são atividades posteriores de construção de código."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-008",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de elicitação (entrevista semiestruturada)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um analista precisa entender as dores de três gestores de logística em profundidade, mas deseja ter liberdade para explorar novos tópicos à medida que surgirem durante a conversa. Qual técnica e formato são mais indicados?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Questionário eletrônico de múltipla escolha com perguntas obrigatórias.",
+        "correta": false,
+        "diagnostico": "Incorreto: questionários fechados engessam a conversa e impedem desvios exploratórios."
+      },
+      {
+        "letra": "B",
+        "texto": "Entrevista com roteiro preparado e possibilidade de adaptação.",
+        "correta": true,
+        "diagnostico": "Correto: a entrevista semiestruturada oferece um esqueleto básico de tópicos planejados com a flexibilidade dialógica para aprofundar insights inesperados."
+      },
+      {
+        "letra": "C",
+        "texto": "Inspeção estática de código-fonte de sistemas concorrentes.",
+        "correta": false,
+        "diagnostico": "Incorreto: inspeção de código estuda implementação de software, não as dores humanas dos gestores."
+      },
+      {
+        "letra": "D",
+        "texto": "Simulação automatizada de estresse de infraestrutura.",
+        "correta": false,
+        "diagnostico": "Incorreto: teste de estresse afere carga computacional em servidores."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como um jornalista experiente: ele leva uma lista de perguntas no bloco de notas, mas se o entrevistado der uma declaração surpreendente, ele puxa esse fio e explora o tema a fundo.",
+      "analise_correta": "A entrevista semiestruturada equilibra cobertura dos tópicos essenciais do projeto com flexibilidade para descobrir requisitos ocultos e motivações subjacentes.",
+      "distratores": {
+        "A": "Incorreto: questionários fechados engessam a conversa e impedem desvios exploratórios.",
+        "C": "Incorreto: inspeção de código estuda implementação de software, não as dores humanas dos gestores.",
+        "D": "Incorreto: teste de estresse afere carga computacional em servidores."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-009",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de elicitação (brainstorming)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "No início da concepção de um aplicativo de fidelidade inovador, a equipe precisa gerar grande variedade de ideias sem julgamentos prévios de viabilidade. Qual técnica de elicitação colaborativa deve ser conduzida?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Auditoria de conformidade com normas contábeis.",
+        "correta": false,
+        "diagnostico": "Incorreto: auditoria foca em checagem normativa restritiva."
+      },
+      {
+        "letra": "B",
+        "texto": "Revisão formal de especificação com aprovação rígida.",
+        "correta": false,
+        "diagnostico": "Incorreto: revisões formais com julgamento precoce inibem a geração de ideias inovadoras."
+      },
+      {
+        "letra": "C",
+        "texto": "Engenharia reversa de assembly de drivers.",
+        "correta": false,
+        "diagnostico": "Incorreto: engenharia reversa de código de máquina é análise técnica de baixo nível."
+      },
+      {
+        "letra": "D",
+        "texto": "Brainstorming facilitado para estimular diferentes ideias.",
+        "correta": true,
+        "diagnostico": "Correto: o brainstorming busca volume e originalidade de propostas em grupo sob a regra expressa de suspender críticas e julgamentos na fase inicial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em uma sessão de post-its onde qualquer ideia é colada na parede sem ninguém dizer \"isso é impossível\", abrindo espaço para soluções fora da caixa antes do filtro final.",
+      "analise_correta": "O brainstorming foca na divergência criativa; apenas na etapa posterior as propostas são categorizadas, refinadas e submetidas a filtros de viabilidade técnica e financeira.",
+      "distratores": {
+        "A": "Incorreto: auditoria foca em checagem normativa restritiva.",
+        "B": "Incorreto: revisões formais com julgamento precoce inibem a geração de ideias inovadoras.",
+        "C": "Incorreto: engenharia reversa de código de máquina é análise técnica de baixo nível."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-010",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de elicitação (questionários em larga escala)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Para coletar dados de 5.000 clientes distribuídos geograficamente por todo o país sobre a frequência de uso de recursos em um aplicativo bancário, qual estratégia de elicitação é mais eficiente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Conduzir reuniões presenciais individuais de duas horas com cada um.",
+        "correta": false,
+        "diagnostico": "Incorreto: inviável em termos de tempo e custo financeiro para milhares de pessoas."
+      },
+      {
+        "letra": "B",
+        "texto": "Observação participante de cada cliente em sua residência.",
+        "correta": false,
+        "diagnostico": "Incorreto: logisticamente impossível e com custo proibitivo."
+      },
+      {
+        "letra": "C",
+        "texto": "Distribuir questionário predominantemente com perguntas fechadas.",
+        "correta": true,
+        "diagnostico": "Correto: formulários padronizados com perguntas fechadas atingem grandes públicos geograficamente dispersos a baixo custo e geram dados quantitativos estatisticamente tratáveis."
+      },
+      {
+        "letra": "D",
+        "texto": "Organizar uma oficina presencial com todos os clientes juntos em uma única sala.",
+        "correta": false,
+        "diagnostico": "Incorreto: reunir milhares de pessoas dispersas pelo país em uma sala é inviável operacionalmente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para saber a opinião de milhões de eleitores sobre um serviço, os institutos enviam formulários estruturados por telefone ou internet, pois entrevistar presencialmente um a um por horas seria impraticável.",
+      "analise_correta": "Questionários fechados operam com escalas Likert e múltipla escolha, facilitando a agregação estatística de tendências de adoção de funcionalidades.",
+      "distratores": {
+        "A": "Incorreto: inviável em termos de tempo e custo financeiro para milhares de pessoas.",
+        "B": "Incorreto: logisticamente impossível e com custo proibitivo.",
+        "D": "Incorreto: reunir milhares de pessoas dispersas pelo país em uma sala é inviável operacionalmente."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-011",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de elicitação (etnografia e observação direta)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Os operadores de uma central de despacho realizam atalhos operacionais e consultas cruzadas não documentadas nos manuais oficiais. Qual técnica é mais indicada para capturar esse conhecimento tácito na prática?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Leitura isolada do manual de políticas da empresa.",
+        "correta": false,
+        "diagnostico": "Incorreto: o manual registra apenas o processo prescrito formal, omitindo os improvisos reais."
+      },
+      {
+        "letra": "B",
+        "texto": "Aplicação de prova teórica sobre o processo formal.",
+        "correta": false,
+        "diagnostico": "Incorreto: provas teóricas apenas aferem o conhecimento do processo idealizado."
+      },
+      {
+        "letra": "C",
+        "texto": "Questionário com opções prefixadas sobre regras corporativas.",
+        "correta": false,
+        "diagnostico": "Incorreto: questionários fechados não capturam práticas espontâneas que o operador nem percebe que realiza."
+      },
+      {
+        "letra": "D",
+        "texto": "Etnografia por observação das atividades no ambiente real.",
+        "correta": true,
+        "diagnostico": "Correto: a etnografia e observação direta acompanham o trabalho em seu contexto real, revelando conhecimento tácito, atalhos e gargalos invisíveis no discurso oficial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como um documentarista que vai conviver com uma comunidade para filmar a rotina real dos pescadores em vez de apenas ler o estatuto da associação de pesca.",
+      "analise_correta": "Sommerville destaca que a etnografia é a técnica primorosa para descobrir como as pessoas realmente operam e cooperam no dia a dia, superando a distância entre a norma prescrita e o trabalho real.",
+      "distratores": {
+        "A": "Incorreto: o manual registra apenas o processo prescrito formal, omitindo os improvisos reais.",
+        "B": "Incorreto: provas teóricas apenas aferem o conhecimento do processo idealizado.",
+        "C": "Incorreto: questionários fechados não capturam práticas espontâneas que o operador nem percebe que realiza."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-012",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de elicitação (prototipagem)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Quando usuários têm dificuldade em expressar o que esperam das telas e do fluxo de navegação a partir de textos formais, qual abordagem auxilia na elicitação e na redução de ambiguidades?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Obrigar os usuários a redigirem scripts de teste em automação.",
+        "correta": false,
+        "diagnostico": "Incorreto: usuários finais de negócio não dominam código de testes automatizados."
+      },
+      {
+        "letra": "B",
+        "texto": "Substituir reuniões por diagramas de arquitetura de rede interna.",
+        "correta": false,
+        "diagnostico": "Incorreto: topologia de rede física não comunica regras de interface e navegação com o usuário."
+      },
+      {
+        "letra": "C",
+        "texto": "Apresentar um protótipo de tela para obter comentários e ajustes.",
+        "correta": true,
+        "diagnostico": "Correto: protótipos de baixa ou alta fidelidade tornam as ideias visíveis e palpáveis, ajudando o usuário a identificar o que falta, corrigir premissas e elicitar requisitos latentes."
+      },
+      {
+        "letra": "D",
+        "texto": "Finalizar o desenvolvimento completo antes de exibir qualquer interface.",
+        "correta": false,
+        "diagnostico": "Incorreto: esperar o fim da entrega gera custos catastróficos de retrabalho caso o escopo esteja desalinhado."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É o princípio \"eu sei o que quero quando vejo\" (IKIWISI): ao ver uma maquete 3D da casa, o comprador percebe na hora se o quarto ficou escuro ou se a porta bate no armário.",
+      "analise_correta": "A prototipagem atua como ferramenta semiótica de mediação entre analistas e clientes, acelerando ciclos de validação e refinamento de requisitos.",
+      "distratores": {
+        "A": "Incorreto: usuários finais de negócio não dominam código de testes automatizados.",
+        "B": "Incorreto: topologia de rede física não comunica regras de interface e navegação com o usuário.",
+        "D": "Incorreto: esperar o fim da entrega gera custos catastróficos de retrabalho caso o escopo esteja desalinhado."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-013",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Papel e natureza da UML na engenharia de software",
+    "artigo_origem": "07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "A respeito do papel da UML (Unified Modeling Language) na engenharia de requisitos e software, qual afirmação é correta?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A UML é uma linguagem de modelagem, não uma metodologia que determina a ordem do trabalho.",
+        "correta": true,
+        "diagnostico": "Correto: a UML define uma notação gráfica formal e semântica de modelagem, sendo agnóstica a metodologias (não dita processo, papéis, fases ou ritos de desenvolvimento)."
+      },
+      {
+        "letra": "B",
+        "texto": "A UML é uma linguagem de programação compilada que gera código executável automaticamente.",
+        "correta": false,
+        "diagnostico": "Incorreto: a UML é uma linguagem visual de especificação e documentação, não um código executável compilável por si só."
+      },
+      {
+        "letra": "C",
+        "texto": "A UML substitui completamente qualquer necessidade de diálogo com stakeholders.",
+        "correta": false,
+        "diagnostico": "Incorreto: modelos UML apoiam o diálogo, não substituindo a comunicação e negociação com stakeholders."
+      },
+      {
+        "letra": "D",
+        "texto": "A UML proíbe o uso de textos explicativos ou tabelas complementares na especificação.",
+        "correta": false,
+        "diagnostico": "Incorreto: a especificação textual complementar (ex.: cenários de casos de uso) é parte essencial da prática de engenharia de software."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A UML é como o conjunto de símbolos do desenho arquitetônico (símbolo de janela, porta, tomada): ela padroniza como desenhar a casa, mas não decide se você constrói em método ágil ou cascata.",
+      "analise_correta": "Padronizada pela OMG (Object Management Group), a UML estabelece vocabulário e regras sintáticas para diagramas estruturais e comportamentais sem ditar o processo de desenvolvimento adotado pela empresa.",
+      "distratores": {
+        "B": "Incorreto: a UML é uma linguagem visual de especificação e documentação, não um código executável compilável por si só.",
+        "C": "Incorreto: modelos UML apoiam o diálogo, não substituindo a comunicação e negociação com stakeholders.",
+        "D": "Incorreto: a especificação textual complementar (ex.: cenários de casos de uso) é parte essencial da prática de engenharia de software."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-014",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Diagrama de casos de uso (atores e fronteira)",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "facil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em um diagrama de casos de uso de um sistema de vendas online, um gateway de pagamentos terceirizado envia confirmações de transação via webhook. Como esse serviço externo deve ser modelado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Como ator externo que interage com o sistema.",
+        "correta": true,
+        "diagnostico": "Correto: atores na UML representam qualquer entidade externa ao sistema (usuários humanos, dispositivos de hardware ou outros sistemas/APIs) que interage com ele."
+      },
+      {
+        "letra": "B",
+        "texto": "Como caso de uso interno do sistema.",
+        "correta": false,
+        "diagnostico": "Incorreto: o gateway é um sistema independente fora da fronteira, e não uma função fornecida pelo sistema em modelagem."
+      },
+      {
+        "letra": "C",
+        "texto": "Como atributo privado de uma classe de domínio.",
+        "correta": false,
+        "diagnostico": "Incorreto: atributos privados são elementos de diagrama de classes, não entidades externas de casos de uso."
+      },
+      {
+        "letra": "D",
+        "texto": "Como um pacote restrito de banco de dados.",
+        "correta": false,
+        "diagnostico": "Incorreto: pacotes de banco são componentes de arquitetura de implementação estrutural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no entregador dos Correios: ele não mora dentro da sua casa nem é cômodo da sua casa, mas é uma entidade externa que bate na sua porta para entregar ou retirar encomendas.",
+      "analise_correta": "Atores representam papéis externos que disparam eventos de entrada ou recebem respostas de saída através da fronteira do sistema (*system boundary*).",
+      "distratores": {
+        "B": "Incorreto: o gateway é um sistema independente fora da fronteira, e não uma função fornecida pelo sistema em modelagem.",
+        "C": "Incorreto: atributos privados são elementos de diagrama de classes, não entidades externas de casos de uso.",
+        "D": "Incorreto: pacotes de banco são componentes de arquitetura de implementação estrutural."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-015",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Relacionamentos em casos de uso (inclusão / include)",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Ao modelar \"Realizar transferência bancária\" e \"Consultar saldo\", observa-se que ambos executam invariavelmente a mesma rotina \"Autenticar correntista\". Qual relacionamento da UML conecta esses casos de uso ao caso de autenticação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Generalização, porque autenticar é subtipo de transferência.",
+        "correta": false,
+        "diagnostico": "Incorreto: autenticar e transferir não mantêm vínculo de taxonomia ontológica (\"é um tipo de\")."
+      },
+      {
+        "letra": "B",
+        "texto": "Inclusão, pois o comportamento é utilizado obrigatoriamente pelo caso principal.",
+        "correta": true,
+        "diagnostico": "Correto: o relacionamento «include» indica que o caso de uso base incorpora obrigatoriamente e incondicionalmente o comportamento do caso incluído como parte de sua execução."
+      },
+      {
+        "letra": "C",
+        "texto": "Extensão, porque o comportamento ocorre apenas em caso de falha de conexão.",
+        "correta": false,
+        "diagnostico": "Incorreto: «extend» modela comportamentos condicionais ou opcionais, não etapas mandatórias."
+      },
+      {
+        "letra": "D",
+        "texto": "Agregação simples de classes.",
+        "correta": false,
+        "diagnostico": "Incorreto: agregação é relação estrutural entre classes, inexistente entre casos de uso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como a diretiva `#include` em programação ou uma sub-rotina obrigatória: para transferir ou tirar extrato, o sistema obrigatoriamente roda a rotina de autenticação.",
+      "analise_correta": "A inclusão fatoriza comportamentos comuns entre múltiplos casos de uso, evitando redundância e promovendo reuso nas especificações textuais.",
+      "distratores": {
+        "A": "Incorreto: autenticar e transferir não mantêm vínculo de taxonomia ontológica (\"é um tipo de\").",
+        "C": "Incorreto: «extend» modela comportamentos condicionais ou opcionais, não etapas mandatórias.",
+        "D": "Incorreto: agregação é relação estrutural entre classes, inexistente entre casos de uso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-016",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Relacionamentos em casos de uso (extensão / extend)",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "No caso de uso \"Finalizar compra\", o cliente pode optar por inserir um cupom de desconto promocional caso possua um. Qual relacionamento deve ligar \"Aplicar cupom promocional\" a \"Finalizar compra\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Inclusão, pois o cupom sempre é digitado em todas as compras.",
+        "correta": false,
+        "diagnostico": "Incorreto: inclusão obrigaria todos os compradores a possuírem e digitarem um cupom para concluir a compra."
+      },
+      {
+        "letra": "B",
+        "texto": "Extensão, porque o desconto depende de condição específica.",
+        "correta": true,
+        "diagnostico": "Correto: o relacionamento «extend» especifica que um caso de uso secundário pode estender o fluxo do caso base apenas se determinada condição de extensão (*extension point*) for satisfeita."
+      },
+      {
+        "letra": "C",
+        "texto": "Herança múltipla entre casos de uso independentes.",
+        "correta": false,
+        "diagnostico": "Incorreto: herança entre casos de uso expressa especialização de objetivos, não acréscimo condicional de passo opcional."
+      },
+      {
+        "letra": "D",
+        "texto": "Composição forte com destruição em cascata.",
+        "correta": false,
+        "diagnostico": "Incorreto: composição é conceito estrito do diagrama estrutural de classes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no airbag lateral de um carro: o carro anda e freia normalmente sem ele, mas se o comprador adquirir o pacote opcional (condição), o airbag entra em ação em um ponto específico de colisão.",
+      "analise_correta": "No relacionamento de extensão, a seta pontilhada aponta do caso estensor para o caso base, indicando que o caso base funciona plenamente sozinho sem conhecimento do estensor.",
+      "distratores": {
+        "A": "Incorreto: inclusão obrigaria todos os compradores a possuírem e digitarem um cupom para concluir a compra.",
+        "C": "Incorreto: herança entre casos de uso expressa especialização de objetivos, não acréscimo condicional de passo opcional.",
+        "D": "Incorreto: composição é conceito estrito do diagrama estrutural de classes."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-017",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Generalização entre atores em casos de uso",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em um hospital, todo Gerente tem acesso a todas as ações permitidas a um Funcionário comum, além de funcionalidades administrativas extras. Como modelar essa relação no diagrama de casos de uso?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Associação bidirecional com cardinalidade 1..* entre os dois.",
+        "correta": false,
+        "diagnostico": "Incorreto: associação regular indicaria comunicação de dados entre eles, não herança de direitos funcionais."
+      },
+      {
+        "letra": "B",
+        "texto": "Inclusão do ator Funcionário pelo ator Gerente com estereótipo «include».",
+        "correta": false,
+        "diagnostico": "Incorreto: «include» é exclusivo para conectar casos de uso a casos de uso, sendo sintaticamente ilegal entre atores."
+      },
+      {
+        "letra": "C",
+        "texto": "Generalização de Gerente para Funcionário.",
+        "correta": true,
+        "diagnostico": "Correto: a generalização/especialização entre atores faz com que o ator especializado (Gerente) herde automaticamente todas as associações de casos de uso do ator mais geral (Funcionário)."
+      },
+      {
+        "letra": "D",
+        "texto": "Extensão de ator para caso de uso por seta pontilhada.",
+        "correta": false,
+        "diagnostico": "Incorreto: «extend» não conecta atores a casos de uso nem atores entre si."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Todo Gerente de banco é um Funcionário do banco: ele tem o crachá básico para entrar no prédio e usar o refeitório, mas possui chaves adicionais para abrir o cofre.",
+      "analise_correta": "A generalização entre atores simplifica diagramas ao eliminar teias de setas repetidas: desenham-se apenas as novas associações exclusivas ligadas ao ator filho.",
+      "distratores": {
+        "A": "Incorreto: associação regular indicaria comunicação de dados entre eles, não herança de direitos funcionais.",
+        "B": "Incorreto: «include» é exclusivo para conectar casos de uso a casos de uso, sendo sintaticamente ilegal entre atores.",
+        "D": "Incorreto: «extend» não conecta atores a casos de uso nem atores entre si."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-REV-018",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Elementos do diagrama de classes (atributos vs. operações)",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Na representação retangular de uma classe UML para \"Produto\", aparecem \"codigo\", \"preco\" e \"atualizarPreco()\". Como esses elementos são categorizados tecnicamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Todos são métodos de execução assíncrona.",
+        "correta": false,
+        "diagnostico": "Incorreto: variáveis de estado de dados não são rotinas executáveis."
+      },
+      {
+        "letra": "B",
+        "texto": "“codigo” e “preco” são atributos; “atualizarPreco()” é método.",
+        "correta": true,
+        "diagnostico": "Correto: atributos representam o estado e as propriedades estruturais da classe, enquanto métodos/operações expressam os comportamentos e transformações executáveis."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos são atributos persistentes de tabela relacional.",
+        "correta": false,
+        "diagnostico": "Incorreto: atualizarPreco() denota comportamento (verbo/ação), não coluna de dados persistente."
+      },
+      {
+        "letra": "D",
+        "texto": "“codigo” é pacote, “preco” é interface e “atualizarPreco()” é classe.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde conceitos de níveis arquiteturais totalmente distintos com membros de classe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no prontuário de um paciente: nome e tipo sanguíneo são as informações anotadas no papel (atributos); aplicar injeção ou aferir pressão são os procedimentos médicos realizados (métodos).",
+      "analise_correta": "Na UML, o compartimento intermediário do retângulo lista os atributos com sua tipagem e visibilidade (+, -, #), e o compartimento inferior lista as operações/assinaturas de métodos.",
+      "distratores": {
+        "A": "Incorreto: variáveis de estado de dados não são rotinas executáveis.",
+        "C": "Incorreto: atualizarPreco() denota comportamento (verbo/ação), não coluna de dados persistente.",
+        "D": "Incorreto: confunde conceitos de níveis arquiteturais totalmente distintos com membros de classe."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-REV-019",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Relacionamento de herança no diagrama de classes",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em uma farmácia, tanto Farmacêutico quanto Atendente compartilham os dados \"matricula\" e \"nome\", mas Farmacêutico possui \"crf\" (registro profissional) e Atendente possui \"comissao\". Qual relação da UML representa essa estrutura de forma canônica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Dependência de compilação transitória.",
+        "correta": false,
+        "diagnostico": "Incorreto: dependência reflete uso efêmero de uma classe por outra, sem reaproveitamento estrutural de atributos."
+      },
+      {
+        "letra": "B",
+        "texto": "Agregação fraca entre Farmacêutico e Atendente.",
+        "correta": false,
+        "diagnostico": "Incorreto: farmacêutico e atendente não mantêm vínculo todo-parte entre si."
+      },
+      {
+        "letra": "C",
+        "texto": "Composição estrita em que Farmacêutico contém Atendente.",
+        "correta": false,
+        "diagnostico": "Incorreto: um profissional não é composto internamente por outro profissional."
+      },
+      {
+        "letra": "D",
+        "texto": "Herança, com Farmacêutico e Atendente especializados de Funcionário.",
+        "correta": true,
+        "diagnostico": "Correto: a herança (generalização/especialização) define uma superclasse base (Funcionário) contendo dados comuns e subclasses que herdam essa base e agregam suas particularidades."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na biologia, tanto cães quanto gatos são mamíferos (superclasse) com pelos e sangue quente, mas o cão possui latido e o gato possui miado (subclasses especializadas).",
+      "analise_correta": "A generalização é indicada por uma linha contínua terminada em um triângulo oco (vazio) apontando da subclasse para a superclasse na notação padrão da UML.",
+      "distratores": {
+        "A": "Incorreto: dependência reflete uso efêmero de uma classe por outra, sem reaproveitamento estrutural de atributos.",
+        "B": "Incorreto: farmacêutico e atendente não mantêm vínculo todo-parte entre si.",
+        "C": "Incorreto: um profissional não é composto internamente por outro profissional."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-REV-020",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Composição vs. agregação (ciclo de vida e dependência)",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Ao modelar \"Pedido\" e \"ItemPedido\", a regra de negócio dita que itens de pedido não podem existir fora de um pedido e são destruídos caso o pedido seja cancelado e excluído. Qual relacionamento UML expressa exatamente essa semântica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Agregação compartilhada representada por losango branco/vazio.",
+        "correta": false,
+        "diagnostico": "Incorreto: agregação compartilhada (losango vazio) permite que as partes existam independentemente e sobrevivam à destruição do todo."
+      },
+      {
+        "letra": "B",
+        "texto": "Associação simples sem multiplicidade definida.",
+        "correta": false,
+        "diagnostico": "Incorreto: associação simples não expressa a forte dependência existencial todo-parte exigida pela regra."
+      },
+      {
+        "letra": "C",
+        "texto": "Composição, com dependência de existência da parte em relação ao todo.",
+        "correta": true,
+        "diagnostico": "Correto: a composição (agregação composta, indicada por losango preenchido no lado do todo) impõe acoplamento vital: as partes pertencem exclusivamente a um todo e são destruídas com ele."
+      },
+      {
+        "letra": "D",
+        "texto": "Generalização por polimorfismo dinâmico.",
+        "correta": false,
+        "diagnostico": "Incorreto: herança trata de hierarquia de tipos, não de agrupamento de instâncias parte-todo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense nas paredes de um prédio: se o edifício for implodido e demolido, as paredes deixam de existir junto com ele (composição). Já os carros no estacionamento do prédio continuam existindo mesmo se o prédio for demolido (agregação).",
+      "analise_correta": "Na composição da UML, a cardinalidade no lado do todo é estritamente 1 (ou 0..1 em criação inicial), garantindo propriedade exclusiva de ciclo de vida.",
+      "distratores": {
+        "A": "Incorreto: agregação compartilhada (losango vazio) permite que as partes existam independentemente e sobrevivam à destruição do todo.",
+        "B": "Incorreto: associação simples não expressa a forte dependência existencial todo-parte exigida pela regra.",
+        "D": "Incorreto: herança trata de hierarquia de tipos, não de agrupamento de instâncias parte-todo."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-REV-021",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Classe associativa em relacionamentos N:N",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Um \"Estudante\" pode se matricular em várias \"Disciplinas\", e cada disciplina possui múltiplos estudantes. Para armazenar a \"dataMatricula\" e a \"notaFinal\" desse vínculo específico, qual recurso da UML deve ser empregado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Duplicar o atributo \"notaFinal\" dentro da classe Disciplina como vetor estático.",
+        "correta": false,
+        "diagnostico": "Incorreto: colocar a nota em Disciplina ou em Estudante corrompe o modelo quando há dezenas de notas de alunos diferentes na mesma matéria."
+      },
+      {
+        "letra": "B",
+        "texto": "Representar uma classe associativa Matrícula vinculada à associação.",
+        "correta": true,
+        "diagnostico": "Correto: uma classe associativa anexa atributos e comportamentos ao próprio relacionamento entre duas classes, existindo em função da ligação entre uma instância de Estudante e uma de Disciplina."
+      },
+      {
+        "letra": "C",
+        "texto": "Transformar Disciplina em subclasse de Estudante via herança múltipla.",
+        "correta": false,
+        "diagnostico": "Incorreto: herança viola frontalmente a semântica de domínio (uma disciplina não \"é um\" estudante)."
+      },
+      {
+        "letra": "D",
+        "texto": "Criar um caso de uso para substituir as duas classes.",
+        "correta": false,
+        "diagnostico": "Incorreto: casos de uso modelam intenções comportamentais do usuário, não modelagem relacional orientada a objetos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A nota não é uma característica só do aluno (pois ele tem notas diferentes em cálculo e biologia) nem só da disciplina (que tem dezenas de alunos). A nota é uma propriedade que só existe no cruzamento do aluno matriculado na matéria.",
+      "analise_correta": "Graficamente, a classe associativa é exibida como uma classe normal conectada por uma linha pontilhada à linha de associação que une as duas classes participantes.",
+      "distratores": {
+        "A": "Incorreto: colocar a nota em Disciplina ou em Estudante corrompe o modelo quando há dezenas de notas de alunos diferentes na mesma matéria.",
+        "C": "Incorreto: herança viola frontalmente a semântica de domínio (uma disciplina não \"é um\" estudante).",
+        "D": "Incorreto: casos de uso modelam intenções comportamentais do usuário, não modelagem relacional orientada a objetos."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-REV-022",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Diagrama de pacotes e organização em subsistemas",
+    "artigo_origem": "10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Para organizar um sistema de grande porte em subsistemas modulares (como \"ModuloFinanceiro\", \"ModuloVendas\" e \"ModuloAutenticacao\") e ilustrar as dependências entre eles, qual diagrama da UML é o mais indicado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Diagrama de máquina de estados de uma variável booleana.",
+        "correta": false,
+        "diagnostico": "Incorreto: máquina de estados foca no ciclo de vida dinâmico de instâncias individuais de objetos."
+      },
+      {
+        "letra": "B",
+        "texto": "Diagrama de atividades de cálculo de raiz quadrada.",
+        "correta": false,
+        "diagnostico": "Incorreto: diagrama de atividades ilustra fluxo de processamento operacional algorítmico."
+      },
+      {
+        "letra": "C",
+        "texto": "Diagrama de sequência de uma única linha de comando.",
+        "correta": false,
+        "diagnostico": "Incorreto: diagrama de sequência detalha troca cronológica de mensagens pontuais entre objetos em tempo de execução."
+      },
+      {
+        "letra": "D",
+        "texto": "Diagrama de pacotes, que agrupa classes relacionadas e representa dependências.",
+        "correta": true,
+        "diagnostico": "Correto: o diagrama de pacotes é o artefato estrutural por excelência para agrupar elementos lógicos em subsistemas/camadas e explicitar acoplamentos e dependências de alto nível."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense nas pastas e gavetas de um arquivo de escritório: você guarda todos os documentos contábeis na gaveta \"Financeiro\" e os contratos na gaveta \"Jurídico\", organizando o caos do escritório.",
+      "analise_correta": "Pacotes na UML são representados pelo ícone de pasta com aba (*tabbed folder*) e apoiam a visão arquitetural de camadas (como Controller, Service, Repository) e microsserviços.",
+      "distratores": {
+        "A": "Incorreto: máquina de estados foca no ciclo de vida dinâmico de instâncias individuais de objetos.",
+        "B": "Incorreto: diagrama de atividades ilustra fluxo de processamento operacional algorítmico.",
+        "C": "Incorreto: diagrama de sequência detalha troca cronológica de mensagens pontuais entre objetos em tempo de execução."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-REV-023",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Ferramentas CASE e consistência semântica de modelos",
+    "artigo_origem": "07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+    "dificuldade": "dificil",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Em um projeto corporativo regulamentado, a equipe precisa garantir que modelos UML mantenham coerência semântica e suporte à geração de relatórios técnicos de engenharia reversa. Qual prática é recomendada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Desenhar todos os diagramas em editores gráficos genéricos sem checagem de tipos.",
+        "correta": false,
+        "diagnostico": "Incorreto: editores de desenho genéricos não validam o metamodelo UML, permitindo erros semânticos graves."
+      },
+      {
+        "letra": "B",
+        "texto": "Proibir o versionamento de arquivos de modelagem em repositórios de código.",
+        "correta": false,
+        "diagnostico": "Incorreto: o versionamento em repositórios é essencial para governança e evolução de modelos."
+      },
+      {
+        "letra": "C",
+        "texto": "Substituir toda modelagem por transcrições gravadas em áudio.",
+        "correta": false,
+        "diagnostico": "Incorreto: gravações de áudio não fornecem especificação estruturada nem permitem engenharia reversa automatizada."
+      },
+      {
+        "letra": "D",
+        "texto": "Utilizar ferramenta CASE com suporte à notação UML, revisando os relacionamentos representados.",
+        "correta": true,
+        "diagnostico": "Correto: ferramentas CASE (*Computer-Aided Software Engineering*) sustentam um metamodelo computável por trás dos diagramas visuais, permitindo validar regras sintáticas, rastreabilidade e sincronização com código."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É a diferença entre desenhar uma planta elétrica no Paint (onde qualquer linha torta é desenhada sem avisar sobre curto-circuito) e desenhar em um CAD profissional com validação automática de circuitos elétricos.",
+      "analise_correta": "Ferramentas CASE profissionais mantêm um repositório centralizado de elementos de modelo, garantindo que a renomeação de uma classe seja refletida em todos os diagramas de classes, casos de uso e sequência.",
+      "distratores": {
+        "A": "Incorreto: editores de desenho genéricos não validam o metamodelo UML, permitindo erros semânticos graves.",
+        "B": "Incorreto: o versionamento em repositórios é essencial para governança e evolução de modelos.",
+        "C": "Incorreto: gravações de áudio não fornecem especificação estruturada nem permitem engenharia reversa automatizada."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-REV-024",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Validação vs. verificação de requisitos",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "A célebre distinção de Boehm pergunta: \"Estamos construindo o produto certo?\". Na engenharia de requisitos, essa pergunta corresponde a qual atividade fundamental?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Verificação estritamente gramatical do texto do contrato.",
+        "correta": false,
+        "diagnostico": "Incorreto: conferência sintática/gramatical é uma técnica local de verificação de padrão textual."
+      },
+      {
+        "letra": "B",
+        "texto": "Benchmarking do clock do processador em tempo de execução.",
+        "correta": false,
+        "diagnostico": "Incorreto: velocidade de clock de CPU é aferição de hardware, sem relação com atendimento das necessidades de negócio."
+      },
+      {
+        "letra": "C",
+        "texto": "Validação dos requisitos frente às necessidades reais do cliente.",
+        "correta": true,
+        "diagnostico": "Correto: a validação certifica se os requisitos expressam exatamente o que o cliente necessita para resolver seus problemas de negócio (\"o produto certo\")."
+      },
+      {
+        "letra": "D",
+        "texto": "Compilação otimizada com flags de depuração ativadas.",
+        "correta": false,
+        "diagnostico": "Incorreto: diretivas de compilação são detalhes operacionais de construção técnica."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Verificação é conferir se a receita culinária foi seguida à risca com as medidas certas; validação é dar o bolo para o cliente provar e confirmar se era mesmo aquele bolo que ele desejava para a sua festa.",
+      "analise_correta": "A validação foca no valor e na adequação ao usuário final, enquanto a verificação (*Are we building the product right?*) foca na conformidade técnica com normas, padrões e ausência de contradições lógicas.",
+      "distratores": {
+        "A": "Incorreto: conferência sintática/gramatical é uma técnica local de verificação de padrão textual.",
+        "B": "Incorreto: velocidade de clock de CPU é aferição de hardware, sem relação com atendimento das necessidades de negócio.",
+        "D": "Incorreto: diretivas de compilação são detalhes operacionais de construção técnica."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
+    "id": "REQ-REV-025",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de verificação (inspeção formal de requisitos)",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "medio",
+    "prioritaria": true,
+    "origem": "revisao_oficial_puc",
+    "enunciado": "Durante uma sessão de revisão formal da documentação, os engenheiros comparam o diagrama de casos de uso com o diagrama de classes para checar se todos os conceitos citados nas ações possuem classes correspondentes, além de checar conformidade com o padrão da empresa. Qual atividade está sendo realizada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Deploy contínuo em ambiente de homologação externa.",
+        "correta": false,
+        "diagnostico": "Incorreto: deploy é etapa operacional de infraestrutura e entrega de binários executáveis."
+      },
+      {
+        "letra": "B",
+        "texto": "Verificação por inspeção da consistência entre os modelos produzidos.",
+        "correta": true,
+        "diagnostico": "Correto: a inspeção técnica de requisitos analisa a consistência interna e cruzada entre artefatos de modelagem, checando conformidade formal com diretrizes metodológicas."
+      },
+      {
+        "letra": "C",
+        "texto": "Elicitação primária de requisitos por questionário anônimo.",
+        "correta": false,
+        "diagnostico": "Incorreto: elicitação é a descoberta inicial de requisitos, enquanto o cenário descreve a auditoria crítica de modelos já consolidados."
+      },
+      {
+        "letra": "D",
+        "texto": "Engenharia reversa automática por descompilador de bytecode.",
+        "correta": false,
+        "diagnostico": "Incorreto: descompilação de bytecode analisa código compilado, não a coerência semântica de especificações conceituais."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como o engenheiro chefe revisando a planta hidráulica contra a planta estrutural da obra para ter certeza absoluta de que nenhum cano passa por dentro de uma viga mestra de sustentação.",
+      "analise_correta": "Inspeções formais (baseadas no método de Fagan) detectam ambiguidades, lacunas e discrepâncias entre modelos antes de uma única linha de código ser escrita, reduzindo brutalmente o custo de defeitos.",
+      "distratores": {
+        "A": "Incorreto: deploy é etapa operacional de infraestrutura e entrega de binários executáveis.",
+        "C": "Incorreto: elicitação é a descoberta inicial de requisitos, enquanto o cenário descreve a auditoria crítica de modelos já consolidados.",
+        "D": "Incorreto: descompilação de bytecode analisa código compilado, não a coerência semântica de especificações conceituais."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
     "id": "REQ-001",
     "disciplina_id": "07",
     "disciplina": "Engenharia de Requisitos",
@@ -15763,7 +16938,9 @@
         "D": "Erro cronológico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-002",
@@ -15808,7 +16985,9 @@
         "D": "Erro técnico: compiladores detectam erros de sintaxe, nunca se a regra de negócio faz sentido para o cliente."
       },
       "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-003",
@@ -15853,7 +17032,9 @@
         "D": "Erro: conceitos de Redes de Computadores."
       },
       "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-004",
@@ -15898,7 +17079,9 @@
         "D": "Erro de escopo."
       },
       "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-005",
@@ -15943,7 +17126,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-006",
@@ -15988,7 +17173,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-007",
@@ -16033,7 +17220,9 @@
         "D": "Erro de infraestrutura física."
       },
       "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-008",
@@ -16078,7 +17267,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-009",
@@ -16123,7 +17314,9 @@
         "D": "Erro inverso: cadastrar cliente é RF; tempo de resposta < 1s é RNF de desempenho."
       },
       "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-010",
@@ -16168,7 +17361,9 @@
         "D": "Erro: requisitos externos legais têm força de lei e são inegociáveis."
       },
       "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-011",
@@ -16213,7 +17408,9 @@
         "D": "Erro de qualidade."
       },
       "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-012",
@@ -16258,7 +17455,9 @@
         "D": "Erro: contradição entre `RF04` e `RF12` é falha de **Consistência**."
       },
       "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-013",
@@ -16303,7 +17502,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-014",
@@ -16348,7 +17549,9 @@
         "D": "Erro semântico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-015",
@@ -16393,7 +17596,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-016",
@@ -16438,7 +17643,9 @@
         "D": "Erro taxonômico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-017",
@@ -16483,7 +17690,9 @@
         "D": "Erro de notação: Atores são por definição **externos** à fronteira do sistema."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-018",
@@ -16528,7 +17737,9 @@
         "D": "Erro de disciplina."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-019",
@@ -16573,7 +17784,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-020",
@@ -16618,7 +17831,9 @@
         "D": "Erro: pelo princípio do encapsulamento, atributos costumam ser privados (`-`) e métodos/propriedades de contrato públicos (`+`)."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-021",
@@ -16663,7 +17878,9 @@
         "D": "Erro: herança usa seta triangular fechada vazada."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-022",
@@ -16708,7 +17925,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-023",
@@ -16753,7 +17972,9 @@
         "D": "Erro de camada."
       },
       "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-024",
@@ -16798,7 +18019,9 @@
         "D": "Erro de sistema operacional."
       },
       "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-025",
@@ -16843,7 +18066,9 @@
         "D": "Erro cronológico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-026",
@@ -16888,7 +18113,9 @@
         "D": "Erro metodológico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-027",
@@ -16933,7 +18160,9 @@
         "D": "Erro de engenharia."
       },
       "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-028",
@@ -16978,7 +18207,9 @@
         "D": "Erro: criptografia BCrypt e conformidade WCAG são qualidades/restrições (RNF)."
       },
       "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-029",
@@ -17023,7 +18254,9 @@
         "D": "Erro superficial."
       },
       "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-030",
@@ -17068,7 +18301,9 @@
         "D": "Erro: papel e caneta têm custo praticamente zero."
       },
       "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-031",
@@ -17113,7 +18348,9 @@
         "D": "Erro: a UML permite Generalização tanto entre Atores quanto entre Casos de Uso (e entre Classes)."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-032",
@@ -17158,7 +18395,9 @@
         "D": "Erro: para fluxos de passos e desvios usa-se a Especificação Textual ou o Diagrama de Atividades."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-033",
@@ -17203,7 +18442,9 @@
         "D": "Erro de notação: `*` significa *muitos* ($N$)."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-034",
@@ -17248,7 +18489,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-035",
@@ -17293,7 +18536,9 @@
         "D": "Erro conceitual."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-036",
@@ -17338,7 +18583,9 @@
         "D": "Erro monolítico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-037",
@@ -17383,7 +18630,9 @@
         "D": "Erro inverso: a rastreabilidade existe justamente para viabilizar a Análise de Impacto."
       },
       "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-038",
@@ -17428,7 +18677,9 @@
         "D": "Erro literal."
       },
       "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-039",
@@ -17473,7 +18724,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-040",
@@ -17518,7 +18771,9 @@
         "D": "Erro técnico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-041",
@@ -17563,7 +18818,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-042",
@@ -17608,7 +18865,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-043",
@@ -17653,7 +18912,9 @@
         "D": "Erro inverso: perguntas fechadas são justamente as mais fáceis de tabular em gráficos."
       },
       "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-044",
@@ -17698,7 +18959,9 @@
         "D": "Erro de incompletude."
       },
       "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-045",
@@ -17743,7 +19006,9 @@
         "D": "Erro pedagógico."
       },
       "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-046",
@@ -17788,7 +19053,9 @@
         "D": "Erro de sintaxe."
       },
       "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-047",
@@ -17833,7 +19100,9 @@
         "D": "Erro: *Gold Plating* consome prazo e orçamento construindo coisas que ninguém pediu."
       },
       "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-048",
@@ -17878,7 +19147,9 @@
         "D": "Erro inverso."
       },
       "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-049",
@@ -17923,7 +19194,9 @@
         "D": "Erro: transcrições brutas são insumo de elicitação, mas precisam ser consolidadas em requisitos estruturados."
       },
       "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "REQ-050",
@@ -17968,7 +19241,9 @@
         "D": "Erro: cada requisito é a base direta do seu respectivo Caso de Teste."
       },
       "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
-    }
+    },
+    "prioritaria": false,
+    "origem": "banco_sintetico_vault"
   },
   {
     "id": "DI-REV-001",
