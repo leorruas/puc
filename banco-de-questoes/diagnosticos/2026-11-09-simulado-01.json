@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "tipo": "diagnostico_simulado",
+  "id": "PUC-SIM-2026-11-09-01",
+  "data": "2026-11-09",
+  "origem": "Simulado interativo no chat, questões do banco do repositório",
+  "status": "encerramento_parcial_para_registro",
+  "resumo": {
+    "respondidas": 7,
+    "acertos": 4,
+    "erros": 3,
+    "aproveitamento_percentual": 57.14,
+    "observacao": "SQL-002 foi acertada após consulta explicativa durante a bateria; não interpretar como domínio autônomo comprovado."
+  },
+  "respostas": [
+    {
+      "id": "WEB-001",
+      "disciplina_id": "05",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto"
+    },
+    {
+      "id": "WEB-002",
+      "disciplina_id": "05",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto"
+    },
+    {
+      "id": "SQL-002",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_com_apoio",
+      "observacao": "Solicitou explicação das siglas antes de responder."
+    },
+    {
+      "id": "SQL-014",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto"
+    },
+    {
+      "id": "SQL-012",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro"
+    },
+    {
+      "id": "SQL-015",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro"
+    },
+    {
+      "id": "SQL-019",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro"
+    }
+  ],
+  "lacunas": [
+    {
+      "id": "LAC-SQL-001",
+      "disciplina_id": "03",
+      "disciplina": "Manipulação de dados SQL",
+      "topico": "Ordem lógica do SELECT e relação com filtros e agregação",
+      "prioridade": "alta",
+      "estado": "confirmada_por_erro",
+      "questoes_evidencia": [
+        "SQL-012",
+        "SQL-019"
+      ],
+      "tipos": [
+        "conceitual"
+      ],
+      "descricao": "Confusão entre a ordem textual do SELECT, sua ordem lógica e o momento em que resultados agregados podem ser filtrados.",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/06. Comando SELECT.md",
+          "motivo": "Revisar a ordem lógica FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY."
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
+          "motivo": "Distinguir condições sobre linhas de condições sobre grupos e entender AVG com HAVING."
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+          "motivo": "Reforçar como AVG e outras funções agregam registros."
+        }
+      ],
+      "estrategia_reteste": "Aplicar nova questão com consulta real combinando WHERE, GROUP BY e HAVING, sem repetir SQL-012 ou SQL-019, após intercalar outras matérias.",
+      "criterio_de_superacao": "Dois acertos independentes sem consulta ao material, em questões diferentes que testem ordem lógica e agregação."
+    },
+    {
+      "id": "LAC-SQL-002",
+      "disciplina_id": "03",
+      "disciplina": "Manipulação de dados SQL",
+      "topico": "Curingas do operador LIKE",
+      "prioridade": "media",
+      "estado": "confirmada_por_erro",
+      "questoes_evidencia": [
+        "SQL-015"
+      ],
+      "tipos": [
+        "terminologico"
+      ],
+      "descricao": "Inversão dos significados de % (zero ou mais caracteres) e _ (exatamente um caractere).",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
+          "motivo": "Ler a seção de LIKE e testar padrões em exemplos concretos."
+        }
+      ],
+      "estrategia_reteste": "Propor caso novo com padrões como 'An_', 'Ana%' e '%a' e pedir quais valores correspondem.",
+      "criterio_de_superacao": "Dois acertos independentes sem consulta em padrões distintos."
+    },
+    {
+      "id": "LAC-SQL-003",
+      "disciplina_id": "03",
+      "disciplina": "Manipulação de dados SQL",
+      "topico": "Categorias de comandos DDL, DML, DCL e TCL",
+      "prioridade": "media",
+      "estado": "atencao_por_duvida_previa",
+      "questoes_evidencia": [
+        "SQL-002"
+      ],
+      "tipos": [
+        "terminologico"
+      ],
+      "descricao": "Necessitou relembrar a expansão e o papel das siglas antes de acertar.",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/01. O que é SQL.md",
+          "motivo": "Revisar as sublinguagens SQL e a classificação dos comandos."
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
+          "motivo": "Reforçar especificamente o papel da DCL."
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
+          "motivo": "Reforçar especificamente o papel da TCL."
+        }
+      ],
+      "estrategia_reteste": "Cobrar classificação de comandos em cenário concreto, sem fornecer antecipadamente o significado das siglas.",
+      "criterio_de_superacao": "Acertar uma questão inédita sem apoio; exigir outra se houver hesitação."
+    }
+  ],
+  "orientacoes_proximas_baterias": {
+    "alternar_disciplinas": true,
+    "preferir_disciplinas_ja_estudadas": true,
+    "questao_por_vez": true,
+    "priorizar_itens_do_repositorio": true,
+    "intercalar_novos_topicos_com_reteste": true,
+    "repeticao_de_questao_literal": "somente_revisionada_e_identificada",
+    "reteste_sem_ajuda": "distinguir_resultado_autonomo_de_resposta_com_apoio",
+    "inicio_sugerido": [
+      "04. Algoritmos e Estruturas de Dados",
+      "07. Engenharia de Requisitos",
+      "03. Manipulação de Dados SQL"
+    ],
+    "revisoes_pendentes": [
+      "LAC-SQL-001",
+      "LAC-SQL-002",
+      "LAC-SQL-003"
+    ]
+  },
+  "observacoes": "Classificações são hipóteses baseadas nas respostas observadas. Não há evidência suficiente para concluir proficiência nas demais matérias nem para declarar as lacunas superadas."
+}
