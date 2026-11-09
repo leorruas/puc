@@ -2,6 +2,23 @@
 
 Este glossário reúne a terminologia fundamental e os conceitos consolidados na disciplina de Redes de Computadores. Ele cresce junto com o estudo, registrando as definições precisas e distinções conceituais com links para as seções correspondentes.
 
+## Topologias de rede
+
+| Conceito | Definição curta | Distinção ou observação | Onde aparece |
+| --- | --- | --- | --- |
+| **Topologia de rede** | Organização e arranjo geométrico e operacional dos nós e enlaces de comunicação. | Divide-se em física (instalação de cabos e nós) e lógica (propagação real dos sinais e quadros). | [[09. Redes de Computadores/03. Topologias de redes de computadores#Topologia física versus topologia lógica\|Artigo 03 — topologias]] |
+| **Topologia física** | Arranjo espacial e leiaute de cabeamento dos componentes de uma rede. | Define o posicionamento visível de cabos e nós no prédio; pode não coincidir com a lógica. | [[09. Redes de Computadores/03. Topologias de redes de computadores#Topologia física versus topologia lógica\|Artigo 03 — física vs lógica]] |
+| **Topologia lógica** | Padrão e caminho real pelo qual os sinais elétricos/ópticos e quadros propagam-se na rede. | Uma rede em estrela física com hub opera como barramento lógico. | [[09. Redes de Computadores/03. Topologias de redes de computadores#Topologia física versus topologia lógica\|Artigo 03 — física vs lógica]] |
+| **Topologia em barramento** | Arquitetura em que todos os nós compartilham um único meio contínuo de transmissão. | Requer terminadores nas pontas para absorver ecos; vulnerável a colisões e mau contato. | [[09. Redes de Computadores/03. Topologias de redes de computadores#1. Topologia em barramento (Bus)\|Artigo 03 — barramento]] |
+| **Terminador de barramento** | Resistor instalado nas extremidades do cabo de barramento para absorver sinais elétricos. | Evita a reflexão do sinal (eco eletromagnético) que causaria colisões e ruídos destrutivos. | [[09. Redes de Computadores/03. Topologias de redes de computadores#1. Topologia em barramento (Bus)\|Artigo 03 — terminadores]] |
+| **Modo promíscuo** | Configuração da placa de rede que a instrui a capturar todos os quadros que trafegam pelo meio compartilhado. | Permite a analisadores de tráfego (como Wireshark) ler dados que seriam descartados por não corresponderem ao seu endereço MAC. | [[09. Redes de Computadores/03. Topologias de redes de computadores#1. Topologia em barramento (Bus)\|Artigo 03 — modo promíscuo]] |
+| **Topologia em estrela** | Arquitetura em que cada nó conecta-se a um concentrador central (*switch* ou *hub*) por um enlace dedicado. | Isola falhas de cabo; o concentrador é o ponto central de falha. | [[09. Redes de Computadores/03. Topologias de redes de computadores#2. Topologia em estrela (Star)\|Artigo 03 — estrela]] |
+| **Switch (comutador)** | Dispositivo de camada 2 que comuta quadros diretamente à porta do nó de destino. | Aprende endereços MAC inspecionando o cabeçalho dos quadros, eliminando colisões. | [[09. Redes de Computadores/03. Topologias de redes de computadores#2. Topologia em estrela (Star)\|Artigo 03 — switch]] |
+| **Hub (repetidor)** | Dispositivo concentrador de camada 1 que replica todo sinal recebido para todas as suas demais portas. | Não filtra tráfego; transforma uma estrela física em um domínio de colisão e barramento lógico. | [[09. Redes de Computadores/03. Topologias de redes de computadores#2. Topologia em estrela (Star)\|Artigo 03 — hub]] |
+| **Topologia em anel** | Arquitetura em que cada nó conecta-se a exatamente dois vizinhos formando um circuito fechado unidirecional. | O tráfego circula de nó a nó; o rompimento de um enlace simples interrompe o anel inteiro. | [[09. Redes de Computadores/03. Topologias de redes de computadores#3. Topologia em anel (Ring)\|Artigo 03 — anel]] |
+| **Token Ring** | Padrão clássico de comunicação em anel baseado na circulação de um bloco de controle (*token*). | Apenas o nó em posse do token tem autorização de emitir quadros, evitando colisões. | [[09. Redes de Computadores/03. Topologias de redes de computadores#3. Topologia em anel (Ring)\|Artigo 03 — Token Ring]] |
+| **Topologia em malha (*Mesh*)** | Arquitetura com múltiplos enlaces diretos e caminhos redundantes entre os nós da rede. | Máxima tolerância a falhas (*self-healing*); base das redes sem fio Mesh e telemetria inteligente. | [[09. Redes de Computadores/03. Topologias de redes de computadores#4. Topologia em malha (Mesh)\|Artigo 03 — malha]] |
+
 ## Classificação por abrangência geográfica
 
 | Conceito | Definição curta | Distinção ou observação | Onde aparece |
