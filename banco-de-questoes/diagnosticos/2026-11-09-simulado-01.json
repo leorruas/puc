@@ -4,13 +4,13 @@
   "id": "PUC-SIM-2026-11-09-01",
   "data": "2026-11-09",
   "origem": "Simulado interativo no chat, questões do banco do repositório",
-  "status": "encerramento_parcial_para_registro",
+  "status": "bateria_concluida",
   "resumo": {
-    "respondidas": 7,
-    "acertos": 4,
-    "erros": 3,
-    "aproveitamento_percentual": 57.14,
-    "observacao": "SQL-002 foi acertada após consulta explicativa durante a bateria; não interpretar como domínio autônomo comprovado."
+    "respondidas": 10,
+    "acertos": 5,
+    "erros": 5,
+    "aproveitamento_percentual": 50,
+    "observacao": "SQL-002 foi acertada após explicação. AED-001 teve explicação prévia sobre tabela hash, mas a resposta foi incorreta. O banco do repositório mudou durante a sessão; IDs MD-002 e AED-001 consultados no fechamento representam outros enunciados. Preservam-se os itens efetivamente apresentados na conversa."
   },
   "respostas": [
     {
@@ -62,6 +62,34 @@
       "resposta": "A",
       "gabarito": "B",
       "resultado": "erro"
+    },
+    {
+      "id": "AED-001",
+      "disciplina_id": "04",
+      "resposta": "C",
+      "gabarito": "B",
+      "resultado": "erro",
+      "topico": "Colisões em tabelas hash",
+      "versao_da_questao": "apresentada_no_chat_antes_da_atualizacao_do_banco",
+      "enunciado_identificador": "Duas chaves distintas geram o mesmo índice em uma tabela hash.",
+      "observacao": "Antes da resposta, o usuário pediu explicação sobre tabela hash e dicionário chave-valor."
+    },
+    {
+      "id": "REQ-002",
+      "disciplina_id": "07",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto"
+    },
+    {
+      "id": "MD-002",
+      "disciplina_id": "02",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro",
+      "topico": "Dependência funcional parcial e 2FN",
+      "versao_da_questao": "apresentada_no_chat_antes_da_atualizacao_do_banco",
+      "enunciado_identificador": "ItemPedido(NumPedido, CodProduto, NomeProduto, Quantidade, PrecoUnitario) com chave composta e NomeProduto dependente somente de CodProduto."
     }
   ],
   "lacunas": [
@@ -150,6 +178,60 @@
       ],
       "estrategia_reteste": "Cobrar classificação de comandos em cenário concreto, sem fornecer antecipadamente o significado das siglas.",
       "criterio_de_superacao": "Acertar uma questão inédita sem apoio; exigir outra se houver hesitação."
+    },
+    {
+      "id": "LAC-AED-001",
+      "disciplina_id": "04",
+      "disciplina": "Algoritmos e estruturas de dados",
+      "topico": "Tabela hash, colisões e estratégias de tratamento",
+      "prioridade": "alta",
+      "estado": "confirmada_por_erro_e_duvida",
+      "questoes_evidencia": [
+        "AED-001 (versão apresentada em chat)"
+      ],
+      "tipos": [
+        "conceitual"
+      ],
+      "descricao": "Após solicitar revisão do conceito chave-valor, considerou que colisões entre chaves distintas exigem sobrescrever a entrada anterior.",
+      "artigos": [
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md",
+          "motivo": "Rever mapeamento de chaves, colisão, encadeamento e endereçamento aberto."
+        },
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md",
+          "motivo": "Revisar função hash, resolução de colisões e comportamento da estrutura."
+        }
+      ],
+      "estrategia_reteste": "Usar questões inéditas sobre inserção de duas chaves diferentes no mesmo índice e técnicas de resolução.",
+      "criterio_de_superacao": "Dois acertos sem apoio em cenários distintos que exijam aplicar a resolução de colisões."
+    },
+    {
+      "id": "LAC-MD-001",
+      "disciplina_id": "02",
+      "disciplina": "Modelagem de dados",
+      "topico": "Primeira, segunda e terceira formas normais; dependência funcional parcial",
+      "prioridade": "alta",
+      "estado": "confirmada_por_erro",
+      "questoes_evidencia": [
+        "MD-002 (versão apresentada em chat)"
+      ],
+      "tipos": [
+        "conceitual"
+      ],
+      "descricao": "Considerou uma relação com chave composta e atributo não-chave dependente de apenas parte da chave como estando na 3FN, apesar de violar a 2FN.",
+      "artigos": [
+        {
+          "caminho": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+          "motivo": "Rever 1FN, dependências funcionais parciais na 2FN, dependências transitivas na 3FN e decomposição."
+        },
+        {
+          "caminho": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md",
+          "motivo": "Reforçar chaves compostas e relação entre chave e atributo não-chave."
+        }
+      ],
+      "estrategia_reteste": "Oferecer relações com chaves compostas e pedir identificar qual parte da chave determina cada atributo; usar item novo, não reapresentar apenas o gabarito.",
+      "criterio_de_superacao": "Dois acertos autônomos em exemplos distintos de normalização."
     }
   ],
   "orientacoes_proximas_baterias": {
@@ -161,15 +243,27 @@
     "repeticao_de_questao_literal": "somente_revisionada_e_identificada",
     "reteste_sem_ajuda": "distinguir_resultado_autonomo_de_resposta_com_apoio",
     "inicio_sugerido": [
-      "04. Algoritmos e Estruturas de Dados",
-      "07. Engenharia de Requisitos",
-      "03. Manipulação de Dados SQL"
+      "05. Desenvolvimento Web Back-End",
+      "02. Modelagem de Dados",
+      "03. Manipulação de Dados SQL",
+      "04. Algoritmos e Estruturas de Dados"
     ],
     "revisoes_pendentes": [
       "LAC-SQL-001",
       "LAC-SQL-002",
-      "LAC-SQL-003"
-    ]
+      "LAC-SQL-003",
+      "LAC-AED-001",
+      "LAC-MD-001"
+    ],
+    "fechamento": "A cada 10 questões respondidas, registrar diagnóstico de lacunas e referências de leitura; checar versão do banco antes de usar IDs."
   },
-  "observacoes": "Classificações são hipóteses baseadas nas respostas observadas. Não há evidência suficiente para concluir proficiência nas demais matérias nem para declarar as lacunas superadas."
+  "observacoes": "Classificações são hipóteses baseadas nas respostas observadas. Não há evidência suficiente para concluir proficiência nas demais matérias nem para declarar as lacunas superadas. Bateria encerrada com 10 respostas. Conferidos os caminhos de leitura nos diretórios do repositório.",
+  "rastreabilidade": {
+    "alerta": "O repositório foi alterado durante o simulado. No banco atual, MD-002 e AED-001 têm enunciados/gabaritos diferentes dos itens efetivamente respondidos. As respostas desta sessão são vinculadas ao texto apresentado no chat, não aos itens homônimos atuais.",
+    "questoes_com_colisao_de_id": [
+      "MD-002",
+      "AED-001"
+    ],
+    "providencia": "Para novo simulado, usar IDs e conteúdo atuais e preservar o enunciado/versão ao registrar cada resposta."
+  }
 }
