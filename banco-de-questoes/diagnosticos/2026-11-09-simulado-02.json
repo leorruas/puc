@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "tipo": "diagnostico_simulado",
+  "id": "PUC-SIM-2026-11-09-02",
+  "data": "2026-11-09",
+  "status": "bateria_concluida",
+  "bateria_numero": 2,
+  "origem": "Simulado interativo no chat com questões do banco do GitHub e questões de reteste declaradas como inéditas",
+  "resumo": {
+    "respondidas": 10,
+    "acertos": 9,
+    "erros": 1,
+    "aproveitamento_percentual": 90,
+    "observacao": "O único erro foi AED-039; usuário observou que a recomendação anterior centrada no artigo 03 não cobria área de reserva, abordada no artigo 11."
+  },
+  "comparacao": {
+    "diagnostico_anterior": "banco-de-questoes/diagnosticos/2026-11-09-simulado-01.json",
+    "bateria_anterior": {
+      "respondidas": 10,
+      "acertos": 5,
+      "erros": 5,
+      "aproveitamento_percentual": 50
+    },
+    "diferenca_pontos_percentuais": 40,
+    "ressalva": "Baterias têm distribuição de disciplinas, nível e itens diferentes; a variação não prova melhora equivalente de proficiência global."
+  },
+  "respostas": [
+    {
+      "ordem": 1,
+      "id": "MD-037",
+      "disciplina_id": "02",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "normalizacao",
+      "origem": "reteste"
+    },
+    {
+      "ordem": 2,
+      "id": "SQL-018",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "agrupamentos",
+      "origem": "reteste"
+    },
+    {
+      "ordem": 3,
+      "id": "AED-039",
+      "disciplina_id": "04",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro",
+      "tema": "hash_colisoes",
+      "origem": "reteste"
+    },
+    {
+      "ordem": 4,
+      "id": "SQL-037",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "agrupamentos",
+      "origem": "questao_do_banco"
+    },
+    {
+      "ordem": 5,
+      "id": "WEB-006",
+      "disciplina_id": "05",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "arquitetura_de_software",
+      "origem": "questao_do_banco_adaptada"
+    },
+    {
+      "ordem": 6,
+      "id": "SQL-026",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "menor_privilegio_DCL",
+      "origem": "questao_do_banco_adaptada"
+    },
+    {
+      "ordem": 7,
+      "id": "REQ-006",
+      "disciplina_id": "07",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "regras_de_negocio",
+      "origem": "questao_do_banco_adaptada"
+    },
+    {
+      "ordem": 8,
+      "id": "SQL-REV-001",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "curingas_LIKE",
+      "origem": "questao_inedita"
+    },
+    {
+      "ordem": 9,
+      "id": "MD-036",
+      "disciplina_id": "02",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "normalizacao",
+      "origem": "reteste"
+    },
+    {
+      "ordem": 10,
+      "id": "SQL-REV-002",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "tema": "WHERE_HAVING",
+      "origem": "questao_inedita"
+    }
+  ],
+  "lacunas_e_retestes": [
+    {
+      "id": "LAC-AED-001",
+      "disciplina_id": "04",
+      "tema": "Tabela hash e resolução de colisões com área de reserva",
+      "estado": "persistente_apos_revisao",
+      "prioridade": "alta",
+      "evidencias": [
+        {
+          "id": "AED-001",
+          "bateria": 1,
+          "resultado": "erro",
+          "observacao": "versão do chat"
+        },
+        {
+          "id": "AED-039",
+          "bateria": 2,
+          "resultado": "erro"
+        }
+      ],
+      "analise": "A resposta A supunha que o registro original seria apagado na colisão. A questão específica exige compreender área de overflow. A recomendação do artigo 03 foi insuficiente para esse nível: o artigo 03 introduz colisões e remete o tratamento a outro artigo.",
+      "artigos": [
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md",
+          "github_pages": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/11.%20Tabela%20hash%20(fun%C3%A7%C3%A3o%20de%20transforma%C3%A7%C3%A3o%20e%20tratamento%20de%20colis%C3%B5es)",
+          "motivo": "Prioridade: ler a seção Hash direto com área de reserva, exemplos de inserção, rehash e hash indireto.",
+          "verificacao": "arquivo encontrado no repositório"
+        },
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md",
+          "github_pages": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/03.%20Hashtable%20(chave%2C%20valor%2C%20hashing%20e%20colis%C3%B5es)",
+          "motivo": "Revisão opcional de pares chave-valor e do conceito inicial de colisão.",
+          "verificacao": "arquivo encontrado no repositório"
+        }
+      ],
+      "plano": "Estudar o artigo 11 e resolver duas questões práticas inéditas: uma com área de reserva e outra comparando rehash e listas encadeadas.",
+      "criterio_de_superacao": "Dois acertos independentes sem apoio em cenários diferentes."
+    },
+    {
+      "id": "LAC-MD-001",
+      "disciplina_id": "02",
+      "tema": "1FN, 2FN e 3FN; dependências parciais e transitivas",
+      "estado": "superada_provisoriamente",
+      "prioridade": "baixa",
+      "evidencias": [
+        {
+          "id": "MD-037",
+          "resultado": "acerto",
+          "bateria": 2
+        },
+        {
+          "id": "MD-036",
+          "resultado": "acerto",
+          "bateria": 2
+        }
+      ],
+      "analise": "Dois acertos independentes em identificação de violações de normalização após revisão; reavaliar retenção após intervalo.",
+      "artigos": [
+        {
+          "caminho": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+          "github_pages": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/12.%201%C2%AA%2C%202%C2%AA%20e%203%C2%AA%20formas%20normais",
+          "motivo": "Consulta pontual se houver dúvida futura.",
+          "verificacao": "arquivo encontrado no repositório"
+        }
+      ],
+      "plano": "Aplicar uma questão de decomposição relacional em bateria posterior; evitar leitura integral imediata, salvo novo erro."
+    },
+    {
+      "id": "LAC-SQL-001",
+      "disciplina_id": "03",
+      "tema": "Ordem lógica do SELECT, GROUP BY, WHERE e HAVING",
+      "estado": "melhoria_observada_reteste_parcial",
+      "prioridade": "media",
+      "evidencias": [
+        {
+          "id": "SQL-018",
+          "resultado": "acerto",
+          "bateria": 2
+        },
+        {
+          "id": "SQL-037",
+          "resultado": "acerto",
+          "bateria": 2
+        },
+        {
+          "id": "SQL-REV-002",
+          "resultado": "acerto",
+          "bateria": 2
+        }
+      ],
+      "analise": "Acertou agrupamento de colunas e WHERE versus HAVING em cenário novo. A ordem lógica completa do SELECT não foi retestada isoladamente; evitar declarar lacuna totalmente superada.",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/06. Comando SELECT.md",
+          "github_pages": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/06.%20Comando%20SELECT",
+          "motivo": "Revisar exclusivamente ordem lógica se necessário.",
+          "verificacao": "arquivo encontrado no repositório"
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
+          "github_pages": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/09.%20Cl%C3%A1usulas%20GROUP%20BY%20e%20HAVING",
+          "motivo": "Referência para filtros antes e depois do agrupamento.",
+          "verificacao": "arquivo encontrado no repositório"
+        }
+      ],
+      "plano": "Uma questão nova sobre ordenar mentalmente FROM, WHERE, GROUP BY, HAVING, SELECT e ORDER BY; só então confirmar superação completa."
+    },
+    {
+      "id": "LAC-SQL-002",
+      "disciplina_id": "03",
+      "tema": "Curingas LIKE: % e _",
+      "estado": "primeiro_reteste_correto",
+      "prioridade": "media",
+      "evidencias": [
+        {
+          "id": "SQL-REV-001",
+          "resultado": "acerto",
+          "bateria": 2
+        }
+      ],
+      "analise": "Acertou padrão An_ aplicado a conjunto de nomes. Foi apenas um reteste; resta validar % em um cenário distinto.",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
+          "github_pages": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/07.%20Operadores%20e%20condi%C3%A7%C3%B5es%20em%20consultas%20SQL",
+          "motivo": "Revisão pontual de correspondência de padrões.",
+          "verificacao": "arquivo encontrado no repositório"
+        }
+      ],
+      "plano": "Testar no próximo ciclo padrão que mistura % e _, sem explicação prévia."
+    },
+    {
+      "id": "LAC-SQL-003",
+      "disciplina_id": "03",
+      "tema": "Categorias DDL, DML, DCL e TCL",
+      "estado": "melhoria_parcial",
+      "prioridade": "media",
+      "evidencias": [
+        {
+          "id": "SQL-026",
+          "resultado": "acerto",
+          "bateria": 2
+        }
+      ],
+      "analise": "Acertou o princípio do menor privilégio em DCL, mas a questão já informava a sigla DCL. Não comprova lembrança autônoma das quatro categorias.",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/01. O que é SQL.md",
+          "github_pages": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/01.%20O%20que%20%C3%A9%20SQL",
+          "motivo": "Revisar as categorias e exemplos de comandos, se falhar no próximo teste.",
+          "verificacao": "arquivo encontrado no repositório"
+        },
+        {
+          "caminho": "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
+          "github_pages": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/13.%20Comandos%20GRANT%20e%20REVOKE",
+          "motivo": "Referência para controle de permissões.",
+          "verificacao": "arquivo encontrado no repositório"
+        }
+      ],
+      "plano": "Classificar, sem apresentar as siglas por extenso, oito comandos misturados entre DDL, DML, DCL e TCL."
+    }
+  ],
+  "proxima_bateria": {
+    "tamanho": 10,
+    "alternar_disciplinas": true,
+    "prioridades": [
+      "tabelas hash: área de reserva, rehash e encadeamento",
+      "ordem lógica completa do SELECT",
+      "curingas LIKE mistos",
+      "classificação DDL/DML/DCL/TCL sem dicas"
+    ],
+    "incluir_questoes_de_outras_materias": true,
+    "criterio": "Preferir questões diferentes, preservando IDs e versões; questões inéditas devem ter identificação própria e não ser confundidas com itens do banco."
+  },
+  "rastreabilidade": {
+    "questoes_ineditas": [
+      "SQL-REV-001",
+      "SQL-REV-002"
+    ],
+    "observacao": "Questões inéditas apareceram somente no chat, não foram incluídas no banco canônico. Respostas aqui seguem o enunciado e alternativas apresentados na sessão."
+  }
+}
