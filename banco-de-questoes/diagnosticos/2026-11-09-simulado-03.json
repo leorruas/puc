@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "tipo": "diagnostico_simulado",
+  "id": "PUC-SIM-2026-11-09-03",
+  "data": "2026-11-09",
+  "status": "bateria_concluida",
+  "origem": "Simulado interativo em chat baseado no banco leorruas/puc e retestes inéditos",
+  "resumo": {
+    "respondidas": 10,
+    "acertos": 10,
+    "erros": 0,
+    "aproveitamento_percentual": 100,
+    "puladas": 1,
+    "observacao": "100% corresponde somente às questões efetivamente respondidas. A questão AED-REV-002 foi pulada por dificuldade declarada, sem penalidade no denominador."
+  },
+  "respostas": [
+    {
+      "numero": 1,
+      "id": "AED-041",
+      "disciplina_id": "04",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Encadeamento externo com listas",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 2,
+      "id": "SQL-008",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "DROP TABLE e TRUNCATE TABLE",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 3,
+      "id": "MD-014",
+      "disciplina_id": "02",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Atributo composto vs. multivalorado",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 4,
+      "id": "REQ-014",
+      "disciplina_id": "07",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Elicitação e conhecimento tácito",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 5,
+      "id": "SQL-REV-003",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Ordem lógica de SQL SELECT",
+      "origem": "inedita_reteste",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 6,
+      "id": "WEB-011",
+      "disciplina_id": "05",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Framework e inversão de controle",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 7,
+      "id": "SQL-REV-004",
+      "disciplina_id": "03",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "DDL, DML, DCL e TCL",
+      "origem": "inedita_reteste",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 8,
+      "id": "MD-026",
+      "disciplina_id": "02",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "FK com RESTRICT, CASCADE, SET NULL",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 9,
+      "id": "SQL-REV-005",
+      "disciplina_id": "03",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "LIKE combinação de % e _",
+      "origem": "inedita_reteste",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    },
+    {
+      "numero": 10,
+      "id": "WEB-019",
+      "disciplina_id": "05",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Migrations no EF Core",
+      "origem": "banco_adaptada",
+      "versao": "enunciado apresentado no chat, com alternativas adaptadas quando indicado"
+    }
+  ],
+  "questoes_puladas": [
+    {
+      "id": "AED-REV-002",
+      "disciplina_id": "04",
+      "posicao_na_sessao": "após a sétima resposta e antes da oitava",
+      "topico": "Sondagem linear, remoção e marcação REMOVIDO (tombstone)",
+      "resposta": null,
+      "resultado": "pulada",
+      "conta_no_denominador": false,
+      "manifestacao_usuario": "putz sei nem o que responder kkkk eu realmente preciso ver essa materia. vamos pra próxima",
+      "origem": "Reteste inédito baseado na AED-040, com h(x)=x%7; valores 10,17,24; remoção de 17; necessidade de preservar percurso de busca",
+      "nota": "Dificuldade declarada, não evidência de resposta incorreta; exige revisão e novo teste."
+    }
+  ],
+  "comparacao": {
+    "baterias": [
+      {
+        "id": "PUC-SIM-2026-11-09-01",
+        "acertos": 5,
+        "respondidas": 10,
+        "erros": 5,
+        "percentual": 50
+      },
+      {
+        "id": "PUC-SIM-2026-11-09-02",
+        "acertos": 9,
+        "respondidas": 10,
+        "erros": 1,
+        "percentual": 90
+      },
+      {
+        "id": "PUC-SIM-2026-11-09-03",
+        "acertos": 10,
+        "respondidas": 10,
+        "erros": 0,
+        "puladas": 1,
+        "percentual": 100
+      }
+    ],
+    "acumulado": {
+      "respondidas": 30,
+      "acertos": 24,
+      "erros": 6,
+      "percentual": 80
+    },
+    "variacao_percentual_pontos": {
+      "bateria_1_para_2": 40,
+      "bateria_2_para_3": 10,
+      "bateria_1_para_3": 50
+    },
+    "limites": "Baterias não foram equiparadas em dificuldade. Diversos distratores eram muito frágeis e permitiam acerto por eliminação. Questão hash pulada demonstra limitação da inferência de proficiência."
+  },
+  "lacunas_e_retestes": [
+    {
+      "id": "LAC-AED-001",
+      "disciplina_id": "04",
+      "topico": "Tabelas hash: colisões, área de reserva, sondagem linear e encadeamento externo",
+      "prioridade": "alta",
+      "estado": "lacuna_ativa_com_acerto_parcial_e_dificuldade_declarada",
+      "evidencias": [
+        {
+          "id": "AED-001",
+          "bateria": 1,
+          "resultado": "erro"
+        },
+        {
+          "id": "AED-039",
+          "bateria": 2,
+          "resultado": "erro"
+        },
+        {
+          "id": "AED-041",
+          "bateria": 3,
+          "resultado": "acerto",
+          "habilidade": "encadeamento externo"
+        },
+        {
+          "id": "AED-REV-002",
+          "bateria": 3,
+          "resultado": "pulada_sem_resposta",
+          "habilidade": "sondagem linear com exclusão"
+        }
+      ],
+      "descricao": "Acertou estrutura com listas encadeadas, mas declarou não saber resolver sondagem linear. Os erros anteriores evidenciaram dificuldade em não sobrescrever elementos colidentes e em área de reserva. Evitar concluir domínio a partir de AED-041.",
+      "artigos": [
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md",
+          "url_git": "https://github.com/leorruas/puc/blob/main/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/11.%20Tabela%20hash%20(fun%C3%A7%C3%A3o%20de%20transforma%C3%A7%C3%A3o%20e%20tratamento%20de%20colis%C3%B5es).md",
+          "url_site": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/11.%20Tabela%20hash%20(fun%C3%A7%C3%A3o%20de%20transforma%C3%A7%C3%A3o%20e%20tratamento%20de%20colis%C3%B5es)",
+          "verificado_no_repositorio": true,
+          "motivo": "Prioridade máxima: área de reserva, rehash/sondagem, exclusão e encadeamento externo. A subseção de remoção com tombstone precisa ser checada quanto à cobertura; a questão pulada pode extrapolar o texto."
+        }
+      ],
+      "estrategia_reteste": "Ler o artigo 11; conferir se remoção com tombstone está coberta antes de cobrar; resolver exemplos com desenhos de índices e sequências de inserção e busca. Usar dois retestes inéditos sem alternativas absurdas.",
+      "criterio_de_superacao": "Pelo menos dois acertos autônomos em situações diferentes de tratamento de colisões, incluindo sondagem/remoção, após assegurar cobertura do conteúdo."
+    },
+    {
+      "id": "LAC-SQL-001",
+      "disciplina_id": "03",
+      "topico": "Ordem lógica SELECT e WHERE/GROUP BY/HAVING",
+      "prioridade": "baixa",
+      "estado": "superada_provisoriamente",
+      "evidencias": [
+        {
+          "id": "SQL-018",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "SQL-037",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "SQL-REV-002",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "SQL-REV-003",
+          "bateria": 3,
+          "resultado": "acerto"
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/06. Comando SELECT.md",
+          "url_git": "https://github.com/leorruas/puc/blob/main/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/06.%20Comando%20SELECT.md",
+          "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/06.%20Comando%20SELECT",
+          "verificado_no_repositorio": true,
+          "motivo": "Referência de apoio para a ordem lógica das cláusulas."
+        }
+      ],
+      "criterio_de_superacao": "Rever retenção após intervalo, em consulta real com múltiplas operações."
+    },
+    {
+      "id": "LAC-SQL-002",
+      "disciplina_id": "03",
+      "topico": "LIKE com % e _",
+      "prioridade": "baixa",
+      "estado": "superada_provisoriamente",
+      "evidencias": [
+        {
+          "id": "SQL-REV-001",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "SQL-REV-005",
+          "bateria": 3,
+          "resultado": "acerto"
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
+          "url_git": "https://github.com/leorruas/puc/blob/main/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/07.%20Operadores%20e%20condi%C3%A7%C3%B5es%20em%20consultas%20SQL.md",
+          "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/07.%20Operadores%20e%20condi%C3%A7%C3%B5es%20em%20consultas%20SQL",
+          "verificado_no_repositorio": true,
+          "motivo": "Revisar somente se houver novo erro."
+        }
+      ],
+      "criterio_de_superacao": "Monitorar retenção em bateria posterior sem apoio."
+    },
+    {
+      "id": "LAC-SQL-003",
+      "disciplina_id": "03",
+      "topico": "Classificar DDL DML DCL TCL",
+      "prioridade": "baixa",
+      "estado": "superada_provisoriamente",
+      "evidencias": [
+        {
+          "id": "SQL-026",
+          "bateria": 2,
+          "resultado": "acerto_com_sigla_fornecida"
+        },
+        {
+          "id": "SQL-008",
+          "bateria": 3,
+          "resultado": "acerto"
+        },
+        {
+          "id": "SQL-REV-004",
+          "bateria": 3,
+          "resultado": "acerto_classificacao_integral_sem_definicoes"
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/01. O que é SQL.md",
+          "url_git": "https://github.com/leorruas/puc/blob/main/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/01.%20O%20que%20%C3%A9%20SQL.md",
+          "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/01.%20O%20que%20%C3%A9%20SQL",
+          "verificado_no_repositorio": true,
+          "motivo": "Referência de apoio às categorias."
+        }
+      ],
+      "criterio_de_superacao": "Checar retenção em cenário aplicado posterior."
+    },
+    {
+      "id": "LAC-MD-001",
+      "disciplina_id": "02",
+      "topico": "Normalização e restrições do modelo relacional",
+      "prioridade": "baixa",
+      "estado": "superada_provisoriamente_mantida",
+      "evidencias": [
+        {
+          "id": "MD-037",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "MD-036",
+          "bateria": 2,
+          "resultado": "acerto"
+        },
+        {
+          "id": "MD-014",
+          "bateria": 3,
+          "resultado": "acerto_1FN_atributos"
+        },
+        {
+          "id": "MD-026",
+          "bateria": 3,
+          "resultado": "acerto_integridade_referencial"
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "02. Modelagem de Dados/09. Integridade referencial e chave estrangeira.md",
+          "url_git": "https://github.com/leorruas/puc/blob/main/02.%20Modelagem%20de%20Dados/09.%20Integridade%20referencial%20e%20chave%20estrangeira.md",
+          "url_site": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/09.%20Integridade%20referencial%20e%20chave%20estrangeira",
+          "verificado_no_repositorio": true,
+          "motivo": "Referência do tema acertado sobre RESTRICT, CASCADE e SET NULL."
+        }
+      ],
+      "criterio_de_superacao": "Aplicar futuramente modelo com chave composta e dependência parcial sem distratores triviais."
+    }
+  ],
+  "outros_acertos": [
+    {
+      "id": "REQ-014",
+      "assunto": "elicitação de requisitos",
+      "referencia": {
+        "caminho": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+        "url_git": "https://github.com/leorruas/puc/blob/main/07.%20Engenharia%20de%20Requisitos/06.%20T%C3%A9cnicas%20de%20elicita%C3%A7%C3%A3o%20de%20requisitos.md",
+        "url_site": "https://leorruas.github.io/puc/#/07.%20Engenharia%20de%20Requisitos/06.%20T%C3%A9cnicas%20de%20elicita%C3%A7%C3%A3o%20de%20requisitos",
+        "verificado_no_repositorio": true,
+        "motivo": "Revisão opcional."
+      }
+    },
+    {
+      "id": "WEB-019",
+      "assunto": "migrations do Entity Framework Core",
+      "referencia": {
+        "caminho": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md",
+        "url_git": "https://github.com/leorruas/puc/blob/main/05.%20Desenvolvimento%20Web%20Back-End/06.%20Model%2C%20valida%C3%A7%C3%A3o%20e%20persist%C3%AAncia%20no%20ASP.NET%20Core%20MVC.md",
+        "url_site": "https://leorruas.github.io/puc/#/05.%20Desenvolvimento%20Web%20Back-End/06.%20Model%2C%20valida%C3%A7%C3%A3o%20e%20persist%C3%AAncia%20no%20ASP.NET%20Core%20MVC",
+        "verificado_no_repositorio": true,
+        "motivo": "Revisão opcional."
+      }
+    }
+  ],
+  "recomendacoes_proxima_bateria": {
+    "foco_prioritario": "Hash: ensinar e avaliar remoção com sondagem, sem contar questão não coberta como falha de aprendizagem",
+    "qualidade_dos_itens": "Trocar distratores absurdos por alternativas tecnicamente plausíveis, mantendo gabarito único; incluir questões de aplicação, código e cenários.",
+    "retestes": [
+      "Estratégias de colisão",
+      "Normalização em exemplos novos",
+      "SQL integrado"
+    ],
+    "registro_automatico_a_cada_10_respondidas": true
+  },
+  "rastreabilidade": {
+    "questoes_ineditas": [
+      "SQL-REV-003",
+      "SQL-REV-004",
+      "SQL-REV-005"
+    ],
+    "questao_pulada_inedita": "AED-REV-002",
+    "observacao": "IDs e respostas preservados com base na versão apresentada no chat, sem atribuir identidade canônica às adaptações. Os caminhos de artigos indicados foram verificados no repositório."
+  }
+}
