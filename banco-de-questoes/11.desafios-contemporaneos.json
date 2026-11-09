@@ -2,44 +2,44 @@
   {
     "id": "DES-001",
     "disciplina_id": "11",
-    "disciplina": "Desafios Contemporâneos",
-    "topico": "Indivíduo, sociedade e dilema ético contemporâneo",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Contemporaneidade e as Leituras de Modernidade Tardia, Pós-Modernidade e Hipermodernidade",
     "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
     "dificuldade": "medio",
-    "enunciado": "Nas ciências sociais e na reflexão ética sobre a sociedade contemporânea, como se compreende a relação dialética entre o indivíduo e a coletividade?",
+    "enunciado": "Ao analisar as transformações sociais, econômicas e tecnológicas dos séculos XX e XXI (especialmente após a Segunda Guerra Mundial), por que expressões como **modernidade tardia**, **pós-modernidade** e **hipermodernidade** não devem ser tratadas como simples sinônimos cronológicos?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "O indivíduo nasce completamente isolado de qualquer influência cultural, construindo sua identidade sem nenhuma dependência da linguagem ou de instituições sociais.",
-        "correta": false,
-        "diagnostico": "Erro sociológico: a subjetividade humana se constitui na e pela mediação social e pela linguagem."
+        "texto": "Porque representam **interpretações teóricas distintas sobre o presente**: a **modernidade tardia** enfatiza o prolongamento e a intensificação de processos modernos; a **pós-modernidade** questiona grandes narrativas universais de progresso e razão; e a **hipermodernidade** destaca a aceleração extrema do consumo, da velocidade e da individualização.",
+        "correta": true,
+        "diagnostico": "Correto: cada conceito funciona como uma chave interpretativa distinta sobre como nossa época se relaciona com as promessas e instituições da modernidade."
       },
       {
         "letra": "B",
-        "texto": "Há uma mútua constituição: a sociedade molda normas, valores e linguagem dos indivíduos, enquanto os sujeitos, por meio de sua agência crítica, práticas e escolhas coletivas, reproduzem ou transformam essas mesmas estruturas sociais.",
-        "correta": true,
-        "diagnostico": "Correto: visão dialética contemporânea consolidada na sociologia e antropologia (estruturação e agência social)."
+        "texto": "Porque modernidade tardia refere-se à Idade Média, pós-modernidade ao Império Romano e hipermodernidade à Grécia Antiga.",
+        "correta": false,
+        "diagnostico": "Incorreto: todas as três leituras analisam transformações recentes dos séculos XX e XXI."
       },
       {
         "letra": "C",
-        "texto": "A sociedade moderna aboliu completamente as desigualdades socioeconômicas através da mecanização robótica.",
+        "texto": "Porque são termos puramente matemáticos usados apenas para medir a velocidade de processadores.",
         "correta": false,
-        "diagnostico": "Erro empírico: desigualdades e conflitos contemporâneos persistem e são temas centrais da disciplina."
+        "diagnostico": "Incorreto: são categorias sociológicas e filosóficas sobre a vida contemporânea."
       },
       {
         "letra": "D",
-        "texto": "A cultura é um traço puramente genético determinado pelo tipo sanguíneo sem influência do meio comunitário.",
+        "texto": "Porque todas as sociedades do planeta vivem essas transformações de modo 100% idêntico e sem desigualdades.",
         "correta": false,
-        "diagnostico": "Erro antropológico: cultura é construção simbólica e histórica transmitida pelo aprendizado social, não biológica."
+        "diagnostico": "Incorreto: a intensidade dessas mudanças varia profundamente entre países, classes e grupos sociais."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Pense no idioma que você fala: você não inventou o português sozinho, aprendeu com a sociedade; mas ao falar e criar gírias ou novas palavras no dia a dia, você ajuda a transformar a própria língua para os próximos falantes.",
-      "analise_correta": "O ser humano é um ser essencialmente social. A individualidade é produto das relações sociais e, ao mesmo tempo, agente capaz de modificar o tecido social em que vive.",
+      "modelo_mental": "Imagine três críticos assistindo ao segundo tempo de uma partida muito rápida: um diz que é a continuação intensa do primeiro tempo (**modernidade tardia**), outro diz que as regras antigas deixaram de fazer sentido (**pós-modernidade**) e o terceiro destaca que tudo ficou acelerado ao extremo (**hipermodernidade**).",
+      "analise_correta": "Distinguir essas leituras evita usar rótulos sociológicos como se fossem meras datas no calendário.",
       "distratores": {
-        "A": "O mito do 'homem isolado' ignora a sociabilidade originária e a linguagem humana.",
-        "C": "Tecnologia não resolveu por si só os desafios éticos, ambientais e distributivos.",
-        "D": "O conceito antropológico de cultura rejeita o determinismo biológico ou racial."
+        "B": "Incorreto: todas as três leituras analisam transformações recentes dos séculos XX e XXI.",
+        "C": "Incorreto: são categorias sociológicas e filosóficas sobre a vida contemporânea.",
+        "D": "Incorreto: a intensidade dessas mudanças varia profundamente entre países, classes e grupos sociais."
       },
       "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
     }
@@ -47,46 +47,2206 @@
   {
     "id": "DES-002",
     "disciplina_id": "11",
-    "disciplina": "Desafios Contemporâneos",
-    "topico": "Cooperação, solidariedade e antropologia da cultura",
-    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
-    "dificuldade": "medio",
-    "enunciado": "Estudos contemporâneos de antropologia, paleoantropologia e psicologia evolutiva demonstram que, ao contrário da visão reducionista do 'egoísmo puro' ou sobrevivência exclusiva do indivíduo isolado, o diferencial evolutivo da espécie humana decorreu prioritariamente de:",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Sociedade de Consumo: Distinção entre Consumo e Consumismo",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "facil",
+    "enunciado": "Na análise da sociedade contemporânea, qual é a diferença conceitual entre **consumo** e **consumismo**?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Capacidade extrema de força bruta física individual em combate corpo a corpo contra grandes predadores sem ajuda de terceiros.",
-        "correta": false,
-        "diagnostico": "Erro factual: fisicamente o ser humano primitivo era vulnerável e mais fraco que a maioria dos grandes predadores."
+        "texto": "**Consumo** é a utilização necessária e cotidiana de bens e serviços para atender necessidades e desejos humanos; **consumismo** designa um padrão social em que comprar e substituir mercadorias assume papel excessivamente central na construção da identidade, do prestígio e da satisfação pessoal.",
+        "correta": true,
+        "diagnostico": "Correto: enquanto o consumo faz parte da reprodução material e cultural de qualquer vida humana, o consumismo transforma o ato de comprar e descartar no eixo central de valor e identidade."
       },
       {
         "letra": "B",
-        "texto": "Capacidades hiperdesenvolvidas de cooperação social, solidariedade intragrupal, compartilhamento altruísta de recursos, transmissão cultural acumulativa e divisão cooperativa de trabalho comunitário.",
-        "correta": true,
-        "diagnostico": "Correto: a inteligência social, a empatia e a cooperação mútua constituem os pilares da sobrevivência e do avanço civilizatório da humanidade."
+        "texto": "Consumo é qualquer compra feita pela internet e consumismo é qualquer compra feita em lojas físicas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o canal de compra (online ou físico) não define o conceito."
       },
       {
         "letra": "C",
-        "texto": "Rejeição voluntária ao convívio em grupos familiares, forçando cada bebê a se alimentar sozinho desde o nascimento.",
+        "texto": "Qualquer pessoa que compra alimentos ou um telefone celular é automaticamente consumista, independentemente do contexto.",
         "correta": false,
-        "diagnostico": "Erro biológico: bebês humanos têm longo período de dependência parental e cuidados aloparentais comunitários."
+        "diagnostico": "Incorreto: adquirir bens necessários (como alimento ou telefone para trabalho/comunicação) não se confunde com a pressão incessante por substituição e ostentação."
       },
       {
         "letra": "D",
-        "texto": "Eliminação sistemática de todas as manifestações artísticas, rituais e linguísticas dos assentamentos humanos.",
+        "texto": "Não existe diferença entre os dois termos nas ciências sociais.",
         "correta": false,
-        "diagnostico": "Erro cultural: a produção simbólica e ritualística fortaleceu os laços de pertencimento e solidariedade social."
+        "diagnostico": "Incorreto: a distinção é fundamental para analisar mercados contemporâneos sem moralismo raso."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Um homem sozinho na savana não sobrevivia diante de uma fera; mas uma comunidade cooperando, cuidando dos feridos, compartilhando alimento e ensinando os mais jovens venceu o ambiente mais hostil da Terra.",
-      "analise_correta": "A solidariedade e a colaboração não são fraquezas, mas as maiores vantagens adaptativas da humanidade. O cuidado comunitário com os vulneráveis é a primeira evidência antropológica da civilização.",
+      "modelo_mental": "Beber água e comprar um sapato confortável para caminhar é **consumo**; sentir que você só tem valor humano se trocar de sapato toda semana para exibir a etiqueta da moda é **consumismo**.",
+      "analise_correta": "Essa análise deve sempre considerar as estratégias de mercado e expectativas sociais, sem reduzir a avaliação moral de uma pessoa apenas ao que ela compra.",
       "distratores": {
-        "A": "A anatomia humana compensou fragilidade física com inteligência social e ferramentas.",
-        "C": "A infância prolongada dos humanos só é viável sob redes sociais densas de cooperação.",
-        "D": "Arte e rituais são expressões essenciais da coesão social comunitária."
+        "B": "Incorreto: o canal de compra (online ou físico) não define o conceito.",
+        "C": "Incorreto: adquirir bens necessários (como alimento ou telefone para trabalho/comunicação) não se confunde com a pressão incessante por substituição e ostentação.",
+        "D": "Incorreto: a distinção é fundamental para analisar mercados contemporâneos sem moralismo raso."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-003",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Plasticidade Profissional: Competência de Adaptação vs. Precarização do Trabalho",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "O conceito de **plasticidade profissional** descreve a capacidade de revisar práticas, aprender continuamente e adaptar competências em cenários de mudança. Qual tensão crítica deve ser observada ao analisar essa exigência no mundo do trabalho contemporâneo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Embora a capacidade de aprender e se adaptar seja desejável e enriquecedora, **exigir flexibilidade constante do trabalhador não resolve, por si só, problemas estruturais de precarização, desigualdade, sobrecarga de jornada ou insegurança no emprego**.",
+        "correta": true,
+        "diagnostico": "Correto: é essencial distinguir a plasticidade como *competência formativa* (autonomia intelectual e criatividade) do discurso que transfere exclusivamente para o indivíduo o peso da instabilidade econômica."
+      },
+      {
+        "letra": "B",
+        "texto": "A plasticidade profissional garante automaticamente pleno emprego e salários altos para todos os trabalhadores sem necessidade de direitos trabalhistas.",
+        "correta": false,
+        "diagnostico": "Incorreto: a adaptação individual não elimina assimetrias econômicas nem precarização estrutural."
+      },
+      {
+        "letra": "C",
+        "texto": "Adaptar conhecimentos é sempre prejudicial e ninguém deve aprender novas tecnologias ao longo da carreira.",
+        "correta": false,
+        "diagnostico": "Incorreto: aprender e renovar práticas é positivo e necessário, especialmente em áreas dinâmicas como tecnologia."
+      },
+      {
+        "letra": "D",
+        "texto": "As condições do mercado de trabalho nunca exercem pressão sobre os indivíduos.",
+        "correta": false,
+        "diagnostico": "Incorreto: o mercado impõe fortes demandas de atualização e produtividade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Saber dobrar o corpo como um ginasta (**plasticidade**) é uma habilidade excelente; mas isso não justifica que o teto da sala de trabalho seja rebaixado todos os dias até obrigar o trabalhador a viver espremido (**precarização**).",
+      "analise_correta": "Essa leitura equilibrada evita tanto o conformismo acrítico quanto a rejeição ao aprendizado contínuo.",
+      "distratores": {
+        "B": "Incorreto: a adaptação individual não elimina assimetrias econômicas nem precarização estrutural.",
+        "C": "Incorreto: aprender e renovar práticas é positivo e necessário, especialmente em áreas dinâmicas como tecnologia.",
+        "D": "Incorreto: o mercado impõe fortes demandas de atualização e produtividade."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-004",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "O Humanismo como Posição Ética e Normativa nas Decisões Profissionais",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "facil",
+    "enunciado": "Na perspectiva trabalhada na disciplina, o que caracteriza o **humanismo** contemporâneo e como ele orienta a avaliação de decisões técnicas e profissionais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Trata-se de uma **posição ética e normativa** que toma a dignidade humana, a justiça social, a redução das desigualdades e a responsabilidade socioambiental como critérios de decisão, perguntando não apenas quanto lucro ou eficiência uma escolha gera, mas **quem se beneficia, quem arca com os custos e quais impactos humanos e ecológicos produz**.",
+        "correta": true,
+        "diagnostico": "Correto: o humanismo não descreve passivamente o mundo como ele é; propõe valores éticos sobre como devemos agir considerando as pessoas e os ecossistemas dos quais dependemos."
+      },
+      {
+        "letra": "B",
+        "texto": "É uma descrição puramente estatística e neutra que afirma que apenas o lucro imediato importa nas empresas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o humanismo é explicitamente normativo (ético) e recusa reduzir decisões à mera eficiência financeira."
+      },
+      {
+        "letra": "C",
+        "texto": "É uma corrente que defende a destruição dos ecossistemas naturais em nome do consumo ilimitado.",
+        "correta": false,
+        "diagnostico": "Incorreto: a formulação contemporânea do humanismo inclui diretamente a responsabilidade socioambiental."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa que profissionais de tecnologia não têm nenhuma responsabilidade ética pelo software que constroem.",
+        "correta": false,
+        "diagnostico": "Incorreto: toda decisão técnica (como algoritmos, privacidade e acessibilidade) carrega implicações humanas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando um engenheiro projeta uma represa ou um sistema de inteligência artificial, a lente técnica pergunta *\"Funciona rápido?\"*, a lente financeira pergunta *\"Dá lucro?\"*, e a lente do **humanismo** pergunta *\"Isso respeita a dignidade das pessoas afetadas e protege o ambiente em que vivem?\"*.",
+      "analise_correta": "Esse critério ético conecta diretamente Desafios Contemporâneos à escolha de projetos alinhados aos ODS da ONU.",
+      "distratores": {
+        "B": "Incorreto: o humanismo é explicitamente normativo (ético) e recusa reduzir decisões à mera eficiência financeira.",
+        "C": "Incorreto: a formulação contemporânea do humanismo inclui diretamente a responsabilidade socioambiental.",
+        "D": "Incorreto: toda decisão técnica (como algoritmos, privacidade e acessibilidade) carrega implicações humanas."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-005",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Da Pólis Grega (Zoon Politikon) à Construção Histórica da Autonomia Moderna",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Como se transformou historicamente a compreensão do **indivíduo** desde a *pólis* grega (Aristóteles) até o Renascimento e o Iluminismo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na Grécia clássica, Aristóteles definiu o ser humano como *zoon politikon* (**animal político**, cuja realização ocorre na vida comunitária da *pólis*); ao longo de processos históricos que envolveram o cristianismo, o Renascimento e o Iluminismo, consolidou-se gradualmente a valorização moderna da **autonomia individual** e do uso crítico da razão.",
+        "correta": true,
+        "diagnostico": "Correto: indivíduos singulares sempre existiram; o que mudou historicamente foi o *lugar central atribuído à autonomia individual* nas explicações morais, políticas e sociais da modernidade."
+      },
+      {
+        "letra": "B",
+        "texto": "Pessoas singulares só passaram a existir biologicamente no século XVIII após a Revolução Francesa.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde a existência de pessoas singulares com a construção histórica do conceito moderno de indivíduo autônomo."
+      },
+      {
+        "letra": "C",
+        "texto": "Na pólis grega todos os habitantes (incluindo mulheres, estrangeiros e escravizados) tinham participação política plena e idêntica.",
+        "correta": false,
+        "diagnostico": "Incorreto: a cidadania na pólis grega era restrita e excluía mulheres, estrangeiros (*metecos*) e escravizados."
+      },
+      {
+        "letra": "D",
+        "texto": "A Idade Média foi um período de escuridão absoluta sem nenhuma produção intelectual ou reflexão sobre a consciência pessoal.",
+        "correta": false,
+        "diagnostico": "Incorreto: o rótulo de \"idade das trevas\" é uma simplificação histórica posterior que ignora a diversidade e a produção intelectual medieval."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em Aristóteles, o ser humano era visto como uma peça viva que só ganha sentido pleno dentro da comunidade (*zoon politikon*); na modernidade iluminista, o foco da câmera dá um zoom no próprio sujeito e na sua capacidade de julgar com a própria razão (**autonomia**).",
+      "analise_correta": "Reconhecer que essa ideia tem história prepara a pergunta sociológica fundamental: até que ponto agimos livremente e até que ponto somos moldados pela sociedade?",
+      "distratores": {
+        "B": "Incorreto: confunde a existência de pessoas singulares com a construção histórica do conceito moderno de indivíduo autônomo.",
+        "C": "Incorreto: a cidadania na pólis grega era restrita e excluía mulheres, estrangeiros (*metecos*) e escravizados.",
+        "D": "Incorreto: o rótulo de \"idade das trevas\" é uma simplificação histórica posterior que ignora a diversidade e a produção intelectual medieval."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-006",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Émile Durkheim: Fatos Sociais, Exterioridade e Coerção",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "facil",
+    "enunciado": "Na sociologia clássica de **Émile Durkheim**, o que são os **fatos sociais** e como eles ajudam a explicar o comportamento dos indivíduos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "São maneiras coletivas de agir, pensar e sentir (como leis, normas morais, idioma, costumes e instituições) que existem **além das preferências isoladas de cada pessoa (exterioridade)** e exercem **pressão sobre as condutas individuais (coerção)**.",
+        "correta": true,
+        "diagnostico": "Correto: Durkheim mostra como grande parte do que fazemos segue padrões coletivos já estabelecidos antes de nascermos e sustentados por sanções formais ou informais."
+      },
+      {
+        "letra": "B",
+        "texto": "São apenas opiniões íntimas que cada indivíduo inventa sozinho sem nenhuma influência da sociedade.",
+        "correta": false,
+        "diagnostico": "Incorreto: opiniões puramente idiossincráticas não configuram fatos sociais."
+      },
+      {
+        "letra": "C",
+        "texto": "São fenômenos puramente climáticos e geológicos sem relação com normas ou instituições humanas.",
+        "correta": false,
+        "diagnostico": "Incorreto: fatos sociais pertencem à vida coletiva e institucional."
+      },
+      {
+        "letra": "D",
+        "texto": "Significam que nenhum ser humano consegue jamais mudar uma regra ou discordar de um costume.",
+        "correta": false,
+        "diagnostico": "Incorreto: destacar a força das normas coletivas é um ponto de partida analítico, mas não significa que mudanças históricas ou divergências individuais sejam impossíveis."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Os **fatos sociais** de Durkheim são como a correnteza de um rio e a gramática da língua portuguesa: você não inventou a língua sozinho (ela é **exterior** a você) e, se você resolver falar palavras inventadas que ninguém entende, sofrerá a pressão imediata de não conseguir se comunicar (**coerção**).",
+      "analise_correta": "A pergunta orientadora de Durkheim é: *\"Como normas e instituições coletivas condicionam as condutas?\"*.",
+      "distratores": {
+        "B": "Incorreto: opiniões puramente idiossincráticas não configuram fatos sociais.",
+        "C": "Incorreto: fatos sociais pertencem à vida coletiva e institucional.",
+        "D": "Incorreto: destacar a força das normas coletivas é um ponto de partida analítico, mas não significa que mudanças históricas ou divergências individuais sejam impossíveis."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-007",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Karl Marx: Relações Materiais de Produção, Classes Sociais e Conflito",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é o ponto de partida de **Karl Marx** para analisar a relação entre os indivíduos e a sociedade, e qual simplificação deve ser evitada ao ler sua obra?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Marx parte das **condições materiais de existência, das relações de produção, do trabalho e dos conflitos entre classes sociais**, mostrando como a posição econômica estrutura oportunidades de vida; contudo, não se deve reduzi-lo a um determinismo mecânico, pois ele destaca também a **ação coletiva histórica** capaz de transformar essas estruturas.",
+        "correta": true,
+        "diagnostico": "Correto: para Marx, os seres humanos fazem sua própria história, mas não em condições escolhidas livremente no vazio — eles atuam a partir das condições materiais herdadas e podem transformá-las coletivamente."
+      },
+      {
+        "letra": "B",
+        "texto": "Marx analisa a sociedade apenas como o resultado de ideias abstratas flutuando fora da economia e do trabalho.",
+        "correta": false,
+        "diagnostico": "Incorreto: a crítica de Marx volta-se justamente à base material e produtiva da vida social."
+      },
+      {
+        "letra": "C",
+        "texto": "Marx afirma que não existem classes sociais nem desigualdades materiais no capitalismo.",
+        "correta": false,
+        "diagnostico": "Incorreto: a divisão em classes sociais e o conflito em torno da produção são o centro da análise marxiana."
+      },
+      {
+        "letra": "D",
+        "texto": "Marx sustenta que os seres humanos são marionetes passivas que jamais fazem greves, lutas políticas ou mudanças históricas.",
+        "correta": false,
+        "diagnostico": "Incorreto: a práxis e a transformação histórica pelas lutas sociais são fundamentais em seu pensamento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para Marx, antes de filosofar ou consumir arte, os seres humanos precisam produzir o que comem, vestem e onde moram. O modo como essa \"oficina da produção\" é organizada (quem é dono das máquinas e quem vende seu trabalho) molda profundamente a vida social, mas os próprios trabalhadores podem se organizar para mudar as regras da oficina.",
+      "analise_correta": "A pergunta orientadora de Marx é: *\"Como as condições materiais de produção formam e podem transformar a vida social?\"*.",
+      "distratores": {
+        "B": "Incorreto: a crítica de Marx volta-se justamente à base material e produtiva da vida social.",
+        "C": "Incorreto: a divisão em classes sociais e o conflito em torno da produção são o centro da análise marxiana.",
+        "D": "Incorreto: a práxis e a transformação histórica pelas lutas sociais são fundamentais em seu pensamento."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-008",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Max Weber: Ação Social e Compreensão do Sentido Subjetivo",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Na sociologia compreensiva de **Max Weber**, o que define uma **ação social** e o que é necessário para o sociólogo compreendê-la?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma **ação social** é toda conduta à qual o próprio agente atribui um **sentido subjetivo** e que se orienta pelo comportamento de outras pessoas; compreendê-la exige investigar os **significados, motivações e valores** em jogo, sem ignorar as instituições e relações de poder do contexto.",
+        "correta": true,
+        "diagnostico": "Correto: Weber coloca a lente sobre o sentido que os sujeitos dão ao que fazem quando interagem com os outros, articulando motivações individuais e contextos históricos/institucionais."
+      },
+      {
+        "letra": "B",
+        "texto": "É qualquer reflexo biológico involuntário (como piscar o olho por causa do vento) sem intenção nem relação com outras pessoas.",
+        "correta": false,
+        "diagnostico": "Incorreto: um ato puramente reflexo ou sem orientação para outros não é ação social em sentido weberiano."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa que Weber ignora a existência da sociedade e acha que cada pessoa vive em uma ilha deserta sem regras.",
+        "correta": false,
+        "diagnostico": "Incorreto: Weber analisa profundamente instituições, burocracia, religião, economia e dominação, mas parte do sentido das ações."
+      },
+      {
+        "letra": "D",
+        "texto": "É um fato puramente estatístico em que o sentido atribuído pelas pessoas às suas escolhas não tem importância.",
+        "correta": false,
+        "diagnostico": "Incorreto: a interpretação do sentido (*Verstehen*) é justamente o núcleo da sociologia weberiana."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se duas pessoas abrem um guarda-chuva ao mesmo tempo só porque começou a chover, isso é uma reação ao clima; mas se alguém entrega um guarda-chuva para proteger um colega ou usa um traje específico para demonstrar respeito em uma cerimônia, há um **sentido orientado ao outro** — isso é **ação social** para Weber.",
+      "analise_correta": "Comparar Durkheim (normas coletivas), Marx (relações materiais/classes) e Weber (sentido da ação) oferece três lentes clássicas complementares.",
+      "distratores": {
+        "B": "Incorreto: um ato puramente reflexo ou sem orientação para outros não é ação social em sentido weberiano.",
+        "C": "Incorreto: Weber analisa profundamente instituições, burocracia, religião, economia e dominação, mas parte do sentido das ações.",
+        "D": "Incorreto: a interpretação do sentido (*Verstehen*) é justamente o núcleo da sociologia weberiana."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-009",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Norbert Elias: Configuração (Figuração) e Redes de Interdependência",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Como o sociólogo **Norbert Elias**, por meio do conceito de **configuração (ou figuração)**, supera a falsa oposição entre \"indivíduo isolado\" e \"sociedade como coisa externa\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Elias mostra que a sociedade não é um bloco separado das pessoas, nem o indivíduo é um átomo isolado: ambos formam **configurações (redes dinâmicas de pessoas interdependentes)**, nas quais as escolhas de cada participante dependem dos demais e alteram o equilíbrio da rede.",
+        "correta": true,
+        "diagnostico": "Correto: na sociologia figuracional de Elias, indivíduo e sociedade são duas dimensões indissociáveis de redes mutáveis de interdependência (como famílias, escolas, cidades e Estados)."
+      },
+      {
+        "letra": "B",
+        "texto": "Elias afirma que a sociedade é um prédio de concreto vazio onde os indivíduos nunca se encontram.",
+        "correta": false,
+        "diagnostico": "Incorreto: Elias critica justamente a visão que trata a sociedade como um objeto externo separado das pessoas."
+      },
+      {
+        "letra": "C",
+        "texto": "Elias defende que cada pessoa é totalmente autossuficiente e não depende de ninguém para falar, trabalhar ou viver.",
+        "correta": false,
+        "diagnostico": "Incorreto: desde o nascimento até a vida adulta, somos constituídos em cadeias de interdependência."
+      },
+      {
+        "letra": "D",
+        "texto": "Configuração para Elias é o painel de controle de hardware do sistema operacional Windows.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se do conceito sociológico de *figuração/configuração*."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Elias compara a sociedade a um **jogo coletivo (como xadrez ou futebol)** ou a uma **dança de salão**: você não consegue apontar para \"o jogo\" separado dos jogadores, mas nenhum jogador consegue fazer uma jogada sem levar em conta o movimento dos outros em campo.",
+      "analise_correta": "Essa imagem desmonta de vez a ideia de que precisamos escolher entre \"só o indivíduo existe\" ou \"só a sociedade manda\".",
+      "distratores": {
+        "B": "Incorreto: Elias critica justamente a visão que trata a sociedade como um objeto externo separado das pessoas.",
+        "C": "Incorreto: desde o nascimento até a vida adulta, somos constituídos em cadeias de interdependência.",
+        "D": "Incorreto: trata-se do conceito sociológico de *figuração/configuração*."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-010",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Pierre Bourdieu: Conceitos de Habitus e Campo",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na sociologia relacional de **Pierre Bourdieu**, como operam os conceitos de **habitus** e **campo**, e por que o *habitus* não deve ser confundido com um \"destino imutável\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **habitus** é um sistema de disposições duráveis aprendidas socialmente na trajetória da pessoa (que orienta percepções, gostos e modos de agir), e o **campo** é um espaço social estruturado de posições, regras e disputas (como o campo científico, artístico ou profissional); o *habitus* **não é um destino rígido**, pois novas experiências, reflexões e contextos podem modificar disposições.",
+        "correta": true,
+        "diagnostico": "Correto: o *habitus* interioriza experiências sociais passadas funcionando como uma \"bússola prática\", mas preserva margem de criação e transformação dentro das lutas de cada *campo*."
+      },
+      {
+        "letra": "B",
+        "texto": "Habitus é um gene biológico hereditário que programa 100% das frases que uma pessoa dirá na vida, e campo é uma fazenda agrícola.",
+        "correta": false,
+        "diagnostico": "Incorreto: o *habitus* é socialmente adquirido pela socialização, não genético."
+      },
+      {
+        "letra": "C",
+        "texto": "Habitus significa apenas um vício individual (como roer unhas) sem relação com a classe ou socialização.",
+        "correta": false,
+        "diagnostico": "Incorreto: na sociologia de Bourdieu, *habitus* é muito mais amplo que \"hábito\" comum, abrangendo esquemas de percepção e apreciação ligados à trajetória social."
+      },
+      {
+        "letra": "D",
+        "texto": "Campo e configuração de Elias são palavras rigorosamente sinônimas que significam ausência de disputas ou desigualdades.",
+        "correta": false,
+        "diagnostico": "Incorreto: embora ambos sejam relacionais, o conceito de *campo* de Bourdieu enfatiza posições hierárquicas e disputas por capitais específicos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se a vida social é um jogo num estádio (**campo** com suas regras e disputas), o **habitus** é o \"senso de jogo\" que o atleta desenvolveu desde a infância no seu bairro: ele age com naturalidade seguindo o estilo que aprendeu, mas ainda pode treinar novas jogadas e até questionar as regras do campeonato.",
+      "analise_correta": "Compreender o *habitus* explica por que escolhas que parecem puramente \"gosto pessoal espontâneo\" têm forte raiz na história social de cada um.",
+      "distratores": {
+        "B": "Incorreto: o *habitus* é socialmente adquirido pela socialização, não genético.",
+        "C": "Incorreto: na sociologia de Bourdieu, *habitus* é muito mais amplo que \"hábito\" comum, abrangendo esquemas de percepção e apreciação ligados à trajetória social.",
+        "D": "Incorreto: embora ambos sejam relacionais, o conceito de *campo* de Bourdieu enfatiza posições hierárquicas e disputas por capitais específicos."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-011",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Pierre Bourdieu: Capitais Econômico, Cultural, Social e Simbólico",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "medio",
+    "enunciado": "Para explicar por que pessoas com talentos semelhantes encontram oportunidades desiguais nos diferentes campos sociais, **Pierre Bourdieu** amplia o conceito de **capital** para além do dinheiro (**capital econômico**). Quais são as outras três formas fundamentais de capital que ele analisa?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Capital cultural** (conhecimentos, saberes, repertórios linguísticos, livros e diplomas/credenciais escolares), **capital social** (redes de relações, contatos e pertencimento a grupos que oferecem suporte e oportunidades) e **capital simbólico** (prestígio, honra, legitimidade e reconhecimento social atribuído a alguém).",
+        "correta": true,
+        "diagnostico": "Correto: em Bourdieu, a posição de um agente no espaço social depende do volume e da composição de seus capitais econômico, cultural, social e simbólico."
+      },
+      {
+        "letra": "B",
+        "texto": "Capital geográfico (cidades capitais de estados), capital bancário de juros compostos e capital astrológico.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde os conceitos sociológicos de Bourdieu com termos geográficos/financeiros."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas o dinheiro em espécie guardado no banco, negando qualquer importância da escolaridade ou da rede de contatos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a grande contribuição de Bourdieu foi justamente mostrar que a desigualdade se reproduz também por vias culturais, sociais e simbólicas, não apenas financeiras."
+      },
+      {
+        "letra": "D",
+        "texto": "Capital cultural em Bourdieu significa exatamente a mesma coisa que o conceito antropológico geral de cultura de Tylor.",
+        "correta": false,
+        "diagnostico": "Incorreto: atenção a esse ponto de confusão! Na antropologia, *cultura* abrange todo modo de vida humano; já o *capital cultural* em Bourdieu refere-se a saberes e credenciais desigualmente distribuídos e valorizados em relações de poder."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Duas pessoas recém-formadas entram no mercado de TI: além da conta bancária (**capital econômico**), o domínio de línguas e certificações (**capital cultural**), conhecer profissionais que indiquem vagas — como a mentoria do NODO tenta suprir! — (**capital social**) e o prestígio da instituição (**capital simbólico**) pesam diretamente na corrida.",
+      "analise_correta": "Veja como o projeto integrador NODO (para a persona Lucas Mendes, \"estudante sem rede de contatos\") atua exatamente democratizando **capital social** e **capital cultural**!",
+      "distratores": {
+        "B": "Incorreto: confunde os conceitos sociológicos de Bourdieu com termos geográficos/financeiros.",
+        "C": "Incorreto: a grande contribuição de Bourdieu foi justamente mostrar que a desigualdade se reproduz também por vias culturais, sociais e simbólicas, não apenas financeiras.",
+        "D": "Incorreto: atenção a esse ponto de confusão! Na antropologia, *cultura* abrange todo modo de vida humano; já o *capital cultural* em Bourdieu refere-se a saberes e credenciais desigualmente distribuídos e valorizados em relações de poder."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-012",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Distinção entre Configuração (Elias) e Campo (Bourdieu)",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "dificil",
+    "enunciado": "Embora tanto **Norbert Elias** quanto **Pierre Bourdieu** defendam uma visão relacional de interdependência entre indivíduo e sociedade, qual nuance distingue o conceito de **configuração** (Elias) do conceito de **campo** (Bourdieu)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **configuração** de Elias enfatiza as **redes mutáveis de interdependência recíproca** entre as pessoas ao longo de processos históricos; já o **campo** de Bourdieu destaca **espaços relativamente autônomos e estruturados de posições e disputas** pela distribuição desigual de capitais específicos.",
+        "correta": true,
+        "diagnostico": "Correto: são ferramentas analíticas primas e complementares, mas com focos próprios: Elias olha para os elos móveis da teia de interdependência; Bourdieu mapeia a topografia de poder e os capitais em disputa dentro de cada arena social."
+      },
+      {
+        "letra": "B",
+        "texto": "Elias nega a existência de relações humanas e Bourdieu nega a existência de desigualdades sociais.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambos são pilares da sociologia relacional e histórica."
+      },
+      {
+        "letra": "C",
+        "texto": "Configuração aplica-se apenas à Idade Antiga e campo aplica-se apenas ao futuro.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambos analisam processos históricos e contemporâneos."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambos os conceitos afirmam que os indivíduos nunca podem transformar as estruturas em que vivem.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambos reconhecem que os indivíduos são formados nas relações e, simultaneamente, participam de sua reprodução ou transformação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Elias olha para a teia elástica de fios que ligam todos os dançarinos no salão (**configuração**); Bourdieu olha para o salão como um campeonato onde alguns competidores entram com sapatos melhores, conhecem os juízes e disputam o troféu de prestígio (**campo**).",
+      "analise_correta": "Essa precisão conceitual é destacada explicitamente na seção de pontos de confusão do Artigo 01.",
+      "distratores": {
+        "B": "Incorreto: ambos são pilares da sociologia relacional e histórica.",
+        "C": "Incorreto: ambos analisam processos históricos e contemporâneos.",
+        "D": "Incorreto: ambos reconhecem que os indivíduos são formados nas relações e, simultaneamente, participam de sua reprodução ou transformação."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-013",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Síntese da Relação de Mão Dupla entre Indivíduo e Sociedade",
+    "artigo_origem": "01. Indivíduo e sociedade no mundo contemporâneo.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual conclusão sintetiza adequadamente a relação entre **indivíduo e sociedade** ao final do Artigo 01?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Existe uma **relação de interdependência e mão dupla**: os indivíduos formam suas disposições, linguagem e escolhas dentro de condições históricas, culturais e institucionais, mas suas ações individuais e coletivas também mantêm, tensionam e transformam essas mesmas estruturas.",
+        "correta": true,
+        "diagnostico": "Correto: superar os extremos do individualismo ingênuo (\"tudo depende só de querer\") e do determinismo absoluto (\"nada pode ser feito\") é a grande conquista das ciências sociais."
+      },
+      {
+        "letra": "B",
+        "texto": "O indivíduo é 100% livre e as regras sociais, econômicas e culturais não exercem nenhuma influência sobre suas oportunidades.",
+        "correta": false,
+        "diagnostico": "Incorreto: ignora fatos sociais, condições materiais, configurações e distribuição de capitais."
+      },
+      {
+        "letra": "C",
+        "texto": "A sociedade é uma ditadura mecânica absoluta que impede qualquer pensamento crítico ou mudança histórica.",
+        "correta": false,
+        "diagnostico": "Incorreto: ignora a agência humana, o sentido da ação e a transformação histórica."
+      },
+      {
+        "letra": "D",
+        "texto": "Indivíduo e sociedade não possuem nenhuma relação entre si.",
+        "correta": false,
+        "diagnostico": "Incorreto: um não existe sem o outro."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Nós somos ao mesmo tempo **atores e coautores** da peça social: quando nascemos, o palco e o roteiro já estavam em andamento (sociedade nos formando), mas à medida que atuamos juntos, podemos reescrever cenas inteiras para as próximas gerações (indivíduos transformando a sociedade).",
+      "analise_correta": "Essa base prepara o terreno para discutir competição e cooperação no Artigo 02.",
+      "distratores": {
+        "B": "Incorreto: ignora fatos sociais, condições materiais, configurações e distribuição de capitais.",
+        "C": "Incorreto: ignora a agência humana, o sentido da ação e a transformação histórica.",
+        "D": "Incorreto: um não existe sem o outro."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/01. Indivíduo e sociedade no mundo contemporâneo.md"
+    }
+  },
+  {
+    "id": "DES-014",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Distinção Quádrupla: Interesse Próprio, Egoísmo, Competição e Cooperação",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "facil",
+    "enunciado": "Na análise filosófica e sociológica da motivação humana, por que é um erro tratar **interesse próprio**, **egoísmo** e **competição** como sinônimos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque **interesse próprio** é buscar objetivos ou condições favoráveis para si (sem necessariamente prejudicar ninguém); **egoísmo** é priorizar os próprios interesses desconsiderando ou lesando interesses alheios que mereceriam respeito; e **competição** é a disputa por recursos ou posições escassas (que pode ocorrer segundo regras justas e coexistir com a **cooperação**).",
+        "correta": true,
+        "diagnostico": "Correto: separar esses quatro conceitos desfaz o argumento falacioso de que \"como todo ser humano cuida de si (interesse próprio), então somos todos egoístas implacáveis\"."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque buscar um emprego melhor ou cuidar da própria saúde é sempre um ato imoral de egoísmo destrutivo.",
+        "correta": false,
+        "diagnostico": "Incorreto: cuidar do próprio bem-estar ou carreira é interesse próprio legítimo, não egoísmo."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque toda vez que duas pessoas competem em um esporte ou processo seletivo elas odeiam uma à outra e violam a lei.",
+        "correta": false,
+        "diagnostico": "Incorreto: a competição regrada não implica hostilidade moral nem egoísmo."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque cooperar exige anular 100% de qualquer benefício pessoal.",
+        "correta": false,
+        "diagnostico": "Incorreto: a cooperação frequentemente gera benefícios mútuos tanto para o grupo quanto para cada participante."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Almoçar para saciar a própria fome é **interesse próprio**; tomar o prato da mão de quem está ao lado é **egoísmo**; disputar uma corrida de 100 metros rasos na raia demarcada é **competição**; e revezar o bastão com sua equipe na corrida 4x100 é **cooperação**.",
+      "analise_correta": "A mesma pessoa pode perfeitamente competir em um concurso pela manhã e cooperar intensamente com seus colegas de projeto à tarde.",
+      "distratores": {
+        "B": "Incorreto: cuidar do próprio bem-estar ou carreira é interesse próprio legítimo, não egoísmo.",
+        "C": "Incorreto: a competição regrada não implica hostilidade moral nem egoísmo.",
+        "D": "Incorreto: a cooperação frequentemente gera benefícios mútuos tanto para o grupo quanto para cada participante."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-015",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Egoísmo Psicológico (Tese Descritiva) vs. Egoísmo Ético (Tese Normativa)",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Na filosofia moral, qual é a diferença fundamental entre o **egoísmo psicológico** e o **egoísmo ético**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **egoísmo psicológico** é uma tese **descritiva** que afirma que todas as ações humanas buscam, em última instância, o benefício de quem age; já o **egoísmo ético** é uma tese **normativa** que sustenta que agir para maximizar o próprio interesse seria o critério do que é moralmente correto fazer.",
+        "correta": true,
+        "diagnostico": "Correto: na filosofia, é crucial distinguir o plano *descritivo* (\"como as pessoas de fato agem / o que é\") do plano *normativo* (\"como as pessoas deveriam agir / o que deve ser\")."
+      },
+      {
+        "letra": "B",
+        "texto": "O egoísmo psicológico é uma lei aprovada pelo Congresso e o egoísmo ético é um diagnóstico médico hospitalar.",
+        "correta": false,
+        "diagnostico": "Incorreto: são teses filosóficas sobre motivação humana e moralidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos dizem exatamente a mesma coisa: que o ser humano nunca sente empatia nem interesse próprio.",
+        "correta": false,
+        "diagnostico": "Incorreto: um tenta explicar a causa psicológica da ação, enquanto o outro propõe uma norma ética de conduta."
+      },
+      {
+        "letra": "D",
+        "texto": "O egoísmo ético descreve como os animais agem na floresta e o egoísmo psicológico proíbe o interesse próprio.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte os domínios das duas teses."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O **egoísmo psicológico** tenta ler a mente e diz: *\"No fundo, todo mundo só faz qualquer coisa pensando em si mesmo\"* (descrição). O **egoísmo ético** tenta ditar uma regra moral e diz: *\"Você tem o dever moral de pensar primeiro na sua vantagem\"* (norma). E nenhum dos dois fica provado só porque vemos pessoas buscando seus interesses no dia a dia!",
+      "analise_correta": "Inclusive, se o egoísmo psicológico fosse uma lei natural inevitável (se fosse impossível agir de outro modo), nem faria sentido criar uma regra mandando ser egoísta.",
+      "distratores": {
+        "B": "Incorreto: são teses filosóficas sobre motivação humana e moralidade.",
+        "C": "Incorreto: um tenta explicar a causa psicológica da ação, enquanto o outro propõe uma norma ética de conduta.",
+        "D": "Incorreto: inverte os domínios das duas teses."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-016",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Burguesia, Propriedade Privada e Concorrência na Sociedade Moderna",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Como a ascensão histórica da **burguesia** e do capitalismo moderno transformou o papel da **concorrência**, e por que a competição econômica não é uma \"garantia automática de progresso social\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A transição das relações feudais para relações mercantis e salariais expandiu o mercado e a disputa econômica; embora a **concorrência** possa estimular inovação técnica e eficiência, seus efeitos reais dependem das **instituições, distribuição de poder e direitos trabalhistas**, podendo também gerar concentração de riqueza, exploração e precarização.",
+        "correta": true,
+        "diagnostico": "Correto: a competição é um mecanismo histórico de organização econômica cujos resultados dependem das regras do jogo (acesso ao mercado, proteção legal, poder de barganha)."
+      },
+      {
+        "letra": "B",
+        "texto": "O surgimento da burguesia eliminou instantaneamente toda forma de desigualdade, exploração e dependência no mundo.",
+        "correta": false,
+        "diagnostico": "Incorreto: a transição foi longa e desigual, mantendo novas formas de exploração e assimetria de poder."
+      },
+      {
+        "letra": "C",
+        "texto": "A concorrência de mercado sempre produz benefícios iguais para todos sem precisar de leis, regulação ou proteção social.",
+        "correta": false,
+        "diagnostico": "Incorreto: sem regras e garantias institucionais, a competição irrestrita pode levar a monopólios e degradação das condições de trabalho."
+      },
+      {
+        "letra": "D",
+        "texto": "Na sociedade feudal a concorrência salarial já era idêntica à das plataformas digitais do século XXI.",
+        "correta": false,
+        "diagnostico": "Incorreto: o mundo feudal baseava-se em obrigações servis e estamentos tradicionais, não em mercados de trabalho assalariado generalizados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A concorrência econômica é como o fogo no fogão: dentro de uma panela controlada por regras de segurança e distribuição justa, ela cozinha o alimento mais rápido (inovação); mas deixada solta sem controle, pode queimar a cozinha inteira (precarização e monopólio).",
+      "analise_correta": "Isso mostra que mercados são instituições socialmente construídas, e não forças da natureza.",
+      "distratores": {
+        "B": "Incorreto: a transição foi longa e desigual, mantendo novas formas de exploração e assimetria de poder.",
+        "C": "Incorreto: sem regras e garantias institucionais, a competição irrestrita pode levar a monopólios e degradação das condições de trabalho.",
+        "D": "Incorreto: o mundo feudal baseava-se em obrigações servis e estamentos tradicionais, não em mercados de trabalho assalariado generalizados."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-017",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Adam Smith: Interesse Próprio nas Trocas vs. Simpatia e Sentimentos Morais",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual redução equivocada costuma ser feita sobre o pensamento de **Adam Smith** quando se discute o papel do **interesse próprio** na economia?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Costuma-se reduzir Smith à ideia de que o egoísmo implacável seria a única motivação humana; na verdade, embora ele tenha mostrado como o **interesse próprio** coordena trocas no mercado (sem depender de afeto pessoal entre comprador e vendedor), sua obra filosófica também atribui papel central à **simpatia, à empatia e ao julgamento moral** das condutas.",
+        "correta": true,
+        "diagnostico": "Correto: autor tanto de *A Riqueza das Nações* quanto da *Teoria dos Sentimentos Morais*, Smith distinguia o interesse próprio legítimo nas trocas mercantis do egoísmo predatório, valorizando a justiça e a simpatia moral."
+      },
+      {
+        "letra": "B",
+        "texto": "Adam Smith defendia o fim do comércio e o retorno ao feudalismo agrário.",
+        "correta": false,
+        "diagnostico": "Incorreto: Smith é um dos principais pensadores clássicos da economia moderna e da divisão do trabalho."
+      },
+      {
+        "letra": "C",
+        "texto": "Adam Smith afirmava que é preciso ser amigo íntimo do padeiro para conseguir comprar pão.",
+        "correta": false,
+        "diagnostico": "Incorreto: seu famoso exemplo do padeiro, do açougueiro e do cervejeiro mostra exatamente que as trocas funcionam pelo interesse recíproco sem exigir amizade prévia."
+      },
+      {
+        "letra": "D",
+        "texto": "Adam Smith nunca escreveu sobre moralidade ou sentimentos humanos, dedicando-se apenas à biologia marinha.",
+        "correta": false,
+        "diagnostico": "Incorreto: Smith era professor de Filosofia Moral."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você compra pão na padaria, você quer o pão e o padeiro quer receber pelo trabalho dele (**interesse próprio** coordenando a troca sem que vocês precisem ser parentes). Mas, para Adam Smith, essa feira só funciona bem se houver leis justas e se as pessoas forem capazes de se colocar no lugar do outro (**simpatia moral**).",
+      "analise_correta": "Mais uma vez, comprova-se que interesse próprio nas trocas não é sinônimo de defender a maldade ou a indiferença moral.",
+      "distratores": {
+        "B": "Incorreto: Smith é um dos principais pensadores clássicos da economia moderna e da divisão do trabalho.",
+        "C": "Incorreto: seu famoso exemplo do padeiro, do açougueiro e do cervejeiro mostra exatamente que as trocas funcionam pelo interesse recíproco sem exigir amizade prévia.",
+        "D": "Incorreto: Smith era professor de Filosofia Moral."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-018",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "O Conceito de Estado de Natureza e Contrato Social como Experimento de Pensamento",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "facil",
+    "enunciado": "Na filosofia política moderna (Hobbes, Locke e Rousseau), o que são o **estado de natureza** e o **contrato social**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **estado de natureza** é um **experimento teórico de pensamento** que pergunta como seriam as relações humanas na ausência de autoridade política instituída; o **contrato social** é o modelo teórico usado para explicar e justificar racionalmente por que e sob quais condições é legítimo constituir um governo civil.",
+        "correta": true,
+        "diagnostico": "Correto: os contratualistas não estavam fazendo escavação arqueológica pré-histórica, mas construindo um modelo lógico: *\"Se tirássemos o Estado da equação, que problemas surgiriam e que tipo de poder político seria legítimo para resolvê-los?\"*."
+      },
+      {
+        "letra": "B",
+        "texto": "São registros arqueológicos comprovados de um documento em papel assinado em cartório pelos primeiros hominídeos há 2 milhões de anos.",
+        "correta": false,
+        "diagnostico": "Incorreto: não se trata de um evento histórico literal documentado, mas de uma hipótese filosófica normativa/analítica."
+      },
+      {
+        "letra": "C",
+        "texto": "São teorias que demonstram que todos os filósofos modernos concordavam 100% sobre a maldade humana.",
+        "correta": false,
+        "diagnostico": "Incorreto: Hobbes, Locke e Rousseau divergem profundamente sobre como seria o estado de natureza e qual governo é legítimo."
+      },
+      {
+        "letra": "D",
+        "texto": "Significam que os seres humanos devem abandonar as cidades e viver isolados nas florestas sem leis.",
+        "correta": false,
+        "diagnostico": "Incorreto: todos os três buscam fundamentar a ordem política civil, embora com desenhos institucionais muito diferentes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O **estado de natureza** funciona na filosofia como o \"teste de simulação de gravidade zero\" na física: você imagina mentalmente o que aconteceria se desligasse a gravidade das leis e do governo por um instante, para entender exatamente para que serve o Estado (**contrato social**).",
+      "analise_correta": "A partir dessa mesma pergunta-base, Hobbes, Locke e Rousseau constroem três respostas clássicas distintas.",
+      "distratores": {
+        "B": "Incorreto: não se trata de um evento histórico literal documentado, mas de uma hipótese filosófica normativa/analítica.",
+        "C": "Incorreto: Hobbes, Locke e Rousseau divergem profundamente sobre como seria o estado de natureza e qual governo é legítimo.",
+        "D": "Incorreto: todos os três buscam fundamentar a ordem política civil, embora com desenhos institucionais muito diferentes."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-019",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Thomas Hobbes: Insegurança, Risco de Conflito e Soberania para Garantir a Paz",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Na formulação contratualista de **Thomas Hobbes**, por que o estado de natureza tende a uma condição de insegurança e guerra, e qual é a finalidade do contrato social?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para Hobbes, na ausência de um poder comum capaz de arbitrar disputas e garantir a segurança, a **desconfiança mútua, a competição por recursos e o temor de ataques preventivos** colocam todos sob risco constante de conflito; o contrato social institui uma **autoridade soberana forte** cuja finalidade primordial é assegurar a **paz e a autopreservação**.",
+        "correta": true,
+        "diagnostico": "Correto: em Hobbes (*Leviatã*), o medo da morte violenta e o cálculo racional de autopreservação levam os indivíduos a pactuarem a submissão a um poder soberano que impeça a guerra de todos contra todos."
+      },
+      {
+        "letra": "B",
+        "texto": "Para Hobbes, no estado de natureza reina a paz perpétua e o Estado só é criado para organizar festas culturais.",
+        "correta": false,
+        "diagnostico": "Incorreto: sem poder comum, para Hobbes, a insegurança transforma o estado de natureza em estado de guerra latente ou aberta."
+      },
+      {
+        "letra": "C",
+        "texto": "Hobbes defende que qualquer cidadão pode desobedecer às leis sempre que tiver vontade, sem necessidade de soberano.",
+        "correta": false,
+        "diagnostico": "Incorreto: Hobbes defende uma soberania indivisível e incontestável para evitar o retorno à guerra civil."
+      },
+      {
+        "letra": "D",
+        "texto": "Hobbes afirma que os seres humanos não possuem razão nem desejo de autopreservação.",
+        "correta": false,
+        "diagnostico": "Incorreto: é justamente a razão calculando os meios de autopreservação que aponta as leis da natureza rumo à paz."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Imagine um cruzamento de trânsito movimentado onde não existem semáforos, guardas nem código de trânsito: mesmo que nem todo motorista seja perverso, o medo de que o outro avance o sinal faz todo mundo acelerar ou bloquear a via, gerando o caos (**Hobbes**). O soberano é o semáforo com multa que devolve a previsibilidade.",
+      "analise_correta": "Note a precisão do artigo: o argumento de Hobbes baseia-se na estrutura de insegurança sem árbitro e na busca de autopreservação, não numa caricatura infantil de \"maldade pura sem razão\".",
+      "distratores": {
+        "B": "Incorreto: sem poder comum, para Hobbes, a insegurança transforma o estado de natureza em estado de guerra latente ou aberta.",
+        "C": "Incorreto: Hobbes defende uma soberania indivisível e incontestável para evitar o retorno à guerra civil.",
+        "D": "Incorreto: é justamente a razão calculando os meios de autopreservação que aponta as leis da natureza rumo à paz."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-020",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "John Locke: Lei Natural, Direitos Inalienáveis e Governo por Consentimento",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Em que a visão de **John Locke** sobre o estado de natureza e a legitimidade do governo diverge fundamentalmente da visão de Thomas Hobbes?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Locke **distingue o estado de natureza do estado de guerra**: mesmo antes do governo civil, os indivíduos são regidos pela **lei natural (razão)** e possuem direitos à **vida, liberdade e propriedade**; como faltam juízes imparciais para resolver disputas, institui-se por **consentimento** um governo limitado para proteger esses direitos, podendo ser contestado se violar sua finalidade.",
+        "correta": true,
+        "diagnostico": "Correto: pai do liberalismo político moderno, Locke sustenta que os direitos naturais precedem o Estado; o governo é um fiduciário (contratado pelo consentimento dos governados) para arbitrar conflitos com leis conhecidas e proteger direitos."
+      },
+      {
+        "letra": "B",
+        "texto": "Locke afirma que os indivíduos não possuem nenhum direito antes do Estado e que o rei tem poder absoluto ilimitado.",
+        "correta": false,
+        "diagnostico": "Incorreto: essa defesa do poder soberano absoluto aproxima-se de Hobbes, sendo criticada por Locke."
+      },
+      {
+        "letra": "C",
+        "texto": "Locke considera que a propriedade privada é a origem de toda corrupção e deve ser abolida imediatamente.",
+        "correta": false,
+        "diagnostico": "Incorreto: a crítica às desigualdades geradas por certas formas de propriedade aparece em Rousseau, enquanto Locke defende a propriedade fundada no trabalho."
+      },
+      {
+        "letra": "D",
+        "texto": "Locke concorda com Hobbes que o estado de natureza é idêntico a uma guerra total sem nenhuma regra moral.",
+        "correta": false,
+        "diagnostico": "Incorreto: para Locke, o estado de natureza é em princípio de paz relativa sob a lei natural, mas instável pela ausência de um juiz comum imparcial (\"cada um sendo juiz em causa própria\")."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para Locke, no estado de natureza as pessoas já são donas legítimas de suas casas e direitos, mas quando dois vizinhos brigam pela cerca, cada um puxa a brasa para o seu lado por falta de um juiz neutro. Então eles contratam um **árbitro constitucional com regras claras (governo civil)** — e se esse árbitro tentar roubar as casas deles, pode ser demitido!",
+      "analise_correta": "Essa matriz lockeana fundamentou a separação de poderes e as declarações modernas de direitos.",
+      "distratores": {
+        "B": "Incorreto: essa defesa do poder soberano absoluto aproxima-se de Hobbes, sendo criticada por Locke.",
+        "C": "Incorreto: a crítica às desigualdades geradas por certas formas de propriedade aparece em Rousseau, enquanto Locke defende a propriedade fundada no trabalho.",
+        "D": "Incorreto: para Locke, o estado de natureza é em princípio de paz relativa sob a lei natural, mas instável pela ausência de um juiz comum imparcial (\"cada um sendo juiz em causa própria\")."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-021",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Jean-Jacques Rousseau: Amour de Soi, Pitié, Amour-Propre e Desigualdade Social",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como **Jean-Jacques Rousseau** analisa os impulsos humanos no estado de natureza (*amour de soi* e *pitié*) e a transformação provocada por certas instituições sociais (*amour-propre*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para Rousseau, no estado de natureza a **autopreservação (*amour de soi*)** convive com a **compaixão/repugnância ao sofrimento alheio (*pitié*)**; é no desenvolvimento histórico da vida social, das comparações por prestígio/reconhecimento (**amour-propre**) e de certas relações de propriedade que se intensificam a competição vaidosa e as desigualdades artificiais.",
+        "correta": true,
+        "diagnostico": "Correto: Rousseau faz uma distinção finíssima entre o cuidado natural de existir (*amour de soi*, temperado pela compaixão *pitié*) e o orgulho comparativo nascido em sociedade (*amour-propre*, que deseja ser superior aos outros), buscando no *Contrato Social* uma associação política legítima que concilie liberdade e igualdade."
+      },
+      {
+        "letra": "B",
+        "texto": "Rousseau afirma que o ser humano nasce com ódio mortal aos seus semelhantes e que a sociedade elimina toda forma de competição.",
+        "correta": false,
+        "diagnostico": "Incorreto: Rousseau critica justamente Hobbes por projetar no \"homem natural\" paixões competitivas e vaidades que só surgiram dentro da sociedade."
+      },
+      {
+        "letra": "C",
+        "texto": "Para Rousseau, *amour de soi* e *amour-propre* são palavras sinônimas que significam egoísmo genético.",
+        "correta": false,
+        "diagnostico": "Incorreto: *amour de soi* é o instinto benigno de conservação; *amour-propre* é o sentimento relativo e competitivo de comparação social."
+      },
+      {
+        "letra": "D",
+        "texto": "Rousseau defende que a única saída política é destruir a linguagem e proibir qualquer associação coletiva.",
+        "correta": false,
+        "diagnostico": "Incorreto: não sendo possível nem desejável \"voltar às cavernas\", a proposta política de Rousseau é refundar o pacto coletivo sobre bases legítimas (vontade geral)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sentir fome e comer uma fruta sem querer ver ninguém sofrer ao lado é **`amour de soi` + `pitié`**; já querer ter dez cestas de frutas apodrecendo só para os vizinhos invejarem você e dependerem do seu favor é **`amour-propre`** — uma sede de superioridade fabricada pela organização social desigual.",
+      "analise_correta": "Compare os três autores: Hobbes vê o conflito na falta de Estado; Locke vê direitos naturais carentes de juiz; Rousseau vê como instituições históricas desiguais inflamam a competição.",
+      "distratores": {
+        "B": "Incorreto: Rousseau critica justamente Hobbes por projetar no \"homem natural\" paixões competitivas e vaidades que só surgiram dentro da sociedade.",
+        "C": "Incorreto: *amour de soi* é o instinto benigno de conservação; *amour-propre* é o sentimento relativo e competitivo de comparação social.",
+        "D": "Incorreto: não sendo possível nem desejável \"voltar às cavernas\", a proposta política de Rousseau é refundar o pacto coletivo sobre bases legítimas (vontade geral)."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-022",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Charles Darwin: Seleção Natural e Aptidão Evolutiva vs. \"Vitória do Mais Forte\"",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Na biologia evolutiva fundada por **Charles Darwin** (*A Origem das Espécies*, 1859), o que significam **seleção natural** e **aptidão evolutiva**, e qual erro comum deve ser evitado ao interpretar a expressão *\"sobrevivência do mais apto\"*?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **seleção natural** ocorre quando características hereditárias que favorecem a sobrevivência e a reprodução diferencial em um ambiente específico tornam-se mais frequentes ao longo das gerações; **\"mais apto\" significa melhor ajustado reprodutivamente àquele contexto específico**, e **não** o mais forte fisicamente, o mais agressivo ou o \"moralmente superior\".",
+        "correta": true,
+        "diagnostico": "Correto: em biologia, aptidão (*fitness*) é sucesso reprodutivo relativo em determinado ambiente — uma característica camuflada, cooperativa ou de baixo consumo energético pode ser muito mais adaptativa do que a força bruta."
+      },
+      {
+        "letra": "B",
+        "texto": "Seleção natural significa que apenas os animais maiores e mais violentos sobrevivem em qualquer ecossistema.",
+        "correta": false,
+        "diagnostico": "Incorreto: espécies gigantescas extinguiram-se quando o ambiente mudou, enquanto microrganismos e espécies cooperativas prosperaram."
+      },
+      {
+        "letra": "C",
+        "texto": "Darwin provou cientificamente que a cooperação não existe na natureza e que seres humanos têm o dever moral de eliminar os mais fracos.",
+        "correta": false,
+        "diagnostico": "Incorreto: o próprio Darwin estudou o comportamento social/cooperativo, e a seleção natural é uma descrição biológica, nunca um mandamento moral."
+      },
+      {
+        "letra": "D",
+        "texto": "A expressão \"sobrevivência do mais apto\" significa vitória militar do país mais rico.",
+        "correta": false,
+        "diagnostico": "Incorreto: essa extrapolação ideológica pertence ao chamado darwinismo social, não à biologia de Darwin."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma região gelada com pouco alimento, um animal pequeno, peludo e que divide o calor da toca em grupo (**cooperativo**) é muito **mais apto** para sobreviver e deixar filhotes do que um predador gigante e solitário que morre de frio e fome. \"Mais apto\" é quem encaixa melhor no quebra-cabeça do ambiente, não quem bate mais forte!",
+      "analise_correta": "Essa clareza conceitual desmonta o uso distorcido da biologia para justificar violências sociais.",
+      "distratores": {
+        "B": "Incorreto: espécies gigantescas extinguiram-se quando o ambiente mudou, enquanto microrganismos e espécies cooperativas prosperaram.",
+        "C": "Incorreto: o próprio Darwin estudou o comportamento social/cooperativo, e a seleção natural é uma descrição biológica, nunca um mandamento moral.",
+        "D": "Incorreto: essa extrapolação ideológica pertence ao chamado darwinismo social, não à biologia de Darwin."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-023",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Herbert Spencer e a Crítica ao Darwinismo Social",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Quem cunhou originalmente a expressão **\"sobrevivência do mais apto\"** e por que as correntes conhecidas como **darwinismo social** são amplamente criticadas pela filosofia, sociologia e biologia?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A expressão foi cunhada por **Herbert Spencer**, que buscou estender ideias evolucionistas às sociedades humanas; o **darwinismo social** é criticado porque extrapola indevidamente uma explicação biológica sobre a natureza para **tentar justificar e naturalizar desigualdades econômicas, dominação política e hierarquias sociais** como se fossem leis morais inevitáveis.",
+        "correta": true,
+        "diagnostico": "Correto: transformar uma descrição da evolução biológica em justificativa política para abandonar vulneráveis ou legitimar opressões comete um grave salto lógico e ético (falácia naturalista)."
+      },
+      {
+        "letra": "B",
+        "texto": "A expressão foi criada por Jean-Jacques Rousseau no século XVIII para defender a solidariedade.",
+        "correta": false,
+        "diagnostico": "Incorreto: foi formulada no século XIX por Herbert Spencer (e posteriormente adotada por Darwin em edições seguintes com sentido biológico restrito)."
+      },
+      {
+        "letra": "C",
+        "texto": "O darwinismo social é o método oficial da antropologia contemporânea para defender os direitos humanos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a antropologia e a sociologia constituíram-se criticando duramente o darwinismo social."
+      },
+      {
+        "letra": "D",
+        "texto": "A biologia comprova que a pobreza econômica é causada por seleção natural genética e não por instituições históricas.",
+        "correta": false,
+        "diagnostico": "Incorreto: desigualdades sociais e econômicas resultam de processos históricos, políticos e institucionais."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar a evolução das espécies para dizer que \"bilionários têm genes superiores e pobres não devem receber apoio público\" (**darwinismo social**) é tão absurdo quanto usar a lei da gravidade de Newton para dizer que é moralmente proibido construir aviões ou escadas.",
+      "analise_correta": "Processos naturais descrevem *como organismos evoluem*; a ética e a política decidem *que sociedade justa queremos construir*.",
+      "distratores": {
+        "B": "Incorreto: foi formulada no século XIX por Herbert Spencer (e posteriormente adotada por Darwin em edições seguintes com sentido biológico restrito).",
+        "C": "Incorreto: a antropologia e a sociologia constituíram-se criticando duramente o darwinismo social.",
+        "D": "Incorreto: desigualdades sociais e econômicas resultam de processos históricos, políticos e institucionais."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-024",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Cooperação como Fenômeno Evolutivo na Biologia",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "facil",
+    "enunciado": "A evolução biológica baseia-se exclusivamente na disputa hostil entre indivíduos isolados, ou a **cooperação** também desempenha papel evolutivo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A própria biologia estuda amplamente a **cooperação como fenômeno evolutivo**: relações de ajuda, reciprocidade, divisão de trabalho, cuidado coletivo de filhotes e coordenação aumentam as chances de sobrevivência e continuidade de organismos e grupos em diversas condições.",
+        "correta": true,
+        "diagnostico": "Correto: de colônias de insetos e cardumes a mamíferos sociais e primatas, a capacidade de cooperar é uma das estratégias adaptativas mais bem-sucedidas da história evolutiva."
+      },
+      {
+        "letra": "B",
+        "texto": "Na natureza nenhum animal jamais coopera com outro da mesma espécie ou de espécie diferente.",
+        "correta": false,
+        "diagnostico": "Incorreto: existem inúmeros registros empíricos de cooperação intraespecífica e de mutualismo interespecífico."
+      },
+      {
+        "letra": "C",
+        "texto": "A cooperação só surgiu no planeta Terra após a invenção dos computadores no século XX.",
+        "correta": false,
+        "diagnostico": "Incorreto: mecanismos cooperativos precedem em milhões de anos a própria espécie humana."
+      },
+      {
+        "letra": "D",
+        "texto": "Qualquer animal que ajuda outro do seu grupo é imediatamente extinto pela seleção natural.",
+        "correta": false,
+        "diagnostico": "Incorreto: comportamentos cooperativos e de altruísmo biológico frequentemente favorecem a preservação de grupos e parentes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Lobos caçando em alcateia coordenada, abelhas mantendo a colmeia viva e pássaros revezando o alerta contra predadores provam que a natureza não é apenas \"dente contra dente\": **juntar forças é uma das maiores invenções da evolução**.",
+      "analise_correta": "Entre seres humanos, essa capacidade biológica de cooperar é ainda amplificada pela linguagem, pela cultura e pelas instituições.",
+      "distratores": {
+        "B": "Incorreto: existem inúmeros registros empíricos de cooperação intraespecífica e de mutualismo interespecífico.",
+        "C": "Incorreto: mecanismos cooperativos precedem em milhões de anos a própria espécie humana.",
+        "D": "Incorreto: comportamentos cooperativos e de altruísmo biológico frequentemente favorecem a preservação de grupos e parentes."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-025",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Como Instituições e Interfaces Digitais Incentivam Competir ou Cooperar",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "facil",
+    "enunciado": "De que maneira as **regras institucionais de uma organização** ou o **design de um produto digital** influenciam a expressão de comportamentos competitivos ou cooperativos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Embora não determinem de forma absoluta cada escolha humana, **os critérios de avaliação e recompensa moldam fortemente as condutas**: premiar apenas quem derrota colegas ou criar *rankings* individuais agressivos estimula rivalidade interna, enquanto valorizar metas coletivas, revisão por pares e compartilhamento de conhecimento incentiva a cooperação.",
+        "correta": true,
+        "diagnostico": "Correto: comportamentos nas organizações e nas redes digitais emergem da interação entre disposições pessoais e a arquitetura de incentivos do ambiente."
+      },
+      {
+        "letra": "B",
+        "texto": "As regras da empresa e o design do software não têm nenhuma influência sobre como os usuários ou funcionários se comportam.",
+        "correta": false,
+        "diagnostico": "Incorreto: sistemas de metas e mecânicas de interface (gamificação, algoritmos de visibilidade) direcionam atenção e comportamento."
+      },
+      {
+        "letra": "C",
+        "texto": "Colocar funcionários para brigarem pelas mesmas comissões sempre aumenta a solidariedade e o compartilhamento de segredos técnicos.",
+        "correta": false,
+        "diagnostico": "Incorreto: incentivos de soma zero (onde para um ganhar o outro precisa perder) tendem a gerar boicote de informações e hipercompetição."
+      },
+      {
+        "letra": "D",
+        "texto": "Usuários de plataformas digitais são robôs sem capacidade de escolher, contestar regras ou colaborar.",
+        "correta": false,
+        "diagnostico": "Incorreto: os sujeitos conservam agência para refletir, contestar regras e construir práticas colaborativas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se um professor avisa que só o 1º colocado da sala passará de ano, os alunos esconderão os cadernos uns dos outros; se o professor avalia um projeto integrador onde o grupo cresce junto (como no Eixo 2 e no GitHub aberto), todos se ajudam a depurar o código. **O desenho da regra muda o jogo!**",
+      "analise_correta": "Essa reflexão conecta diretamente a sociologia e a ética ao trabalho prático do designer de interação e do desenvolvedor de software.",
+      "distratores": {
+        "B": "Incorreto: sistemas de metas e mecânicas de interface (gamificação, algoritmos de visibilidade) direcionam atenção e comportamento.",
+        "C": "Incorreto: incentivos de soma zero (onde para um ganhar o outro precisa perder) tendem a gerar boicote de informações e hipercompetição.",
+        "D": "Incorreto: os sujeitos conservam agência para refletir, contestar regras e construir práticas colaborativas."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-026",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "A Falácia de Derivar Obrigações Éticas Diretamente de Comportamentos Naturais",
+    "artigo_origem": "02. Egoísmo, competição e natureza humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que a constatação de que existem tanto **competição** quanto **cooperação** na natureza **não resolve, sozinha, os debates éticos e políticos** sobre como devemos organizar a sociedade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque observar que um comportamento existe na natureza (**fato descritivo**) não estabelece automaticamente que ele seja moralmente justo ou desejável (**juízo normativo**); escolher entre instituições mais desiguais ou mais solidárias exige fundamentação ética, política e histórica própria.",
+        "correta": true,
+        "diagnostico": "Correto: fatos biológicos informam sobre nossas capacidades e limites, mas não substituem a deliberação ética sobre justiça, dignidade e direitos."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque os seres humanos não fazem parte do mundo vivo nem possuem corpo biológico.",
+        "correta": false,
+        "diagnostico": "Incorreto: somos seres biológicos e simultaneamente culturais/históricos."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque tudo o que acontece na natureza (como predadores devorarem filhotes ou vírus causarem doenças) deve ser copiado como lei moral humana.",
+        "correta": false,
+        "diagnostico": "Incorreto: mostra justamente por que \"ser natural\" não equivale a \"ser moralmente bom\"."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque a ética proíbe o estudo da biologia nas universidades.",
+        "correta": false,
+        "diagnostico": "Incorreto: o diálogo interdisciplinar entre biologia, filosofia e ciências sociais é riquíssimo quando respeita a diferença entre explicar um fato e justificar um valor."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um vírus existir na natureza é um **fato biológico**, mas criar vacinas e hospitais para proteger as pessoas é uma **decisão ética e social**. A natureza nos dá o repertório de possibilidades; a ética escolhe quais possibilidades queremos cultivar.",
+      "analise_correta": "Esse princípio metodológico reaparece com força total no Artigo 03 ao analisar a teoria de Humberto Maturana.",
+      "distratores": {
+        "B": "Incorreto: somos seres biológicos e simultaneamente culturais/históricos.",
+        "C": "Incorreto: mostra justamente por que \"ser natural\" não equivale a \"ser moralmente bom\".",
+        "D": "Incorreto: o diálogo interdisciplinar entre biologia, filosofia e ciências sociais é riquíssimo quando respeita a diferença entre explicar um fato e justificar um valor."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/02. Egoísmo, competição e natureza humana.md"
+    }
+  },
+  {
+    "id": "DES-027",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Distinção entre Cooperação, Colaboração, Solidariedade e Altruísmo",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "facil",
+    "enunciado": "No vocabulário conceitual do Artigo 03, como se distinguem **cooperação**, **colaboração**, **solidariedade** e **altruísmo**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Cooperação** é a coordenação de ações entre indivíduos ou organismos; **colaboração** costuma designar o trabalho conjunto em torno de uma tarefa compartilhada; **solidariedade** acrescenta um vínculo moral e social de responsabilidade e apoio mútuo (especialmente diante de dificuldades); e **altruísmo** refere-se a agir em benefício de outro (com definições específicas na ética, psicologia e biologia).",
+        "correta": true,
+        "diagnostico": "Correto: enquanto cooperar e colaborar destacam a ação coordenada em conjunto, a solidariedade carrega uma dimensão ética explícita de compromisso com o bem e a dignidade do outro."
+      },
+      {
+        "letra": "B",
+        "texto": "Cooperação e solidariedade são termos 100% idênticos e nenhum deles envolve coordenação de ações.",
+        "correta": false,
+        "diagnostico": "Incorreto: é possível haver coordenação técnica de ações (cooperação operacional) sem que haja necessariamente o vínculo moral da solidariedade."
+      },
+      {
+        "letra": "C",
+        "texto": "Altruísmo significa prejudicar outras pessoas para obter lucro imediato.",
+        "correta": false,
+        "diagnostico": "Incorreto: isso seria egoísmo predatório, o exato oposto de altruísmo."
+      },
+      {
+        "letra": "D",
+        "texto": "Solidariedade é um conceito exclusivamente ecológico usado apenas para descrever rochas e minerais.",
+        "correta": false,
+        "diagnostico": "Incorreto: solidariedade é um conceito eminentemente social e moral."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Duas empresas rivais acertarem um padrão único de tomada elétrica é **cooperação** prática; colegas programando juntos o mesmo módulo é **colaboração**; e uma comunidade se mobilizar para apoiar e garantir direitos a quem está vulnerável é **solidariedade**.",
+      "analise_correta": "Essa precisão conceitual evita usar palavras próximas de maneira frouxa na argumentação acadêmica.",
+      "distratores": {
+        "B": "Incorreto: é possível haver coordenação técnica de ações (cooperação operacional) sem que haja necessariamente o vínculo moral da solidariedade.",
+        "C": "Incorreto: isso seria egoísmo predatório, o exato oposto de altruísmo.",
+        "D": "Incorreto: solidariedade é um conceito eminentemente social e moral."
       },
       "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-028",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Humberto Maturana: Linguagem como Coordenação Consensual de Ações (Linguajear)",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Como o biólogo chileno **Humberto Maturana** compreende a **linguagem** humana e por que ele utiliza o verbo **linguajear**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para Maturana, a linguagem não é apenas um dicionário abstrato de símbolos isolados no cérebro, mas um **processo vivo e recorrente de coordenação consensual de ações** construído na história de convivência entre as pessoas; o termo **linguajear** destaca justamente a linguagem como atividade prática em curso.",
+        "correta": true,
+        "diagnostico": "Correto: uma palavra ou gesto ganha sentido porque participa de um ajuste recíproco e reiterado de condutas (coordenação de coordenações consensuais de ações) ao longo do viver juntos."
+      },
+      {
+        "letra": "B",
+        "texto": "Maturana afirma que a linguagem nasce pronta no cérebro de uma pessoa isolada mesmo que ela nunca conviva com ninguém.",
+        "correta": false,
+        "diagnostico": "Incorreto: embora dependa de base biológica cerebral, a linguagem não emerge sem uma história de convivência e interação recorrente."
+      },
+      {
+        "letra": "C",
+        "texto": "Linguajear significa decorar regras de gramática normativa sem interagir com outros seres humanos.",
+        "correta": false,
+        "diagnostico": "Incorreto: *linguajear* refere-se à dinâmica viva de coordenar ações na convivência."
+      },
+      {
+        "letra": "D",
+        "texto": "Para Maturana, as palavras não têm nenhuma relação com as ações que coordenamos no dia a dia.",
+        "correta": false,
+        "diagnostico": "Incorreto: para Maturana, o sentido das palavras realiza-se exatamente na coordenação prática do que fazemos juntos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em duas pessoas montando uma barraca na chuva: quando uma diz *\"Segura a corda!\"* e a outra firma a estaca no chão, a palavra não é um enfeite solto no ar — ela é a ferramenta viva que sincroniza o movimento das mãos das duas pessoas (**coordenação consensual de ações**).",
+      "analise_correta": "Nessa perspectiva, a linguagem é um fenômeno relacional que nasce na intimidade da convivência cotidiana.",
+      "distratores": {
+        "B": "Incorreto: embora dependa de base biológica cerebral, a linguagem não emerge sem uma história de convivência e interação recorrente.",
+        "C": "Incorreto: *linguajear* refere-se à dinâmica viva de coordenar ações na convivência.",
+        "D": "Incorreto: para Maturana, o sentido das palavras realiza-se exatamente na coordenação prática do que fazemos juntos."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-029",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Emocionar, Conversar e o Conceito Teórico de Aceitação Mútua (Amor) em Maturana",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Na teoria de **Humberto Maturana**, o que significam os conceitos de **emocionar**, **conversar** e **aceitação mútua** (que ele associa à palavra *amor*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Emocionar** é a dimensão afetiva que define as disposições corporais para agir em cada domínio relacional; **conversar** é o entrelaçamento contínuo do *linguajear* (coordenar ações) com o *emocionar*; e **aceitação mútua (amor)** é o reconhecimento do outro como um **legítimo outro na convivência** (não se reduzindo a paixão romântica).",
+        "correta": true,
+        "diagnostico": "Correto: no vocabulário técnico de Maturana, toda ação humana apoia-se em uma disposição afetiva (*emocionar*), e a emoção que possibilita a convivência social duradoura e o surgimento da linguagem é a *aceitação do outro como legítimo outro*."
+      },
+      {
+        "letra": "B",
+        "texto": "Emocionar significa perder a razão em ataques de fúria, e conversar significa discutir para derrotar o interlocutor.",
+        "correta": false,
+        "diagnostico": "Incorreto: *emocionar* participa de todas as interações cotidianas (inclusive as mais calmas e racionais), não apenas de explosões intensas."
+      },
+      {
+        "letra": "C",
+        "texto": "O conceito de amor em Maturana refere-se exclusivamente ao casamento romântico em novelas televisivas.",
+        "correta": false,
+        "diagnostico": "Incorreto: trata-se de uma definição biológica/relacional de legitimidade na convivência, não de romantismo sentimental."
+      },
+      {
+        "letra": "D",
+        "texto": "Para Maturana, a razão humana opera totalmente separada das emoções e da convivência.",
+        "correta": false,
+        "diagnostico": "Incorreto: Maturana enfatiza justamente o entrelaçamento indissociável entre razão/linguagem e emoção no *conversar*."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Imagine que o **linguajear** são os fios da melodia e o **emocionar** é o ritmo da percussão: quando você trança os dois juntos no dia a dia com outra pessoa, nasce o **conversar**. E o palco só continua inteiro se os músicos reconhecerem que todos têm o direito legítimo de estar ali (**aceitação mútua**).",
+      "analise_correta": "A nota de precisão conceitual do artigo lembra que essa é uma interpretação teórica instigante de Maturana, devendo ser compreendida dentro de seu sistema conceitual.",
+      "distratores": {
+        "B": "Incorreto: *emocionar* participa de todas as interações cotidianas (inclusive as mais calmas e racionais), não apenas de explosões intensas.",
+        "C": "Incorreto: trata-se de uma definição biológica/relacional de legitimidade na convivência, não de romantismo sentimental.",
+        "D": "Incorreto: Maturana enfatiza justamente o entrelaçamento indissociável entre razão/linguagem e emoção no *conversar*."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-030",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "As Três Teses de Augusto de Franco Baseadas em Maturana",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "No texto *Uma teoria da cooperação baseada em Maturana*, **Augusto de Franco** organiza a leitura do biólogo chileno em **três grandes teses encadeadas**. Quais são elas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "1) **A cooperação está na constituição do humano** (convivência recorrente, compartilhamento de alimentos e emergência da linguagem); 2) **A cooperação funda o social** (sistemas sociais genuínos baseiam-se na aceitação mútua); e 3) **A competição não constitui o humano nem funda o social** (sendo interpretada ali como padrão cultural posterior de negação do outro).",
+        "correta": true,
+        "diagnostico": "Correto: o encadeamento de Franco parte da convivência cooperativa ancestral (que viabilizou a linguagem), define o social pela aceitação mútua e, por consequência, exclui a competição e a dominação da definição estrita de relação social."
+      },
+      {
+        "letra": "B",
+        "texto": "1) A guerra constitui o humano; 2) A coerção funda o social; e 3) A cooperação é impossível entre seres vivos.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte integralmente as três proposições de Franco."
+      },
+      {
+        "letra": "C",
+        "texto": "1) O mercado financeiro criou a linguagem; 2) O egoísmo ético funda a biologia; e 3) A cultura não existe.",
+        "correta": false,
+        "diagnostico": "Incorreto: mistura categorias alheias ao texto."
+      },
+      {
+        "letra": "D",
+        "texto": "1) As plantas pensam racionalmente; 2) Os animais não cooperam; e 3) A autopoiese é uma lei trabalhista.",
+        "correta": false,
+        "diagnostico": "Incorreto: deturpa os conceitos biológicos e sociológicos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "As três teses formam uma escada lógica na leitura de Franco: Degrau 1 — convivemos e repartimos o alimento, fazendo nascer a linguagem (**humano**); Degrau 2 — essa aceitação recíproca é o cimento da comunidade (**social**); Degrau 3 — querer derrotar o outro (**competição**) não faz parte desse alicerce original.",
+      "analise_correta": "O próprio Augusto de Franco, ao republicar o texto vinte anos depois (2021), fez ressalvas autocríticas importantes sobre exageros e imprecisões da versão original.",
+      "distratores": {
+        "B": "Incorreto: inverte integralmente as três proposições de Franco.",
+        "C": "Incorreto: mistura categorias alheias ao texto.",
+        "D": "Incorreto: deturpa os conceitos biológicos e sociológicos."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-031",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Conceito de Autopoiese (Maturana e Varela) e Limites de sua Transposição Social",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "dificil",
+    "enunciado": "O que significa exatamente o conceito biológico de **autopoiese**, formulado por **Humberto Maturana** e **Francisco Varela**, e qual cuidado deve ser tomado ao mencioná-lo nas ciências sociais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Autopoiese** é a organização autoprodutiva característica dos sistemas vivos, pela qual um organismo (como uma célula) produz e renova continuamente, por seus próprios processos internos, os componentes que o constituem; **não é sinônimo de cooperação/solidariedade entre pessoas** nem significa que o ser vivo não dependa do ambiente.",
+        "correta": true,
+        "diagnostico": "Correto: *auto* (próprio) + *poiesis* (produção/criação) define a autonomia organizacional metabólica da vida celular/orgânica, mas o ser vivo continua em acoplamento estrutural com o ambiente, e transpor esse termo literalmente para sociedades exige muita cautela."
+      },
+      {
+        "letra": "B",
+        "texto": "Autopoiese significa caridade moral e doação financeira entre empresas.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde um conceito de biologia celular/sistêmica (*autopoiese*) com conceitos éticos e relacionais (*solidariedade/cooperação*)."
+      },
+      {
+        "letra": "C",
+        "texto": "Autopoiese significa que uma célula viva não precisa de água, energia ou trocas com o meio ambiente para existir.",
+        "correta": false,
+        "diagnostico": "Incorreto: sistemas autopoiéticos são abertos à troca de matéria e energia com o meio; o que eles mantêm é sua organização autoprodutiva."
+      },
+      {
+        "letra": "D",
+        "texto": "Autopoiese é o nome que a sociologia clássica de Durkheim dava às leis trabalhistas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o termo foi cunhado por Maturana e Varela na década de 1970 na biologia da cognição."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma fábrica de carros produz automóveis (algo diferente dela mesma); já uma **célula viva (sistema autopoiético)** é uma fábrica cujas máquinas internas trabalham o tempo todo para fabricar e consertar as próprias paredes e peças daquela mesma célula! Mas cuidado: célula produzir suas proteínas (**autopoiese**) não é a mesma coisa que vizinhos fazerem mutirão no bairro (**cooperação**).",
+      "analise_correta": "Esse é um dos pontos de confusão mais cobrados: não misturar a definição biológica de *autopoiese* com a definição relacional de *cooperação*.",
+      "distratores": {
+        "B": "Incorreto: confunde um conceito de biologia celular/sistêmica (*autopoiese*) com conceitos éticos e relacionais (*solidariedade/cooperação*).",
+        "C": "Incorreto: sistemas autopoiéticos são abertos à troca de matéria e energia com o meio; o que eles mantêm é sua organização autoprodutiva.",
+        "D": "Incorreto: o termo foi cunhado por Maturana e Varela na década de 1970 na biologia da cognição."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-032",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Sentido Restrito de \"Social\" em Maturana vs. Uso Sociológico Geral (Obediência vs. Cooperação)",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "dificil",
+    "enunciado": "Por que **Humberto Maturana** afirma que uma relação baseada em **coerção, dominação e obediência cega** não é uma relação propriamente *\"social\"*, e como essa definição difere do uso padrão da palavra **social** na Sociologia?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque Maturana adota uma **definição teórica restrita de \"social\"**, reservando o termo exclusivamente para interações fundadas na **aceitação mútua** (onde a obediência sob ameaça não é cooperação genuína); já a **Sociologia em geral** utiliza o termo *social* em sentido amplo, abrangendo tanto relações cooperativas quanto conflitos, hierarquias e relações coercitivas.",
+        "correta": true,
+        "diagnostico": "Correto: o aparente paradoxo resolve-se ao notar a diferença de dicionário: para Maturana, *social = convivência na aceitação mútua* (excluindo quartéis autoritários ou trabalho forçado); para a Sociologia, *social = toda relação historicamente construída entre humanos* (incluindo poder, conflito e coerção)."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque na Sociologia clássica (Durkheim, Marx e Weber) conflitos, leis coercitivas e classes sociais não são estudados como fenômenos sociais.",
+        "correta": false,
+        "diagnostico": "Incorreto: Durkheim, Marx e Weber estudam intensamente a coerção, o conflito e a dominação como fenômenos sociais."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque Maturana considera que obedecer a uma ameaça armada é a forma mais pura de aceitação mútua e amor.",
+        "correta": false,
+        "diagnostico": "Incorreto: para Maturana, a submissão por medo nega a legitimidade do outro e, portanto, descaracteriza a cooperação."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque não existe nenhuma diferença entre trabalhar sob ameaça de punição e trabalhar em parceria voluntária.",
+        "correta": false,
+        "diagnostico": "Incorreto: mesmo quando executam a mesma tarefa física, a qualidade relacional da obediência coercitiva é oposta à da cooperação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Duas pessoas carregando uma caixa pesada juntas: se uma está apontando um chicote para a outra, a Sociologia diz *\"Isso é uma relação social de dominação\"*, enquanto Maturana diz *\"Isso é coordenação sob coerção (obediência), e não um sistema social genuíno, porque falta aceitação mútua\"*. Ambos enxergam a mesma cena, mas usam réguas diferentes para a palavra *social*!",
+      "analise_correta": "No ambiente de trabalho, essa distinção de Maturana é valiosa para lembrar que bater metas na base do medo não equivale a ter uma equipe verdadeiramente cooperativa.",
+      "distratores": {
+        "B": "Incorreto: Durkheim, Marx e Weber estudam intensamente a coerção, o conflito e a dominação como fenômenos sociais.",
+        "C": "Incorreto: para Maturana, a submissão por medo nega a legitimidade do outro e, portanto, descaracteriza a cooperação.",
+        "D": "Incorreto: mesmo quando executam a mesma tarefa física, a qualidade relacional da obediência coercitiva é oposta à da cooperação."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-033",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Competição em Maturana/Franco vs. Competição Ecológica na Biologia Evolutiva",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na leitura de Augusto de Franco sobre Maturana, aparece a afirmação de que *\"seres vivos não humanos não competem\"*. Por que essa frase entra em choque direto com a **biologia evolutiva e a ecologia**, e como se explica a divergência?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Entra em choque porque na **ecologia e biologia evolutiva** a **competição** é um fenômeno amplamente comprovado em que organismos sofrem efeitos negativos ao disputar recursos limitados (água, luz, alimento, território), **sem exigir intenção consciente de derrotar o outro**; já Maturana restringia a palavra *competição* a disputas culturais humanas onde o prazer da vitória depende da derrota intencional do outro.",
+        "correta": true,
+        "diagnostico": "Correto: mais uma vez, a precisão conceitual desfaz a confusão: na biologia, duas plantas disputando luz solar no solo estão em **competição ecológica** (mesmo sem cérebro ou intenção); Maturana falava apenas da rivalidade simbólica cultural."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque na verdade as árvores e as bactérias assinam contratos comerciais e sentem inveja psicológica umas das outras.",
+        "correta": false,
+        "diagnostico": "Incorreto: plantas e microrganismos competem ecologicamente por recursos sem possuírem estados mentais intencionais."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque a biologia moderna aboliu o conceito de competição ecológica e concorda que animais nunca disputam alimento ou território.",
+        "correta": false,
+        "diagnostico": "Incorreto: a competição intraespecífica e interespecífica por recursos escassos é um conceito basilar e consolidado da ecologia."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque seres humanos nunca competem em nenhuma cultura.",
+        "correta": false,
+        "diagnostico": "Incorreto: a competição cultural e econômica é amplamente observada em sociedades humanas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Duas árvores crescendo lado a lado na floresta disputam a mesma faixa de sol e água do solo: para o **biólogo/ecólogo**, isso é **competição ecológica** clara; para **Maturana**, como uma árvore não \"deseja humilhar a outra no pódio\", ele preferia não chamar de competição. Na ciência, prevalece a definição ecológica: há competição biológica na natureza, sim!",
+      "analise_correta": "Por isso, o artigo alerta que não se deve repetir a frase *\"animais não competem\"* como se fosse um fato biológico estabelecido.",
+      "distratores": {
+        "B": "Incorreto: plantas e microrganismos competem ecologicamente por recursos sem possuírem estados mentais intencionais.",
+        "C": "Incorreto: a competição intraespecífica e interespecífica por recursos escassos é um conceito basilar e consolidado da ecologia.",
+        "D": "Incorreto: a competição cultural e econômica é amplamente observada em sociedades humanas."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-034",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Mutualismo e Altruísmo Biológico vs. Altruísmo e Solidariedade Moral",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Na biologia evolutiva, o que definem o **mutualismo** e o **altruísmo biológico**, e por que o altruísmo biológico difere do altruísmo moral humano?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Mutualismo** é a interação entre organismos de espécies diferentes que traz benefícios para ambos; **altruísmo biológico** é um comportamento que aumenta o sucesso reprodutivo de outros organismos com custo reprodutivo para o agente **sem exigir intenção consciente ou reflexão ética**, ao passo que o altruísmo/solidariedade moral envolve valores, consciência e responsabilidade.",
+        "correta": true,
+        "diagnostico": "Correto: na biologia evolutiva, o critério que define o *altruísmo biológico* é estritamente a consequência sobre a aptidão reprodutiva (*fitness*), não a intenção psicológica consciente."
+      },
+      {
+        "letra": "B",
+        "texto": "Altruísmo biológico exige que a abelha estude filosofia moral antes de defender a colmeia.",
+        "correta": false,
+        "diagnostico": "Incorreto: organismos realizam comportamentos biologicamente altruístas por mecanismos evolutivos/instintivos, sem deliberação moral consciente."
+      },
+      {
+        "letra": "C",
+        "texto": "Mutualismo ocorre quando duas espécies se destroem mutuamente sem benefício para nenhuma.",
+        "correta": false,
+        "diagnostico": "Incorreto: no mutualismo (como abelhas polinizando flores ou fungos em micorrizas) ambos os lados são beneficiados."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe nenhuma diferença entre o comportamento instintivo de um inseto e uma decisão ética humana.",
+        "correta": false,
+        "diagnostico": "Incorreto: decisões éticas humanas envolvem linguagem, normas culturais e reflexão sobre deveres e consequências."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando uma abelha operária defende a colmeia com a própria vida, a biologia chama de **altruísmo biológico** porque ela protegeu a reprodução da rainha/irmãs pagando um custo biológico; quando um voluntário doa seu sábado para dar mentoria gratuita a um estudante no NODO, há reflexão consciente sobre justiça e empatia — isso é **solidariedade ética**.",
+      "analise_correta": "Reconhecer os dois planos valoriza tanto nossas raízes evolutivas quanto nossa responsabilidade ética.",
+      "distratores": {
+        "B": "Incorreto: organismos realizam comportamentos biologicamente altruístas por mecanismos evolutivos/instintivos, sem deliberação moral consciente.",
+        "C": "Incorreto: no mutualismo (como abelhas polinizando flores ou fungos em micorrizas) ambos os lados são beneficiados.",
+        "D": "Incorreto: decisões éticas humanas envolvem linguagem, normas culturais e reflexão sobre deveres e consequências."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-035",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "O Compartilhamento de Alimentos na História Evolutiva Humana",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que o hábito ancestral de **compartilhar alimentos** (e não apenas comer no mesmo local) é destacado na leitura sobre a constituição do humano?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque repartir o alimento obtido com outros integrantes do grupo envolve uma **ação coordenada e orientada à existência e ao cuidado do outro**, fortalecendo vínculos de convivência estável, reciprocidade e aceitação mútua que favoreceram o desenvolvimento da linguagem e da vida coletiva.",
+        "correta": true,
+        "diagnostico": "Correto: diferentemente de apenas tolerar a presença alheia na mesma fonte de comida, o ato ativo de levar e repartir o alimento com o grupo reflete interdependência e atenção ao outro."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque animais que comem perto uns dos outros nunca disputam comida.",
+        "correta": false,
+        "diagnostico": "Incorreto: comer no mesmo local físico frequentemente envolve disputa, o que difere de repartir ativamente o alimento."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o compartilhamento de alimentos impediu o surgimento da linguagem articulada.",
+        "correta": false,
+        "diagnostico": "Incorreto: na hipótese estudada, a convivência cooperativa e o compartilhamento ajudaram justamente a criar o terreno relacional da linguagem."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque os primeiros grupos humanos viviam completamente isolados sem dividir tarefas nem alimentos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a sobrevivência dos hominídeos dependeu fortemente da organização grupal e da partilha."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Comer no mesmo restaurante que estranhos é apenas estar no mesmo espaço físico; mas sentar-se à roda para dividir o pão que cada um trouxe garantindo que ninguém fique com fome é um gesto de **convivência e aceitação mútua** que tece a comunidade.",
+      "analise_correta": "Esse exemplo ilustra concretamente a primeira tese sistematizada no artigo.",
+      "distratores": {
+        "B": "Incorreto: comer no mesmo local físico frequentemente envolve disputa, o que difere de repartir ativamente o alimento.",
+        "C": "Incorreto: na hipótese estudada, a convivência cooperativa e o compartilhamento ajudaram justamente a criar o terreno relacional da linguagem.",
+        "D": "Incorreto: a sobrevivência dos hominídeos dependeu fortemente da organização grupal e da partilha."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-036",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Cooperação e Interesse Próprio: Benefícios Mútuos",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "facil",
+    "enunciado": "Para que uma relação entre pessoas seja considerada **cooperativa**, é obrigatório que os participantes anulem completamente qualquer interesse próprio ou benefício pessoal?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Não: **interesses individuais e benefícios mútuos podem coexistir perfeitamente em relações cooperativas**, pois coordenar ações em conjunto permite alcançar resultados que beneficiam tanto o coletivo quanto cada integrante.",
+        "correta": true,
+        "diagnostico": "Correto: cooperar não exige martírio; no trabalho em equipe, no código aberto e nas comunidades científicas, quem colabora ajuda o grupo e, ao mesmo tempo, aprende, ganha reconhecimento e usufrui da obra comum."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim: se uma pessoa sentir qualquer satisfação ou obtiver aprendizado ao cooperar, a ação deixa de ser cooperação e vira crime.",
+        "correta": false,
+        "diagnostico": "Incorreto: satisfação pessoal e reciprocidade fortalecem e sustentam a cooperação."
+      },
+      {
+        "letra": "C",
+        "texto": "Sim: cooperar exige que todos os envolvidos saiam prejudicados da atividade.",
+        "correta": false,
+        "diagnostico": "Incorreto: a perda mútua caracterizaria um conflito destrutivo, não a cooperação."
+      },
+      {
+        "letra": "D",
+        "texto": "A cooperação e a competição nunca podem existir na mesma sociedade.",
+        "correta": false,
+        "diagnostico": "Incorreto: como vimos nos artigos 02 e 03, ambas coexistem e são moduladas pelas instituições."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando dois remadores sincronizam os remos no mesmo barco (**cooperação**), eles chegam muito mais rápido à outra margem do lago: ambos tinham o interesse de atravessar o lago, e foi justamente cooperando que ambos venceram a travessia.",
+      "analise_correta": "Superar a visão de que \"cooperar é perder para o outro ganhar\" (lógica de soma zero) é essencial para o trabalho colaborativo moderno.",
+      "distratores": {
+        "B": "Incorreto: satisfação pessoal e reciprocidade fortalecem e sustentam a cooperação.",
+        "C": "Incorreto: a perda mútua caracterizaria um conflito destrutivo, não a cooperação.",
+        "D": "Incorreto: como vimos nos artigos 02 e 03, ambas coexistem e são moduladas pelas instituições."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-037",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Qualidade das Relações nas Organizações: Discurso de Solidariedade vs. Prática de Coerção",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Como a discussão do Artigo 03 sobre **cooperação, solidariedade e dominação** permite analisar criticamente a cultura interna das organizações de trabalho?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Permite avaliar a **qualidade real das relações** além do discurso oficial: uma empresa pode usar slogans de \"família e colaboração\", mas se exige alinhamento apenas por ameaça de punição ou premia exclusivamente a derrota de colegas, ela produz **obediência coercitiva ou hipercompetição**, e não cooperação genuína.",
+        "correta": true,
+        "diagnostico": "Correto: a análise deve observar as práticas efetivas (como se distribuem responsabilidades, como se lida com a discordância e como se recompensam os resultados), lembrando inclusive que hierarquias formais podem abrigar cooperação genuína e grupos sem chefia podem ter coerção entre pares."
+      },
+      {
+        "letra": "B",
+        "texto": "Basta colocar a palavra \"solidariedade\" na parede da recepção para que todas as relações da empresa se tornem automaticamente cooperativas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o discurso declaratório não substitui as práticas e incentivos reais do cotidiano."
+      },
+      {
+        "letra": "C",
+        "texto": "Se uma equipe tem um gestor formal na hierarquia, é impossível existir qualquer colaboração voluntária ou respeito mútuo.",
+        "correta": false,
+        "diagnostico": "Incorreto: como vimos em Liderança (Unidade 1) e aqui no Artigo 03, estruturas hierárquicas podem funcionar com alta confiança, escuta e colaboração voluntária."
+      },
+      {
+        "letra": "D",
+        "texto": "Em equipes sem chefe formal nunca ocorre pressão coercitiva entre colegas.",
+        "correta": false,
+        "diagnostico": "Incorreto: mesmo sem chefe formal, pares podem exercer pressão hostil se a cultura do grupo for opressiva."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Não adianta o cartaz na parede dizer *\"Aqui somos um time colaborativo\"* se o sistema de metas pune quem tira 10 minutos para ajudar o colega ao lado. Para saber se há **cooperação real**, olhe para como as pessoas são tratadas quando discordam ou precisam de apoio.",
+      "analise_correta": "Essa ponte interdisciplinar conecta diretamente Desafios Contemporâneos à disciplina de Liderança e Competências Comportamentais.",
+      "distratores": {
+        "B": "Incorreto: o discurso declaratório não substitui as práticas e incentivos reais do cotidiano.",
+        "C": "Incorreto: como vimos em Liderança (Unidade 1) e aqui no Artigo 03, estruturas hierárquicas podem funcionar com alta confiança, escuta e colaboração voluntária.",
+        "D": "Incorreto: mesmo sem chefe formal, pares podem exercer pressão hostil se a cultura do grupo for opressiva."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-038",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Por Que a Solidariedade Exige Fundamentação Ética Além da Biologia",
+    "artigo_origem": "03. Cooperação e solidariedade na constituição do humano.md",
+    "dificuldade": "medio",
+    "enunciado": "Ao encerrar o estudo sobre Humberto Maturana e a biologia evolutiva no Artigo 03, por que se conclui que defender a **solidariedade** na sociedade contemporânea exige um **argumento ético e político**, e não apenas biológico?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a biologia explica que somos *capazes* tanto de cooperar quanto de competir, mas um fato natural não cria sozinho um dever moral; defendemos a **solidariedade como valor ético** porque reconhecemos nossa **interdependência** e assumimos a responsabilidade pelas consequências compartilhadas de nossas escolhas sobre a dignidade das outras pessoas.",
+        "correta": true,
+        "diagnostico": "Correto: saber que a cooperação faz parte da nossa história evolutiva mostra que a solidariedade não é uma \"utopia contra a natureza\", mas escolhê-la como princípio de justiça social é uma decisão ética consciente."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque a biologia prova que os seres humanos são incapazes de cooperar.",
+        "correta": false,
+        "diagnostico": "Incorreto: a biologia mostra justamente que temos plena capacidade biológica e cognitiva para cooperar."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque a ética é um ramo da zoologia que estuda apenas formigas e abelhas.",
+        "correta": false,
+        "diagnostico": "Incorreto: a ética é a reflexão filosófica e normativa sobre os valores e deveres da ação humana."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque decisões políticas não afetam a vida de ninguém na sociedade.",
+        "correta": false,
+        "diagnostico": "Incorreto: justamente porque nossas ações e instituições afetam uns aos outros na rede de interdependência é que a solidariedade se torna urgente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A biologia nos entrega as cordas vocais e mostra que sabemos tanto gritar quanto cantar em coral; mas decidir montar o coral da **solidariedade** em vez de gritar uns contra os outros é uma escolha **ética e cultural** que fazemos todos os dias.",
+      "analise_correta": "E é justamente o papel da **cultura** nesse aprendizado coletivo que inaugura o Artigo 04.",
+      "distratores": {
+        "B": "Incorreto: a biologia mostra justamente que temos plena capacidade biológica e cognitiva para cooperar.",
+        "C": "Incorreto: a ética é a reflexão filosófica e normativa sobre os valores e deveres da ação humana.",
+        "D": "Incorreto: justamente porque nossas ações e instituições afetam uns aos outros na rede de interdependência é que a solidariedade se torna urgente."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/03. Cooperação e solidariedade na constituição do humano.md"
+    }
+  },
+  {
+    "id": "DES-039",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Do Latim Colere e da Ideia de Erudição ao Conceito Antropológico de Cultura",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a diferença fundamental entre o uso cotidiano/elitista da palavra **\"cultura\"** (quando se diz que alguém é \"muito culto\" ou \"não tem cultura\") e o **conceito antropológico de cultura**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No senso comum elitista, \"cultura\" é reduzida à escolaridade formal ou à erudição artística; já para a **Antropologia**, **toda sociedade e todo grupo humano possui cultura**, entendida como o conjunto amplo de práticas, saberes, línguas, crenças, valores, técnicas e significados **aprendidos e compartilhados socialmente**.",
+        "correta": true,
+        "diagnostico": "Correto: originada do latim *colere* (cultivar, cuidar, habitar), a palavra ganhou na Antropologia um sentido universal e democrático: não existe ser humano nem grupo social \"sem cultura\"."
+      },
+      {
+        "letra": "B",
+        "texto": "Na Antropologia, só tem cultura quem possui doutorado universitário e frequenta concertos de música clássica europeia.",
+        "correta": false,
+        "diagnostico": "Incorreto: confunde cultura (modo de vida e significados aprendidos por todos os grupos) com erudição acadêmica/prestígio social."
+      },
+      {
+        "letra": "C",
+        "texto": "Povos indígenas ou comunidades rurais tradicionais vivem em estado puramente biológico sem nenhuma cultura.",
+        "correta": false,
+        "diagnostico": "Incorreto: técnicas de plantio, narrativas orais, parentesco, culinária e cosmovisões tradicionais são expressões culturais riquíssimas e complexas."
+      },
+      {
+        "letra": "D",
+        "texto": "A palavra cultura vem do grego e sempre significou computador digital desde a Antiguidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: vem do latim *colere* (cultivo da terra / cuidado e formação das capacidades humanas)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Dizer que uma pessoa que sabe ler a época da chuva, preparar remédios da floresta e contar a história da sua comunidade \"não tem cultura\" porque não conhece ópera italiana é confundir **diploma/erudição** com **cultura**. Para a Antropologia, tanto a ópera quanto o saber tradicional da roça ou a gíria dos programadores são **cultura**!",
+      "analise_correta": "Essa distinção inaugural desmonta preconceitos linguísticos e sociais muito arraigados.",
+      "distratores": {
+        "B": "Incorreto: confunde cultura (modo de vida e significados aprendidos por todos os grupos) com erudição acadêmica/prestígio social.",
+        "C": "Incorreto: técnicas de plantio, narrativas orais, parentesco, culinária e cosmovisões tradicionais são expressões culturais riquíssimas e complexas.",
+        "D": "Incorreto: vem do latim *colere* (cultivo da terra / cuidado e formação das capacidades humanas)."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-040",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Edward Burnett Tylor (1871): Definição Abrangente e Limite do Evolucionismo Unilinear",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual foi a grande contribuição do antropólogo britânico **Edward Burnett Tylor** em *Primitive Culture* (1871) e qual era a limitação teórica do **evolucionismo cultural unilinear** ao qual ele estava vinculado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A contribuição decisiva de Tylor foi definir a cultura como um todo complexo **aprendido pelo ser humano como membro da sociedade** (e não herdado biologicamente), abrangendo costumes cotidianos; sua limitação era o **evolucionismo unilinear**, que tentava classificar todos os povos em uma escada única de etapas (\"selvageria, barbárie, civilização\") tomando a Europa como topo.",
+        "correta": true,
+        "diagnostico": "Correto: Tylor deu o passo gigante de separar cultura de biologia (mostrando que cultura é aprendida), mas ainda carregava o viés eurocêntrico do século XIX de achar que a história humana seguia uma linha única de progresso."
+      },
+      {
+        "letra": "B",
+        "texto": "Tylor provou que a cultura é transmitida pelo sangue e pelo DNA sem necessidade de aprendizado social.",
+        "correta": false,
+        "diagnostico": "Incorreto: o mérito de Tylor foi justamente afirmar que a cultura é *adquirida/aprendida* em sociedade."
+      },
+      {
+        "letra": "C",
+        "texto": "Tylor já defendia integralmente o particularismo histórico e o relativismo cultural contemporâneo sem qualquer hierarquia entre povos.",
+        "correta": false,
+        "diagnostico": "Incorreto: atenção a esse ponto de confusão! Quem rompeu com a escada hierárquica evolucionista foi Franz Boas décadas depois."
+      },
+      {
+        "letra": "D",
+        "texto": "O evolucionismo cultural unilinear afirmava que a Europa do século XIX era a sociedade mais atrasada do planeta.",
+        "correta": false,
+        "diagnostico": "Incorreto: os evolucionistas vitorianos colocavam a própria sociedade industrial europeia no degrau mais alto da suposta escada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Tylor acertou em cheio ao mostrar que cultura é \"software aprendido em sociedade\" e não \"hardware biológico de nascença\"; mas errou ao imaginar que todas as culturas do mundo estavam subindo a mesma escada rolante em fila indiana rumo ao modelo europeu (**evolucionismo unilinear**).",
+      "analise_correta": "Reconhecer tanto o avanço quanto o limite histórico de Tylor é essencial para entender a evolução da própria Antropologia.",
+      "distratores": {
+        "B": "Incorreto: o mérito de Tylor foi justamente afirmar que a cultura é *adquirida/aprendida* em sociedade.",
+        "C": "Incorreto: atenção a esse ponto de confusão! Quem rompeu com a escada hierárquica evolucionista foi Franz Boas décadas depois.",
+        "D": "Incorreto: os evolucionistas vitorianos colocavam a própria sociedade industrial europeia no degrau mais alto da suposta escada."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-041",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Crítica ao Determinismo Biológico e ao Determinismo Geográfico",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que a Antropologia rejeita tanto o **determinismo biológico** quanto o **determinismo geográfico (ou ambiental)** como explicações para a diversidade cultural humana?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Rejeita o **determinismo biológico** porque capacidades morais, intelectuais e costumes não são fixados por \"raça\" ou genética, mas aprendidos socialmente; e rejeita o **determinismo geográfico** porque, embora o ambiente físico influencie recursos e possibilidades, **ele não determina uma única forma de vida** (povos no mesmo clima criam culturas muito diferentes).",
+        "correta": true,
+        "diagnostico": "Correto: qualquer criança humana saudável, independentemente de sua ancestralidade biológica, aprende perfeitamente a língua e os costumes da comunidade em que for criada; e ambientes geográficos idênticos abrigam modos de vida radicalmente distintos."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque a Antropologia afirma que o clima e a biologia não existem no planeta Terra.",
+        "correta": false,
+        "diagnostico": "Incorreto: a Antropologia não nega a existência do corpo nem da natureza; ela critica a *redução determinista* da cultura a essas variáveis."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque ficou comprovado que o calor ou o frio determinam 100% das leis políticas e da religião de um povo.",
+        "correta": false,
+        "diagnostico": "Incorreto: exemplos clássicos (mostrados por Boas e Laraia) comprovam que povos vizinhos no mesmo deserto ou no mesmo Ártico têm organizações sociais muito diferentes."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o determinismo biológico provou que cada idioma humano vem gravado nos cromossomos ao nascer.",
+        "correta": false,
+        "diagnostico": "Incorreto: nenhum idioma é genético; toda língua é 100% aprendida por socialização."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o **determinismo biológico** fosse verdade, um bebê filho de brasileiros criado desde o primeiro dia no Japão falaria português sozinho por genética — o que sabemos que não acontece! E se o **determinismo geográfico** fosse verdade, todos os povos que moram perto da neve teriam exatamente a mesma religião, a mesma família e a mesma culinária.",
+      "analise_correta": "Roque Laraia dedica toda a primeira parte de seu livro clássico a desmontar esses dois determinismos.",
+      "distratores": {
+        "B": "Incorreto: a Antropologia não nega a existência do corpo nem da natureza; ela critica a *redução determinista* da cultura a essas variáveis.",
+        "C": "Incorreto: exemplos clássicos (mostrados por Boas e Laraia) comprovam que povos vizinhos no mesmo deserto ou no mesmo Ártico têm organizações sociais muito diferentes.",
+        "D": "Incorreto: nenhum idioma é genético; toda língua é 100% aprendida por socialização."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-042",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Franz Boas: Particularismo Histórico e Difusão Cultural",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual foi a mudança de paradigma promovida por **Franz Boas** na Antropologia por meio do **particularismo histórico** e do estudo da **difusão cultural**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Boas refutou a ideia de uma escada evolutiva única para toda a humanidade e defendeu o estudo empírico da **trajetória histórica singular de cada cultura** (**particularismo histórico**), mostrando também como saberes, técnicas e costumes circulam e são reinterpretados no contato entre diferentes grupos (**difusão cultural**).",
+        "correta": true,
+        "diagnostico": "Correto: com Franz Boas, a palavra \"cultura\" passa a ser pensada no plural (*as culturas*): cada sociedade tem sua própria história, suas invenções e suas trocas com outros povos, não sendo versão \"atrasada\" de ninguém."
+      },
+      {
+        "letra": "B",
+        "texto": "Boas defendeu que as culturas nunca entram em contato umas com as outras e nunca mudam ao longo do tempo.",
+        "correta": false,
+        "diagnostico": "Incorreto: o conceito de *difusão cultural* mostra justamente a intensa circulação e troca de elementos culturais entre grupos humanos."
+      },
+      {
+        "letra": "C",
+        "texto": "Boas criou o darwinismo social para classificar os povos entre superiores e inferiores.",
+        "correta": false,
+        "diagnostico": "Incorreto: Boas foi um dos maiores críticos científicos do racismo, do determinismo biológico e do evolucionismo unilinear."
+      },
+      {
+        "letra": "D",
+        "texto": "Difusão cultural significa a proibição de aprender técnicas de outros povos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a difusão cultural descreve justamente a circulação e transformação de práticas e saberes pelo contato."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de julgar todos os livros do mundo como se fossem rascunhos incompletos de um único romance europeu, **Franz Boas** ensinou a ler cada cultura como uma obra literária com **enredo histórico próprio** (**particularismo histórico**) que também dialoga e troca ideias com os livros vizinhos (**difusão cultural**).",
+      "analise_correta": "Essa virada metodológica lançou as bases do relativismo cultural moderno.",
+      "distratores": {
+        "B": "Incorreto: o conceito de *difusão cultural* mostra justamente a intensa circulação e troca de elementos culturais entre grupos humanos.",
+        "C": "Incorreto: Boas foi um dos maiores críticos científicos do racismo, do determinismo biológico e do evolucionismo unilinear.",
+        "D": "Incorreto: a difusão cultural descreve justamente a circulação e transformação de práticas e saberes pelo contato."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-043",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Socialização e Aprendizagem Cultural (Explícita e Implícita)",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "O que é o processo de **socialização** (ou endoculturação) e de que formas ocorre a transmissão cultural ao longo da vida?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "É o processo contínuo pelo qual os indivíduos aprendem a língua, as normas, os valores e as maneiras de perceber e agir ao participarem de grupos e instituições; ocorre tanto por **ensino deliberado/explícito** (escola, instruções familiares) quanto de modo **implícito/cotidiano**, pela observação, convivência e ajuste às reações dos outros.",
+        "correta": true,
+        "diagnostico": "Correto: aprendemos cultura desde os primeiros dias de vida na família, na rua, na escola, no trabalho e nas redes digitais, tanto quando alguém nos explica uma regra quanto quando observamos silenciosamente como as pessoas interagem."
+      },
+      {
+        "letra": "B",
+        "texto": "É um procedimento cirúrgico realizado no hospital no dia do nascimento.",
+        "correta": false,
+        "diagnostico": "Incorreto: socialização é aprendizagem relacional e simbólica, não intervenção biomédica."
+      },
+      {
+        "letra": "C",
+        "texto": "Ocorre exclusivamente dentro de universidades entre os 18 e os 22 anos de idade.",
+        "correta": false,
+        "diagnostico": "Incorreto: a socialização começa na primeira infância e estende-se por toda a existência em diversos espaços sociais."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa que as pessoas apenas copiam movimentos como robôs sem nunca atribuir sentido nem discordar de nada.",
+        "correta": false,
+        "diagnostico": "Incorreto: aprender cultura envolve interpretar significados em contexto, permitindo inclusive questionar e transformar costumes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A **socialização** é como aprender a falar e a se portar à mesa: parte você aprende porque alguém disse *\"Peça por favor\"* (explícita), e grande parte você aprende observando o tom de voz, os olhares e o jeito como as pessoas ao seu redor convivem todos os dias (implícita).",
+      "analise_correta": "É por meio da socialização que os fatos sociais (Durkheim) e o *habitus* (Bourdieu) se conectam ao repertório cultural.",
+      "distratores": {
+        "B": "Incorreto: socialização é aprendizagem relacional e simbólica, não intervenção biomédica.",
+        "C": "Incorreto: a socialização começa na primeira infância e estende-se por toda a existência em diversos espaços sociais.",
+        "D": "Incorreto: aprender cultura envolve interpretar significados em contexto, permitindo inclusive questionar e transformar costumes."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-044",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Clifford Geertz: Dimensão Simbólica da Cultura e Descrição Densa",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "medio",
+    "enunciado": "Para o antropólogo **Clifford Geertz** (vertente interpretativa/simbólica), o que é fundamental para compreender uma prática cultural e em que consiste a **descrição densa**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Geertz enfatiza a **dimensão simbólica da cultura**: como um mesmo gesto físico pode ter sentidos completamente diferentes conforme o contexto, a **descrição densa** busca **interpretar e reconstruir a teia de significados** que os próprios participantes atribuem às suas ações, indo além do mero registro superficial do movimento.",
+        "correta": true,
+        "diagnostico": "Correto: para Geertz, o ser humano está inserido em \"teias de significados\" que ele mesmo teceu; fazer antropologia não é catalogar objetos soltos, mas interpretar o que cada gesto ou símbolo significa naquele contexto vivo."
+      },
+      {
+        "letra": "B",
+        "texto": "Geertz afirma que os significados não importam e que o antropólogo deve apenas cronometrar movimentos musculares como um relógio.",
+        "correta": false,
+        "diagnostico": "Incorreto: registrar apenas o movimento físico externo seria uma \"descrição superficial/fina\", incapaz de distinguir um tique nervoso no olho de uma piscadela cúmplice."
+      },
+      {
+        "letra": "C",
+        "texto": "Descrição densa significa escrever um texto com palavras difíceis sem conversar nem observar o grupo estudado.",
+        "correta": false,
+        "diagnostico": "Incorreto: a descrição densa exige imersão atenta no contexto para captar os sentidos locais."
+      },
+      {
+        "letra": "D",
+        "texto": "Para Geertz, qualquer gesto físico (como um silêncio ou um piscar de olho) tem exatamente o mesmo significado em todas as culturas da Terra.",
+        "correta": false,
+        "diagnostico": "Incorreto: um mesmo silêncio pode significar reverência sagrada, concordância tímida, protesto hostil ou constrangimento dependendo da situação cultural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Imagine duas pessoas contraindo rapidamente a pálpebra do olho direito: na fotografia física o movimento muscular é idêntico, mas um estava apenas com um cisco no olho e o outro estava dando uma piscadela combinando uma brincadeira! A **descrição densa** de Geertz é o que lê o **significado cultural da piscadela** por trás do movimento físico.",
+      "analise_correta": "Veja que ponte incrível o artigo faz aqui: na **Engenharia Semiótica (Design de Interação)**, um ícone na tela do software também só funciona quando compreendemos o significado que o usuário atribui àquele signo em seu contexto!",
+      "distratores": {
+        "B": "Incorreto: registrar apenas o movimento físico externo seria uma \"descrição superficial/fina\", incapaz de distinguir um tique nervoso no olho de uma piscadela cúmplice.",
+        "C": "Incorreto: a descrição densa exige imersão atenta no contexto para captar os sentidos locais.",
+        "D": "Incorreto: um mesmo silêncio pode significar reverência sagrada, concordância tímida, protesto hostil ou constrangimento dependendo da situação cultural."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-045",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Roque de Barros Laraia (1986): Participação Desigual do Indivíduo na Cultura",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "medio",
+    "enunciado": "Em sua obra clássica *Cultura: um conceito antropológico* (1986), o antropólogo brasileiro **Roque de Barros Laraia** destaca que **\"os indivíduos participam de maneira diferente de sua própria cultura\"**. O que essa tese significa e qual erro ela evita?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Significa que nenhuma pessoa domina sozinha todo o repertório de sua sociedade, pois **idade, classe social, gênero, profissão, região, religião e trajetória de vida** geram experiências e acessos distintos dentro da mesma cultura; isso evita o erro de tratar uma cultura como um bloco monolítico homogêneo ou de achar que um único indivíduo representa a totalidade de seu povo.",
+        "correta": true,
+        "diagnostico": "Correto: toda cultura possui diversidade interna e divisão social do conhecimento; falar em \"cultura brasileira\" serve para olhar processos históricos amplos, mas nunca para estereotipar todos os brasileiros como cópias idênticas."
+      },
+      {
+        "letra": "B",
+        "texto": "Significa que apenas os governantes participam da cultura e o restante da população vive fora da cultura.",
+        "correta": false,
+        "diagnostico": "Incorreto: todos participam da cultura, porém a partir de posições, recortes e experiências diferenciadas."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa que todos os 210 milhões de brasileiros pensam, comem, falam e agem de modo 100% idêntico em todas as situações.",
+        "correta": false,
+        "diagnostico": "Incorreto: essa homogeneização artificial é exatamente o que Laraia critica."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa que dentro de uma mesma sociedade não existem diferenças de classe, geração ou profissão.",
+        "correta": false,
+        "diagnostico": "Incorreto: essas clivagens sociais são justamente os fatores que diversificam a participação cultural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense na cultura de um país como uma biblioteca gigantesca com milhões de salas (música, culinária regional, medicina, futebol, programação, gírias jovens, tradições religiosas): todos nós moramos dentro dessa biblioteca, mas **ninguém leu todos os livros de todas as salas**, e cada pessoa percorre corredores diferentes conforme sua história de vida.",
+      "analise_correta": "Para o designer de software e analista de requisitos, isso ensina a nunca criar \"personas caricatas baseadas em estereótipos nacionais\", investigando sempre a diversidade real dos usuários.",
+      "distratores": {
+        "B": "Incorreto: todos participam da cultura, porém a partir de posições, recortes e experiências diferenciadas.",
+        "C": "Incorreto: essa homogeneização artificial é exatamente o que Laraia critica.",
+        "D": "Incorreto: essas clivagens sociais são justamente os fatores que diversificam a participação cultural."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-046",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Roque de Barros Laraia: Lógica Própria e Caráter Dinâmico da Cultura (Mudança Cultural)",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "Segundo **Roque de Barros Laraia**, como devemos compreender a **lógica interna** de um sistema cultural e o seu **caráter dinâmico** no tempo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Cada cultura possui uma **lógica própria** (práticas que parecem estranhas a um observador de fora fazem sentido dentro daquela rede de valores) e toda cultura é **dinâmica**, transformando-se continuamente tanto por fatores internos (invenções, conflitos geracionais, questionamentos) quanto externos (contato e difusão com outros grupos).",
+        "correta": true,
+        "diagnostico": "Correto: não existe cultura \"morta/congelada\" entre seres humanos vivos; tradições são constantemente reproduzidas, negociadas, disputadas e transformadas pelos próprios participantes."
+      },
+      {
+        "letra": "B",
+        "texto": "Culturas autênticas são estátuas congeladas no tempo: se uma comunidade indígena ou tradicional usar um celular ou mudar um costume, ela deixa de ter cultura.",
+        "correta": false,
+        "diagnostico": "Incorreto: incorporar novos instrumentos técnicos reinterpretando seus usos faz parte do dinamismo vivo de qualquer cultura."
+      },
+      {
+        "letra": "C",
+        "texto": "Os costumes humanos são caóticos e não possuem nenhuma coerência ou sentido para quem os pratica.",
+        "correta": false,
+        "diagnostico": "Incorreto: todo sistema cultural articula redes de sentido compreensíveis quando estudadas em seu contexto."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas as sociedades industriais modernas mudam, enquanto todas as outras sociedades são 100% fixas e imóveis.",
+        "correta": false,
+        "diagnostico": "Incorreto: todas as sociedades humanas passam por mudanças históricas em ritmos e modos variados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A cultura é como uma língua viva (como o português que falamos hoje comparado ao de 1500): ela tem uma gramática que faz sentido para quem conversa (**lógica própria**), mas a cada geração palavras novas nascem, gírias mudam e expressões antigas se transformam (**cultura dinâmica**).",
+      "analise_correta": "Assim, permanência (tradição) e mudança (inovação/conflito) convivem permanentemente na história cultural.",
+      "distratores": {
+        "B": "Incorreto: incorporar novos instrumentos técnicos reinterpretando seus usos faz parte do dinamismo vivo de qualquer cultura.",
+        "C": "Incorreto: todo sistema cultural articula redes de sentido compreensíveis quando estudadas em seu contexto.",
+        "D": "Incorreto: todas as sociedades humanas passam por mudanças históricas em ritmos e modos variados."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-047",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Interação entre Corpo Biológico e Aprendizagem Cultural",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "Como a Antropologia analisa a relação entre as **necessidades biológicas do corpo humano** (como comer, dormir, curar-se de doenças) e a **cultura**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Mostra que dimensões biológicas e culturais **interagem profundamente**: todos os seres humanos têm a necessidade fisiológica de se alimentar ou cuidar da saúde, mas *o que* é considerado comida apetitosa ou tabu, *como* se prepara o alimento, os horários e os significados da saúde são moldados pela aprendizagem cultural.",
+        "correta": true,
+        "diagnostico": "Correto: sentir fome é biológico; decidir se insetos, carne bovina, peixe cru ou feijoada são iguarias deliciosas ou alimentos proibidos é profundamente cultural."
+      },
+      {
+        "letra": "B",
+        "texto": "A cultura elimina o funcionamento biológico do estômago e permite viver sem água e sem nutrientes.",
+        "correta": false,
+        "diagnostico": "Incorreto: os limites e processos biológicos continuam existindo, mas são vividos e significados culturalmente."
+      },
+      {
+        "letra": "C",
+        "texto": "Hábitos alimentares e regras de etiqueta à mesa são 100% determinados pelos genes sem qualquer influência cultural.",
+        "correta": false,
+        "diagnostico": "Incorreto: a enorme variação culinária e de etiqueta entre sociedades comprova sua natureza aprendida."
+      },
+      {
+        "letra": "D",
+        "texto": "Corpo biológico e cultura são mundos que nunca se tocam.",
+        "correta": false,
+        "diagnostico": "Incorreto: a cultura incide diretamente sobre os modos de usar, cuidar e perceber o próprio corpo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O estômago humano roncar de fome ao meio-dia é **biologia**; mas escolher comer arroz com feijão usando garfo e faca em vez de comer com *hashi* ou com as mãos sobre uma folha de bananeira é **cultura**.",
+      "analise_correta": "Essa compreensão evita tanto o reducionismo biológico quanto a negação da nossa condição corpórea.",
+      "distratores": {
+        "B": "Incorreto: os limites e processos biológicos continuam existindo, mas são vividos e significados culturalmente.",
+        "C": "Incorreto: a enorme variação culinária e de etiqueta entre sociedades comprova sua natureza aprendida.",
+        "D": "Incorreto: a cultura incide diretamente sobre os modos de usar, cuidar e perceber o próprio corpo."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-048",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Etnocentrismo vs. Relativismo Cultural (Compreensão Contextual)",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a definição precisa de **etnocentrismo** e como o **relativismo cultural** (enquanto orientação metodológica da Antropologia) contrapõe-se a ele?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Etnocentrismo** é a atitude de julgar práticas, crenças e modos de vida de outros grupos tomando os valores da própria cultura como régua universal do que é \"normal, certo ou superior\"; o **relativismo cultural** orienta o pesquisador a **compreender os significados e práticas dentro do contexto próprio do grupo estudado** antes de aplicar categorias externas.",
+        "correta": true,
+        "diagnostico": "Correto: o etnocentrismo transforma a diferença cultural em suposta \"inferioridade ou anormalidade\"; o relativismo metodológico suspende esse preconceito para reconstruir o sentido local da prática."
+      },
+      {
+        "letra": "B",
+        "texto": "Etnocentrismo é o respeito profundo à diversidade cultural, e relativismo cultural é a imposição violenta dos próprios costumes aos outros.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte os dois conceitos."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas povos antigos eram etnocêntricos; na sociedade contemporânea ninguém julga outros grupos pelos próprios padrões.",
+        "correta": false,
+        "diagnostico": "Incorreto: o etnocentrismo é um fenômeno recorrente no cotidiano contemporâneo e exige vigilância crítica constante."
+      },
+      {
+        "letra": "D",
+        "texto": "O etnocentrismo é o método científico oficial recomendado por Franz Boas e Roque Laraia.",
+        "correta": false,
+        "diagnostico": "Incorreto: a Antropologia constituiu-se justamente combatendo o olhar etnocêntrico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O **etnocentrismo** é olhar o mundo inteiro usando apenas os óculos do seu próprio bairro e achar que qualquer pessoa que se vista ou fale diferente \"está com defeito\". O **relativismo cultural** é tirar os óculos do preconceito e perguntar: *\"O que essa prática significa dentro da história e da vida dessa comunidade?\"*.",
+      "analise_correta": "Superar o etnocentrismo é passo obrigatório tanto na convivência cidadã quanto na pesquisa com usuários em tecnologia.",
+      "distratores": {
+        "B": "Incorreto: inverte os dois conceitos.",
+        "C": "Incorreto: o etnocentrismo é um fenômeno recorrente no cotidiano contemporâneo e exige vigilância crítica constante.",
+        "D": "Incorreto: a Antropologia constituiu-se justamente combatendo o olhar etnocêntrico."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-049",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Relativismo Metodológico vs. Avaliação Ética e Desigualdade de Direitos",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "dificil",
+    "enunciado": "Adotar o **relativismo cultural** como método para compreender uma prática em seu contexto significa que somos proibidos de fazer **qualquer avaliação ética** ou que devemos aceitar passivamente **desigualdades e violações de dignidade** apenas porque são tradicionais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Não: **compreender o significado contextual de uma prática (operação antropológica) não exige concordar moralmente com ela (avaliação ética)**; devemos evitar hierarquias etnocêntricas automáticas, mas sem apagar desigualdades materiais nem abrir mão de avaliar os efeitos de práticas e instituições sobre os direitos e a dignidade das pessoas.",
+        "correta": true,
+        "diagnostico": "Correto: o artigo destaca duas distinções vitais: 1) *compreender* em contexto não é *endossar* moralmente; e 2) *diferença cultural* (diversidade legítima de saberes e costumes) não deve ser confundida com *desigualdade social* (privação injusta de recursos e direitos)."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim: para a Antropologia, se uma violência ou opressão for antiga e tradicional, ninguém pode jamais questioná-la eticamente nem os próprios membros oprimidos do grupo podem mudá-la.",
+        "correta": false,
+        "diagnostico": "Incorreto: inclusive, como as culturas são dinâmicas e desiguais internamente, as próprias pessoas afetadas dentro da cultura frequentemente contestam e transformam tradições opressivas."
+      },
+      {
+        "letra": "C",
+        "texto": "Sim: diferença cultural e desigualdade socioeconômica são exatamente a mesma coisa, portanto a fome e a falta de saneamento básico não devem ser combatidas.",
+        "correta": false,
+        "diagnostico": "Incorreto: confundir diferença cultural com privação de direitos básicos serviria para naturalizar injustiças sociais."
+      },
+      {
+        "letra": "D",
+        "texto": "Não: devemos julgar e condenar imediatamente qualquer costume diferente do nosso sem procurar entender seu contexto.",
+        "correta": false,
+        "diagnostico": "Incorreto: julgar sem compreender o contexto seria recair no etnocentrismo cego."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Entender historicamente por que uma estrutura desigual surgiu (**compreensão contextual**) é como o médico entender como uma infecção se instalou no organismo: entender a causa com rigor científico não significa \"torcer a favor da doença\", e sim ter clareza para defender a vida e a dignidade (**avaliação ética**)!",
+      "analise_correta": "Essa articulação madura une a sensibilidade antropológica do Artigo 04 ao critério ético do humanismo visto no Artigo 01.",
+      "distratores": {
+        "B": "Incorreto: inclusive, como as culturas são dinâmicas e desiguais internamente, as próprias pessoas afetadas dentro da cultura frequentemente contestam e transformam tradições opressivas.",
+        "C": "Incorreto: confundir diferença cultural com privação de direitos básicos serviria para naturalizar injustiças sociais.",
+        "D": "Incorreto: julgar sem compreender o contexto seria recair no etnocentrismo cego."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
+    }
+  },
+  {
+    "id": "DES-050",
+    "disciplina_id": "11",
+    "disciplina": "Desafios Contemporâneos: Sociedade, Diversidade e Ética",
+    "topico": "Ponte Interdisciplinar: Antropologia Cultural, Engenharia Semiótica e Design de Tecnologia",
+    "artigo_origem": "04. Cultura como construção social e conceito antropológico.md",
+    "dificuldade": "medio",
+    "enunciado": "De que forma os conceitos estudados no Artigo 04 (**significados contextualizados, participação desigual na cultura e crítica a estereótipos**) aplicam-se diretamente ao **Design de Interação, Engenharia Semiótica e Desenvolvimento de Software**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ensinam que **interfaces digitais comunicam signos que são interpretados culturalmente**: o desenvolvedor não deve pressupor que todos os usuários compartilham o mesmo vocabulário, letramento digital, referências visuais ou condições de acesso, devendo investigar contextos reais de uso sem cair em estereótipos rígidos de nacionalidade ou origem.",
+        "correta": true,
+        "diagnostico": "Correto: uma interface de software é um artefato cultural e semiótico; um ícone, metáfora ou fluxo que parece \"óbvio\" para o programador pode ser opaco para um usuário de outra geração, classe ou repertório cultural."
+      },
+      {
+        "letra": "B",
+        "texto": "Mostram que basta programar uma única interface em inglês técnico com jargões avançados, pois todos os seres humanos interpretam símbolos de forma idêntica.",
+        "correta": false,
+        "diagnostico": "Incorreto: ignorar a diversidade de repertórios culturais gera barreiras severas de usabilidade e exclusão digital."
+      },
+      {
+        "letra": "C",
+        "texto": "Provam que a cultura não tem nenhuma relação com o uso de aplicativos, sites ou sistemas de informação.",
+        "correta": false,
+        "diagnostico": "Incorreto: toda interação humano-computador ocorre mediada por linguagem, símbolos e práticas culturais."
+      },
+      {
+        "letra": "D",
+        "texto": "Determinam que o designer deve criar caricaturas etnocêntricas fixas para classificar os usuários pelo país onde nasceram.",
+        "correta": false,
+        "diagnostico": "Incorreto: o artigo alerta explicitamente contra criar perfis rígidos baseados em estereótipos nacionais, pois há enorme diversidade interna em qualquer grupo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando o designer coloca um ícone ou escreve uma mensagem no aplicativo (**Engenharia Semiótica**), ele está enviando um recado que vai ser lido através do repertório cultural do usuário. Se você projetar apenas para \"pessoas idênticas a você\" (**etnocentrismo de design**), deixará metade do público trancada do lado de fora da tela!",
+      "analise_correta": "Essa conexão fecha os 50 itens integrando Desafios Contemporâneos a Design de Interação, Engenharia de Requisitos e ao Projeto da Aplicação Interativa NODO.",
+      "distratores": {
+        "B": "Incorreto: ignorar a diversidade de repertórios culturais gera barreiras severas de usabilidade e exclusão digital.",
+        "C": "Incorreto: toda interação humano-computador ocorre mediada por linguagem, símbolos e práticas culturais.",
+        "D": "Incorreto: o artigo alerta explicitamente contra criar perfis rígidos baseados em estereótipos nacionais, pois há enorme diversidade interna em qualquer grupo."
+      },
+      "referencia_vault": "11. Desafios Contemporaneos/04. Cultura como construção social e conceito antropológico.md"
     }
   }
 ]

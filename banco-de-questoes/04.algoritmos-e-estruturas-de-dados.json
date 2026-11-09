@@ -3,90 +3,2250 @@
     "id": "AED-001",
     "disciplina_id": "04",
     "disciplina": "Algoritmos e Estruturas de Dados",
-    "topico": "Tabelas Hash, colisões e complexidade",
-    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
-    "dificuldade": "medio",
-    "enunciado": "Em uma tabela hash (*hash table*) implementada para armazenamento de pares chave-valor, a função de espalhamento (*hash function*) mapeia chaves de domínio amplo em índices de um array interno. O que acontece quando duas chaves distintas geram exatamente o mesmo índice calculado, e qual a estratégia típica para contornar essa situação?",
+    "topico": "ArrayList vs. Arrays estáticos",
+    "artigo_origem": "01. ArrayList, referências e operações em coleções.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a principal diferença operacional entre um vetor nativo `int[]` e uma coleção `ArrayList` em C#?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Ocorre um *overflow* de memória fatal com terminação do processo sem possibilidade de recuperação.",
-        "correta": false,
-        "diagnostico": "Erro conceitual: colisões de hash são esperadas e inerentes ao princípio da casa dos pombos; estruturas tratam isso rotineiramente."
+        "texto": "O vetor nativo tem tamanho fixo definido na alocação; o ArrayList redimensiona sua capacidade dinamicamente conforme novos elementos são inseridos.",
+        "correta": true,
+        "diagnostico": "Correto: vetores nativos têm dimensão estática, enquanto ArrayList realoca um novo array maior (tipicamente dobrando a capacidade) quando enche."
       },
       {
         "letra": "B",
-        "texto": "Ocorre uma colisão de hash (*hash collision*), resolvida por técnicas como encadeamento externo (*separate chaining* com listas encadeadas) ou endereçamento aberto (*open addressing*).",
-        "correta": true,
-        "diagnostico": "Correto: colisões são tratadas encadeando elementos no mesmo balde (bucket) ou buscando outro slot livre por sondagem linear/quadrática."
+        "texto": "O ArrayList só pode armazenar números inteiros; o vetor nativo armazena qualquer tipo de objeto.",
+        "correta": false,
+        "diagnostico": "Erro inverso: ArrayList armazena `object` heterogêneo."
       },
       {
         "letra": "C",
-        "texto": "A tabela sobrescreve compulsoriamente a chave anterior, pois tabelas hash não permitem chaves com valores de hash iguais.",
+        "texto": "O vetor nativo é alocado no disco rígido; o ArrayList fica apenas na memória cache do processador.",
         "correta": false,
-        "diagnostico": "Erro conceitual: sobrescrita só ocorre quando a mesma chave é reinserida, não quando chaves diferentes colidem no mesmo índice."
+        "diagnostico": "Erro de hardware."
       },
       {
         "letra": "D",
-        "texto": "A estrutura converte-se automaticamente em uma árvore B* com complexidade O(N!) para preservar a ordenação sequencial.",
+        "texto": "Não existe diferença, ambos possuem tamanho fixo imutável.",
         "correta": false,
-        "diagnostico": "Erro absurdo e taxonômico: tabelas hash não são ordenadas e O(N!) é complexidade fatorial."
+        "diagnostico": "Erro conceitual."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Pense em armários numerados de 0 a 9 em um vestiário: se duas pessoas recebem o bilhete para o armário 4 (colisão), podemos colocar uma gaveta com divisórias dentro do armário 4 (encadeamento) ou mandar a segunda pessoa procurar o próximo armário vazio ao lado (endereçamento aberto).",
-      "analise_correta": "Funções hash produzem colisões quando mapeiam domínios maiores para arrays finitos. O encadeamento mantém uma lista dos elementos colidentes no bucket, mantendo custo médio O(1) com fator de carga controlado.",
+      "modelo_mental": "Um array nativo é uma caixa de ovos de papelão com 12 lugares fixos; o ArrayList é uma mochila elástica que troca para um modelo maior quando fica cheia.",
+      "analise_correta": "O redimensionamento dinâmico do ArrayList tem custo O(N) na cópia, mas custo amortizado O(1) por inserção.",
       "distratores": {
-        "A": "Colisões são eventos previstos e normais no projeto de tabelas hash.",
-        "C": "Sobrescrita destruiria dados de chaves distintas.",
-        "D": "Tabelas hash não garantem ordem e O(1) médio é sua principal vantagem."
+        "B": "Erro inverso: ArrayList armazena `object` heterogêneo.",
+        "C": "Erro de hardware.",
+        "D": "Erro conceitual."
       },
-      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md"
     }
   },
   {
     "id": "AED-002",
     "disciplina_id": "04",
     "disciplina": "Algoritmos e Estruturas de Dados",
-    "topico": "Árvores Binárias de Busca (ABB) e balanceamento AVL",
-    "artigo_origem": "10. Árvore AVL - conceito, fator de balanceamento e rotações.md",
+    "topico": "Boxing e Unboxing no ArrayList",
+    "artigo_origem": "01. ArrayList, referências e operações em coleções.md",
     "dificuldade": "dificil",
-    "enunciado": "Em uma Árvore Binária de Busca (ABB), a inserção desbalanceada de elementos previamente ordenados pode degradar sua altura para N, transformando a busca em O(N). Para evitar isso, a árvore AVL introduz o fator de balanceamento (FB) em cada nó. Como o FB é definido e qual critério desencadeia rotações na árvore?",
+    "enunciado": "Por que o uso de `ArrayList` (do namespace `System.Collections`) para armazenar milhões de números inteiros (`int`) provoca degradação severa de desempenho e pressão no Garbage Collector em C#?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "O FB é a quantidade total de folhas dividida pela raiz; rotações ocorrem quando FB ultrapassa 10.",
+        "texto": "Porque o ArrayList grava cada número em um arquivo XML separado.",
         "correta": false,
-        "diagnostico": "Erro conceitual: o fator de balanceamento relaciona a altura das subárvores de cada nó, não a contagem de folhas."
+        "diagnostico": "Erro de persistência."
       },
       {
         "letra": "B",
-        "texto": "O FB é a diferença entre a altura da subárvore esquerda e a altura da subárvore direita (ou vice-versa); rotações de rebalanceamento ocorrem quando |FB| > 1 (ou seja, quando FB assume -2 ou +2).",
+        "texto": "Porque o ArrayList armazena referências do tipo `object`, forçando que cada tipo de valor (`int` na stack) sofra *boxing* (alocação de um invólucro na heap) ao inserir e *unboxing* (cast e cópia) ao ler.",
         "correta": true,
-        "diagnostico": "Correto: a condição de invariante AVL exige que em todo nó |h_esq - h_dir| <= 1. Se FB atingir 2 ou -2, aplicam-se rotações simples ou duplas."
+        "diagnostico": "Correto: o boxing aloca objetos na heap gerenciada para cada primitivo, aumentando o consumo de memória e o trabalho do GC."
       },
       {
         "letra": "C",
-        "texto": "O FB mede a profundidade do nó mais raso; qualquer nó com filhos requer rotação simples imediata.",
+        "texto": "Porque o ArrayList ordena os elementos com Bubble Sort a cada leitura.",
         "correta": false,
-        "diagnostico": "Erro conceitual: nós com filhos são a própria essência de árvores binárias; rotação só é necessária quando há desequilíbrio na altura."
+        "diagnostico": "Erro algorítmico: ArrayList não ordena automaticamente na leitura."
       },
       {
         "letra": "D",
-        "texto": "O FB é um índice de busca binária utilizado apenas para desalocar nós na coleta de lixo (garbage collector) do C#.",
+        "texto": "Porque o ArrayList envia os dados pela rede local antes de salvar na RAM.",
         "correta": false,
-        "diagnostico": "Erro conceitual: FB é um atributo estrutural do algoritmo AVL para manutenção de altura logarítmica O(log N)."
+        "diagnostico": "Erro de rede."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Pense em uma balança de dois pratos em cada bifurcação da árvore: se um prato estiver mais de um nível mais pesado que o outro (|FB| = 2), a balança puxa um cabo e redistribui os pesos (rotação simples ou dupla) para o centro.",
-      "analise_correta": "A árvore AVL garante busca, inserção e remoção em tempo O(log N) no pior caso ao reequilibrar a altura estritamente através de rotações (simples à direita/esquerda ou duplas esquerda-direita/direita-esquerda).",
+      "modelo_mental": "Guardar uma moeda (int) no ArrayList exige embrulhá-la em uma caixa de presente pesada com etiqueta (boxing na heap) e rasgar a caixa toda vez que quiser ver o valor (unboxing).",
+      "analise_correta": "Por essa razão, em C# moderno deve-se preferir sempre a coleção genérica `List<int>` em vez de `ArrayList`.",
       "distratores": {
-        "A": "FB não é média de folhas, mas a diferença direta de altura entre subárvores.",
-        "C": "Uma árvore perfeitamente balanceada possui filhos em todos os nós internos sem precisar de rotações.",
-        "D": "O GC de C# gerencia memória na heap e não conhece regras de balanceamento AVL."
+        "A": "Erro de persistência.",
+        "C": "Erro algorítmico: ArrayList não ordena automaticamente na leitura.",
+        "D": "Erro de rede."
       },
-      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvore AVL - conceito, fator de balanceamento e rotações.md"
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md"
+    }
+  },
+  {
+    "id": "AED-003",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Propriedades Count vs. Capacity",
+    "artigo_origem": "01. ArrayList, referências e operações em coleções.md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma coleção dinâmica baseada em vetor (como `ArrayList` ou `List<T>`), qual é a distinção exata entre as propriedades `Count` e `Capacity`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`Count` é a quantidade de elementos efetivamente armazenados no momento; `Capacity` é o tamanho total do array interno já alocado em memória para suportar inserções sem realocação.",
+        "correta": true,
+        "diagnostico": "Correto: Count <= Capacity sempre; quando Count atinge Capacity, a próxima inserção dispara o redimensionamento."
+      },
+      {
+        "letra": "B",
+        "texto": "`Count` é o limite máximo do sistema operacional; `Capacity` é sempre zero.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "`Capacity` é o número de elementos atuais; `Count` é a memória livre em gigabytes.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas retornam sempre o mesmo valor inteiro em qualquer situação.",
+        "correta": false,
+        "diagnostico": "Erro: só coincidem quando o buffer interno está exatamente cheio."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em um ônibus de 40 lugares com 15 passageiros sentados: Count é 15 (passageiros reais) e Capacity é 40 (assentos disponíveis sem precisar chamar um ônibus maior).",
+      "analise_correta": "Compreender Count vs. Capacity permite pré-alocar a capacidade inicial quando o volume de dados é conhecido, evitando cópias intermediárias.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro inverso.",
+        "D": "Erro: só coincidem quando o buffer interno está exatamente cheio."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md"
+    }
+  },
+  {
+    "id": "AED-004",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Custo de Remoção no Início de ArrayList",
+    "artigo_origem": "01. ArrayList, referências e operações em coleções.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a complexidade assintótica de tempo no pior caso ao executar `lista.RemoveAt(0)` (remover o primeiro elemento) em um `ArrayList` ou `List<T>` contendo N elementos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O(1), pois basta apagar o ponteiro inicial.",
+        "correta": false,
+        "diagnostico": "Erro: isso ocorreria apenas em uma lista encadeada ou fila circular."
+      },
+      {
+        "letra": "B",
+        "texto": "O(N), pois todos os N - 1 elementos subsequentes precisam ser deslocados (shiftados) uma posição para a esquerda na memória contígua para cobrir a lacuna.",
+        "correta": true,
+        "diagnostico": "Correto: em estruturas contíguas sem buracos, remover no índice 0 exige copiar todo o restante do vetor."
+      },
+      {
+        "letra": "C",
+        "texto": "O(log N), pois utiliza busca binária.",
+        "correta": false,
+        "diagnostico": "Erro de busca."
+      },
+      {
+        "letra": "D",
+        "texto": "O(N^2), pois reordena toda a coleção.",
+        "correta": false,
+        "diagnostico": "Erro quadrático."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma fila de pessoas sentadas em cadeiras fixas sem deixar buracos: se a primeira pessoa sai, a segunda precisa sentar na primeira, a terceira na segunda, e assim até a última.",
+      "analise_correta": "Inserções e remoções frequentes na cabeça de vetores contíguos degradam a performance para O(N).",
+      "distratores": {
+        "A": "Erro: isso ocorreria apenas em uma lista encadeada ou fila circular.",
+        "C": "Erro de busca.",
+        "D": "Erro quadrático."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md"
+    }
+  },
+  {
+    "id": "AED-005",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Disciplina FIFO em Filas (Queue)",
+    "artigo_origem": "02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a política de acesso e manipulação de elementos que define formalmente uma estrutura de dados do tipo Fila (`Queue`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "LIFO (Last-In, First-Out): o último a entrar é o primeiro a sair.",
+        "correta": false,
+        "diagnostico": "Erro: LIFO define uma Pilha (Stack)."
+      },
+      {
+        "letra": "B",
+        "texto": "FIFO (First-In, First-Out): o primeiro elemento inserido no final da fila (`Enqueue`) é obrigatoriamente o primeiro a ser removido na frente (`Dequeue`).",
+        "correta": true,
+        "diagnostico": "Correto: a fila preserva a ordem cronológica estrita de chegada."
+      },
+      {
+        "letra": "C",
+        "texto": "Acesso aleatório irrestrito por qualquer índice intermediário.",
+        "correta": false,
+        "diagnostico": "Erro: filas puras restringem o acesso às extremidades."
+      },
+      {
+        "letra": "D",
+        "texto": "Remoção prioritária exclusiva pelo maior valor numérico.",
+        "correta": false,
+        "diagnostico": "Erro: isso descreve uma Fila de Prioridades (Heap)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A fila da padaria: quem chegou primeiro ao balcão é atendido primeiro; quem chega depois entra no final da fila.",
+      "analise_correta": "As operações canônicas de uma Queue em C# são `Enqueue` (enfileirar), `Dequeue` (desenfileirar) e `Peek` (espiar o primeiro sem remover).",
+      "distratores": {
+        "A": "Erro: LIFO define uma Pilha (Stack).",
+        "C": "Erro: filas puras restringem o acesso às extremidades.",
+        "D": "Erro: isso descreve uma Fila de Prioridades (Heap)."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md"
+    }
+  },
+  {
+    "id": "AED-006",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Disciplina LIFO em Pilhas (Stack)",
+    "artigo_origem": "02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+    "dificuldade": "facil",
+    "enunciado": "Em uma estrutura de dados do tipo Pilha (`Stack`), se empilharmos sequencialmente os valores 10, 20 e 30 (por meio de `Push(10)`, `Push(20)`, `Push(30)`) e executarmos uma operação `Pop()`, qual elemento será retornado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O elemento 10.",
+        "correta": false,
+        "diagnostico": "Erro: 10 está na base da pilha e será o último a sair."
+      },
+      {
+        "letra": "B",
+        "texto": "O elemento 30, pois a pilha segue a política LIFO (Last-In, First-Out), onde o último elemento depositado no topo é o primeiro a ser retirado.",
+        "correta": true,
+        "diagnostico": "Correto: 30 foi o último a entrar no topo, logo é o primeiro a sair no Pop()."
+      },
+      {
+        "letra": "C",
+        "texto": "O elemento 20 do meio.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os elementos somados (60).",
+        "correta": false,
+        "diagnostico": "Erro aritmético."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma pilha de pratos na pia: você coloca um prato em cima do outro; na hora de lavar, você pega sempre o prato que está bem no topo.",
+      "analise_correta": "Pilhas são fundamentais para gerenciar a pilha de chamadas de funções (Call Stack), recursão, avaliação de expressões e botão Desfazer (Undo).",
+      "distratores": {
+        "A": "Erro: 10 está na base da pilha e será o último a sair.",
+        "C": "Erro conceitual.",
+        "D": "Erro aritmético."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md"
+    }
+  },
+  {
+    "id": "AED-007",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Operação Peek em Filas e Pilhas",
+    "artigo_origem": "02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a diferença entre chamar o método `Peek()` e chamar `Pop()` (na Stack) ou `Dequeue()` (na Queue) em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`Peek()` apaga toda a estrutura; `Pop()` apenas lê.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "B",
+        "texto": "`Peek()` retorna o elemento que está na vez (topo da pilha ou frente da fila) apenas para consulta, SEM removê-lo da coleção; `Pop()` e `Dequeue()` retornam e removem efetivamente o elemento.",
+        "correta": true,
+        "diagnostico": "Correto: Peek é uma operação de inspeção não-destrutiva em tempo constante O(1)."
+      },
+      {
+        "letra": "C",
+        "texto": "`Peek()` ordena a pilha em ordem crescente.",
+        "correta": false,
+        "diagnostico": "Erro algorítmico."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há diferença: ambos removem o elemento da memória.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Peek é apenas olhar qual é a carta que está no topo do baralho sem comprá-la; Pop é comprar a carta tirando-a do monte.",
+      "analise_correta": "Tentar executar `Peek()`, `Pop()` ou `Dequeue()` em uma coleção vazia lança `InvalidOperationException`.",
+      "distratores": {
+        "A": "Erro inverso.",
+        "C": "Erro algorítmico.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md"
+    }
+  },
+  {
+    "id": "AED-008",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Verificação de Balanceamento de Parênteses com Pilha",
+    "artigo_origem": "02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+    "dificuldade": "dificil",
+    "enunciado": "Na análise sintática de expressões matemáticas como `((a + b) * [c - d])`, por que a Pilha (`Stack`) é a estrutura de dados ideal para validar se todos os delimitadores abertos são fechados na ordem correta?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o último delimitador aberto precisa ser obrigatoriamente o primeiro a ser fechado, espelhando exatamente a inversão de ordem LIFO da pilha.",
+        "correta": true,
+        "diagnostico": "Correto: o aninhamento de escopos e parênteses segue estritamente a simetria LIFO."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque a pilha ordena as letras em ordem alfabética automaticamente.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque expressões matemáticas exigem complexidade fatorial.",
+        "correta": false,
+        "diagnostico": "Erro de complexidade: a validação com pilha roda em tempo linear O(N)."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque filas FIFO invertem a ordem dos elementos.",
+        "correta": false,
+        "diagnostico": "Erro: filas mantêm a ordem original, não a invertem."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Aninhar parênteses é como abrir bonecas russas (Matrioskas): a última bonequinha que você abriu no centro tem que ser a primeira a ser fechada antes de fechar a maior por fora.",
+      "analise_correta": "Ao encontrar `(`, `[` ou `{`, faz-se `Push`; ao encontrar `)`, `]` ou `}`, faz-se `Pop` e verifica-se a correspondência do par.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de complexidade: a validação com pilha roda em tempo linear O(N).",
+        "D": "Erro: filas mantêm a ordem original, não a invertem."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md"
+    }
+  },
+  {
+    "id": "AED-009",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Conceito de Hashing e Função de Espalhamento",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é o objetivo primordial de uma função de espalhamento (*hash function*) dentro de uma estrutura `Hashtable` ou `Dictionary`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Criptografar o banco de dados para envio por e-mail.",
+        "correta": false,
+        "diagnostico": "Erro de segurança."
+      },
+      {
+        "letra": "B",
+        "texto": "Transformar uma chave de busca arbitrária em um índice numérico inteiro dentro dos limites do vetor interno (tabela), permitindo localização quase instantânea em O(1) médio.",
+        "correta": true,
+        "diagnostico": "Correto: a função hash calcula aritmeticamente a posição provável do registro sem precisar percorrer os elementos anteriores."
+      },
+      {
+        "letra": "C",
+        "texto": "Ordenar todas as chaves em uma lista encadeada simples.",
+        "correta": false,
+        "diagnostico": "Erro: tabelas hash não mantêm ordenação."
+      },
+      {
+        "letra": "D",
+        "texto": "Comprimir imagens em formato JPEG.",
+        "correta": false,
+        "diagnostico": "Erro de multimídia."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de procurar o livro de um autor lendo prateleira por prateleira, uma fórmula mágica transforma as letras do nome do autor diretamente no número exato da gaveta onde o livro está.",
+      "analise_correta": "Uma boa função de hash deve ser determinística, rápida de calcular e distribuir as chaves uniformemente pelos compartimentos.",
+      "distratores": {
+        "A": "Erro de segurança.",
+        "C": "Erro: tabelas hash não mantêm ordenação.",
+        "D": "Erro de multimídia."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-010",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Contrato entre Equals e GetHashCode em C#",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "dificil",
+    "enunciado": "Na plataforma .NET, toda classe herda `Equals()` e `GetHashCode()` de `System.Object`. Qual é a regra contratual obrigatória que deve ser respeitada ao sobrescrever esses métodos para usar um objeto como chave em um `Dictionary` ou `Hashtable`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Dois objetos diferentes nunca podem ter o mesmo HashCode em hipótese alguma.",
+        "correta": false,
+        "diagnostico": "Erro: pelo princípio da casa dos pombos, colisões (objetos diferentes com mesmo hash) são possíveis e esperadas."
+      },
+      {
+        "letra": "B",
+        "texto": "Se dois objetos são considerados iguais pelo método `Equals(a, b) == true`, eles DEVEM obrigatoriamente retornar exatamente o mesmo valor inteiro em `GetHashCode()`.",
+        "correta": true,
+        "diagnostico": "Correto: se dois objetos iguais tiverem hashes diferentes, a tabela procurará no balde errado e jamais encontrará a chave."
+      },
+      {
+        "letra": "C",
+        "texto": "O método `GetHashCode()` deve retornar um número aleatório diferente a cada chamada na mesma execução.",
+        "correta": false,
+        "diagnostico": "Erro fatal: se o hash mudar ou for aleatório, o objeto se perde dentro da tabela hash."
+      },
+      {
+        "letra": "D",
+        "texto": "Se `GetHashCode()` for igual, os objetos são obrigatoriamente idênticos sem precisar chamar `Equals()`.",
+        "correta": false,
+        "diagnostico": "Erro: hashes iguais podem ser apenas uma colisão; o `Equals()` é chamado em seguida para confirmar a igualdade real."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O HashCode é o CEP da rua e o Equals é o número da casa com o nome do morador: duas pessoas que moram juntas na mesma casa (Equals true) têm obrigatoriamente o mesmo CEP (HashCode igual); mas ter o mesmo CEP não significa morar na mesma casa (colisão de rua).",
+      "analise_correta": "Além disso, campos usados no cálculo de `GetHashCode` devem ser imutáveis enquanto o objeto atuar como chave no dicionário.",
+      "distratores": {
+        "A": "Erro: pelo princípio da casa dos pombos, colisões (objetos diferentes com mesmo hash) são possíveis e esperadas.",
+        "C": "Erro fatal: se o hash mudar ou for aleatório, o objeto se perde dentro da tabela hash.",
+        "D": "Erro: hashes iguais podem ser apenas uma colisão; o `Equals()` é chamado em seguida para confirmar a igualdade real."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-011",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Fator de Carga (Load Factor) e Rehashing",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "dificil",
+    "enunciado": "O que representa o Fator de Carga (*Load Factor*, α = N / M, onde N é o número de elementos e M o tamanho do vetor) em uma tabela hash e por que ocorre a operação de *Rehashing* quando ele ultrapassa um limiar (ex.: 0.75)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Mede a temperatura da CPU; o rehashing desliga o cooler.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "B",
+        "texto": "Mede o grau de ocupação da tabela; quando fica muito cheia, a probabilidade de colisões dispara degradando a busca para O(N), exigindo alocar um vetor maior (tipicamente primo) e recalcular a posição de todos os elementos.",
+        "correta": true,
+        "diagnostico": "Correto: manter o fator de carga controlado é indispensável para preservar o desempenho O(1) médio."
+      },
+      {
+        "letra": "C",
+        "texto": "Mede a quantidade de memória livre no HD; rehashing formata a partição.",
+        "correta": false,
+        "diagnostico": "Erro de armazenamento."
+      },
+      {
+        "letra": "D",
+        "texto": "Representa o número de threads concorrentes bloqueadas.",
+        "correta": false,
+        "diagnostico": "Erro de concorrência."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se um estacionamento de 100 vagas tem 95 carros, um motorista novo vai rodar muitos minutos procurando vaga (colisões). Quando passa de 75 carros, o dono amplia o terreno para 200 vagas e reorganiza os carros (rehashing).",
+      "analise_correta": "No rehashing, não basta copiar os elementos: como o tamanho M mudou, o módulo `hash % M` muda, exigindo reinserção completa.",
+      "distratores": {
+        "A": "Erro de hardware.",
+        "C": "Erro de armazenamento.",
+        "D": "Erro de concorrência."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-012",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Iteração em Hashtable com DictionaryEntry",
+    "artigo_origem": "03. Hashtable (chave, valor, hashing e colisões).md",
+    "dificuldade": "medio",
+    "enunciado": "Ao percorrer uma `Hashtable` não genérica em C# utilizando um laço `foreach`, qual é o tipo de cada elemento retornado pelo enumerador?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma estrutura `DictionaryEntry`, contendo as propriedades `.Key` e `.Value` tipadas como `object`.",
+        "correta": true,
+        "diagnostico": "Correto: cada par chave-valor na Hashtable clássica é encapsulado em um struct `DictionaryEntry`."
+      },
+      {
+        "letra": "B",
+        "texto": "Um número inteiro representando apenas o índice.",
+        "correta": false,
+        "diagnostico": "Erro: retorna o par chave-valor."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma string formatada em JSON.",
+        "correta": false,
+        "diagnostico": "Erro de formato."
+      },
+      {
+        "letra": "D",
+        "texto": "Não é permitido usar foreach em uma Hashtable.",
+        "correta": false,
+        "diagnostico": "Erro: implementa `IEnumerable` normalmente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Cada gaveta aberta na inspeção te entrega uma ficha com dois campos preenchidos: a etiqueta da chave (Key) e o objeto guardado (Value).",
+      "analise_correta": "Na versão genérica moderna (`Dictionary<TKey, TValue>`), o elemento iterado é o tipo fortemente tipado `KeyValuePair<TKey, TValue>`.",
+      "distratores": {
+        "B": "Erro: retorna o par chave-valor.",
+        "C": "Erro de formato.",
+        "D": "Erro: implementa `IEnumerable` normalmente."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md"
+    }
+  },
+  {
+    "id": "AED-013",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Vantagens de System.Collections.Generic",
+    "artigo_origem": "04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+    "dificuldade": "facil",
+    "enunciado": "Quais são os dois benefícios centrais das coleções do namespace `System.Collections.Generic` (como `List<T>`, `Queue<T>`, `Stack<T>` e `Dictionary<TKey, TValue>`) sobre suas equivalentes antigas não genéricas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Segurança de tipos em tempo de compilação (*type safety*, evitando `InvalidCastException` em runtime) e eliminação de *boxing/unboxing* para tipos de valor.",
+        "correta": true,
+        "diagnostico": "Correto: o compilador garante a homogeneidade dos dados e gera código nativo especializado para tipos primitivos."
+      },
+      {
+        "letra": "B",
+        "texto": "Capacidade de rodar sem memória RAM e suporte exclusivo a variáveis globais.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "C",
+        "texto": "Criptografia automática de dados e conexão nativa com satélites.",
+        "correta": false,
+        "diagnostico": "Erro absurdo."
+      },
+      {
+        "letra": "D",
+        "texto": "Eliminação da necessidade de declarar tipos nas variáveis.",
+        "correta": false,
+        "diagnostico": "Erro: o tipo `T` é explicitamente parametrizado."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Coleções genéricas são caixas etiquetadas de fábrica ('Apenas Parafusos M6'): ninguém consegue jogar um prego torto lá dentro por engano e você pega o parafuso de olhos fechados sem precisar testar se é parafuso mesmo.",
+      "analise_correta": "Sempre utilize as versões genéricas em qualquer projeto C# moderno.",
+      "distratores": {
+        "B": "Erro de hardware.",
+        "C": "Erro absurdo.",
+        "D": "Erro: o tipo `T` é explicitamente parametrizado."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md"
+    }
+  },
+  {
+    "id": "AED-014",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "LinkedList<T> e LinkedListNode<T>",
+    "artigo_origem": "04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+    "dificuldade": "medio",
+    "enunciado": "Como a classe `LinkedList<T>` do .NET é implementada internamente e qual é a característica de seus nós (`LinkedListNode<T>`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "É uma lista simplesmente encadeada que só permite avançar para frente.",
+        "correta": false,
+        "diagnostico": "Erro: ela possui ponteiro `Previous`, sendo duplamente encadeada."
+      },
+      {
+        "letra": "B",
+        "texto": "É uma lista duplamente encadeada, na qual cada nó (`LinkedListNode<T>`) mantém referências para o próximo nó (`Next`), para o nó anterior (`Previous`) e para o valor (`Value`), permitindo travessia bidirecional.",
+        "correta": true,
+        "diagnostico": "Correto: o duplo encadeamento permite inserção e remoção de um nó conhecido em O(1) sem precisar percorrer desde o início para achar o antecessor."
+      },
+      {
+        "letra": "C",
+        "texto": "É um vetor contíguo de tamanho fixo 100.",
+        "correta": false,
+        "diagnostico": "Erro: isso seria um array."
+      },
+      {
+        "letra": "D",
+        "texto": "É uma árvore binária equilibrada.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É um trem onde cada vagão tem engate tanto na frente quanto atrás: estando em qualquer vagão, você consegue ir para o vagão da frente ou para o de trás imediatamente.",
+      "analise_correta": "Use `AddFirst`, `AddLast`, `AddBefore` e `AddAfter` para manipular extremidades e posições adjacentes em tempo constante O(1).",
+      "distratores": {
+        "A": "Erro: ela possui ponteiro `Previous`, sendo duplamente encadeada.",
+        "C": "Erro: isso seria um array.",
+        "D": "Erro taxonômico."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md"
+    }
+  },
+  {
+    "id": "AED-015",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Busca Segura em Dictionary com TryGetValue",
+    "artigo_origem": "04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+    "dificuldade": "medio",
+    "enunciado": "Ao buscar uma chave em um `Dictionary<string, int>` em C#, por que o método `dicionario.TryGetValue(chave, out int valor)` é frequentemente preferível ao acesso direto pelo indexador `dicionario[chave]`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o indexador `dicionario[chave]` apaga a chave após a leitura.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque se a chave não existir, o indexador lança uma exceção custosa (`KeyNotFoundException`), enquanto `TryGetValue` retorna `false` de forma limpa e realiza apenas uma única busca de hash (evitando chamar `ContainsKey` seguido do indexador).",
+        "correta": true,
+        "diagnostico": "Correto: `TryGetValue` evita o custo de lançamento de exceção e elimina a dupla consulta de hash que ocorreria em `if (d.ContainsKey(k)) v = d[k];`."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque `TryGetValue` ordena o dicionário automaticamente.",
+        "correta": false,
+        "diagnostico": "Erro algorítmico."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o indexador só funciona com chaves numéricas.",
+        "correta": false,
+        "diagnostico": "Erro de tipos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar ContainsKey + indexador é bater na porta do almoxarifado para perguntar se a peça existe e, quando o funcionário diz sim, fechar a porta e bater de novo pedindo para ele ir buscar a peça. TryGetValue já traz a peça na primeira batida se ela existir.",
+      "analise_correta": "`TryGetValue` é o padrão idiomático de alta performance para leitura condicional em dicionários C#.",
+      "distratores": {
+        "A": "Erro conceitual.",
+        "C": "Erro algorítmico.",
+        "D": "Erro de tipos."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md"
+    }
+  },
+  {
+    "id": "AED-016",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Alocação Contígua vs. Alocação Dinâmica Encadeada",
+    "artigo_origem": "05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md",
+    "dificuldade": "medio",
+    "enunciado": "Na comparação arquitetural entre Estruturas Contíguas (baseadas em arrays) e Estruturas Flexíveis/Encadeadas (baseadas em nós e referências), qual afirmação resume corretamente o *trade-off* fundamental?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Estruturas contíguas têm acesso aleatório O(1) por índice e excelente localidade de cache, mas custo O(N) para inserções/remoções no meio; estruturas encadeadas alocam memória sob demanda e inserem/removem ponteiros localmente em O(1), mas sofrem com acesso sequencial O(N) e sobrecarga de memória dos ponteiros.",
+        "correta": true,
+        "diagnostico": "Correto: síntese exata das vantagens e desvantagens de vetores contíguos vs. nós dispersos na heap."
+      },
+      {
+        "letra": "B",
+        "texto": "Estruturas encadeadas não consomem memória RAM.",
+        "correta": false,
+        "diagnostico": "Erro físico: cada nó alocado gasta memória para o dado mais os ponteiros de referência."
+      },
+      {
+        "letra": "C",
+        "texto": "Estruturas contíguas têm busca por índice O(N) e estruturas encadeadas têm acesso por índice O(1).",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas possuem exatamente os mesmos custos operacionais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Vetor contíguo é um prédio de apartamentos colados (você vai direto ao apto 50, mas não dá para construir um apto novo entre o 10 e o 11 sem demolir). Lista flexível são barracas ligadas por cordas no campo (para achar a barraca 50 tem que seguir as cordas uma por uma, mas você monta uma barraca nova no meio só amarrando duas cordas).",
+      "analise_correta": "A escolha da estrutura de dados depende diretamente do perfil predominante de operações (leitura indexada vs. mutação posicional).",
+      "distratores": {
+        "B": "Erro físico: cada nó alocado gasta memória para o dado mais os ponteiros de referência.",
+        "C": "Erro inverso.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md"
+    }
+  },
+  {
+    "id": "AED-017",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Visão Geral de Complexidades Assintóticas",
+    "artigo_origem": "05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere um conjunto de N elementos dinâmicos onde precisamos realizar buscas rápidas, mas TAMBÉM precisamos percorrer os elementos em ordem crescente com frequência. Qual estrutura oferece o melhor equilíbrio garantido no pior caso?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Tabela Hash (`Dictionary`), pois garante busca O(1) e mantém os dados estritamente ordenados por chave.",
+        "correta": false,
+        "diagnostico": "Erro clássico: tabelas hash espalham as chaves pseudoaleatoriamente e NÃO mantêm ordem."
+      },
+      {
+        "letra": "B",
+        "texto": "Árvore Binária de Pesquisa Balanceada (como AVL ou Red-Black), pois garante busca, inserção e remoção em O(log N) no pior caso e permite percurso ordenado (*in-order*) em tempo linear O(N).",
+        "correta": true,
+        "diagnostico": "Correto: árvores balanceadas preservam a relação de ordem total com operações logarítmicas garantidas."
+      },
+      {
+        "letra": "C",
+        "texto": "Lista simplesmente encadeada não ordenada.",
+        "correta": false,
+        "diagnostico": "Erro: busca e ordenação seriam custosas."
+      },
+      {
+        "letra": "D",
+        "texto": "Pilha LIFO estática.",
+        "correta": false,
+        "diagnostico": "Erro: pilha restringe acesso ao topo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A tabela hash é um gaveteiro super-rápido por código, mas tudo fora de ordem alfabética; a árvore AVL é uma biblioteca organizada onde você acha qualquer livro rápido (log N) e ainda pode caminhar pela estante lendo os títulos de A a Z.",
+      "analise_correta": "Compreender quando usar Hash (apenas chave exata) vs. Árvore de Busca (ordem, intervalos, sucessor/predecessor) é uma competência central de AED.",
+      "distratores": {
+        "A": "Erro clássico: tabelas hash espalham as chaves pseudoaleatoriamente e NÃO mantêm ordem.",
+        "C": "Erro: busca e ordenação seriam custosas.",
+        "D": "Erro: pilha restringe acesso ao topo."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md"
+    }
+  },
+  {
+    "id": "AED-018",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Implementação Manual de Lista Linear Sequencial",
+    "artigo_origem": "06. Lista linear (array, contador, inserção e remoção).md",
+    "dificuldade": "medio",
+    "enunciado": "Na implementação clássica de uma Lista Linear Sequencial utilizando um array estático `int[] array` de tamanho máximo `MAX` e uma variável inteira `n` (contador de elementos), qual é a função exata da variável `n`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Guardar o valor do último número inserido.",
+        "correta": false,
+        "diagnostico": "Erro: `n` guarda a quantidade/índice, não o conteúdo do elemento."
+      },
+      {
+        "letra": "B",
+        "texto": "Indicar simultaneamente a quantidade atual de elementos válidos na lista E o índice exato da próxima posição livre no final (`InserirFim`).",
+        "correta": true,
+        "diagnostico": "Correto: como os índices começam em 0, se há `n` elementos (índices `0` a `n-1`), a posição `array[n]` é exatamente o primeiro espaço vago no fim."
+      },
+      {
+        "letra": "C",
+        "texto": "Armazenar o endereço físico da placa-mãe.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituir o array quando houver números negativos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O contador `n` é um marcador móvel na prateleira de livros: ele diz quantos livros existem da esquerda até ele e aponta exatamente onde o próximo livro novo deve ser apoiado.",
+      "analise_correta": "Se `n == array.Length`, a lista está cheia (condição de overflow da lista sequencial).",
+      "distratores": {
+        "A": "Erro: `n` guarda a quantidade/índice, não o conteúdo do elemento.",
+        "C": "Erro de hardware.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md"
+    }
+  },
+  {
+    "id": "AED-019",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Algoritmo de InserirInicio na Lista Sequencial",
+    "artigo_origem": "06. Lista linear (array, contador, inserção e remoção).md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao implementar o método `InserirInicio(int x)` em uma Lista Linear Sequencial com `n` elementos, por que o laço de deslocamento (*shift*) deve percorrer o vetor de trás para frente (`for (int i = n; i > 0; i--) array[i] = array[i-1];`) e não da esquerda para a direita?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o processador só aceita laços regressivos em C#.",
+        "correta": false,
+        "diagnostico": "Erro de linguagem."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque se deslocarmos da esquerda para a direita (`array[i+1] = array[i]` começando em `i = 0`), o valor do primeiro elemento sobrescreverá o segundo e será replicado em cascata por todo o vetor, destruindo os dados existentes.",
+        "correta": true,
+        "diagnostico": "Correto: mover da direita para a esquerda abre espaço na posição vazia `n` antes de sobrescrever as posições anteriores."
+      },
+      {
+        "letra": "C",
+        "texto": "Para economizar 50% de memória RAM.",
+        "correta": false,
+        "diagnostico": "Erro de memória: o uso de espaço é O(1) em ambos."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o índice zero fica no final direito do vetor.",
+        "correta": false,
+        "diagnostico": "Erro de indexação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você quer abrir espaço na primeira cadeira da fila, a última pessoa precisa dar um passo para a cadeira vazia atrás dela primeiro, depois a penúltima, até a primeira cadeira ficar livre. Se a primeira pessoa sentar no colo da segunda antes dela sair, esmaga todo mundo.",
+      "analise_correta": "Simetricamente, na remoção (`RemoverInicio`), o deslocamento deve ocorrer da esquerda para a direita (`for (int i = 0; i < n - 1; i++) array[i] = array[i+1];`).",
+      "distratores": {
+        "A": "Erro de linguagem.",
+        "C": "Erro de memória: o uso de espaço é O(1) em ambos.",
+        "D": "Erro de indexação."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md"
+    }
+  },
+  {
+    "id": "AED-020",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Remoção Lógica no Fim da Lista Linear",
+    "artigo_origem": "06. Lista linear (array, contador, inserção e remoção).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma Lista Linear Sequencial de inteiros controlada pelo contador `n`, como o método `RemoverFim()` pode ser implementado em tempo constante O(1)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Basta verificar se `n > 0`, decrementar o contador (`n--`) e retornar `array[n]`, pois qualquer valor além do índice `n - 1` passa a ser logicamente ignorado pela lista e será sobrescrito em futuras inserções.",
+        "correta": true,
+        "diagnostico": "Correto: o contador `n` define a fronteira lógica dos dados válidos; decrementar `n` exclui o último item instantaneamente."
+      },
+      {
+        "letra": "B",
+        "texto": "É obrigatório criar um novo array do zero e copiar todos os elementos.",
+        "correta": false,
+        "diagnostico": "Erro de performance."
+      },
+      {
+        "letra": "C",
+        "texto": "É necessário percorrer todo o array com um laço for zerando cada posição.",
+        "correta": false,
+        "diagnostico": "Erro: percorrer tudo custaria O(N) sem necessidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Não é possível remover do fim em menos de O(N^2).",
+        "correta": false,
+        "diagnostico": "Erro de complexidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o marcador na estante diz que só valem os livros à esquerda dele, para tirar o último livro da conta basta puxar o marcador uma posição para a esquerda.",
+      "analise_correta": "Quando o array armazena referências a objetos em vez de tipos primitivos, recomenda-se atribuir `array[n] = null` após decrementar para não reter referências que impeçam o Garbage Collector (*memory leak* lógico).",
+      "distratores": {
+        "B": "Erro de performance.",
+        "C": "Erro: percorrer tudo custaria O(N) sem necessidade.",
+        "D": "Erro de complexidade."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md"
+    }
+  },
+  {
+    "id": "AED-021",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Inserção e Remoção em Posição Arbitrária (pos)",
+    "artigo_origem": "06. Lista linear (array, contador, inserção e remoção).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma lista linear com `n` elementos, qual condição de guarda valida se uma posição `pos` é válida para o método `Inserir(int x, int pos)` vs. para o método `Remover(int pos)`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para `Inserir`, `0 <= pos <= n` (pois é válido inserir na posição `n`, que equivale ao fim); para `Remover`, `0 <= pos < n` (pois só é possível remover de índices que efetivamente contêm elementos, de `0` a `n-1`).",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica de fronteira: inserção aceita `pos == n` (anexar no fim), mas remoção em `pos == n` tentaria remover um elemento inexistente."
+      },
+      {
+        "letra": "B",
+        "texto": "Para ambos, `pos` pode ser qualquer número negativo.",
+        "correta": false,
+        "diagnostico": "Erro de índice."
+      },
+      {
+        "letra": "C",
+        "texto": "Para `Remover`, `pos` pode ser igual a `n`.",
+        "correta": false,
+        "diagnostico": "Erro de fronteira (off-by-one): o último elemento válido está em `n - 1`."
+      },
+      {
+        "letra": "D",
+        "texto": "Não é necessário validar limites em arrays.",
+        "correta": false,
+        "diagnostico": "Erro grave de segurança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma fila com 5 pessoas (posições 0, 1, 2, 3, 4): uma pessoa nova pode entrar na posição 5 (logo atrás da última), mas você não pode tirar ninguém da posição 5 porque não há ninguém sentado lá.",
+      "analise_correta": "Erros de fronteira (*off-by-one*) entre `< n` e `<= n` são as falhas mais cobradas em provas de implementação de estruturas de dados.",
+      "distratores": {
+        "B": "Erro de índice.",
+        "C": "Erro de fronteira (off-by-one): o último elemento válido está em `n - 1`.",
+        "D": "Erro grave de segurança."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md"
+    }
+  },
+  {
+    "id": "AED-022",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Conceito de Classe Autorreferencial (Celula/Nó)",
+    "artigo_origem": "07. Classes autorreferenciais e células encadeadas.md",
+    "dificuldade": "facil",
+    "enunciado": "O que define uma classe autorreferencial (frequentemente chamada de `Celula` ou `No`) na construção de estruturas de dados flexíveis em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma classe que chama seu próprio construtor em loop infinito até estourar a pilha.",
+        "correta": false,
+        "diagnostico": "Erro: recursão infinita no construtor geraria `StackOverflowException`."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma classe que possui, além do atributo de dado (`Elemento`), pelo menos um atributo de referência cujo tipo é a própria classe (ex.: `public Celula Prox;`), permitindo encadear instâncias dinamicamente na heap.",
+        "correta": true,
+        "diagnostico": "Correto: como classes em C# são tipos de referência, o campo `Prox` armazena apenas um ponteiro (4 ou 8 bytes) que inicialmente vale `null`, sem causar alocação infinita."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma classe que não pode ser instanciada com `new`.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Uma classe que só aceita métodos estáticos.",
+        "correta": false,
+        "diagnostico": "Erro de escopo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma célula é como uma pessoa em uma caça ao tesouro: ela guarda um papel com um prêmio (Elemento) e sabe apontar com o braço exatamente onde está a próxima pessoa da corrente (ponteiro Prox).",
+      "analise_correta": "Se uma `struct` (tipo de valor) tentasse conter um campo do próprio tipo diretamente, o compilador bloquearia por tamanho infinito de memória; em `class`, funciona porque o campo é uma referência.",
+      "distratores": {
+        "A": "Erro: recursão infinita no construtor geraria `StackOverflowException`.",
+        "C": "Erro conceitual.",
+        "D": "Erro de escopo."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/07. Classes autorreferenciais e células encadeadas.md"
+    }
+  },
+  {
+    "id": "AED-023",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Manipulação de Ponteiros e Perda de Referência (Orphaning)",
+    "artigo_origem": "07. Classes autorreferenciais e células encadeadas.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao inserir uma nova célula `nova` entre a célula `atual` e a célula `atual.Prox` em uma cadeia simplesmente encadeada, por que devemos executar PRIMEIRO `nova.Prox = atual.Prox;` e SÓ DEPOIS `atual.Prox = nova;`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a ordem alfabética das variáveis exige que `nova` venha antes.",
+        "correta": false,
+        "diagnostico": "Erro cosmético."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque se fizermos `atual.Prox = nova;` primeiro, perderemos a única referência para o restante da lista que começava em `atual.Prox`, desconectando e descartando todos os nós seguintes.",
+        "correta": true,
+        "diagnostico": "Correto: em estruturas encadeadas, nunca sobrescreva um ponteiro antes de salvar ou conectar o destino para o qual ele apontava."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o C# proíbe atribuir variáveis com o nome `atual` na primeira linha.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe."
+      },
+      {
+        "letra": "D",
+        "texto": "Não faz nenhuma diferença a ordem das duas linhas.",
+        "correta": false,
+        "diagnostico": "Erro clássico de ponteiro: inverter a ordem faz `nova.Prox` apontar para a própria `nova` (ciclo infinito) e perde o resto da lista."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É como um trapezista no circo: a pessoa nova precisa primeiro segurar firme na mão da frente (`nova.Prox = atual.Prox`) antes que a pessoa de trás solte a mão antiga para segurar na nova (`atual.Prox = nova`). Se soltar antes, todo mundo cai.",
+      "analise_correta": "Desenhar o diagrama de caixas e setas passo a passo é a técnica infalível para nunca errar a ordem de atualização de ponteiros.",
+      "distratores": {
+        "A": "Erro cosmético.",
+        "C": "Erro de sintaxe.",
+        "D": "Erro clássico de ponteiro: inverter a ordem faz `nova.Prox` apontar para a própria `nova` (ciclo infinito) e perde o resto da lista."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/07. Classes autorreferenciais e células encadeadas.md"
+    }
+  },
+  {
+    "id": "AED-024",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Travessia de Células Encadeadas com Ponteiro Auxiliar",
+    "artigo_origem": "07. Classes autorreferenciais e células encadeadas.md",
+    "dificuldade": "medio",
+    "enunciado": "Para percorrer e imprimir todos os elementos de uma cadeia de células cujo início é apontado por `primeiro`, por que utilizamos uma variável auxiliar (`for (Celula i = primeiro; i != null; i = i.Prox)`) em vez de avançar diretamente o próprio ponteiro `primeiro = primeiro.Prox`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque `primeiro` é uma palavra reservada do Windows.",
+        "correta": false,
+        "diagnostico": "Erro de sistema."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque se avançarmos o próprio ponteiro `primeiro` até ele chegar a `null`, perderemos permanentemente o endereço do início da lista e toda a estrutura será perdida da memória.",
+        "correta": true,
+        "diagnostico": "Correto: o ponteiro raiz (`primeiro`) é a âncora da estrutura; perdê-lo equivale a destruir a lista inteira."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque variáveis chamadas `i` rodam mais rápido na ALU.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque `primeiro.Prox` aponta sempre para o último elemento.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O ponteiro `primeiro` é o prego na parede onde o barbante está amarrado; o ponteiro `i` é o seu dedo deslizando pelo barbante até a ponta. Se você arrancar o prego da parede para caminhar com ele, perde o início do fio.",
+      "analise_correta": "Avançar o ponteiro auxiliar com `i = i.Prox` é o equivalente nas estruturas encadeadas ao incremento `i++` nos vetores.",
+      "distratores": {
+        "A": "Erro de sistema.",
+        "C": "Erro de hardware.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/07. Classes autorreferenciais e células encadeadas.md"
+    }
+  },
+  {
+    "id": "AED-025",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Conceito e Vantagem do Nó Cabeça (Sentinela / Dummy Node)",
+    "artigo_origem": "08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+    "dificuldade": "dificil",
+    "enunciado": "Na implementação canônica de Lista Flexível estudada na disciplina, cria-se no construtor uma célula especial vazia onde `primeiro = ultimo = new Celula();`. Qual é a função desse **Nó Cabeça** (ou célula sentinela)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Gastar memória RAM propositalmente para testar o computador.",
+        "correta": false,
+        "diagnostico": "Erro absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Eliminar os casos especiais de lista vazia (`primeiro == null`), garantindo que sempre exista uma célula física anterior ao primeiro elemento real e simplificando drasticamente a lógica de inserção e remoção.",
+        "correta": true,
+        "diagnostico": "Correto: com nó cabeça, o primeiro elemento válido real da lista está sempre em `primeiro.Prox`, e a lista está vazia quando `primeiro == ultimo`."
+      },
+      {
+        "letra": "C",
+        "texto": "Guardar a soma total de todos os elementos da lista.",
+        "correta": false,
+        "diagnostico": "Erro: o campo elemento do nó cabeça na implementação padrão permanece ignorado/vazio."
+      },
+      {
+        "letra": "D",
+        "texto": "Impedir que a lista tenha mais de um elemento.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O nó cabeça é a locomotiva fixa do trem: os passageiros só entram nos vagões a partir do primeiro vagão engatado atrás da locomotiva (`primeiro.Prox`). Mesmo sem nenhum passageiro/vagão, a locomotiva está lá parada (`primeiro == ultimo`), então você nunca precisa perguntar se o trem existe antes de engatar algo.",
+      "analise_correta": "Ao percorrer uma lista com nó cabeça, o ponteiro de leitura deve sempre começar em `primeiro.Prox` (e nunca em `primeiro`).",
+      "distratores": {
+        "A": "Erro absurdo.",
+        "C": "Erro: o campo elemento do nó cabeça na implementação padrão permanece ignorado/vazio.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md"
+    }
+  },
+  {
+    "id": "AED-026",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "InserirFim em O(1) na Lista Flexível com Ponteiro Ultimo",
+    "artigo_origem": "08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma Lista Flexível com nó cabeça e referências `primeiro` e `ultimo`, como a operação `InserirFim(int x)` consegue adicionar um novo elemento em tempo constante O(1) sem percorrer a lista?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Alocando a nova célula diretamente em `ultimo.Prox = new Celula(x);` e avançando o ponteiro final com `ultimo = ultimo.Prox;`.",
+        "correta": true,
+        "diagnostico": "Correto: manter o ponteiro `ultimo` atualizado permite anexar no final em 2 linhas de código com custo O(1)."
+      },
+      {
+        "letra": "B",
+        "texto": "Colocando o elemento dentro do nó cabeça.",
+        "correta": false,
+        "diagnostico": "Erro: isso seria parte da lógica de InserirInicio."
+      },
+      {
+        "letra": "C",
+        "texto": "Usando busca binária para achar o último nó.",
+        "correta": false,
+        "diagnostico": "Erro: busca binária não funciona em listas encadeadas."
+      },
+      {
+        "letra": "D",
+        "texto": "Invertendo todos os ponteiros da lista.",
+        "correta": false,
+        "diagnostico": "Erro algorítmico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você mantém um funcionário parado sempre ao lado da última pessoa da fila (`ultimo`), quando chega alguém novo você não precisa caminhar desde a porta da loja: basta entregar a pessoa direto para esse funcionário no final.",
+      "analise_correta": "Sem o ponteiro `ultimo`, inserir no fim exigiria percorrer todos os N nós desde o início, custando O(N).",
+      "distratores": {
+        "B": "Erro: isso seria parte da lógica de InserirInicio.",
+        "C": "Erro: busca binária não funciona em listas encadeadas.",
+        "D": "Erro algorítmico."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md"
+    }
+  },
+  {
+    "id": "AED-027",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Remoção no Fim (RemoverFim) em Lista Simplesmente Encadeada",
+    "artigo_origem": "08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+    "dificuldade": "dificil",
+    "enunciado": "Mesmo possuindo o ponteiro `ultimo` apontando diretamente para o último nó, por que a operação `RemoverFim()` em uma Lista Flexível **simplesmente encadeada** tem complexidade O(N) e não O(1)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque é necessário atualizar o ponteiro `ultimo` para que ele recue para o **penúltimo** nó, e como os ponteiros `Prox` só apontam para frente, a única forma de descobrir quem é o penúltimo nó é percorrer a lista desde `primeiro` até encontrar a célula `i` tal que `i.Prox == ultimo`.",
+        "correta": true,
+        "diagnostico": "Correto: a ausência de ponteiro para trás (`Ant`) obriga uma travessia O(N) para localizar o antecessor do nó `ultimo`."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque o Garbage Collector exige um laço for para apagar inteiros.",
+        "correta": false,
+        "diagnostico": "Erro de runtime."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque a remoção no fim precisa ordenar a lista antes.",
+        "correta": false,
+        "diagnostico": "Erro algorítmico."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o nó cabeça bloqueia o acesso direto ao ponteiro `ultimo`.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma fila onde cada pessoa só enxerga as costas de quem está na frente: você sabe quem é o último da fila, mas para avisar o penúltimo que agora ele virou o último, você precisa vir desde o começo perguntando quem está olhando para o último.",
+      "analise_correta": "Em uma lista **duplamente encadeada** (`CelulaDupla` com ponteiros `Prox` e `Ant`), `RemoverFim()` cai para tempo constante O(1) porque acessamos o penúltimo diretamente via `ultimo.Ant`.",
+      "distratores": {
+        "B": "Erro de runtime.",
+        "C": "Erro algorítmico.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md"
+    }
+  },
+  {
+    "id": "AED-028",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Pilha Flexível e Fila Flexível",
+    "artigo_origem": "08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+    "dificuldade": "medio",
+    "enunciado": "Na implementação de uma Pilha Flexível (sem nó cabeça, apenas com ponteiro `topo`) e de uma Fila Flexível (com nó cabeça e ponteiros `primeiro` e `ultimo`), qual é a complexidade assintótica de tempo das operações `Empilhar/Desempilhar` e `Enfileirar/Desenfileirar`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Todas as quatro operações executam em tempo constante O(1), pois manipulam exclusivamente ponteiros nas extremidades conhecidas sem necessidade de percorrer a estrutura nem deslocar elementos.",
+        "correta": true,
+        "diagnostico": "Correto: tanto a Pilha Flexível (no `topo`) quanto a Fila Flexível (inserindo em `ultimo` e removendo em `primeiro`) operam estritamente em O(1)."
+      },
+      {
+        "letra": "B",
+        "texto": "Todas custam O(N) devido ao deslocamento de células na memória.",
+        "correta": false,
+        "diagnostico": "Erro: listas encadeadas nunca fazem shift físico de elementos."
+      },
+      {
+        "letra": "C",
+        "texto": "Empilhar custa O(1), mas Desenfileirar custa O(N^2).",
+        "correta": false,
+        "diagnostico": "Erro de complexidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Dependem da ordenação prévia dos valores.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Como não há cadeiras fixas e só precisamos trocar o aperto de mão da primeira ou da última pessoa da corrente, o tempo gasto é exatamente o mesmo quer a fila tenha 3 pessoas ou 1 milhão de pessoas.",
+      "analise_correta": "Na Fila Flexível com nó cabeça, `Remover()` pode avançar o próprio nó cabeça (`primeiro = primeiro.Prox`) ou desconectar `primeiro.Prox` (cuidando para atualizar `ultimo = primeiro` se a fila esvaziar).",
+      "distratores": {
+        "B": "Erro: listas encadeadas nunca fazem shift físico de elementos.",
+        "C": "Erro de complexidade.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md"
+    }
+  },
+  {
+    "id": "AED-029",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Propriedade Fundamental da Árvore Binária de Pesquisa (ABP / BST)",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a invariante estrutural que define uma Árvore Binária de Pesquisa (ABP / *Binary Search Tree*) para qualquer nó `i` da árvore?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Todos os elementos na subárvore à esquerda de `i` possuem chaves estritamente menores que `i.Elemento`, e todos os elementos na subárvore à direita de `i` possuem chaves estritamente maiores que `i.Elemento`.",
+        "correta": true,
+        "diagnostico": "Correto: essa propriedade recursiva de ordenação permite descartar metade da árvore a cada comparação (quando balanceada)."
+      },
+      {
+        "letra": "B",
+        "texto": "O filho da esquerda é sempre um número par e o da direita é sempre ímpar.",
+        "correta": false,
+        "diagnostico": "Erro aritmético."
+      },
+      {
+        "letra": "C",
+        "texto": "A raiz guarda sempre o menor elemento de toda a árvore.",
+        "correta": false,
+        "diagnostico": "Erro: isso descreve um Min-Heap, não uma ABP."
+      },
+      {
+        "letra": "D",
+        "texto": "Cada nó pode ter até 10 filhos diretos.",
+        "correta": false,
+        "diagnostico": "Erro: uma árvore binária tem no máximo 2 filhos (`Esq` e `Dir`)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É uma placa de sinalização em cada encruzilhada: valores menores viram à esquerda, valores maiores viram à direita.",
+      "analise_correta": "Graças a essa propriedade, o menor elemento da ABP está sempre no nó mais à esquerda possível, e o maior elemento no nó mais à direita.",
+      "distratores": {
+        "B": "Erro aritmético.",
+        "C": "Erro: isso descreve um Min-Heap, não uma ABP.",
+        "D": "Erro: uma árvore binária tem no máximo 2 filhos (`Esq` e `Dir`)."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-030",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Caminhamentos (Percursos) em Árvore Binária",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "medio",
+    "enunciado": "Ao executar o caminhamento **Central** (ou *In-Order*: visita subárvore esquerda, visita o nó atual, visita subárvore direita) em uma Árvore Binária de Pesquisa (ABP), em que ordem os elementos são impressos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Em ordem puramente aleatória.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "B",
+        "texto": "Em ordem estritamente crescente (ordenada do menor para o maior valor).",
+        "correta": true,
+        "diagnostico": "Correto: como todos os menores estão à esquerda e todos os maiores à direita, visitar `Esq -> Raiz -> Dir` produz a sequência ordenada em tempo O(N)."
+      },
+      {
+        "letra": "C",
+        "texto": "Em ordem decrescente.",
+        "correta": false,
+        "diagnostico": "Erro: ordem decrescente seria obtida visitando `Dir -> Raiz -> Esq`."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas as folhas são impressas, ignorando a raiz.",
+        "correta": false,
+        "diagnostico": "Erro: todos os nós são visitados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você sempre lê primeiro todo mundo que é menor que você, depois fala seu próprio número, e depois lê todo mundo que é maior que você, a lista final sai perfeitamente em ordem crescente.",
+      "analise_correta": "Os três percursos em profundidade clássicos são: Pré-Ordem (`Raiz, Esq, Dir`), Central/Em-Ordem (`Esq, Raiz, Dir`) e Pós-Ordem (`Esq, Dir, Raiz`).",
+      "distratores": {
+        "A": "Erro conceitual.",
+        "C": "Erro: ordem decrescente seria obtida visitando `Dir -> Raiz -> Esq`.",
+        "D": "Erro: todos os nós são visitados."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-031",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Degradação da ABP no Pior Caso (Árvore Degenerada)",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "medio",
+    "enunciado": "O que acontece com a topologia e com a complexidade de busca de uma Árvore Binária de Pesquisa (ABP) simples (sem balanceamento automático) se inserirmos os elementos já ordenados `10, 20, 30, 40, 50`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A árvore fica perfeitamente equilibrada com altura 2.",
+        "correta": false,
+        "diagnostico": "Erro: sem rotações, a raiz permanecerá sendo o 10 e todos os demais cairão à direita."
+      },
+      {
+        "letra": "B",
+        "texto": "A árvore degenera em uma lista linear encadeada inclinada apenas para a direita (zigue-zague/linha reta), elevando a altura para O(N) e degradando a busca do caso médio O(log N) para o pior caso linear O(N).",
+        "correta": true,
+        "diagnostico": "Correto: a ordem de inserção dita o formato de uma ABP simples; entradas ordenadas produzem o pior caso O(N)."
+      },
+      {
+        "letra": "C",
+        "texto": "A árvore rejeita números ordenados com erro de compilação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "A busca passa a ser O(1).",
+        "correta": false,
+        "diagnostico": "Erro de complexidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o primeiro chefe é o número 10 e só chegam números cada vez maiores, todo mundo vai formando uma fila indiana apenas pelo braço direito, virando uma escada comprida em vez de uma árvore frondosa.",
+      "analise_correta": "Essa vulnerabilidade ao pior caso O(N) é a motivação direta para o uso de árvores autobalanceadas como as Árvores AVL.",
+      "distratores": {
+        "A": "Erro: sem rotações, a raiz permanecerá sendo o 10 e todos os demais cairão à direita.",
+        "C": "Erro conceitual.",
+        "D": "Erro de complexidade."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-032",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Remoção de Nó com Dois Filhos na ABP (Antecessor / Maior da Esquerda)",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "dificil",
+    "enunciado": "Na remoção de um nó `i` em uma ABP, quando o nó possui apenas 0 ou 1 filho, basta substituí-lo por `null` ou pelo único filho. Porém, quando o nó `i` possui **dois filhos** (`i.Esq != null && i.Dir != null`), qual é a estratégia clássica para removê-lo sem quebrar a propriedade da ABP?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Apagar toda a subárvore esquerda e direita do nó.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo: perderia dados válidos."
+      },
+      {
+        "letra": "B",
+        "texto": "Substituir o elemento do nó `i` pelo **maior elemento da sua subárvore esquerda** (antecessor in-order, encontrado descendo um passo à esquerda e tudo à direita) ou pelo **menor elemento da sua subárvore direita** (sucessor in-order), e então remover esse nó substituto (que garantidamente terá no máximo 1 filho).",
+        "correta": true,
+        "diagnostico": "Correto: o maior da esquerda é maior que todos os demais da esquerda e menor que todos da direita, preservando perfeitamente a invariante de busca."
+      },
+      {
+        "letra": "C",
+        "texto": "Substituir o nó pela raiz principal da árvore.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "D",
+        "texto": "Não é permitido remover nós com dois filhos em árvores binárias.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o gerente de um setor sai e tem duas equipes abaixo dele, para manter a hierarquia perfeita você promove ou o funcionário mais graduado da equipe da esquerda (maior da esquerda) ou o primeiro da equipe da direita (menor da direita).",
+      "analise_correta": "O método auxiliar `MaiorEsq(i, i.Esq)` caminha pela direita até encontrar `j.Dir == null`, copia `i.Elemento = j.Elemento` e faz `j = j.Esq`.",
+      "distratores": {
+        "A": "Erro destrutivo: perderia dados válidos.",
+        "C": "Erro estrutural.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-033",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Passagem por Referência na Inserção Recursiva em C#",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "dificil",
+    "enunciado": "Na implementação recursiva em C# `private No Inserir(int x, No i)` (que retorna a nova raiz da subárvore: `i.Esq = Inserir(x, i.Esq);`) ou `private void Inserir(int x, ref No i)`, por que não funciona fazer simplesmente `i = new No(x);` no caso base se o parâmetro `No i` for passado por valor sem reatribuir o retorno no pai?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque em C# variáveis do tipo classe são passadas por valor da referência: alterar a variável local `i` dentro do método faz apenas a cópia local apontar para o novo nó, mantendo o ponteiro `pai.Esq` ou `pai.Dir` original valendo `null`.",
+        "correta": true,
+        "diagnostico": "Correto: distinção sutil e fundamental entre mutar o objeto apontado (`i.Elemento = x`) vs. reatribuir a variável de referência local (`i = new No(x)`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque `new No(x)` retorna um inteiro.",
+        "correta": false,
+        "diagnostico": "Erro de tipos."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque recursão é proibida em classes autorreferenciais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o coletor de lixo apaga o nó antes do return.",
+        "correta": false,
+        "diagnostico": "Erro de memória."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se seu pai te dá um papel em branco para você anotar o endereço da casa nova, mas você joga o papel dele fora e anota o endereço na palma da sua mão (`i = new No`), quando você volta seu pai continua com o papel dele em branco (`null`). Você precisa devolver o endereço para ele anotar (`i.Esq = Inserir(...)`) ou escrever direto no caderno dele (`ref No i`).",
+      "analise_correta": "Dominar o padrão `i.Esq = Inserir(x, i.Esq); return i;` é essencial para implementar tanto ABP quanto rotações em AVL.",
+      "distratores": {
+        "B": "Erro de tipos.",
+        "C": "Erro conceitual.",
+        "D": "Erro de memória."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-034",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Invariante de Balanceamento da Árvore AVL",
+    "artigo_origem": "10. Árvores AVL (balanceamento e rotações).md",
+    "dificuldade": "medio",
+    "enunciado": "Proposta por Adelson-Velsky e Landis em 1962, qual é a regra de balanceamento que define uma Árvore AVL?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma Árvore Binária de Pesquisa na qual, para **todo e qualquer nó**, a diferença de altura entre sua subárvore direita e sua subárvore esquerda (Fator de Balanceamento) tem módulo no máximo 1 (ou seja, pertence ao conjunto `{-1, 0, +1}`).",
+        "correta": true,
+        "diagnostico": "Correto: a condição `|h(Dir) - h(Esq)| <= 1` mantém a altura estritamente logarítmica O(log N) em todas as operações."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma árvore onde todas as folhas estão obrigatoriamente no mesmo nível exato sem nenhuma exceção.",
+        "correta": false,
+        "diagnostico": "Erro: folhas no mesmo nível exato definem uma árvore binária cheia/perfeita, o que seria rígido demais; a AVL tolera diferença de até 1 nível."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma árvore que só permite números primos.",
+        "correta": false,
+        "diagnostico": "Erro aritmético."
+      },
+      {
+        "letra": "D",
+        "texto": "Uma árvore que se rebalanceia apenas uma vez por semana.",
+        "correta": false,
+        "diagnostico": "Erro temporal: o rebalanceamento ocorre imediatamente na volta da recursão de cada inserção ou remoção."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A árvore AVL é um móbile de berço onde os dois lados de cada haste podem ter no máximo 1 andar de diferença de tamanho; se passar para 2 andares de diferença, a haste gira para empatar.",
+      "analise_correta": "Com essa invariante, a altura máxima de uma AVL com N nós nunca ultrapassa aproximadamente `1.44 * log2(N)`.",
+      "distratores": {
+        "B": "Erro: folhas no mesmo nível exato definem uma árvore binária cheia/perfeita, o que seria rígido demais; a AVL tolera diferença de até 1 nível.",
+        "C": "Erro aritmético.",
+        "D": "Erro temporal: o rebalanceamento ocorre imediatamente na volta da recursão de cada inserção ou remoção."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md"
+    }
+  },
+  {
+    "id": "AED-035",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Diagnóstico dos 4 Casos de Rotação na AVL",
+    "artigo_origem": "10. Árvores AVL (balanceamento e rotações).md",
+    "dificuldade": "dificil",
+    "enunciado": "Considere o Fator de Balanceamento definido como `FB(nó) = altura(Dir) - altura(Esq)`. Se após uma inserção um nó `no` apresenta `FB(no) == +2` (pesado à direita) e seu filho da direita apresenta `FB(no.Dir) == -1` (inclinado à esquerda, formando um \"joelho\" ou zigue-zague Direita-Esquerda), qual operação corrige o desbalanceamento?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma única Rotação Simples à Esquerda no nó `no`.",
+        "correta": false,
+        "diagnostico": "Erro: rotação simples só funciona quando pai e filho têm FBs de mesmo sinal (+2 com +1/0, ou -2 com -1/0)."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma **Rotação Dupla Direita-Esquerda** (que consiste em aplicar primeiro uma Rotação Simples à Direita no filho `no.Dir` para alinhar a inclinação, seguida de uma Rotação Simples à Esquerda no nó `no`).",
+        "correta": true,
+        "diagnostico": "Correto: sinais opostos entre o nó desbalanceado (+2) e o filho (-1) caracterizam um joelho, exigindo rotação dupla."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma Rotação Simples à Direita no nó `no`.",
+        "correta": false,
+        "diagnostico": "Erro: agravaria o peso à direita."
+      },
+      {
+        "letra": "D",
+        "texto": "Apagar o nó desbalanceado.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando o galho entorta em formato de joelho (vai para a direita e depois dobra para a esquerda), primeiro você estica a ponta do joelho para ficar reto (1ª rotação no filho) e depois gira o galho inteiro para o centro (2ª rotação no avô).",
+      "analise_correta": "Resumo mnemônico: sinais iguais (`+2/+1` -> Rotação Simples Esquerda; `-2/-1` -> Rotação Simples Direita); sinais trocados (`+2/-1` -> Dupla Direita-Esquerda; `-2/+1` -> Dupla Esquerda-Direita).",
+      "distratores": {
+        "A": "Erro: rotação simples só funciona quando pai e filho têm FBs de mesmo sinal (+2 com +1/0, ou -2 com -1/0).",
+        "C": "Erro: agravaria o peso à direita.",
+        "D": "Erro destrutivo."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md"
+    }
+  },
+  {
+    "id": "AED-036",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Mecânica de Ponteiros na Rotação Simples à Direita",
+    "artigo_origem": "10. Árvores AVL (balanceamento e rotações).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma Árvore AVL onde um nó `no` ficou desbalanceado para a esquerda (`FB = -2` e filho esquerdo `noEsq` com `FB = -1`), ao executarmos a `RotacaoDir(No no)`, o filho `noEsq` sobe para se tornar a nova raiz dessa subárvore e `no` desce para ser o filho direito de `noEsq`. O que acontece com a antiga subárvore direita de `noEsq` (`noEsqDir = noEsq.Dir`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ela é descartada da memória.",
+        "correta": false,
+        "diagnostico": "Erro grave: nenhum elemento pode ser perdido durante uma rotação."
+      },
+      {
+        "letra": "B",
+        "texto": "Ela passa a ser a nova **subárvore esquerda de `no`** (`no.Esq = noEsqDir`), pois seus elementos são maiores que `noEsq` mas menores que `no`.",
+        "correta": true,
+        "diagnostico": "Correto: `noEsqDir` estava à direita de `noEsq` (logo > `noEsq`) e na subárvore esquerda de `no` (logo < `no`), encaixando-se perfeitamente em `no.Esq`."
+      },
+      {
+        "letra": "C",
+        "texto": "Ela vai para a raiz principal do programa.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "D",
+        "texto": "Ela é somada ao valor do nó.",
+        "correta": false,
+        "diagnostico": "Erro aritmético."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando o subgerente da esquerda (`noEsq`) sobe para o lugar do chefe (`no`) e o chefe passa para a direita dele, a pequena equipe que ficava à direita do subgerente é adotada pela mão esquerda do antigo chefe, que acabou de ficar livre.",
+      "analise_correta": "Além de reatribuir os 2 ponteiros (`noEsq.Dir = no; no.Esq = noEsqDir;`), deve-se recalcular o nível/altura de `no` primeiro e de `noEsq` em seguida, ambos em tempo O(1).",
+      "distratores": {
+        "A": "Erro grave: nenhum elemento pode ser perdido durante uma rotação.",
+        "C": "Erro estrutural.",
+        "D": "Erro aritmético."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md"
+    }
+  },
+  {
+    "id": "AED-037",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Complexidade de Tempo das Rotações AVL",
+    "artigo_origem": "10. Árvores AVL (balanceamento e rotações).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a complexidade assintótica de tempo para executar uma Rotação Simples ou Dupla em um nó desbalanceado de uma Árvore AVL?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O(1) (tempo constante), pois envolve apenas a troca local de uma quantidade fixa de ponteiros (2 ou 4 referências) e o recálculo da altura dos nós diretamente envolvidos.",
+        "correta": true,
+        "diagnostico": "Correto: uma rotação em si é uma cirurgia puramente local de ponteiros de custo O(1); como o caminho da folha até a raiz tem altura O(log N), toda a inserção/remoção com rebalanceamento custa O(log N)."
+      },
+      {
+        "letra": "B",
+        "texto": "O(N), pois precisa reescrever todos os nós da árvore.",
+        "correta": false,
+        "diagnostico": "Erro: as subárvores filhas são movidas inteiras trocando apenas o ponteiro da raiz delas."
+      },
+      {
+        "letra": "C",
+        "texto": "O(N log N), pois executa o algoritmo Quicksort.",
+        "correta": false,
+        "diagnostico": "Erro algorítmico."
+      },
+      {
+        "letra": "D",
+        "texto": "O(2^N), pois duplica a árvore a cada rotação.",
+        "correta": false,
+        "diagnostico": "Erro exponencial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Trocar o cabide principal de lugar no armário move todas as roupas penduradas nele de uma vez só (O(1)), sem precisar desdobrar peça por peça.",
+      "analise_correta": "A eficiência O(1) das rotações é o que garante que a manutenção do equilíbrio não destrua o ganho de busca O(log N).",
+      "distratores": {
+        "B": "Erro: as subárvores filhas são movidas inteiras trocando apenas o ponteiro da raiz delas.",
+        "C": "Erro algorítmico.",
+        "D": "Erro exponencial."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md"
+    }
+  },
+  {
+    "id": "AED-038",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Função de Transformação pelo Método da Divisão",
+    "artigo_origem": "11. Tabela hash (função de transformação e tratamento de colisões).md",
+    "dificuldade": "facil",
+    "enunciado": "Na implementação de uma Tabela Hash para chaves inteiras utilizando o método da divisão sobre uma tabela de tamanho `m`, qual é a fórmula da função de transformação `h(x)` e por que recomenda-se escolher `m` como um número primo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`h(x) = x * m`; números primos ocupam menos bits.",
+        "correta": false,
+        "diagnostico": "Erro: multiplicação estouraria os limites do vetor `0 .. m-1`."
+      },
+      {
+        "letra": "B",
+        "texto": "`h(x) = x % m` (resto da divisão inteira de `x` por `m`); escolher `m` como número primo distante de potências de 2 reduz drasticamente colisões causadas por padrões regulares ou múltiplos comuns nas chaves de entrada.",
+        "correta": true,
+        "diagnostico": "Correto: o operador módulo `% m` garante que o resultado caia sempre no intervalo válido `[0, m - 1]`, e `m` primo espalha melhor os restos."
+      },
+      {
+        "letra": "C",
+        "texto": "`h(x) = x / 0`; números primos evitam exceções.",
+        "correta": false,
+        "diagnostico": "Erro matemático."
+      },
+      {
+        "letra": "D",
+        "texto": "`h(x) = m - x`; qualquer número par serve melhor.",
+        "correta": false,
+        "diagnostico": "Erro: `m` par faz com que chaves pares só caiam em posições pares."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O operador `% m` funciona como os ponteiros de um relógio de `m` horas: não importa quantas voltas o número dê, ele sempre para apontando para um número entre 0 e `m-1`.",
+      "analise_correta": "Em C#, se a chave puder ser negativa (ou ao usar `GetHashCode()`), deve-se usar `Math.Abs(x) % m` ou máscara de sinal `(x & 0x7FFFFFFF) % m`.",
+      "distratores": {
+        "A": "Erro: multiplicação estouraria os limites do vetor `0 .. m-1`.",
+        "C": "Erro matemático.",
+        "D": "Erro: `m` par faz com que chaves pares só caiam em posições pares."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md"
+    }
+  },
+  {
+    "id": "AED-039",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Tabela Hash Direta com Área de Reserva (Overflow Area)",
+    "artigo_origem": "11. Tabela hash (função de transformação e tratamento de colisões).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma Tabela Hash Direta com **Área de Reserva**, o vetor é dividido em duas regiões: a área principal de tamanho `m1` (índices `0` a `m1 - 1`) e a área de reserva de tamanho `m2` (índices `m1` a `m1 + m2 - 1`). Como funciona a inserção quando ocorre uma colisão na posição `pos = x % m1`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O elemento antigo é apagado.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      },
+      {
+        "letra": "B",
+        "texto": "A função hash calcula apenas sobre `m1` (`x % m1`); se a posição `pos` na área principal já estiver ocupada, o novo elemento colidente é inserido na primeira posição livre da **área de reserva** (controlada por um contador de reserva).",
+        "correta": true,
+        "diagnostico": "Correto: a área de reserva funciona como um estacionamento anexo compartilhado para todos os carros cujas vagas titulares na área principal já estavam ocupadas."
+      },
+      {
+        "letra": "C",
+        "texto": "O elemento é salvo em uma árvore AVL externa.",
+        "correta": false,
+        "diagnostico": "Erro: isso seria hash indireto com árvores."
+      },
+      {
+        "letra": "D",
+        "texto": "A área de reserva nunca é utilizada.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um prédio tem 10 vagas numeradas por apartamento (`m1 = 10`) e 4 vagas extras de visitantes no fundo (`m2 = 4`): se chega um segundo carro para o apto 3, ele vai direto para a primeira vaga livre do fundo.",
+      "analise_correta": "Na pesquisa, se `tabela[pos]` não for o elemento procurado (e não estiver vazia), percorre-se sequencialmente a área de reserva ocupada.",
+      "distratores": {
+        "A": "Erro destrutivo.",
+        "C": "Erro: isso seria hash indireto com árvores.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md"
+    }
+  },
+  {
+    "id": "AED-040",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Tabela Hash Direta com Rehash (Sondagem / Endereçamento Aberto)",
+    "artigo_origem": "11. Tabela hash (função de transformação e tratamento de colisões).md",
+    "dificuldade": "dificil",
+    "enunciado": "Em uma Tabela Hash Direta com **Rehash** (sondagem linear, onde `rehash(x) = (x + 1) % m`), por que não podemos simplesmente limpar uma posição com `VAZIO` ao remover um elemento, precisando marcá-la com uma lápide especial (*tombstone* / `REMOVIDO`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque se marcarmos a posição como `VAZIO`, uma busca futura por outro elemento que havia sofrido colisão e sido deslocado pelo rehash encontrará o buraco `VAZIO` no meio do caminho e parará prematuramente, concluindo falsamente que o elemento não existe.",
+        "correta": true,
+        "diagnostico": "Correto: na sondagem aberta, um compartimento vazio encerra a busca; remover sem deixar lápide quebra a ponte de alcance dos elementos que colidiram anteriormente."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque a memória ROM não permite gravar zero.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o C# proíbe alterar valores de arrays.",
+        "correta": false,
+        "diagnostico": "Erro de linguagem."
+      },
+      {
+        "letra": "D",
+        "texto": "Para deixar a tabela mais colorida no depurador.",
+        "correta": false,
+        "diagnostico": "Erro cosmético."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o armário 3 estava cheio e você guardou a mochila no 4, e depois o dono do 3 vai embora: se o armário 3 ficar com placa de 'Nunca usado', quando você vier procurar sua mochila e vir o 3 vazio, vai achar que nunca houve colisão e desistir antes de olhar o 4. A placa 'Desocupado recentemente' (lápide) avisa para continuar olhando o 4.",
+      "analise_correta": "Posições marcadas como `REMOVIDO` podem ser reutilizadas normalmente para novas inserções, mas na busca devem ser tratadas como ponte de passagem.",
+      "distratores": {
+        "B": "Erro de hardware.",
+        "C": "Erro de linguagem.",
+        "D": "Erro cosmético."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md"
+    }
+  },
+  {
+    "id": "AED-041",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Tabela Hash Indireta com Lista Encadeada (Separate Chaining)",
+    "artigo_origem": "11. Tabela hash (função de transformação e tratamento de colisões).md",
+    "dificuldade": "medio",
+    "enunciado": "Como é estruturada uma **Tabela Hash Indireta com Lista Flexível** (encadeamento externo / *separate chaining*) de tamanho `m`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A tabela é um vetor de `m` referências para Listas Simplesmente Encadeadas (`Lista[] tabela = new Lista[m]`), onde cada posição `i` armazena uma lista contendo todos os elementos cujo hash `h(x)` resultou em `i`.",
+        "correta": true,
+        "diagnostico": "Correto: cada compartimento (*bucket*) do vetor é a cabeça de uma lista flexível independente que absorve todas as colisões daquele índice."
+      },
+      {
+        "letra": "B",
+        "texto": "A tabela possui apenas uma única lista encadeada e não usa função hash.",
+        "correta": false,
+        "diagnostico": "Erro: usa o vetor de índice `h(x)` para saltar diretamente para a lista correta em O(1)."
+      },
+      {
+        "letra": "C",
+        "texto": "A tabela não aceita mais de `m` elementos no total.",
+        "correta": false,
+        "diagnostico": "Erro: como as listas são dinâmicas, a tabela pode armazenar mais que `m` elementos (embora o fator de carga deva permanecer baixo)."
+      },
+      {
+        "letra": "D",
+        "texto": "As colisões apagam a lista inteira.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de uma única cadeira em cada número do vestiário, cada número tem um gancho onde você pode pendurar uma corrente com quantas mochilas quiser.",
+      "analise_correta": "Se as chaves forem bem distribuídas, cada lista terá tamanho médio pequeno `α = N / m`, mantendo busca, inserção e remoção em O(1) médio.",
+      "distratores": {
+        "B": "Erro: usa o vetor de índice `h(x)` para saltar diretamente para a lista correta em O(1).",
+        "C": "Erro: como as listas são dinâmicas, a tabela pode armazenar mais que `m` elementos (embora o fator de carga deva permanecer baixo).",
+        "D": "Erro destrutivo."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md"
+    }
+  },
+  {
+    "id": "AED-042",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Arrays Multidimensionais (Matrizes Retangulares vs. Jagged Arrays) em C#",
+    "artigo_origem": "Recordando C# e arrays.md",
+    "dificuldade": "medio",
+    "enunciado": "Em C#, qual é a diferença entre declarar uma matriz retangular `int[,] matriz = new int[3, 4];` e um array denteado (*jagged array* / array de arrays) `int[][] jagged = new int[3][];`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`int[,]` aloca um bloco único contíguo onde todas as linhas têm obrigatoriamente o mesmo número de colunas; `int[][]` é um vetor de referências para outros vetores independentes, permitindo que cada linha tenha um tamanho diferente.",
+        "correta": true,
+        "diagnostico": "Correto: matrizes retangulares `[,]` têm formato gradeado fixo; jagged arrays `[][]` são vetores de vetores alocados separadamente."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambos são 100% idênticos na memória.",
+        "correta": false,
+        "diagnostico": "Erro de layout de memória."
+      },
+      {
+        "letra": "C",
+        "texto": "`int[,]` não permite laços `for`.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe."
+      },
+      {
+        "letra": "D",
+        "texto": "`int[][]` só aceita strings.",
+        "correta": false,
+        "diagnostico": "Erro de tipos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A matriz `[,]` é uma bandeja de gelo rígida de 3 por 4 cubos; o jagged array `[][]` é um chaveiro com 3 argolas onde você pode pendurar uma corrente de 2 chaves na primeira argola e uma de 10 chaves na segunda.",
+      "analise_correta": "Em matrizes `[,]`, `matriz.GetLength(0)` retorna o número de linhas e `matriz.GetLength(1)` retorna o número de colunas.",
+      "distratores": {
+        "B": "Erro de layout de memória.",
+        "C": "Erro de sintaxe.",
+        "D": "Erro de tipos."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md"
+    }
+  },
+  {
+    "id": "AED-043",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Passagem de Arrays como Parâmetros de Métodos em C#",
+    "artigo_origem": "Recordando C# e arrays.md",
+    "dificuldade": "facil",
+    "enunciado": "Quando um array `int[] vet = { 1, 2, 3 };` é passado como argumento para um método `void Dobrar(int[] v)` que executa `v[0] *= 2;`, qual será o valor de `vet[0]` após o retorno do método?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Permanece 1, pois arrays de inteiros são passados por cópia completa.",
+        "correta": false,
+        "diagnostico": "Erro comum: mesmo que os elementos internos sejam `int`, o array em si (`int[]`) é um objeto na heap."
+      },
+      {
+        "letra": "B",
+        "texto": "Passa a ser 2, pois todo array em C# herda de `System.Array` e é um **tipo de referência**, de modo que `v` e `vet` apontam para o mesmo bloco de elementos na memória heap.",
+        "correta": true,
+        "diagnostico": "Correto: alterações nos elementos `v[i]` dentro do método refletem diretamente no array original do chamador."
+      },
+      {
+        "letra": "C",
+        "texto": "Gera erro de compilação.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe."
+      },
+      {
+        "letra": "D",
+        "texto": "O array é esvaziado.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Passar um array para um método não é tirar xerox do mural da escola, é dizer ao colega em qual corredor o mural está: o que ele escrever no mural fica lá para todo mundo ver.",
+      "analise_correta": "Se você quiser impedir que um método altere o array original, deve passar uma cópia explícita (ex.: `(int[])vet.Clone()` ou `ReadOnlySpan<int>`).",
+      "distratores": {
+        "A": "Erro comum: mesmo que os elementos internos sejam `int`, o array em si (`int[]`) é um objeto na heap.",
+        "C": "Erro de sintaxe.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/Recordando C# e arrays.md"
+    }
+  },
+  {
+    "id": "AED-044",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Contagem de Nós e Altura de uma Árvore Binária",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma árvore binária, como se define recursivamente a altura de um nó `i` (considerando árvore vazia com altura -1 e nó folha com altura 0)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Se `i == null` retorna -1; caso contrário, retorna `1 + Math.Max(Altura(i.Esq), Altura(i.Dir))`.",
+        "correta": true,
+        "diagnostico": "Correto: a altura de uma árvore é 1 passo mais a maior altura entre suas duas subárvores filhas."
+      },
+      {
+        "letra": "B",
+        "texto": "Retorna a soma de todos os elementos guardados na árvore.",
+        "correta": false,
+        "diagnostico": "Erro: isso calcularia a soma dos valores, não a altura."
+      },
+      {
+        "letra": "C",
+        "texto": "Retorna apenas a altura do lado esquerdo, ignorando o lado direito.",
+        "correta": false,
+        "diagnostico": "Erro: deve considerar o ramo mais longo (`Math.Max`)."
+      },
+      {
+        "letra": "D",
+        "texto": "Retorna sempre o número 2.",
+        "correta": false,
+        "diagnostico": "Erro constante."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para saber a altura de uma empresa abaixo do diretor, você pergunta a altura do departamento esquerdo e a do direito, pega o mais profundo dos dois e soma 1 andar (o do próprio diretor).",
+      "analise_correta": "Para contar o número total de nós da árvore, a fórmula recursiva é `return (i == null) ? 0 : 1 + ContarNos(i.Esq) + ContarNos(i.Dir);`.",
+      "distratores": {
+        "B": "Erro: isso calcularia a soma dos valores, não a altura.",
+        "C": "Erro: deve considerar o ramo mais longo (`Math.Max`).",
+        "D": "Erro constante."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-045",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Busca em Árvore Binária de Pesquisa vs. Busca em Árvore Binária Comum",
+    "artigo_origem": "09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a diferença de complexidade para pesquisar se um valor `x` existe em uma Árvore Binária de Pesquisa (ABP) equilibrada vs. em uma Árvore Binária comum (que NÃO segue a regra de menores à esquerda e maiores à direita)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na ABP equilibrada a busca custa O(log N) porque descarta uma subárvore inteira a cada comparação; na Árvore Binária comum sem ordenação, a busca custa O(N) porque no pior caso precisa visitar ambas as subárvores (`Pesquisar(x, i.Esq) || Pesquisar(x, i.Dir)`).",
+        "correta": true,
+        "diagnostico": "Correto: a propriedade de ordenação da ABP é o que permite escolher apenas um ramo (`if (x < i.Elemento)` ou `else`) em vez de bifurcar nos dois."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambas custam O(1).",
+        "correta": false,
+        "diagnostico": "Erro de complexidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Na árvore comum é mais rápido porque não tem regras.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a ausência de ordem obriga busca exaustiva O(N)."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas exigem percorrer 100% dos nós sempre.",
+        "correta": false,
+        "diagnostico": "Erro: a ABP só visita um único caminho da raiz até a folha."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Procurar uma palavra no dicionário em ordem alfabética (ABP) permite abrir no meio e descartar metade das páginas de cara (log N); procurar uma frase solta em um romance (árvore sem ordem) exige ler página por página (N).",
+      "analise_correta": "Essa distinção mostra como invariantes estruturais na inserção economizam trabalho exponencial na consulta.",
+      "distratores": {
+        "B": "Erro de complexidade.",
+        "C": "Erro inverso: a ausência de ordem obriga busca exaustiva O(N).",
+        "D": "Erro: a ABP só visita um único caminho da raiz até a folha."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md"
+    }
+  },
+  {
+    "id": "AED-046",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Coleta de Lixo ao Desconectar Células em C#",
+    "artigo_origem": "08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma Lista Flexível em C#, após removermos uma célula `tmp` ajustando os ponteiros da lista e fazermos `tmp.Prox = null; tmp = null;`, quem é responsável por liberar os bytes ocupados por aquela célula na memória heap?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O programador deve chamar o comando `free(tmp)` do C.",
+        "correta": false,
+        "diagnostico": "Erro: C# gerencia memória automaticamente sem `free` manual."
+      },
+      {
+        "letra": "B",
+        "texto": "O **Garbage Collector (GC)** do runtime .NET, que detectará automaticamente que o objeto não possui mais nenhuma referência ativa apontando para ele (tornou-se inacessível a partir das raízes) e reciclará sua memória.",
+        "correta": true,
+        "diagnostico": "Correto: ao isolar a célula (`tmp.Prox = null`) e descartar a variável local, o objeto fica elegível para coleta automática pelo GC."
+      },
+      {
+        "letra": "C",
+        "texto": "A célula nunca é liberada e fica na RAM até formatar o PC.",
+        "correta": false,
+        "diagnostico": "Erro de vazamento."
+      },
+      {
+        "letra": "D",
+        "texto": "O banco de dados SQL.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você desamarra um vagão velho do trem e tira todas as cordas presas a ele, a equipe de reciclagem do pátio (GC) percebe que ele está solto e o recolhe sozinha.",
+      "analise_correta": "Fazer `tmp.Prox = null` antes de perder `tmp` é uma boa prática didática e defensiva para garantir o isolamento completo do nó removido.",
+      "distratores": {
+        "A": "Erro: C# gerencia memória automaticamente sem `free` manual.",
+        "C": "Erro de vazamento.",
+        "D": "Erro de camada."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md"
+    }
+  },
+  {
+    "id": "AED-047",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Pesquisa Sequencial vs. Pesquisa Binária em Lista Linear",
+    "artigo_origem": "06. Lista linear (array, contador, inserção e remoção).md",
+    "dificuldade": "medio",
+    "enunciado": "Sob qual pré-condição obrigatória podemos substituir a Pesquisa Sequencial O(N) pela **Pesquisa Binária** O(log N) em uma Lista Linear Sequencial (array)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Apenas quando o array estiver **estritamente ordenado** pelos valores da chave de busca.",
+        "correta": true,
+        "diagnostico": "Correto: a pesquisa binária compara com o elemento do meio (`meio = (esq + dir) / 2`) e descarta metade do vetor com base na relação de ordem; sem ordenação prévia, o algoritmo falha."
+      },
+      {
+        "letra": "B",
+        "texto": "Em qualquer array, mesmo totalmente bagunçado.",
+        "correta": false,
+        "diagnostico": "Erro clássico: busca binária em vetor desordenado produz resultados incorretos."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas em listas simplesmente encadeadas sem array.",
+        "correta": false,
+        "diagnostico": "Erro: em listas encadeadas não há acesso O(1) ao elemento do meio `array[meio]`."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas quando o array tiver menos de 5 elementos.",
+        "correta": false,
+        "diagnostico": "Erro: para N grande (ex.: 1 milhão de itens), a busca binária faz no máximo ~20 comparações."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para achar um nome na lista telefônica abrindo no meio e vendo se o nome vem antes ou depois da letra M, a lista precisa estar em ordem alfabética E ter páginas numeradas para abrir direto no meio.",
+      "analise_correta": "Assim, a Pesquisa Binária exige duas condições: **ordenação dos elementos** e **acesso direto O(1) por índice** (alocação contígua).",
+      "distratores": {
+        "B": "Erro clássico: busca binária em vetor desordenado produz resultados incorretos.",
+        "C": "Erro: em listas encadeadas não há acesso O(1) ao elemento do meio `array[meio]`.",
+        "D": "Erro: para N grande (ex.: 1 milhão de itens), a busca binária faz no máximo ~20 comparações."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md"
+    }
+  },
+  {
+    "id": "AED-048",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Comparação Prática: Inserções Aleatórias vs. Ordenadas em ABP e AVL",
+    "artigo_origem": "10. Árvores AVL (balanceamento e rotações).md",
+    "dificuldade": "dificil",
+    "enunciado": "Se inserirmos 100.000 números gerados em ordem estritamente crescente (`1, 2, 3, ..., 100.000`) em uma ABP simples e em uma Árvore AVL, qual será aproximadamente a altura final de cada árvore?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ambas terão altura 100.000.",
+        "correta": false,
+        "diagnostico": "Erro: a AVL se autobalanceia a cada inserção."
+      },
+      {
+        "letra": "B",
+        "texto": "A ABP simples ficará degenerada com altura ~100.000 (causando provável `StackOverflowException` na recursão), enquanto a Árvore AVL aplicará rotações simples à esquerda mantendo a altura perfeitamente controlada em cerca de 17 níveis (`~log2(100.000)`).",
+        "correta": true,
+        "diagnostico": "Correto: demonstração prática do poder da AVL contra entradas adversariais ordenadas."
+      },
+      {
+        "letra": "C",
+        "texto": "A AVL ficará com altura 100.000 e a ABP com altura 17.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas terão altura 1.",
+        "correta": false,
+        "diagnostico": "Erro matemático."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Enquanto a ABP simples vai empilhando 100 mil caixas uma em cima da outra até tombar no teto, a AVL arruma as caixas em uma pirâmide larga e baixinha de apenas 17 andares.",
+      "analise_correta": "Mesmo quando a entrada é aleatória, a ABP fica com altura próxima de `~2.5 * log2(N)`, enquanto a AVL mantém a altura colada no limite ótimo `~log2(N)`.",
+      "distratores": {
+        "A": "Erro: a AVL se autobalanceia a cada inserção.",
+        "C": "Erro inverso.",
+        "D": "Erro matemático."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md"
+    }
+  },
+  {
+    "id": "AED-049",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Escolha da Estrutura de Dados por Cenário de Negócio",
+    "artigo_origem": "04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+    "dificuldade": "medio",
+    "enunciado": "Relacione os três cenários reais abaixo às estruturas genéricas C# mais adequadas: (1) Fila de impressão de documentos por ordem de chegada; (2) Histórico de páginas visitadas no botão Voltar do navegador; (3) Cache de consulta rápida de clientes pelo CPF.",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) `Queue<T>`, (2) `Stack<T>`, (3) `Dictionary<string, Cliente>`.",
+        "correta": true,
+        "diagnostico": "Correto: (1) Impressão é FIFO -> `Queue<T>`; (2) Botão Voltar é LIFO -> `Stack<T>`; (3) Busca por chave única CPF em O(1) -> `Dictionary<TKey, TValue>`."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) `Stack<T>`, (2) `Queue<T>`, (3) `LinkedList<Cliente>`.",
+        "correta": false,
+        "diagnostico": "Erro: inverteu fila e pilha e usou lista O(N) para busca por chave."
+      },
+      {
+        "letra": "C",
+        "texto": "(1) `List<T>`, (2) `List<T>`, (3) `List<T>`.",
+        "correta": false,
+        "diagnostico": "Erro de especialização."
+      },
+      {
+        "letra": "D",
+        "texto": "(1) `Dictionary`, (2) `Dictionary`, (3) `Stack`.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Cada ferramenta para o seu parafuso: fila para atendimento justo por chegada, pilha para voltar pelo último caminho feito, e dicionário hash para achar qualquer ficha pelo código instantaneamente.",
+      "analise_correta": "Saber selecionar a coleção correta da BCL (*Base Class Library*) do .NET evita reimplementar algoritmos e garante complexidade ótima.",
+      "distratores": {
+        "B": "Erro: inverteu fila e pilha e usou lista O(N) para busca por chave.",
+        "C": "Erro de especialização.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md"
+    }
+  },
+  {
+    "id": "AED-050",
+    "disciplina_id": "04",
+    "disciplina": "Algoritmos e Estruturas de Dados",
+    "topico": "Síntese Comparativa de Estruturas de Dados (Lista, Árvore e Hash)",
+    "artigo_origem": "05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao comparar Lista Linear/Flexível, Árvore AVL e Tabela Hash quanto às operações de **Busca por chave**, **Inserção** e **Percurso Ordenado**, qual afirmação é tecnicamente impecável?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Tabela Hash tem a busca e inserção mais rápidas no caso médio O(1), mas não suporta percurso ordenado nativo (exigiria ordenar em O(N log N)); a Árvore AVL realiza busca e inserção em O(log N) garantido e entrega percurso ordenado imediato em O(N); a Lista não ordenada insere no fim em O(1), mas exige O(N) para busca por valor.",
+        "correta": true,
+        "diagnostico": "Correto: síntese completa das garantias assintóticas das três grandes famílias de estruturas de dados."
+      },
+      {
+        "letra": "B",
+        "texto": "A Lista Simplesmente Encadeada vence em todas as operações em O(1).",
+        "correta": false,
+        "diagnostico": "Erro: busca por valor em lista custa O(N)."
+      },
+      {
+        "letra": "C",
+        "texto": "A Tabela Hash é sempre O(log N) e a Árvore AVL é sempre O(1).",
+        "correta": false,
+        "diagnostico": "Erro inverso nas complexidades de Hash e AVL."
+      },
+      {
+        "letra": "D",
+        "texto": "Nenhuma estrutura permite buscar elementos em menos de O(N).",
+        "correta": false,
+        "diagnostico": "Erro: Hash é O(1) médio e AVL é O(log N)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É o triângulo das escolhas de engenharia: Hash é o velocista puro (acha em 1 passo, mas não sabe a ordem); AVL é o organizador equilibrado (acha rápido em log N e mantém tudo em ordem de A a Z); Lista é o caderno simples de anotar na sequência.",
+      "analise_correta": "Essa visão sistêmica encerra a matriz conceitual de Algoritmos e Estruturas de Dados do semestre.",
+      "distratores": {
+        "B": "Erro: busca por valor em lista custa O(N).",
+        "C": "Erro inverso nas complexidades de Hash e AVL.",
+        "D": "Erro: Hash é O(1) médio e AVL é O(log N)."
+      },
+      "referencia_vault": "04. Algoritmos e Estruturas de Dados/05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md"
     }
   }
 ]

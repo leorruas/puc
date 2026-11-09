@@ -3,90 +3,2250 @@
     "id": "MD-001",
     "disciplina_id": "02",
     "disciplina": "Modelagem de Dados",
-    "topico": "Abordagem de arquivos vs. abordagem de banco de dados",
-    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
-    "dificuldade": "medio",
-    "enunciado": "No início da computação comercial, cada aplicação gerenciava seus próprios arquivos físicos independentes. O advento dos Sistemas de Gerenciamento de Bancos de Dados (SGBD) resolveu os problemas estruturais dessa abordagem arcaica. Qual dos seguintes fenômenos era uma consequência direta e inevitável da abordagem tradicional de processamento de arquivos?",
+    "topico": "Dado vs. Informação vs. Conhecimento",
+    "artigo_origem": "01. Introdução à modelagem de dados e sua importância.md",
+    "dificuldade": "facil",
+    "enunciado": "Na ciência da informação e na modelagem de bancos de dados, qual é a distinção conceitual precisa entre **Dado**, **Informação** e **Conhecimento**?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Independência lógica de dados garantida automaticamente pelo sistema operacional.",
-        "correta": false,
-        "diagnostico": "Erro conceitual: arquivos tradicionais possuem alta dependência entre programa e estrutura de dados física."
+        "texto": "Dado é o registro bruto e isolado de um fato (ex.: `38.5`); Informação é o dado processado e contextualizado com significado (ex.: `Temperatura corporal do paciente João: 38,5°C`); Conhecimento é a interpretação aplicada para tomada de decisão (ex.: `O paciente está com febre e requer antitérmico`).",
+        "correta": true,
+        "diagnostico": "Correto: a hierarquia DIKW (Data, Information, Knowledge) fundamenta o propósito de estruturar bancos de dados."
       },
       {
         "letra": "B",
-        "texto": "Redundância descontrolada e inconsistência de dados dispersos em múltiplos programas com formatos incompatíveis.",
-        "correta": true,
-        "diagnostico": "Correto: sem catálogo centralizado (SGBD), dados de clientes/produtos eram replicados em formatos distintos, gerando anomalias e divergências graves."
+        "texto": "Dado é um gráfico colorido; Informação é um código binário sem contexto.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
       },
       {
         "letra": "C",
-        "texto": "Controle concorrente de transações ACID executado em nível de hardware sem necessidade de software adicional.",
+        "texto": "Os três termos são sinônimos absolutos sem nenhuma diferença semântica.",
         "correta": false,
-        "diagnostico": "Erro conceitual e anacronismo: transações ACID e controle de concorrência são serviços introduzidos pelos SGBDs relacionais."
+        "diagnostico": "Erro conceitual."
       },
       {
         "letra": "D",
-        "texto": "Padronização obrigatória de esquemas conceituais baseados no modelo entidade-relacionamento de Peter Chen.",
+        "texto": "Dado só existe em papel; Informação só existe na nuvem.",
         "correta": false,
-        "diagnostico": "Erro histórico: o modelo ER foi proposto por Peter Chen em 1976 para bancos de dados conceituais, não para sistemas antigos baseados em arquivos de texto/binários."
+        "diagnostico": "Erro de suporte físico."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Sistemas baseados em arquivos são como várias secretárias mantendo seus próprios cadernos de telefones de clientes em salas separadas: quando um cliente muda de endereço, uma atualiza e as outras continuam com o dado antigo.",
-      "analise_correta": "A abordagem de arquivos sofria de redundância não controlada, alto acoplamento programa-dados, dificuldade de acesso concorrente e ausência de restrições de integridade centrais.",
+      "modelo_mental": "Dado são ingredientes crus soltos na bancada (farinha, ovos); Informação é a receita organizada dizendo as quantidades de cada um; Conhecimento é saber assar o bolo perfeito para a ocasião certa.",
+      "analise_correta": "O banco de dados armazena dados estruturados com metadados para que os sistemas gerem informação útil à decisão.",
       "distratores": {
-        "A": "A independência lógica e física de dados é justamente uma conquista da arquitetura em 3 níveis dos SGBDs (ANSI/SPARC).",
-        "C": "Sistemas de arquivos convencionais bloqueavam o arquivo inteiro ou causavam corrupção por escrita simultânea desordenada.",
-        "D": "O modelo ER é posterior e visa modelagem de bancos de dados integrados."
+        "B": "Erro inverso.",
+        "C": "Erro conceitual.",
+        "D": "Erro de suporte físico."
       },
-      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+      "referencia_vault": "02. Modelagem de Dados/01. Introdução à modelagem de dados e sua importância.md"
     }
   },
   {
     "id": "MD-002",
     "disciplina_id": "02",
     "disciplina": "Modelagem de Dados",
-    "topico": "Normalização de dados e primeira/segunda formas normais",
-    "artigo_origem": "11. Normalização de dados - 1FN, 2FN e 3FN.md",
-    "dificuldade": "dificil",
-    "enunciado": "Durante o processo de normalização de um esquema relacional, uma tabela `ItemPedido(NumPedido, CodProduto, NomeProduto, Quantidade, PrecoUnitario)` possui chave primária composta `(NumPedido, CodProduto)`. Sabendo que `NomeProduto` é determinado unicamente por `CodProduto` e que todos os atributos contêm valores atômicos indivisíveis, qual é o estado de normalização dessa tabela?",
+    "topico": "Minimundo (Universo de Discurso) e Abstração",
+    "artigo_origem": "01. Introdução à modelagem de dados e sua importância.md",
+    "dificuldade": "medio",
+    "enunciado": "O que significa o conceito de **Minimundo** (ou Universo de Discurso) durante a fase inicial de modelagem de um banco de dados?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "A tabela já está na 3FN porque todas as anomalias de exclusão foram eliminadas pelo uso de chave composta.",
-        "correta": false,
-        "diagnostico": "Erro conceitual: chave composta não garante 3FN; pelo contrário, propicia dependência parcial caso atributos dependam de apenas parte da chave."
+        "texto": "É o recorte específico e delimitado da realidade organizacional cujos fatos, regras de negócio e entidades são relevantes para o sistema que está sendo projetado.",
+        "correta": true,
+        "diagnostico": "Correto: nenhum banco modela o universo inteiro; modela-se apenas o recorte pertinente ao negócio (minimundo)."
       },
       {
         "letra": "B",
-        "texto": "A tabela está na 1FN, mas viola a 2FN porque apresenta dependência funcional parcial de um atributo não-chave em relação a parte da chave primária composta.",
-        "correta": true,
-        "diagnostico": "Correto: para estar na 2FN, todo atributo não-chave deve depender da totalidade da chave primária composta. `NomeProduto` depende apenas de `CodProduto`."
+        "texto": "É um jogo virtual em 3D criado para testar placas de vídeo.",
+        "correta": false,
+        "diagnostico": "Erro literal."
       },
       {
         "letra": "C",
-        "texto": "A tabela viola a 1FN devido à presença de múltiplos atributos não-chave na mesma relação relacional.",
+        "texto": "É o conjunto de todos os computadores conectados à Internet mundial.",
         "correta": false,
-        "diagnostico": "Erro conceitual: 1FN exige atomicidade de domínios e ausência de grupos repetidores/multivalorados; ter múltiplos atributos é normal."
+        "diagnostico": "Erro de escala."
       },
       {
         "letra": "D",
-        "texto": "A tabela atende à Forma Normal de Boyce-Codd (BCNF), pois toda chave primária é candidata por definição.",
+        "texto": "É uma tabela que possui apenas uma linha.",
         "correta": false,
-        "diagnostico": "Erro taxonômico: BCNF é uma forma mais restritiva que a 3FN; uma relação que sequer está na 2FN não pode estar em BCNF."
+        "diagnostico": "Erro estrutural."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Se o crachá de identificação de uma entrega exige o código do pedido E o código da peça, o nome da peça não deveria depender do pedido. A peça tem seu próprio nome mesmo antes de qualquer pedido existir.",
-      "analise_correta": "A 2FN exige que a tabela esteja na 1FN e que nenhum atributo não-chave dependa parcialmente de uma chave primária composta. A solução é decompor em `ItemPedido(NumPedido, CodProduto, Quantidade)` e `Produto(CodProduto, NomeProduto, PrecoUnitario)`.",
+      "modelo_mental": "Para fazer o sistema de uma biblioteca, você só anota do aluno o nome, matrícula e livros emprestados (o minimundo da biblioteca); você ignora o tipo sanguíneo ou o time de futebol dele, mesmo que existam no mundo real.",
+      "analise_correta": "A modelagem aplica a abstração para capturar apenas as propriedades essenciais do minimundo e descartar detalhes irrelevantes.",
       "distratores": {
-        "A": "A dependência funcional parcial causa anomalias de atualização (se o nome mudar, deve ser alterado em cada pedido).",
-        "C": "Valores atômicos cumprem os requisitos da 1FN.",
-        "D": "BCNF exige que todo determinante seja superchave."
+        "B": "Erro literal.",
+        "C": "Erro de escala.",
+        "D": "Erro estrutural."
       },
-      "referencia_vault": "02. Modelagem de Dados/11. Normalização de dados - 1FN, 2FN e 3FN.md"
+      "referencia_vault": "02. Modelagem de Dados/01. Introdução à modelagem de dados e sua importância.md"
+    }
+  },
+  {
+    "id": "MD-003",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Papel da Modelagem antes da Implementação Física",
+    "artigo_origem": "01. Introdução à modelagem de dados e sua importância.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que a engenharia de dados exige a construção de modelos conceituais e lógicos antes de sair executando comandos `CREATE TABLE` diretamente no SGBD?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para validar as regras de negócio com os stakeholders, prevenir redundâncias e anomalias estruturais, e documentar a arquitetura de forma independente de tecnologia antes de assumir custos de codificação.",
+        "correta": true,
+        "diagnostico": "Correto: corrigir um erro de cardinalidade no diagrama conceitual custa minutos; corrigir em produção com milhões de registros custa caro e arrisca perda de dados."
+      },
+      {
+        "letra": "B",
+        "texto": "Apenas para atrasar o cronograma da equipe.",
+        "correta": false,
+        "diagnostico": "Erro gerencial."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o SGBD não aceita comandos SQL sem um arquivo PDF anexado.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "Para obrigar o uso de bancos não-relacionais.",
+        "correta": false,
+        "diagnostico": "Erro de paradigma."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Modelar antes de criar tabelas é como desenhar a planta arquitetônica da casa antes de bater a laje: é muito mais fácil apagar uma parede com borracha no papel do que demolir concreto com marreta depois de pronto.",
+      "analise_correta": "A modelagem atua como instrumento de comunicação entre analistas, desenvolvedores e especialistas do domínio.",
+      "distratores": {
+        "B": "Erro gerencial.",
+        "C": "Erro técnico.",
+        "D": "Erro de paradigma."
+      },
+      "referencia_vault": "02. Modelagem de Dados/01. Introdução à modelagem de dados e sua importância.md"
+    }
+  },
+  {
+    "id": "MD-004",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Isolamento e Redundância em Sistemas de Arquivos",
+    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Na abordagem tradicional baseada em arquivos (onde cada setor da empresa tinha seu próprio programa e seus próprios arquivos `.dat` ou `.csv`), qual problema estrutural ocorria quando o endereço de um cliente mudava?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O endereço atualizava sozinho em todos os arquivos por telepatia.",
+        "correta": false,
+        "diagnostico": "Erro absurdo."
+      },
+      {
+        "letra": "B",
+        "texto": "Ocorria **inconsistência de dados** decorrente da **redundância descontrolada**: o arquivo do setor de Vendas era atualizado, mas o arquivo do setor de Cobrança continuava com o endereço antigo.",
+        "correta": true,
+        "diagnostico": "Correto: a duplicação da mesma informação em arquivos independentes leva inevitavelmente a estados contraditórios (inconsistência)."
+      },
+      {
+        "letra": "C",
+        "texto": "O sistema operacional impedia qualquer repetição de dados entre pastas.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "Os arquivos criavam chaves estrangeiras automáticas.",
+        "correta": false,
+        "diagnostico": "Erro: sistemas de arquivos não possuem motor de integridade relacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se três irmãos anotam a lista de compras em três cadernos separados na mochila de cada um, quando a mãe pede para riscar o leite e só fala com o irmão mais velho, os outros dois compram leite repetido sem saber.",
+      "analise_correta": "O SGBD centraliza os dados em uma base integrada única com controle de redundância.",
+      "distratores": {
+        "A": "Erro absurdo.",
+        "C": "Erro técnico.",
+        "D": "Erro: sistemas de arquivos não possuem motor de integridade relacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-005",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Dependência Programa-Dados vs. Autodescrição pelo Catálogo",
+    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como a abordagem de Banco de Dados supera a **dependência programa-dados** típica dos sistemas legados de arquivos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No sistema de arquivos, a estrutura física dos campos está codificada dentro de cada programa-fonte; no SGBD, o banco é **autodescritivo**, armazenando a definição das estruturas, tipos e restrições separadamente no **Catálogo do Sistema (Dicionário de Dados / Metadados)**.",
+        "correta": true,
+        "diagnostico": "Correto: separar os metadados no catálogo do SGBD permite alterar estruturas sem precisar recompilar todos os aplicativos."
+      },
+      {
+        "letra": "B",
+        "texto": "Proibindo que programas em C# acessem o banco.",
+        "correta": false,
+        "diagnostico": "Erro de integração."
+      },
+      {
+        "letra": "C",
+        "texto": "Gravando o código-fonte do programa dentro de cada célula da tabela.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Eliminando completamente o uso de discos rígidos.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No sistema de arquivos, o mapa das gavetas estava tatuado no braço de cada funcionário (se mudasse a gaveta, tinha que trocar o funcionário). No SGBD, o mapa fica colado na porta do armário (catálogo): qualquer um que chega lê o mapa atualizado na hora.",
+      "analise_correta": "Os metadados (dados sobre os dados) permitem que o SGBD valide tipos, restrições e planos de acesso genericamente.",
+      "distratores": {
+        "B": "Erro de integração.",
+        "C": "Erro conceitual.",
+        "D": "Erro de hardware."
+      },
+      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-006",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Controle de Concorrência e Visões (Views) no SGBD",
+    "artigo_origem": "02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Quais outros dois benefícios nativos um SGBD oferece nativamente para múltiplos usuários que sistemas de arquivos comuns não gerenciam sozinhos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Controle de acesso concorrente multiusuário (evitando que duas escritas simultâneas corrompam o registro) e suporte a múltiplas Visões (*Views*) personalizadas para diferentes perfis de usuários.",
+        "correta": true,
+        "diagnostico": "Correto: SGBDs gerenciam bloqueios (*locks*/MVCC) para transações simultâneas e oferecem abstrações de leitura via Views."
+      },
+      {
+        "letra": "B",
+        "texto": "Edição de vídeo 4K e renderização de áudio.",
+        "correta": false,
+        "diagnostico": "Erro multimídia."
+      },
+      {
+        "letra": "C",
+        "texto": "Substituição da placa de rede e aumento do monitor.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Compilação de código Java e formatação de impressoras.",
+        "correta": false,
+        "diagnostico": "Erro de utilitários."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O SGBD age como o maestro do trânsito (não deixa dois carros baterem no mesmo cruzamento ao mesmo tempo) e como uma janela mágica (mostra para o caixa só o preço, e para o gerente o lucro completo da mesma tabela).",
+      "analise_correta": "Essas garantias permitem que milhares de clientes operem sobre a mesma base de dados com segurança e isolamento.",
+      "distratores": {
+        "B": "Erro multimídia.",
+        "C": "Erro de hardware.",
+        "D": "Erro de utilitários."
+      },
+      "referencia_vault": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-007",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "DDL vs. DML no Projeto de Banco de Dados",
+    "artigo_origem": "03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a diferença de finalidade entre a **DDL** (*Data Definition Language*) e a **DML** (*Data Manipulation Language*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A DDL define e altera o esquema estrutural do banco (tabelas, colunas, chaves e restrições no catálogo); a DML consulta, insere, atualiza e remove as instâncias de dados (linhas/tuplas) armazenadas nas tabelas.",
+        "correta": true,
+        "diagnostico": "Correto: DDL atua sobre os metadados (o esqueleto/esquema); DML atua sobre os dados (o conteúdo/estado)."
+      },
+      {
+        "letra": "B",
+        "texto": "A DDL apaga linhas; a DML cria bancos de dados.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "A DDL é usada por usuários finais; a DML é usada apenas para desligar o servidor.",
+        "correta": false,
+        "diagnostico": "Erro de perfil."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas são linguagens de estilização visual equivalentes ao CSS.",
+        "correta": false,
+        "diagnostico": "Erro de tecnologia web."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "DDL é fabricar a estante vazia com as prateleiras etiquetadas; DML é colocar, trocar de lugar, ler ou retirar os livros de dentro das prateleiras.",
+      "analise_correta": "Junto com DCL (controle de acesso) e TCL (transações), compõem a linguagem SQL.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro de perfil.",
+        "D": "Erro de tecnologia web."
+      },
+      "referencia_vault": "02. Modelagem de Dados/03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md"
+    }
+  },
+  {
+    "id": "MD-008",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Perfis Profissionais: Administrador de Dados (AD) vs. Administrador de Banco de Dados (DBA)",
+    "artigo_origem": "03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Nas grandes organizações, distingue-se o papel do **Administrador de Dados (AD)** do papel do **Administrador de Banco de Dados (DBA)**. Qual é a diferença central de foco entre esses dois profissionais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O AD atua no nível conceitual, estratégico e de governança da informação (políticas de dados, dicionário corporativo, regras de negócio e conformidade/LGPD); o DBA atua no nível técnico, lógico e físico do SGBD (instalação, tuning de performance, índices, backups, segurança de acesso e recuperação).",
+        "correta": true,
+        "diagnostico": "Correto: AD foca no dado como ativo de negócio e modelo semântico; DBA foca na operação, performance e infraestrutura do SGBD."
+      },
+      {
+        "letra": "B",
+        "texto": "O AD instala cabos de rede; o DBA digita planilhas no Word.",
+        "correta": false,
+        "diagnostico": "Erro de funções."
+      },
+      {
+        "letra": "C",
+        "texto": "O DBA não conhece SQL; o AD cuida apenas do cooler do servidor.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "São apenas dois nomes para o estagiário de suporte.",
+        "correta": false,
+        "diagnostico": "Erro corporativo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Administrador de Dados (AD) é o urbanista que planeja o plano diretor da cidade e onde ficam as zonas residenciais; o DBA é o engenheiro chefe da usina e das estradas que garante que a água e o trânsito fluam sem parar.",
+      "analise_correta": "Além do AD e do DBA, destacam-se o Projetista de Banco de Dados (modelagem), o Desenvolvedor de Aplicações e os Usuários Finais.",
+      "distratores": {
+        "B": "Erro de funções.",
+        "C": "Erro inverso.",
+        "D": "Erro corporativo."
+      },
+      "referencia_vault": "02. Modelagem de Dados/03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md"
+    }
+  },
+  {
+    "id": "MD-009",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Arquitetura de Três Esquemas (ANSI/SPARC)",
+    "artigo_origem": "04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "A arquitetura clássica ANSI/SPARC divide a representação de um banco de dados em três níveis de abstração: **Nível Externo**, **Nível Conceitual** e **Nível Interno**. O que descreve cada um desses níveis?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Externo: visões parciais e personalizadas para grupos de usuários; Conceitual: estrutura global integrada de todas as entidades, atributos, relacionamentos e restrições do banco (independente de detalhes físicos); Interno: estrutura física de armazenamento em disco, índices, páginas e caminhos de acesso.",
+        "correta": true,
+        "diagnostico": "Correto: a separação nos 3 esquemas (Externo/Visão, Conceitual/Lógico Global e Interno/Físico) é o que sustenta o isolamento do SGBD."
+      },
+      {
+        "letra": "B",
+        "texto": "Externo: o gabinete do PC; Conceitual: o monitor; Interno: o teclado.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "C",
+        "texto": "Externo: arquivos em nuvem; Conceitual: código C#; Interno: código HTML.",
+        "correta": false,
+        "diagnostico": "Erro de camadas de software."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os três níveis descrevem apenas a velocidade da rede.",
+        "correta": false,
+        "diagnostico": "Erro de rede."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um prédio visto de três formas: o Nível Externo é a janela de cada morador (cada um vê apenas o seu apartamento); o Nível Conceitual é a planta arquitetônica completa de todos os andares do prédio; o Nível Interno é o cálculo estrutural das vigas de ferro e tubulações debaixo da terra.",
+      "analise_correta": "Essa arquitetura garante que mudanças no armazenamento físico não afetem o modelo global, e mudanças em outras tabelas não quebrem a visão de um usuário.",
+      "distratores": {
+        "B": "Erro de hardware.",
+        "C": "Erro de camadas de software.",
+        "D": "Erro de rede."
+      },
+      "referencia_vault": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-010",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Independência Lógica vs. Independência Física de Dados",
+    "artigo_origem": "04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "Com base na arquitetura ANSI/SPARC, qual é a diferença entre **Independência Lógica de Dados** e **Independência Física de Dados**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Independência Lógica é a capacidade de alterar o esquema conceitual global (ex.: adicionar novas tabelas ou colunas) sem precisar alterar os esquemas externos (Views) ou os programas que não usam os novos campos; Independência Física é a capacidade de alterar o esquema interno (ex.: criar um índice B-Tree ou mover arquivos de disco) sem alterar o esquema conceitual.",
+        "correta": true,
+        "diagnostico": "Correto: a independência física protege o nível conceitual de mudanças no nível interno; a independência lógica protege o nível externo de mudanças no nível conceitual."
+      },
+      {
+        "letra": "B",
+        "texto": "Independência Lógica é usar o banco sem energia elétrica; Independência Física é usar sem computador.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambas exigem reescrever todo o código C# da aplicação a cada novo índice.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Independência Física significa apagar as chaves primárias.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Independência Física é trocar o motor do ônibus por um mais econômico sem mudar os bancos dos passageiros. Independência Lógica é acrescentar uma fileira nova de bancos no fundo do ônibus sem mudar o lugar dos passageiros que já sentavam na frente.",
+      "analise_correta": "As Views SQL são o principal mecanismo prático para entregar independência lógica às aplicações.",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro inverso.",
+        "D": "Erro estrutural."
+      },
+      "referencia_vault": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-011",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "As Três Fases do Projeto de Banco de Dados (Conceitual, Lógico e Físico)",
+    "artigo_origem": "04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Ordene cronologicamente as três grandes fases de modelagem de um banco de dados e identifique o artefato principal gerado em cada uma:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Projeto Conceitual -> gera o MER/DER (independente de qualquer SGBD); (2) Projeto Lógico -> transforma o DER em Esquema Relacional (tabelas, chaves primárias e estrangeiras); (3) Projeto Físico -> implementa o código DDL específico para o SGBD escolhido (tipos nativos, índices, partições).",
+        "correta": true,
+        "diagnostico": "Correto: parte-se da alta abstração semântica (Conceitual), passa-se pelo paradigma matemático (Lógico/Relacional) e chega-se à implementação no motor real (Físico)."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Projeto Físico -> (2) Projeto Lógico -> (3) Projeto Conceitual.",
+        "correta": false,
+        "diagnostico": "Erro: ordem invertida."
+      },
+      {
+        "letra": "C",
+        "texto": "(1) Criar índices -> (2) Desenhar entidades -> (3) Entrevistar o cliente.",
+        "correta": false,
+        "diagnostico": "Erro metodológico."
+      },
+      {
+        "letra": "D",
+        "texto": "Existe apenas uma fase única chamada codificação.",
+        "correta": false,
+        "diagnostico": "Erro de engenharia."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "1º você desenha o rascunho livre da ideia com o cliente (Conceitual); 2º o engenheiro transforma em planta técnica padronizada com medidas (Lógico); 3º o mestre de obras escolhe a marca do cimento e constrói no terreno específico (Físico).",
+      "analise_correta": "Respeitar essas três etapas evita que limitações técnicas de um SGBD poluam o entendimento inicial do negócio.",
+      "distratores": {
+        "B": "Erro: ordem invertida.",
+        "C": "Erro metodológico.",
+        "D": "Erro de engenharia."
+      },
+      "referencia_vault": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-012",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Entidade Forte vs. Entidade Fraca no MER",
+    "artigo_origem": "05. Modelagem de entidades e tipos de atributos.md",
+    "dificuldade": "dificil",
+    "enunciado": "No Modelo Entidade-Relacionamento (MER) de Peter Chen, o que caracteriza uma **Entidade Fraca** (representada por retângulo duplo) em oposição a uma **Entidade Forte**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma Entidade Fraca não possui atributos suficientes para formar uma chave primária própria completa e depende existencialmente e para sua identificação de uma Entidade Forte proprietária (através de um relacionamento identificador e uma chave parcial/discriminadora).",
+        "correta": true,
+        "diagnostico": "Correto: exemplos clássicos de Entidade Fraca são `Dependente` (identificado pelo `IdFuncionario` + `SequencialDependente`) ou `Quarto` de um `Predio`."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma Entidade Fraca é uma tabela que tem menos de 3 colunas.",
+        "correta": false,
+        "diagnostico": "Erro quantitativo."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma Entidade Forte não possui chave primária.",
+        "correta": false,
+        "diagnostico": "Erro inverso: toda Entidade Forte possui seu próprio atributo identificador."
+      },
+      {
+        "letra": "D",
+        "texto": "Entidades Fracas são apagadas automaticamente toda meia-noite.",
+        "correta": false,
+        "diagnostico": "Erro operacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um Dependente no plano de saúde não existe no cadastro sozinho: ele só existe porque é dependente de um Funcionário titular (entidade forte), e o número 'Dependente 01' só é único quando juntado com a matrícula daquele titular.",
+      "analise_correta": "Na notação de Chen, a Entidade Fraca usa retângulo duplo, o relacionamento identificador usa losango duplo e a chave parcial usa sublinhado tracejado.",
+      "distratores": {
+        "B": "Erro quantitativo.",
+        "C": "Erro inverso: toda Entidade Forte possui seu próprio atributo identificador.",
+        "D": "Erro operacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md"
+    }
+  },
+  {
+    "id": "MD-013",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Taxonomia de Atributos: Simples, Composto, Multivalorado e Derivado",
+    "artigo_origem": "05. Modelagem de entidades e tipos de atributos.md",
+    "dificuldade": "medio",
+    "enunciado": "Classifique corretamente os quatro atributos de uma entidade `Pessoa` segundo o MER: (1) `CPF`; (2) `Endereco` (subdividido em Rua, Número, CEP e Cidade); (3) `Telefones` (uma pessoa pode ter vários números); (4) `Idade` (calculada a partir da `DataNascimento`).",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Atributo Identificador/Chave (Simples e Monovalorado); (2) Atributo Composto; (3) Atributo Multivalorado; (4) Atributo Derivado.",
+        "correta": true,
+        "diagnostico": "Correto: classificação exata dos 4 tipos fundamentais de atributos no Modelo Entidade-Relacionamento."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Derivado; (2) Multivalorado; (3) Simples; (4) Chave.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os quatro são atributos simples monovalorados.",
+        "correta": false,
+        "diagnostico": "Erro: ignora subdivisão, multiplicidade e cálculo."
+      },
+      {
+        "letra": "D",
+        "texto": "(1) Composto; (2) Derivado; (3) Chave; (4) Multivalorado.",
+        "correta": false,
+        "diagnostico": "Erro de mapeamento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Simples é uma peça inteiriça (CPF); Composto é um kit desmontável em partes menores (Endereço = Rua + CEP); Multivalorado é uma sacola com vários itens do mesmo tipo (vários Telefones); Derivado é um valor calculado na hora pela calculadora sem precisar guardar fixo (Idade = Hoje - DataNascimento).",
+      "analise_correta": "Evita-se armazenar atributos derivados fisicamente no banco para não precisar atualizá-los todos os dias, a menos que haja exigência extrema de performance de leitura.",
+      "distratores": {
+        "B": "Erro taxonômico.",
+        "C": "Erro: ignora subdivisão, multiplicidade e cálculo.",
+        "D": "Erro de mapeamento."
+      },
+      "referencia_vault": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md"
+    }
+  },
+  {
+    "id": "MD-014",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Atributos Compostos vs. Atributos Multivalorados (Confusão Clássica)",
+    "artigo_origem": "05. Modelagem de entidades e tipos de atributos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é o erro conceitual ao confundir um **Atributo Composto** com um **Atributo Multivalorado** e como eles se diferenciam no mapeamento futuro para tabelas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Atributo Composto agrupa partes heterogêneas de um MESMO valor (ex.: `Endereco` tem 1 Rua + 1 Bairro + 1 CEP) e vira múltiplas colunas na mesma tabela; já o Atributo Multivalorado permite MÚLTIPLAS ocorrências do mesmo domínio para uma mesma entidade (ex.: vários `Telefones` para o mesmo cliente) e exigirá uma **nova tabela separada** no modelo relacional para respeitar a 1FN.",
+        "correta": true,
+        "diagnostico": "Correto: distinção crucial de prova: Composto = partes diferentes (vira colunas na própria tabela); Multivalorado = repetições do mesmo atributo (vira tabela própria com FK)."
+      },
+      {
+        "letra": "B",
+        "texto": "Atributo Composto cria uma nova tabela; Atributo Multivalorado vira uma única coluna separada por vírgulas.",
+        "correta": false,
+        "diagnostico": "Erro grave: guardar valores separados por vírgula em uma coluna viola a 1ª Forma Normal (1FN)."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos são proibidos em bancos de dados.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Atributo Multivalorado só aceita números e Composto só aceita letras.",
+        "correta": false,
+        "diagnostico": "Erro de tipos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um terno completo (paletó + calça + gravata) é Composto: são peças diferentes usadas juntas por uma pessoa. Já ter 5 pares de sapatos na sapateira é Multivalorado: são várias ocorrências do mesmo item.",
+      "analise_correta": "Essa diferença determina diretamente a quantidade de tabelas geradas na etapa de mapeamento lógico.",
+      "distratores": {
+        "B": "Erro grave: guardar valores separados por vírgula em uma coluna viola a 1ª Forma Normal (1FN).",
+        "C": "Erro conceitual.",
+        "D": "Erro de tipos."
+      },
+      "referencia_vault": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md"
+    }
+  },
+  {
+    "id": "MD-015",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Grau de um Relacionamento (Unário, Binário e Ternário)",
+    "artigo_origem": "06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+    "dificuldade": "medio",
+    "enunciado": "No Modelo Entidade-Relacionamento, o que define o **Grau** de um relacionamento e o que é um **Auto-relacionamento** (ou relacionamento recursivo)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Grau é o número de tipos de entidade que participam do relacionamento (Unário = 1, Binário = 2, Ternário = 3); um Auto-relacionamento é um relacionamento de **grau 1 (unário)** onde uma entidade se relaciona com ela mesma desempenhando papéis distintos (ex.: `Funcionario` gerencia `Funcionario`).",
+        "correta": true,
+        "diagnostico": "Correto: grau mede quantas entidades estão ligadas ao losango; no grau 1 (unário), a mesma entidade conecta-se duas vezes ao losango com rótulos de papéis (ex.: Gerente / Subordinado)."
+      },
+      {
+        "letra": "B",
+        "texto": "O Grau é a quantidade de linhas da tabela.",
+        "correta": false,
+        "diagnostico": "Erro: quantidade de instâncias é volume, não grau."
+      },
+      {
+        "letra": "C",
+        "texto": "Auto-relacionamento é quando um banco de dados conversa com outro servidor.",
+        "correta": false,
+        "diagnostico": "Erro de rede."
+      },
+      {
+        "letra": "D",
+        "texto": "Relacionamentos ternários são proibidos por Peter Chen.",
+        "correta": false,
+        "diagnostico": "Erro: Chen prevê relacionamentos n-ários."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Casamento entre duas pessoas da entidade Pessoa é unário (1 única entidade envolvida em dois papéis); Aluno matricula-se em Disciplina é binário (2 entidades diferentes); Médico prescreve Medicamento para Paciente em uma consulta é ternário (3 entidades simultâneas).",
+      "analise_correta": "Em relacionamentos unários/recursivos, é obrigatório explicitar os **papéis** (*roles*) sobre as linhas do diagrama.",
+      "distratores": {
+        "B": "Erro: quantidade de instâncias é volume, não grau.",
+        "C": "Erro de rede.",
+        "D": "Erro: Chen prevê relacionamentos n-ários."
+      },
+      "referencia_vault": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md"
+    }
+  },
+  {
+    "id": "MD-016",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Cardinalidade Máxima (1:1, 1:N e N:M)",
+    "artigo_origem": "06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+    "dificuldade": "facil",
+    "enunciado": "Considere a regra de negócio: \"Um Departamento possui vários Funcionários, mas cada Funcionário está alocado em apenas um único Departamento\". Qual é a razão de cardinalidade máxima desse relacionamento entre `Departamento` e `Funcionario`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "1:N (Um para Muitos), onde o lado `1` está em `Departamento` e o lado `N` está em `Funcionario`.",
+        "correta": true,
+        "diagnostico": "Correto: 1 Departamento -> N Funcionários; 1 Funcionário -> 1 Departamento. Resulta em 1:N."
+      },
+      {
+        "letra": "B",
+        "texto": "1:1 (Um para Um).",
+        "correta": false,
+        "diagnostico": "Erro: impediria um departamento de ter mais de 1 funcionário."
+      },
+      {
+        "letra": "C",
+        "texto": "N:M (Muitos para Muitos).",
+        "correta": false,
+        "diagnostico": "Erro: permitiria que um funcionário trabalhasse em vários departamentos simultaneamente."
+      },
+      {
+        "letra": "D",
+        "texto": "0:0 (Zero para Zero).",
+        "correta": false,
+        "diagnostico": "Erro inexistente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma mãe biológica (1) pode ter vários filhos (N), mas cada filho tem apenas uma mãe biológica (1): relação 1:N.",
+      "analise_correta": "Se a regra mudasse para \"Um Funcionário pode trabalhar em vários Projetos e um Projeto tem vários Funcionários\", a cardinalidade passaria a ser **N:M**.",
+      "distratores": {
+        "B": "Erro: impediria um departamento de ter mais de 1 funcionário.",
+        "C": "Erro: permitiria que um funcionário trabalhasse em vários departamentos simultaneamente.",
+        "D": "Erro inexistente."
+      },
+      "referencia_vault": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md"
+    }
+  },
+  {
+    "id": "MD-017",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Restrição de Participação: Total (Obrigatória) vs. Parcial (Opcional)",
+    "artigo_origem": "06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+    "dificuldade": "dificil",
+    "enunciado": "No par de cardinalidades `(min, max)`, o que representa a **cardinalidade mínima** (`0` vs. `1`) e como ela se traduz nas restrições de participação **Total** e **Parcial**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Cardinalidade mínima `1` indica **Participação Total (Obrigatória)** (toda instância da entidade deve participar do relacionamento, representada por linha dupla em Chen); cardinalidade mínima `0` indica **Participação Parcial (Opcional)** (uma instância pode existir sem participar do relacionamento, linha simples).",
+        "correta": true,
+        "diagnostico": "Correto: a cardinalidade mínima governa a obrigatoriedade (que no banco físico determinará se a chave estrangeira será `NOT NULL` ou `NULL`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Cardinalidade mínima `0` significa que a tabela está vazia.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Participação Total significa que a cardinalidade máxima é N.",
+        "correta": false,
+        "diagnostico": "Erro: confunde participação mínima com cardinalidade máxima."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe cardinalidade mínima em bancos de dados.",
+        "correta": false,
+        "diagnostico": "Erro teórico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Todo Pedido DEVE ter pelo menos 1 Cliente dono (participação total, min = 1: não existe pedido fantasma sem cliente). Mas um Cliente recém-cadastrado pode ter 0 Pedidos feitos até agora (participação parcial, min = 0).",
+      "analise_correta": "Dominar o par `(min, max)` evita erros graves de colunas `NOT NULL` que impedem cadastros legítimos.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro: confunde participação mínima com cardinalidade máxima.",
+        "D": "Erro teórico."
+      },
+      "referencia_vault": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md"
+    }
+  },
+  {
+    "id": "MD-018",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Atributos de Relacionamento em Relações N:M",
+    "artigo_origem": "06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+    "dificuldade": "dificil",
+    "enunciado": "No relacionamento N:M onde `Aluno` cursa `Disciplina`, onde devem ser modelados os atributos `NotaFinal` e `Frequencia` do aluno naquela disciplina?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Como **atributos do próprio relacionamento** `Cursa` (ligados ao losango), pois a nota não pertence apenas ao Aluno isolado (ele tem várias disciplinas) nem apenas à Disciplina isolada (ela tem vários alunos), mas sim ao par específico `(Aluno, Disciplina)`.",
+        "correta": true,
+        "diagnostico": "Correto: atributos cuja existência depende da interação conjunta das duas entidades pertencem ao relacionamento."
+      },
+      {
+        "letra": "B",
+        "texto": "Dentro da entidade `Aluno`, sobrescrevendo a nota a cada matéria.",
+        "correta": false,
+        "diagnostico": "Erro: perderia o histórico das demais matérias do aluno."
+      },
+      {
+        "letra": "C",
+        "texto": "Dentro da entidade `Disciplina`, dando a mesma nota para a turma inteira.",
+        "correta": false,
+        "diagnostico": "Erro: todos os alunos ficariam com a mesma nota."
+      },
+      {
+        "letra": "D",
+        "texto": "Em uma tabela separada sem chaves.",
+        "correta": false,
+        "diagnostico": "Erro relacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O preço pago e a quantidade comprada de um item em uma nota fiscal não são características fixas do Cliente nem do Produto na prateleira: são características do encontro daquele Produto naquele Pedido específico.",
+      "analise_correta": "No mapeamento lógico, os atributos do relacionamento N:M tornam-se colunas da tabela associativa gerada.",
+      "distratores": {
+        "B": "Erro: perderia o histórico das demais matérias do aluno.",
+        "C": "Erro: todos os alunos ficariam com a mesma nota.",
+        "D": "Erro relacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md"
+    }
+  },
+  {
+    "id": "MD-019",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Especialização e Generalização no MERE (Herança em Dados)",
+    "artigo_origem": "07. Modelo de entidades e relacionamentos estendido.md",
+    "dificuldade": "medio",
+    "enunciado": "O Modelo Entidade-Relacionamento Estendido (MERE / EER) introduz os conceitos de **Especialização** e **Generalização** (como `Pessoa` dividida em `PessoaFisica` com CPF e `PessoaJuridica` com CNPJ). Qual é a diferença de direção entre esses dois processos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Especialização é o refinamento *top-down* (parte-se de uma superclasse genérica e divide-se em subclasses com atributos específicos); Generalização é a síntese *bottom-up* (identificam-se atributos comuns em várias entidades existentes e abstrai-se uma superclasse mãe).",
+        "correta": true,
+        "diagnostico": "Correto: são as duas direções de projeto da mesma relação taxonômica de superclasse/subclasse (herança de atributos e relacionamentos)."
+      },
+      {
+        "letra": "B",
+        "texto": "Especialização apaga a superclasse; Generalização apaga as subclasses.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Especialização só funciona em bancos NoSQL.",
+        "correta": false,
+        "diagnostico": "Erro de paradigma."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambos criam relacionamentos N:M comuns sem herança.",
+        "correta": false,
+        "diagnostico": "Erro: trata-se de relacionamento `É-UM` (herança), não associação comum."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Especialização é olhar para o conceito 'Veículo' e separar em Carro, Moto e Caminhão (de cima para baixo). Generalização é olhar para Carro, Moto e Caminhão soltos, perceber que todos têm placa e chassi, e criar a mãe 'Veículo' (de baixo para cima).",
+      "analise_correta": "Toda subclasse herda automaticamente a chave primária, os atributos e os relacionamentos da superclasse.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de paradigma.",
+        "D": "Erro: trata-se de relacionamento `É-UM` (herança), não associação comum."
+      },
+      "referencia_vault": "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md"
+    }
+  },
+  {
+    "id": "MD-020",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Restrições de Disjunção (Disjunta/d vs. Sobreposta/o) no MERE",
+    "artigo_origem": "07. Modelo de entidades e relacionamentos estendido.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na hierarquia de especialização do MERE, o que diferencia uma especialização **Disjunta** (*Disjoint* - `d` ou exclusiva) de uma especialização **Sobreposta** (*Overlapping* - `o` ou compartilhada)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na Disjunta (`d`), uma instância da superclasse pode pertencer a **no máximo uma única** subclasse (ex.: uma `Pessoa` ou é `PessoaFisica` OU é `PessoaJuridica`, nunca ambas); na Sobreposta (`o`), uma mesma instância pode pertencer a **mais de uma** subclasse simultaneamente (ex.: uma `Pessoa` na universidade pode ser `Professor` E `Aluno` de pós-graduação ao mesmo tempo).",
+        "correta": true,
+        "diagnostico": "Correto: Disjunção governa quantas subclasses uma mesma entidade pode instanciar simultaneamente (exclusiva vs. múltipla)."
+      },
+      {
+        "letra": "B",
+        "texto": "Na Disjunta as tabelas não têm chave primária.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "C",
+        "texto": "Na Sobreposta uma subclasse sobrescreve e apaga a outra.",
+        "correta": false,
+        "diagnostico": "Erro terminológico."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas impedem o uso de chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro relacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Disjunta é uma bifurcação de trem: o vagão vai para o trilho da esquerda OU para o da direita. Sobreposta é um clube onde um sócio pode entrar tanto no time de futebol quanto no grupo de xadrez ao mesmo tempo.",
+      "analise_correta": "Complementarmente, a restrição de **Completude** define se a especialização é **Total** (toda superclasse DEVE ser pelo menos uma das subclasses) ou **Parcial** (uma superclasse pode não pertencer a nenhuma subclasse).",
+      "distratores": {
+        "B": "Erro estrutural.",
+        "C": "Erro terminológico.",
+        "D": "Erro relacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md"
+    }
+  },
+  {
+    "id": "MD-021",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Entidade Associativa (Agregação) no MERE",
+    "artigo_origem": "07. Modelo de entidades e relacionamentos estendido.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em que situação de modelagem devemos utilizar uma **Entidade Associativa** (representada por um losango inscrito dentro de um retângulo) no MERE?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Quando precisamos que um **relacionamento N:M** participe, ele próprio, de um **novo relacionamento** com outra entidade (já que no MER clássico um losango não pode se ligar diretamente a outro losango).",
+        "correta": true,
+        "diagnostico": "Correto: a Entidade Associativa reifica um relacionamento em entidade para que ele possa se relacionar com terceiros (ex.: a matrícula `Aluno-Turma` relacionando-se com `Avaliacao` ou `Boleto`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Para substituir todas as chaves primárias por texto.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas quando o relacionamento for 1:1 opcional.",
+        "correta": false,
+        "diagnostico": "Erro de cardinalidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Para transformar o banco em um arquivo de texto.",
+        "correta": false,
+        "diagnostico": "Erro de formato."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o casamento entre duas pessoas (um relacionamento) precisa contratar um Buffet (outra entidade), o Buffet não é contratado pelo noivo sozinho nem pela noiva sozinha: o 'Casamento' vira uma pasta própria (Entidade Associativa) que assina o contrato com o Buffet.",
+      "analise_correta": "No modelo relacional, toda Entidade Associativa vira uma tabela cuja chave primária é composta pelas FKs das entidades originais (ou uma chave substituta própria).",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de cardinalidade.",
+        "D": "Erro de formato."
+      },
+      "referencia_vault": "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md"
+    }
+  },
+  {
+    "id": "MD-022",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Terminologia Formal do Modelo Relacional (Relação, Tupla, Atributo e Domínio)",
+    "artigo_origem": "08. Conceitos do modelo relacional e chave primária.md",
+    "dificuldade": "facil",
+    "enunciado": "No vocabulário matemático formal do Modelo Relacional de Codd, como são chamados, respectivamente, uma **Tabela**, uma **Linha** (registro), uma **Coluna** (campo) e o **Conjunto de valores atômicos permitidos** para uma coluna?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Relação, Tupla, Atributo e Domínio.",
+        "correta": true,
+        "diagnostico": "Correto: correspondência exata entre a teoria formal (Relação, Tupla, Atributo, Domínio) e a implementação SQL (Tabela, Linha, Coluna, Tipo/Restrição)."
+      },
+      {
+        "letra": "B",
+        "texto": "Arquivo, Ponteiro, Variável e Classe.",
+        "correta": false,
+        "diagnostico": "Erro: termos de programação/arquivos."
+      },
+      {
+        "letra": "C",
+        "texto": "Planilha, Célula, Fórmula e Macro.",
+        "correta": false,
+        "diagnostico": "Erro: termos de planilhas eletrônicas."
+      },
+      {
+        "letra": "D",
+        "texto": "Grafo, Vértice, Aresta e Peso.",
+        "correta": false,
+        "diagnostico": "Erro: termos de teoria dos grafos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É o dicionário bilíngue do banco de dados: na matemática elegante de Codd dizemos Relação, Tupla e Atributo; no dia a dia do SQL dizemos Tabela, Linha e Coluna.",
+      "analise_correta": "Além disso, o **Grau** (ou aridade) de uma relação é o seu número de atributos (colunas), e a **Cardinalidade** é o seu número de tuplas (linhas).",
+      "distratores": {
+        "B": "Erro: termos de programação/arquivos.",
+        "C": "Erro: termos de planilhas eletrônicas.",
+        "D": "Erro: termos de teoria dos grafos."
+      },
+      "referencia_vault": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md"
+    }
+  },
+  {
+    "id": "MD-023",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Propriedades das Relações (Conjuntos de Tuplas)",
+    "artigo_origem": "08. Conceitos do modelo relacional e chave primária.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que, na definição matemática do Modelo Relacional, **não existem duas tuplas idênticas** em uma relação e **a ordem física das linhas é irrelevante**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque uma relação é formalmente definida como um **subconjunto matemático** do produto cartesiano dos domínios, e em conjuntos matemáticos não há elementos duplicados nem ordem intrínseca entre os elementos.",
+        "correta": true,
+        "diagnostico": "Correto: propriedades herdadas diretamente da Teoria dos Conjuntos (unicidade de tuplas garantida pela chave primária e ausência de ordenação posicional)."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque o disco rígido embaralha os dados a cada segundo.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o SQL proíbe usar a cláusula ORDER BY.",
+        "correta": false,
+        "diagnostico": "Erro: ORDER BY ordena o resultado de saída da consulta, mas a tabela base permanece um conjunto sem ordem obrigatória."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque toda tabela só pode ter 1 linha.",
+        "correta": false,
+        "diagnostico": "Erro absurdo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma tabela relacional é um saco de bolas de sinuca numeradas de 1 a 15: não existem duas bolas número 8 dentro do saco, e não importa qual bola está mais no fundo do saco, o conjunto é exatamente o mesmo.",
+      "analise_correta": "Além disso, todo valor de atributo em uma tupla deve ser **atômico** (indivisível), propriedade conhecida como 1ª Forma Normal.",
+      "distratores": {
+        "B": "Erro de hardware.",
+        "C": "Erro: ORDER BY ordena o resultado de saída da consulta, mas a tabela base permanece um conjunto sem ordem obrigatória.",
+        "D": "Erro absurdo."
+      },
+      "referencia_vault": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md"
+    }
+  },
+  {
+    "id": "MD-024",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Superchave, Chave Candidata, Chave Primária e Chave Alternativa",
+    "artigo_origem": "08. Conceitos do modelo relacional e chave primária.md",
+    "dificuldade": "dificil",
+    "enunciado": "Distinga com precisão técnica os conceitos de **Superchave**, **Chave Candidata**, **Chave Primária** e **Chave Alternativa (Secundária)**:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Superchave é qualquer conjunto de um ou mais atributos que identifica unicamente uma tupla (mesmo com atributos supérfluos, como `{CPF, Nome}`); Chave Candidata é uma **superchave mínima** (sem atributos redundantes, como `{CPF}` ou `{Email}`); Chave Primária é a chave candidata escolhida pelo projetista como identificador principal; Chave Alternativa são as demais chaves candidatas não escolhidas (implementadas com `UNIQUE`).",
+        "correta": true,
+        "diagnostico": "Correto: hierarquia taxonômica completa de chaves no modelo relacional."
+      },
+      {
+        "letra": "B",
+        "texto": "Superchave é a senha do administrador; Chave Candidata é uma chave que pode ter valores repetidos.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Chave Primária pode conter atributos supérfluos e valores nulos.",
+        "correta": false,
+        "diagnostico": "Erro: a chave primária é mínima e respeita a Restrição de Integridade de Entidade (`NOT NULL`)."
+      },
+      {
+        "letra": "D",
+        "texto": "Todas as quatro são exatamente a mesma coisa.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Superchave é identificar alguém por 'CPF + Cor da Camisa' (funciona, mas a cor da camisa é inútil/supérflua). Chave Candidata tira o excesso e deixa só o mínimo que identifica ('CPF' ou 'Passaporte'). O projetista escolhe o 'CPF' para ser o crachá oficial (Chave Primária) e o 'Passaporte' fica como documento único reserva (Chave Alternativa / UNIQUE).",
+      "analise_correta": "A **Regra de Integridade de Entidade** afirma que nenhum atributo que participe da Chave Primária de uma relação base pode aceitar valor `NULL`.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro: a chave primária é mínima e respeita a Restrição de Integridade de Entidade (`NOT NULL`).",
+        "D": "Erro taxonômico."
+      },
+      "referencia_vault": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md"
+    }
+  },
+  {
+    "id": "MD-025",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Chave Estrangeira (FK) e Regra de Integridade Referencial",
+    "artigo_origem": "09. Integridade referencial e chave estrangeira.md",
+    "dificuldade": "medio",
+    "enunciado": "O que estabelece formalmente a **Restrição de Integridade Referencial** sobre uma Chave Estrangeira (*Foreign Key* - FK) na relação `R1` que referencia a Chave Primária (PK) da relação `R2`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para toda tupla em `R1`, o valor da Chave Estrangeira deve obrigatoriamente: OU ser **igual a um valor de Chave Primária existente** em alguma tupla de `R2`, OU ser totalmente **nulo (`NULL`)** (caso o relacionamento seja opcional e a FK não faça parte da PK de `R1`).",
+        "correta": true,
+        "diagnostico": "Correto: a Integridade Referencial impede a existência de \"registros órfãos\" (ponteiros lógicos apontando para chaves inexistentes)."
+      },
+      {
+        "letra": "B",
+        "texto": "A Chave Estrangeira nunca pode ter valores repetidos na tabela filha `R1` e nunca pode ser nula.",
+        "correta": false,
+        "diagnostico": "Erro clássico: em um relacionamento 1:N (ex.: vários pedidos do mesmo cliente), a FK `IdCliente` em `Pedido` DEVE se repetir para cada pedido daquele cliente, e pode ser `NULL` se a participação for opcional."
+      },
+      {
+        "letra": "C",
+        "texto": "A Chave Estrangeira deve ter sempre o mesmo nome de coluna da Chave Primária.",
+        "correta": false,
+        "diagnostico": "Erro: elas devem ter o mesmo **domínio** (tipo de dado), mas podem ter nomes diferentes (ex.: `IdGerente` referenciando `IdFuncionario`)."
+      },
+      {
+        "letra": "D",
+        "texto": "A Chave Estrangeira apaga a Chave Primária quando consultada.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A chave estrangeira é o número do apartamento anotado no pacote da portaria: ou o pacote tem o número de um apartamento que realmente existe no prédio, ou está sem número nenhum (NULL, pacote da administração); nunca pode estar anotado 'Apartamento 9999' se o prédio só vai até o 100.",
+      "analise_correta": "É a Chave Estrangeira que materializa os relacionamentos lógicos entre tabelas no modelo relacional.",
+      "distratores": {
+        "B": "Erro clássico: em um relacionamento 1:N (ex.: vários pedidos do mesmo cliente), a FK `IdCliente` em `Pedido` DEVE se repetir para cada pedido daquele cliente, e pode ser `NULL` se a participação for opcional.",
+        "C": "Erro: elas devem ter o mesmo **domínio** (tipo de dado), mas podem ter nomes diferentes (ex.: `IdGerente` referenciando `IdFuncionario`).",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "02. Modelagem de Dados/09. Integridade referencial e chave estrangeira.md"
+    }
+  },
+  {
+    "id": "MD-026",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Políticas de Reação da Integridade Referencial (RESTRICT, CASCADE, SET NULL)",
+    "artigo_origem": "09. Integridade referencial e chave estrangeira.md",
+    "dificuldade": "dificil",
+    "enunciado": "Quando alguém tenta excluir uma linha da tabela pai (ex.: um `Departamento`) que ainda possui linhas filhas associadas na tabela `Funcionario`, quais são os comportamentos das políticas `RESTRICT / NO ACTION`, `CASCADE` e `SET NULL`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`RESTRICT`: bloqueia e rejeita a exclusão do Departamento enquanto houver funcionários nele; `CASCADE`: exclui o Departamento e apaga junto todos os seus Funcionários; `SET NULL`: exclui o Departamento e mantém os Funcionários, alterando a coluna `IdDepto` deles para `NULL`.",
+        "correta": true,
+        "diagnostico": "Correto: a escolha entre RESTRICT (padrão mais seguro), CASCADE (composição forte) e SET NULL (desvinculação opcional) reflete diretamente a regra de negócio do minimundo."
+      },
+      {
+        "letra": "B",
+        "texto": "`RESTRICT` apaga tudo; `CASCADE` bloqueia; `SET NULL` apaga o banco.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Todas as três políticas apagam os funcionários sem aviso.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      },
+      {
+        "letra": "D",
+        "texto": "O SGBD ignora a chave estrangeira e deixa o código inválido.",
+        "correta": false,
+        "diagnostico": "Erro: o SGBD nunca permite violação de integridade referencial ativa."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se um departamento fecha: RESTRICT diz 'proibido fechar enquanto houver gente trabalhando aqui'; CASCADE diz 'demita todo mundo junto com o departamento'; SET NULL diz 'feche o departamento e deixe os funcionários sem setor definido (NULL) aguardando realocação'.",
+      "analise_correta": "Note que `ON DELETE SET NULL` só pode ser configurado se a coluna de chave estrangeira aceitar valores nulos (participação opcional).",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro destrutivo.",
+        "D": "Erro: o SGBD nunca permite violação de integridade referencial ativa."
+      },
+      "referencia_vault": "02. Modelagem de Dados/09. Integridade referencial e chave estrangeira.md"
+    }
+  },
+  {
+    "id": "MD-027",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Mapeamento de Entidades Fortes, Atributos Compostos e Derivados",
+    "artigo_origem": "10. Mapeamento de entidades e atributos.md",
+    "dificuldade": "medio",
+    "enunciado": "Na transformação do DER para o Esquema Relacional (Projeto Lógico), como devem ser mapeados uma **Entidade Forte**, um **Atributo Composto** e um **Atributo Derivado**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Entidade Forte vira uma tabela com sua PK; o Atributo Composto é \"achatado\" (*flattened*), virando colunas apenas para seus subatributos componentes atômicos (ignorando o nome do grupo); o Atributo Derivado em regra não vira coluna física (é calculado em consultas/views).",
+        "correta": true,
+        "diagnostico": "Correto: o achatamento do atributo composto (ex.: `Rua, Numero, Cep` na própria tabela `Cliente`) garante a atomicidade da 1FN sem criar tabelas desnecessárias."
+      },
+      {
+        "letra": "B",
+        "texto": "O Atributo Composto vira uma nova tabela separada com chave estrangeira.",
+        "correta": false,
+        "diagnostico": "Erro: quem vira nova tabela separada é o Atributo **Multivalorado**, não o Composto."
+      },
+      {
+        "letra": "C",
+        "texto": "O Atributo Derivado vira a chave primária da tabela.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "A Entidade Forte vira apenas uma coluna dentro de outra tabela.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na hora de passar a ficha cadastral para a planilha: você não cria uma coluna única para 'Endereço inteiro misturado', você cria três colunas lado a lado na mesma linha ('Rua', 'Número', 'CEP').",
+      "analise_correta": "Essa regra preserva a simplicidade do esquema e facilita filtros individuais (ex.: `WHERE Cidade = 'Belo Horizonte'`).",
+      "distratores": {
+        "B": "Erro: quem vira nova tabela separada é o Atributo **Multivalorado**, não o Composto.",
+        "C": "Erro conceitual.",
+        "D": "Erro estrutural."
+      },
+      "referencia_vault": "02. Modelagem de Dados/10. Mapeamento de entidades e atributos.md"
+    }
+  },
+  {
+    "id": "MD-028",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Mapeamento de Atributos Multivalorados e Entidades Fracas",
+    "artigo_origem": "10. Mapeamento de entidades e atributos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como são mapeados para o Modelo Relacional um **Atributo Multivalorado** (ex.: `Telefone` na entidade `Cliente`) e uma **Entidade Fraca** (ex.: `Dependente` de `Funcionario`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ambos geram uma **nova tabela própria** contendo como Chave Estrangeira (FK) a PK da entidade forte proprietária, e em ambos os casos a **Chave Primária da nova tabela é composta** pela FK da entidade proprietária somada ao valor do atributo (ou chave parcial da entidade fraca).",
+        "correta": true,
+        "diagnostico": "Correto: `Telefone_Cliente(IdCliente [PK, FK], NumTelefone [PK])` e `Dependente(IdFuncionario [PK, FK], SeqDependente [PK], Nome)`."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambos viram colunas `Telefone1, Telefone2, Telefone3` na tabela principal.",
+        "correta": false,
+        "diagnostico": "Erro grave: criar `Telefone1, Telefone2` cria grupos repetitivos, limita a quantidade máxima e enche a tabela de `NULL`s, violando o bom design e a 1FN."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos são ignorados e descartados no projeto lógico.",
+        "correta": false,
+        "diagnostico": "Erro de perda de requisitos."
+      },
+      {
+        "letra": "D",
+        "texto": "A Entidade Fraca não recebe chave estrangeira.",
+        "correta": false,
+        "diagnostico": "Erro: sem a FK da entidade forte, a entidade fraca não pode ser identificada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para não limitar quantos telefones o cliente pode ter nem deixar buracos vazios na ficha dele, você cria um caderninho anexo de telefones onde cada linha anota: 'Código do Cliente + Número do Telefone'.",
+      "analise_correta": "Em ambos os casos, recomenda-se configurar a FK com `ON DELETE CASCADE` e `ON UPDATE CASCADE`, pois não existem sem o dono.",
+      "distratores": {
+        "B": "Erro grave: criar `Telefone1, Telefone2` cria grupos repetitivos, limita a quantidade máxima e enche a tabela de `NULL`s, violando o bom design e a 1FN.",
+        "C": "Erro de perda de requisitos.",
+        "D": "Erro: sem a FK da entidade forte, a entidade fraca não pode ser identificada."
+      },
+      "referencia_vault": "02. Modelagem de Dados/10. Mapeamento de entidades e atributos.md"
+    }
+  },
+  {
+    "id": "MD-029",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Regras de Mapeamento de Relacionamentos 1:1 (Fusão vs. Adição de FK)",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "dificil",
+    "enunciado": "No mapeamento lógico de um relacionamento binário **1:1**, como decidimos entre a abordagem de **Fusão de Tabelas** e a abordagem de **Adição de Chave Estrangeira** (e em qual lado colocar a FK)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Se a participação for **Total (Obrigatória) em ambos os lados** `(1,1)-(1,1)`, pode-se fundir as duas entidades em uma única tabela; se um lado tiver participação **Total `(1,1)` e o outro Parcial `(0,1)`**, cria-se duas tabelas e coloca-se a Chave Estrangeira (com restrição `UNIQUE` e `NOT NULL`) na tabela que tem **participação Total `(1,1)`**, evitando valores `NULL`.",
+        "correta": true,
+        "diagnostico": "Correto: colocar a FK no lado obrigatório `(1,1)` garante que 100% das linhas daquela tabela terão a FK preenchida (zero `NULL`s), além de receber `UNIQUE` para garantir que seja 1:1 e não 1:N."
+      },
+      {
+        "letra": "B",
+        "texto": "Relacionamentos 1:1 sempre exigem criar 3 tabelas obrigatoriamente.",
+        "correta": false,
+        "diagnostico": "Erro: 3ª tabela só é usada em 1:1 se ambos os lados forem muito esparsos `(0,1)-(0,1)` para evitar nulos."
+      },
+      {
+        "letra": "C",
+        "texto": "A Chave Estrangeira deve ir sempre para o lado opcional `(0,1)` para gerar o máximo possível de valores `NULL`.",
+        "correta": false,
+        "diagnostico": "Erro inverso: o objetivo do mapeamento é minimizar valores `NULL` nas chaves estrangeiras."
+      },
+      {
+        "letra": "D",
+        "texto": "Em relacionamentos 1:1 não existe chave estrangeira.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Todo Computador de Mesa tem no máximo 1 Funcionário usuário `(0,1)`, mas digamos que todo Diretor `(1,1)` tem obrigatoriamente 1 Sala Executiva: você anota o número da Sala na ficha do Diretor (que nunca fica em branco), e não o nome do Diretor na lista de todas as salas do prédio (onde a maioria das salas não tem diretor e ficaria NULL).",
+      "analise_correta": "Não esquecer: em um mapeamento 1:1 por adição de FK, a coluna FK deve ter a constraint `UNIQUE` para impedir que duas linhas apontem para o mesmo registro pai.",
+      "distratores": {
+        "B": "Erro: 3ª tabela só é usada em 1:1 se ambos os lados forem muito esparsos `(0,1)-(0,1)` para evitar nulos.",
+        "C": "Erro inverso: o objetivo do mapeamento é minimizar valores `NULL` nas chaves estrangeiras.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-030",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Regra de Mapeamento de Relacionamentos 1:N",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a regra canônica para mapear um relacionamento binário **1:N** (Um para Muitos) para tabelas relacionais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na abordagem padrão de adição de chave estrangeira, a Chave Primária da tabela do **lado `1`** vai como Chave Estrangeira (FK) para a tabela do **lado `N`** (junto com eventuais atributos do relacionamento).",
+        "correta": true,
+        "diagnostico": "Correto: no lado `N`, cada registro filho aponta para apenas `1` pai, mantendo a coluna FK perfeitamente atômica (1FN)."
+      },
+      {
+        "letra": "B",
+        "texto": "A Chave Primária do lado `N` vai para a tabela do lado `1`, criando vários valores separados por vírgula.",
+        "correta": false,
+        "diagnostico": "Erro clássico: colocar a FK no lado `1` obrigaria a repetir o departamento várias vezes ou guardar uma lista de funcionários em uma célula, violando a 1FN."
+      },
+      {
+        "letra": "C",
+        "texto": "Obrigatoriamente apaga-se a tabela do lado `1`.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      },
+      {
+        "letra": "D",
+        "texto": "Nenhuma tabela recebe chave estrangeira.",
+        "correta": false,
+        "diagnostico": "Erro relacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em '1 Mãe tem N Filhos': você anota o nome da Mãe na certidão de cada Filho (pois cada filho só tem 1 mãe, cabendo em 1 linha). Se tentasse anotar todos os filhos num campo só do RG da mãe, faltaria espaço a cada filho novo.",
+      "analise_correta": "Apenas se o lado `N` tiver participação opcional muito rara (pouquíssimas ocorrências) pode-se optar por uma tabela associativa intermediária para evitar `NULL`s.",
+      "distratores": {
+        "B": "Erro clássico: colocar a FK no lado `1` obrigaria a repetir o departamento várias vezes ou guardar uma lista de funcionários em uma célula, violando a 1FN.",
+        "C": "Erro destrutivo.",
+        "D": "Erro relacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-031",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Regra de Mapeamento de Relacionamentos N:M (Tabela Associativa)",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que um relacionamento binário **N:M** (Muitos para Muitos, ex.: `Medico` atende `Paciente`) **NUNCA** pode ser mapeado apenas adicionando uma chave estrangeira em uma das duas tabelas, exigindo obrigatoriamente uma **terceira tabela (tabela associativa)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque qualquer tentativa de colocar a FK em uma das duas tabelas geraria valores multivalorados ou repetição da chave primária; por isso, cria-se uma nova tabela associativa contendo as chaves estrangeiras das duas entidades (que juntas formam a PK composta da associativa, ou combinadas com data/hora) mais os atributos do relacionamento.",
+        "correta": true,
+        "diagnostico": "Correto: em N:M, a criação da terceira tabela (relação de junção/associativa) é a única forma matemática de preservar a 1ª Forma Normal."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque o SGBD cobra por tabela criada.",
+        "correta": false,
+        "diagnostico": "Erro comercial."
+      },
+      {
+        "letra": "C",
+        "texto": "É perfeitamente possível mapear N:M com apenas 2 tabelas sem repetir dados.",
+        "correta": false,
+        "diagnostico": "Erro matemático: impossível em relações normalizadas."
+      },
+      {
+        "letra": "D",
+        "texto": "Relacionamentos N:M apagam as tabelas originais.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se um Médico atende 50 Pacientes e um Paciente consulta 5 Médicos: não cabe anotar 50 pacientes na ficha do médico nem 5 médicos na ficha do paciente. Solução: cria-se o fichário de 'Consultas', onde cada ficha liga 1 Médico + 1 Paciente naquela data.",
+      "analise_correta": "Na prática, todo relacionamento N:M do modelo conceitual se transforma em dois relacionamentos 1:N apontando para a nova tabela associativa no modelo lógico.",
+      "distratores": {
+        "B": "Erro comercial.",
+        "C": "Erro matemático: impossível em relações normalizadas.",
+        "D": "Erro estrutural."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-032",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Opções de Mapeamento de Especialização/Generalização (Herança)",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao mapear uma hierarquia de Especialização/Generalização (superclasse `Veiculo` e subclasses `Carro` e `Caminhao`) para tabelas relacionais, quais são as três estratégias clássicas possíveis?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Uma tabela para cada classe** (1 tabela para a superclasse com atributos comuns + 1 tabela para cada subclasse tendo a mesma PK como FK); (2) **Apenas tabelas para as subclasses** (duplicando os atributos herdados da mãe em cada filha, válido se a especialização for Total e Disjunta); (3) **Tabela única global** (fundindo todos os atributos da mãe e das filhas em uma só tabela com uma coluna discriminadora `Tipo` e aceitando `NULL` nos atributos específicos das outras subclasses).",
+        "correta": true,
+        "diagnostico": "Correto: no Entity Framework Core, essas 3 estratégias correspondem exatamente aos padrões **TPT** (*Table-per-Type*), **TPC** (*Table-per-Concrete-Type*) e **TPH** (*Table-per-Hierarchy*)."
+      },
+      {
+        "letra": "B",
+        "texto": "Existe apenas uma única forma: apagar as subclasses.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Criar um banco NoSQL obrigatoriamente.",
+        "correta": false,
+        "diagnostico": "Erro de paradigma."
+      },
+      {
+        "letra": "D",
+        "texto": "Usar herança em SQL ANSI sem criar colunas.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três jeitos de organizar pastas de funcionários e estagiários: (1) Uma pasta geral para todos + um anexo separado só para quem é estagiário; (2) Duas gavetas separadas completas, uma de Efetivos e outra de Estagiários; (3) Um fichário único gigante com uma etiqueta 'Cargo' na capa e campos em branco que não se aplicam.",
+      "analise_correta": "A escolha envolve o *trade-off* entre custo de `JOIN`s (na opção de múltiplas tabelas) vs. desperdício de colunas `NULL` (na tabela única).",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de paradigma.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-033",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Anomalias de Inserção, Exclusão e Atualização",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é o objetivo central da **Normalização de Dados** proposta por Codd e quais são as três **Anomalias** que ocorrem em tabelas não normalizadas (com redundância)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Organizar atributos em relações bem estruturadas para eliminar redundâncias indesejadas e prevenir: **Anomalia de Inserção** (não conseguir cadastrar um fato sem ter outro), **Anomalia de Exclusão** (ao apagar um registro, perder acidentalmente a única informação sobre outra entidade) e **Anomalia de Atualização** (ter que alterar o mesmo dado em dezenas de linhas sob risco de inconsistência).",
+        "correta": true,
+        "diagnostico": "Correto: as três anomalias de modificação são o sintoma direto de misturar assuntos independentes na mesma tabela."
+      },
+      {
+        "letra": "B",
+        "texto": "Deixar todas as tabelas com nomes em inglês.",
+        "correta": false,
+        "diagnostico": "Erro cosmético."
+      },
+      {
+        "letra": "C",
+        "texto": "Juntar todas as tabelas do banco em uma única tabela gigante.",
+        "correta": false,
+        "diagnostico": "Erro: juntar tudo é desnormalização extrema, que causa todas as anomalias."
+      },
+      {
+        "letra": "D",
+        "texto": "Aumentar a redundância para ocupar mais espaço no disco.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você anota os dados do Departamento junto na linha de cada Funcionário: (Inserção) não dá para criar um Departamento novo enquanto não contratar alguém; (Exclusão) se o único funcionário daquele setor for demitido, o Departamento some do mapa; (Atualização) se o telefone do setor mudar, tem que editar 500 fichas de funcionários.",
+      "analise_correta": "A normalização decompõe tabelas problemáticas em tabelas menores sem perda de informação (*lossless-join decomposition*).",
+      "distratores": {
+        "B": "Erro cosmético.",
+        "C": "Erro: juntar tudo é desnormalização extrema, que causa todas as anomalias.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-034",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Primeira Forma Normal (1FN): Atomicidade e Grupos Repetitivos",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "medio",
+    "enunciado": "Quando uma relação encontra-se na **Primeira Forma Normal (1FN)** e qual é o procedimento passo a passo para normalizar uma tabela que possui um grupo repetitivo/multivalorado (ex.: `Pedido(IdPedido, Data, Cliente, [CodProd, NomeProd, Qtd])`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma tabela está na 1FN quando todos os seus atributos contêm apenas **valores atômicos (indivisíveis)** e não existem grupos repetitivos ou tabelas aninhadas; para normalizar, extrai-se o grupo repetitivo para uma **nova tabela** levando junto a Chave Primária da tabela original para compor a chave da nova tabela (`ItemPedido(IdPedido, CodProd, NomeProd, Qtd)`).",
+        "correta": true,
+        "diagnostico": "Correto: a 1FN proíbe relações dentro de relações (*non-first normal form*) e atributos multivalorados."
+      },
+      {
+        "letra": "B",
+        "texto": "Basta separar os produtos por ponto-e-vírgula dentro da mesma célula.",
+        "correta": false,
+        "diagnostico": "Erro: concatenar listas em uma string disfarça o multivalorado e impede joins e índices."
+      },
+      {
+        "letra": "C",
+        "texto": "Basta apagar a chave primária.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "D",
+        "texto": "A 1FN exige remover todas as chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro relacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A 1FN é a regra de ouro das planilhas: 'proibido colocar uma sub-tabela ou uma lista de compras inteira apertada dentro de um único quadradinho'. Cada quadradinho guarda um único valor simples.",
+      "analise_correta": "Após colocar `ItemPedido` na 1FN com PK composta `(IdPedido, CodProd)`, o próximo passo imediato é avaliar a 2FN.",
+      "distratores": {
+        "B": "Erro: concatenar listas em uma string disfarça o multivalorado e impede joins e índices.",
+        "C": "Erro estrutural.",
+        "D": "Erro relacional."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-035",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Segunda Forma Normal (2FN): Dependência Funcional Parcial",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a condição necessária e suficiente para que uma tabela já na 1FN esteja na **Segunda Forma Normal (2FN)**, e em que tipo de tabela pode ocorrer violação da 2FN?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Estar na 1FN e **não possuir nenhuma Dependência Funcional Parcial** (ou seja, todo atributo não-chave deve depender funcionalmente da **chave primária inteira**, e não de apenas um pedaço dela); por definição, uma tabela cuja Chave Primária é **simples** (formada por 1 única coluna) e já está na 1FN **já está automaticamente na 2FN**.",
+        "correta": true,
+        "diagnostico": "Correto: dependência parcial só pode existir se a PK for **composta** (2 ou mais colunas). Se um atributo depende apenas de parte da PK, ele deve ser extraído para outra tabela."
+      },
+      {
+        "letra": "B",
+        "texto": "A 2FN exige que a tabela tenha pelo menos 2 chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro quantitativo."
+      },
+      {
+        "letra": "C",
+        "texto": "Violações da 2FN ocorrem apenas em tabelas com chave primária simples de 1 coluna.",
+        "correta": false,
+        "diagnostico": "Erro inverso: não existe \"parte\" de uma chave de 1 coluna só."
+      },
+      {
+        "letra": "D",
+        "texto": "A 2FN remove dependências entre colunas não-chave.",
+        "correta": false,
+        "diagnostico": "Erro: dependência entre colunas não-chave é a **3FN** (transitiva), não a 2FN."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na tabela `Matricula(IdAluno, IdDisciplina, Nota, NomeDisciplina)`: a `Nota` depende dos dois juntos (`IdAluno + IdDisciplina`), mas o `NomeDisciplina` depende SÓ de `IdDisciplina` (metade da chave). Isso é dependência parcial! O nome da disciplina deve ir para a tabela `Disciplina`.",
+      "analise_correta": "Dica infalível de prova: viu chave primária composta e um atributo com o nome de apenas uma das metades? É violação clássica de **2FN**.",
+      "distratores": {
+        "B": "Erro quantitativo.",
+        "C": "Erro inverso: não existe \"parte\" de uma chave de 1 coluna só.",
+        "D": "Erro: dependência entre colunas não-chave é a **3FN** (transitiva), não a 2FN."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-036",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Terceira Forma Normal (3FN): Dependência Funcional Transitiva",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "dificil",
+    "enunciado": "O que caracteriza uma violação da **Terceira Forma Normal (3FN)** em uma tabela que já está na 2FN?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A presença de uma **Dependência Funcional Transitiva**, isto é, quando um atributo não-chave depende funcionalmente de **outro atributo não-chave** (`PK -> A -> B`, onde `A` não é chave candidata e determina `B`), como em `Funcionario(IdFunc [PK], Nome, CodCargo, NomeCargo, SalarioBaseCargo)`.",
+        "correta": true,
+        "diagnostico": "Correto: em `Funcionario`, `NomeCargo` e `SalarioBaseCargo` dependem de `CodCargo` (que é um atributo não-chave), e não diretamente do funcionário. Solução: extrair a tabela `Cargo(CodCargo [PK], NomeCargo, SalarioBaseCargo)`."
+      },
+      {
+        "letra": "B",
+        "texto": "A presença de uma chave primária composta.",
+        "correta": false,
+        "diagnostico": "Erro: PK composta diz respeito à 2FN."
+      },
+      {
+        "letra": "C",
+        "texto": "O uso de colunas do tipo `DATE` ou `DECIMAL`.",
+        "correta": false,
+        "diagnostico": "Erro de tipos."
+      },
+      {
+        "letra": "D",
+        "texto": "Ter menos de 3 colunas na tabela.",
+        "correta": false,
+        "diagnostico": "Erro quantitativo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A regra das 3 Formas Normais resumida no juramento famoso: 'Todo atributo não-chave deve depender da chave (1FN), da chave inteira (2FN) e de NADA MAIS além da chave (3FN)'. Se uma coluna depende da coluna vizinha que não é chave, é fofoca indireta (dependência transitiva) e viola a 3FN!",
+      "analise_correta": "Na prática corporativa, um modelo relacional levado até a **3FN** é considerado o padrão ouro de equilíbrio entre integridade e performance.",
+      "distratores": {
+        "B": "Erro: PK composta diz respeito à 2FN.",
+        "C": "Erro de tipos.",
+        "D": "Erro quantitativo."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-037",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Exercício de Diagnóstico Integrado: 1FN vs. 2FN vs. 3FN",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Analise os três problemas abaixo e associe cada um à Forma Normal exata que ele viola: (I) Na tabela `Cliente(IdCliente [PK], Nome, Cep, NomeCidade, Uf)`, `NomeCidade` e `Uf` são determinados pelo `Cep`; (II) Na tabela `VendaItem(IdVenda [PK], IdProd [PK], Qtd, DescricaoProd)`, `DescricaoProd` depende apenas de `IdProd`; (III) Na tabela `Autor(IdAutor [PK], Nome, LivrosPublicados)`, a coluna `LivrosPublicados` guarda uma lista de vários títulos na mesma célula.",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(I) Viola a **3FN** (dependência transitiva `IdCliente -> Cep -> NomeCidade`); (II) Viola a **2FN** (dependência parcial em chave composta); (III) Viola a **1FN** (atributo multivalorado / não atômico).",
+        "correta": true,
+        "diagnostico": "Correto: diagnóstico perfeito dos três casos clássicos de provas de Banco de Dados."
+      },
+      {
+        "letra": "B",
+        "texto": "(I) Viola a 1FN; (II) Viola a 3FN; (III) Viola a 2FN.",
+        "correta": false,
+        "diagnostico": "Erro de associação."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os três violam apenas a 1FN.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Nenhum deles viola formas normais.",
+        "correta": false,
+        "diagnostico": "Erro de análise."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "(III) Lista na mesma célula -> falta atomicidade -> 1FN; (II) Depende só de metade da PK composta -> dependência parcial -> 2FN; (I) Coluna comum dependendo de outra coluna comum (CEP) -> dependência transitiva -> 3FN.",
+      "analise_correta": "Esse trio de cenários cobre 95% das questões práticas de normalização em exames universitários e concursos.",
+      "distratores": {
+        "B": "Erro de associação.",
+        "C": "Erro conceitual.",
+        "D": "Erro de análise."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-038",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Motivação e Características dos Bancos NoSQL",
+    "artigo_origem": "13. Bancos de dados não-relacionais.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual foi a principal motivação histórica para o surgimento dos bancos de dados **NoSQL** (*Not Only SQL*) e quais características eles priorizam em relação aos SGBDs relacionais tradicionais?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Atender demandas da Web 2.0, Big Data e sistemas distribuídos globais que exigem **escalabilidade horizontal massiva** (adicionar novos servidores comuns em cluster), **flexibilidade de esquema** (*schemaless* / esquema dinâmico para dados semiestruturados) e alta disponibilidade com baixa latência.",
+        "correta": true,
+        "diagnostico": "Correto: enquanto SGBDs relacionais escalam tradicionalmente de forma **vertical** (comprar um servidor maior e mais caro) e exigem esquema rígido prévio, bancos NoSQL escalam **horizontalmente** (*sharding*/replicação) com esquemas flexíveis."
+      },
+      {
+        "letra": "B",
+        "texto": "Substituir completamente o SQL porque tabelas foram proibidas por lei.",
+        "correta": false,
+        "diagnostico": "Erro histórico: NoSQL significa *Not Only SQL* (complementar, persistência poliglota)."
+      },
+      {
+        "letra": "C",
+        "texto": "Rodar exclusivamente em disquetes de 1.44 MB sem rede.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
+      },
+      {
+        "letra": "D",
+        "texto": "Obrigar que todos os dados estejam na 3ª Forma Normal.",
+        "correta": false,
+        "diagnostico": "Erro: NoSQL frequentemente usa **desnormalização** e agregados para leitura rápida sem joins."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O banco Relacional é um edifício de luxo com planta rígida (para crescer, você precisa reforçar os pilares do mesmo prédio - escala vertical). O NoSQL é um condomínio de casas modulares pré-fabricadas (quando chega mais gente, você constrói mais casas ao lado em terrenos vizinhos - escala horizontal).",
+      "analise_correta": "Na arquitetura moderna usa-se **Persistência Poliglota**: banco relacional para transações financeiras críticas (ACID) e NoSQL para catálogos flexíveis, sessões, cache ou grafos.",
+      "distratores": {
+        "B": "Erro histórico: NoSQL significa *Not Only SQL* (complementar, persistência poliglota).",
+        "C": "Erro de hardware.",
+        "D": "Erro: NoSQL frequentemente usa **desnormalização** e agregados para leitura rápida sem joins."
+      },
+      "referencia_vault": "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md"
+    }
+  },
+  {
+    "id": "MD-039",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "As Quatro Famílias de Bancos NoSQL (Chave-Valor, Documentos, Colunas Largas e Grafos)",
+    "artigo_origem": "13. Bancos de dados não-relacionais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Associe corretamente as **quatro categorias principais de bancos NoSQL** aos seus modelos de dados e exemplos de mercado:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Chave-Valor** (dicionário simples de altíssima velocidade em memória, ex.: *Redis*, *DynamoDB*); (2) **Orientado a Documentos** (armazena documentos autoexplicativos em JSON/BSON aninhados, ex.: *MongoDB*); (3) **Orientado a Colunas / Colunas Largas** (famílias de colunas esparsas distribuídas para escrita massiva, ex.: *Cassandra*, *HBase*); (4) **Orientado a Grafos** (nós/vértices e arestas para conexões complexas e redes sociais, ex.: *Neo4j*).",
+        "correta": true,
+        "diagnostico": "Correto: taxonomia oficial das 4 famílias NoSQL e seus principais expoentes tecnológicos."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Chave-Valor: MySQL; (2) Documentos: PostgreSQL; (3) Colunas: Oracle; (4) Grafos: SQL Server.",
+        "correta": false,
+        "diagnostico": "Erro: MySQL, PostgreSQL, Oracle e SQL Server são SGBDs Relacionais."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os bancos NoSQL salvam dados exclusivamente em arquivos `.txt` sem índices.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "Bancos de Grafos não permitem relacionamentos entre entidades.",
+        "correta": false,
+        "diagnostico": "Erro inverso: bancos de grafos são os mais poderosos justamente para navegar relacionamentos profundos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quatro ferramentas especializadas: Chave-Valor é o guarda-volumes rápido por senha (Redis); Documentos é a pasta com fichas JSON completas lá dentro (MongoDB); Colunas Largas é uma planilha gigante distribuída para telemetria e séries temporais (Cassandra); Grafos é a teia de conexões de amigos e recomendações (Neo4j).",
+      "analise_correta": "No modelo de Documentos (como MongoDB), os dados relacionados frequentemente ficam **embutidos** (*embedded*) no mesmo documento JSON para serem lidos em uma única operação sem `JOIN`.",
+      "distratores": {
+        "B": "Erro: MySQL, PostgreSQL, Oracle e SQL Server são SGBDs Relacionais.",
+        "C": "Erro técnico.",
+        "D": "Erro inverso: bancos de grafos são os mais poderosos justamente para navegar relacionamentos profundos."
+      },
+      "referencia_vault": "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md"
+    }
+  },
+  {
+    "id": "MD-040",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Teorema CAP e Modelo BASE vs. ACID",
+    "artigo_origem": "13. Bancos de dados não-relacionais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em sistemas de bancos de dados distribuídos, o que afirma o **Teorema CAP** (de Eric Brewer) e o que significa o acrônimo **BASE** associado a muitos sistemas NoSQL?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Teorema CAP afirma que, diante de uma **Partição de rede (P)** entre nós do cluster, um sistema distribuído precisa escolher entre garantir **Consistência imediata (C)** ou **Disponibilidade total (A)**; o modelo **BASE** (*Basically Available, Soft state, Eventual consistency*) prioriza a disponibilidade aceitando a **Consistência Eventual** (os nós convergem para o mesmo dado após alguns milissegundos).",
+        "correta": true,
+        "diagnostico": "Correto: contraponto clássico entre o rigor imediato do **ACID** (Relacional) e a escalabilidade tolerante a falhas do **BASE** (NoSQL distribuído)."
+      },
+      {
+        "letra": "B",
+        "texto": "O Teorema CAP diz que é possível ter Consistência, Disponibilidade e Tolerância a Partição 100% perfeitas simultaneamente mesmo com o cabo de rede cortado.",
+        "correta": false,
+        "diagnostico": "Erro: é fisicamente impossível sincronizar dois servidores incomunicáveis (particionados) sem ou bloquear a resposta (perdendo Disponibilidade -> CP) ou responder com o dado local antigo (perdendo Consistência imediata -> AP)."
+      },
+      {
+        "letra": "C",
+        "texto": "BASE significa que o banco não tem energia elétrica.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "D",
+        "texto": "Consistência Eventual significa que os dados são perdidos para sempre.",
+        "correta": false,
+        "diagnostico": "Erro: os dados não se perdem; eles são propagados assincronamente até que todas as réplicas fiquem idênticas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se a linha telefônica entre duas agências bancárias cai (Partição P): ou a agência trava o caixa e diz 'volte mais tarde' para não correr risco de saldo errado (escolheu Consistência - CP), ou deixa você usar e avisa a outra agência assim que o telefone voltar (escolheu Disponibilidade e Consistência Eventual - AP / BASE).",
+      "analise_correta": "Para curtidas em redes sociais ou carrinho de compras, a Consistência Eventual (BASE) é ideal; para transferência bancária de saldo, exige-se Consistência Forte (ACID).",
+      "distratores": {
+        "B": "Erro: é fisicamente impossível sincronizar dois servidores incomunicáveis (particionados) sem ou bloquear a resposta (perdendo Disponibilidade -> CP) ou responder com o dado local antigo (perdendo Consistência imediata -> AP).",
+        "C": "Erro literal.",
+        "D": "Erro: os dados não se perdem; eles são propagados assincronamente até que todas as réplicas fiquem idênticas."
+      },
+      "referencia_vault": "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md"
+    }
+  },
+  {
+    "id": "MD-041",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Tríade CIA da Segurança da Informação em Bancos de Dados",
+    "artigo_origem": "14. Segurança de banco de dados.md",
+    "dificuldade": "facil",
+    "enunciado": "Quais são os três pilares fundamentais da segurança da informação (Tríade **CID** em português / **CIA** em inglês) aplicados à proteção de bancos de dados?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Confidencialidade** (garantir que os dados sejam lidos apenas por quem tem autorização), **Integridade** (garantir que os dados sejam exatos, completos e não sofram alteração indevida ou corrupção) e **Disponibilidade** (garantir que o banco esteja acessível e operacional quando os usuários autorizados precisarem).",
+        "correta": true,
+        "diagnostico": "Correto: Confidencialidade, Integridade e Disponibilidade formam a base de todas as políticas de segurança de dados."
+      },
+      {
+        "letra": "B",
+        "texto": "Compilação, Indentação e Depuração.",
+        "correta": false,
+        "diagnostico": "Erro de programação."
+      },
+      {
+        "letra": "C",
+        "texto": "Custo, Imposto e Desconto.",
+        "correta": false,
+        "diagnostico": "Erro financeiro."
+      },
+      {
+        "letra": "D",
+        "texto": "Conexão, Internet e Antivírus.",
+        "correta": false,
+        "diagnostico": "Erro de infraestrutura."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Cofre do banco: Confidencialidade é ninguém de fora conseguir ver o seu extrato; Integridade é ninguém conseguir alterar o número do seu saldo sem permissão; Disponibilidade é o caixa eletrônico estar funcionando quando você precisa sacar.",
+      "analise_correta": "Qualquer ameaça ao banco de dados (vazamento, ransomware, corrupção ou ataque de negação de serviço DDoS) ataca um ou mais desses três pilares.",
+      "distratores": {
+        "B": "Erro de programação.",
+        "C": "Erro financeiro.",
+        "D": "Erro de infraestrutura."
+      },
+      "referencia_vault": "02. Modelagem de Dados/14. Segurança de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-042",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Controle de Acesso Discricionário (DAC) vs. Baseado em Papéis (RBAC) vs. Obrigatório (MAC)",
+    "artigo_origem": "14. Segurança de banco de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na segurança de SGBDs, como se diferenciam os modelos de controle de acesso **DAC** (*Discretionary Access Control*), **RBAC** (*Role-Based Access Control*) e **MAC** (*Mandatory Access Control*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No **DAC**, o proprietário do objeto concede/revoga permissões individualmente (`GRANT/REVOKE`); no **RBAC**, as permissões são agrupadas em **Papéis/Funções** (*Roles*, como `Vendedor`, `Financeiro`) atribuídos aos usuários; no **MAC**, o acesso é imposto centralmente pelo sistema através de rótulos de classificação de sigilo (ex.: *Confidencial, Secreto, Ultrassecreto*) que nem o criador do dado pode burlar.",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica de segurança de bancos de dados (Elmasri & Navathe)."
+      },
+      {
+        "letra": "B",
+        "texto": "O DAC proíbe o uso de senhas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "O RBAC dá acesso de administrador para todos os clientes.",
+        "correta": false,
+        "diagnostico": "Erro de segurança."
+      },
+      {
+        "letra": "D",
+        "texto": "O MAC é o endereço físico da placa de rede Wi-Fi.",
+        "correta": false,
+        "diagnostico": "Erro: confunde Mandatory Access Control com Media Access Control de redes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "DAC é você emprestar a chave do seu carro para quem você quiser; RBAC é a empresa dar o crachá 'Equipe Médica' que abre todas as salas do hospital para quem for contratado como médico; MAC é a base militar onde um documento carimbado 'Ultrassecreto' só pode ser lido por um General com credencial nível 5, mesmo que tenha sido digitado por um soldado.",
+      "analise_correta": "Na prática corporativa moderna, o **RBAC** aliado ao **Princípio do Menor Privilégio** é o padrão universal.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de segurança.",
+        "D": "Erro: confunde Mandatory Access Control com Media Access Control de redes."
+      },
+      "referencia_vault": "02. Modelagem de Dados/14. Segurança de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-043",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Ataque de Injeção de SQL (SQL Injection) e Prevenção com Consultas Parametrizadas",
+    "artigo_origem": "14. Segurança de banco de dados.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como ocorre a vulnerabilidade crítica de **SQL Injection** em aplicações conectadas a bancos de dados e qual é a defesa técnica definitiva no código da aplicação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ocorre quando entradas não confiáveis digitadas pelo usuário são **concatenadas diretamente como texto** dentro do comando SQL (ex.: `\"SELECT * FROM Usuario WHERE Login = '\" + txtLogin + \"'\"`), permitindo que o invasor injete comandos como `' OR '1'='1` para burlar autenticação ou destruir dados; a defesa definitiva é usar **Consultas Parametrizadas (*Prepared Statements* / parâmetros de ORM)**, onde o SGBD trata a entrada estritamente como valor literal e nunca como código executável.",
+        "correta": true,
+        "diagnostico": "Correto: na consulta parametrizada (`WHERE Login = @login`), o plano de execução e a árvore sintática do SQL são compilados antes de receber o parâmetro, tornando impossível alterar a lógica da consulta."
+      },
+      {
+        "letra": "B",
+        "texto": "Ocorre quando o banco de dados pega um vírus biológico.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "A defesa definitiva é esconder o botão de Enviar com CSS.",
+        "correta": false,
+        "diagnostico": "Erro: validações apenas no front-end (JS/CSS) são facilmente contornadas via ferramentas HTTP."
+      },
+      {
+        "letra": "D",
+        "texto": "SQL Injection só acontece em bancos NoSQL que não usam SQL.",
+        "correta": false,
+        "diagnostico": "Erro contraditório."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Concatenar string em SQL é assinar um cheque em branco e deixar o cliente preencher o texto da ordem bancária; usar Consulta Parametrizada é usar um formulário oficial engessado onde o que o cliente escreve no campo 'Nome' jamais consegue virar uma ordem para esvaziar o cofre.",
+      "analise_correta": "ORMs como o Entity Framework Core já geram consultas parametrizadas automaticamente nas expressões LINQ (`context.Usuarios.Where(u => u.Login == input)`).",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro: validações apenas no front-end (JS/CSS) são facilmente contornadas via ferramentas HTTP.",
+        "D": "Erro contraditório."
+      },
+      "referencia_vault": "02. Modelagem de Dados/14. Segurança de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-044",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Criptografia em Repouso (At Rest), em Trânsito (In Transit) e Mascaramento / LGPD",
+    "artigo_origem": "14. Segurança de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Para proteger dados sensíveis e cumprir legislações de proteção de dados (como a **LGPD**), qual é a função conjunta da **Criptografia em Repouso**, **Criptografia em Trânsito**, **Hashing de Senhas** e **Mascaramento de Dados**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Em Repouso (TDE/disco) protege arquivos `.mdf/.ibd` e backups contra roubo físico; em Trânsito (TLS/SSL) protege a comunicação na rede entre aplicação e SGBD contra interceptação (*sniffing*); Hashing unidirecional (BCrypt/Argon2) protege senhas mesmo se a tabela vazar; Mascaramento oculta partes de dados pessoais (ex.: `***.456.789-**`) em ambientes de teste ou telas de atendimento.",
+        "correta": true,
+        "diagnostico": "Correto: estratégia de **Defesa em Profundidade** cobrindo disco, rede, credenciais e privacidade de visualização."
+      },
+      {
+        "letra": "B",
+        "texto": "Basta colocar o servidor em uma sala trancada e salvar senhas em texto puro.",
+        "correta": false,
+        "diagnostico": "Erro gravíssimo: senhas NUNCA devem ser salvas em texto puro nem com criptografia reversível; exige-se hash criptográfico lento com *salt*."
+      },
+      {
+        "letra": "C",
+        "texto": "Criptografia em trânsito substitui a necessidade de backup.",
+        "correta": false,
+        "diagnostico": "Erro operacional."
+      },
+      {
+        "letra": "D",
+        "texto": "A LGPD exige que todos os dados dos clientes sejam publicados abertamente na internet.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a LGPD exige minimização, finalidade, segurança e prevenção de vazamentos de dados pessoais."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Defesa em camadas: cofre blindado no banco (em repouso), carro-forte blindado na rua (em trânsito), combinação que nem o gerente consegue reverter (hash de senha) e tarja preta nos documentos entregues aos estagiários (mascaramento).",
+      "analise_correta": "Auditorias de banco de dados (*Database Auditing*) e backups periódicos testados (*Restore Test*) completam a governança de segurança.",
+      "distratores": {
+        "B": "Erro gravíssimo: senhas NUNCA devem ser salvas em texto puro nem com criptografia reversível; exige-se hash criptográfico lento com *salt*.",
+        "C": "Erro operacional.",
+        "D": "Erro inverso: a LGPD exige minimização, finalidade, segurança e prevenção de vazamentos de dados pessoais."
+      },
+      "referencia_vault": "02. Modelagem de Dados/14. Segurança de banco de dados.md"
+    }
+  },
+  {
+    "id": "MD-045",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Leitura de Cardinalidades na Notação de Peter Chen vs. Pé de Galinha (Crow's Foot)",
+    "artigo_origem": "06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na notação original de **Peter Chen** com pares `(min, max)` posicionados nas linhas do relacionamento `Cliente (1,1) ------ <Faz> ------ (0,N) Pedido` (usando a convenção de leitura de participação onde cada lado anota quantas vezes aquela entidade participa do losango), o que significa `(0,N)` ao lado de `Cliente` e `(1,1)` ao lado de `Pedido`?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Significa que **1 Cliente** pode fazer no mínimo `0` e no máximo `N` pedidos (participação parcial/opcional de Cliente), enquanto **1 Pedido** é feito por no mínimo `1` e no máximo `1` cliente (participação total/obrigatória de Pedido).",
+        "correta": true,
+        "diagnostico": "Correto: na convenção `(min, max)` de participação (adotada em Heuser/Navathe para o par completo), o par `(min, max)` indica com quantas instâncias do relacionamento aquela entidade se associa."
+      },
+      {
+        "letra": "B",
+        "texto": "Significa que um Pedido tem vários Clientes e um Cliente tem apenas um Pedido.",
+        "correta": false,
+        "diagnostico": "Erro de inversão de leitura."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa que o relacionamento é N:M.",
+        "correta": false,
+        "diagnostico": "Erro de cardinalidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa que não podem existir clientes sem pedidos.",
+        "correta": false,
+        "diagnostico": "Erro: o `0` indica justamente que o cliente pode ter zero pedidos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sempre traduza em frase de negócio: 'Um Cliente faz de zero a muitos Pedidos; um Pedido pertence a um e somente um Cliente'.",
+      "analise_correta": "Já na notação Pé de Galinha (*Crow's Foot*), os símbolos de traço `|` (1), círculo `o` (0) e pé de galinha `<` (N) ficam desenhados diretamente na ponta da entidade destino da frase.",
+      "distratores": {
+        "B": "Erro de inversão de leitura.",
+        "C": "Erro de cardinalidade.",
+        "D": "Erro: o `0` indica justamente que o cliente pode ter zero pedidos."
+      },
+      "referencia_vault": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md"
+    }
+  },
+  {
+    "id": "MD-046",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Mapeamento de Auto-Relacionamento (Unário) 1:N e N:M",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como deve ser mapeado para o Modelo Relacional um **Auto-Relacionamento (Unário) 1:N** (ex.: `Funcionario` supervisiona `Funcionario`, onde cada funcionário tem 1 supervisor e um supervisor tem N subordinados) vs. um **Auto-Relacionamento N:M** (ex.: `Peca` é composta por várias `Pecas` e faz parte de várias `Pecas` - *Bill of Materials*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No Auto-Relacionamento **1:N**, mantém-se **1 única tabela** `Funcionario` e adiciona-se nela mesma uma coluna de Chave Estrangeira `IdSupervisor` que referencia a própria PK `IdFuncionario`; no Auto-Relacionamento **N:M**, cria-se uma **2ª tabela associativa** `ComposicaoPeca(IdPecaPai [PK, FK], IdPecaFilha [PK, FK], Quantidade)` onde ambas as FKs apontam para a PK de `Peca`.",
+        "correta": true,
+        "diagnostico": "Correto: a regra de 1:N (adicionar FK) e N:M (criar tabela associativa) aplica-se exatamente igual aos relacionamentos unários, apenas apontando as FKs para a própria tabela!"
+      },
+      {
+        "letra": "B",
+        "texto": "Em ambos os casos cria-se apenas 1 tabela sem chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "C",
+        "texto": "No Auto-Relacionamento 1:N é obrigatório criar 5 tabelas.",
+        "correta": false,
+        "diagnostico": "Erro quantitativo."
+      },
+      {
+        "letra": "D",
+        "texto": "O modelo relacional não suporta que uma FK aponte para a PK da mesma tabela.",
+        "correta": false,
+        "diagnostico": "Erro: FKs autorreferenciais são nativas de todos os SGBDs SQL."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No 1:N de chefia, na própria ficha do funcionário tem um campo 'Matrícula do meu Chefe' (que aponta para outra ficha do mesmo fichário). No N:M de peças de engenharia, cria-se uma lista técnica de montagem dizendo 'Peça A usa 4 unidades da Peça B'.",
+      "analise_correta": "Em uma hierarquia de chefia, o presidente da empresa terá `IdSupervisor = NULL` (participação parcial na condição de subordinado).",
+      "distratores": {
+        "B": "Erro estrutural.",
+        "C": "Erro quantitativo.",
+        "D": "Erro: FKs autorreferenciais são nativas de todos os SGBDs SQL."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-047",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Mapeamento de Relacionamento Ternário (Grau 3)",
+    "artigo_origem": "11. Mapeamento de relacionamentos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como é mapeado para o Modelo Relacional um **Relacionamento Ternário** (ex.: `Fornecedor` fornece `Peca` para um `Projeto`, onde os três participam simultaneamente com cardinalidade N:M:P)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Cria-se uma **nova tabela associativa** (ex.: `Fornecimento`) contendo como Chaves Estrangeiras as Chaves Primárias das **três entidades participantes** (`IdFornecedor`, `IdPeca`, `IdProjeto`), que juntas compõem a Chave Primária da nova tabela, além dos atributos do próprio relacionamento (como `Quantidade` e `PrecoUnitario`).",
+        "correta": true,
+        "diagnostico": "Correto: relacionamentos de grau $n \\ge 3$ são mapeados para uma nova relação com $n$ chaves estrangeiras."
+      },
+      {
+        "letra": "B",
+        "texto": "Escolhe-se apenas uma das tabelas e apagam-se as outras duas.",
+        "correta": false,
+        "diagnostico": "Erro destrutivo."
+      },
+      {
+        "letra": "C",
+        "texto": "Não é possível mapear relacionamentos ternários para tabelas relacionais.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Coloca-se todas as chaves dentro da tabela `Projeto` separadas por vírgula.",
+        "correta": false,
+        "diagnostico": "Erro de violação da 1FN."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para registrar quem vendeu qual peça para qual obra, a nota de fornecimento precisa carimbar os três códigos juntos na mesma linha: Fornecedor + Peça + Obra.",
+      "analise_correta": "Caso uma das entidades no relacionamento ternário tenha cardinalidade máxima `1` (ex.: cada par Projeto+Peça só pode ter 1 único Fornecedor), a PK da tabela associativa será composta apenas pelas duas FKs do lado `N` (`IdProjeto, IdPeca`), ficando `IdFornecedor` como FK simples.",
+      "distratores": {
+        "B": "Erro destrutivo.",
+        "C": "Erro conceitual.",
+        "D": "Erro de violação da 1FN."
+      },
+      "referencia_vault": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md"
+    }
+  },
+  {
+    "id": "MD-048",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Chave Natural vs. Chave Substituta (Surrogate Key / Artificial)",
+    "artigo_origem": "08. Conceitos do modelo relacional e chave primária.md",
+    "dificuldade": "medio",
+    "enunciado": "No projeto lógico e físico de tabelas, qual é a diferença entre usar uma **Chave Primária Natural** (ex.: `CPF`, `CNPJ` ou `PlacaVeiculo`) e uma **Chave Substituta / Artificial** (*Surrogate Key*, ex.: `IdCliente INT IDENTITY / AUTO_INCREMENT` ou `UUID`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Chave Natural usa um atributo que já existe no mundo real do negócio; a Chave Substituta é um número sequencial ou identificador sintético gerado pelo sistema, imutável, compacto para índices e imune a mudanças nas regras externas ou leis governamentais (enquanto o atributo natural como `CPF` continua protegido por uma constraint `UNIQUE`).",
+        "correta": true,
+        "diagnostico": "Correto: usar `Id` inteiro autoincremental como PK e manter `CPF UNIQUE NOT NULL` une a estabilidade/performance das chaves substitutas com a garantia de unicidade de negócio da chave natural."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar Chave Substituta proíbe colocar `UNIQUE` no CPF.",
+        "correta": false,
+        "diagnostico": "Erro: DEVE-SE manter a constraint `UNIQUE` na chave natural (chave alternativa) para impedir duplicação de clientes."
+      },
+      {
+        "letra": "C",
+        "texto": "Chaves Naturais nunca sofrem alterações no mundo real.",
+        "correta": false,
+        "diagnostico": "Erro prático: placas de veículos mudaram para o padrão Mercosul, códigos de produtos mudam e CPFs podem conter erros de digitação no cadastro inicial."
+      },
+      {
+        "letra": "D",
+        "texto": "Chaves Substitutas ocupam 10 gigabytes por linha.",
+        "correta": false,
+        "diagnostico": "Erro técnico: um `INT` ocupa apenas 4 bytes (`BIGINT` 8 bytes), sendo menor e mais rápido em índices e FKs do que um `VARCHAR(14)`."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A chave natural é o seu nome ou número de documento externo; a chave substituta é o número curto da sua matrícula interna que nunca muda mesmo se você trocar de documento.",
+      "analise_correta": "No Entity Framework Core (projeto integrador), o padrão por convenção é utilizar chaves substitutas `Id` em todas as entidades.",
+      "distratores": {
+        "B": "Erro: DEVE-SE manter a constraint `UNIQUE` na chave natural (chave alternativa) para impedir duplicação de clientes.",
+        "C": "Erro prático: placas de veículos mudaram para o padrão Mercosul, códigos de produtos mudam e CPFs podem conter erros de digitação no cadastro inicial.",
+        "D": "Erro técnico: um `INT` ocupa apenas 4 bytes (`BIGINT` 8 bytes), sendo menor e mais rápido em índices e FKs do que um `VARCHAR(14)`."
+      },
+      "referencia_vault": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md"
+    }
+  },
+  {
+    "id": "MD-049",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Desnormalização Controlada e Performance de Leitura",
+    "artigo_origem": "12. 1ª, 2ª e 3ª formas normais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Embora a **3ª Forma Normal (3FN)** seja o padrão ideal para sistemas transacionais (**OLTP** - *Online Transaction Processing*), em que situação um arquiteto de dados pode optar conscientemente por uma **Desnormalização Controlada**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Em sistemas analíticos de relatórios (**OLAP** / *Data Warehouses* com esquema estrela) ou em consultas críticas de altíssima leitura onde o custo de múltiplos `JOIN`s pesados degrada a latência, aceitando-se uma redundância calculada (ex.: armazenar o `ValorTotalPedido` pré-calculado na tabela `Pedido` mantido consistente por transação/trigger).",
+        "correta": true,
+        "diagnostico": "Correto: normalizar otimiza a escrita e a integridade (OLTP); desnormalizar pontualmente otimiza a leitura eliminando junções caras (OLAP / caches de leitura)."
+      },
+      {
+        "letra": "B",
+        "texto": "Sempre que o programador tiver preguiça de criar chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro de engenharia."
+      },
+      {
+        "letra": "C",
+        "texto": "Para economizar espaço em disco, já que desnormalizar reduz a repetição de dados.",
+        "correta": false,
+        "diagnostico": "Erro inverso: desnormalizar AUMENTA a redundância e o espaço em disco em troca de menos `JOIN`s."
+      },
+      {
+        "letra": "D",
+        "texto": "A desnormalização melhora a velocidade de `UPDATE` em dados repetidos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: desnormalizar torna o `UPDATE` mais caro e arriscado porque exige atualizar todas as cópias."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Normalizar é guardar cada ingrediente em seu pote fechado (seguro e sem desperdício); desnormalizar é deixar o kit de café da manhã já montado na bandeja para sair correndo em 1 segundo, sabendo que você terá o trabalho extra de manter a bandeja atualizada.",
+      "analise_correta": "Regra de ouro: **primeiro normalize até a 3FN**; só desnormalize um ponto específico se houver gargalo comprovado de leitura e mecanismo seguro para manter a consistência.",
+      "distratores": {
+        "B": "Erro de engenharia.",
+        "C": "Erro inverso: desnormalizar AUMENTA a redundância e o espaço em disco em troca de menos `JOIN`s.",
+        "D": "Erro inverso: desnormalizar torna o `UPDATE` mais caro e arriscado porque exige atualizar todas as cópias."
+      },
+      "referencia_vault": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md"
+    }
+  },
+  {
+    "id": "MD-050",
+    "disciplina_id": "02",
+    "disciplina": "Modelagem de Dados",
+    "topico": "Síntese Geral da Disciplina: Do Minimundo ao Banco Seguro e Normalizado",
+    "artigo_origem": "04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual sequência resume de ponta a ponta o fluxo completo de engenharia de um banco de dados estudado em Modelagem de Dados?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Levantamento de requisitos do **Minimundo**; (2) **Modelagem Conceitual** no MER/MERE (entidades, atributos, relacionamentos, cardinalidades e especializações); (3) **Mapeamento Lógico** para o Modelo Relacional (tabelas, PKs, FKs e tabelas associativas); (4) Validação pelas **Formas Normais (1FN, 2FN e 3FN)**; (5) **Implementação Física (DDL)** e aplicação de controles de **Segurança (RBAC, criptografia e prevenção de SQL Injection)**.",
+        "correta": true,
+        "diagnostico": "Correto: visão holística conectando todos os 14 artigos da disciplina em um pipeline de engenharia coerente."
+      },
+      {
+        "letra": "B",
+        "texto": "Criar uma tabela única sem chaves, salvar senhas em texto puro e nunca fazer backup.",
+        "correta": false,
+        "diagnostico": "Erro de todas as boas práticas."
+      },
+      {
+        "letra": "C",
+        "texto": "Começar direto pelo código HTML e ignorar o modelo conceitual.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      },
+      {
+        "letra": "D",
+        "texto": "Usar apenas arquivos de texto separados em cada computador.",
+        "correta": false,
+        "diagnostico": "Erro: retorno à abordagem arcaica de arquivos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É a linha de montagem completa da engenharia de dados: entender o negócio -> desenhar o mapa conceitual -> traduzir em tabelas e chaves -> passar a peneira da normalização contra defeitos -> construir no SGBD com cadeados de segurança.",
+      "analise_correta": "Esse domínio integrado prepara diretamente a base para Manipulação de Dados com SQL, Desenvolvimento Web Back-End e o Projeto Integrador.",
+      "distratores": {
+        "B": "Erro de todas as boas práticas.",
+        "C": "Erro de camada.",
+        "D": "Erro: retorno à abordagem arcaica de arquivos."
+      },
+      "referencia_vault": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md"
     }
   }
 ]

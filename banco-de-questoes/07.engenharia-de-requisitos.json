@@ -3,90 +3,2250 @@
     "id": "REQ-001",
     "disciplina_id": "07",
     "disciplina": "Engenharia de Requisitos",
-    "topico": "Requisitos funcionais vs. não-funcionais",
-    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
-    "dificuldade": "medio",
-    "enunciado": "Na Engenharia de Requisitos, a classificação correta entre requisitos funcionais (RF) e não-funcionais (RNF) é vital para o planejamento de testes e arquitetura. Considere a declaração: 'O sistema deve criptografar as senhas dos usuários utilizando o algoritmo BCrypt e responder a 95% das consultas de busca em menos de 2 segundos sob carga de 500 usuários simultâneos'. Como essa declaração se classifica?",
+    "topico": "Definição e Propósito da Engenharia de Requisitos",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "facil",
+    "enunciado": "Segundo Ian Sommerville e Roger Pressman, o que é a **Engenharia de Requisitos** e qual é o seu papel no ciclo de vida de desenvolvimento de software?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Trata-se de um conjunto de Requisitos Funcionais, pois descreve ações que o usuário clica diretamente na tela.",
-        "correta": false,
-        "diagnostico": "Erro conceitual: criptografia e tempo de resposta são restrições e qualidades arquiteturais, não interações funcionais de negócio."
+        "texto": "É o processo sistemático e disciplinado de descobrir (elicitar), analisar, documentar, validar e gerenciar os serviços que o sistema deve fornecer e as restrições sob as quais ele deve operar, mantendo a ponte entre as necessidades dos stakeholders e a solução técnica.",
+        "correta": true,
+        "diagnostico": "Correto: a Engenharia de Requisitos estabelece **O QUE** o software deve resolver antes e durante a definição de **COMO** ele será codificado."
       },
       {
         "letra": "B",
-        "texto": "Trata-se de Requisitos Não-Funcionais (RNF) referentes a critérios de segurança (criptografia) e desempenho/eficiência (latência e concorrência).",
-        "correta": true,
-        "diagnostico": "Correto: RNFs definem restrições de qualidade, propriedades do sistema e condições de operação (segurança, desempenho, disponibilidade)."
+        "texto": "É a atividade exclusiva de programar classes em C# sem conversar com o cliente.",
+        "correta": false,
+        "diagnostico": "Erro: programar sem entender as necessidades gera sistemas tecnicamente corretos, mas inúteis para o negócio."
       },
       {
         "letra": "C",
-        "texto": "Trata-se de um caso de uso abstrato sem valor prático para o projeto de software.",
+        "texto": "É o conserto de placas-mãe e servidores físicos.",
         "correta": false,
-        "diagnostico": "Erro conceitual: metas de desempenho e segurança são verificáveis e essenciais para a arquitetura."
+        "diagnostico": "Erro de hardware."
       },
       {
         "letra": "D",
-        "texto": "Classifica-se como regra de negócio exclusiva de marketing que não gera impactos na infraestrutura de servidores.",
+        "texto": "É uma etapa opcional que só acontece depois que o software já foi entregue.",
         "correta": false,
-        "diagnostico": "Erro conceitual: exigências de latência sob concorrência impactam diretamente o dimensionamento da infraestrutura."
+        "diagnostico": "Erro cronológico."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Se o requisito funcional diz 'o que' o sistema faz (ex.: permitir que o passageiro reserve uma passagem), o requisito não-funcional diz 'como' ele faz (com que rapidez, segurança e confiabilidade a reserva é processada).",
-      "analise_correta": "Requisitos funcionais descrevem serviços, entradas e saídas do sistema. Requisitos não-funcionais (RNF) impõem restrições e atributos de qualidade (ISO/IEC 25010) como segurança, usabilidade, eficiência e portabilidade.",
+      "modelo_mental": "Engenharia de Requisitos é o trabalho do arquiteto entrevistando a família antes de construir a casa: entender quantos filhos eles têm, se precisam de rampa de acessibilidade e qual é o orçamento, para não construir um galpão frio quando eles precisavam de um lar.",
+      "analise_correta": "Estudos clássicos (como o Chaos Report do Standish Group e pesquisas de Boehm) mostram que falhas na engenharia de requisitos são a principal causa de fracasso, retrabalho e estouro de orçamento em projetos de software.",
       "distratores": {
-        "A": "Usuários não 'clicam' em algoritmos de criptografia; são restrições de qualidade do sistema.",
-        "C": "RNFs bem especificados fornecem critérios objetivos de aceitação e testes de estresse.",
-        "D": "Requisitos de desempenho influenciam diretamente a escolha de servidores e banco de dados."
+        "B": "Erro: programar sem entender as necessidades gera sistemas tecnicamente corretos, mas inúteis para o negócio.",
+        "C": "Erro de hardware.",
+        "D": "Erro cronológico."
       },
-      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
     }
   },
   {
     "id": "REQ-002",
     "disciplina_id": "07",
     "disciplina": "Engenharia de Requisitos",
-    "topico": "Casos de Uso UML e relacionamentos include vs. extend",
-    "artigo_origem": "07. Casos de uso - modelagem e relacionamentos include e extend.md",
-    "dificuldade": "dificil",
-    "enunciado": "Em diagramas de casos de uso da UML, a modularização de fluxos de eventos pode utilizar os estereótipos `«include»` e `«extend»`. Qual é a distinção semântica essencial entre esses dois relacionamentos?",
+    "topico": "Custo de Correção de Erros de Requisitos ao Longo do Ciclo de Vida (Curva de Boehm)",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "medio",
+    "enunciado": "De acordo com a lei empírica da Engenharia de Software (Curva de Custo de Boehm), o que acontece com o custo de corrigir um defeito de requisito quando ele só é descoberto na fase de **Testes Finals** ou em **Produção**, em comparação a corrigi-lo durante a fase inicial de **Requisitos**?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "`«include»` e `«extend»` são termos sinônimos que podem ser intercambiados livremente pelo analista de requisitos.",
-        "correta": false,
-        "diagnostico": "Erro conceitual grave: possuem semânticas de dependência e condicionalidade opostas na UML."
+        "texto": "O custo cresce exponencialmente (podendo ser de 10 a 100 vezes mais caro), pois um requisito errado já gerou modelagem de banco errada, código C# errado, telas erradas e manuais errados que precisarão ser demolidos e refeitos.",
+        "correta": true,
+        "diagnostico": "Correto: o efeito cascata de uma premissa de negócio equivocada multiplica o esforço de retrabalho em todas as disciplinas subsequentes."
       },
       {
         "letra": "B",
-        "texto": "`«include»` indica inclusão mandatória/obrigatória (o caso base depende obrigatoriamente do caso incluído para se completar); `«extend»` indica extensão condicional ou opcional disparada a partir de um ponto de extensão (*extension point*) sem que o caso base dependa dele.",
-        "correta": true,
-        "diagnostico": "Correto: define com precisão o comportamento padrão UML. Include é obrigatório e compartilhado; extend é condicional e desacoplado do caso de uso base."
+        "texto": "O custo é exatamente o mesmo em qualquer fase do projeto.",
+        "correta": false,
+        "diagnostico": "Erro econômico."
       },
       {
         "letra": "C",
-        "texto": "`«extend»` é obrigatório em todos os fluxos e a seta sempre aponta em direção contrária ao ator principal.",
+        "texto": "É mais barato corrigir em produção depois que os clientes reclamam.",
         "correta": false,
-        "diagnostico": "Erro conceitual: extend é opcional/condicional e a seta aponta do caso de uso de extensão para o caso base."
+        "diagnostico": "Erro grave de gestão."
       },
       {
         "letra": "D",
-        "texto": "`«include»` serve apenas para conectar atores humanos a sistemas legados externos sem casos de uso.",
+        "texto": "Erros de requisitos se corrigem sozinhos durante a compilação.",
         "correta": false,
-        "diagnostico": "Erro taxonômico: atores conectam-se a casos de uso por associação; include conecta casos de uso entre si."
+        "diagnostico": "Erro técnico: compiladores detectam erros de sintaxe, nunca se a regra de negócio faz sentido para o cliente."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Pense em comprar um lanche: pagar é mandatório (`«include»` Pagar Conta no Comprar Lanche); pedir maionese extra só ocorre se você quiser (`«extend»` Adicionar Molho Especial dependendo da condição de escolha).",
-      "analise_correta": "Include modulariza passos comuns e obrigatórios. Extend insere comportamento opcional ou de exceção apenas quando condições específicas no ponto de extensão são satisfeitas.",
+      "modelo_mental": "Errar um requisito na planta é usar uma borracha de R$ 2,00 no papel; descobrir em produção que o prédio precisava de garagem subterrânea depois de os moradores já terem mudado exige demolir a fundação com custo milionário.",
+      "analise_correta": "Por isso as atividades de **Verificação e Validação (V&V)** devem começar já sobre os artefatos de requisitos.",
       "distratores": {
-        "A": "Confundir include e extend altera gravemente o escopo e a obrigatoriedade dos fluxos contratuais de software.",
-        "C": "Extend não é obrigatório; é inerentemente condicional.",
-        "D": "Relacionamentos entre atores e casos de uso são associações simples, não includes."
+        "B": "Erro econômico.",
+        "C": "Erro grave de gestão.",
+        "D": "Erro técnico: compiladores detectam erros de sintaxe, nunca se a regra de negócio faz sentido para o cliente."
       },
-      "referencia_vault": "07. Engenharia de Requisitos/07. Casos de uso - modelagem e relacionamentos include e extend.md"
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-003",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "As Macroatividades do Processo de Engenharia de Requisitos",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "medio",
+    "enunciado": "Quais são as macroatividades fundamentais que compõem o processo iterativo de Engenharia de Requisitos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Concepção / Estudo de Viabilidade, (2) Elicitação e Descoberta, (3) Análise e Negociação, (4) Especificação / Documentação, (5) Validação e Verificação, e (6) Gerenciamento de Requisitos (controle de mudanças e rastreabilidade).",
+        "correta": true,
+        "diagnostico": "Correto: o processo de requisitos não é um evento único estático, mas um ciclo contínuo que acompanha a evolução do produto."
+      },
+      {
+        "letra": "B",
+        "texto": "Apenas digitar um arquivo Word na primeira semana e nunca mais abri-lo.",
+        "correta": false,
+        "diagnostico": "Erro: documentos estáticos abandonados perdem valor rapidamente."
+      },
+      {
+        "letra": "C",
+        "texto": "Compilação, Linkedição, Alocação de Registradores e Coleta de Lixo.",
+        "correta": false,
+        "diagnostico": "Erro: fases de um compilador."
+      },
+      {
+        "letra": "D",
+        "texto": "Roteamento IP, Multiplexação TDM e Modulação QAM.",
+        "correta": false,
+        "diagnostico": "Erro: conceitos de Redes de Computadores."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Descobrir o que precisam (Elicitação) -> Resolver conflitos e priorizar (Análise/Negociação) -> Escrever e desenhar modelos claros (Especificação) -> Conferir se está certo (Validação) -> Controlar mudanças ao longo do caminho (Gerenciamento).",
+      "analise_correta": "Mesmo em métodos ágeis (Scrum/XP), essas mesmas atividades ocorrem continuamente a cada Sprint no refinamento do *Product Backlog*.",
+      "distratores": {
+        "B": "Erro: documentos estáticos abandonados perdem valor rapidamente.",
+        "C": "Erro: fases de um compilador.",
+        "D": "Erro: conceitos de Redes de Computadores."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-004",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Alinhamento Estratégico entre TI e Negócios",
+    "artigo_origem": "02. Engenharia de requisitos e negócios - o alinhamento estratégico.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que a Engenharia de Requisitos contemporânea afirma que \"um software não existe no vácuo, mas para gerar valor a uma organização ou contexto social\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque toda funcionalidade especificada deve estar alinhada aos **objetivos estratégicos do negócio** (resolver uma dor real, reduzir custos, aumentar eficiência, cumprir normas legais ou atingir metas como o ODS 4), evitando construir funcionalidades supérfluas (*gold plating*) que não agregam valor.",
+        "correta": true,
+        "diagnostico": "Correto: um requisito só tem razão de existir se contribuir para uma meta de negócio ou necessidade legítima de um stakeholder."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque o objetivo da engenharia de requisitos é usar a tecnologia mais difícil da moda mesmo que o cliente não precise.",
+        "correta": false,
+        "diagnostico": "Erro: *Technology-driven* sem alinhamento de negócio gera desperdício."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o analista de requisitos deve ignorar o orçamento da empresa.",
+        "correta": false,
+        "diagnostico": "Erro de viabilidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque apenas empresas bilionárias podem ter requisitos.",
+        "correta": false,
+        "diagnostico": "Erro de escopo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Não adianta instalar uma turbina de avião a jato em um carrinho de feira se o objetivo do cliente é apenas carregar frutas na calçada com economia.",
+      "analise_correta": "A **Matriz de Rastreabilidade** ajuda justamente a ligar cada requisito técnico de software ao objetivo de negócio que o justificou.",
+      "distratores": {
+        "B": "Erro: *Technology-driven* sem alinhamento de negócio gera desperdício.",
+        "C": "Erro de viabilidade.",
+        "D": "Erro de escopo."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
+    }
+  },
+  {
+    "id": "REQ-005",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Identificação de Stakeholders (Partes Interessadas)",
+    "artigo_origem": "02. Engenharia de requisitos e negócios - o alinhamento estratégico.md",
+    "dificuldade": "facil",
+    "enunciado": "Na Engenharia de Requisitos, quem são os **Stakeholders** (partes interessadas) de um sistema de software?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Qualquer pessoa, grupo ou instituição que afete ou seja afetada direta ou indiretamente pelo sistema — incluindo usuários finais operacionais, gestores, patrocinadores/clientes que pagam pelo projeto, equipe de desenvolvimento, equipe de suporte e órgãos reguladores/leis.",
+        "correta": true,
+        "diagnostico": "Correto: esquecer uma categoria de stakeholder (por exemplo, ouvir apenas o diretor e esquecer de entrevistar o operador do caixa que usará a tela 8 horas por dia) é uma causa clássica de rejeição do sistema."
+      },
+      {
+        "letra": "B",
+        "texto": "Exclusivamente o diretor que assina o cheque do pagamento.",
+        "correta": false,
+        "diagnostico": "Erro: o patrocinador conhece as metas financeiras, mas frequentemente desconhece a rotina operacional detalhada do usuário final."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas os programadores back-end.",
+        "correta": false,
+        "diagnostico": "Erro de visão parcial."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas os concorrentes da empresa.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em um sistema escolar (como no nosso Projeto Integrador ODS 4), os stakeholders incluem: alunos, professores, coordenadores pedagógicos, secretaria, pais/responsáveis, direção da escola e o MEC/LGPD.",
+      "analise_correta": "Diferentes stakeholders frequentemente possuem visões e prioridades conflitantes, cabendo ao engenheiro de requisitos conduzir a **negociação e conciliação**.",
+      "distratores": {
+        "B": "Erro: o patrocinador conhece as metas financeiras, mas frequentemente desconhece a rotina operacional detalhada do usuário final.",
+        "C": "Erro de visão parcial.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
+    }
+  },
+  {
+    "id": "REQ-006",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Regras de Negócio vs. Requisitos do Sistema",
+    "artigo_origem": "02. Engenharia de requisitos e negócios - o alinhamento estratégico.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a distinção conceitual entre uma **Regra de Negócio (RN)** e um **Requisito Funcional (RF)** de software?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **Regra de Negócio** é uma política, norma legal, cálculo ou restrição da própria organização que existe independentemente de haver software (ex.: `RN01: Alunos com frequência inferior a 75% são reprovados por falta`); o **Requisito Funcional** especifica a ação que o software deve executar para apoiar ou fazer cumprir aquela regra (ex.: `RF01: O sistema deve calcular o percentual de presença do aluno e bloquear a aprovação caso seja menor que 75%`).",
+        "correta": true,
+        "diagnostico": "Correto: a Regra de Negócio pertence ao domínio da instituição/mundo real; o Requisito Funcional é o comportamento automatizado do software derivado daquela regra."
+      },
+      {
+        "letra": "B",
+        "texto": "Regras de negócio são comandos SQL; Requisitos funcionais são folhas de estilo CSS.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "C",
+        "texto": "Regras de negócio só existem depois que o software é programado.",
+        "correta": false,
+        "diagnostico": "Erro histórico: a lei ou regra da faculdade já existia na época do diário de papel."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há nenhuma diferença entre uma lei governamental e um botão da tela.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A lei do Banco Central dizendo 'Menores de 18 anos só abrem conta com responsável' é a Regra de Negócio; a funcionalidade do aplicativo de pedir a data de nascimento e abrir a tela de cadastro do pai quando a idade for < 18 é o Requisito Funcional.",
+      "analise_correta": "Documentar as Regras de Negócio (`RN01, RN02...`) separadamente e referenciá-las nos Requisitos Funcionais evita duplicação caso a política da empresa mude.",
+      "distratores": {
+        "B": "Erro técnico.",
+        "C": "Erro histórico: a lei ou regra da faculdade já existia na época do diário de papel.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
+    }
+  },
+  {
+    "id": "REQ-007",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Definição Formal de Requisito (IEEE 610.12)",
+    "artigo_origem": "03. O conceito de requisito de software - definição, níveis e características.md",
+    "dificuldade": "facil",
+    "enunciado": "De acordo com o glossário padrão **IEEE 610.12**, o que define formalmente um **Requisito de Software**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Uma condição ou capacidade necessária a um usuário para resolver um problema ou atingir um objetivo; (2) Uma condição ou capacidade que deve ser satisfeita ou possuída por um sistema para satisfazer um contrato, padrão ou especificação; e (3) Uma representação documentada dessa condição ou capacidade.",
+        "correta": true,
+        "diagnostico": "Correto: a definição do IEEE contempla a necessidade humana do usuário, a obrigação contratual/técnica do sistema e o artefato documentado."
+      },
+      {
+        "letra": "B",
+        "texto": "Um trecho de código-fonte C# já compilado em arquivo `.dll`.",
+        "correta": false,
+        "diagnostico": "Erro: código é implementação, não requisito."
+      },
+      {
+        "letra": "C",
+        "texto": "Uma sugestão informal falada no corredor sem registro nem validação.",
+        "correta": false,
+        "diagnostico": "Erro: requisitos precisam ser registrados e validados."
+      },
+      {
+        "letra": "D",
+        "texto": "O manual de instalação elétrica do data center.",
+        "correta": false,
+        "diagnostico": "Erro de infraestrutura física."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O requisito é o acordo oficial assinado entre dois lados: para o cliente, é a descrição clara do problema que será resolvido; para a equipe de engenharia, é a meta verificável que o software precisa entregar.",
+      "analise_correta": "Requisitos formam a base para estimativa de prazos, arquitetura, codificação e criação dos casos de teste de aceitação.",
+      "distratores": {
+        "B": "Erro: código é implementação, não requisito.",
+        "C": "Erro: requisitos precisam ser registrados e validados.",
+        "D": "Erro de infraestrutura física."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
+    }
+  },
+  {
+    "id": "REQ-008",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Níveis de Abstração de Requisitos (Negócio, Usuário e Sistema)",
+    "artigo_origem": "03. O conceito de requisito de software - definição, níveis e características.md",
+    "dificuldade": "dificil",
+    "enunciado": "Segundo Karl Wiegers e Ian Sommerville, os requisitos são organizados em três níveis de abstração (da visão mais estratégica até a mais detalhada): **Requisitos de Negócio**, **Requisitos de Usuário** e **Requisitos de Sistema**. O que caracteriza cada nível?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Requisitos de Negócio**: declaram o porquê do projeto e os objetivos macro da organização (visão executiva); **Requisitos de Usuário**: descrevem em linguagem natural ou histórias/casos de uso as tarefas e metas que os usuários precisam realizar com o sistema; **Requisitos de Sistema**: detalham com precisão técnica as funções, entradas, saídas, restrições e comportamentos que a equipe de engenharia implementará.",
+        "correta": true,
+        "diagnostico": "Correto: cada nível fala a língua do seu público-alvo sem perder o alinhamento vertical: Patrocinador (Negócio) -> Usuário/PO (Usuário) -> Desenvolvedores/QAs (Sistema)."
+      },
+      {
+        "letra": "B",
+        "texto": "Requisitos de Usuário são escritos em código binário para os programadores.",
+        "correta": false,
+        "diagnostico": "Erro: Requisitos de Usuário devem ser compreensíveis por stakeholders não técnicos."
+      },
+      {
+        "letra": "C",
+        "texto": "Requisitos de Sistema são frases vagas de marketing para outdoors.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Os três níveis são escritos exclusivamente em SQL.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense em viajar: Requisito de Negócio = 'Expandir as vendas da empresa para o exterior'; Requisito de Usuário = 'Como vendedor, preciso emitir propostas comerciais em dólar e inglês'; Requisito de Sistema = 'O sistema deve converter os preços da tabela Produto usando a API de câmbio PTAX do Banco Central com precisão de 4 casas decimais'.",
+      "analise_correta": "Misturar esses níveis no mesmo parágrafo gera especificações confusas: ou técnicas demais para o cliente validar, ou vagas demais para o programador codificar.",
+      "distratores": {
+        "B": "Erro: Requisitos de Usuário devem ser compreensíveis por stakeholders não técnicos.",
+        "C": "Erro inverso.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
+    }
+  },
+  {
+    "id": "REQ-009",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Distinção Fundamental: Requisitos Funcionais (RF) vs. Requisitos Não-Funcionais (RNF)",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a diferença essencial entre **Requisitos Funcionais (RF)** e **Requisitos Não-Funcionais (RNF)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Os **Requisitos Funcionais (RF)** descrevem **O QUE** o sistema faz (as funcionalidades, serviços, transformações de entrada em saída, cadastros, buscas e relatórios); os **Requisitos Não-Funcionais (RNF)** definem **COMO** o sistema se comporta ou as **restrições e qualidades** sob as quais opera (desempenho, segurança, usabilidade, disponibilidade, portabilidade e padrões tecnológicos).",
+        "correta": true,
+        "diagnostico": "Correto: RF = serviços e comportamentos funcionais de domínio; RNF = atributos de qualidade e restrições de projeto/execução."
+      },
+      {
+        "letra": "B",
+        "texto": "Requisitos Funcionais são os que funcionam e Requisitos Não-Funcionais são os que estão com defeito.",
+        "correta": false,
+        "diagnostico": "Erro literal cômico: \"Não-Funcional\" significa *Atributo de Qualidade / Restrição*, e não \"aquilo que não funciona\"!"
+      },
+      {
+        "letra": "C",
+        "texto": "Requisitos Não-Funcionais são irrelevantes e podem ser ignorados pela arquitetura.",
+        "correta": false,
+        "diagnostico": "Erro grave: na prática, sistemas frequentemente falham mais por descumprir RNFs (sistema cai, é lento ou inseguro) do que por falta de um botão funcional."
+      },
+      {
+        "letra": "D",
+        "texto": "Cadastrar um cliente é um RNF; responder em menos de 1 segundo é um RF.",
+        "correta": false,
+        "diagnostico": "Erro inverso: cadastrar cliente é RF; tempo de resposta < 1s é RNF de desempenho."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em um carro: os Requisitos Funcionais são 'ter marcha à ré, ligar o farol e tocar música no painel'; os Requisitos Não-Funcionais são 'fazer 15 km por litro (eficiência), atingir 5 estrelas no teste de colisão (segurança) e funcionar em temperaturas de -10°C a 45°C (confiabilidade)'.",
+      "analise_correta": "Um único RNF (como exigir alta disponibilidade 99,99% ou criptografia ponta a ponta) pode impactar a arquitetura de todos os RFs do sistema.",
+      "distratores": {
+        "B": "Erro literal cômico: \"Não-Funcional\" significa *Atributo de Qualidade / Restrição*, e não \"aquilo que não funciona\"!",
+        "C": "Erro grave: na prática, sistemas frequentemente falham mais por descumprir RNFs (sistema cai, é lento ou inseguro) do que por falta de um botão funcional.",
+        "D": "Erro inverso: cadastrar cliente é RF; tempo de resposta < 1s é RNF de desempenho."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-010",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Taxonomia de Requisitos Não-Funcionais de Sommerville (Produto, Organizacionais e Externos)",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ian Sommerville classifica os Requisitos Não-Funcionais (RNF) em três grandes categorias conforme a sua origem: **Requisitos de Produto**, **Requisitos Organizacionais** e **Requisitos Externos**. Associe corretamente os exemplos abaixo a cada categoria:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **De Produto** (comportamento em execução do software: tempo de resposta < 2s, disponibilidade 99,9%, usabilidade); (2) **Organizacionais** (políticas e padrões internos da empresa/faculdade: desenvolver obrigatoriamente em C# ASP.NET Core MVC com GitHub); (3) **Externos** (fatores fora da empresa, como leis e órgãos reguladores: conformidade estrita com a **LGPD**, normas do Banco Central ou diretrizes **WCAG**).",
+        "correta": true,
+        "diagnostico": "Correto: classificação clássica de Sommerville muito cobrada em provas: Produto (qualidades de runtime), Organizacionais (processo/padrões da instituição) e Externos (legislação/interoperabilidade externa)."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) De Produto: LGPD; (2) Organizacionais: tempo de resposta; (3) Externos: usar C#.",
+        "correta": false,
+        "diagnostico": "Erro de inversão das categorias."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os RNFs dizem respeito apenas à velocidade da CPU.",
+        "correta": false,
+        "diagnostico": "Erro redutor."
+      },
+      {
+        "letra": "D",
+        "texto": "Requisitos Externos são decididos livremente pelo estagiário.",
+        "correta": false,
+        "diagnostico": "Erro: requisitos externos legais têm força de lei e são inegociáveis."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "De Produto = qualidades do próprio aparelho; Organizacionais = regras da fábrica que está construindo; Externos = leis do governo e normas do país.",
+      "analise_correta": "No Projeto Integrador da PUC Minas, a exigência de usar C# ASP.NET Core MVC e GitHub é um clássico **RNF Organizacional**, enquanto a proteção de dados pessoais é um **RNF Externo (Legal)**.",
+      "distratores": {
+        "B": "Erro de inversão das categorias.",
+        "C": "Erro redutor.",
+        "D": "Erro: requisitos externos legais têm força de lei e são inegociáveis."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-011",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Métricas Quantificáveis e Testabilidade em Requisitos Não-Funcionais",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "medio",
+    "enunciado": "Compare as duas redações para um Requisito Não-Funcional de Desempenho: (Redação 1) *\"O sistema deve ser muito rápido e fácil de usar\"*; (Redação 2) *\"O sistema deve processar a busca de livros e exibir os resultados em no máximo 1,5 segundo para 95% das requisições sob carga simultânea de 200 usuários\"*. Por que a Redação 1 é considerada defeituosa na Engenharia de Requisitos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a Redação 1 é **vaga, subjetiva e não verificável/testável** (o que é \"muito rápido\" para o programador pode ser lento para o cliente), enquanto a Redação 2 estabelece uma **métrica quantitativa objetiva** que pode ser medida e aprovada ou reprovada em um teste automatizado.",
+        "correta": true,
+        "diagnostico": "Correto: sempre que possível, um RNF deve ser especificado de forma **quantitativamente mensurável** (tempo em segundos, taxa de erros, percentual de uptime, cliques máximos, tempo de aprendizado)."
+      },
+      {
+        "letra": "B",
+        "texto": "A Redação 1 é melhor porque é mais curta.",
+        "correta": false,
+        "diagnostico": "Erro: concisão sem precisão gera litígio na entrega do projeto."
+      },
+      {
+        "letra": "C",
+        "texto": "Requisitos Não-Funcionais nunca podem conter números.",
+        "correta": false,
+        "diagnostico": "Erro inverso: números e métricas são essenciais para RNFs."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas são igualmente testáveis.",
+        "correta": false,
+        "diagnostico": "Erro de qualidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pedir 'Quero uma corda bem forte' (subjetivo) não diz ao engenheiro qual aço comprar; pedir 'A corda deve suportar tração de 500 kg sem romper' (mensurável) permite testar na máquina com um peso de 500 kg e dar o laudo exato.",
+      "analise_correta": "Essa propriedade de poder provar objetivamente se o requisito foi cumprido chama-se **Verificabilidade / Testabilidade**.",
+      "distratores": {
+        "B": "Erro: concisão sem precisão gera litígio na entrega do projeto.",
+        "C": "Erro inverso: números e métricas são essenciais para RNFs.",
+        "D": "Erro de qualidade."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-012",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Atributos de Qualidade de um Bom Requisito e de um Documento SRS (IEEE 830 / ISO 29148)",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "dificil",
+    "enunciado": "De acordo com as normas **IEEE 830 / ISO/IEC/IEEE 29148**, quais são os atributos fundamentais de qualidade que os requisitos bem escritos devem possuir?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Não-ambíguo** (admite uma única interpretação), **Completo** (toda informação necessária está presente), **Consistente** (não contradiz outros requisitos), **Correto** (reflete a necessidade real), **Verificável/Testável** (há como testar se foi atendido), **Rastreável** (identificado por código único como `RF01` e ligado à sua origem/testes) e **Modificável**.",
+        "correta": true,
+        "diagnostico": "Correto: os 7 critérios canônicos do IEEE para avaliar se uma especificação de requisitos tem maturidade de engenharia."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambíguo, poético, sem numeração e aberto a múltiplas interpretações criativas.",
+        "correta": false,
+        "diagnostico": "Erro: ambiguidade na literatura é arte; ambiguidade na engenharia de software é defeito grave."
+      },
+      {
+        "letra": "C",
+        "texto": "Escrito inteiramente com gírias regionais e sem revisão.",
+        "correta": false,
+        "diagnostico": "Erro de padronização."
+      },
+      {
+        "letra": "D",
+        "texto": "Contraditório para testar a atenção do programador.",
+        "correta": false,
+        "diagnostico": "Erro: contradição entre `RF04` e `RF12` é falha de **Consistência**."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um bom requisito é como uma prescrição médica cirúrgica: tem código único (Rastreável), dose exata sem dupla interpretação (Não-ambíguo), não mistura dois remédios que brigam entre si (Consistente) e permite medir no exame se fez efeito (Verificável).",
+      "analise_correta": "Para garantir atomicidade e clareza, cada requisito deve usar verbos imperativos padronizados (*\"O sistema deve...\"*) e tratar de uma única obrigação por item.",
+      "distratores": {
+        "B": "Erro: ambiguidade na literatura é arte; ambiguidade na engenharia de software é defeito grave.",
+        "C": "Erro de padronização.",
+        "D": "Erro: contradição entre `RF04` e `RF12` é falha de **Consistência**."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-013",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Histórias de Usuário (User Stories) Ágeis, Template Connextra e Critérios INVEST",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "enunciado": "Em metodologias ágeis, os requisitos de usuário são frequentemente expressos como **Histórias de Usuário (*User Stories*)** acompanhadas de **Critérios de Aceitação**. Qual é a estrutura clássica (Template Connextra) de uma User Story e o que ela destaca?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`\"Como um [papel/persona de usuário], eu quero [ação/funcionalidade desejada], para que [benefício/valor de negócio alcançado]\"` — destacando explicitamente **QUEM** precisa, **O QUE** precisa e **POR QUE** (qual valor gera), complementada pelos **Critérios de Aceitação** (ex.: *Dado que / Quando / Então*).",
+        "correta": true,
+        "diagnostico": "Correto: a estrutura *Como [Quem] -> Quero [O Quê] -> Para que [Por Quê]* impede que se criem funcionalidades sem saber quem vai usar ou qual benefício real trará."
+      },
+      {
+        "letra": "B",
+        "texto": "`\"SELECT * FROM Tabela WHERE Id = 1\"`.",
+        "correta": false,
+        "diagnostico": "Erro: comando SQL."
+      },
+      {
+        "letra": "C",
+        "texto": "Um documento de 300 páginas sem participação do usuário.",
+        "correta": false,
+        "diagnostico": "Erro de método."
+      },
+      {
+        "letra": "D",
+        "texto": "Uma frase que esconde quem é o usuário e qual é o objetivo.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de anotar seco 'Botão de exportar PDF', a User Story conta a história real: 'Como coordenador pedagógico, quero exportar o boletim da turma em PDF, para que eu possa entregá-lo impresso na reunião de pais'.",
+      "analise_correta": "Boas User Stories seguem o acrônimo **INVEST**: *Independent* (Independente), *Negotiable* (Negociável), *Valuable* (Valiosa), *Estimable* (Estimável), *Small* (Pequena) e *Testable* (Testável).",
+      "distratores": {
+        "B": "Erro: comando SQL.",
+        "C": "Erro de método.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-014",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Por que \"Elicitar\" em vez de apenas \"Coletar\" Requisitos? (Conhecimento Tácito vs. Explícito)",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que na Engenharia de Requisitos utiliza-se o termo **Elicitação** (ou descoberta) de requisitos em vez de simplesmente \"coleta\" ou \"recolhimento\"?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque os requisitos **não estão prontos na superfície** esperando para serem colhidos como frutas: os usuários muitas vezes têm **conhecimento tácito** (sabem fazer o trabalho no automático, mas esquecem de verbalizar passos óbvios para eles), têm dificuldades de expressar necessidades futuras ou pedem soluções em vez de explicar o problema, exigindo técnicas investigativas ativas.",
+        "correta": true,
+        "diagnostico": "Correto: \"coletar\" passa a falsa ideia de que os requisitos estão espalhados na mesa bastando pegá-los; **elicitar** (do latim *elicere* = extrair, trazer à tona) exige investigação, escuta ativa e cruzamento de técnicas."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque elicitar significa adivinhar os requisitos sem conversar com ninguém.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque os clientes já entregam o documento SRS 100% pronto e sem falhas no primeiro dia.",
+        "correta": false,
+        "diagnostico": "Erro prático: clientes raramente sabem especificar software formalmente."
+      },
+      {
+        "letra": "D",
+        "texto": "É apenas uma palavra difícil sem motivo prático.",
+        "correta": false,
+        "diagnostico": "Erro semântico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O analista de requisitos não é um garimpeiro catando pedras prontas no chão; é um médico fazendo anamnese: o paciente chega dizendo 'quero tomar antibiótico' (solução imaginada), mas o médico investiga os sintomas até descobrir que a causa real é outra.",
+      "analise_correta": "Por isso nunca se deve confiar em uma única técnica isolada; combinam-se entrevistas, questionários, observação e prototipação.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro prático: clientes raramente sabem especificar software formalmente.",
+        "D": "Erro semântico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-015",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Comparativo de Técnicas de Elicitação: Entrevistas, Questionários, Observação (Etnografia), Brainstorming e Prototipação",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Associe cada cenário real de projeto à **técnica de elicitação de requisitos** mais indicada para resolvê-lo:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Entrevista**: aprofundar regras estratégicas e tirar dúvidas abertas diretamente com o gestor ou especialista; (2) **Questionário / Survey**: colher opiniões e perfil de um público amplo (ex.: 500 alunos) de forma rápida e tabulável; (3) **Observação / Etnografia**: acompanhar o operador no posto de trabalho real quando ele está ocupado demais ou executa passos no automático (*conhecimento tácito*); (4) **Prototipação**: validar telas e fluxos visuais quando o usuário tem dificuldade de imaginar o sistema apenas lendo texto.",
+        "correta": true,
+        "diagnostico": "Correto: cada técnica tem seu ponto forte e suas limitações; combiná-las (ex.: Entrevista + Questionário + Protótipo de tela no Figma) garante cobertura ampla e profunda."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Questionário para 1 pessoa; (2) Entrevista individual de 2 horas para 10.000 pessoas; (3) Prototipação sem desenhar nada.",
+        "correta": false,
+        "diagnostico": "Erro de escala e viabilidade."
+      },
+      {
+        "letra": "C",
+        "texto": "Usar apenas Brainstorming para todas as situações e ignorar os usuários.",
+        "correta": false,
+        "diagnostico": "Erro metodológico."
+      },
+      {
+        "letra": "D",
+        "texto": "Nenhuma técnica envolve contato com stakeholders.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Caixa de ferramentas do detetive: Entrevista é a conversa olho no olho; Questionário é o censo rápido para a multidão; Observação é sentar ao lado do caixa do supermercado para ver os atalhos que ele usa sem perceber; Protótipo é mostrar a maquete para o cliente apontar o que gostou.",
+      "analise_correta": "Complementarmente, a **Análise de Documentos / Arqueologia de Sistemas** examina formulários, planilhas e sistemas antigos já usados pela empresa.",
+      "distratores": {
+        "B": "Erro de escala e viabilidade.",
+        "C": "Erro metodológico.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-016",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "O que é a UML e a Divisão entre Diagramas Estruturais vs. Comportamentais",
+    "artigo_origem": "07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+    "dificuldade": "facil",
+    "enunciado": "O que é a **UML** (*Unified Modeling Language*, criada por Booch, Rumbaugh e Jacobson) e como seus diagramas se dividem em duas grandes famílias?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A UML é uma **linguagem visual padronizada para especificar, visualizar, construir e documentar** artefatos de sistemas de software orientados a objetos (não é uma linguagem de programação nem uma metodologia); seus diagramas dividem-se em **Diagramas Estruturais** (visão estática da arquitetura: Classes, Pacotes, Componentes, Implantação) e **Diagramas Comportamentais** (visão dinâmica de interações e ações: Casos de Uso, Sequência, Atividades, Estados).",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica: **Estruturais** = o esqueleto estático do que existe no sistema (Classes, Pacotes); **Comportamentais** = o movimento dinâmico do que acontece no tempo (Casos de Uso, Sequência, Estados)."
+      },
+      {
+        "letra": "B",
+        "texto": "A UML é um banco de dados relacional concorrente do PostgreSQL.",
+        "correta": false,
+        "diagnostico": "Erro de tecnologia."
+      },
+      {
+        "letra": "C",
+        "texto": "A UML é um compilador que substitui o C#.",
+        "correta": false,
+        "diagnostico": "Erro: UML é linguagem de modelagem visual, não linguagem de programação."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os diagramas da UML mostram apenas fluxos de tempo e nenhum mostra estrutura de classes.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Construindo um teatro: os Diagramas Estruturais são a planta do palco, das cadeiras e dos camarins (o que está lá parado); os Diagramas Comportamentais são o roteiro da peça mostrando quem entra em cena, o que fala e para onde se move (a ação acontecendo).",
+      "analise_correta": "Na disciplina de Engenharia de Requisitos, focamos em 3 diagramas essenciais da UML: **Casos de Uso** (comportamental), **Classes** (estrutural) e **Pacotes** (estrutural).",
+      "distratores": {
+        "B": "Erro de tecnologia.",
+        "C": "Erro: UML é linguagem de modelagem visual, não linguagem de programação.",
+        "D": "Erro taxonômico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-017",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Elementos do Diagrama de Casos de Uso: Ator, Caso de Uso e Fronteira do Sistema",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "facil",
+    "enunciado": "Em um **Diagrama de Casos de Uso** da UML (proposto por Ivar Jacobson), o que representam um **Ator** (boneco *stickman*), um **Caso de Uso** (elipse) e a **Fronteira do Sistema** (retângulo)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **Ator** representa qualquer papel externo que interage com o sistema (podendo ser um perfil de usuário humano, outro sistema externo, uma API de pagamento ou um dispositivo/timer); o **Caso de Uso** representa um serviço ou objetivo completo de valor entregue pelo sistema ao ator (verbo no infinitivo + substantivo, ex.: `Realizar Matrícula`); a **Fronteira** delimita o que está dentro do escopo do software (elipses) do que é externo (atores).",
+        "correta": true,
+        "diagnostico": "Correto: atenção especial para o fato de que **um Ator NÃO é necessariamente um ser humano**: um sistema externo (como o gateway do PIX ou servidor de e-mail) que interage com o seu software também é um **Ator** (geralmente secundário) e fica fora da fronteira!"
+      },
+      {
+        "letra": "B",
+        "texto": "O Ator só pode ser uma pessoa física de carne e osso; sistemas externos como o Correios ou Mercado Pago ficam dentro das elipses.",
+        "correta": false,
+        "diagnostico": "Erro clássico de prova: sistemas externos são Atores, não Casos de Uso."
+      },
+      {
+        "letra": "C",
+        "texto": "Cada Caso de Uso representa uma linha de código `if` ou um botão isolado da tela.",
+        "correta": false,
+        "diagnostico": "Erro de granularidade: Caso de Uso não é micro-passo de interface (*\"Clicar no botão OK\"*), mas um objetivo completo de negócio."
+      },
+      {
+        "letra": "D",
+        "texto": "Os Atores ficam desenhados dentro do retângulo da fronteira do sistema.",
+        "correta": false,
+        "diagnostico": "Erro de notação: Atores são por definição **externos** à fronteira do sistema."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A Fronteira do Sistema é a parede da agência bancária; lá dentro ficam os serviços oferecidos nas elipses (`Sacar Dinheiro`, `Emitir Extrato`); do lado de fora da parede ficam os Atores que conversam com a agência (o `Cliente` humano na frente e o `Sistema do Banco Central` nos fundos).",
+      "analise_correta": "Uma mesma pessoa física pode assumir múltiplos papéis (Atores), e um Ator especializado pode herdar de outro Ator via seta de **Generalização**.",
+      "distratores": {
+        "B": "Erro clássico de prova: sistemas externos são Atores, não Casos de Uso.",
+        "C": "Erro de granularidade: Caso de Uso não é micro-passo de interface (*\"Clicar no botão OK\"*), mas um objetivo completo de negócio.",
+        "D": "Erro de notação: Atores são por definição **externos** à fronteira do sistema."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-018",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Relacionamentos entre Casos de Uso: «include» vs. «extend» e Direção das Setas",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Compare com rigor técnico os relacionamentos **`«include»`** (inclusão) e **`«extend»`** (extensão) entre casos de uso na UML, incluindo a **obrigatoriedade** e para onde aponta a **seta tracejada**:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No **`«include»`**, o comportamento do caso de uso incluído é **obrigatório** (sempre executado como sub-rotina compartilhada), e a seta tracejada aponta **DO caso de uso base PARA o caso de uso incluído** (ex.: `Finalizar Compra ---«include»---> Validar Pagamento`); no **`«extend»`**, o comportamento é **opcional/condicional** (só ocorre se uma condição num *Ponto de Extensão* for ativada), e a seta tracejada aponta **DO caso de uso estendido (opcional) PARA o caso de uso base** (ex.: `Aplicar Cupom de Desconto ---«extend»---> Finalizar Compra`).",
+        "correta": true,
+        "diagnostico": "Correto: questão campeã absoluta de provas de Engenharia de Requisitos! Memorize a direção da seta: quem depende aponta para quem é independente. No `include`, o Base precisa do Incluído (`Base -> Incluído`). No `extend`, o Base funciona sozinho sem saber do opcional; é o Opcional que se encaixa no Base (`Estendido -> Base`)."
+      },
+      {
+        "letra": "B",
+        "texto": "No `«include»` a execução é opcional e no `«extend»` é obrigatória.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Em ambos os casos a seta aponta para o Ator.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe UML."
+      },
+      {
+        "letra": "D",
+        "texto": "`«include»` e `«extend»` servem para ligar tabelas de banco de dados.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ponte com Programação Modular: `«include»` é uma chamada obrigatória de método auxiliar `ValidarPagamento()` no meio do fluxo; `«extend»` é um plugin ou evento condicional `if (temCupom) AplicarDesconto()` que se acopla ao caso base sem que o caso base dependa dele!",
+      "analise_correta": "Dominar `«include»` (obrigatório, seta vai para o incluído) vs. `«extend»` (condicional, seta volta para o base) garante acerto nas questões mais difíceis de UML.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro de sintaxe UML.",
+        "D": "Erro de disciplina."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-019",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Especificação Textual (Descrição Expandida) de Caso de Uso: Fluxo Principal, Alternativo e de Exceção",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "medio",
+    "enunciado": "O Diagrama de Casos de Uso mostra apenas uma visão panorâmica de alto nível. Onde são detalhados passo a passo os diálogos entre o Ator e o Sistema, e qual é a diferença entre **Fluxo Principal (Caminho Feliz)**, **Fluxo Alternativo** e **Fluxo de Exceção**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "São detalhados na **Especificação Textual (ou Descrição Expandida) do Caso de Uso**, que contém: Pré-condições, Pós-condições, **Fluxo Principal** (sequência padrão de passos onde tudo dá certo e o objetivo é atingido), **Fluxos Alternativos** (variações legítimas de caminho que também atingem o objetivo, ex.: pagar com PIX em vez de cartão) e **Fluxos de Exceção** (tratamento de falhas ou impedimentos que impedem a conclusão normal, ex.: senha inválida ou saldo insuficiente).",
+        "correta": true,
+        "diagnostico": "Correto: como destacava Alistair Cockburn e Ivar Jacobson, a essência de um Caso de Uso está no seu **texto estruturado de fluxos**; o diagrama gráfico é apenas o sumário visual!"
+      },
+      {
+        "letra": "B",
+        "texto": "Todo o passo a passo de 20 linhas deve ser escrito espremido dentro da bolinha (elipse) do diagrama.",
+        "correta": false,
+        "diagnostico": "Erro de notação: a elipse contém apenas o nome curto do caso de uso (`CSU01 - Realizar Empréstimo`)."
+      },
+      {
+        "letra": "C",
+        "texto": "Não existe texto em casos de uso, apenas o desenho das elipses.",
+        "correta": false,
+        "diagnostico": "Erro grave: sem especificação textual de fluxos e regras de negócio associadas, o diagrama é apenas um desenho vazio."
+      },
+      {
+        "letra": "D",
+        "texto": "Fluxo Principal é quando o sistema dá erro fatal.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O diagrama de elipses é o índice de capítulos do livro; a Especificação Textual é o capítulo aberto contando a cena: Caminho Feliz (cliente escolhe o produto, paga e leva), Caminho Alternativo (cliente decide parcelar em 2x e leva), Fluxo de Exceção (cartão é recusado, sistema exibe alerta e cancela a venda).",
+      "analise_correta": "As **Pré-condições** declaram o estado que já deve ser verdadeiro antes de o caso de uso iniciar (ex.: *\"O usuário deve estar autenticado no sistema\"*).",
+      "distratores": {
+        "B": "Erro de notação: a elipse contém apenas o nome curto do caso de uso (`CSU01 - Realizar Empréstimo`).",
+        "C": "Erro grave: sem especificação textual de fluxos e regras de negócio associadas, o diagrama é apenas um desenho vazio.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-020",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Anatomia de uma Classe na UML e Símbolos de Visibilidade (+, -, #, ~)",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "facil",
+    "enunciado": "No **Diagrama de Classes da UML**, uma classe é representada por um retângulo dividido em três compartimentos (**Nome da Classe**, **Atributos** e **Operações/Métodos**). O que significam os símbolos de visibilidade `+`, `-`, `#` e `~` antes de cada membro?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`+` = **Public** (público, acessível por qualquer classe); `-` = **Private** (privado, acessível apenas dentro da própria classe); `#` = **Protected** (protegido, acessível pela própria classe e subclasses herdeiras); `~` = **Package / Internal** (visível dentro do mesmo pacote/assembly).",
+        "correta": true,
+        "diagnostico": "Correto: ponte direta com **Programação Modular (Artigo 12 - Modificadores de Acesso)**: a notação UML mapeia 1 para 1 para os modificadores do C# (`public`, `private`, `protected`, `internal`)."
+      },
+      {
+        "letra": "B",
+        "texto": "`+` significa somar, `-` significa subtrair e `#` significa comentário.",
+        "correta": false,
+        "diagnostico": "Erro aritmético."
+      },
+      {
+        "letra": "C",
+        "texto": "`-` é público e `+` é privado.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os atributos devem ser marcados com `+` para quebrar o encapsulamento.",
+        "correta": false,
+        "diagnostico": "Erro: pelo princípio do encapsulamento, atributos costumam ser privados (`-`) e métodos/propriedades de contrato públicos (`+`)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sinais de trânsito na porta de cada membro da classe: `-` é trancado no quarto (private), `#` é liberado só para a família/herdeiros (protected), `~` é liberado para o condomínio/pacote (internal) e `+` é aberto ao público na rua (public).",
+      "analise_correta": "Membros estáticos (`static`) são representados na UML com o texto **sublinhado**, e classes/métodos abstratos (`abstract`) em *itálico* ou com `{abstract}`.",
+      "distratores": {
+        "B": "Erro aritmético.",
+        "C": "Erro inverso.",
+        "D": "Erro: pelo princípio do encapsulamento, atributos costumam ser privados (`-`) e métodos/propriedades de contrato públicos (`+`)."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-021",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Relacionamentos no Diagrama de Classes: Associação, Agregação (Losango Vazado) e Composição (Losango Preenchido)",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "dificil",
+    "enunciado": "No Diagrama de Classes da UML, qual é a diferença semântica entre uma **Associação simples**, uma **Agregação** (losango branco/vazado no todo) e uma **Composição** (losango preto/preenchido no todo)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Associação**: vínculo estrutural entre classes pares independentes (ex.: `Medico` — `Paciente`); **Agregação** (losango vazado): relação *Todo-Parte fraca*, onde a Parte faz parte do Todo mas **sobrevive independentemente** se o Todo for destruído (ex.: `Turma` ◇— `Aluno`: se a turma fechar, o aluno continua existindo); **Composição** (losango preenchido): relação *Todo-Parte forte e exclusiva*, onde a Parte tem **dependência existencial** do Todo (ex.: `Pedido` ◆— `ItemPedido`: se o pedido for excluído, seus itens deixam de existir).",
+        "correta": true,
+        "diagnostico": "Correto: atenção dupla para provas: (1) Composição = losango **preenchido** (morte conjunta / `ON DELETE CASCADE`); Agregação = losango **vazado** (vida independente); (2) O losango é SEMPRE encostado na classe **TODO** (ex.: encostado em `Pedido`, nunca em `ItemPedido`)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Composição usa losango branco e a Parte sobrevive sozinha; Agregação usa losango preto e apaga tudo.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "O losango fica desenhado do lado da Parte (filha) e não do lado do Todo (pai).",
+        "correta": false,
+        "diagnostico": "Erro clássico de desenho: o diamante/losango indica quem é o **Todo** (o dono)."
+      },
+      {
+        "letra": "D",
+        "texto": "Os três relacionamentos representam herança.",
+        "correta": false,
+        "diagnostico": "Erro: herança usa seta triangular fechada vazada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Agregação (losango branco) é um time de futebol e seus jogadores: se o time acabar, os jogadores continuam vivos e vão jogar em outro clube. Composição (losango preto) é um prédio e os seus apartamentos: se o prédio for demolido, é impossível o apartamento do 5º andar continuar flutuando sozinho no ar!",
+      "analise_correta": "No código C# e no EF Core, uma Composição se traduz em chave estrangeira obrigatória (`NOT NULL`) com exclusão em cascata.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro clássico de desenho: o diamante/losango indica quem é o **Todo** (o dono).",
+        "D": "Erro: herança usa seta triangular fechada vazada."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-022",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Generalização (Herança), Realização (Interface) e Dependência no Diagrama de Classes",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "enunciado": "Como são representados graficamente na UML os relacionamentos de **Generalização/Herança** (classe filha herda da classe mãe), **Realização** (classe implementa uma `«interface»`) e **Dependência** (uma classe usa outra temporariamente como parâmetro)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Generalização (Herança)**: linha contínua com **seta triangular fechada vazada** apontando para a superclasse mãe; **Realização (Interface)**: linha **tracejada** com **seta triangular fechada vazada** apontando para a interface; **Dependência**: linha **tracejada** com **seta aberta simples** (`- - ->`) apontando para a classe utilizada.",
+        "correta": true,
+        "diagnostico": "Correto: vocabulário gráfico essencial: Triângulo fechado em linha contínua = Herança (`extends`); Triângulo fechado em linha tracejada = Realização de Interface (`implements`); Seta aberta em linha tracejada = Dependência (`uses`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Herança usa losango preto e Interface usa linha sem seta.",
+        "correta": false,
+        "diagnostico": "Erro de símbolos."
+      },
+      {
+        "letra": "C",
+        "texto": "A seta da herança aponta da classe mãe para a classe filha.",
+        "correta": false,
+        "diagnostico": "Erro de direção: a seta de herança aponta sempre da subclasse específica PARA a superclasse geral."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe representação de interfaces na UML.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Linha firme com ponta de triângulo vazio = sangue da família (Herança de classe); Linha pontilhada com ponta de triângulo vazio = cumprimento de contrato assinado (Interface); Linha pontilhada com setinha aberta = pediu uma ferramenta emprestada rapidinho num método (Dependência).",
+      "analise_correta": "Multiplicidades na UML (`1`, `0..1`, `0..*` ou `*`, `1..*`) são anotadas nas extremidades das associações exatamente como as cardinalidades do banco de dados.",
+      "distratores": {
+        "B": "Erro de símbolos.",
+        "C": "Erro de direção: a seta de herança aponta sempre da subclasse específica PARA a superclasse geral.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-023",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Finalidade do Diagrama de Pacotes da UML e Ponte com Namespaces e Camadas",
+    "artigo_origem": "10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+    "dificuldade": "medio",
+    "enunciado": "Em sistemas de médio e grande porte com dezenas ou centenas de classes, qual é a finalidade do **Diagrama de Pacotes** da UML e como ele se materializa no código C# / ASP.NET Core MVC?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Diagrama de Pacotes agrupa elementos da UML (como classes, casos de uso ou outros subpacotes) em unidades lógicas de mais alto nível (representadas por pastas com aba), organizando a arquitetura em **camadas ou módulos** (`Controllers`, `Models`, `Views`, `Services`, `Data`) e governando as **dependências entre pacotes** (`- - ->`), materializando-se diretamente nos **`namespace`s, pastas e projetos/assemblies** do C#.",
+        "correta": true,
+        "diagnostico": "Correto: ponte direta com **Programação Modular (Artigo 14 - Namespaces)** e **Desenvolvimento Web (Artigo 02 - Camadas)**: o Diagrama de Pacotes é a visão macro da arquitetura modular."
+      },
+      {
+        "letra": "B",
+        "texto": "Serve apenas para compactar arquivos em formato `.zip` ou `.rar`.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "Mostra o passo a passo de um algoritmo `while`.",
+        "correta": false,
+        "diagnostico": "Erro: algoritmos são comportamentais (Diagrama de Atividades)."
+      },
+      {
+        "letra": "D",
+        "texto": "Substitui o banco de dados relacional.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o Diagrama de Classes mostra os móveis dentro de cada quarto, o Diagrama de Pacotes é a planta dos andares do prédio mostrando que o andar de Apresentação conversa com o andar de Negócios, mas não existem escadas circulares caóticas entre todos os andares.",
+      "analise_correta": "Uma regra de ouro arquitetural no Diagrama de Pacotes é **evitar dependências cíclicas** (Pacote A depende do Pacote B e o Pacote B depende do Pacote A), mantendo um grafo acíclico direcionado (DAG).",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro: algoritmos são comportamentais (Diagrama de Atividades).",
+        "D": "Erro de camada."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-024",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Estereótipos de Dependência entre Pacotes («import», «access», «merge»)",
+    "artigo_origem": "10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em um Diagrama de Pacotes da UML, uma seta tracejada de dependência do Pacote A para o Pacote B indica que mudanças em B podem impactar A. O que significam os estereótipos `«import»` e `«access»` sobre essa seta?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`«import»` indica uma importação pública (os elementos públicos do pacote destino são adicionados ao namespace do pacote origem e permanecem visíveis para quem importar a origem); `«access»` indica uma importação privada (o pacote origem usa os elementos do destino internamente, sem reexportá-los).",
+        "correta": true,
+        "diagnostico": "Correto: em C#, o comando `using MeuProjeto.Models;` no topo de um arquivo dentro do pacote `Controllers` materializa exatamente essa relação de dependência entre pacotes/namespaces."
+      },
+      {
+        "letra": "B",
+        "texto": "`«import»` apaga o pacote destino e `«access»` bloqueia a compilação.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos indicam que não há nenhuma relação entre os pacotes.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a seta indica dependência explícita."
+      },
+      {
+        "letra": "D",
+        "texto": "Servem apenas para instalar pacotes do Windows Update.",
+        "correta": false,
+        "diagnostico": "Erro de sistema operacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Alto acoplamento entre pacotes (todos os pacotes apontando para todos) viola a modularidade; busca-se **alta coesão interna** dentro de cada pacote e **baixo acoplamento** entre pacotes distintos.",
+      "analise_correta": "Agrupar Casos de Uso por subsistema ou perfil em pacotes também é uma excelente prática para organizar grandes especificações de requisitos.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro inverso: a seta indica dependência explícita.",
+        "D": "Erro de sistema operacional."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-025",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "A Diferença Clássica de Boehm: Verificação vs. Validação (V&V)",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "facil",
+    "enunciado": "Formulada de modo célebre por Barry Boehm, qual é a distinção fundamental entre **Verificação** e **Validação** na Engenharia de Requisitos e de Software?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Verificação** (*\"Are we building the product right?\"* / Estamos construindo o produto corretamente?): checa a **conformidade interna e técnica** dos artefatos com os padrões, normas de escrita, consistência entre diagramas e ausência de ambiguidades; **Validação** (*\"Are we building the right product?\"* / Estamos construindo o produto certo?): checa junto aos **clientes e usuários finais** se os requisitos especificados realmente atendem às suas necessidades reais e resolvem o problema do negócio.",
+        "correta": true,
+        "diagnostico": "Correto: distinção obrigatória em todas as provas de Engenharia de Software: **Verificação** = conformidade com a especificação/regras técnicas (olhar para dentro); **Validação** = utilidade e aderência ao desejo real do usuário/negócio (olhar para fora, com o cliente)."
+      },
+      {
+        "letra": "B",
+        "texto": "Verificação é feita pelo cliente final sem ler o documento; Validação é feita pelo compilador C#.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Verificação e Validação são palavras 100% sinônimas.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas só podem ser feitas 5 anos após o lançamento do sistema.",
+        "correta": false,
+        "diagnostico": "Erro cronológico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Imagine encomendar um terno de casamento: **Verificação** é o alfaiate conferir com a fita métrica se as costuras estão retas, sem fios soltos e nas medidas anotadas no papel; **Validação** é o noivo vestir o terno na frente do espelho e dizer: 'Era exatamente esse modelo que eu sonhava para o meu casamento!'.",
+      "analise_correta": "Um documento de requisitos pode estar perfeitamente *verificado* (sem erros de português, numerado como `RF01`, UML impecável), mas ser reprovado na *validação* porque descreve um sistema que o cliente não quer!",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro conceitual.",
+        "D": "Erro cronológico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
+    "id": "REQ-026",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Técnicas de V&V de Requisitos: Revisões/Inspeções Formais (Fagan), Prototipação e Geração de Casos de Teste",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como funcionam as três principais técnicas práticas de Verificação e Validação (V&V) aplicadas diretamente sobre os requisitos antes da codificação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Revisões Técnicas / Inspeções Formais (*Walkthroughs* / Inspeção de Fagan)**: equipe multidisciplinar lê e audita o documento/diagramas com um *checklist* caçando ambiguidades, omissões e contradições; (2) **Prototipação Validada**: apresenta-se um protótipo navegável (ex.: Figma) aos usuários para confirmar fluxos e descobrir requisitos esquecidos; (3) **Geração de Casos de Teste de Aceitação**: tentar escrever o teste para cada requisito já na fase de especificação — se for impossível desenhar um teste para um requisito, isso prova imediatamente que o requisito está vago ou incompleto!",
+        "correta": true,
+        "diagnostico": "Correto: tentar derivar os casos de teste de aceitação (*BDD / ATDD*) durante a escrita do requisito é o melhor detector de requisitos vagos ou inverificáveis."
+      },
+      {
+        "letra": "B",
+        "texto": "A única forma de validar requisitos é colocar o sistema em produção sem testar e esperar os processos judiciais.",
+        "correta": false,
+        "diagnostico": "Erro grave."
+      },
+      {
+        "letra": "C",
+        "texto": "Inspeção formal consiste em contar quantas páginas tem o PDF sem ler o texto.",
+        "correta": false,
+        "diagnostico": "Erro superficial."
+      },
+      {
+        "letra": "D",
+        "texto": "Gerar casos de teste é proibido durante a engenharia de requisitos.",
+        "correta": false,
+        "diagnostico": "Erro metodológico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três filtros de qualidade antes de ligar as máquinas da fábrica: (1) Revisão por pares com lupa e checklist; (2) Mostrar a maquete para o morador aprovar; (3) Perguntar 'Como vamos medir no dia da entrega se isso funcionou?' — se ninguém souber responder, o requisito precisa ser reescrito.",
+      "analise_correta": "O uso de um **Checklist de Qualidade de Requisitos** padroniza a inspeção para verificar se todos os RFs e RNFs estão completos, consistentes, atômicos e rastreáveis.",
+      "distratores": {
+        "B": "Erro grave.",
+        "C": "Erro superficial.",
+        "D": "Erro metodológico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
+    "id": "REQ-027",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos Funcionais vs. Regras de Interface / Detalhes de Implementação Prematuros",
+    "artigo_origem": "03. O conceito de requisito de software - definição, níveis e características.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que um bom Requisito Funcional de análise deve especificar **o que** precisa ser registrado ou validado (ex.: *\"RF05: O sistema deve permitir que o aluno solicite o cancelamento de matrícula informando o motivo\"*), evitando travar prematuramente detalhes físicos de implementação ou layout (como *\"O sistema deve ter um botão redondo azul no canto inferior direito que chama a função `cancel_mat()`\"*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para preservar a **separação entre o espaço do problema (O Quê) e o espaço da solução (Como)**, dando liberdade ao Designer de Interação e ao Arquiteto de Software para projetarem a melhor interface e estrutura de código sem ficarem engessados por escolhas arbitrárias feitas cedo demais.",
+        "correta": true,
+        "diagnostico": "Correto: a menos que uma tecnologia ou padrão visual seja uma restrição contratual obrigatória (RNF), o RF deve focar na essência funcional do negócio."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque requisitos nunca podem falar sobre dados de negócio.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o requisito deve conter todo o código C# da classe dentro dele.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Tanto faz misturar código C# com necessidade de negócio.",
+        "correta": false,
+        "diagnostico": "Erro de engenharia."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você pede um transporte para ir ao aeroporto (o problema/necessidade), você diz o horário de chegada e quantas malas tem; você não exige que o motorista troque a marcha exatamente aos 2.400 giros do motor.",
+      "analise_correta": "Essa clareza evita que mudanças cosméticas de layout (trocar um dropdown por radio buttons) obriguem a reescrever os requisitos contratuais.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro inverso.",
+        "D": "Erro de engenharia."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
+    }
+  },
+  {
+    "id": "REQ-028",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Classificação Prática de RFs e RNFs em Cenários do Projeto Integrador (ODS 4)",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "medio",
+    "enunciado": "Em uma plataforma educacional voltada ao ODS 4 (Educação de Qualidade), classifique os três itens abaixo em **RF** (Requisito Funcional) ou **RNF** (Requisito Não-Funcional e sua subcategoria): (I) *\"O sistema deve permitir que o professor publique materiais de aula em formato PDF e vídeo\"*; (II) *\"As senhas dos usuários devem ser armazenadas utilizando hash criptográfico BCrypt\"*; (III) *\"A interface deve atingir conformidade nível AA nas diretrizes de acessibilidade WCAG 2.1\"*.",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(I) **RF** (funcionalidade de domínio do professor); (II) **RNF de Segurança** (restrição técnica de proteção de credenciais); (III) **RNF de Acessibilidade / Usabilidade (e Externo/Normativo)**.",
+        "correta": true,
+        "diagnostico": "Correto: aplicação direta no contexto real do Projeto Integrador do Eixo 2."
+      },
+      {
+        "letra": "B",
+        "texto": "(I) RNF; (II) RF; (III) RF.",
+        "correta": false,
+        "diagnostico": "Erro de inversão."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os três são Requisitos Não-Funcionais.",
+        "correta": false,
+        "diagnostico": "Erro: publicar material de aula é uma ação funcional de negócio (RF)."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os três são Requisitos Funcionais.",
+        "correta": false,
+        "diagnostico": "Erro: criptografia BCrypt e conformidade WCAG são qualidades/restrições (RNF)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ação que o usuário realiza no domínio ('publicar aula') = RF; Proteção invisível do cofre ('hash BCrypt') = RNF de Segurança; Norma de qualidade inclusiva da tela ('WCAG AA') = RNF de Acessibilidade.",
+      "analise_correta": "Perceba a ponte interdisciplinar: o RF vira Action no Controller MVC; o RNF de Segurança vira o pacote `BCrypt.Net`; o RNF de Acessibilidade conecta-se diretamente com **Design de Interação (Artigo 22)**!",
+      "distratores": {
+        "B": "Erro de inversão.",
+        "C": "Erro: publicar material de aula é uma ação funcional de negócio (RF).",
+        "D": "Erro: criptografia BCrypt e conformidade WCAG são qualidades/restrições (RNF)."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-029",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Palavras Perigosas e Ambiguidade Lexical em Requisitos",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "enunciado": "Ao redigir ou revisar uma especificação de requisitos, palavras subjetivas ou abertas como *\"rápido\", \"amigável\", \"intuitivo\", \"vários\", \"normalmente\", \"etc.\", \"e/ou\", \"se possível\"* são consideradas \"palavras de alerta\" (*smells* de requisitos). Qual critério de qualidade elas violam diretamente?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Violam a **Não-Ambiguidade**, a **Completude** (no caso de *\"etc.\"* que esconde o resto da lista) e a **Verificabilidade/Testabilidade**, pois cada leitor (cliente, programador e testador) interpretará essas palavras de um jeito diferente.",
+        "correta": true,
+        "diagnostico": "Correto: escrever *\"O sistema deve gerar relatórios de vendas, estoque, etc.\"* deixa em aberto quais são os outros relatórios do *\"etc.\"* — gerando conflito contratual na entrega."
+      },
+      {
+        "letra": "B",
+        "texto": "Elas aumentam a precisão matemática do documento.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "O uso de \"etc.\" é altamente recomendado para economizar tempo.",
+        "correta": false,
+        "diagnostico": "Erro grave: *\"etc.\"* e *\"a definir (TBD)\"* são incompletudes que devem ser eliminadas antes do fechamento da especificação."
+      },
+      {
+        "letra": "D",
+        "texto": "Elas violam apenas a formatação de fonte.",
+        "correta": false,
+        "diagnostico": "Erro superficial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Dizer ao pedreiro 'Construa quartos grandes, bonitos, etc.' é receita certa para briga no dia da entrega da obra. Substitua sempre por listas fechadas e números verificáveis.",
+      "analise_correta": "Da mesma forma, evite voz passiva sem sujeito (*\"O pedido será aprovado\"* -> aprovado por quem? Pelo gerente humano ou automaticamente pelo sistema?).",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro grave: *\"etc.\"* e *\"a definir (TBD)\"* são incompletudes que devem ser eliminadas antes do fechamento da especificação.",
+        "D": "Erro superficial."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-030",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Workshops de Requisitos (JAD) e Prototipação Evolutiva vs. Descartável",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na elicitação e validação de requisitos, qual é a vantagem de um **Workshop de Requisitos / JAD** (*Joint Application Design*) quando há conflito de interesses entre departamentos, e qual a diferença entre um **Protótipo Descartável (*Throwaway*)** e um **Protótipo Evolutivo**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Workshop JAD reúne todos os stakeholders-chave na mesma sessão mediada por um facilitador para resolver conflitos e fechar consenso em horas (em vez de semanas de e-mails contraditórios). Quanto aos protótipos: o **Descartável** (ex.: rabisco em papel ou wireframe rápido) serve apenas para esclarecer dúvidas de requisitos e depois é deixado de lado; o **Evolutivo** é construído sobre uma base técnica sólida que vai sendo refinada até se transformar no produto final.",
+        "correta": true,
+        "diagnostico": "Correto: alerta clássico de engenharia: transformar um protótipo descartável (feito sem arquitetura, sem banco normalizado e sem segurança apenas para testar a tela) no sistema de produção gera dívida técnica catastrófica."
+      },
+      {
+        "letra": "B",
+        "texto": "No JAD cada pessoa é entrevistada sozinha sem saber o que a outra disse.",
+        "correta": false,
+        "diagnostico": "Erro: JAD é uma sessão colaborativa conjunta."
+      },
+      {
+        "letra": "C",
+        "texto": "Um protótipo feito às pressas sem arquitetura e sem segurança deve ser jogado direto em produção como sistema definitivo.",
+        "correta": false,
+        "diagnostico": "Erro grave de qualidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Protótipos de baixa fidelidade custam milhões de reais.",
+        "correta": false,
+        "diagnostico": "Erro: papel e caneta têm custo praticamente zero."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O Workshop JAD é a reunião de condomínio com síndico mediador onde todo mundo já sai com a ata assinada. O Protótipo Descartável é a maquete de isopor (serve para ver o formato do prédio, mas ninguém vai morar dentro do isopor!); o Evolutivo é o primeiro cômodo de alvenaria real que depois ganha o resto da casa.",
+      "analise_correta": "Ponte direta com **Design de Interação (Artigo 13)**: lá estudamos em detalhe a fidelidade de protótipos (wireframes, mockups e storyboards).",
+      "distratores": {
+        "B": "Erro: JAD é uma sessão colaborativa conjunta.",
+        "C": "Erro grave de qualidade.",
+        "D": "Erro: papel e caneta têm custo praticamente zero."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-031",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Generalização (Herança) entre Atores no Diagrama de Casos de Uso",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "medio",
+    "enunciado": "Em um sistema acadêmico, tanto o ator `Aluno` quanto o ator `Professor` podem realizar `Fazer Login` e `Consultar Acervo da Biblioteca`, mas apenas o `Professor` pode `Lançar Notas`. Se modelarmos um ator geral `Usuario Academico` (ou `Professor` herdando de um perfil base) com a seta de **Generalização** (triângulo fechado vazado), o que essa herança entre atores significa?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Significa que o **Ator filho (especializado)** herda automaticamente a capacidade de iniciar todos os Casos de Uso associados ao **Ator pai (geral)**, além de possuir seus próprios Casos de Uso exclusivos, evitando desenhar dezenas de linhas repetidas cruzando o diagrama.",
+        "correta": true,
+        "diagnostico": "Correto: se `Administrador` herda de `Usuario Comum` (`Administrador ---|> Usuario Comum`), o `Administrador` pode executar tudo o que o `Usuario Comum` faz mais os casos de uso administrativos exclusivos."
+      },
+      {
+        "letra": "B",
+        "texto": "Significa que o Ator pai herda apenas os poderes exclusivos do filho.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a seta aponta do mais específico (filho) para o mais geral (pai), e quem herda tudo é o filho."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa que o Professor foi excluído do sistema.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "A UML proíbe usar generalização entre Atores.",
+        "correta": false,
+        "diagnostico": "Erro: a UML permite Generalização tanto entre Atores quanto entre Casos de Uso (e entre Classes)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No crachá da empresa: como o Gerente também é um Funcionário (`Gerente ---|> Funcionário`), ele passa em todas as catracas normais de Funcionário (refeitório, estacionamento) MAIS na catraca exclusiva da gerência, sem precisar carregar dois crachás separados.",
+      "analise_correta": "Isso mantém o Diagrama de Casos de Uso limpo e com mínimo cruzamento de linhas.",
+      "distratores": {
+        "B": "Erro inverso: a seta aponta do mais específico (filho) para o mais geral (pai), e quem herda tudo é o filho.",
+        "C": "Erro conceitual.",
+        "D": "Erro: a UML permite Generalização tanto entre Atores quanto entre Casos de Uso (e entre Classes)."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-032",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Erros Comuns na Modelagem de Casos de Uso (Decomposição Funcional Excessiva e CRUD Individual)",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao desenhar um Diagrama de Casos de Uso, um iniciante criou elipses chamadas: `Digitar Nome`, `Clicar no Botão Salvar`, `Exibir Mensagem de Sucesso` e `Gravar Linha na Tabela SQL`. Qual erro clássico de modelagem foi cometido?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ele confundiu **Casos de Uso** (que devem representar objetivos de negócio completos que entregam valor ao ator, como `Cadastrar Cliente` ou `Gerenciar Veículos`) com **passos internos de interface gráfica ou detalhes técnicos de banco de dados**, que pertencem aos passos da Especificação Textual e não a elipses separadas no diagrama.",
+        "correta": true,
+        "diagnostico": "Correto: **Caso de Uso NÃO é fluxograma de cliques!** Passos atômicos como *\"informar dados\", \"clicar em salvar\", \"validar campos\"* são os passos 1, 2, 3, 4 dentro da **Especificação Textual** de um único Caso de Uso `Cadastrar Cliente`."
+      },
+      {
+        "letra": "B",
+        "texto": "O diagrama ficou perfeito porque quanto mais bolinhas de clique houver, melhor.",
+        "correta": false,
+        "diagnostico": "Erro: pulverizar passos de tela em dezenas de elipses com `«include»` transforma o diagrama num fluxograma ilegível."
+      },
+      {
+        "letra": "C",
+        "texto": "Faltou colocar o código C# dentro das elipses.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "Casos de uso servem justamente para desenhar fluxogramas de programação `if/else`.",
+        "correta": false,
+        "diagnostico": "Erro: para fluxos de passos e desvios usa-se a Especificação Textual ou o Diagrama de Atividades."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Teste do Valor do Chefe (de Alistair Cockburn): se o funcionário disser no fim do dia 'Chefe, hoje eu Cliquei no Botão Salvar!', o chefe dirá 'E daí? Que negócio foi concluído?'. Mas se ele disser 'Hoje eu Concluí a Matrícula de 10 Alunos!', isso tem valor real de negócio — logo `Realizar Matrícula` é um Caso de Uso verdadeiro!",
+      "analise_correta": "Na prática acadêmica e de mercado, operações simples de manutenção de uma mesma entidade também podem ser agrupadas em `Manter <Entidade>` (ou separadas em `Cadastrar, Consultar, Alterar, Excluir <Entidade>` quando possuem regras e atores distintos).",
+      "distratores": {
+        "B": "Erro: pulverizar passos de tela em dezenas de elipses com `«include»` transforma o diagrama num fluxograma ilegível.",
+        "C": "Erro técnico.",
+        "D": "Erro: para fluxos de passos e desvios usa-se a Especificação Textual ou o Diagrama de Atividades."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-033",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Leitura de Multiplicidades (Cardinalidades) no Diagrama de Classes da UML",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "enunciado": "No Diagrama de Classes da UML, existe uma linha de associação entre `Cliente` e `Pedido`. Na ponta encostada em `Cliente` está escrito `1`, e na ponta encostada em `Pedido` está escrito `0..*`. Como se lê exatamente essa regra estrutural?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Lê-se olhando da classe de origem para o número escrito na ponta da classe de destino: **cada `Cliente` (1) pode estar associado a zero ou muitos `Pedidos` (`0..*`)**, e **cada `Pedido` está associado a exatamente um `Cliente` (`1`)**.",
+        "correta": true,
+        "diagnostico": "Correto: na UML (Diagrama de Classes), a multiplicidade é anotada na **extremidade de destino** da leitura: da esquerda para a direita (`Cliente` -> `0..* Pedido`), e da direita para a esquerda (`Pedido` -> `1 Cliente`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Cada Pedido tem zero ou muitos Clientes, e cada Cliente tem apenas 1 Pedido.",
+        "correta": false,
+        "diagnostico": "Erro de leitura invertida."
+      },
+      {
+        "letra": "C",
+        "texto": "O sistema só aceita no máximo 1 cliente cadastrado no banco inteiro.",
+        "correta": false,
+        "diagnostico": "Erro: `1` refere-se a cada instância individual no relacionamento, não ao total da tabela."
+      },
+      {
+        "letra": "D",
+        "texto": "O asterisco `*` significa erro de multiplicação.",
+        "correta": false,
+        "diagnostico": "Erro de notação: `*` significa *muitos* ($N$)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Olhe para a placa na ponta de lá da ponte: saindo de `Cliente` e olhando para `Pedido`, a placa na entrada de `Pedido` diz `0..*` ('um cliente faz de zero a muitos pedidos'). Saindo de `Pedido` e olhando para `Cliente`, a placa na entrada de `Cliente` diz `1` ('um pedido tem exatamente 1 cliente dono').",
+      "analise_correta": "Ponte direta com **Desenvolvimento Web (Artigo 09)**: o lado `1` (`Cliente`) terá uma `ICollection<Pedido> Pedidos`, e o lado `0..*` (`Pedido`) terá a FK `int ClienteId` e a referência `Cliente Cliente`.",
+      "distratores": {
+        "B": "Erro de leitura invertida.",
+        "C": "Erro: `1` refere-se a cada instância individual no relacionamento, não ao total da tabela.",
+        "D": "Erro de notação: `*` significa *muitos* ($N$)."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-034",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Classe Associativa no Diagrama de Classes da UML",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "dificil",
+    "enunciado": "Quando duas classes `Aluno` e `Turma` possuem uma associação muitos-para-muitos (`*` para `*`), e existem atributos e métodos que pertencem especificamente ao vínculo entre elas (como `notaFinal: double`, `frequencia: double` e `+verificarAprovacao(): bool`), qual elemento do Diagrama de Classes da UML modela isso com perfeição?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Uma **Classe Associativa** (ex.: `Matricula`), representada por um retângulo de classe completo conectado por uma **linha tracejada ao meio da linha de associação** entre `Aluno` e `Turma`.",
+        "correta": true,
+        "diagnostico": "Correto: a Classe Associativa da UML é a irmã gêmea exata da **Entidade Associativa / Atributo de Relacionamento** que estudamos em Modelagem de Dados!"
+      },
+      {
+        "letra": "B",
+        "texto": "Um pacote vazio sem atributos.",
+        "correta": false,
+        "diagnostico": "Erro de elemento."
+      },
+      {
+        "letra": "C",
+        "texto": "Um ator desenhado no meio das classes.",
+        "correta": false,
+        "diagnostico": "Erro de diagrama."
+      },
+      {
+        "letra": "D",
+        "texto": "Não é possível representar atributos de vínculo no Diagrama de Classes.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando o aperto de mão entre `Aluno` e `Turma` precisa guardar um boletim próprio com notas e métodos de cálculo de aprovação, penduramos uma caixinha de classe (`Matricula`) com uma linha tracejada bem no meio do fio que liga `Aluno` e `Turma`.",
+      "analise_correta": "Na implementação em C# com Entity Framework Core, essa Classe Associativa torna-se uma classe de Model explícita (`public class Matricula`) contendo `AlunoId`, `TurmaId`, `NotaFinal` e `Frequencia`.",
+      "distratores": {
+        "B": "Erro de elemento.",
+        "C": "Erro de diagrama.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-035",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Navegabilidade de Associações (Seta Aberta em Linha Contínua) no Diagrama de Classes",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "enunciado": "Em um Diagrama de Classes da UML, o que significa colocar uma **seta aberta em uma linha contínua** apontando da classe `Pedido` para a classe `Produto` (`Pedido ------> Produto`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Indica **Navegabilidade unidirecional**: um objeto `Pedido` conhece e mantém referência para seus `Produtos` (podendo navegar `pedido.Produtos`), mas um objeto `Produto` isolado não mantém uma lista de todos os `Pedidos` em que já apareceu.",
+        "correta": true,
+        "diagnostico": "Correto: não confunda **Seta Aberta em linha contínua** (`--->`, Navegabilidade de Associação) com **Triângulo Fechado vazado** (`---|>`, Herança/Generalização) nem com **Seta Aberta em linha tracejada** (`- - ->`, Dependência temporária)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Indica que `Pedido` herda de `Produto`.",
+        "correta": false,
+        "diagnostico": "Erro: herança usa triângulo fechado vazado."
+      },
+      {
+        "letra": "C",
+        "texto": "Indica que `Produto` é uma interface.",
+        "correta": false,
+        "diagnostico": "Erro: interface usa linha tracejada com triângulo fechado."
+      },
+      {
+        "letra": "D",
+        "texto": "Indica que o relacionamento foi apagado.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Navegabilidade de mão única: a Nota Fiscal sabe quais Produtos estão listados nela, mas a lata de refrigerante na prateleira não guarda uma lista de todas as notas fiscais da história do supermercado.",
+      "analise_correta": "Quando nenhuma seta é desenhada nas pontas da linha contínua, a navegabilidade é considerada bidirecional ou não especificada no nível de análise.",
+      "distratores": {
+        "B": "Erro: herança usa triângulo fechado vazado.",
+        "C": "Erro: interface usa linha tracejada com triângulo fechado.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-036",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Princípios de Coesão e Acoplamento no Design de Pacotes",
+    "artigo_origem": "10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao organizar as classes de um sistema em **Pacotes** (módulos/camadas), quais princípios de engenharia determinam se a divisão de pacotes foi bem projetada?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Deve-se buscar **Alta Coesão Interna** (agrupar no mesmo pacote classes que mudam juntas, pertencem ao mesmo contexto semântico ou camada arquitetural) e **Baixo Acoplamento entre Pacotes** (minimizar o número de setas de dependência `- - ->` entre pacotes diferentes e proibir ciclos de dependência `A <-> B`).",
+        "correta": true,
+        "diagnostico": "Correto: ponte direta com **Programação Modular (Artigos 04, 06 e 14)**: um bom pacote esconde detalhes internos (`internal` / `~`) e expõe apenas interfaces/classes públicas essenciais (`public` / `+`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Colocar cada classe em um pacote aleatório por ordem alfabética da primeira letra.",
+        "correta": false,
+        "diagnostico": "Erro absurdo de organização."
+      },
+      {
+        "letra": "C",
+        "texto": "Fazer todos os pacotes dependerem ciclicamente uns dos outros.",
+        "correta": false,
+        "diagnostico": "Erro: ciclos entre pacotes impedem compilar ou reutilizar um pacote sem arrastar o sistema inteiro junto."
+      },
+      {
+        "letra": "D",
+        "texto": "Colocar 100% das classes do sistema soltas na raiz sem pacotes.",
+        "correta": false,
+        "diagnostico": "Erro monolítico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Organizar pacotes é como organizar os departamentos de um hospital: Cardiologia fica junta num bloco (alta coesão), Ortopedia em outro, e eles conversam por protocolos claros sem que um dependa da bagunça interna do outro (baixo acoplamento).",
+      "analise_correta": "No padrão MVC, temos o pacote `Controllers` dependendo de `Models` e `Data`, mas o pacote `Models` (domínio puro) não depende de `Controllers` nem de `Views`.",
+      "distratores": {
+        "B": "Erro absurdo de organização.",
+        "C": "Erro: ciclos entre pacotes impedem compilar ou reutilizar um pacote sem arrastar o sistema inteiro junto.",
+        "D": "Erro monolítico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-037",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Rastreabilidade de Requisitos (Pré-Rastreabilidade, Pós-Rastreabilidade e Matriz de Rastreabilidade)",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "dificil",
+    "enunciado": "O que é a **Rastreabilidade de Requisitos** e qual é a diferença entre **Rastreabilidade Pré-Especificação (*Backward/Pre-traceability*)** e **Rastreabilidade Pós-Especificação (*Forward/Post-traceability*)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Rastreabilidade é a capacidade de seguir a vida de um requisito em ambas as direções: a **Pré-Rastreabilidade** liga o requisito à sua **origem/fonte** (qual stakeholder pediu, qual ata de reunião ou regra de negócio/lei o motivou); a **Pós-Rastreabilidade** liga o requisito aos **artefatos de desenvolvimento e teste derivados dele** (qual Caso de Uso, qual Classe/Tabela e qual Caso de Teste implementam e validam aquele `RF`).",
+        "correta": true,
+        "diagnostico": "Correto: com uma **Matriz de Rastreabilidade** (`Requisito <-> Caso de Uso <-> Classe/Tela <-> Caso de Teste`), se o cliente pedir para alterar o `RF08` amanhã, você descobre em 10 segundos exatamente quais telas, classes e testes serão impactados (**Análise de Impacto de Mudança**)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Rastreabilidade é colocar um rastreador GPS físico no notebook do programador.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "Serve apenas para numerar páginas em algarismos romanos.",
+        "correta": false,
+        "diagnostico": "Erro de formatação."
+      },
+      {
+        "letra": "D",
+        "texto": "Se um requisito mudar, a rastreabilidade impede saber quais classes serão afetadas.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a rastreabilidade existe justamente para viabilizar a Análise de Impacto."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Fio de Ariadne no labirinto: olhando para trás (Pré-rastreabilidade), você sabe *quem pediu e por quê*; olhando para frente (Pós-rastreabilidade), você sabe *onde foi construído no código e qual teste garante que funciona*.",
+      "analise_correta": "Requisitos órfãos (código que não corresponde a nenhum requisito = *gold plating*, ou requisito que não tem nenhum caso de teste associado) são detectados imediatamente na Matriz de Rastreabilidade.",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro de formatação.",
+        "D": "Erro inverso: a rastreabilidade existe justamente para viabilizar a Análise de Impacto."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
+    "id": "REQ-038",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "A Síndrome do \"Telefone Sem Fio\" e a Dificuldade de Comunicação na Engenharia de Requisitos",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "facil",
+    "enunciado": "A famosa tirinha clássica da Engenharia de Software (\"Como o cliente explicou / Como o líder entendeu / Como o analista projetou / Como o programador codificou / O que o cliente realmente precisava: um pneu amarrado na árvore\") ilustra qual desafio central da área?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "As barreiras de comunicação, vocabulários distintos e suposições implícitas não validadas entre stakeholders de negócio e equipe técnica — problema que a Engenharia de Requisitos combate com modelos visuais padronizados (UML), protótipos, glossários de domínio e validações iterativas constantes.",
+        "correta": true,
+        "diagnostico": "Correto: a linguagem natural humana é inerentemente ambígua e carregada de pressupostos; sem técnicas estruturadas de elicitação, modelagem e validação, cada elo da cadeia distorce o entendimento."
+      },
+      {
+        "letra": "B",
+        "texto": "Que os clientes sempre sabem desenhar diagramas UML sozinhos.",
+        "correta": false,
+        "diagnostico": "Erro prático."
+      },
+      {
+        "letra": "C",
+        "texto": "Que nunca devemos conversar com o cliente durante o projeto.",
+        "correta": false,
+        "diagnostico": "Erro: isolar a equipe técnica agrava o abismo."
+      },
+      {
+        "letra": "D",
+        "texto": "Que balanços de árvore são melhores que softwares.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Sem engenharia de requisitos, cada pessoa imagina um animal diferente ao ouvir a palavra 'bicho'; quando juntamos Glossário + Casos de Uso + Protótipo + Critérios de Aceitação, todos passam a enxergar exatamente o mesmo projeto.",
+      "analise_correta": "É por isso que o próprio vault mantém um `Glossário de conceitos.md` para unificar a terminologia precisa de cada matéria.",
+      "distratores": {
+        "B": "Erro prático.",
+        "C": "Erro: isolar a equipe técnica agrava o abismo.",
+        "D": "Erro literal."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-039",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Estudo de Viabilidade (Técnica, Econômica, Operacional e Legal)",
+    "artigo_origem": "02. Engenharia de requisitos e negócios - o alinhamento estratégico.md",
+    "dificuldade": "medio",
+    "enunciado": "Antes de investir meses detalhando centenas de requisitos, realiza-se na concepção um **Estudo de Viabilidade**. Quais são as quatro dimensões essenciais avaliadas nessa análise?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Viabilidade Técnica** (existe tecnologia e competência na equipe para construir?); (2) **Viabilidade Econômica/Financeira e de Prazo** (o custo cabe no orçamento e o retorno compensa no prazo disponível?); (3) **Viabilidade Operacional/Organizacional** (o sistema resolverá o problema e os usuários realmente o adotarão na rotina?); e (4) **Viabilidade Legal/Ética** (o sistema respeita leis como LGPD e direitos autorais?).",
+        "correta": true,
+        "diagnostico": "Correto: se um projeto for tecnicamente impossível no prazo, financeiramente deficitário ou ilegal perante a LGPD, o Estudo de Viabilidade evita o desperdício de recursos logo no início."
+      },
+      {
+        "letra": "B",
+        "texto": "Avalia-se apenas se o logotipo é bonito.",
+        "correta": false,
+        "diagnostico": "Erro superficial."
+      },
+      {
+        "letra": "C",
+        "texto": "Todo projeto de software é sempre 100% viável em qualquer prazo.",
+        "correta": false,
+        "diagnostico": "Erro de gestão."
+      },
+      {
+        "letra": "D",
+        "texto": "Viabilidade Legal significa ignorar a LGPD.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Antes de planejar uma viagem à Lua no fim de semana: temos foguete (Técnica)? Temos dinheiro e tempo até domingo (Econômica/Prazo)? A família quer ir (Operacional)? Temos autorização de voo (Legal)?",
+      "analise_correta": "No Projeto Integrador acadêmico, o alinhamento de escopo nas Etapas 1 e 2 garante que os 3 CRUDs sejam viáveis de implementar e publicar até o fim do semestre.",
+      "distratores": {
+        "B": "Erro superficial.",
+        "C": "Erro de gestão.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/02. Engenharia de requisitos e negócios - o alinhamento estratégico.md"
+    }
+  },
+  {
+    "id": "REQ-040",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos Emergentes e Mudança Contínua de Requisitos (Escopo Volátil)",
+    "artigo_origem": "03. O conceito de requisito de software - definição, níveis e características.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que os requisitos de um software **mudam inevitavelmente** ao longo do projeto, mesmo quando a equipe fez um bom levantamento inicial?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o ambiente de negócios, as leis e o mercado evoluem, novos stakeholders surgem, e porque os próprios usuários só compreendem profundamente suas reais necessidades à medida que interagem com protótipos e versões parciais do software (**requisitos emergentes**).",
+        "correta": true,
+        "diagnostico": "Correto: aceitar que requisitos evoluem — e ter um processo saudável de **Gerenciamento de Mudanças** e entregas incrementais — é a base da engenharia de software moderna."
+      },
+      {
+        "letra": "B",
+        "texto": "Apenas porque os clientes gostam de atrapalhar os programadores por maldade.",
+        "correta": false,
+        "diagnostico": "Erro psicológico."
+      },
+      {
+        "letra": "C",
+        "texto": "Em projetos bem feitos, os requisitos nunca sofrem nenhuma alteração.",
+        "correta": false,
+        "diagnostico": "Erro histórico: o congelamento absoluto de requisitos (*big design up front* rígido) falhava justamente por negar a evolução do negócio."
+      },
+      {
+        "letra": "D",
+        "texto": "Mudanças de requisitos só ocorrem se o banco de dados quebrar.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você vê o primeiro cômodo da casa construído ou usa o primeiro protótipo na tela, percebe coisas que era impossível notar no papel em branco ('Puxa, precisamos de uma tomada aqui ao lado da mesa!').",
+      "analise_correta": "Gerenciar requisitos não é proibir mudanças, mas avaliar o impacto de cada mudança no prazo, custo e arquitetura de forma controlada.",
+      "distratores": {
+        "B": "Erro psicológico.",
+        "C": "Erro histórico: o congelamento absoluto de requisitos (*big design up front* rígido) falhava justamente por negar a evolução do negócio.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md"
+    }
+  },
+  {
+    "id": "REQ-041",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Requisitos Não-Funcionais e a Norma ISO/IEC 25010 (SQuaRE)",
+    "artigo_origem": "04. Requisitos funcionais e não-funcionais.md",
+    "dificuldade": "dificil",
+    "enunciado": "A norma internacional de qualidade de produto de software **ISO/IEC 25010** (que sucedeu a ISO/IEC 9126) estrutura as características de qualidade que servem de catálogo para levantar **Requisitos Não-Funcionais**. Quais das seguintes características fazem parte desse padrão?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Adequação Funcional, Eficiência de Desempenho, Compatibilidade (Interoperabilidade), Usabilidade, Confiabilidade (Disponibilidade, Tolerância a Falhas), Segurança, Manutenibilidade (Modularidade, Testabilidade) e Portabilidade.",
+        "correta": true,
+        "diagnostico": "Correto: usar as 8 características da ISO/IEC 25010 como guia impede que o analista esqueça categorias inteiras de RNFs (como Esquecer Segurança, Acessibilidade ou Portabilidade Mobile)."
+      },
+      {
+        "letra": "B",
+        "texto": "Cor da Embalagem, Peso em Gramas e Voltagem 220V.",
+        "correta": false,
+        "diagnostico": "Erro de produto físico."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas Velocidade de Digitação do Programador.",
+        "correta": false,
+        "diagnostico": "Erro de métrica individual."
+      },
+      {
+        "letra": "D",
+        "texto": "A ISO 25010 proíbe requisitos de segurança e usabilidade.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A ISO/IEC 25010 é o checklist completo de inspeção veicular do software: Desempenho (motor), Usabilidade (painel ergonômico), Segurança (alarmes e airbags), Confiabilidade (não enguiçar na estrada), Manutenibilidade (fácil de trocar peças na oficina) e Portabilidade (rodar em vários terrenos/navegadores).",
+      "analise_correta": "Perceba a conexão direta com **Programação Modular (Artigos 05 e 06)** e **Design de Interação (Artigo 07)**!",
+      "distratores": {
+        "B": "Erro de produto físico.",
+        "C": "Erro de métrica individual.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md"
+    }
+  },
+  {
+    "id": "REQ-042",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Priorização de Requisitos: Técnica MoSCoW",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "facil",
+    "enunciado": "Como os recursos de tempo e orçamento de um projeto são sempre finitos, é indispensável **priorizar** os requisitos. Na técnica clássica de priorização **MoSCoW**, o que significam as categorias **M, S, C e W**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Must have** (Obrigatório / Essencial para o sistema funcionar no lançamento mínimo - MVP), **Should have** (Importante / Deve ter, mas o sistema sobrevive temporariamente com contorno se necessário), **Could have** (Desejável / Bom ter se sobrar tempo e orçamento, sem impacto crítico) e **Won't have (this time)** (Não terá nesta versão / Fica fora do escopo atual para versões futuras).",
+        "correta": true,
+        "diagnostico": "Correto: classificar tudo como \"Prioridade Alta\" equivale a não priorizar nada! O método MoSCoW força stakeholders e equipe a separarem o **MVP** (*Minimum Viable Product* - *Must have*) dos itens secundários."
+      },
+      {
+        "letra": "B",
+        "texto": "Significa que o projeto deve ser desenvolvido na cidade de Moscou.",
+        "correta": false,
+        "diagnostico": "Erro geográfico cômico."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os requisitos devem ser classificados como Must have (100% prioridade máxima).",
+        "correta": false,
+        "diagnostico": "Erro: se tudo é urgente, nada é urgente."
+      },
+      {
+        "letra": "D",
+        "texto": "Won't have significa o requisito mais importante do sistema.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Arrumando a mala de viagem com limite de peso: **Must** = passaporte e remédios vitais (sem isso não viaja); **Should** = casaco de frio importante; **Could** = terceiro par de tênis se sobrar espaço; **Won't** = levar a televisão da sala (fica para outra vez).",
+      "analise_correta": "Definir explicitamente o *Won't have* é fundamental para proteger o projeto contra o **Scope Creep** (crescimento descontrolado e silencioso do escopo).",
+      "distratores": {
+        "B": "Erro geográfico cômico.",
+        "C": "Erro: se tudo é urgente, nada é urgente.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-043",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Perguntas Abertas vs. Perguntas Fechadas em Entrevistas eQuestionários",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "facil",
+    "enunciado": "Durante a elicitação de requisitos por **Entrevistas** ou **Questionários**, qual é a diferença de finalidade entre **Perguntas Abertas** e **Perguntas Fechadas**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Perguntas Abertas** (ex.: *\"Como funciona hoje o processo de matrícula e quais são os maiores gargalos que vocês enfrentam?\"*) permitem respostas livres e ricas para explorar o contexto e descobrir problemas imprevistos; **Perguntas Fechadas** (ex.: múltipla escolha, escala de 1 a 5 ou Sim/Não) restringem a resposta a opções pré-definidas para confirmar fatos específicos e facilitar a tabulação estatística rápida.",
+        "correta": true,
+        "diagnostico": "Correto: boas entrevistas combinam perguntas abertas (para descobrir o problema sem induzir a resposta) com perguntas fechadas de confirmação (para fechar regras exatas)."
+      },
+      {
+        "letra": "B",
+        "texto": "Perguntas Abertas só aceitam Sim ou Não como resposta.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Em uma entrevista exploratória inicial deve-se proibir o cliente de falar mais de uma palavra.",
+        "correta": false,
+        "diagnostico": "Erro de condução."
+      },
+      {
+        "letra": "D",
+        "texto": "Perguntas Fechadas são impossíveis de transformar em gráficos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: perguntas fechadas são justamente as mais fáceis de tabular em gráficos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pergunta Aberta é jogar uma rede larga no mar para ver que peixes aparecem; Pergunta Fechada é usar uma pinça cirúrgica para confirmar uma escolha exata.",
+      "analise_correta": "Cuidado para não fazer **perguntas indutivas/enviesadas** (ex.: *\"Você concorda que essa tela antiga é horrível, né?\"*).",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro de condução.",
+        "D": "Erro inverso: perguntas fechadas são justamente as mais fáceis de tabular em gráficos."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-044",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Complementaridade entre Diagrama de Casos de Uso, Diagrama de Classes e Diagrama de Sequência/Atividades",
+    "artigo_origem": "07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que um único diagrama da UML não é suficiente para especificar um sistema completo, exigindo a combinação de múltiplos diagramas complementares?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque cada diagrama projeta uma **dimensão ortogonal** do sistema: o **Diagrama de Casos de Uso** mostra o escopo funcional externo (quem usa o quê); o **Diagrama de Classes** mostra a estrutura estática de dados e contratos do domínio; o **Diagrama de Pacotes** mostra a organização modular em camadas; e diagramas como **Sequência/Atividades** mostram o fluxo temporal de mensagens e decisões passo a passo.",
+        "correta": true,
+        "diagnostico": "Correto: consistência horizontal entre modelos: toda entidade mencionada nos passos do Caso de Uso (`Realizar Empréstimo` -> `Livro`, `Aluno`, `Emprestimo`) deve existir como classe correspondente no Diagrama de Classes!"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque a UML obriga a desenhar 14 diagramas repetindo exatamente a mesma informação.",
+        "correta": false,
+        "diagnostico": "Erro: na prática selecionam-se apenas os diagramas que agregam valor real ao projeto."
+      },
+      {
+        "letra": "C",
+        "texto": "O Diagrama de Classes mostra os atores bonequinhos e o Diagrama de Casos de Uso mostra as chaves estrangeiras.",
+        "correta": false,
+        "diagnostico": "Erro de troca de elementos entre diagramas."
+      },
+      {
+        "letra": "D",
+        "texto": "Basta desenhar apenas o Diagrama de Pacotes sem saber quais classes ou funcionalidades existem.",
+        "correta": false,
+        "diagnostico": "Erro de incompletude."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Assim como um engenheiro civil precisa da Planta Baixa (estrutura dos cômodos), da Planta Hidráulica (fluxo de água) e da Fachada Externa (visão do cliente), no software usamos visões complementares que devem bater perfeitamente umas com as outras.",
+      "analise_correta": "Na Verificação (V&V), cruzar o Diagrama de Casos de Uso com o Diagrama de Classes é uma técnica poderosa para achar classes esquecidas ou casos de uso sem dados de suporte.",
+      "distratores": {
+        "B": "Erro: na prática selecionam-se apenas os diagramas que agregam valor real ao projeto.",
+        "C": "Erro de troca de elementos entre diagramas.",
+        "D": "Erro de incompletude."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-045",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Ponte Interdisciplinar: Casos de Uso («include» e «extend») -> Código Modular e Controllers MVC",
+    "artigo_origem": "08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+    "dificuldade": "dificil",
+    "enunciado": "Conectando **Engenharia de Requisitos**, **Programação Modular** e **Desenvolvimento Web Back-End**: como um Caso de Uso com um relacionamento `«include»` e um relacionamento `«extend»` se traduz na estrutura de métodos e classes em C#?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Caso de Uso base traduz-se em uma Action/Serviço principal; o **`«include»`** traduz-se em uma **chamada incondicional/obrigatória de sub-rotina ou serviço injetado** (reuso de código que sempre executa, ex.: `_validador.Validar(pedido)`); já o **`«extend»`** traduz-se em um **desvio condicional (`if`), tratamento de exceção (`try/catch`), Strategy ou Evento/Observer** acionado apenas quando a condição do ponto de extensão ocorre.",
+        "correta": true,
+        "diagnostico": "Correto: ponte conceitual explícita documentada no vault (Regra 18): a modelagem de requisitos antecipa diretamente a arquitetura modular do código!"
+      },
+      {
+        "letra": "B",
+        "texto": "Ambos viram variáveis globais estáticas sem métodos.",
+        "correta": false,
+        "diagnostico": "Erro de programação modular."
+      },
+      {
+        "letra": "C",
+        "texto": "`«include»` vira um `catch` de erro e `«extend»` vira o método `Main`.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe nenhuma relação entre o modelo UML e o código C#.",
+        "correta": false,
+        "diagnostico": "Erro pedagógico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O desenho da UML não é burocracia de papel: o `«include»` vira uma função que você sempre chama na linha 10 do método; o `«extend»` vira um bloco condicional ou evento que só dispara quando aquela situação especial acontece.",
+      "analise_correta": "Essa visão integrada permite que o estudante de ADS olhe para um diagrama UML e já enxergue as classes, interfaces e Actions que irá programar.",
+      "distratores": {
+        "B": "Erro de programação modular.",
+        "C": "Erro inverso.",
+        "D": "Erro pedagógico."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md"
+    }
+  },
+  {
+    "id": "REQ-046",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Atributos Derivados (/idade) e Multiplicidade de Atributos no Diagrama de Classes",
+    "artigo_origem": "09. Modelagem estrutural com diagrama de classes da uml.md",
+    "dificuldade": "medio",
+    "enunciado": "Na notação oficial do Diagrama de Classes da UML, o que significa uma barra `/` antes do nome de um atributo (ex.: `- /idade : int` ou `+ /valorTotal : decimal`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Indica que se trata de um **Atributo Derivado (Calculado)**, cujo valor é computado dinamicamente a partir de outros atributos ou relacionamentos (como calcular `idade` a partir de `dataNascimento`, ou `valorTotal` somando os `itens`), correspondendo exatamente a uma propriedade somente-leitura (`public decimal ValorTotal => Itens.Sum(...)`) em C# e ao Atributo Derivado (elipse tracejada) em Modelagem de Dados.",
+        "correta": true,
+        "diagnostico": "Correto: tríplice ponte entre **Engenharia de Requisitos (UML `/atributo`)**, **Modelagem de Dados (elipse tracejada)** e **Programação Modular (propriedade calculada `get`)**!"
+      },
+      {
+        "letra": "B",
+        "texto": "Indica que o atributo contém um erro de divisão por zero.",
+        "correta": false,
+        "diagnostico": "Erro matemático."
+      },
+      {
+        "letra": "C",
+        "texto": "Indica que o atributo é a chave primária da tabela.",
+        "correta": false,
+        "diagnostico": "Erro de notação."
+      },
+      {
+        "letra": "D",
+        "texto": "Indica um comentário que deve ser apagado.",
+        "correta": false,
+        "diagnostico": "Erro de sintaxe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A barra `/` na UML é o aviso: 'Não guarde isso numa gaveta fixa; calcule na hora que alguém perguntar!'.",
+      "analise_correta": "Repare como os mesmos fundamentos conceituais reaparecem com notações equivalentes nas três disciplinas.",
+      "distratores": {
+        "B": "Erro matemático.",
+        "C": "Erro de notação.",
+        "D": "Erro de sintaxe."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md"
+    }
+  },
+  {
+    "id": "REQ-047",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Classificação de Defeitos em Inspeções de Requisitos (Omissão, Inconsistência, Ambiguidade, Fato Incorreto e Extrapolação)",
+    "artigo_origem": "11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+    "dificuldade": "dificil",
+    "enunciado": "Durante uma **Inspeção Formal de Requisitos**, os inspetores classificam os defeitos encontrados no documento SRS. Associe corretamente os 4 tipos clássicos de defeitos de requisitos:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Omissão**: faltou especificar uma regra ou caso de exceção importante do domínio; (2) **Inconsistência / Contradição**: o requisito `RF03` diz que o prazo máximo de empréstimo é 7 dias, mas o `RF19` diz que é 15 dias; (3) **Ambiguidade**: uma frase mal redigida permite duas interpretações diferentes; (4) **Extrapolação / *Gold Plating***: especificou-se uma funcionalidade inventada pelo analista que nenhum stakeholder pediu nem agrega valor ao negócio.",
+        "correta": true,
+        "diagnostico": "Correto: taxonomia precisa de defeitos em revisões de requisitos (Sommerville / Wiegers)."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Omissão: escrever demais; (2) Inconsistência: usar a mesma fonte em todo o texto.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Contradição entre dois requisitos é uma qualidade desejável.",
+        "correta": false,
+        "diagnostico": "Erro lógico."
+      },
+      {
+        "letra": "D",
+        "texto": "Gold Plating (banho de ouro) é obrigatório em todo projeto.",
+        "correta": false,
+        "diagnostico": "Erro: *Gold Plating* consome prazo e orçamento construindo coisas que ninguém pediu."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quatro furos na planta da obra: Omissão (esqueceram de desenhar o banheiro), Inconsistência (na página 1 a porta tem 80cm e na página 5 a mesma porta tem 1,20m), Ambiguidade (escreveram 'pintar de tom claro' sem dizer a cor) e Gold Plating (desenharam um heliponto no telhado sem o dono ter helicóptero).",
+      "analise_correta": "Corrigir esses 4 tipos de defeitos na revisão de requisitos economiza centenas de horas de programação perdida.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro lógico.",
+        "D": "Erro: *Gold Plating* consome prazo e orçamento construindo coisas que ninguém pediu."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md"
+    }
+  },
+  {
+    "id": "REQ-048",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Cenários, Personas e Mapas de Empatia na Descoberta de Requisitos Centrada no Usuário",
+    "artigo_origem": "06. Técnicas de elicitação de requisitos.md",
+    "dificuldade": "medio",
+    "enunciado": "Como a Engenharia de Requisitos se conecta ao **Design de Interação** ao utilizar **Personas** e **Cenários de Uso** durante a fase de elicitação e análise?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "As **Personas** (arquétipos realistas dos perfis de usuários com seus objetivos, dores e contexto) e os **Cenários** (narrativas concretas de pessoas tentando resolver um problema no mundo real) evitam que a equipe projete requisitos para um \"usuário genérico abstrato\", revelando necessidades reais de usabilidade, acessibilidade e fluxos de trabalho.",
+        "correta": true,
+        "diagnostico": "Correto: ponte direta com **Design de Interação (Artigo 12 - Perfil, Persona e Mapa de Empatia)**: cada Persona modelada em IHC corresponde diretamente aos **Atores** dos Casos de Uso e aos papéis das **User Stories** (`Como <Persona>...`)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Personas substituem completamente o Diagrama de Classes e o banco de dados.",
+        "correta": false,
+        "diagnostico": "Erro de substituição."
+      },
+      {
+        "letra": "C",
+        "texto": "Cenários servem apenas para escrever roteiros de cinema de ficção científica.",
+        "correta": false,
+        "diagnostico": "Erro de domínio."
+      },
+      {
+        "letra": "D",
+        "texto": "A Engenharia de Requisitos proíbe pensar na experiência do usuário.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de escrever requisitos frios para um 'Usuário 01', quando você lembra da Persona 'Dona Helena, professora de 58 anos que usa celular com internet 3G instável na escola pública', você descobre na hora requisitos essenciais de simplicidade e baixo consumo de dados!",
+      "analise_correta": "No Projeto Integrador (ODS 4), as Personas criadas na Etapa 1 guiaram diretamente os Requisitos Funcionais e os Casos de Uso.",
+      "distratores": {
+        "B": "Erro de substituição.",
+        "C": "Erro de domínio.",
+        "D": "Erro inverso."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md"
+    }
+  },
+  {
+    "id": "REQ-049",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Estrutura Padrão de um Documento de Especificação de Requisitos de Software (SRS)",
+    "artigo_origem": "05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a organização lógica recomendada pelo padrão **IEEE 830 / ISO 29148** (e adotada na documentação do Projeto Integrador) para estruturar um documento de **Especificação de Requisitos de Software (SRS)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Introdução / Contexto e Escopo** (propósito do sistema, objetivos de negócio e glossário); (2) **Descrição Geral** (perspectiva do produto, perfis de usuários/personas, premissas e restrições); (3) **Requisitos Específicos** (tabela de **Requisitos Funcionais `RF`** priorizados, tabela de **Requisitos Não-Funcionais `RNF`** e **Regras de Negócio `RN`**); e (4) **Modelos de Análise e Rastreabilidade** (Diagrama e Especificações de Casos de Uso, Diagrama de Classes de Domínio, Diagrama de Pacotes e Protótipos/Matriz).",
+        "correta": true,
+        "diagnostico": "Correto: um bom SRS vai do contexto macro para a especificação numerada (`RF/RNF/RN`) e fecha com os modelos visuais (UML) e rastreabilidade."
+      },
+      {
+        "letra": "B",
+        "texto": "Colocar apenas um parágrafo solto sem títulos e sem numeração.",
+        "correta": false,
+        "diagnostico": "Erro estrutural."
+      },
+      {
+        "letra": "C",
+        "texto": "Colocar apenas o código SQL das tabelas sem explicar o que o sistema faz.",
+        "correta": false,
+        "diagnostico": "Erro: SQL é projeto físico de dados, não especificação completa de requisitos."
+      },
+      {
+        "letra": "D",
+        "texto": "Misturar atas de reunião brutas sem síntese como único documento final.",
+        "correta": false,
+        "diagnostico": "Erro: transcrições brutas são insumo de elicitação, mas precisam ser consolidadas em requisitos estruturados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O documento SRS é o manual mestre da missão: primeiro explica por que a missão existe e quem vai participar (Introdução/Perfis), depois lista numerado cada serviço e regra de qualidade (`RF` e `RNF`), e por fim mostra os mapas visuais da operação (Casos de Uso, Classes e Pacotes).",
+      "analise_correta": "Manter identificadores únicos (`RF01, RF02...`, `RNF01, RNF02...`) é obrigatório para que todas as demais seções e testes possam referenciá-los sem ambiguidade.",
+      "distratores": {
+        "B": "Erro estrutural.",
+        "C": "Erro: SQL é projeto físico de dados, não especificação completa de requisitos.",
+        "D": "Erro: transcrições brutas são insumo de elicitação, mas precisam ser consolidadas em requisitos estruturados."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md"
+    }
+  },
+  {
+    "id": "REQ-050",
+    "disciplina_id": "07",
+    "disciplina": "Engenharia de Requisitos",
+    "topico": "Síntese Geral da Disciplina: O Fluxo Completo da Engenharia de Requisitos até a Arquitetura e Código",
+    "artigo_origem": "01. O que é, afinal, engenharia de requisitos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Sintetize como todas as etapas estudadas em **Engenharia de Requisitos** se encadeiam para alimentar as demais disciplinas do semestre:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Compreende-se o **Alinhamento Estratégico de Negócios** e os **Stakeholders**; (2) Aplica-se **Elicitação** (entrevistas, questionários, observação, protótipos) para descobrir necessidades; (3) Especificam-se **RFs, RNFs e RNs** com qualidade (não-ambíguos, completos, verificáveis e priorizados via MoSCoW); (4) Modela-se na **UML** o comportamento externo (**Casos de Uso** com `«include»/«extend»` e especificações textuais), a estrutura de domínio (**Diagrama de Classes**, que alimenta o MER/EF Core e o C#) e a modularização (**Diagrama de Pacotes**); e (5) Submete-se tudo à **Verificação e Validação (V&V)** com matriz de rastreabilidade e testes de aceitação.",
+        "correta": true,
+        "diagnostico": "Correto: visão sistêmica completa dos 11 artigos da disciplina, mostrando como a Engenharia de Requisitos é a espinha dorsal que conecta Design de Interação, Modelagem de Dados, Programação Modular, Web Back-End e o Projeto Integrador."
+      },
+      {
+        "letra": "B",
+        "texto": "Pula-se direto para a codificação e escrevem-se os requisitos apenas se sobrar tempo depois da entrega.",
+        "correta": false,
+        "diagnostico": "Erro de processo."
+      },
+      {
+        "letra": "C",
+        "texto": "A Engenharia de Requisitos termina apagando todos os diagramas antes de começar o banco de dados.",
+        "correta": false,
+        "diagnostico": "Erro: os modelos de requisitos são a entrada direta para o projeto de banco e arquitetura."
+      },
+      {
+        "letra": "D",
+        "texto": "Os requisitos não têm nenhuma relação com os testes de software.",
+        "correta": false,
+        "diagnostico": "Erro: cada requisito é a base direta do seu respectivo Caso de Teste."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A Engenharia de Requisitos é a bússola do semestre: ela transforma uma dor humana real do mundo em requisitos claros, desenha a ponte em UML e entrega o mapa validado para o Banco de Dados, o C# e o Web Back-End construírem com segurança.",
+      "analise_correta": "Com essas 50 questões, todos os 11 artigos de Engenharia de Requisitos estão integralmente cobertos no banco.",
+      "distratores": {
+        "B": "Erro de processo.",
+        "C": "Erro: os modelos de requisitos são a entrada direta para o projeto de banco e arquitetura.",
+        "D": "Erro: cada requisito é a base direta do seu respectivo Caso de Teste."
+      },
+      "referencia_vault": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md"
     }
   }
 ]

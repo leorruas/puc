@@ -2,44 +2,44 @@
   {
     "id": "LID-001",
     "disciplina_id": "10",
-    "disciplina": "Liderança e Competências",
-    "topico": "Poder formal vs. liderança e influência",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança como Relação de Influência e Adesão de Seguidores",
     "artigo_origem": "01. Liderança, influência e poder formal.md",
-    "dificuldade": "medio",
-    "enunciado": "Na teoria das organizações e no estudo das relações interpessoais de trabalho, qual é a distinção conceitual essencial entre 'poder formal' (ou autoridade delegada) e 'liderança'?",
+    "dificuldade": "facil",
+    "enunciado": "Nos estudos organizacionais e comportamentais, qual é a condição fundamental que define a existência de **liderança** em um grupo ou organização?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Poder formal e liderança são sinônimos perfeitos; quem possui cargo de chefia é automaticamente um líder reconhecido pela equipe.",
-        "correta": false,
-        "diagnostico": "Erro conceitual: autoridade formal decorre da hierarquia, enquanto liderança é um processo social de influência legítima."
+        "texto": "A existência de uma **relação de influência social reconhecida pela adesão espontânea de seguidores** a propostas, ideias ou orientações, não se reduzindo à simples ocupação de um cargo hierárquico.",
+        "correta": true,
+        "diagnostico": "Correto: a liderança não é um título estático nem um atributo isolado, mas uma relação social que só se confirma quando existem seguidores que reconhecem e aderem à influência."
       },
       {
         "letra": "B",
-        "texto": "O poder formal emana da posição ou cargo hierárquico na estrutura organizacional (capacidade de comando e sanção legal); a liderança é um processo interpessoal e dinâmico de influência que independe de título e gera engajamento voluntário em prol de objetivos comuns.",
-        "correta": true,
-        "diagnostico": "Correto: autoridade formal decorre do organograma institucional, enquanto liderança baseia-se em influência, confiança e credibilidade conquistadas."
+        "texto": "A nomeação formal publicada em contrato ou portaria, independentemente de a equipe confiar ou aderir às orientações.",
+        "correta": false,
+        "diagnostico": "Incorreto: a nomeação confere autoridade formal (chefia/gestão), mas não garante liderança."
       },
       {
         "letra": "C",
-        "texto": "Liderança existe apenas em ambientes militares com ordens coercitivas de cumprimento obrigatório sob pena de detenção.",
+        "texto": "O uso exclusivo de punições salariais para forçar o cumprimento de tarefas.",
         "correta": false,
-        "diagnostico": "Erro conceitual: coerção é manifestação de poder coercitivo autoritário, não da essência da liderança interpessoal."
+        "diagnostico": "Incorreto: coerção pura gera obediência por receio de punição, não adesão de seguidores."
       },
       {
         "letra": "D",
-        "texto": "O poder formal só pode ser exercido por algoritmos de inteligência artificial sem intervenção humana.",
+        "texto": "O isolamento completo do profissional para tomar decisões sem interagir com outras pessoas.",
         "correta": false,
-        "diagnostico": "Erro conceitual e anacrônico: poder formal é dimensão humana de governança corporativa e institucional."
+        "diagnostico": "Incorreto: sem interação social e seguidores não há relação de liderança."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Um chefe nomeado pela diretoria pode fazer você trabalhar porque tem o poder de demitir (autoridade formal do cargo). Um líder faz você querer dar o seu melhor mesmo se ele tiver o mesmo cargo que você (influência e respeito voluntário).",
-      "analise_correta": "A liderança é um fenômeno social de influenciar pessoas para canalizar esforços em direção a metas compartilhadas. Pode haver chefes formais que não lideram e líderes informais sem cargo de chefia.",
+      "modelo_mental": "A liderança é como a sintonia de uma estação de rádio: não basta uma antena transmitir sinal forte (ter um cargo); só existe comunicação real quando os aparelhos ao redor decidem sintonizar voluntariamente naquela frequência (seguidores).",
+      "analise_correta": "Por isso, o ponto de partida para identificar um líder é observar quem o segue e por quê.",
       "distratores": {
-        "A": "Nomear alguém gerente não o transforma automaticamente em líder inspirador.",
-        "C": "Coerção gera submissão obrigatória, não engajamento autêntico.",
-        "D": "Poder formal emana de contratos sociais e governança das instituições humanas."
+        "B": "Incorreto: a nomeação confere autoridade formal (chefia/gestão), mas não garante liderança.",
+        "C": "Incorreto: coerção pura gera obediência por receio de punição, não adesão de seguidores.",
+        "D": "Incorreto: sem interação social e seguidores não há relação de liderança."
       },
       "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
     }
@@ -47,46 +47,2206 @@
   {
     "id": "LID-002",
     "disciplina_id": "10",
-    "disciplina": "Liderança e Competências",
-    "topico": "Grid Gerencial de Blake e Mouton",
-    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
-    "dificuldade": "dificil",
-    "enunciado": "O Grid Gerencial proposto por Robert Blake e Jane Mouton mapeia o comportamento do líder em duas dimensões ortogonais: 'preocupação com a produção' (eixo X, de 1 a 9) e 'preocupação com as pessoas' (eixo Y, de 1 a 9). Como é denominado o estilo de liderança situado na coordenada (9, 9) e qual é sua característica central?",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Diferença entre Seguidores e Subordinados, e entre Gestor/Chefe e Líder",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a distinção conceitual precisa entre **gestor (ou chefe com autoridade formal)** e **líder**, bem como entre **subordinados** e **seguidores**?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Gestão Empobrecida (1, 1), caracterizada pelo esforço mínimo para se manter no emprego sem se importar com ninguém.",
-        "correta": false,
-        "diagnostico": "Erro de coordenadas: gestão empobrecida é (1, 1), no extremo oposto da escala."
+        "texto": "O **gestor** ocupa uma posição formal na hierarquia para administrar recursos e processos, tendo **subordinados** vinculados por dever institucional; o **líder** exerce influência reconhecida por **seguidores** que aderem espontaneamente, podendo coincidir ou não com o ocupante do cargo formal.",
+        "correta": true,
+        "diagnostico": "Correto: gestão e liderança são fenômenos distintos que podem (e idealmente devem) coexistir na mesma pessoa, mas um gestor pode ter apenas subordinados sem ser líder, e um membro sem cargo pode ter seguidores."
       },
       {
         "letra": "B",
-        "texto": "Gestão em Equipe (9, 9), caracterizada por alto comprometimento das pessoas com os objetivos da organização, com relações de confiança mútua e busca simultânea pelo alcance de resultados de excelência e satisfação humana.",
-        "correta": true,
-        "diagnostico": "Correto: a liderança em equipe (9, 9) integra a máxima consideração tanto pelas metas produtivas quanto pelo bem-estar e desenvolvimento das pessoas."
+        "texto": "Todo chefe formal é automaticamente um líder admirado, e nenhuma pessoa sem cargo pode influenciar colegas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o cargo garante obediência formal, não adesão espontânea; além disso, existe a liderança informal."
       },
       {
         "letra": "C",
-        "texto": "Gestão Clube de Campo (1, 9), onde a produção fabril rígida é maximizada através de punições rigorosas aos operários.",
+        "texto": "Gestores não possuem responsabilidade administrativa e líderes só existem fora das empresas.",
         "correta": false,
-        "diagnostico": "Erro conceitual: Clube de Campo (1, 9) foca exclusivamente no conforto das pessoas ignorando a produção; foco cego na produção é Autoridade-Obediência (9, 1)."
+        "diagnostico": "Incorreto: gestores respondem por planejamento, organização, direção e controle (Fayol), e líderes atuam tanto dentro quanto fora de empresas."
       },
       {
         "letra": "D",
-        "texto": "Gestão Meio-Termo (5, 5), que estabelece a rotatividade semanal compulsória dos membros da diretoria executiva.",
+        "texto": "Subordinados e seguidores são termos idênticos que designam apenas funcionários terceirizados.",
         "correta": false,
-        "diagnostico": "Erro conceitual: meio-termo (5, 5) busca equilíbrio conservador entre metas razoáveis e moral satisfatória."
+        "diagnostico": "Incorreto: subordinado responde à hierarquia; seguidor responde à influência legitimada."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Pense em uma tabela de notas de 1 a 9: nota 9 em cuidar das pessoas e nota 9 em bater metas. Em vez de achar que para produzir muito é preciso maltratar a equipe, o líder (9, 9) entende que pessoas valorizadas e motivadas produzem os melhores resultados do mundo.",
-      "analise_correta": "Blake e Mouton defenderam que alta produção e alto respeito às pessoas não são conflitantes, mas sinérgicos na liderança eficaz em equipe (9, 9).",
+      "modelo_mental": "O crachá de \"Gerente\" na porta da sala dá **autoridade formal** (as pessoas obedecem porque o organograma manda — são subordinados). Já a **liderança** acontece quando, mesmo que o crachá não estivesse lá, a equipe continuaria ouvindo e construindo junto com aquela pessoa (são seguidores).",
+      "analise_correta": "Compreender essa distinção evita confundir poder de posição com capacidade real de mobilizar pessoas.",
       "distratores": {
-        "A": "(1, 1) é a negligência gerencial total.",
-        "C": "(1, 9) negligencia os resultados do negócio em prol de um clima artificialmente amigável.",
-        "D": "(5, 5) acomoda-se na média sem atingir a excelência integrada do (9, 9)."
+        "B": "Incorreto: o cargo garante obediência formal, não adesão espontânea; além disso, existe a liderança informal.",
+        "C": "Incorreto: gestores respondem por planejamento, organização, direção e controle (Fayol), e líderes atuam tanto dentro quanto fora de empresas.",
+        "D": "Incorreto: subordinado responde à hierarquia; seguidor responde à influência legitimada."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-003",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Informal e Grupos Informais (Elton Mayo e Relações Humanas)",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "medio",
+    "enunciado": "Como os estudos de **Elton Mayo** e a **Teoria das Relações Humanas** contribuíram para a compreensão da **liderança informal** dentro das organizações?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ao evidenciarem que, paralelamente ao organograma oficial (concepção clássica de Henri Fayol), os trabalhadores formam **grupos informais** com normas próprias, afetos e referências de influência, nos quais surgem líderes informais sem cargo de chefia.",
+        "correta": true,
+        "diagnostico": "Correto: a Escola das Relações Humanas mostrou que o trabalho é uma atividade social e que lideranças informais emergem espontaneamente no cotidiano das equipes."
+      },
+      {
+        "letra": "B",
+        "texto": "Ao provarem que os trabalhadores agem apenas como engrenagens mecânicas movidas exclusivamente por estímulos financeiros individuais.",
+        "correta": false,
+        "diagnostico": "Incorreto: essa visão mecanicista do *homo economicus* pertencia à Administração Científica clássica que Mayo justamente problematizou."
+      },
+      {
+        "letra": "C",
+        "texto": "Ao recomendarem a proibição de qualquer conversa ou amizade entre funcionários no ambiente de trabalho.",
+        "correta": false,
+        "diagnostico": "Incorreto: Mayo destacou a importância da integração social e dos grupos informais."
+      },
+      {
+        "letra": "D",
+        "texto": "Ao demonstrarem que apenas diretores executivos possuem influência sobre o ritmo de produção.",
+        "correta": false,
+        "diagnostico": "Incorreto: a pesquisa de Hawthorne mostrou que referências internas do próprio grupo de colegas influenciavam fortemente o ritmo e o clima de trabalho."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma turma de faculdade ou equipe de desenvolvimento, quase sempre há aquele colega que não tem cargo de coordenador, mas a quem todos recorrem quando surge uma dúvida difícil ou um impasse: esse é o **líder informal** reconhecido pelo grupo.",
+      "analise_correta": "Um bom gestor não combate cegamente a liderança informal, mas compreende a dinâmica social da equipe para alinhar objetivos.",
+      "distratores": {
+        "B": "Incorreto: essa visão mecanicista do *homo economicus* pertencia à Administração Científica clássica que Mayo justamente problematizou.",
+        "C": "Incorreto: Mayo destacou a importância da integração social e dos grupos informais.",
+        "D": "Incorreto: a pesquisa de Hawthorne mostrou que referências internas do próprio grupo de colegas influenciavam fortemente o ritmo e o clima de trabalho."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-004",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Reconhecimento da Liderança vs. Avaliação Ética de suas Consequências",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "medio",
+    "enunciado": "Reconhecer sociologicamente que determinada pessoa exerceu **liderança** sobre um grupo equivale a afirmar que suas ações foram eticamente boas ou benéficas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Não: identificar a presença de liderança constata apenas que houve influência e adesão de seguidores; **avaliar positivamente ou negativamente os valores, métodos e consequências** dessa liderança exige um julgamento ético e de resultados próprio.",
+        "correta": true,
+        "diagnostico": "Correto: o conceito descritivo de liderança (existência de seguidores e influência) não se confunde com o juízo de valor moral sobre os fins alcançados."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim: por definição científica, só é considerado líder quem produz resultados moralmente perfeitos e altruístas.",
+        "correta": false,
+        "diagnostico": "Incorreto: historicamente, líderes demagógicos ou destrutivos também conquistaram seguidores fervorosos."
+      },
+      {
+        "letra": "C",
+        "texto": "Sim: se uma liderança causou danos graves à sociedade ou à organização, significa que nunca houve seguidores.",
+        "correta": false,
+        "diagnostico": "Incorreto: justamente por terem mobilizado seguidores é que certos líderes conseguiram produzir impactos em larga escala, positivos ou danosos."
+      },
+      {
+        "letra": "D",
+        "texto": "A ética e as consequências das decisões nunca devem ser analisadas em estudos sobre liderança.",
+        "correta": false,
+        "diagnostico": "Incorreto: a análise crítica dos valores, meios e resultados é parte indispensável do estudo responsável da liderança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um amplificador de som potente pode ser usado tanto para transmitir um concerto musical emocionante quanto para espalhar ruído ensurdecedor: reconhecer que o amplificador é potente (há influência e seguidores) não nos dispensa de julgar a qualidade da música (ética e consequências).",
+      "analise_correta": "Essa distinção protege o estudante contra a romantização acrítica da figura do líder.",
+      "distratores": {
+        "B": "Incorreto: historicamente, líderes demagógicos ou destrutivos também conquistaram seguidores fervorosos.",
+        "C": "Incorreto: justamente por terem mobilizado seguidores é que certos líderes conseguiram produzir impactos em larga escala, positivos ou danosos.",
+        "D": "Incorreto: a análise crítica dos valores, meios e resultados é parte indispensável do estudo responsável da liderança."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-005",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "O Conceito de Teoria e a Pluralidade das Teorias de Liderança",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que existem **múltiplas teorias de liderança** (personalidade, comportamental, contingencial/situacional, nova liderança) em vez de uma única fórmula definitiva?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a liderança é um fenômeno social complexo e multifacetado; cada teoria funciona como uma lente que destaca determinados aspectos (traços, ações, contexto, trocas ou propósito), sendo sujeita a críticas, revisões e complementaridade ao longo do tempo.",
+        "correta": true,
+        "diagnostico": "Correto: uma teoria científica é uma explicação organizada sobre a realidade que ilumina certas variáveis e permanece aberta a refutação e aprimoramento."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque todas as teorias anteriores estavam 100% erradas e foram proibidas por lei.",
+        "correta": false,
+        "diagnostico": "Incorreto: as abordagens posteriores criticam limites das anteriores (como o determinismo), mas incorporam aprendizados em vez de simplesmente apagá-las."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque cada empresa inventa uma palavra diferente para dizer exatamente a mesma coisa sem base em pesquisa.",
+        "correta": false,
+        "diagnostico": "Incorreto: as escolas teóricas diferem substancialmente em seus pressupostos sobre o que explica a emergência e a eficácia do líder."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque teorias científicas são dogmas imutáveis que nunca passam por testes empíricos.",
+        "correta": false,
+        "diagnostico": "Incorreto: teorias não são dogmas; elas evoluem justamente quando confrontadas com evidências empíricas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "As teorias de liderança são como diferentes mapas de uma mesma cidade: um mapa mostra o relevo, outro mostra as linhas de metrô e outro mostra o trânsito em tempo real. Nenhum mapa sozinho é a cidade inteira, mas juntos eles ajudam você a navegar muito melhor.",
+      "analise_correta": "Ao longo da Unidade 1, comparar essas lentes permite entender quando focar no indivíduo, no comportamento observável ou na situação.",
+      "distratores": {
+        "B": "Incorreto: as abordagens posteriores criticam limites das anteriores (como o determinismo), mas incorporam aprendizados em vez de simplesmente apagá-las.",
+        "C": "Incorreto: as escolas teóricas diferem substancialmente em seus pressupostos sobre o que explica a emergência e a eficácia do líder.",
+        "D": "Incorreto: teorias não são dogmas; elas evoluem justamente quando confrontadas com evidências empíricas."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-006",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Funções Clássicas da Gestão (Henri Fayol) vs. Influência Interpessoal",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "facil",
+    "enunciado": "Na tradição da Administração Clássica associada a **Henri Fayol**, o papel do administrador/gestor estruturou-se em torno de funções como prever/planejar, organizar, comandar, coordenar e controlar. Qual limite dessa visão isolada levou ao aprofundamento dos estudos sobre liderança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A percepção de que a estrutura formal e o comando burocrático, por si sós, não explicam por que certas equipes se engajam com entusiasmo enquanto outras apenas cumprem o mínimo exigido, revelando o papel crucial da motivação, da confiança e das relações interpessoais.",
+        "correta": true,
+        "diagnostico": "Correto: prever, organizar e controlar continuam necessários na gestão, mas a eficácia sustentável depende também da dimensão humana e relacional da liderança."
+      },
+      {
+        "letra": "B",
+        "texto": "A descoberta de que as empresas não precisam de planejamento nem de organização para funcionar.",
+        "correta": false,
+        "diagnostico": "Incorreto: planejamento e organização seguem essenciais na administração moderna."
+      },
+      {
+        "letra": "C",
+        "texto": "A conclusão de que cargos formais devem ser extintos de todas as instituições públicas e privadas.",
+        "correta": false,
+        "diagnostico": "Incorreto: a hierarquia formal organiza responsabilidades, mas precisa ser complementada pela legitimidade da liderança."
+      },
+      {
+        "letra": "D",
+        "texto": "A prova de que contratos de trabalho substituem qualquer necessidade de comunicação com a equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: contratos garantem o vínculo jurídico, não o comprometimento criativo e colaborativo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O planejamento de Fayol é como a partitura musical distribuída na estante da orquestra; mas a liderança é a regência viva do maestro que inspira os músicos a tocarem com alma e harmonia, e não apenas no automático.",
+      "analise_correta": "Daí a importância de formar profissionais que combinem competência técnica de gestão com competências comportamentais de liderança.",
+      "distratores": {
+        "B": "Incorreto: planejamento e organização seguem essenciais na administração moderna.",
+        "C": "Incorreto: a hierarquia formal organiza responsabilidades, mas precisa ser complementada pela legitimidade da liderança.",
+        "D": "Incorreto: contratos garantem o vínculo jurídico, não o comprometimento criativo e colaborativo."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-007",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Assimetria de Poder vs. Legitimidade na Relação Líder-Liderado",
+    "artigo_origem": "01. Liderança, influência e poder formal.md",
+    "dificuldade": "medio",
+    "enunciado": "Quando um gestor utiliza exclusivamente a **coerção e a ameaça de demissão** para obter resultados de curto prazo, o que ocorre sob a ótica dos conceitos de autoridade e liderança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ele aciona o **poder formal coercitivo** do cargo sobre subordinados, mas fragiliza a **liderança**, pois não constrói adesão espontânea, confiança nem influência sustentável quando a vigilância cessa.",
+        "correta": true,
+        "diagnostico": "Correto: depender apenas do medo e da imposição hierárquica mantém subordinados sob vigilância, mas não forma seguidores comprometidos."
+      },
+      {
+        "letra": "B",
+        "texto": "Ele exerce o mais alto grau de liderança servidora e coaching.",
+        "correta": false,
+        "diagnostico": "Incorreto: liderança servidora e coaching baseiam-se em apoio, escuta e desenvolvimento, o exato oposto da coerção."
+      },
+      {
+        "letra": "C",
+        "texto": "Ele conquista seguidores voluntários que continuarão fiéis mesmo que ele perca o cargo.",
+        "correta": false,
+        "diagnostico": "Incorreto: quando o poder coercitivo desaparece, a obediência cessa imediatamente."
+      },
+      {
+        "letra": "D",
+        "texto": "Ele elimina qualquer rotatividade ou estresse na equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambientes puramente coercitivos elevam o estresse, o absenteísmo e a perda de talentos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Empurrar um carro enguiçado na força bruta faz ele andar alguns metros enquanto você está fazendo força (coerção); já ligar o motor da confiança e do propósito faz o carro rodar por conta própria (liderança).",
+      "analise_correta": "Essa distinção prepara a crítica aos estilos puramente autoritários e de obediência cega.",
+      "distratores": {
+        "B": "Incorreto: liderança servidora e coaching baseiam-se em apoio, escuta e desenvolvimento, o exato oposto da coerção.",
+        "C": "Incorreto: quando o poder coercitivo desaparece, a obediência cessa imediatamente.",
+        "D": "Incorreto: ambientes puramente coercitivos elevam o estresse, o absenteísmo e a perda de talentos."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/01. Liderança, influência e poder formal.md"
+    }
+  },
+  {
+    "id": "LID-008",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Premissa da Abordagem da Personalidade e a Ideia de que \"Líderes Nascem Prontos\"",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual era a premissa central da **Abordagem da Personalidade** (primeira grande corrente sistemática de estudos sobre liderança) e qual visão popular ela refletia?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Procurava explicar a liderança a partir de **características individuais internas (físicas, intelectuais, sociais ou de personalidade)** que diferenciariam líderes de não líderes, refletindo a crença determinista de que *\"líderes já nascem prontos\"*.",
+        "correta": true,
+        "diagnostico": "Correto: o foco inicial recaiu inteiramente sobre \"quem o líder é\" (seus atributos intrínsecos), tratando a liderança como um dom inato."
+      },
+      {
+        "letra": "B",
+        "texto": "Defendia que qualquer pessoa pode aprender a liderar exclusivamente por meio de treinamento comportamental, sem influência de traços pessoais.",
+        "correta": false,
+        "diagnostico": "Incorreto: a ênfase na aprendizagem e no treinamento de ações surgiu depois, com a abordagem comportamental."
+      },
+      {
+        "letra": "C",
+        "texto": "Afirmava que o contexto e a maturidade dos liderados são os únicos fatores que importam.",
+        "correta": false,
+        "diagnostico": "Incorreto: o contexto e a maturidade dos liderados são o foco das teorias situacionais e contingenciais."
+      },
+      {
+        "letra": "D",
+        "texto": "Sustentava que a liderança é apenas uma troca financeira contratual.",
+        "correta": false,
+        "diagnostico": "Incorreto: a lógica de trocas pertence à liderança transacional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A abordagem da personalidade olhava para a liderança como se fosse a cor dos olhos ou a altura: algo que veio no \"código de fábrica\" da pessoa ao nascer, dividindo a humanidade entre os \"nascidos para mandar\" e os \"nascidos para obedecer\".",
+      "analise_correta": "Essa visão desdobrou-se historicamente na Teoria do Grande Homem e na Teoria dos Traços.",
+      "distratores": {
+        "B": "Incorreto: a ênfase na aprendizagem e no treinamento de ações surgiu depois, com a abordagem comportamental.",
+        "C": "Incorreto: o contexto e a maturidade dos liderados são o foco das teorias situacionais e contingenciais.",
+        "D": "Incorreto: a lógica de trocas pertence à liderança transacional."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-009",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Teoria do Grande Homem vs. Teoria dos Traços",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a relação e a diferença entre a **Teoria do Grande Homem** e a **Teoria dos Traços** dentro da abordagem da personalidade?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **Teoria do Grande Homem** apoiava-se em narrativas históricas de figuras consideradas heroicas e extraordinárias (estadistas, generais, líderes religiosos); já a **Teoria dos Traços** buscou sistematizar e medir empiricamente **atributos específicos** (físicos, intelectuais, sociais e de personalidade) que estariam presentes nos líderes.",
+        "correta": true,
+        "diagnostico": "Correto: enquanto o \"Grande Homem\" olhava para biografias monumentais da História, a Teoria dos Traços tentou decompor essa excepcionalidade em listas mensuráveis de características psicológicas, físicas e intelectuais."
+      },
+      {
+        "letra": "B",
+        "texto": "A Teoria do Grande Homem aplicava questionários estatísticos em empresas de telemarketing, enquanto a Teoria dos Traços estudava apenas mitologia grega.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte o método e o contexto histórico das duas vertentes."
+      },
+      {
+        "letra": "C",
+        "texto": "São teorias opostas: a primeira nega a importância do indivíduo e a segunda nega a existência de personalidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambas pertencem à mesma matriz centrada nos atributos do indivíduo."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas provaram com sucesso absoluto que apenas pessoas com mais de 1,90m de altura conseguem liderar equipes de tecnologia.",
+        "correta": false,
+        "diagnostico": "Incorreto: traços físicos como estatura ou aparência mostraram-se incapazes de prever eficácia de liderança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A **Teoria do Grande Homem** olhava para Napoleão ou Alexandre, o Grande, como \"semideuses da História\"; já a **Teoria dos Traços** tentou levar essa ideia para o laboratório, fazendo um checklist de ingredientes (\"será que todo líder tem extroversão X, inteligência Y e altura Z?\").",
+      "analise_correta": "No artigo, menciona-se inclusive como reflexões políticas clássicas, como as de Nicolau Maquiavel em *O Príncipe*, já discutiam qualidades associadas ao governante.",
+      "distratores": {
+        "B": "Incorreto: inverte o método e o contexto histórico das duas vertentes.",
+        "C": "Incorreto: ambas pertencem à mesma matriz centrada nos atributos do indivíduo.",
+        "D": "Incorreto: traços físicos como estatura ou aparência mostraram-se incapazes de prever eficácia de liderança."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-010",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Quatro Categorias de Atributos Investigados na Teoria dos Traços",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "facil",
+    "enunciado": "Nas pesquisas da **Teoria dos Traços**, os atributos investigados para tentar distinguir líderes de não líderes costumavam ser agrupados em quais quatro grandes categorias?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Características **físicas** (ex.: estatura, aparência, energia), **intelectuais** (ex.: inteligência, fluência verbal), **sociais** (ex.: sociabilidade, cooperação, diplomacia) e **de personalidade** (ex.: autoconfiança, iniciativa, estabilidade emocional).",
+        "correta": true,
+        "diagnostico": "Correto: os pesquisadores catalogaram dezenas de traços distribuídos entre aspectos físicos, cognitivos/intelectuais, interpessoais/sociais e psicológicos/de personalidade."
+      },
+      {
+        "letra": "B",
+        "texto": "Apenas saldo bancário, endereço residencial, signo astrológico e tipo sanguíneo.",
+        "correta": false,
+        "diagnostico": "Incorreto: não são categorias científicas da teoria dos traços."
+      },
+      {
+        "letra": "C",
+        "texto": "Exclusivamente habilidades de programação em C#, SQL, HTML e CSS.",
+        "correta": false,
+        "diagnostico": "Incorreto: tratam-se de hard skills contemporâneas de TI, não das categorias clássicas da teoria dos traços."
+      },
+      {
+        "letra": "D",
+        "texto": "Maturidade M1, Maturidade M2, Maturidade M3 e Maturidade M4.",
+        "correta": false,
+        "diagnostico": "Incorreto: M1 a M4 são níveis de maturidade do liderado na Liderança Situacional de Hersey e Blanchard."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Os pesquisadores da Teoria dos Traços montaram quatro gavetas para procurar o \"segredo do líder\": o corpo (físicas), a mente (intelectuais), o jeito com os outros (sociais) e o temperamento interno (personalidade).",
+      "analise_correta": "Apesar do esforço de catalogação, a lista cresceu indefinidamente sem chegar a um denominador universal.",
+      "distratores": {
+        "B": "Incorreto: não são categorias científicas da teoria dos traços.",
+        "C": "Incorreto: tratam-se de hard skills contemporâneas de TI, não das categorias clássicas da teoria dos traços.",
+        "D": "Incorreto: M1 a M4 são níveis de maturidade do liderado na Liderança Situacional de Hersey e Blanchard."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-011",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Crítica ao Determinismo e Limites de Previsão da Teoria dos Traços",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que a **Teoria dos Traços** mostrou-se insuficiente como explicação única da liderança, e qual é o risco do **determinismo** associado a ela?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque as pesquisas **não encontraram um conjunto único e universal de traços** capaz de prever quem será um líder eficaz em qualquer situação; além disso, o **determinismo** leva ao erro de achar que quem não nasceu com certas características nunca poderá se desenvolver, desencorajando o aprendizado e o treinamento.",
+        "correta": true,
+        "diagnostico": "Correto: pessoas com traços muito diferentes (ex.: líderes mais extrovertidos vs. líderes mais reservados e analíticos) podem ser igualmente eficazes dependendo do contexto, e competências de liderança podem ser desenvolvidas."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque ficou provado que a personalidade de um ser humano não existe.",
+        "correta": false,
+        "diagnostico": "Incorreto: diferenças individuais de personalidade existem, mas não determinam sozinhas o sucesso da liderança."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque todos os líderes da história tinham exatamente os mesmos traços físicos e psicológicos sem nenhuma exceção.",
+        "correta": false,
+        "diagnostico": "Incorreto: ocorreu justamente o oposto — uma enorme variedade de perfis entre líderes reais."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque a teoria dos traços dava atenção excessiva ao contexto e ignorava completamente o indivíduo.",
+        "correta": false,
+        "diagnostico": "Incorreto: a falha da teoria dos traços foi justamente ignorar o contexto e os seguidores, focando apenas no indivíduo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Acreditar no determinismo dos traços seria como dizer que só quem nasceu com \"dom musical puro\" pode tocar violão, fechando todas as escolas de música. Na realidade, características pessoais influenciam, mas técnica, prática e adaptação ao ritmo da banda fazem toda a diferença.",
+      "analise_correta": "Superar o determinismo abriu espaço para estudar a flexibilidade comportamental e a aprendizagem.",
+      "distratores": {
+        "B": "Incorreto: diferenças individuais de personalidade existem, mas não determinam sozinhas o sucesso da liderança.",
+        "C": "Incorreto: ocorreu justamente o oposto — uma enorme variedade de perfis entre líderes reais.",
+        "D": "Incorreto: a falha da teoria dos traços foi justamente ignorar o contexto e os seguidores, focando apenas no indivíduo."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-012",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Referência a Nicolau Maquiavel e as Qualidades do Governante",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "medio",
+    "enunciado": "No estudo das origens históricas da reflexão sobre atributos de comando e poder, qual é o papel atribuído à obra ***O Príncipe***, de **Nicolau Maquiavel**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Representa uma reflexão clássica sobre como conquistar, exercer e conservar o poder político, discutindo como o governante lida com suas qualidades perante os governados e com as circunstâncias (*virtù* e *fortuna*).",
+        "correta": true,
+        "diagnostico": "Correto: Maquiavel é citado como marco histórico anterior às teorias administrativas modernas na análise pragmática das qualidades e da imagem projetada por quem detém o poder."
+      },
+      {
+        "letra": "B",
+        "texto": "Apresenta o modelo moderno de Liderança Servidora baseado na humildade cristã e no empoderamento horizontal.",
+        "correta": false,
+        "diagnostico": "Incorreto: a Liderança Servidora foi formulada por Robert Greenleaf no século XX com premissas éticas muito distintas."
+      },
+      {
+        "letra": "C",
+        "texto": "Cria a matriz matemática 9x9 do Grid Gerencial de produção e pessoas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o Grid Gerencial é de Robert Blake e Jane Mouton (1964)."
+      },
+      {
+        "letra": "D",
+        "texto": "Descreve o método de Liderança Coaching para equipes ágeis de software.",
+        "correta": false,
+        "diagnostico": "Incorreto: o Coaching gerencial é uma abordagem contemporânea."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Maquiavel já observava no Renascimento que o governante lida tanto com suas capacidades de ação quanto com a percepção dos outros e os ventos imprevisíveis da sorte — antecipando tensões entre características pessoais, aparência e circunstância.",
+      "analise_correta": "Na disciplina, essa referência situa historicamente o interesse humano pelas qualidades dos líderes.",
+      "distratores": {
+        "B": "Incorreto: a Liderança Servidora foi formulada por Robert Greenleaf no século XX com premissas éticas muito distintas.",
+        "C": "Incorreto: o Grid Gerencial é de Robert Blake e Jane Mouton (1964).",
+        "D": "Incorreto: o Coaching gerencial é uma abordagem contemporânea."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-013",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Diferença entre Possuir um Traço e Exercer Liderança Eficaz",
+    "artigo_origem": "02. Abordagem da personalidade e teoria dos traços.md",
+    "dificuldade": "facil",
+    "enunciado": "Um profissional apresenta alta extroversão e grande fluência verbal em testes de perfil, mas sua equipe não confia em suas decisões nem atinge as metas do setor. O que esse cenário ilustra em relação à Teoria dos Traços?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ilustra que **possuir determinados traços individuais não garante a eficácia da liderança** nem a conquista de seguidores, pois a liderança depende de como a pessoa age, se relaciona com o grupo e responde às demandas reais da situação.",
+        "correta": true,
+        "diagnostico": "Correto: traços isolados podem facilitar o contato inicial, mas sem coerência comportamental, competência contextual e relação de confiança, não se sustentam como liderança eficaz."
+      },
+      {
+        "letra": "B",
+        "texto": "Ilustra que o teste de perfil foi aplicado incorretamente, pois toda pessoa extrovertida é obrigatoriamente um líder eficaz.",
+        "correta": false,
+        "diagnostico": "Incorreto: a extroversão não é garantia automática de boa liderança."
+      },
+      {
+        "letra": "C",
+        "texto": "Prova que pessoas comunicativas nunca podem ocupar cargos de gestão.",
+        "correta": false,
+        "diagnostico": "Incorreto: a comunicação é útil, mas insuficiente se desacompanhada de escuta, justiça e direção adequada."
+      },
+      {
+        "letra": "D",
+        "texto": "Demonstra que os resultados e a confiança da equipe são irrelevantes para avaliar a liderança.",
+        "correta": false,
+        "diagnostico": "Incorreto: a adesão dos seguidores e a eficácia no contexto são centrais para avaliar a liderança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ter boas ferramentas na caixa (traços como boa fala ou autoconfiança) não constrói uma casa sozinha se o construtor não souber ler a planta do terreno nem trabalhar em sintonia com os pedreiros.",
+      "analise_correta": "Essa constatação conecta diretamente o artigo 02 às críticas desenvolvidas no artigo 03.",
+      "distratores": {
+        "B": "Incorreto: a extroversão não é garantia automática de boa liderança.",
+        "C": "Incorreto: a comunicação é útil, mas insuficiente se desacompanhada de escuta, justiça e direção adequada.",
+        "D": "Incorreto: a adesão dos seguidores e a eficácia no contexto são centrais para avaliar a liderança."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/02. Abordagem da personalidade e teoria dos traços.md"
+    }
+  },
+  {
+    "id": "LID-014",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Dificuldade de Estabelecer Relações Causais na Teoria dos Traços",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Uma das críticas metodológicas mais importantes à Teoria dos Traços diz respeito à **relação de causalidade** entre um traço (como a autoconfiança) e a posição de liderança. Qual é o cerne dessa crítica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Muitas vezes não é possível afirmar se a pessoa **se tornou líder porque já era autoconfiante** (causa) ou se ela **desenvolveu autoconfiança justamente depois que passou a ocupar a posição de liderança** e obteve reconhecimento (consequência).",
+        "correta": true,
+        "diagnostico": "Correto: observar que muitos líderes são autoconfiantes é uma correlação, mas não prova que a autoconfiança prévia causou a liderança; o próprio exercício bem-sucedido do papel fortalece essa característica."
+      },
+      {
+        "letra": "B",
+        "texto": "A ciência provou que líderes eficazes nunca possuem autoconfiança em nenhum momento da carreira.",
+        "correta": false,
+        "diagnostico": "Incorreto: a autoconfiança é frequente em líderes, mas sua origem pode ser fruto da própria prática e validação social."
+      },
+      {
+        "letra": "C",
+        "texto": "A relação causal é sempre unidirecional e genética, sem qualquer influência da experiência profissional.",
+        "correta": false,
+        "diagnostico": "Incorreto: a experiência social e o exercício da função moldam profundamente os atributos pessoais."
+      },
+      {
+        "letra": "D",
+        "texto": "Correlação estatística sempre comprova causalidade direta sem necessidade de análise contextual.",
+        "correta": false,
+        "diagnostico": "Incorreto: na metodologia científica, correlação não implica necessariamente direção única de causa e efeito."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É o dilema do nadador com ombros largos: será que ele ganhou a medalha apenas porque já nasceu com ombros largos, ou os ombros dele ficaram largos porque ele treinou natação todos os dias durante anos? Na liderança, o treino e o papel também moldam a pessoa.",
+      "analise_correta": "Reconhecer essa via de mão dupla reforça que competências associadas à liderança podem ser construídas ao longo da trajetória.",
+      "distratores": {
+        "B": "Incorreto: a autoconfiança é frequente em líderes, mas sua origem pode ser fruto da própria prática e validação social.",
+        "C": "Incorreto: a experiência social e o exercício da função moldam profundamente os atributos pessoais.",
+        "D": "Incorreto: na metodologia científica, correlação não implica necessariamente direção única de causa e efeito."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-015",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Conceitos de Flexibilidade Comportamental e Automonitoramento",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "O que significam os conceitos de **flexibilidade comportamental** e **automonitoramento** nos estudos sobre liderança?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Flexibilidade comportamental** é a capacidade de adaptar ações e posturas às mudanças de contexto; **automonitoramento** é a habilidade de observar o ambiente social, ler os sinais das outras pessoas e ajustar a própria expressão e comportamento conforme a situação exige.",
+        "correta": true,
+        "diagnostico": "Correto: pessoas com alto automonitoramento percebem melhor as demandas de cada interação social e utilizam a flexibilidade para ajustar sua comunicação e conduta."
+      },
+      {
+        "letra": "B",
+        "texto": "Flexibilidade significa mudar de opinião a cada minuto sem manter nenhum valor ético, e automonitoramento significa instalar câmeras de segurança no escritório.",
+        "correta": false,
+        "diagnostico": "Incorreto: flexibilidade não é falta de caráter, nem automonitoramento é vigilância eletrônica."
+      },
+      {
+        "letra": "C",
+        "texto": "Automonitoramento é a incapacidade de perceber o impacto das próprias palavras sobre a equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: o automonitoramento é justamente a alta sensibilidade aos sinais sociais e ao impacto do próprio comportamento."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambos os conceitos determinam que o líder deve agir exatamente da mesma maneira rígida em reuniões estratégicas, crises ou conversas individuais.",
+        "correta": false,
+        "diagnostico": "Incorreto: agir de modo rígido e invariável é o oposto de flexibilidade e automonitoramento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O **automonitoramento** funciona como o termostato inteligente de um ambiente: primeiro ele lê a temperatura da sala (percebe se a equipe está tensa, confusa ou confiante) e, em seguida, a **flexibilidade comportamental** ajusta a potência do ar (adapta o tom e a postura do líder).",
+      "analise_correta": "Essas capacidades ajudam a explicar por que algumas pessoas conseguem transitar bem entre diferentes grupos e desafios.",
+      "distratores": {
+        "B": "Incorreto: flexibilidade não é falta de caráter, nem automonitoramento é vigilância eletrônica.",
+        "C": "Incorreto: o automonitoramento é justamente a alta sensibilidade aos sinais sociais e ao impacto do próprio comportamento.",
+        "D": "Incorreto: agir de modo rígido e invariável é o oposto de flexibilidade e automonitoramento."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-016",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Emergência da Liderança vs. Eficácia da Liderança",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ao analisar o papel do automonitoramento e das situações inesperadas, por que é fundamental distinguir **emergência da liderança** de **eficácia da liderança**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a **emergência** refere-se ao processo de uma pessoa surgir e ser inicialmente reconhecida como referência pelo grupo (algo que o automonitoramento costuma favorecer), enquanto a **eficácia** refere-se aos **resultados reais e sustentáveis** alcançados pela atuação desse líder ao longo do tempo (o que não é garantido apenas pelo automonitoramento).",
+        "correta": true,
+        "diagnostico": "Correto: saber ler o grupo e se posicionar bem ajuda alguém a *emergir* como líder, mas ser um líder *eficaz* exige entregar resultados consistentes, manter a confiança e tomar boas decisões técnicas e humanas."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque emergência da liderança significa apenas trabalhar em prontos-socorros hospitalares.",
+        "correta": false,
+        "diagnostico": "Incorreto: em teoria da liderança, \"emergência\" vem do verbo *emergir* (surgir, despontar como líder perante o grupo)."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque toda pessoa que emerge rapidamente como líder em uma reunião é obrigatoriamente eficaz em longo prazo.",
+        "correta": false,
+        "diagnostico": "Incorreto: alguém pode causar ótima impressão inicial e emergir como líder, mas falhar na condução prática do trabalho (baixa eficácia)."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque eficácia significa apenas falar alto, independentemente de a equipe atingir os objetivos.",
+        "correta": false,
+        "diagnostico": "Incorreto: eficácia está ligada aos resultados concretos da liderança no contexto."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Destacar-se na entrevista e ser escolhido capitão do time é a **emergência da liderança**; fazer o time jogar unido e vencer o campeonato ao longo da temporada é a **eficácia da liderança**.",
+      "analise_correta": "Essa distinção evita confundir carisma ou habilidade social de autopresentação com competência efetiva de liderança.",
+      "distratores": {
+        "B": "Incorreto: em teoria da liderança, \"emergência\" vem do verbo *emergir* (surgir, despontar como líder perante o grupo).",
+        "C": "Incorreto: alguém pode causar ótima impressão inicial e emergir como líder, mas falhar na condução prática do trabalho (baixa eficácia).",
+        "D": "Incorreto: eficácia está ligada aos resultados concretos da liderança no contexto."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-017",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Diante de Situações Inesperadas e Crises",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Como situações inesperadas ou momentos de crise demonstram os limites da ideia de que a liderança depende apenas de cargos formais ou traços fixos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Diante de imprevistos em que as rotinas habituais deixam de funcionar, membros que até então não ocupavam posição de destaque podem demonstrar leitura rápida do cenário, equilíbrio e iniciativa, **emergindo como líderes reconhecidos pelo grupo** naquele contexto específico.",
+        "correta": true,
+        "diagnostico": "Correto: mudanças bruscas no contexto alteram as necessidades do grupo e abrem espaço para que novas referências de influência surjam conforme as competências exigidas pelo momento."
+      },
+      {
+        "letra": "B",
+        "texto": "Em situações de crise, as pessoas sempre aguardam passivamente que apenas o diretor mais antigo do organograma resolva tudo sozinho.",
+        "correta": false,
+        "diagnostico": "Incorreto: quando a autoridade formal falha ou não detém o conhecimento necessário na crise, lideranças emergentes frequentemente assumem a coordenação."
+      },
+      {
+        "letra": "C",
+        "texto": "Crises provam que o contexto não tem nenhuma importância para o surgimento de líderes.",
+        "correta": false,
+        "diagnostico": "Incorreto: crises mostram justamente a força decisiva do contexto sobre quem emerge como líder."
+      },
+      {
+        "letra": "D",
+        "texto": "Situações inesperadas impedem qualquer forma de cooperação ou liderança entre seres humanos.",
+        "correta": false,
+        "diagnostico": "Incorreto: momentos críticos frequentemente despertam forte coesão e liderança emergente (como estudado no caso dos mineiros chilenos)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em um voo tranquilo, ninguém nota o passageiro sentado na fileira 12; mas se ocorre uma emergência médica a bordo e ele é um socorrista experiente que organiza o atendimento com calma, naquele momento todos passam a seguir suas instruções — a situação fez emergir a liderança.",
+      "analise_correta": "Isso mostra a transição natural da abordagem dos traços para as abordagens comportamental e situacional.",
+      "distratores": {
+        "B": "Incorreto: quando a autoridade formal falha ou não detém o conhecimento necessário na crise, lideranças emergentes frequentemente assumem a coordenação.",
+        "C": "Incorreto: crises mostram justamente a força decisiva do contexto sobre quem emerge como líder.",
+        "D": "Incorreto: momentos críticos frequentemente despertam forte coesão e liderança emergente (como estudado no caso dos mineiros chilenos)."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-018",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Riscos do Excesso de Automonitoramento sem Coerência de Valores",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Embora o automonitoramento favoreça a adaptação social e a emergência da liderança, qual ressalva conceitual deve ser feita sobre o seu uso isolado?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Adaptar o comportamento ao contexto é positivo quando mantém integridade e propósito, mas se o ajuste for apenas **camaleônico ou oportunista** para agradar plateias sem consistência de valores e entregas, a confiança dos seguidores pode se deteriorar e comprometer a eficácia.",
+        "correta": true,
+        "diagnostico": "Correto: a flexibilidade saudável ajusta a forma de comunicar e conduzir conforme a necessidade da situação, mas preserva a autenticidade e a responsabilidade pelos resultados."
+      },
+      {
+        "letra": "B",
+        "texto": "Quanto mais o líder fingir ser uma pessoa diferente a cada hora, maior será a confiança de longo prazo da equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: incoerência percebida pela equipe destrói a credibilidade (influência idealizada/confiança)."
+      },
+      {
+        "letra": "C",
+        "texto": "O automonitoramento dispensa qualquer conhecimento técnico ou entrega de resultados.",
+        "correta": false,
+        "diagnostico": "Incorreto: como visto, automonitoramento ajuda na emergência, mas não garante eficácia sem competência e resultado."
+      },
+      {
+        "letra": "D",
+        "texto": "O automonitoramento é uma falha grave de caráter que deve ser totalmente eliminada do ambiente profissional.",
+        "correta": false,
+        "diagnostico": "Incorreto: em doses equilibradas, ler o contexto social é uma competência interpessoal valiosa."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ser flexível é como falar o idioma que o seu interlocutor entende sem mudar a verdade do que você tem a dizer; se a pessoa muda não só o idioma, mas promete coisas opostas para cada grupo, deixa de ser adaptação e vira falta de confiabilidade.",
+      "analise_correta": "Por isso, o estudo da liderança avança para observar padrões consistentes de comportamento e relação com os liderados.",
+      "distratores": {
+        "B": "Incorreto: incoerência percebida pela equipe destrói a credibilidade (influência idealizada/confiança).",
+        "C": "Incorreto: como visto, automonitoramento ajuda na emergência, mas não garante eficácia sem competência e resultado.",
+        "D": "Incorreto: em doses equilibradas, ler o contexto social é uma competência interpessoal valiosa."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-019",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Síntese da Superação da Abordagem Puramente Inatista",
+    "artigo_origem": "03. Flexibilidade e automonitoramento na liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é a principal conclusão que encerra a discussão sobre personalidade, traços e automonitoramento nos três primeiros artigos da disciplina?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Características individuais e capacidade de adaptação social influenciam o surgimento de líderes, mas **não determinam de forma absoluta quem pode liderar nem garantem eficácia**, abrindo caminho para estudar **o que o líder faz (comportamento)** e **em que condições atua (contexto)**.",
+        "correta": true,
+        "diagnostico": "Correto: a insuficiência do inatismo desloca o eixo da pergunta científica de *\"quem o líder é ao nascer\"* para *\"como o líder se comporta e interage com seu contexto\"*."
+      },
+      {
+        "letra": "B",
+        "texto": "A conclusão de que apenas a genética explica 100% do sucesso gerencial nas organizações.",
+        "correta": false,
+        "diagnostico": "Incorreto: o determinismo biológico/genético foi justamente refutado."
+      },
+      {
+        "letra": "C",
+        "texto": "A conclusão de que é impossível treinar ou desenvolver habilidades de liderança em adultos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a possibilidade de aprendizagem e desenvolvimento torna-se um pilar central a partir da abordagem comportamental."
+      },
+      {
+        "letra": "D",
+        "texto": "A conclusão de que seguidores não têm nenhum papel na relação de liderança.",
+        "correta": false,
+        "diagnostico": "Incorreto: os seguidores são parte constitutiva da relação de liderança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em vez de procurar uma \"pedra filosofal\" escondida dentro da personalidade de poucas pessoas iluminadas, a ciência da liderança percebeu que precisava olhar para a **ação prática** no palco do trabalho e para a **interação com a equipe**.",
+      "analise_correta": "Essa virada inaugura a Abordagem Comportamental desenvolvida a partir da década de 1950.",
+      "distratores": {
+        "B": "Incorreto: o determinismo biológico/genético foi justamente refutado.",
+        "C": "Incorreto: a possibilidade de aprendizagem e desenvolvimento torna-se um pilar central a partir da abordagem comportamental.",
+        "D": "Incorreto: os seguidores são parte constitutiva da relação de liderança."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/03. Flexibilidade e automonitoramento na liderança.md"
+    }
+  },
+  {
+    "id": "LID-020",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Mudança de Paradigma na Abordagem Comportamental: Ações Observáveis e Aprendizagem",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual mudança fundamental de foco a **Abordagem Comportamental** (desenvolvida a partir dos anos 1950) trouxe em relação à Teoria dos Traços, e qual foi sua principal implicação prática para as organizações?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Deslocou o foco de atributos internos inatos para as **ações e padrões de comportamento observáveis** que o líder realiza na prática; sua grande implicação é que, se a liderança baseia-se em comportamentos, **ela pode ser aprendida, treinada e desenvolvida**.",
+        "correta": true,
+        "diagnostico": "Correto: ao focar no que o líder *faz* (como decide, como orienta, como escuta), a abordagem comportamental democratizou o desenvolvimento de líderes por meio da educação e do treinamento."
+      },
+      {
+        "letra": "B",
+        "texto": "Passou a exigir exames de DNA antes de contratar qualquer gerente.",
+        "correta": false,
+        "diagnostico": "Incorreto: oposto total da perspectiva comportamental."
+      },
+      {
+        "letra": "C",
+        "texto": "Concluiu que o comportamento do líder não tem nenhuma influência sobre o clima ou o desempenho da equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: a abordagem investiga justamente como diferentes estilos comportamentais afetam a equipe e a eficácia."
+      },
+      {
+        "letra": "D",
+        "texto": "Proibiu programas de treinamento e desenvolvimento gerencial nas empresas.",
+        "correta": false,
+        "diagnostico": "Incorreto: ela foi a grande impulsionadora dos programas de treinamento gerencial."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se a Teoria dos Traços achava que liderar era como \"ter olhos azuis\" (ou você nasce com eles ou não tem jeito), a **Abordagem Comportamental** mostrou que liderar é como \"saber nadar ou cozinhar\": é um conjunto de práticas observáveis que qualquer pessoa dedicada pode treinar e aperfeiçoar.",
+      "analise_correta": "Essa perspectiva fundamenta toda a educação executiva e o desenvolvimento de competências comportamentais (*soft skills*).",
+      "distratores": {
+        "B": "Incorreto: oposto total da perspectiva comportamental.",
+        "C": "Incorreto: a abordagem investiga justamente como diferentes estilos comportamentais afetam a equipe e a eficácia.",
+        "D": "Incorreto: ela foi a grande impulsionadora dos programas de treinamento gerencial."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-021",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Estilo Autoritário vs. Estilo Democrático de Liderança",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Na classificação clássica dos estilos comportamentais quanto ao modo de conduzir o grupo e tomar decisões, o que distingue o **estilo autoritário** do **estilo democrático**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **estilo autoritário** caracteriza-se pela centralização das decisões no líder, imposição de ordens e controle rígido com pouca abertura a questionamentos; o **estilo democrático** incentiva a participação ativa do grupo, o debate de ideias, a escuta de sugestões e o compartilhamento de responsabilidades.",
+        "correta": true,
+        "diagnostico": "Correto: a diferença central reside em como o poder decisório e a comunicação fluem entre o líder e o grupo (centralização impositiva vs. participação e diálogo)."
+      },
+      {
+        "letra": "B",
+        "texto": "O estilo democrático significa ausência total de líder e abandono da equipe, enquanto o autoritário significa consultar todos os funcionários por votação secreta.",
+        "correta": false,
+        "diagnostico": "Incorreto: ausência de direção seria omissão (*laissez-faire*), não liderança democrática; e votação consultiva não é estilo autoritário."
+      },
+      {
+        "letra": "C",
+        "texto": "O estilo autoritário nunca define tarefas e o estilo democrático proíbe os membros da equipe de falarem nas reuniões.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte completamente as definições."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe diferença comportamental entre os dois estilos na rotina de trabalho.",
+        "correta": false,
+        "diagnostico": "Incorreto: produzem climas organizacionais, níveis de autonomia e reações muito distintos na equipe."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O líder **autoritário** age como um diretor de cinema que dita cada milímetro do movimento e não aceita sugestões do elenco; o líder **democrático** apresenta a cena que precisa ser construída, ouve as contribuições dos atores e constrói uma solução melhor com a inteligência coletiva.",
+      "analise_correta": "Embora o estilo autoritário possa gerar velocidade imediata sob supervisão, o estilo democrático tende a favorecer maior comprometimento, criatividade e qualidade nas relações.",
+      "distratores": {
+        "B": "Incorreto: ausência de direção seria omissão (*laissez-faire*), não liderança democrática; e votação consultiva não é estilo autoritário.",
+        "C": "Incorreto: inverte completamente as definições.",
+        "D": "Incorreto: produzem climas organizacionais, níveis de autonomia e reações muito distintos na equipe."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-022",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "As Duas Dimensões Clássicas: Orientação para Tarefas vs. Orientação para Pessoas",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Os estudos comportamentais (como os das universidades de Ohio e Michigan) identificaram duas grandes dimensões ou focos de atuação do líder. Como se definem a **orientação para tarefas (ou produção)** e a **orientação para pessoas (ou relações)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **orientação para tarefas** concentra-se na organização do trabalho, definição de metas, prazos, padrões de execução e alcance de resultados; a **orientação para pessoas** volta-se à construção de confiança mútua, respeito, escuta das necessidades, bem-estar e apoio ao desenvolvimento dos membros da equipe.",
+        "correta": true,
+        "diagnostico": "Correto: uma dimensão estrutura o trabalho e os objetivos produtivos (tarefas), enquanto a outra cuida do tecido humano e relacional da equipe (pessoas)."
+      },
+      {
+        "letra": "B",
+        "texto": "Orientação para tarefas significa demitir funcionários diariamente, e orientação para pessoas significa cancelar todas as metas de produção da empresa.",
+        "correta": false,
+        "diagnostico": "Incorreto: focar em tarefas é organizar processos e metas, não demitir arbitrariamente; focar em pessoas é apoiar a equipe para trabalhar bem, não abandonar resultados."
+      },
+      {
+        "letra": "C",
+        "texto": "São dimensões mutuamente exclusivas em qualquer modelo: se um líder tiver 1% de atenção a tarefas, ele terá obrigatoriamente 0% de atenção a pessoas.",
+        "correta": false,
+        "diagnostico": "Incorreto: um mesmo líder pode (e como veremos no Grid Gerencial, deve buscar) combinar atenção às tarefas e atenção às pessoas."
+      },
+      {
+        "letra": "D",
+        "texto": "Orientação para pessoas aplica-se apenas a clubes recreativos e nunca a ambientes profissionais.",
+        "correta": false,
+        "diagnostico": "Incorreto: o cuidado com as relações de trabalho é determinante para o desempenho organizacional sustentável."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em uma expedição de montanhismo, a **orientação para tarefas** é conferir o mapa, o cronograma de subida e as cordas; a **orientação para pessoas** é cuidar da hidratação, do ânimo e da segurança de cada alpinista. Sem mapa o grupo se perde; sem cuidar dos alpinistas ninguém chega ao topo.",
+      "analise_correta": "A combinação dessas duas dimensões deu origem diretamente à matriz de Blake e Mouton estudada no artigo 05.",
+      "distratores": {
+        "B": "Incorreto: focar em tarefas é organizar processos e metas, não demitir arbitrariamente; focar em pessoas é apoiar a equipe para trabalhar bem, não abandonar resultados.",
+        "C": "Incorreto: um mesmo líder pode (e como veremos no Grid Gerencial, deve buscar) combinar atenção às tarefas e atenção às pessoas.",
+        "D": "Incorreto: o cuidado com as relações de trabalho é determinante para o desempenho organizacional sustentável."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-023",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Efeitos do Estilo Autoritário e do Estilo Democrático sobre a Equipe",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Ao comparar as consequências práticas dos estilos **autoritário** e **democrático** sobre o funcionamento das equipes, o que os estudos comportamentais observaram?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Sob liderança estritamente **autoritária**, a produção pode ocorrer enquanto o líder está presente vigiando, mas tende a gerar maior tensão, submissão ou hostilidade latente e queda de iniciativa quando ele se ausenta; já o estilo **democrático** estimula maior engajamento autônomo, cooperação e satisfação do grupo.",
+        "correta": true,
+        "diagnostico": "Correto: a centralização excessiva inibe a autonomia e cria dependência da vigilância, ao passo que a participação constrói senso de pertencimento e corresponsabilidade."
+      },
+      {
+        "letra": "B",
+        "texto": "O estilo autoritário é o único que desenvolve a criatividade e a autonomia de longo prazo dos liderados.",
+        "correta": false,
+        "diagnostico": "Incorreto: o autoritarismo reprime o questionamento e a autonomia criativa."
+      },
+      {
+        "letra": "C",
+        "texto": "O estilo democrático impede que qualquer tarefa técnica seja concluída no prazo.",
+        "correta": false,
+        "diagnostico": "Incorreto: equipes democráticas bem coordenadas atingem altos índices de qualidade e compromisso com prazos."
+      },
+      {
+        "letra": "D",
+        "texto": "Equipes submetidas ao autoritarismo apresentam zero estresse e altíssima iniciativa espontânea.",
+        "correta": false,
+        "diagnostico": "Incorreto: pesquisas clássicas (como as de Kurt Lewin) mostraram maior tensão e agressividade ou apatia em grupos sob comando autocrático."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando o professor autoritário sai da sala de aula, o silêncio forçado vira bagunça imediata porque a regra vinha só do medo; quando o professor democrático sai por cinco minutos, a turma continua trabalhando no projeto porque entendeu o propósito e se sente dona da atividade.",
+      "analise_correta": "Ainda assim, a eficácia de cada comportamento também dependerá das urgências e características da situação.",
+      "distratores": {
+        "B": "Incorreto: o autoritarismo reprime o questionamento e a autonomia criativa.",
+        "C": "Incorreto: equipes democráticas bem coordenadas atingem altos índices de qualidade e compromisso com prazos.",
+        "D": "Incorreto: pesquisas clássicas (como as de Kurt Lewin) mostraram maior tensão e agressividade ou apatia em grupos sob comando autocrático."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-024",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Compatibilidade entre Foco em Tarefas e Foco em Pessoas",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual erro de interpretação deve ser evitado ao estudar as dimensões de **orientação para tarefas** e **orientação para pessoas**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Deve-se evitar tratá-las como polos opostos de uma mesma linha (onde subir um obrigaria a zerar o outro); na verdade, são **duas dimensões independentes**, permitindo que um líder apresente simultaneamente alto compromisso com os processos/resultados e alto respeito/apoio às pessoas.",
+        "correta": true,
+        "diagnostico": "Correto: transformar as duas dimensões em eixos ortogonais (independentes) foi o grande passo que permitiu mapear estilos que integram produção e pessoas."
+      },
+      {
+        "letra": "B",
+        "texto": "Deve-se escolher apenas uma dimensão para toda a vida profissional e ignorar completamente a outra.",
+        "correta": false,
+        "diagnostico": "Incorreto: negligenciar qualquer uma das duas dimensões gera desequilíbrios graves de gestão."
+      },
+      {
+        "letra": "C",
+        "texto": "A orientação para tarefas só pode ser exercida por máquinas e a orientação para pessoas só por psicólogos.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambas compõem a atuação cotidiana de qualquer líder humano."
+      },
+      {
+        "letra": "D",
+        "texto": "Tratar bem a equipe sempre reduz a produtividade técnica da organização.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambientes psicologicamente seguros e apoiadores sustentam alta performance técnica."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Pense no volume da música (tarefas) e na equalização dos graves/agudos (pessoas): não são um botão só onde aumentar um diminui o outro; são dois controles separados na mesa de som que você pode ajustar em alto nível ao mesmo tempo.",
+      "analise_correta": "É exatamente essa representação em dois eixos independentes (X e Y) que estrutura o Grid Gerencial de Blake e Mouton.",
+      "distratores": {
+        "B": "Incorreto: negligenciar qualquer uma das duas dimensões gera desequilíbrios graves de gestão.",
+        "C": "Incorreto: ambas compõem a atuação cotidiana de qualquer líder humano.",
+        "D": "Incorreto: ambientes psicologicamente seguros e apoiadores sustentam alta performance técnica."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-025",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Importância do Feedback e do Treinamento Comportamental",
+    "artigo_origem": "04. Abordagem comportamental e estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Se a liderança envolve comportamentos observáveis que podem ser aprendidos, qual é o papel do **feedback** e da **autoavaliação** no desenvolvimento de um líder?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Permitem que o profissional tome consciência de como suas ações cotidianas (modo de decidir, delegar, cobrar e acolher) estão impactando a equipe, possibilitando corrigir excessos autoritários ou omissões e desenvolver novas práticas.",
+        "correta": true,
+        "diagnostico": "Correto: o ciclo de observar comportamentos, receber feedback da equipe e praticar novos modos de agir é o motor da aprendizagem gerencial."
+      },
+      {
+        "letra": "B",
+        "texto": "Não têm utilidade, pois o comportamento humano no trabalho é imutável após os 18 anos de idade.",
+        "correta": false,
+        "diagnostico": "Incorreto: a plasticidade comportamental e o aprendizado contínuo acompanham toda a vida adulta."
+      },
+      {
+        "letra": "C",
+        "texto": "Servem apenas para punir liderados e nunca para aperfeiçoar a conduta do próprio líder.",
+        "correta": false,
+        "diagnostico": "Incorreto: o feedback de mão dupla (inclusive dos liderados para o líder) é vital para alinhar autopercepção e realidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituem a necessidade de agir de forma coerente no dia a dia.",
+        "correta": false,
+        "diagnostico": "Incorreto: o diagnóstico só gera transformação quando acompanhado de mudança prática de conduta."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O feedback para o líder funciona como o espelho retrovisor e os sensores de um carro: sem eles, o motorista acha que está dirigindo perfeitamente no centro da faixa enquanto, na verdade, está fechando os carros ao lado.",
+      "analise_correta": "Como mostra o estudo complementar de Versiani et al. (2017), a percepção que o gestor tem de si mesmo frequentemente diverge da percepção de seus liderados.",
+      "distratores": {
+        "B": "Incorreto: a plasticidade comportamental e o aprendizado contínuo acompanham toda a vida adulta.",
+        "C": "Incorreto: o feedback de mão dupla (inclusive dos liderados para o líder) é vital para alinhar autopercepção e realidade.",
+        "D": "Incorreto: o diagnóstico só gera transformação quando acompanhado de mudança prática de conduta."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/04. Abordagem comportamental e estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-026",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Estrutura da Matriz 9x9 do Grid Gerencial de Blake e Mouton",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Como é estruturado o **Grid Gerencial** (ou Grade Gerencial) criado por **Robert R. Blake** e **Jane S. Mouton**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "É uma matriz composta por dois eixos graduados de **1 a 9** — o eixo horizontal representando a **orientação para a produção (resultados/tarefas)** e o eixo vertical representando a **orientação para as pessoas (relacionamentos)** —, gerando **81 posições possíveis**, das quais cinco estilos principais são destacados nos extremos e no centro.",
+        "correta": true,
+        "diagnostico": "Correto: ao cruzar 9 níveis de preocupação com a produção (eixo X) e 9 níveis de preocupação com as pessoas (eixo Y), a matriz forma 81 combinações ($9 \\times 9 = 81$) e destaca os marcos `(1,1)`, `(1,9)`, `(9,1)`, `(5,5)` e `(9,9)`."
+      },
+      {
+        "letra": "B",
+        "texto": "É uma tabela de 3 colunas que mede apenas o salário do líder, a idade da empresa e o tamanho do escritório.",
+        "correta": false,
+        "diagnostico": "Incorreto: o modelo avalia orientações comportamentais para produção e pessoas, não variáveis demográficas ou salariais."
+      },
+      {
+        "letra": "C",
+        "texto": "É um gráfico circular que classifica os líderes conforme os quatro elementos da natureza.",
+        "correta": false,
+        "diagnostico": "Incorreto: não tem relação com tipologias esotéricas."
+      },
+      {
+        "letra": "D",
+        "texto": "É uma escala de 1 a 4 que mede exclusivamente a maturidade técnica do estagiário.",
+        "correta": false,
+        "diagnostico": "Incorreto: a escala de maturidade M1 a M4 pertence à Liderança Situacional de Hersey e Blanchard."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Imagine um mapa de batalha naval de 9 colunas por 9 linhas: quanto mais você anda para a direita, mais foca em entregar metas e produção; quanto mais você sobe, mais foca em apoiar e valorizar as pessoas da equipe.",
+      "analise_correta": "Na notação `(X,Y)` do Grid, o primeiro número indica sempre a orientação para a **produção** e o segundo número indica a orientação para as **pessoas**.",
+      "distratores": {
+        "B": "Incorreto: o modelo avalia orientações comportamentais para produção e pessoas, não variáveis demográficas ou salariais.",
+        "C": "Incorreto: não tem relação com tipologias esotéricas.",
+        "D": "Incorreto: a escala de maturidade M1 a M4 pertence à Liderança Situacional de Hersey e Blanchard."
       },
       "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-027",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Os Estilos (1,1) Gerência Empobrecida e (1,9) Clube Campestre",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "No Grid Gerencial de Blake e Mouton, o que caracterizam os estilos **`(1,1) Gerência empobrecida`** e **`(1,9) Gerência de clube campestre`**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na **Gerência empobrecida `(1,1)`**, há baixa preocupação tanto com a produção quanto com as pessoas (postura apática, mínimo esforço apenas para manter-se no cargo, evitando decisões e conflitos); na **Gerência de clube campestre `(1,9)`**, há baixa preocupação com a produção e altíssima preocupação com as pessoas (foco em manter um clima agradável e amistoso a qualquer custo, evitando cobranças que possam gerar desconforto).",
+        "correta": true,
+        "diagnostico": "Correto: `(1,1)` representa a omissão gerencial nas duas dimensões, enquanto `(1,9)` prioriza o conforto social e a harmonia superficial em detrimento das entregas produtivas."
+      },
+      {
+        "letra": "B",
+        "texto": "O estilo `(1,1)` é o líder mais produtivo e exigente da empresa, enquanto o `(1,9)` demite funcionários que conversam no café.",
+        "correta": false,
+        "diagnostico": "Incorreto: descreve o oposto de ambos os estilos."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos os estilos exigem produção máxima com zero tolerância a erros.",
+        "correta": false,
+        "diagnostico": "Incorreto: em ambos, a orientação para a produção é mínima (nível 1)."
+      },
+      {
+        "letra": "D",
+        "texto": "O estilo `(1,9)` significa 9 pontos para produção e 1 ponto para pessoas.",
+        "correta": false,
+        "diagnostico": "Incorreto:9 pontos para produção e 1 para pessoas é o estilo `(9,1) Autoridade e obediência`."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O gestor **`(1,1)`** é o \"piloto automático desligado\" que só repassa recados burocráticos para não se comprometer; já o gestor **`(1,9)`** transforma o setor num \"clube de amigos\" onde todo mundo se sente acolhido e ninguém é contrariado, mas os projetos atrasam porque ninguém cobra resultado.",
+      "analise_correta": "Observar como cada estilo lida com decisões, conflitos e feedback permite diagnosticar rapidamente disfunções na gestão.",
+      "distratores": {
+        "B": "Incorreto: descreve o oposto de ambos os estilos.",
+        "C": "Incorreto: em ambos, a orientação para a produção é mínima (nível 1).",
+        "D": "Incorreto:9 pontos para produção e 1 para pessoas é o estilo `(9,1) Autoridade e obediência`."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-028",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Os Estilos (9,1) Autoridade e Obediência e (5,5) Gerência de Meio-Termo",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Como se comportam os líderes nos estilos **`(9,1) Gerência com autoridade e obediência`** e **`(5,5) Gerência de meio-termo`** no Grid de Blake e Mouton?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O estilo **`(9,1)`** tem máxima orientação para a produção e mínima para as pessoas (concentra decisões, trata a equipe como meros executores, reprime conflitos com autoridade e dá feedback apenas corretivo/punitivo); o estilo **`(5,5)`** busca um equilíbrio moderado e acomodado nas duas dimensões (negocia concessões, evita extremos e contenta-se com um desempenho mediano e seguro).",
+        "correta": true,
+        "diagnostico": "Correto: `(9,1)` sacrifica o fator humano em nome da eficiência imediata e da obediência, enquanto `(5,5)` opera na lógica do \"bom o bastante\", cedendo um pouco na meta e um pouco no clima para manter a estabilidade."
+      },
+      {
+        "letra": "B",
+        "texto": "O estilo `(9,1)` prioriza exclusivamente o lazer da equipe e o `(5,5)` exige perfeição máxima em tudo.",
+        "correta": false,
+        "diagnostico": "Incorreto: `(9,1)` é implacável com a produção e indiferente às necessidades humanas."
+      },
+      {
+        "letra": "C",
+        "texto": "O estilo `(5,5)` é considerado por Blake e Mouton superior ao estilo `(9,9)`.",
+        "correta": false,
+        "diagnostico": "Incorreto: para os autores, o ideal de referência é o `(9,9)`, enquanto o `(5,5)` estaciona na mediocridade confortável."
+      },
+      {
+        "letra": "D",
+        "texto": "O estilo `(9,1)` estimula o debate aberto e compartilha todas as decisões estratégicas com os liderados.",
+        "correta": false,
+        "diagnostico": "Incorreto: quem compartilha decisões e debate abertamente buscando excelência é o estilo `(9,9)`."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O gestor **`(9,1)`** é o \"capataz de fábrica antiga\": para ele, pessoas são peças de máquina que devem produzir sem reclamar. Já o gestor **`(5,5)`** é o \"político do meio-termo\": não aperta demais para ninguém reclamar, nem solta demais para a diretoria não brigar, entregando sempre resultados nota 5.",
+      "analise_correta": "No curto prazo o `(9,1)` pode exibir picos de produção, mas gera desgaste severo, ressentimento e queda de qualidade no médio prazo.",
+      "distratores": {
+        "B": "Incorreto: `(9,1)` é implacável com a produção e indiferente às necessidades humanas.",
+        "C": "Incorreto: para os autores, o ideal de referência é o `(9,9)`, enquanto o `(5,5)` estaciona na mediocridade confortável.",
+        "D": "Incorreto: quem compartilha decisões e debate abertamente buscando excelência é o estilo `(9,9)`."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-029",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "O Estilo (9,9) Gerência de Equipe como Referência Ideal de Blake e Mouton",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que **Blake e Mouton** defendiam o estilo **`(9,9) Gerência de equipe`** como o modelo de referência para o treinamento e desenvolvimento de gestores?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o estilo **`(9,9)`** integra alta orientação para a produção com alta orientação para as pessoas, partindo da premissa de que resultados de excelência são alcançados por meio do comprometimento compartilhado, da confiança mútua, do enfrentamento construtivo de conflitos e do feedback aberto.",
+        "correta": true,
+        "diagnostico": "Correto: na Gerência de Equipe `(9,9)`, as necessidades das pessoas e as metas da organização não são vistas como inimigas, mas como aliadas: pessoas respeitadas e envolvidas nas decisões produzem melhor."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque no estilo `(9,9)` o gestor não precisa se preocupar com metas nem com o bem-estar da equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: isso descreveria o `(1,1)`."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o estilo `(9,9)` proíbe qualquer conversa entre os membros da equipe para economizar tempo.",
+        "correta": false,
+        "diagnostico": "Incorreto: a comunicação participativa é um pilar central do `(9,9)`."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o estilo `(9,9)` esconde os problemas debaixo do tapete para evitar discussões.",
+        "correta": false,
+        "diagnostico": "Incorreto: esconder conflitos é típico do `(1,9)` ou `(1,1)`; o `(9,9)` enfrenta divergências abertamente buscando compreender as causas e construir consenso."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O líder **`(9,9)`** é como o técnico de uma seleção campeã: ele exige o mais alto nível tático e de vitória (produção 9), mas faz isso desenvolvendo cada atleta, ouvindo o grupo e criando um espírito de equipe onde todos têm orgulho de vestir a camisa (pessoas 9).",
+      "analise_correta": "Blake e Mouton estruturaram seminários de desenvolvimento gerencial justamente para ajudar líderes a diagnosticarem sua posição atual no Grid e caminharem rumo ao `(9,9)`.",
+      "distratores": {
+        "B": "Incorreto: isso descreveria o `(1,1)`.",
+        "C": "Incorreto: a comunicação participativa é um pilar central do `(9,9)`.",
+        "D": "Incorreto: esconder conflitos é típico do `(1,9)` ou `(1,1)`; o `(9,9)` enfrenta divergências abertamente buscando compreender as causas e construir consenso."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-030",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Decisões, Conflitos e Feedback nos Cinco Estilos do Grid",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "dificil",
+    "enunciado": "Compare como os cinco estilos do Grid Gerencial lidam especificamente com **conflitos** dentro da equipe e assinale a alternativa correta:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O `(1,1)` **ignora/se omite** diante do conflito; o `(1,9)` **abafa/suaviza** o conflito para não estragar a harmonia; o `(9,1)` **suprime/esmaga** o conflito usando a autoridade; o `(5,5)` **negocia um meio-termo** superficial para acomodar os lados; e o `(9,9)` **enfrenta e examina abertamente** as causas do conflito para chegar a uma solução conjunta.",
+        "correta": true,
+        "diagnostico": "Correto: a postura diante do conflito (omissão, suavização, supressão autoritária, acomodação negociada ou resolução integrativa) é um dos melhores indicadores práticos para identificar o estilo de um gestor no Grid."
+      },
+      {
+        "letra": "B",
+        "texto": "Todos os cinco estilos resolvem conflitos demitindo imediatamente os envolvidos.",
+        "correta": false,
+        "diagnostico": "Incorreto: cada estilo reage de acordo com sua combinação de foco em produção e pessoas."
+      },
+      {
+        "letra": "C",
+        "texto": "O `(9,1)` pede desculpas e desiste da meta, enquanto o `(1,9)` impõe punições severas.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte os comportamentos do `(9,1)` e do `(1,9)`."
+      },
+      {
+        "letra": "D",
+        "texto": "O `(9,9)` proíbe que qualquer divergência de opinião seja mencionada em reuniões.",
+        "correta": false,
+        "diagnostico": "Incorreto: no `(9,9)`, divergências técnicas são vistas como oportunidade de aprendizado e melhoria da decisão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Diante de uma discussão na equipe: o `(1,1)` sai da sala; o `(1,9)` serve um café e pede \"gente, vamos mudar de assunto para ninguém ficar triste\"; o `(9,1)` bate na mesa e diz \"quem manda sou eu, calem-se\"; o `(5,5)` divide a diferença pela metade sem ver quem tinha razão; e o `(9,9)` coloca os argumentos no quadro e resolve a raiz do problema junto com o time.",
+      "analise_correta": "Essa mesma coerência aparece na tomada de decisão e na forma de dar feedback em cada quadrante do Grid.",
+      "distratores": {
+        "B": "Incorreto: cada estilo reage de acordo com sua combinação de foco em produção e pessoas.",
+        "C": "Incorreto: inverte os comportamentos do `(9,1)` e do `(1,9)`.",
+        "D": "Incorreto: no `(9,9)`, divergências técnicas são vistas como oportunidade de aprendizado e melhoria da decisão."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-031",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Críticas e Limites do Grid Gerencial: O Papel das Contingências",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Apesar da enorme utilidade didática do Grid Gerencial de Blake e Mouton, qual foi a principal **crítica científica** dirigida à defesa do estilo `(9,9)` como solução universalmente ideal?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Pesquisas posteriores apontaram que o Grid **dá pouca atenção às contingências (ao contexto, à natureza da tarefa e à maturidade dos liderados)**, questionando se um único estilo — mesmo o `(9,9)` — seria igualmente eficaz em absolutamente todas as situações (como emergências agudas ou equipes totalmente inexperientes).",
+        "correta": true,
+        "diagnostico": "Correto: embora o `(9,9)` seja uma excelente referência de desenvolvimento, a eficácia real da liderança também sofre influência das circunstâncias e das características dos liderados."
+      },
+      {
+        "letra": "B",
+        "texto": "A crítica de que a matriz deveria ter apenas 2 posições em vez de 81.",
+        "correta": false,
+        "diagnostico": "Incorreto: a crítica não é aritmética sobre o número 81, mas conceitual sobre o universalismo do estilo ideal."
+      },
+      {
+        "letra": "C",
+        "texto": "A descoberta de que o estilo `(1,1)` Gerência Empobrecida é na verdade o mais eficaz em todas as empresas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o estilo `(1,1)` é consensualmente ineficaz."
+      },
+      {
+        "letra": "D",
+        "texto": "A crítica de que os gestores não devem se importar nem com produção nem com pessoas.",
+        "correta": false,
+        "diagnostico": "Incorreto: produção e pessoas continuam fundamentais, mas sua dosagem de direção e apoio precisa considerar o contexto."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um carro esportivo de alta performance `(9,9)` é incrível na estrada asfaltada, mas se você precisar atravessar um lamaçal fechado ou ensinar alguém na primeira aula de direção no estacionamento, precisará ajustar a marcha às condições do terreno (**contingências**).",
+      "analise_correta": "Essa limitação do Grid abriu a ponte direta para as teorias Contingencial (Fiedler) e Situacional (Hersey e Blanchard) estudadas no artigo 06.",
+      "distratores": {
+        "B": "Incorreto: a crítica não é aritmética sobre o número 81, mas conceitual sobre o universalismo do estilo ideal.",
+        "C": "Incorreto: o estilo `(1,1)` é consensualmente ineficaz.",
+        "D": "Incorreto: produção e pessoas continuam fundamentais, mas sua dosagem de direção e apoio precisa considerar o contexto."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-032",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Autopercepção do Gestor vs. Percepção dos Liderados no Grid",
+    "artigo_origem": "05. Grid gerencial e os cinco estilos de liderança.md",
+    "dificuldade": "medio",
+    "enunciado": "Ao aplicar o Grid Gerencial em treinamentos ou pesquisas organizacionais, por que não basta confiar apenas na **autoavaliação do próprio gestor**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque gestores frequentemente se enxergam próximos do ideal `(9,9)`, enquanto seus liderados — que vivenciam na pele as decisões, cobranças e feedbacks diários — podem perceber o comportamento real do gestor como `(9,1)`, `(5,5)` ou `(1,1)`.",
+        "correta": true,
+        "diagnostico": "Correto: como a liderança depende do reconhecimento dos seguidores, confrontar a autopercepção do líder com a percepção da equipe é indispensável para um diagnóstico realista."
+      },
+      {
+        "letra": "B",
+        "texto": "Porque os gestores sempre se avaliam como `(1,1)` mesmo quando são excelentes líderes.",
+        "correta": false,
+        "diagnostico": "Incorreto: o viés de desejabilidade social leva a maioria dos gestores a superestimar sua própria atuação."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque a opinião dos liderados não tem nenhuma relação com o conceito de liderança.",
+        "correta": false,
+        "diagnostico": "Incorreto: os liderados/seguidores são a fonte primária que valida se a influência realmente ocorre."
+      },
+      {
+        "letra": "D",
+        "texto": "Porque o Grid Gerencial só pode ser respondido por consultores externos que nunca viram a equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: o instrumento ganha força justamente quando cruza a visão do líder com a visão dos liderados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Perguntar apenas ao cozinheiro se a comida dele é nota 9 pode gerar uma resposta enviesada pelo carinho que ele tem pela própria receita; para saber a verdade, é preciso perguntar a quem está sentado à mesa comendo o prato todos os dias (os liderados).",
+      "analise_correta": "Essa questão é comprovada empiricamente no artigo brasileiro de Versiani, Caeiro e Carvalho Neto (2017) analisado nos materiais complementares da unidade.",
+      "distratores": {
+        "B": "Incorreto: o viés de desejabilidade social leva a maioria dos gestores a superestimar sua própria atuação.",
+        "C": "Incorreto: os liderados/seguidores são a fonte primária que valida se a influência realmente ocorre.",
+        "D": "Incorreto: o instrumento ganha força justamente quando cruza a visão do líder com a visão dos liderados."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/05. Grid gerencial e os cinco estilos de liderança.md"
+    }
+  },
+  {
+    "id": "LID-033",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Premissa Central das Abordagens Contingencial e Situacional",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é o avanço conceitual central trazido pelas abordagens **Contingencial** e **Situacional** da liderança em relação às abordagens anteriores?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Elas reconhecem que **não existe um único modo de liderar que seja eficaz em todas as circunstâncias**; a eficácia da liderança depende do ajuste entre a atuação do líder, as características dos liderados e as condições específicas da situação.",
+        "correta": true,
+        "diagnostico": "Correto: o termo *contingência* significa justamente que \"depende das circunstâncias\": o que funciona em uma equipe madura com tarefa criativa pode falhar em uma equipe iniciante diante de uma operação padronizada urgente."
+      },
+      {
+        "letra": "B",
+        "texto": "Elas defendem que o contexto deve ser ignorado e que apenas os traços físicos de nascimento determinam o sucesso.",
+        "correta": false,
+        "diagnostico": "Incorreto: regrediria à Teoria dos Traços."
+      },
+      {
+        "letra": "C",
+        "texto": "Elas afirmam que o líder deve tratar todos os membros da equipe exatamente do mesmo jeito, tenham eles 1 dia ou 20 anos de experiência na tarefa.",
+        "correta": false,
+        "diagnostico": "Incorreto: na liderança situacional, tratar um iniciante inseguro e um especialista autônomo exatamente da mesma forma é um erro gerencial."
+      },
+      {
+        "letra": "D",
+        "texto": "Elas sustentam que a liderança independe da aceitação da equipe ou da clareza das tarefas.",
+        "correta": false,
+        "diagnostico": "Incorreto: aceitação da equipe e estruturação da tarefa são variáveis centrais dessas teorias."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Liderar sem olhar a situação seria como um médico receitar o mesmo remédio na mesma dose para todos os pacientes da fila sem examinar o sintoma de cada um. Nas abordagens contingencial e situacional, **o diagnóstico do contexto e do liderado precede a escolha da conduta**.",
+      "analise_correta": "Embora ambas valorizem o contexto, o modelo de Fiedler e o modelo de Hersey e Blanchard diferem em como propõem esse ajuste.",
+      "distratores": {
+        "B": "Incorreto: regrediria à Teoria dos Traços.",
+        "C": "Incorreto: na liderança situacional, tratar um iniciante inseguro e um especialista autônomo exatamente da mesma forma é um erro gerencial.",
+        "D": "Incorreto: aceitação da equipe e estruturação da tarefa são variáveis centrais dessas teorias."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-034",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Teoria Contingencial de Fred Fiedler e a Favorabilidade da Situação",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "medio",
+    "enunciado": "No **Modelo Contingencial de Fred Fiedler**, quais são os **três fatores situacionais** que determinam o grau de **favorabilidade da situação** para o líder?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "1. **Relações líder-liderados** (grau de confiança, respeito e aceitação da equipe em relação ao líder); 2. **Estruturação das tarefas** (grau de clareza sobre o que fazer, como executar e qual resultado alcançar); e 3. **Poder da posição** (autoridade formal disponível ao líder para contratar, promover, recompensar ou punir).",
+        "correta": true,
+        "diagnostico": "Correto: para Fiedler, uma situação é altamente favorável quando a equipe confia no líder (boas relações), o trabalho tem procedimentos e metas claros (tarefa estruturada) e o líder detém forte respaldo institucional (alto poder de posição)."
+      },
+      {
+        "letra": "B",
+        "texto": "1. Altura física do líder; 2. Saldo bancário da empresa; e 3. Temperatura climática da cidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: variáveis estranhas ao modelo de Fiedler."
+      },
+      {
+        "letra": "C",
+        "texto": "1. Maturidade M1; 2. Maturidade M2; e 3. Maturidade M3.",
+        "correta": false,
+        "diagnostico": "Incorreto: M1 a M4 pertencem ao modelo de Hersey e Blanchard."
+      },
+      {
+        "letra": "D",
+        "texto": "1. Carisma; 2. Humildade servidora; e 3. Perguntas de coaching.",
+        "correta": false,
+        "diagnostico": "Incorreto: pertencem às abordagens de Nova Liderança, Servidora e Coaching (artigo 07)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Para Fiedler, a **favorabilidade da situação** é medida por três perguntas práticas: 1) *\"A equipe gosta de mim e confia em mim?\"* (Relações); 2) *\"O trabalho tem manual claro ou é nebuloso?\"* (Estrutura da tarefa); 3) *\"Eu tenho caneta formal para decidir e recompensar?\"* (Poder da posição).",
+      "analise_correta": "Entre os três fatores, as **relações líder-liderados** (aceitação pela equipe) têm peso primordial para sustentar a influência.",
+      "distratores": {
+        "B": "Incorreto: variáveis estranhas ao modelo de Fiedler.",
+        "C": "Incorreto: M1 a M4 pertencem ao modelo de Hersey e Blanchard.",
+        "D": "Incorreto: pertencem às abordagens de Nova Liderança, Servidora e Coaching (artigo 07)."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-035",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Como o Modelo de Fiedler Trata o Estilo do Líder vs. a Situação",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual é a particularidade do modelo de **Fred Fiedler** quanto à estabilidade do estilo predominante do líder e o que ele recomenda quando o estilo do líder é incompatível com a situação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Fiedler considerava o estilo predominante do líder (orientado para tarefas ou orientado para relacionamentos) **relativamente estável e difícil de mudar rapidamente**; por isso, para obter eficácia, deve-se **alocar o líder em uma situação compatível com seu estilo** ou **modificar as variáveis da situação** (estruturar melhor a tarefa, ajustar o poder formal).",
+        "correta": true,
+        "diagnostico": "Correto: essa é a grande diferença entre Fiedler e Hersey/Blanchard: para Fiedler, o estilo do líder é mais fixo, então ajusta-se o encaixe *líder-contexto*; já para Hersey e Blanchard, o líder deve ser flexível para mudar seu estilo a cada liderado/tarefa."
+      },
+      {
+        "letra": "B",
+        "texto": "Fiedler afirmava que o líder consegue trocar de personalidade a cada 5 minutos com total facilidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: a flexibilidade contínua de estilo é premissa de Hersey e Blanchard, não de Fiedler."
+      },
+      {
+        "letra": "C",
+        "texto": "Fiedler recomendava fechar a empresa sempre que a tarefa não estivesse estruturada.",
+        "correta": false,
+        "diagnostico": "Incorreto: tarefas não estruturadas são comuns em pesquisa e criação; o modelo analisa qual estilo se adapta melhor a elas."
+      },
+      {
+        "letra": "D",
+        "texto": "Para Fiedler, líderes orientados para tarefas são eficazes em 100% das situações e líderes orientados para pessoas nunca são eficazes.",
+        "correta": false,
+        "diagnostico": "Incorreto: segundo Fiedler, líderes orientados para tarefas tendem a ir melhor em situações *muito favoráveis* ou *muito desfavoráveis*, enquanto líderes orientados para relacionamentos destacam-se em situações de *favorabilidade intermediária*."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na visão de Fiedler, cada líder é como um tipo de pneu (pneu de chuva ou pneu de pista seca): como o pneu não muda sua borracha sozinho no meio da corrida, você coloca o pneu certo para o clima do dia ou drena a pista para combinar com ele.",
+      "analise_correta": "Essa distinção entre ajustar a situação/alocação (Fiedler) e ajustar o comportamento do líder ao liderado (Hersey e Blanchard) é um ponto clássico de prova.",
+      "distratores": {
+        "B": "Incorreto: a flexibilidade contínua de estilo é premissa de Hersey e Blanchard, não de Fiedler.",
+        "C": "Incorreto: tarefas não estruturadas são comuns em pesquisa e criação; o modelo analisa qual estilo se adapta melhor a elas.",
+        "D": "Incorreto: segundo Fiedler, líderes orientados para tarefas tendem a ir melhor em situações *muito favoráveis* ou *muito desfavoráveis*, enquanto líderes orientados para relacionamentos destacam-se em situações de *favorabilidade intermediária*."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-036",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Situacional de Hersey e Blanchard: Conceito de Maturidade na Tarefa",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "facil",
+    "enunciado": "Na **Teoria da Liderança Situacional** de **Paul Hersey** e **Kenneth Blanchard**, o que significa o conceito de **maturidade do liderado** (`M1` a `M4`) que serve de base para o líder escolher seu estilo?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Refere-se ao **nível de desenvolvimento, competência técnica (saber fazer) e disposição/autoconfiança (querer fazer/assumir responsabilidade)** que o liderado apresenta **em relação a uma tarefa específica**, e não à sua idade biológica ou caráter geral.",
+        "correta": true,
+        "diagnostico": "Correto: na Liderança Situacional, a maturidade é **específica da tarefa** e combina capacidade (conhecimento/habilidade) com disposição/confiança (motivação/segurança para assumir a responsabilidade)."
+      },
+      {
+        "letra": "B",
+        "texto": "Refere-se exclusivamente à idade cronológica em anos do funcionário na carteira de identidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: um profissional de 50 anos pode ser M1 (iniciante) ao aprender uma linguagem de programação nova, enquanto um jovem de 20 anos pode ser M4 em uma ferramenta que já domina."
+      },
+      {
+        "letra": "C",
+        "texto": "É um rótulo permanente: se um funcionário é M1 em uma tarefa hoje, ele será M1 em todas as tarefas pelo resto da vida.",
+        "correta": false,
+        "diagnostico": "Incorreto: a maturidade é dinâmica e varia de tarefa para tarefa; além disso, o papel do líder é justamente ajudar o liderado a evoluir de M1 até M4."
+      },
+      {
+        "letra": "D",
+        "texto": "Mede apenas a simpatia pessoal do funcionário durante festas de confraternização.",
+        "correta": false,
+        "diagnostico": "Incorreto: o foco é a prontidão e autonomia para realizar atividades de trabalho."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Um cirurgião renomado é **M4** operando no centro cirúrgico (alta competência e autonomia), mas no primeiro dia em que tenta configurar um servidor Linux no terminal ele é **M1** naquela tarefa (precisa de instruções passo a passo). A maturidade é sempre *para a tarefa*!",
+      "analise_correta": "Por isso, o mesmo líder pode precisar usar estilos diferentes com a mesma pessoa dependendo de qual atividade ela está assumindo.",
+      "distratores": {
+        "B": "Incorreto: um profissional de 50 anos pode ser M1 (iniciante) ao aprender uma linguagem de programação nova, enquanto um jovem de 20 anos pode ser M4 em uma ferramenta que já domina.",
+        "C": "Incorreto: a maturidade é dinâmica e varia de tarefa para tarefa; além disso, o papel do líder é justamente ajudar o liderado a evoluir de M1 até M4.",
+        "D": "Incorreto: o foco é a prontidão e autonomia para realizar atividades de trabalho."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-037",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Os Quatro Estilos de Hersey e Blanchard: Determinar (M1) e Persuadir (M2)",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo de **Hersey e Blanchard**, como o líder deve atuar diante de liderados nos níveis de maturidade **`M1`** e **`M2`**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para **`M1`** (baixa maturidade na tarefa: ainda não sabe fazer e/ou está inseguro), usa-se o estilo **Determinar** (alta direção passo a passo e acompanhamento próximo); para **`M2`** (maturidade entre baixa e moderada: ainda precisa desenvolver habilidade, mas demonstra interesse ou precisa de estímulo), usa-se o estilo **Persuadir** (alta direção combinada com alto apoio, explicando o porquê das orientações e incentivando).",
+        "correta": true,
+        "diagnostico": "Correto: quando falta domínio da tarefa (`M1` e `M2`), o líder precisa fornecer direção clara; em `M1` o foco é instruir de perto (*Determinar*), e em `M2` é instruir explicando as razões e dando suporte socioemocional (*Persuadir*)."
+      },
+      {
+        "letra": "B",
+        "texto": "Para `M1`, usa-se o estilo Delegar (deixar o iniciante totalmente sozinho sem nenhuma instrução); para `M2`, demite-se o funcionário.",
+        "correta": false,
+        "diagnostico": "Incorreto: largar um iniciante `M1` sem direção (*Delegar* prematuramente) gera erro, frustração e sensação de abandono."
+      },
+      {
+        "letra": "C",
+        "texto": "Tanto em `M1` quanto em `M2` o líder não dá nenhuma orientação sobre a tarefa.",
+        "correta": false,
+        "diagnostico": "Incorreto: nos níveis iniciais de maturidade, a orientação de tarefa é indispensável."
+      },
+      {
+        "letra": "D",
+        "texto": "O estilo Determinar é exclusivo para profissionais seniores que já dominam todo o processo (`M4`).",
+        "correta": false,
+        "diagnostico": "Incorreto: usar *Determinar* (microgerenciar passo a passo) com um profissional `M4` gera desmotivação e sensação de desconfiança."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ensinar alguém a andar de bicicleta: no primeiro dia (**`M1` — Determinar**), você segura firme no guidão e no banco dizendo exatamente onde colocar o pé e como frear; na semana seguinte (**`M2` — Persuadir**), você ainda corre ao lado orientando a direção, mas elogia, explica o equilíbrio e encoraja a pedalar.",
+      "analise_correta": "Note que *Determinar* em M1 não é ser rude ou autocrático; é fornecer a estrutura didática que quem está começando precisa para não travar.",
+      "distratores": {
+        "B": "Incorreto: largar um iniciante `M1` sem direção (*Delegar* prematuramente) gera erro, frustração e sensação de abandono.",
+        "C": "Incorreto: nos níveis iniciais de maturidade, a orientação de tarefa é indispensável.",
+        "D": "Incorreto: usar *Determinar* (microgerenciar passo a passo) com um profissional `M4` gera desmotivação e sensação de desconfiança."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-038",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Os Quatro Estilos de Hersey e Blanchard: Compartilhar (M3) e Delegar (M4)",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo de **Hersey e Blanchard**, como o líder deve ajustar seu comportamento para liderados nos níveis de maturidade **`M3`** e **`M4`**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Para **`M3`** (maturidade moderada a alta: já possui competência técnica para a tarefa, mas ainda pode oscilar na confiança ou precisar de alinhamento), usa-se o estilo **Compartilhar** (baixa direção de tarefa e alto apoio, envolvendo o liderado nas decisões); para **`M4`** (alta maturidade: domina a tarefa com segurança e autonomia), usa-se o estilo **Delegar** (baixa direção e menor necessidade de supervisão constante, concedendo autonomia para executar).",
+        "correta": true,
+        "diagnostico": "Correto: à medida que o liderado já sabe fazer a tarefa (`M3` e `M4`), o líder reduz a direção passo a passo: em `M3` foca em escutar, apoiar e decidir junto (*Compartilhar*), e em `M4` entrega a responsabilidade com confiança e autonomia (*Delegar*)."
+      },
+      {
+        "letra": "B",
+        "texto": "Para `M4`, o líder deve vigiar cada clique do profissional de 5 em 5 minutos usando o estilo Determinar.",
+        "correta": false,
+        "diagnostico": "Incorreto: microgerenciar um `M4` sufoca a autonomia de quem já provou competência e compromisso."
+      },
+      {
+        "letra": "C",
+        "texto": "Para `M3`, o líder proíbe o liderado de dar opiniões e dita um manual de iniciante.",
+        "correta": false,
+        "diagnostico": "Incorreto: quem está em `M3` já tem bagagem técnica e cresce quando participa das decisões (*Compartilhar*)."
+      },
+      {
+        "letra": "D",
+        "texto": "Delegar em `M4` significa a mesma coisa que a Gerência Empobrecida `(1,1)` do Grid: abandonar o setor por preguiça.",
+        "correta": false,
+        "diagnostico": "Incorreto: distinção crucial! No `(1,1)` o gestor se omite com qualquer pessoa por apatia; no **Delegar (`M4`)**, o líder concede autonomia deliberada porque diagnosticou que aquele liderado já está pronto e maduro na tarefa."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Continuando a analogia da bicicleta: em **`M3` (Compartilhar)**, a pessoa já sabe pedalar bem, mas vai encarar uma trilha nova e você vai junto trocando ideias para dar segurança; em **`M4` (Delegar)**, ela já é ciclista experiente — vocês combinam o ponto de chegada e ela faz o percurso com total autonomia.",
+      "analise_correta": "Assim, a Liderança Situacional forma um ciclo evolutivo (`M1: Determinar → M2: Persuadir → M3: Compartilhar → M4: Delegar`) que desenvolve a autonomia da equipe.",
+      "distratores": {
+        "B": "Incorreto: microgerenciar um `M4` sufoca a autonomia de quem já provou competência e compromisso.",
+        "C": "Incorreto: quem está em `M3` já tem bagagem técnica e cresce quando participa das decisões (*Compartilhar*).",
+        "D": "Incorreto: distinção crucial! No `(1,1)` o gestor se omite com qualquer pessoa por apatia; no **Delegar (`M4`)**, o líder concede autonomia deliberada porque diagnosticou que aquele liderado já está pronto e maduro na tarefa."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-039",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Comparação Direta: Fiedler (Contingencial) vs. Hersey & Blanchard (Situacional)",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual das alternativas resume com exatidão a **diferença teórica central** entre o modelo contingencial de **Fred Fiedler** e a liderança situacional de **Hersey e Blanchard**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Enquanto **Fiedler** analisa a **favorabilidade global da situação** (relações líder-equipe, estruturação da tarefa e poder da posição) assumindo que o estilo do líder é pouco maleável, **Hersey e Blanchard** focam na **maturidade de cada liderado na tarefa (`M1` a `M4`)** assumindo que o líder pode e deve flexibilizar seu estilo (*Determinar, Persuadir, Compartilhar, Delegar*).",
+        "correta": true,
+        "diagnostico": "Correto: os dois modelos pertencem à família contextual, mas divergem no foco diagnóstico (favorabilidade dos 3 fatores situacionais vs. maturidade M1-M4 do liderado) e na premissa de maleabilidade do líder (estilo estável vs. estilo adaptável)."
+      },
+      {
+        "letra": "B",
+        "texto": "Fiedler estuda apenas empresas públicas e Hersey e Blanchard estudam apenas hospitais.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambos são modelos gerais aplicáveis a organizações de qualquer setor."
+      },
+      {
+        "letra": "C",
+        "texto": "Fiedler criou os níveis M1 a M4 e Hersey e Blanchard criaram o conceito de poder da posição.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte a autoria dos conceitos entre os dois modelos."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambos os modelos afirmam que os liderados não têm nenhuma influência sobre a escolha do estilo de liderança.",
+        "correta": false,
+        "diagnostico": "Incorreto: ambos colocam a relação com os liderados e suas características no centro da análise."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Fiedler olha para o \"clima geral do estádio\" (a torcida apoia? a regra do jogo é clara? o juiz tem apito?) para escalar o treinador certo; já Hersey e Blanchard olham para \"cada jogador individualmente em campo\" (o camisa 10 é M4, o estreante da base é M1) e pedem que o mesmo treinador fale diferente com cada um.",
+      "analise_correta": "Dominar esse contraste evita confundir os termos *contingencial (Fiedler)* e *situacional (Hersey & Blanchard)*.",
+      "distratores": {
+        "B": "Incorreto: ambos são modelos gerais aplicáveis a organizações de qualquer setor.",
+        "C": "Incorreto: inverte a autoria dos conceitos entre os dois modelos.",
+        "D": "Incorreto: ambos colocam a relação com os liderados e suas características no centro da análise."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-040",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Riscos do Diagnóstico Incorreto da Maturidade (Subliderar vs. Superliderar)",
+    "artigo_origem": "06. Liderança situacional e contingencial.md",
+    "dificuldade": "medio",
+    "enunciado": "Na prática da Liderança Situacional, que problemas ocorrem quando um líder **erra o diagnóstico de maturidade** do liderado — por exemplo, aplicando **Delegar (`M4`) a um iniciante `M1`** ou aplicando **Determinar (`M1`) a um sênior `M4`**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Aplicar *Delegar* a um `M1` deixa o iniciante desamparado sem saber como executar a tarefa (gerando erros e ansiedade); aplicar *Determinar* a um `M4` configura microgerenciamento desnecessário sobre quem já é autônomo (gerando frustração, perda de tempo e desmotivação).",
+        "correta": true,
+        "diagnostico": "Correto: a eficácia no modelo de Hersey e Blanchard nasce da correspondência precisa (`M1->Determinar`, `M2->Persuadir`, `M3->Compartilhar`, `M4->Delegar`)."
+      },
+      {
+        "letra": "B",
+        "texto": "Não ocorre nenhum problema, pois qualquer um dos quatro estilos funciona perfeitamente para qualquer nível de maturidade.",
+        "correta": false,
+        "diagnostico": "Incorreto: o descompasso entre maturidade e estilo é a principal causa de falha gerencial segundo o modelo."
+      },
+      {
+        "letra": "C",
+        "texto": "O iniciante `M1` aprende mais rápido quando é proibido de fazer perguntas ou receber instruções.",
+        "correta": false,
+        "diagnostico": "Incorreto: em `M1` a falta de direção trava o aprendizado inicial."
+      },
+      {
+        "letra": "D",
+        "texto": "O profissional sênior `M4` sente-se mais valorizado quando é tratado como se nunca tivesse visto a tarefa antes.",
+        "correta": false,
+        "diagnostico": "Incorreto: o excesso de controle sobre quem tem alta maturidade corrói o engajamento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Dar autonomia total (`M4`) para quem acabou de entrar (`M1`) é jogar na piscina funda quem ainda não sabe boiar; já ditar cada passo (`M1`) para um especialista (`M4`) é colocar rodinhas de plástico na bicicleta de um campeão olímpico.",
+      "analise_correta": "Por isso, a competência diagnóstica do líder — observar a prontidão real do liderado em cada tarefa — é tão importante quanto a flexibilidade para adaptar o estilo.",
+      "distratores": {
+        "B": "Incorreto: o descompasso entre maturidade e estilo é a principal causa de falha gerencial segundo o modelo.",
+        "C": "Incorreto: em `M1` a falta de direção trava o aprendizado inicial.",
+        "D": "Incorreto: o excesso de controle sobre quem tem alta maturidade corrói o engajamento."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/06. Liderança situacional e contingencial.md"
+    }
+  },
+  {
+    "id": "LID-041",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Transacional e a Lógica da Troca Social",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "facil",
+    "enunciado": "Dentro das abordagens conhecidas como **Nova Liderança**, como funciona a **Liderança Transacional**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Baseia-se em uma relação de **troca social e contratual** entre líder e liderado, na qual o líder define claramente metas e expectativas e oferece **recompensas (bônus, reconhecimento, promoção)** em contrapartida ao cumprimento dos resultados acordados.",
+        "correta": true,
+        "diagnostico": "Correto: o termo *transacional* vem de *transação* (acordo de reciprocidade: \"se você entregar a meta X com qualidade, receberá a contrapartida Y\")."
+      },
+      {
+        "letra": "B",
+        "texto": "Baseia-se exclusivamente na devoção mística ao carisma pessoal do líder, sem metas nem recompensas.",
+        "correta": false,
+        "diagnostico": "Incorreto: a adesão emocional extraordinária refere-se à liderança carismática."
+      },
+      {
+        "letra": "C",
+        "texto": "Proíbe o estabelecimento de metas claras ou indicadores de desempenho na equipe.",
+        "correta": false,
+        "diagnostico": "Incorreto: a liderança transacional depende justamente de metas, papéis e critérios de avaliação bem definidos."
+      },
+      {
+        "letra": "D",
+        "texto": "Exige que os funcionários trabalhem sem remuneração e sem saber o que é esperado deles.",
+        "correta": false,
+        "diagnostico": "Incorreto: toda a lógica transacional apoia-se na previsibilidade das contrapartidas."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "A **Liderança Transacional** funciona como um contrato comercial justo e transparente: o combinado não sai caro — o líder deixa claro o que precisa ser entregue e cumpre fielmente a recompensa prometida quando a meta é batida.",
+      "analise_correta": "Embora seja eficaz para manter a operação funcionando com previsibilidade, ela costuma limitar-se ao cumprimento do que foi contratado, sem necessariamente gerar transformação profunda.",
+      "distratores": {
+        "B": "Incorreto: a adesão emocional extraordinária refere-se à liderança carismática.",
+        "C": "Incorreto: a liderança transacional depende justamente de metas, papéis e critérios de avaliação bem definidos.",
+        "D": "Incorreto: toda a lógica transacional apoia-se na previsibilidade das contrapartidas."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-042",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Transformacional e suas Quatro Dimensões (4 Is)",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "dificil",
+    "enunciado": "Em contraste com a lógica puramente contratual da troca transacional, o que caracteriza a **Liderança Transformacional** e quais são suas **quatro dimensões clássicas**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Liderança Transformacional inspira os seguidores a transcenderem interesses imediatos em prol de um propósito coletivo, promovendo mudança e desenvolvimento por meio de quatro dimensões: **Influência idealizada** (líder como exemplo ético de confiança e coerência), **Inspiração motivacional** (visão de futuro mobilizadora), **Estímulo intelectual** (incentivo a questionar padrões e inovar) e **Consideração individualizada** (atenção singular às necessidades e ao crescimento de cada pessoa).",
+        "correta": true,
+        "diagnostico": "Correto: os \"4 Is\" da Liderança Transformacional unem o exemplo moral (*Influência idealizada*), o sentido de propósito (*Inspiração motivacional*), a abertura à inovação crítica (*Estímulo intelectual*) e o cuidado mentor com cada indivíduo (*Consideração individualizada*)."
+      },
+      {
+        "letra": "B",
+        "texto": "Caracteriza-se por substituir todas as pessoas da empresa por robôs sem oferecer apoio nem visão de futuro.",
+        "correta": false,
+        "diagnostico": "Incorreto: a liderança transformacional é profundamente centrada no desenvolvimento humano e na mudança coletiva."
+      },
+      {
+        "letra": "C",
+        "texto": "Suas quatro dimensões são: Gerência Empobrecida, Clube Campestre, Meio-Termo e Autoridade.",
+        "correta": false,
+        "diagnostico": "Incorreto: esses são estilos do Grid Gerencial de Blake e Mouton."
+      },
+      {
+        "letra": "D",
+        "texto": "Proíbe os liderados de pensarem por conta própria ou proporem soluções novas.",
+        "correta": false,
+        "diagnostico": "Incorreto: o *Estímulo intelectual* incentiva exatamente o pensamento autônomo, o questionamento de pressupostos e a criatividade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se o líder transacional negocia \"quantos tijolos você assenta por hora\", o líder **transformacional** faz a equipe enxergar a catedral que estão construindo juntos (**Inspiração**), dá o exemplo trabalhando com integridade (**Influência idealizada**), convida o time a inventar um jeito mais inteligente de erguer a abóbada (**Estímulo intelectual**) e conhece o talento único de cada artesão (**Consideração individualizada**).",
+      "analise_correta": "As perspectivas transacional e transformacional não precisam ser inimigas absolutas, mas a transformacional alcança níveis mais profundos de engajamento e inovação.",
+      "distratores": {
+        "B": "Incorreto: a liderança transformacional é profundamente centrada no desenvolvimento humano e na mudança coletiva.",
+        "C": "Incorreto: esses são estilos do Grid Gerencial de Blake e Mouton.",
+        "D": "Incorreto: o *Estímulo intelectual* incentiva exatamente o pensamento autônomo, o questionamento de pressupostos e a criatividade."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-043",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Carismática e a Referência Sociológica de Max Weber",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "medio",
+    "enunciado": "O que destaca a perspectiva da **Liderança Carismática**, como ela se relaciona com o conceito sociológico de *carisma* em **Max Weber**, e qual cuidado crítico exige?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Destaca a capacidade de comunicar uma visão envolvente que desperta forte **identificação pessoal e vínculo emocional** nos seguidores; em diálogo com Weber, o carisma não é uma propriedade mágica isolada, mas depende do **reconhecimento e da percepção dos seguidores**, exigindo cautela crítica para que a admiração emocional não gere dependência acrítica ou manipulação.",
+        "correta": true,
+        "diagnostico": "Correto: o carisma envolve atribuição social pelos seguidores e forte apelo emocional/visionário, podendo impulsionar grandes mobilizações, mas também apresentando riscos se houver centralização narcísica na figura do líder."
+      },
+      {
+        "letra": "B",
+        "texto": "Afirma que o carisma é um gene biológico visível no microscópio que funciona mesmo sem seguidores.",
+        "correta": false,
+        "diagnostico": "Incorreto: Weber mostrou que a autoridade carismática existe na relação de reconhecimento por parte dos seguidores."
+      },
+      {
+        "letra": "C",
+        "texto": "Garante que todo líder carismático toma apenas decisões técnicas perfeitas e éticas.",
+        "correta": false,
+        "diagnostico": "Incorreto: líderes muito carismáticos podem, inclusive, conduzir grupos a decisões arriscadas ou antiéticas se não houver freios críticos."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa administrar exclusivamente por meio de planilhas burocráticas sem falar em público.",
+        "correta": false,
+        "diagnostico": "Incorreto: a autoridade burocrática/racional-legal é distinta da autoridade carismática na tipologia de Weber."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O carisma é como o magnetismo de um palco iluminado: ele atrai olhares e emociona a plateia rapidamente, mas é preciso verificar para onde o artista está conduzindo o público e garantir que a equipe não fique paralisada quando os refletores se apagam.",
+      "analise_correta": "Por isso, abordagens contemporâneas como a Liderança Servidora deslocam os holofotes da figura heroica do líder para o crescimento das pessoas.",
+      "distratores": {
+        "B": "Incorreto: Weber mostrou que a autoridade carismática existe na relação de reconhecimento por parte dos seguidores.",
+        "C": "Incorreto: líderes muito carismáticos podem, inclusive, conduzir grupos a decisões arriscadas ou antiéticas se não houver freios críticos.",
+        "D": "Incorreto: a autoridade burocrática/racional-legal é distinta da autoridade carismática na tipologia de Weber."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-044",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Servidora: O Princípio de \"Servir Primeiro\" (Robert K. Greenleaf)",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "facil",
+    "enunciado": "Qual é o fundamento ético e prático da **Liderança Servidora**, formulada por **Robert K. Greenleaf**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Parte do princípio de **servir primeiro**: a motivação primária nasce do desejo genuíno de servir, apoiar e promover o crescimento e a autonomia das pessoas e da comunidade, vindo a aspiração de liderar como consequência desse compromisso.",
+        "correta": true,
+        "diagnostico": "Correto: para Greenleaf, o grande teste da liderança servidora é verificar se aqueles que são servidos crescem como pessoas, tornam-se mais sábios, livres, autônomos e propensos a também servir."
+      },
+      {
+        "letra": "B",
+        "texto": "Significa que o líder deve fazer sozinho todo o trabalho operacional da equipe enquanto os liderados ficam ociosos.",
+        "correta": false,
+        "diagnostico": "Incorreto: servir na liderança não é ser \"empregado submisso que faz a tarefa pelo outro\", mas remover obstáculos, oferecer recursos e desenvolver a capacidade da equipe."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa colocar os interesses pessoais e a vaidade do líder acima das necessidades da equipe e da organização.",
+        "correta": false,
+        "diagnostico": "Incorreto: inverte o eixo de humildade e altruísmo do modelo."
+      },
+      {
+        "letra": "D",
+        "texto": "É sinônimo de liderança autoritária `(9,1)`, baseada na obediência cega ao chefe.",
+        "correta": false,
+        "diagnostico": "Incorreto: opõe-se diametralmente ao modelo autoritário."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Na pirâmide tradicional, a equipe existe para servir ao chefe no topo; na **Liderança Servidora**, a pirâmide se inverte: o líder é a base sólida que sustenta, nutre e remove pedras do caminho para que a equipe floresça e entregue o seu melhor.",
+      "analise_correta": "Essa abordagem conecta-se fortemente a culturas colaborativas modernas (como o papel do *Scrum Master* em métodos ágeis e a mentoria voluntária do projeto NODO).",
+      "distratores": {
+        "B": "Incorreto: servir na liderança não é ser \"empregado submisso que faz a tarefa pelo outro\", mas remover obstáculos, oferecer recursos e desenvolver a capacidade da equipe.",
+        "C": "Incorreto: inverte o eixo de humildade e altruísmo do modelo.",
+        "D": "Incorreto: opõe-se diametralmente ao modelo autoritário."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-045",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "As Sete Dimensões da Liderança Servidora segundo Kathleen A. Patterson",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "medio",
+    "enunciado": "No modelo teórico desenvolvido por **Kathleen A. Patterson** (2003), a Liderança Servidora articula sete dimensões virtuosas voltadas aos liderados. Quais elementos centrais compõem essa atuação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Dimensões como **amor moral/ágape** (consideração genuína pelo outro), **humildade** (reconhecer limites e valorizar contribuições alheias), **altruísmo**, **visão** voltada ao futuro dos liderados, **confiança**, **empoderamento** (dar condições e autonomia) e **serviço**.",
+        "correta": true,
+        "diagnostico": "Correto: Patterson sistematizou como a disposição de servir se desdobra em humildade, confiança e empoderamento real dos liderados."
+      },
+      {
+        "letra": "B",
+        "texto": "Coerção, competição interna, sigilo de informações, punição, centralização, vaidade e microgerenciamento.",
+        "correta": false,
+        "diagnostico": "Incorreto: lista práticas opostas à liderança servidora."
+      },
+      {
+        "letra": "C",
+        "texto": "Apenas pagamento de comissões financeiras por peça produzida.",
+        "correta": false,
+        "diagnostico": "Incorreto: refere-se apenas a incentivos materiais transacionais."
+      },
+      {
+        "letra": "D",
+        "texto": "Substituição do diálogo por ordens escritas unilaterais.",
+        "correta": false,
+        "diagnostico": "Incorreto: a liderança servidora apoia-se na escuta e no diálogo próximo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No modelo de Patterson, a **humildade** impede que o líder ache que sabe tudo sozinho, a **confiança** cria um ambiente seguro e o **empoderamento** entrega as ferramentas para que o liderado conquiste autonomia.",
+      "analise_correta": "Note como a Liderança Servidora diferencia-se da Transformacional: enquanto a transformacional frequentemente foca em mobilizar seguidores para os objetivos estratégicos da organização, a servidora coloca o desenvolvimento integral das pessoas como prioridade ética primeira.",
+      "distratores": {
+        "B": "Incorreto: lista práticas opostas à liderança servidora.",
+        "C": "Incorreto: refere-se apenas a incentivos materiais transacionais.",
+        "D": "Incorreto: a liderança servidora apoia-se na escuta e no diálogo próximo."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-046",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Liderança Coaching: Perguntas, Escuta e Desenvolvimento de Autonomia",
+    "artigo_origem": "07. Nova liderança, liderança servidora e coaching.md",
+    "dificuldade": "facil",
+    "enunciado": "No contexto gerencial estudado na disciplina, em que consiste a prática da **Liderança Coaching** e qual cuidado situacional ela requer?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "É uma prática gerencial baseada no **diálogo, na escuta ativa e na formulação de perguntas instigantes** que ajudam o liderado a refletir, encontrar caminhos e desenvolver autonomia; contudo, **não dispensa dar orientações diretas** quando o liderado é iniciante ou a situação exige instrução imediata.",
+        "correta": true,
+        "diagnostico": "Correto: em vez de entregar sempre a resposta mastigada (que mantém a dependência), o líder *coach* pergunta *\"Como você analisa esse problema? Quais opções você enxerga?\"*, estimulando o raciocínio próprio, sem deixar de instruir diretamente quando falta base técnica."
+      },
+      {
+        "letra": "B",
+        "texto": "Consiste em o líder nunca responder nenhuma dúvida técnica e proibir qualquer instrução direta mesmo durante um incêndio ou para um estagiário no primeiro dia.",
+        "correta": false,
+        "diagnostico": "Incorreto: recusar-se a orientar quem não tem repertório básico (`M1`) usando apenas perguntas vagas gera frustração; o coaching deve ser combinado com bom senso situacional."
+      },
+      {
+        "letra": "C",
+        "texto": "É uma terapia clínica psicanalítica profunda aplicada obrigatoriamente pelo gerente de TI.",
+        "correta": false,
+        "diagnostico": "Incorreto: liderança coaching é desenvolvimento profissional focado no trabalho e aprendizado, não psicoterapia clínica."
+      },
+      {
+        "letra": "D",
+        "texto": "Consiste em ditar respostas prontas o tempo todo para que o liderado nunca precise pensar.",
+        "correta": false,
+        "diagnostico": "Incorreto: dar sempre a resposta pronta é o oposto da proposta de desenvolver autonomia pela reflexão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Dar o peixe pronto toda vez deixa o liderado dependente de você para sempre; fazer boas perguntas na **Liderança Coaching** é ensinar a ler a maré e manusear a vara de pesca para que ele aprenda a pensar como sênior.",
+      "analise_correta": "Essa prática fecha com chave de ouro o repertório comportamental da Unidade 1, conectando-se diretamente à relação de mentoria.",
+      "distratores": {
+        "B": "Incorreto: recusar-se a orientar quem não tem repertório básico (`M1`) usando apenas perguntas vagas gera frustração; o coaching deve ser combinado com bom senso situacional.",
+        "C": "Incorreto: liderança coaching é desenvolvimento profissional focado no trabalho e aprendizado, não psicoterapia clínica.",
+        "D": "Incorreto: dar sempre a resposta pronta é o oposto da proposta de desenvolver autonomia pela reflexão."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/07. Nova liderança, liderança servidora e coaching.md"
+    }
+  },
+  {
+    "id": "LID-047",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Pesquisa sobre Grid Gerencial em Telemarketing (Versiani, Caeiro e Carvalho Neto, 2017)",
+    "artigo_origem": "Materiais complementares - Unidade 1.md",
+    "dificuldade": "medio",
+    "enunciado": "No artigo científico de **Versiani, Caeiro e Carvalho Neto (2017)** (*\"Líder versus liderado? Percepções a partir do grid gerencial\"*), realizado com 52 questionários em duas equipes de telemarketing, qual foi a principal conclusão empírica?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Ao comparar seis dimensões do Grid Gerencial (**decisão, convicção, conflito, emoções, senso de humor e empenho**), constatou-se que **as percepções dos gestores sobre seu próprio estilo divergiram das percepções de suas equipes**, comprovando que a autodeclaração do líder não garante que os liderados vivenciem sua liderança da mesma forma.",
+        "correta": true,
+        "diagnostico": "Correto: o estudo empírico valida na prática a crítica vista no artigo 05: há uma distância frequente entre o estilo que o gestor acredita praticar e o estilo percebido pelos subordinados/seguidores."
+      },
+      {
+        "letra": "B",
+        "texto": "Constatou-se que 100% dos liderados concordam exatamente com a nota que o chefe dá para si mesmo.",
+        "correta": false,
+        "diagnostico": "Incorreto: o estudo evidenciou justamente divergências significativas entre líderes e liderados."
+      },
+      {
+        "letra": "C",
+        "texto": "O estudo provou que o Grid Gerencial mede apenas a velocidade de digitação no computador.",
+        "correta": false,
+        "diagnostico": "Incorreto: avalia as 6 dimensões comportamentais do Grid."
+      },
+      {
+        "letra": "D",
+        "texto": "A pesquisa concluiu que não existem conflitos nem emoções no ambiente de trabalho.",
+        "correta": false,
+        "diagnostico": "Incorreto: conflito e emoções são duas das seis dimensões centrais analisadas no instrumento."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O estudo de Versiani et al. é como gravar a voz de alguém: na própria cabeça a pessoa acha que está cantando afinado como um `(9,9)`, mas quando ouve a gravação captada pelo microfone da equipe (os 25 liderados), percebe desafinações que não notava sozinha.",
+      "analise_correta": "Isso reforça a importância de instrumentos de avaliação 360 graus e escuta real da equipe.",
+      "distratores": {
+        "B": "Incorreto: o estudo evidenciou justamente divergências significativas entre líderes e liderados.",
+        "C": "Incorreto: avalia as 6 dimensões comportamentais do Grid.",
+        "D": "Incorreto: conflito e emoções são duas das seis dimensões centrais analisadas no instrumento."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/Materiais complementares - Unidade 1.md"
+    }
+  },
+  {
+    "id": "LID-048",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Tipos Psicológicos (Jung/MBTI) e Estresse em Executivos Brasileiros (Tanure et al., 2015)",
+    "artigo_origem": "Materiais complementares - Unidade 1.md",
+    "dificuldade": "medio",
+    "enunciado": "Como o estudo de **Tanure et al. (2015)** (*\"O tipo psicológico dos altos executivos brasileiros e a percepção de estresse\"*, com 965 executivos) e o questionário recreativo *\"Qual líder famoso você seria?\"* devem ser interpretados à luz da **Abordagem da Personalidade**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O artigo de Tanure et al. mostra que é possível investigar cientificamente relações entre tipos psicológicos (baseados em Jung/MBTI) e vivências como o estresse, **sem cair no determinismo de afirmar que um tipo psicológico define quem pode ser líder**; já o teste online recreativo é apenas uma curiosidade lúdica **sem validade psicométrica ou diagnóstica**.",
+        "correta": true,
+        "diagnostico": "Correto: é essencial distinguir pesquisa científica revisada por pares (que analisa tendências e estresse sem determinismo) de testes recreativos de internet (que servem apenas para reflexão lúdica inicial)."
+      },
+      {
+        "letra": "B",
+        "texto": "Ambos provam que apenas um único tipo psicológico do MBTI pode ocupar cargos de direção no Brasil.",
+        "correta": false,
+        "diagnostico": "Incorreto: mesmo havendo perfis mais frequentes em certos ambientes corporativos, diferentes tipos psicológicos exercem liderança."
+      },
+      {
+        "letra": "C",
+        "texto": "O quiz recreativo da internet tem o mesmo rigor metodológico e validade científica que uma pesquisa acadêmica com 965 executivos.",
+        "correta": false,
+        "diagnostico": "Incorreto: questionários recreativos não possuem validação psicométrica nem comprovam semelhança psicológica real com figuras históricas."
+      },
+      {
+        "letra": "D",
+        "texto": "O estudo concluiu que altos executivos brasileiros nunca sentem estresse.",
+        "correta": false,
+        "diagnostico": "Incorreto: o próprio subtítulo do estudo (*\"onde os fracos não têm vez\"*) discute a forte pressão e percepção de estresse na alta gestão."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Ler um estudo científico sobre tipos psicológicos (Tanure et al.) é como analisar um exame clínico populacional sério; já fazer um quiz rápido de \"qual líder famoso você é\" na internet é como brincar de horóscopo no domingo: pode render uma conversa divertida sobre características, mas jamais serve como diagnóstico profissional.",
+      "analise_correta": "Essa distinção exercita o letramento científico sobre evidências em comportamento organizacional.",
+      "distratores": {
+        "B": "Incorreto: mesmo havendo perfis mais frequentes em certos ambientes corporativos, diferentes tipos psicológicos exercem liderança.",
+        "C": "Incorreto: questionários recreativos não possuem validação psicométrica nem comprovam semelhança psicológica real com figuras históricas.",
+        "D": "Incorreto: o próprio subtítulo do estudo (*\"onde os fracos não têm vez\"*) discute a forte pressão e percepção de estresse na alta gestão."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/Materiais complementares - Unidade 1.md"
+    }
+  },
+  {
+    "id": "LID-049",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Comunicação Não Verbal, \"Poses de Poder\" (Amy Cuddy) e Crise de Replicação Científica",
+    "artigo_origem": "Materiais complementares - Unidade 1.md",
+    "dificuldade": "dificil",
+    "enunciado": "A palestra de **Amy Cuddy (2012)** no TED popularizou a hipótese das **\"poses de poder\"** (*power posing*). O que as revisões meta-analíticas e estudos posteriores de **replicação científica** (como Körner et al., 2022 e Barel et al., 2024) demonstraram sobre essa hipótese?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Demonstraram que, embora posturas expansivas possam gerar efeitos subjetivos de **autopercepção (sentir-se mais confiante)**, **não foram confirmados efeitos confiáveis sobre indicadores fisiológicos/hormonais** (como aumento de testosterona e queda de cortisol propostos originalmente), além de que uma postura corporal isolada não substitui as relações, ações e resultados da liderança.",
+        "correta": true,
+        "diagnostico": "Correto: a ciência avança por **replicação**: quando outros laboratórios testaram a hipótese com amostras maiores e rigor estatístico, os alegados efeitos hormonais não se sustentaram, restando apenas efeitos moderados de autopercepção subjetiva."
+      },
+      {
+        "letra": "B",
+        "texto": "Confirmaram que ficar em pé com as mãos na cintura por 2 minutos transforma qualquer pessoa automaticamente no líder mais eficaz da empresa.",
+        "correta": false,
+        "diagnostico": "Incorreto: reduziu-se um fenômeno relacional complexo (liderança) a um truque postural individual sem comprovação de eficácia objetiva."
+      },
+      {
+        "letra": "C",
+        "texto": "Provaram que a comunicação não verbal não existe entre seres humanos.",
+        "correta": false,
+        "diagnostico": "Incorreto: a comunicação não verbal existe e importa na interação, mas não opera os \"milagres hormonais\" divulgados inicialmente."
+      },
+      {
+        "letra": "D",
+        "texto": "Demonstraram que um único estudo inicial nunca precisa ser testado novamente por outros pesquisadores.",
+        "correta": false,
+        "diagnostico": "Incorreto: a **replicação científica** é justamente o filtro indispensável para confirmar se um achado é robusto ou se foi um falso-positivo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Adotar uma postura ereta antes de uma apresentação pode ajudar você a *se sentir* mais confortável (autopercepção), assim como ouvir uma música animada no fone; mas isso não muda magicamente seus hormônios nem substitui ter estudado o assunto e construído confiança real com sua equipe.",
+      "analise_correta": "O caso das poses de poder é um exemplo clássico na psicologia contemporânea sobre a importância de checar revisões sistemáticas e meta-análises antes de adotar modismos corporativos.",
+      "distratores": {
+        "B": "Incorreto: reduziu-se um fenômeno relacional complexo (liderança) a um truque postural individual sem comprovação de eficácia objetiva.",
+        "C": "Incorreto: a comunicação não verbal existe e importa na interação, mas não opera os \"milagres hormonais\" divulgados inicialmente.",
+        "D": "Incorreto: a **replicação científica** é justamente o filtro indispensável para confirmar se um achado é robusto ou se foi um falso-positivo."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/Materiais complementares - Unidade 1.md"
+    }
+  },
+  {
+    "id": "LID-050",
+    "disciplina_id": "10",
+    "disciplina": "Liderança e Competências Comportamentais",
+    "topico": "Estudo de Caso: O Resgate dos 33 Mineiros Chilenos e as Três Frentes de Liderança",
+    "artigo_origem": "Materiais complementares - Unidade 1.md",
+    "dificuldade": "medio",
+    "enunciado": "Na análise do caso do **resgate dos 33 mineiros no Chile (2010)** dramatizado no filme *Os 33*, como se articulam as **três frentes de liderança** observadas durante a crise?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Observa-se a interação complementar entre: 1) a **liderança no subterrâneo** (exercida entre os próprios mineiros para manter a coesão, racionamento e sobrevivência do grupo); 2) a **liderança política** (presidente Sebastián Piñera e ministro Laurence Golborne, mobilizando recursos estatais e mantendo o compromisso público); e 3) a **liderança técnica do resgate** (engenheiro André Sougarret, coordenando as soluções de perfuração).",
+        "correta": true,
+        "diagnostico": "Correto: o caso ilustra brilhantemente como crises complexas exigem lideranças distribuídas em diferentes esferas — emergente/comunitária no subsolo, institucional/política na superfície e técnico-científica na engenharia."
+      },
+      {
+        "letra": "B",
+        "texto": "Houve apenas um único líder que perfurou a rocha sozinho enquanto governava o país e ficava soterrado ao mesmo tempo.",
+        "correta": false,
+        "diagnostico": "Incorreto: nenhuma pessoa isolada detinha simultaneamente a presença no subsolo, o poder de Estado e o domínio técnico de engenharia de perfuração."
+      },
+      {
+        "letra": "C",
+        "texto": "O caso mostra que em situações de crise não há necessidade de liderança técnica nem de coordenação política.",
+        "correta": false,
+        "diagnostico": "Incorreto: o sucesso dependeu justamente da sinergia entre sobrevivência psicológica/social embaixo, decisão política de não desistir e precisão técnica de engenharia."
+      },
+      {
+        "letra": "D",
+        "texto": "Apenas quem tinha o cargo político mais alto exerceu influência, sendo irrelevante a organização interna dos mineiros soterrados.",
+        "correta": false,
+        "diagnostico": "Incorreto: sem a liderança emergente e a disciplina coletiva dentro da mina nos primeiros 17 dias sem contato, o grupo não teria sobrevivido até a chegada da sonda."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O resgate dos mineiros funcionou como um tripé de salvamento: no fundo da mina, a liderança mantinha a esperança e a ordem viva; no governo, a liderança política destravava recursos e unia o país; e nas sondas, a liderança técnica calculava cada metro de rocha. Se qualquer perna do tripé falhasse, o resgate não aconteceria.",
+      "analise_correta": "Esse estudo de caso sintetiza toda a Unidade 1: mostra autoridade formal vs. liderança emergente, controle emocional, foco em pessoas e tarefas, e adaptação extrema às contingências da situação.",
+      "distratores": {
+        "B": "Incorreto: nenhuma pessoa isolada detinha simultaneamente a presença no subsolo, o poder de Estado e o domínio técnico de engenharia de perfuração.",
+        "C": "Incorreto: o sucesso dependeu justamente da sinergia entre sobrevivência psicológica/social embaixo, decisão política de não desistir e precisão técnica de engenharia.",
+        "D": "Incorreto: sem a liderança emergente e a disciplina coletiva dentro da mina nos primeiros 17 dias sem contato, o grupo não teria sobrevivido até a chegada da sonda."
+      },
+      "referencia_vault": "10. Lideranca e Competencias/Materiais complementares - Unidade 1.md"
     }
   }
 ]

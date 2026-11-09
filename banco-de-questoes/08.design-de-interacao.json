@@ -3,90 +3,2250 @@
     "id": "DI-001",
     "disciplina_id": "08",
     "disciplina": "Design de Interação",
-    "topico": "Engenharia Cognitiva vs. Engenharia Semiótica",
-    "artigo_origem": "02. Construções teóricas da interação humano-computador.md",
-    "dificuldade": "dificil",
-    "enunciado": "No campo da Interação Humano-Computador (IHC), a Engenharia Cognitiva (Donald Norman) e a Engenharia Semiótica (Clarisse de Souza) oferecem modelos teóricos distintos para explicar o fenômeno da interação. Qual é a diferença fundamental entre as visões dessas duas correntes?",
+    "topico": "Objeto de Estudo da IHC (SIGCHI) e Natureza Multidisciplinar",
+    "artigo_origem": "01. O que é interação humano-computador e a visão teórica do ser humano.md",
+    "dificuldade": "facil",
+    "enunciado": "Segundo a definição clássica da ACM SIGCHI, qual é o objeto de estudo da **Interação Humano-Computador (IHC)** e por que ela é uma área intrinsecamente multidisciplinar?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "A Engenharia Cognitiva enxerga a interface como um circuito puramente elétrico de hardware; a Engenharia Semiótica rejeita o uso de computadores por humanos.",
-        "correta": false,
-        "diagnostico": "Erro conceitual absurdo: nenhuma das duas teorias defende tais posições."
+        "texto": "A IHC estuda o **design, a avaliação e a implementação de sistemas computacionais interativos para uso humano**, bem como os principais fenômenos que os cercam; é multidisciplinar porque une Ciência da Computação, Psicologia Cognitiva, Ergonomia, Semiótica, Design Gráfico, Sociologia e Antropologia.",
+        "correta": true,
+        "diagnostico": "Correto: a IHC atua exatamente na fronteira entre o ser humano (cognição, cultura, capacidades físicas) e a máquina (software/hardware)."
       },
       {
         "letra": "B",
-        "texto": "A Engenharia Cognitiva foca no usuário como processador de informação (superação dos golfos de execução e avaliação); a Engenharia Semiótica enxerga a interação como metacomunicação, na qual a interface é a mensagem e o preposto do designer para o usuário.",
-        "correta": true,
-        "diagnostico": "Correto: Norman modela a cognição e as pontes entre intenção física e avaliação mental; Clarisse de Souza conceitua a interface como signo e metacomunicação designer-usuário."
+        "texto": "A IHC estuda exclusivamente a velocidade de clock dos processadores sem participação de pessoas.",
+        "correta": false,
+        "diagnostico": "Erro de foco."
       },
       {
         "letra": "C",
-        "texto": "Ambas consideram que a interface gráfica é um erro conceitual e que sistemas devem operar exclusivamente por linha de comando Unix.",
+        "texto": "A IHC resume-se a escolher cores bonitas no Photoshop depois que o sistema já está pronto.",
         "correta": false,
-        "diagnostico": "Erro histórico: Norman e Clarisse de Souza fundamentam o design de interfaces interativas e gráficas modernas."
+        "diagnostico": "Erro redutor: estética é apenas uma fração; IHC envolve cognição, semiótica, ergonomia e avaliação."
       },
       {
         "letra": "D",
-        "texto": "A Engenharia Cognitiva se restringe a testes quantitativos automatizados sem humanos; a Engenharia Semiótica analisa somente a velocidade de conexão em redes de computadores.",
+        "texto": "A IHC proíbe o uso de psicologia na engenharia de software.",
         "correta": false,
-        "diagnostico": "Erro conceitual: IHC estuda a relação humana; redes de computadores é outra disciplina."
+        "diagnostico": "Erro inverso."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Para Norman, o sistema é uma ferramenta que o usuário tenta manipular (ele aperta um botão e avalia se o resultado atendeu à intenção dele). Para Clarisse de Souza, o sistema é uma carta ou preposto enviado pelo designer: o usuário 'conversa' com as mensagens deixadas pelo criador do software.",
-      "analise_correta": "Norman modela a ação humana em 7 etapas e analisa os Golfos de Execução e Avaliação. Clarisse de Souza formula a teoria da metacomunicação designer-usuário (*'aqui está quem eu sou, o que criei para você fazer e como você pode usar isso'*).",
+      "modelo_mental": "Para projetar uma cabine de avião segura, não basta entender apenas das turbinas (Computação) nem apenas do olho e cérebro do piloto (Psicologia): é preciso estudar o encontro entre o piloto e o painel durante o voo (IHC).",
+      "analise_correta": "Essa visão integrada coloca o ser humano no centro do projeto tecnológico.",
       "distratores": {
-        "A": "IHC estuda fatores humanos e cognitivos, não apenas voltagens de circuitos.",
-        "C": "Interfaces gráficas (WIMP e manipulação direta) foram amplamente elucidadas por essas teorias.",
-        "D": "Engenharia cognitiva envolve testes com usuários e psicologia cognitiva aplicada."
+        "B": "Erro de foco.",
+        "C": "Erro redutor: estética é apenas uma fração; IHC envolve cognição, semiótica, ergonomia e avaliação.",
+        "D": "Erro inverso."
       },
-      "referencia_vault": "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md"
+      "referencia_vault": "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md"
     }
   },
   {
     "id": "DI-002",
     "disciplina_id": "08",
     "disciplina": "Design de Interação",
-    "topico": "Heurísticas de Nielsen e prevenção de erros",
-    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
-    "dificuldade": "medio",
-    "enunciado": "Durante uma avaliação heurística de um sistema bancário, o especialista constata que, ao tentar realizar um Pix de alto valor, o botão 'Confirmar' não solicita dupla confirmação nem exibe o resumo dos dados do destinatário, executando a transferência irreversível instantaneamente. Qual das 10 Heurísticas de Usabilidade de Jakob Nielsen é violada prioritariamente?",
+    "topico": "O Processador Humano de Informação (Card, Moran e Newell)",
+    "artigo_origem": "01. O que é interação humano-computador e a visão teórica do ser humano.md",
+    "dificuldade": "dificil",
+    "enunciado": "No modelo clássico do **Processador Humano de Informação** (*Model Human Processor* de Card, Moran e Newell, 1983), o ser humano é compreendido em analogia a um sistema de processamento composto por três subsistemas integrados. Quais são eles?",
     "alternativas": [
       {
         "letra": "A",
-        "texto": "Correspondência entre o sistema e o mundo real.",
-        "correta": false,
-        "diagnostico": "Embora haja termos bancários, a falha crítica aqui é não impedir uma ação catastrófica e acidental do usuário."
+        "texto": "(1) **Sistema Perceptivo** (sensores visuais/auditivos e memórias sensoriais que captam estímulos da tela), (2) **Sistema Cognitivo** (memória de trabalho de curto prazo e memória de longo prazo que interpretam e decidem) e (3) **Sistema Motor** (mãos/olhos/voz que executam a ação física nos dispositivos de entrada).",
+        "correta": true,
+        "diagnostico": "Correto: cada ciclo de interação segue o circuito **Percepção -> Cognição -> Ação Motora**, respeitando os limites biológicos de tempo e memória de trabalho (7 ± 2 itens)."
       },
       {
         "letra": "B",
-        "texto": "Prevenção de erros (*Error prevention*), já que um design cuidadoso deve impedir a ocorrência de erros graves antes que eles aconteçam, solicitando confirmação para ações de alto risco.",
-        "correta": true,
-        "diagnostico": "Correto: a heurística 5 (Prevenção de erros) preconiza eliminar condições propensas a falhas ou apresentar aviso e confirmação prévia ao usuário."
+        "texto": "Placa-mãe, Placa de Vídeo e Fonte de Energia.",
+        "correta": false,
+        "diagnostico": "Erro de hardware."
       },
       {
         "letra": "C",
-        "texto": "Flexibilidade e eficiência de uso para usuários experientes.",
+        "texto": "Apenas Memória Infinita sem limites de atenção.",
         "correta": false,
-        "diagnostico": "Flexibilidade visa atalhos e personalização, mas não às custas de segurança e prevenção de desastres."
+        "diagnostico": "Erro: a memória de trabalho humana é altamente limitada e volátil."
       },
       {
         "letra": "D",
-        "texto": "Design estético e minimalista.",
+        "texto": "Banco de Dados SQL, Servidor Web e Roteador.",
         "correta": false,
-        "diagnostico": "Design minimalista trata de evitar informações irrelevantes na tela, não de confirmações transacionais essenciais."
+        "diagnostico": "Erro de infraestrutura."
       }
     ],
     "explicacao": {
-      "modelo_mental": "Melhor do que uma excelente mensagem de erro explicando que o vaso quebrou é colocar uma cerca protetora em volta do vaso para que ninguém tropece nele (prevenção de erros).",
-      "analise_correta": "Nielsen destaca que prevenir erros é superior a boas mensagens de erro. Em operações financeiras irreversíveis, passos de confirmação e checagem de dados são mandatórios.",
+      "modelo_mental": "Quando você vê um botão vermelho piscando na tela: seus olhos captam a luz (Sistema Perceptivo) -> seu cérebro lembra que vermelho é alerta e decide cancelar (Sistema Cognitivo) -> seu dedo move o mouse e clica (Sistema Motor).",
+      "analise_correta": "Projetar interfaces que sobrecarregam a memória de curto prazo do usuário viola os limites do Processador Humano de Informação.",
       "distratores": {
-        "A": "Mundo real diz respeito a metáforas conhecidas (ex.: ícone de carteira ou comprovante).",
-        "C": "Atalhos rápidos para especialistas não eliminam checagens críticas de segurança.",
-        "D": "Estética minimalista foca na carga visual e eliminação de ruídos."
+        "B": "Erro de hardware.",
+        "C": "Erro: a memória de trabalho humana é altamente limitada e volátil.",
+        "D": "Erro de infraestrutura."
+      },
+      "referencia_vault": "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md"
+    }
+  },
+  {
+    "id": "DI-003",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Engenharia Cognitiva vs. Engenharia Semiótica vs. Teoria da Atividade",
+    "artigo_origem": "02. Construções teóricas da interação humano-computador.md",
+    "dificuldade": "dificil",
+    "enunciado": "Compare as três grandes matrizes teóricas da IHC: **Engenharia Cognitiva** (Donald Norman), **Engenharia Semiótica** (Clarisse Sieckenius de Souza) e **Teoria da Atividade** (Vygotsky/Leontiev/Kaptelinin):",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Engenharia Cognitiva**: foca nos modelos mentais do usuário e na superação dos Golfos de Execução e Avaliação; **Engenharia Semiótica**: enxerga a interface como um artefato de **metacomunicação** (*preposto do designer* enviando uma mensagem ao usuário por meio de signos); **Teoria da Atividade**: analisa o sistema como **instrumento mediador** de uma atividade humana situada em um contexto histórico, social e cultural.",
+        "correta": true,
+        "diagnostico": "Correto: síntese magistral das três lentes teóricas que fundamentam toda a disciplina de Design de Interação."
+      },
+      {
+        "letra": "B",
+        "texto": "As três teorias dizem que o usuário deve aprender código binário.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "C",
+        "texto": "A Engenharia Semiótica estuda cabos de rede e a Cognitiva estuda bancos SQL.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Não existe diferença entre cognição individual, comunicação de signos e atividade social.",
+        "correta": false,
+        "diagnostico": "Erro teórico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três óculos para enxergar o mesmo sistema: (1) Óculos Cognitivo (Norman): o que passa na cabeça do usuário para entender e operar a ferramenta? (2) Óculos Semiótico (Clarisse): que recado o criador do sistema deixou escrito nos signos da tela para conversar com o usuário? (3) Óculos da Atividade: como essa ferramenta transforma o trabalho real daquela comunidade?",
+      "analise_correta": "Essas três construções teóricas não se anulam: elas se complementam para explicar falhas cognitivas, rupturas comunicativas e inadequações ao contexto de trabalho.",
+      "distratores": {
+        "B": "Erro conceitual.",
+        "C": "Erro de disciplina.",
+        "D": "Erro teórico."
+      },
+      "referencia_vault": "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md"
+    }
+  },
+  {
+    "id": "DI-004",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Modelos Conceituais em Norman: Modelo do Designer, Imagem do Sistema e Modelo Mental do Usuário",
+    "artigo_origem": "02. Construções teóricas da interação humano-computador.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na teoria de Donald Norman, o designer e o usuário normalmente não conversam pessoalmente; toda a relação acontece através da **Imagem do Sistema** (a interface física/visual, seus comportamentos, feedbacks e documentação). Qual é a condição para que a interação seja bem-sucedida?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **Modelo de Design** (concepção na mente do projetista) deve ser expresso com tanta clareza na **Imagem do Sistema** que o usuário, ao interagir com a tela, consiga construir um **Modelo Mental do Usuário** compatível e alinhado ao modelo do designer.",
+        "correta": true,
+        "diagnostico": "Correto: se a Imagem do Sistema for confusa ou contraditória, o Modelo Mental formado pelo usuário divergerá do Modelo do Designer, gerando erros graves de operação."
+      },
+      {
+        "letra": "B",
+        "texto": "O usuário deve adivinhar o que o programador pensou sem olhar para a tela.",
+        "correta": false,
+        "diagnostico": "Erro: o usuário só tem acesso à Imagem do Sistema."
+      },
+      {
+        "letra": "C",
+        "texto": "A Imagem do Sistema é o código C# escondido no servidor.",
+        "correta": false,
+        "diagnostico": "Erro: código interno oculto não faz parte da Imagem do Sistema percebida pelo usuário."
+      },
+      {
+        "letra": "D",
+        "texto": "O Modelo do Usuário nunca depende da interface.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três peças do quebra-cabeça de Norman: (1) O que o arquiteto imaginou (Modelo do Designer) -> (2) A porta física construída com sua maçaneta (Imagem do Sistema) -> (3) Como o visitante acha que a porta abre ao olhar para a maçaneta (Modelo do Usuário). Se a porta é de empurrar mas colocaram uma alça de puxar, a Imagem do Sistema mentiu!",
+      "analise_correta": "Esse conceito de Norman prepara diretamente a ponte para a Engenharia Semiótica de Clarisse de Souza.",
+      "distratores": {
+        "B": "Erro: o usuário só tem acesso à Imagem do Sistema.",
+        "C": "Erro: código interno oculto não faz parte da Imagem do Sistema percebida pelo usuário.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "08. Design de Interacao/02. Construções teóricas da interação humano-computador.md"
+    }
+  },
+  {
+    "id": "DI-005",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Mediação Instrumental e Transformação da Atividade Humana",
+    "artigo_origem": "03. O papel dos sistemas interativos na atividade humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Ao introduzir um novo sistema computacional interativo em uma organização (ex.: substituir o diário de classe de papel por um portal acadêmico digital), o que acontece com a **atividade humana** segundo a IHC?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O sistema nunca é neutro: ele atua como um **artefato mediador** que reestrutura a própria atividade humana, eliminando tarefas mecânicas antigas, mas exigindo novas habilidades cognitivas e alterando fluxos de trabalho e relações sociais.",
+        "correta": true,
+        "diagnostico": "Correto: conforme Donald Norman e a Teoria da Atividade, um artefato cognitivo não apenas acelera a tarefa antiga — ele **transforma a natureza da tarefa**."
+      },
+      {
+        "letra": "B",
+        "texto": "A atividade humana continua 100% idêntica; apenas muda a cor do papel para o monitor.",
+        "correta": false,
+        "diagnostico": "Erro: informatizar um processo ruim sem repensar a interação apenas automatiza a bagunça."
+      },
+      {
+        "letra": "C",
+        "texto": "O computador substitui completamente a necessidade de existir escola, alunos e professores.",
+        "correta": false,
+        "diagnostico": "Erro extremista."
+      },
+      {
+        "letra": "D",
+        "texto": "Sistemas interativos não têm relação com o trabalho humano.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar uma calculadora ou GPS não faz apenas você somar ou ler mapas mais rápido: muda o próprio jeito como seu cérebro planeja a rota e resolve o problema.",
+      "analise_correta": "Por isso o designer de interação precisa compreender profundamente a atividade real antes de redesenhá-la.",
+      "distratores": {
+        "B": "Erro: informatizar um processo ruim sem repensar a interação apenas automatiza a bagunça.",
+        "C": "Erro extremista.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md"
+    }
+  },
+  {
+    "id": "DI-006",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Artefatos Físicos vs. Artefatos Cognitivos / Simbólicos",
+    "artigo_origem": "03. O papel dos sistemas interativos na atividade humana.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a distinção entre uma ferramenta física tradicional (como um martelo ou alavanca, que amplifica a força muscular) e um **sistema computacional interativo** (entendido como **artefato cognitivo e simbólico**)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O sistema interativo opera sobre **informações e signos simbólicos**, amplificando e reorganizando as capacidades **intelectuais, perceptivas, de memória, decisão e comunicação** do ser humano.",
+        "correta": true,
+        "diagnostico": "Correto: computadores são máquinas semióticas/cognitivas que manipulam representações simbólicas do mundo."
+      },
+      {
+        "letra": "B",
+        "texto": "O computador serve apenas como peso de papel físico.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "Artefatos cognitivos não usam símbolos nem linguagem.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Martelos e softwares operam exatamente sobre a mesma matéria física.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O guindaste levanta toneladas de concreto para o seu braço descansar (artefato físico); o software de planilha e mapas organiza milhões de dados para a sua mente enxergar padrões e decidir (artefato cognitivo).",
+      "analise_correta": "Como o trabalho é mental e simbólico, a qualidade da **interface** determina diretamente se o artefato ajuda ou atrapalha o pensamento.",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro inverso.",
+        "D": "Erro conceitual."
+      },
+      "referencia_vault": "08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md"
+    }
+  },
+  {
+    "id": "DI-007",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Interagir COM o Sistema vs. Interagir POR MEIO do Sistema",
+    "artigo_origem": "04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md",
+    "dificuldade": "medio",
+    "enunciado": "Na evolução das perspectivas de interação em IHC (Kammersgaard / Barbosa & Silva), qual é a diferença fundamental entre **\"Interagir COM o sistema\"** e **\"Interagir POR MEIO do sistema\"**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Interagir COM o sistema**: a interação termina na própria máquina/dados (perspectiva de Sistema como Parceiro de Discurso ou como Ferramenta, ex.: usar uma calculadora ou editor local); **Interagir POR MEIO do sistema**: o computador atua como **mídia/canal de comunicação** que conecta seres humanos entre si (ex.: WhatsApp, Microsoft Teams, redes sociais ou a metacomunicação entre Designer e Usuário).",
+        "correta": true,
+        "diagnostico": "Correto: distinção crucial: a máquina é o interlocutor/ferramenta final (*COM o sistema*) ou a máquina é a ponte/meio que liga pessoas a outras pessoas (*POR MEIO do sistema*)?"
+      },
+      {
+        "letra": "B",
+        "texto": "Interagir COM o sistema é conversar com outra pessoa pelo telefone; POR MEIO é desligar o PC.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Não existe comunicação entre humanos mediada por computador.",
+        "correta": false,
+        "diagnostico": "Erro: sistemas colaborativos (CSCW) e redes sociais são a maior prova da interação mediada."
+      },
+      {
+        "letra": "D",
+        "texto": "Ambas significam programar em linguagem Assembly.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Usar um martelo para pregar um quadro na parede é interagir COM a ferramenta; usar um megafone ou enviar uma carta para falar com seu amigo do outro lado do rio é interagir POR MEIO do aparelho.",
+      "analise_correta": "Na Engenharia Semiótica, mesmo quando você usa um software sozinho, você está interagindo **por meio** da interface com o **Designer** que a projetou!",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: sistemas colaborativos (CSCW) e redes sociais são a maior prova da interação mediada.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md"
+    }
+  },
+  {
+    "id": "DI-008",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "As 4 Perspectivas de Interação de Kammersgaard (Sistema, Parceiro de Discurso, Ferramenta e Mídia)",
+    "artigo_origem": "04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md",
+    "dificuldade": "dificil",
+    "enunciado": "Jan Kammersgaard propôs quatro perspectivas clássicas para caracterizar a interação usuário-sistema. Associe corretamente cada perspectiva à sua metáfora central:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Perspectiva de Sistema**: trata usuário e computador como subcomponentes de um mesmo sistema de processamento de dados (foco em eficiência e baixa taxa de erro em digitação repetitiva); (2) **Parceiro de Discurso**: interação como diálogo em linguagem natural/conversacional (ex.: chatbots, assistentes de voz); (3) **Ferramenta**: o computador como utensílio que o usuário manipula diretamente para moldar um objeto de trabalho (ex.: Photoshop, CAD); (4) **Mídia**: o computador como meio de comunicação entre seres humanos.",
+        "correta": true,
+        "diagnostico": "Correto: as 4 perspectivas de Kammersgaard são um tema clássico das provas de Design de Interação."
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Sistema: rede social; (2) Mídia: calculadora sem rede; (3) Ferramenta: chatbot de voz.",
+        "correta": false,
+        "diagnostico": "Erro de troca das metáforas."
+      },
+      {
+        "letra": "C",
+        "texto": "Kammersgaard defende que existe apenas uma única perspectiva para todos os softwares.",
+        "correta": false,
+        "diagnostico": "Erro teórico."
+      },
+      {
+        "letra": "D",
+        "texto": "A Perspectiva de Ferramenta proíbe o uso de mouse e manipulação direta.",
+        "correta": false,
+        "diagnostico": "Erro inverso: a Perspectiva de Ferramenta é a base da manipulação direta!"
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quatro papéis para o computador: (1) Engrenagem junto com o operador (Sistema); (2) Interlocutor que conversa com você (Parceiro de Discurso); (3) Pincel/Chave de fenda na sua mão (Ferramenta); (4) Telefone/Jornal que liga você a outras pessoas (Mídia).",
+      "analise_correta": "Um mesmo software complexo (como um editor colaborativo online) pode combinar a perspectiva de **Ferramenta** (editar o texto) com a de **Mídia** (comentários e chat com colegas).",
+      "distratores": {
+        "B": "Erro de troca das metáforas.",
+        "C": "Erro teórico.",
+        "D": "Erro inverso: a Perspectiva de Ferramenta é a base da manipulação direta!"
+      },
+      "referencia_vault": "08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md"
+    }
+  },
+  {
+    "id": "DI-009",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Impacto da Escolha da Perspectiva nas Decisões de Design e Avaliação",
+    "artigo_origem": "05. Por que a perspectiva da interação importa.md",
+    "dificuldade": "medio",
+    "enunciado": "Por que a escolha consciente da **perspectiva de interação** pelo designer importa na prática ao projetar uma aplicação?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque a perspectiva adotada guia todo o vocabulário visual, o estilo de interação (comandos/conversa vs. manipulação direta de objetos), o grau de controle do usuário e os próprios critérios de avaliação de qualidade do sistema.",
+        "correta": true,
+        "diagnostico": "Correto: projetar um aplicativo de desenho pensando nele como \"Parceiro de Discurso\" (ter que digitar `\"Desenhe um círculo azul na posição X=10, Y=20\"`) seria um desastre ergonômico; como \"Ferramenta\" (arrastar o pincel na tela), torna-se natural!"
+      },
+      {
+        "letra": "B",
+        "texto": "Não importa em nada, é apenas uma discussão filosófica sem efeito na tela.",
+        "correta": false,
+        "diagnostico": "Erro prático."
+      },
+      {
+        "letra": "C",
+        "texto": "Serve apenas para decidir qual SGBD SQL será comprado.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      },
+      {
+        "letra": "D",
+        "texto": "Obriga todos os sistemas do mundo a serem chatbots de texto.",
+        "correta": false,
+        "diagnostico": "Erro de generalização."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se você acha que está projetando um balcão de perguntas (Parceiro), você coloca uma caixa de chat; se percebe que o usuário precisa de uma bancada de marcenaria (Ferramenta), você coloca réguas e objetos arrastáveis na mão dele.",
+      "analise_correta": "Inversamente, para um atendimento de dúvidas médicas ou triagem guiada, a perspectiva de Parceiro de Discurso pode ser muito mais acolhedora do que um painel técnico complexo.",
+      "distratores": {
+        "B": "Erro prático.",
+        "C": "Erro de camada.",
+        "D": "Erro de generalização."
+      },
+      "referencia_vault": "08. Design de Interacao/05. Por que a perspectiva da interação importa.md"
+    }
+  },
+  {
+    "id": "DI-010",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Transparência da Ferramenta vs. Visibilidade do Diálogo",
+    "artigo_origem": "05. Por que a perspectiva da interação importa.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na perspectiva de **Ferramenta** (e de **Mídia**), busca-se que a interface atinja um estado de \"transparência\" durante o uso fluente. O que significa dizer que uma boa ferramenta torna-se \"transparente\" para o usuário?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Significa que o usuário consegue concentrar 100% da sua atenção cognitiva na **sua tarefa/objetivo final** (escrever o livro, desenhar a planta ou conversar com o amigo) sem precisar gastar esforço mental pensando em *como operar os botões do software*.",
+        "correta": true,
+        "diagnostico": "Correto: conceito fenomenológico de Heidegger/Winograd & Flores aplicado à IHC: quando você escreve com um bom lápis, você não pensa no lápis, você pensa nas ideias do texto; você só nota o lápis quando a ponta quebra (*breakdown* / ruptura)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Significa deixar todas as janelas com opacidade `opacity: 0` no CSS para que ninguém enxergue nada.",
+        "correta": false,
+        "diagnostico": "Erro literal cômico."
+      },
+      {
+        "letra": "C",
+        "texto": "Significa esconder o código-fonte no GitHub.",
+        "correta": false,
+        "diagnostico": "Erro de repositório."
+      },
+      {
+        "letra": "D",
+        "texto": "Significa que a tela deve ser feita de vidro transparente.",
+        "correta": false,
+        "diagnostico": "Erro físico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você dirige um carro ao qual já está acostumado, você não fica pensando 'agora vou pisar 3 centímetros no pedal esquerdo': o carro vira uma extensão do seu corpo e você só foca na estrada (transparência). Você só lembra do pedal se ele emperrar!",
+      "analise_correta": "Qualquer defeito de usabilidade ou comunicabilidade quebra essa transparência e força o usuário a interromper seu trabalho para \"brigar com a interface\".",
+      "distratores": {
+        "B": "Erro literal cômico.",
+        "C": "Erro de repositório.",
+        "D": "Erro físico."
+      },
+      "referencia_vault": "08. Design de Interacao/05. Por que a perspectiva da interação importa.md"
+    }
+  },
+  {
+    "id": "DI-011",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Tríade Conceitual: Contexto de Uso, Interface e Interação",
+    "artigo_origem": "06. Contexto de uso, interface, interação e papéis do design.md",
+    "dificuldade": "facil",
+    "enunciado": "Em IHC e na norma ISO 9241-11, é fundamental não confundir **Interface**, **Interação** e **Contexto de Uso**. Qual alternativa define corretamente cada um dos três termos?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Interface**: é a superfície de contato físico e perceptivo/simbólico entre usuário e sistema (telas, botões, sons, teclado, mouse); **Interação**: é o **processo dinâmico** (fenômeno temporal de ações e reações/comunicação) que ocorre através da interface; **Contexto de Uso**: engloba quem são os usuários, quais tarefas realizam, com quais equipamentos e em qual ambiente físico, social e organizacional.",
+        "correta": true,
+        "diagnostico": "Correto: distinção basilar da disciplina: a **Interface** é o objeto/superfície estática e dinâmica de contato; a **Interação** é a dança/conversa que acontece no tempo quando o usuário usa a interface dentro de um **Contexto de Uso**!"
+      },
+      {
+        "letra": "B",
+        "texto": "Interface e Interação são palavras 100% sinônimas para design gráfico.",
+        "correta": false,
+        "diagnostico": "Erro clássico: o designer constrói diretamente a *Interface*, mas o objetivo dele é proporcionar uma boa *Interação*."
+      },
+      {
+        "letra": "C",
+        "texto": "Contexto de Uso é apenas a resolução em pixels do monitor.",
+        "correta": false,
+        "diagnostico": "Erro redutor: usar um app num escritório silencioso vs. andando sob sol forte na rua com uma mão ocupada muda totalmente o Contexto de Uso."
+      },
+      {
+        "letra": "D",
+        "texto": "A Interface é o banco de dados SQL e a Interação é o cabo de energia.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Em um violão: as cordas, o braço de madeira e a caixa acústica são a **Interface**; o ato de dedilhar e produzir música ao vivo é a **Interação**; tocar numa sala de concerto silenciosa ou numa roda de praia com vento é o **Contexto de Uso**.",
+      "analise_correta": "Nunca se avalia a qualidade de uma interface no vazio: uma interface excelente para um piloto de caça é péssima para um caixa de supermercado, pois o **Contexto de Uso** é outro.",
+      "distratores": {
+        "B": "Erro clássico: o designer constrói diretamente a *Interface*, mas o objetivo dele é proporcionar uma boa *Interação*.",
+        "C": "Erro redutor: usar um app num escritório silencioso vs. andando sob sol forte na rua com uma mão ocupada muda totalmente o Contexto de Uso.",
+        "D": "Erro de camada."
+      },
+      "referencia_vault": "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md"
+    }
+  },
+  {
+    "id": "DI-012",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "O Papel da Análise, Síntese e Avaliação no Processo de Design de Interação",
+    "artigo_origem": "06. Contexto de uso, interface, interação e papéis do design.md",
+    "dificuldade": "medio",
+    "enunciado": "O processo iterativo de **Design de Interação** articula continuamente três grandes atividades fundamentais: **Análise**, **Síntese (Concepção/Projeto)** e **Avaliação**. O que ocorre em cada uma?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Análise**: compreender o problema atual, estudar os usuários (personas), suas tarefas e o contexto de uso; **Síntese**: conceber soluções de intervenção, modelar fluxos de interação e construir protótipos de interface; **Avaliação**: verificar e testar (por inspeção ou com usuários) se a solução concebida atende aos critérios de qualidade antes e durante a implementação.",
+        "correta": true,
+        "diagnostico": "Correto: ciclo **Analisar (Situação Atual) -> Sintetizar (Proposta de Intervenção/Protótipo) -> Avaliar (Diagnóstico de Qualidade)** repetido iterativamente."
+      },
+      {
+        "letra": "B",
+        "texto": "Faz-se apenas a Síntese (desenhar telas) sem estudar o usuário e sem avaliar.",
+        "correta": false,
+        "diagnostico": "Erro de processo."
+      },
+      {
+        "letra": "C",
+        "texto": "A Avaliação ocorre apenas 10 anos depois que o software sai de linha.",
+        "correta": false,
+        "diagnostico": "Erro cronológico."
+      },
+      {
+        "letra": "D",
+        "texto": "Análise consiste em programar o banco de dados em SQL.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Médico: faz os exames para entender a saúde do paciente (Análise) -> receita o tratamento sob medida (Síntese) -> acompanha se a febre baixou e ajusta a dose (Avaliação).",
+      "analise_correta": "Ponte direta com **Engenharia de Requisitos**: a Análise de IHC alimenta a Elicitação, a Síntese gera os Protótipos/Wireframes e a Avaliação valida os RNFs de Usabilidade/Acessibilidade.",
+      "distratores": {
+        "B": "Erro de processo.",
+        "C": "Erro cronológico.",
+        "D": "Erro de disciplina."
+      },
+      "referencia_vault": "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md"
+    }
+  },
+  {
+    "id": "DI-013",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Os 4 Grandes Critérios de Qualidade de IHC: Usabilidade, Comunicabilidade, Acessibilidade e Experiência do Usuário (UX)",
+    "artigo_origem": "07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
+    "dificuldade": "medio",
+    "enunciado": "Distinga com precisão os quatro grandes atributos de qualidade estudados em Design de Interação: **Usabilidade**, **Comunicabilidade**, **Acessibilidade** e **Experiência do Usuário (UX)**:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Usabilidade**: facilidade de aprendizado, eficiência, eficácia, segurança/baixa taxa de erros e satisfação ao realizar tarefas; **Comunicabilidade**: capacidade da interface de comunicar eficazmente ao usuário a lógica do design e como interagir (metacomunicação semiótica); **Acessibilidade**: remoção de barreiras para que pessoas com diferentes capacidades (visuais, auditivas, motoras, cognitivas) usem o sistema com autonomia; **UX**: percepção holística, emocional, subjetiva e afetiva do usuário antes, durante e após o uso.",
+        "correta": true,
+        "diagnostico": "Correto: quadro comparativo central da disciplina (Barbosa & Silva / ISO 9241 / Nielsen / Clarisse de Souza)."
+      },
+      {
+        "letra": "B",
+        "texto": "Todos os quatro significam apenas deixar a página rápida.",
+        "correta": false,
+        "diagnostico": "Erro redutor."
+      },
+      {
+        "letra": "C",
+        "texto": "Acessibilidade é exclusiva para usuários sem nenhuma deficiência.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "Comunicabilidade mede a velocidade do Wi-Fi.",
+        "correta": false,
+        "diagnostico": "Erro de redes."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quatro selos de excelência de um restaurante: **Usabilidade** (o garfo é fácil de segurar e você come sem derrubar nada); **Comunicabilidade** (o cardápio explica claramente o que vem em cada prato e como pedir); **Acessibilidade** (há rampa, cardápio em Braille e mesas adaptadas para que todos entrem com dignidade); **UX** (a música, o carinho do atendimento e a memória feliz que faz você querer voltar no seu aniversário).",
+      "analise_correta": "Cada um desses 4 atributos possui métodos próprios de avaliação (ex.: Teste de Usabilidade/Heurísticas para Usabilidade; MIS/MAC para Comunicabilidade; WCAG para Acessibilidade).",
+      "distratores": {
+        "B": "Erro redutor.",
+        "C": "Erro inverso.",
+        "D": "Erro de redes."
+      },
+      "referencia_vault": "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md"
+    }
+  },
+  {
+    "id": "DI-014",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Componentes da Usabilidade segundo Jakob Nielsen e a ISO 9241-11",
+    "artigo_origem": "07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
+    "dificuldade": "dificil",
+    "enunciado": "Segundo a norma **ISO 9241-11** (Eficácia, Eficiência e Satisfação em um contexto de uso específico) e **Jakob Nielsen** (5 fatores de usabilidade), como se diferenciam **Facilidade de Aprendizado (*Learnability*)**, **Facilidade de Recordação (*Memorability*)**, **Eficiência**, **Segurança/Erros** e **Satisfação**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Aprendizado**: quão fácil é para um novato realizar tarefas na primeira vez; **Recordação**: quão fácil é para um usuário intermitente lembrar como usar após ficar semanas sem abrir o sistema; **Eficiência**: rapidez/produtividade atingida após aprender; **Erros**: frequência, gravidade e facilidade de recuperação de erros; **Satisfação**: conforto subjetivo e ausência de frustração.",
+        "correta": true,
+        "diagnostico": "Correto: atenção também para a diferença da ISO 9241-11 entre **Eficácia** (alcançar o objetivo com exatidão/completude: *fez o que precisava?*) e **Eficiência** (quantidade de recursos/tempo/esforço gastos para alcançar essa eficácia: *gastou pouco tempo e poucos cliques?*)."
+      },
+      {
+        "letra": "B",
+        "texto": "Eficiência significa acertar o objetivo mesmo gastando 50 horas; Eficácia significa usar pouca memória RAM.",
+        "correta": false,
+        "diagnostico": "Erro inverso entre eficácia e eficiência."
+      },
+      {
+        "letra": "C",
+        "texto": "Facilidade de Aprendizado e Facilidade de Recordação são exatamente o mesmo teste para usuários diários.",
+        "correta": false,
+        "diagnostico": "Erro: *Learnability* foca no **primeiro contato do novato**; *Memorability* foca no **retorno após um período sem uso**."
+      },
+      {
+        "letra": "D",
+        "texto": "A ISO 9241-11 afirma que a usabilidade independe do usuário e da tarefa.",
+        "correta": false,
+        "diagnostico": "Erro: a ISO define usabilidade estritamente em função de *usuários específicos, objetivos específicos e contexto de uso específico*."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Eficácia vs. Eficiência: se você conseguiu comprar a passagem de ônibus no site, mas levou 45 minutos e 80 cliques, o site foi **eficaz** (você comprou!), mas teve **péssima eficiência** (gastou esforço absurdo).",
+      "analise_correta": "Dominar os 3 pilares da ISO 9241-11 e as 5 dimensões de Nielsen é garantia de ponto nas questões teóricas de qualidade.",
+      "distratores": {
+        "B": "Erro inverso entre eficácia e eficiência.",
+        "C": "Erro: *Learnability* foca no **primeiro contato do novato**; *Memorability* foca no **retorno após um período sem uso**.",
+        "D": "Erro: a ISO define usabilidade estritamente em função de *usuários específicos, objetivos específicos e contexto de uso específico*."
+      },
+      "referencia_vault": "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md"
+    }
+  },
+  {
+    "id": "DI-015",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Os 7 Estágios da Ação e os Golfos de Execução e de Avaliação de Donald Norman",
+    "artigo_origem": "08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na **Engenharia Cognitiva** de Donald Norman (*O Design do Dia a Dia*), o ciclo de ação humana divide-se em 7 estágios (Formar o objetivo -> Formar a intenção -> Especificar a ação -> Executar a ação -> Perceber o estado do mundo -> Interpretar o estado -> Avaliar o resultado em relação ao objetivo). O que são o **Golfo de Execução** e o **Golfo de Avaliação**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **Golfo de Execução** é a distância (dificuldade) entre as intenções do usuário e as ações permitidas pelo sistema (*\"Como eu faço o sistema realizar o que eu quero? Onde eu clico?\"*); o **Golfo de Avaliação** é a distância (esforço) para perceber, interpretar e entender o novo estado do sistema após a ação (*\"O que aconteceu? Deu certo ou deu erro?\"*).",
+        "correta": true,
+        "diagnostico": "Correto: questão clássica absoluta de IHC! **Golfo de Execução** = dificuldade de *agir* (superado por bons *signifiers/affordances*, mapeamento claro e restrições); **Golfo de Avaliação** = dificuldade de *entender a resposta* (superado por bom **feedback** imediato e visibilidade do estado)."
+      },
+      {
+        "letra": "B",
+        "texto": "Golfo de Execução é quando o programa demora para abrir; Golfo de Avaliação é a nota da prova da faculdade.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "O Golfo de Execução é superado apenas com mensagens de confirmação; o Golfo de Avaliação é superado escondendo o estado do sistema.",
+        "correta": false,
+        "diagnostico": "Erro inverso: feedback supera o Golfo de Avaliação!"
+      },
+      {
+        "letra": "D",
+        "texto": "Norman afirma que quanto maiores forem os golfos, melhor é a interface.",
+        "correta": false,
+        "diagnostico": "Erro inverso: o papel do designer é construir **pontes estreitas** que diminuam e eliminem os dois golfos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Micro-ondas misterioso: você quer esquentar o prato por 1 minuto, mas há 20 botões com siglas estranhas e você não sabe qual apertar (**Golfo de Execução**). Aí você aperta um botão, o aparelho não acende luz nem faz barulho nenhum, e você não sabe se está esquentando ou desligado (**Golfo de Avaliação**).",
+      "analise_correta": "Sempre que uma questão falar em \"usuário não encontra o botão para realizar a tarefa\", é **Golfo de Execução**; quando falar em \"usuário clicou e não sabe se o pedido foi salvo\", é **Golfo de Avaliação**.",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro inverso: feedback supera o Golfo de Avaliação!",
+        "D": "Erro inverso: o papel do designer é construir **pontes estreitas** que diminuam e eliminem os dois golfos."
+      },
+      "referencia_vault": "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md"
+    }
+  },
+  {
+    "id": "DI-016",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Deslizes (Slips) vs. Enganos (Mistakes) na Taxonomia de Erros Humanos de Norman",
+    "artigo_origem": "08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+    "dificuldade": "dificil",
+    "enunciado": "Donald Norman classifica os erros humanos durante a interação em duas categorias cognitivas fundamentais: **Deslizes (*Slips*)** e **Enganos (*Mistakes*)**. Qual é a diferença exata entre eles?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **Deslize (*Slip*)** ocorre quando o usuário formou a **intenção/objetivo correto**, mas errou na execução física/automática por distração ou similaridade motora (ex.: queria clicar em *Salvar*, mas escorregou e clicou em *Excluir* logo ao lado, ou digitou uma letra trocada); o **Engano (*Mistake*)** ocorre quando o usuário formou a **intenção ou plano mental errado** por interpretar incorretamente o funcionamento do sistema (modelo mental equivocado).",
+        "correta": true,
+        "diagnostico": "Correto: **Slip (Deslize)** = intenção certa + ação executada errada (comum em usuários experientes operando no piloto automático; previne-se com confirmação/Undo e bom espaçamento de botões); **Mistake (Engano)** = intenção/plano errado por falha de compreensão (exige redesenhar a comunicação/modelo conceitual da tela)."
+      },
+      {
+        "letra": "B",
+        "texto": "Deslize é quando o usuário cai da cadeira; Engano é quando o computador trava.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      },
+      {
+        "letra": "C",
+        "texto": "Deslizes ocorrem apenas com novatos e Enganos são fáceis de corrigir mudando apenas o tamanho da letra.",
+        "correta": false,
+        "diagnostico": "Erro: curiosamente, *Deslizes (Slips)* acontecem muito com **especialistas** que fazem a tarefa rápido sem olhar, enquanto *Enganos (Mistakes)* nascem de modelos mentais falhos."
+      },
+      {
+        "letra": "D",
+        "texto": "Não há diferença: todo erro humano tem a mesma causa.",
+        "correta": false,
+        "diagnostico": "Erro psicológico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Deslize (*Slip*): você sabe o caminho de casa, mas distraído pensando na prova acaba entrando na rua do trabalho por hábito automático. Engano (*Mistake*): você leu o mapa errado, planejou ir para o Norte achando que a praia ficava lá e seguiu o plano errado perfeitamente.",
+      "analise_correta": "Conectar essa distinção à **Taxonomia de Diagnóstico de Erros (Regra 11 do vault)**: um *Mistake* equivale ao Erro Conceitual, enquanto um *Slip* equivale à Distração/Desatenção!",
+      "distratores": {
+        "B": "Erro literal.",
+        "C": "Erro: curiosamente, *Deslizes (Slips)* acontecem muito com **especialistas** que fazem a tarefa rápido sem olhar, enquanto *Enganos (Mistakes)* nascem de modelos mentais falhos.",
+        "D": "Erro psicológico."
+      },
+      "referencia_vault": "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md"
+    }
+  },
+  {
+    "id": "DI-017",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Metacomunicação e o Preposto do Designer na Engenharia Semiótica (Clarisse de Souza)",
+    "artigo_origem": "09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na **Engenharia Semiótica** formulada pela pesquisadora brasileira Clarisse Sieckenius de Souza (PUC-Rio), o que são a **Metacomunicação** e o **Preposto do Designer**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A Engenharia Semiótica enxerga a interação humano-computador como um caso particular de **metacomunicação** (comunicação sobre como se comunicar): como o designer não está presente ao lado do usuário no momento do uso, a própria interface atua como o **Preposto (representante/porta-voz) do Designer**, transmitindo a mensagem: *\"Aqui está a minha visão de quem você é, do que aprendi que você quer ou precisa fazer, em que modos prefere fazer e por quê. Este é, portanto, o sistema que projetei para você, e é assim que você pode ou deve usá-lo...\"*.",
+        "correta": true,
+        "diagnostico": "Correto: definição canônica da Engenharia Semiótica! Existem duas comunicações simultâneas: a comunicação direta **Usuário <-> Sistema** (em tempo de execução) que realiza a **Metacomunicação Designer -> Usuário** (a mensagem do criador sobre como usar o artefato)."
+      },
+      {
+        "letra": "B",
+        "texto": "O Preposto do Designer é um funcionário humano sentado ao lado de cada cliente.",
+        "correta": false,
+        "diagnostico": "Erro literal: o preposto é o próprio **software/interface** falando em nome do designer."
+      },
+      {
+        "letra": "C",
+        "texto": "Metacomunicação é o protocolo TCP/IP conversando com a placa de rede.",
+        "correta": false,
+        "diagnostico": "Erro de redes."
+      },
+      {
+        "letra": "D",
+        "texto": "A Engenharia Semiótica ignora os signos da interface.",
+        "correta": false,
+        "diagnostico": "Erro inverso: toda a teoria baseia-se nos signos da interface."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O designer não pode ir morar na casa de cada um dos 1 milhão de usuários para explicar a tela; então ele deixa um representante robô treinado por ele dentro da tela (o **Preposto do Designer** = a interface). Cada botão, ícone e mensagem de erro é o designer conversando com você através desse representante.",
+      "analise_correta": "Quando o usuário entende perfeitamente o recado do preposto, dizemos que o sistema tem alta **Comunicabilidade**.",
+      "distratores": {
+        "B": "Erro literal: o preposto é o próprio **software/interface** falando em nome do designer.",
+        "C": "Erro de redes.",
+        "D": "Erro inverso: toda a teoria baseia-se nos signos da interface."
+      },
+      "referencia_vault": "08. Design de Interacao/09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md"
+    }
+  },
+  {
+    "id": "DI-018",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Classificação dos Signos da Interface: Estáticos, Dinâmicos e Metalinguísticos",
+    "artigo_origem": "09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md",
+    "dificuldade": "dificil",
+    "enunciado": "A Engenharia Semiótica classifica os **signos** que compõem a mensagem da interface em três categorias: **Signos Estáticos**, **Signos Dinâmicos** e **Signos Metalinguísticos**. Associe corretamente cada tipo de signo:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Signos Estáticos**: comunicam seu significado independentemente de relações temporais/causais, podendo ser interpretados em uma foto parada da tela (ex.: rótulos de botões, ícones, cores, disposição visual dos campos); (2) **Signos Dinâmicos**: dependem da interação no tempo e do comportamento causal do sistema para serem compreendidos (ex.: um botão que fica desabilitado até preencher o CPF, animações de progresso, arrastar e soltar); (3) **Signos Metalinguísticos**: signos que explicam ou falam sobre outros signos da própria interface (ex.: *tooltips*/dicas de contexto, mensagens de ajuda, tutoriais e mensagens de erro explicativas).",
+        "correta": true,
+        "diagnostico": "Correto: esses três tipos de signos serão exatamente o objeto de análise do **Método de Inspeção Semiótica (MIS)** no artigo 21!"
+      },
+      {
+        "letra": "B",
+        "texto": "(1) Estáticos: vídeos; (2) Dinâmicos: texto fixo impresso; (3) Metalinguísticos: cabos USB.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos os signos da tela são apenas estáticos.",
+        "correta": false,
+        "diagnostico": "Erro: sem signos dinâmicos não haveria interatividade reativa."
+      },
+      {
+        "letra": "D",
+        "texto": "Signos Metalinguísticos são proibidos em sistemas interativos.",
+        "correta": false,
+        "diagnostico": "Erro: mensagens de ajuda e erro (*metalinguísticos*) são essenciais para recuperar falhas de comunicação."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três formas de a tela falar com você: (1) **Estático** é a placa parada na porta dizendo 'Salvar'; (2) **Dinâmico** é a porta destrancar e mudar de cinza para verde no instante em que você termina de digitar a senha (precisa ver acontecendo no tempo); (3) **Metalinguístico** é o balãozinho de ajuda que aparece quando você para o mouse em cima explicando 'Clique no ícone de disquete ao lado para salvar seu rascunho' (um signo explicando outro signo!).",
+      "analise_correta": "Dominar Estáticos, Dinâmicos e Metalinguísticos é indispensável para as questões sobre Engenharia Semiótica e MIS.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: sem signos dinâmicos não haveria interatividade reativa.",
+        "D": "Erro: mensagens de ajuda e erro (*metalinguísticos*) são essenciais para recuperar falhas de comunicação."
+      },
+      "referencia_vault": "08. Design de Interacao/09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md"
+    }
+  },
+  {
+    "id": "DI-019",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Graus de Envolvimento do Usuário: Design Independente, Design Centrado no Usuário (DCU) e Design Participativo (Co-Design)",
+    "artigo_origem": "10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md",
+    "dificuldade": "medio",
+    "enunciado": "Compare as três abordagens de projeto quanto ao papel e grau de participação dos usuários reais: **Design Independente (Centrado no Designer)**, **Design Centrado no Usuário (DCU / UCD)** e **Design Participativo (Co-Design)**:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Design Independente**: o designer projeta sozinho baseando-se apenas em sua intuição/talento, sem consultar nem testar com usuários (alto risco de falha em software); **Design Centrado no Usuário (DCU)**: o designer conduz o projeto mantendo o foco nas necessidades do usuário, que participa como **informante e avaliador** nas fases de pesquisa e testes; **Design Participativo**: o usuário deixa de ser apenas consultado e passa a ser **co-autor ativo (*co-designer*)**, tomando decisões e desenhando soluções lado a lado com a equipe.",
+        "correta": true,
+        "diagnostico": "Correto: progressão do envolvimento: **Independente** (sem usuário) -> **Centrado no Usuário / DCU** (usuário estudado e consultado: design *PARA* o usuário) -> **Participativo** (usuário na mesa criando junto: design *COM* o usuário)."
+      },
+      {
+        "letra": "B",
+        "texto": "No Design Centrado no Usuário nunca se faz entrevista nem teste com usuários.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "No Design Participativo os programadores são demitidos e o usuário programa o C# sozinho.",
+        "correta": false,
+        "diagnostico": "Erro: o usuário co-projeta a concepção, fluxos e protótipos de baixa fidelidade, não o código-fonte de infraestrutura."
+      },
+      {
+        "letra": "D",
+        "texto": "Design Independente é a abordagem mais recomendada pela ISO 9241-210 para sistemas críticos.",
+        "correta": false,
+        "diagnostico": "Erro: a ISO 9241-210 padroniza justamente o Design Centrado no Ser Humano."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Reforma do quarto do filho: **Independente** = os pais reformam tudo em segredo sem perguntar nada; **Centrado no Usuário** = os pais entrevistam o filho, medem a altura dele, fazem o projeto e mostram para ele testar; **Participativo** = pais e filho sentam juntos com papel e lápis de cor para desenhar e escolher os móveis em parceria.",
+      "analise_correta": "Tanto o DCU quanto o Design Participativo reduzem drasticamente a rejeição do sistema e os erros de entendimento de domínio.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: o usuário co-projeta a concepção, fluxos e protótipos de baixa fidelidade, não o código-fonte de infraestrutura.",
+        "D": "Erro: a ISO 9241-210 padroniza justamente o Design Centrado no Ser Humano."
+      },
+      "referencia_vault": "08. Design de Interacao/10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md"
+    }
+  },
+  {
+    "id": "DI-020",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Racionalismo Técnico (Simon) vs. Reflexão em Ação (Donald Schön) e Problemas Capciosos (Wicked Problems)",
+    "artigo_origem": "11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na epistemologia do design discutida por Herbert Simon e **Donald Schön**, qual é a diferença entre a visão do **Racionalismo Técnico** e a **Reflexão em Ação (*Reflection-in-Action*)** diante dos chamados *Wicked Problems* (problemas capciosos/mal definidos do mundo real)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **Racionalismo Técnico** trata o projeto como aplicação mecânica de fórmulas científicas prontas para problemas perfeitamente fechados; já Donald Schön demonstra que problemas reais de design são únicos, instáveis e complexos, exigindo **Reflexão em Ação**: uma \"conversa reflexiva com a situação e os materiais\" na qual o designer experimenta um rascunho/protótipo, o protótipo \"responde\" revelando consequências imprevistas (*backtalk*), e o designer reflete e reformula o problema e a solução simultaneamente.",
+        "correta": true,
+        "diagnostico": "Correto: em Design de Interação, **técnica (racionalismo) e criatividade situada (reflexão em ação) são aliadas**: usamos métodos e diretrizes rigorosas, mas refletimos continuamente sobre os protótipos para lidar com as singularidades humanas."
+      },
+      {
+        "letra": "B",
+        "texto": "Racionalismo Técnico significa chutar qualquer coisa sem método; Reflexão em Ação significa nunca usar técnica.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Problemas de design de interação têm sempre uma única resposta matemática exata igual a $2 + 2 = 4$.",
+        "correta": false,
+        "diagnostico": "Erro: em design não existe \"a única tela certa\", existem soluções melhores ou piores para aquele contexto."
+      },
+      {
+        "letra": "D",
+        "texto": "Donald Schön proíbe desenhar wireframes e protótipos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: para Schön, o rascunho/protótipo é justamente o meio pelo qual o designer pensa e conversa com o problema!"
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O engenheiro calculando a bitola de um fio elétrico aplica uma fórmula pronta (Racionalismo Técnico). Já o arquiteto desenhando uma escola inclusiva faz um esboço no papel, olha para o desenho e percebe 'Puxa, se eu colocar a rampa aqui, ela ilumina o pátio inteiro!' (Reflexão em Ação: o desenho conversou de volta com ele).",
+      "analise_correta": "Compreender Schön explica por que a prototipagem iterativa não é perda de tempo, mas o próprio motor cognitivo do design.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: em design não existe \"a única tela certa\", existem soluções melhores ou piores para aquele contexto.",
+        "D": "Erro inverso: para Schön, o rascunho/protótipo é justamente o meio pelo qual o designer pensa e conversa com o problema!"
+      },
+      "referencia_vault": "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md"
+    }
+  },
+  {
+    "id": "DI-021",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Tríade de Modelagem de Usuário: Perfil de Usuário vs. Persona (Alan Cooper) vs. Mapa de Empatia",
+    "artigo_origem": "12. Modelagem de usuário - perfil, persona e mapa de empatia.md",
+    "dificuldade": "medio",
+    "enunciado": "Para não projetar para um \"usuário elástico\" imaginário, utilizamos três artefatos complementares de modelagem de usuário: **Perfil de Usuário**, **Persona** e **Mapa de Empatia**. Como eles se diferenciam?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Perfil de Usuário**: descrição agregada de faixas e características demográficas/profissionais e experiência tecnológica de uma categoria de público (ex.: *\"Professores do ensino público, 30 a 55 anos, uso intermediário de smartphone\"*); **Persona** (criada por Alan Cooper): personagem **arquétipo fictício mas realista e individualizado** (com nome, foto, história de vida, objetivos e frustrações sintetizados a partir de dados reais); **Mapa de Empatia**: ferramenta visual que aprofunda a imersão subjetiva no que a persona **Pensa e Sente, Vê, Ouve, Fala e Faz, suas Dores e seus Ganhos**.",
+        "correta": true,
+        "diagnostico": "Correto: o **Perfil** dá o recorte estatístico do grupo; a **Persona** dá um rosto humano concreto com objetivos claros para gerar foco e empatia na equipe; o **Mapa de Empatia** aprofunda as dores e motivações emocionais/contextuais."
+      },
+      {
+        "letra": "B",
+        "texto": "Persona é um cliente real com CPF verdadeiro exposto no documento; Perfil é um desenho animado.",
+        "correta": false,
+        "diagnostico": "Erro: uma Persona NÃO é um indivíduo único real com CPF exposto, e sim um **arquétipo composto** que sintetiza padrões encontrados em vários usuários pesquisados."
+      },
+      {
+        "letra": "C",
+        "texto": "Os três artefatos servem para modelar as chaves estrangeiras do banco de dados.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Criar Personas consiste em inventar personagens estereotipados sem fazer nenhuma pesquisa ou entrevista prévia.",
+        "correta": false,
+        "diagnostico": "Erro metodológico: Personas devem ser fundamentadas em dados de elicitação/pesquisa para não virarem achismos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Perfil é a ficha do IBGE do grupo ('Homens e mulheres de 20 a 30 anos que estudam EAD'); Persona é o personagem vivo que representa essa turma ('Lucas, 24 anos, trabalha no comércio durante o dia e estuda ADS no ônibus pelo celular à noite porque sonha em mudar de carreira'); Mapa de Empatia é entrar nos sapatos do Lucas para sentir o cansaço e a esperança dele.",
+      "analise_correta": "Durante todo o projeto, a equipe pergunta: *\"O Lucas conseguiria fazer esse fluxo com uma mão só no celular dentro do ônibus?\"*.",
+      "distratores": {
+        "B": "Erro: uma Persona NÃO é um indivíduo único real com CPF exposto, e sim um **arquétipo composto** que sintetiza padrões encontrados em vários usuários pesquisados.",
+        "C": "Erro de disciplina.",
+        "D": "Erro metodológico: Personas devem ser fundamentadas em dados de elicitação/pesquisa para não virarem achismos."
+      },
+      "referencia_vault": "08. Design de Interacao/12. Modelagem de usuário - perfil, persona e mapa de empatia.md"
+    }
+  },
+  {
+    "id": "DI-022",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Níveis de Fidelidade (Baixa, Média e Alta) e Dimensões (Horizontal vs. Vertical) de Protótipos",
+    "artigo_origem": "13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
+    "dificuldade": "medio",
+    "enunciado": "Na prototipagem de sistemas interativos, qual é a diferença entre **Baixa Fidelidade** e **Alta Fidelidade**, e o que significam as dimensões **Protótipo Horizontal** vs. **Protótipo Vertical**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Baixa Fidelidade** (ex.: rascunhos em papel): rápido, barato e foca na estrutura conceitual sem prender o usuário a detalhes de cor; **Alta Fidelidade** (ex.: Figma navegável com identidade visual final): simula de perto a aparência e navegação real. Quanto ao escopo: **Protótipo Horizontal** cobre uma **ampla largura** de telas na superfície (vários menus, mas sem aprofundar as funções); **Protótipo Vertical** aprofunda **uma única funcionalidade** de ponta a ponta em todos os detalhes.",
+        "correta": true,
+        "diagnostico": "Correto: curiosamente, nas fases iniciais, protótipos de **Baixa Fidelidade** (papel/wireframe) deixam o usuário muito mais à vontade para criticar e sugerir mudanças estruturais do que uma tela pronta e colorida!"
+      },
+      {
+        "letra": "B",
+        "texto": "Baixa Fidelidade demora 6 meses para fazer e Alta Fidelidade é feita em guardanapo.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Protótipo Horizontal aprofunda apenas 1 botão até o banco de dados; Vertical mostra apenas a barra superior.",
+        "correta": false,
+        "diagnostico": "Erro inverso entre horizontal (largura de superfície) e vertical (profundidade de um fluxo)."
+      },
+      {
+        "letra": "D",
+        "texto": "Só é permitido mostrar ao cliente protótipos 100% prontos em Alta Fidelidade.",
+        "correta": false,
+        "diagnostico": "Erro: começar direto na alta fidelidade desperdiça tempo pintando uma estrutura que ainda nem foi validada."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Horizontal vs. Vertical: **Horizontal** é raspar a superfície do lago inteiro (mostrar todas as abas do menu principal, mas só a primeira tela de cada uma); **Vertical** é mergulhar fundo num ponto só até o fundo do lago (fazer o fluxo de Compra completo do início ao fim, enquanto os outros botões do menu ainda estão desativados).",
+      "analise_correta": "Essa taxonomia permite escolher o protótipo certo para a pergunta que queremos responder em cada etapa.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro inverso entre horizontal (largura de superfície) e vertical (profundidade de um fluxo).",
+        "D": "Erro: começar direto na alta fidelidade desperdiça tempo pintando uma estrutura que ainda nem foi validada."
+      },
+      "referencia_vault": "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md"
+    }
+  },
+  {
+    "id": "DI-023",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Diferença entre Storyboard, Sketch (Rabisco), Wireframe, Mockup e Protótipo Interativo/Funcional",
+    "artigo_origem": "13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
+    "dificuldade": "dificil",
+    "enunciado": "No vocabulário prático de Design de Interação e UX/UI, diferencie com precisão **Storyboard**, **Wireframe** e **Mockup**:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Storyboard**: sequência de quadros estilo história em quadrinhos que ilustra o **contexto de uso, a cena humana, a dor do usuário e o momento em que ele usa o sistema**; **Wireframe**: esqueleto estrutural da tela em tons de cinza/linhas simples (baixa/média fidelidade) focado em **hierarquia de informação, layout, áreas funcionais e posicionamento de componentes**, sem cores ou estética final; **Mockup**: representação visual estática de **média/alta fidelidade** que aplica a paleta de cores, tipografia, ícones e imagens definitivas sobre a estrutura do wireframe.",
+        "correta": true,
+        "diagnostico": "Correto: escada evolutiva da concepção visual: **Storyboard** (a história humana no mundo) -> **Sketch / Rabisco** (ideação livre no papel) -> **Wireframe** (planta baixa/esqueleto cinza da tela) -> **Mockup** (fachada pintada com cores e fontes reais) -> **Protótipo Navegável** (cliques e transições entre as telas)."
+      },
+      {
+        "letra": "B",
+        "texto": "Storyboard é o banco de dados SQL; Wireframe é o vídeo final com música; Mockup é um rascunho a lápis sem cores.",
+        "correta": false,
+        "diagnostico": "Erro de inversão completa."
+      },
+      {
+        "letra": "C",
+        "texto": "Wireframes devem sempre usar todas as cores definitivas, fotos em alta resolução e animações 3D.",
+        "correta": false,
+        "diagnostico": "Erro: colocar cores e fotos definitivas no Wireframe o transforma em Mockup e desvia o foco da estrutura."
+      },
+      {
+        "letra": "D",
+        "texto": "Os três termos referem-se exatamente ao mesmo arquivo `.cs`.",
+        "correta": false,
+        "diagnostico": "Erro de código."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Construindo uma casa: **Storyboard** é o quadrinho mostrando a família chegando do mercado com sacolas na chuva; **Wireframe** é a planta baixa preta e branca mostrando onde ficam a porta, a pia e a mesa; **Mockup** é a maquete 3D pintada mostrando o piso de madeira e a parede azul; **Protótipo Navegável** é poder abrir a porta da maquete e caminhar de um cômodo para o outro!",
+      "analise_correta": "Na Etapa 2 do Projeto Integrador, entregamos justamente o fluxo de telas estruturado em Wireframes/Protótipos navegáveis por perfil.",
+      "distratores": {
+        "B": "Erro de inversão completa.",
+        "C": "Erro: colocar cores e fotos definitivas no Wireframe o transforma em Mockup e desvia o foco da estrutura.",
+        "D": "Erro de código."
+      },
+      "referencia_vault": "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md"
+    }
+  },
+  {
+    "id": "DI-024",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Efeito Estética-Usabilidade, Harmonização de Cores (60-30-10) e Tipografia Legível",
+    "artigo_origem": "14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md",
+    "dificuldade": "medio",
+    "enunciado": "Qual é a relação entre **Estética Visual** (cores, tipografia, alinhamento e espaço em branco) e **Usabilidade**, e como a **Regra 60-30-10** auxilia na harmonização de cores de uma interface?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A estética não é mero enfeite: ela organiza a **hierarquia visual**, guia o olhar, reduz a carga cognitiva e provoca o **Efeito Estética-Usabilidade** (interfaces visualmente harmoniosas são percebidas pelos usuários como mais fáceis de usar e confiáveis). Na **Regra 60-30-10**, usa-se **60%** de cor dominante/neutra de fundo (respiro visual), **30%** de cor secundária estrutural (cards, menus, cabeçalhos) e **10%** de cor de destaque/acento (*accent color*) reservada para botões de ação primária (*Call to Action* - CTA).",
+        "correta": true,
+        "diagnostico": "Correto: se tudo grita com cor de destaque na tela, **nada** se destaca! Reservar os **10%** da cor de acento para o botão principal guia o olho do usuário instantaneamente para a ação mais importante."
+      },
+      {
+        "letra": "B",
+        "texto": "Para destacar tudo na tela, deve-se usar 100% de vermelho neon piscante no fundo e texto amarelo claro.",
+        "correta": false,
+        "diagnostico": "Erro grave de ergonomia visual e contraste."
+      },
+      {
+        "letra": "C",
+        "texto": "A estética é inimiga da usabilidade: sistemas bons precisam ser feios e desalinhados.",
+        "correta": false,
+        "diagnostico": "Erro conceitual."
+      },
+      {
+        "letra": "D",
+        "texto": "Deve-se usar pelo menos 12 fontes tipográficas manuscritas diferentes na mesma tela.",
+        "correta": false,
+        "diagnostico": "Erro tipográfico: recomenda-se usar no máximo 1 ou 2 famílias tipográficas sem serifa (*sans-serif*, como Inter, Roboto, Open Sans) com tamanhos e pesos bem hierarquizados."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Decoração de uma sala: 60% são as paredes claras neutras que dão paz aos olhos; 30% é o sofá e a estante que organizam o espaço; e 10% são as almofadas vibrantes ou o quadro iluminado para onde todo mundo olha ao entrar (o botão principal da tela!).",
+      "analise_correta": "Além disso, a **cor nunca deve ser o único canal para transmitir informação crítica** (ex.: erro indicado apenas pela cor vermelha sem ícone e sem texto exclui pessoas com daltonismo!).",
+      "distratores": {
+        "B": "Erro grave de ergonomia visual e contraste.",
+        "C": "Erro conceitual.",
+        "D": "Erro tipográfico: recomenda-se usar no máximo 1 ou 2 famílias tipográficas sem serifa (*sans-serif*, como Inter, Roboto, Open Sans) com tamanhos e pesos bem hierarquizados."
+      },
+      "referencia_vault": "08. Design de Interacao/14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md"
+    }
+  },
+  {
+    "id": "DI-025",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Escolha Semântica de Componentes de Interface (Widgets): Radio Button vs. Checkbox vs. Dropdown (Select)",
+    "artigo_origem": "15. Componentes e recomendações ergonômicas em sistemas interativos.md",
+    "dificuldade": "facil",
+    "enunciado": "Na ergonomia de componentes de formulários (*widgets*), quando devemos utilizar **Radio Buttons** (botões de opção redondos), **Checkboxes** (caixas de seleção quadradas) e **Dropdown / Select** (lista suspensa)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Radio Buttons**: escolha **mutuamente exclusiva** (apenas 1 opção pode ser marcada) entre poucas alternativas visíveis (tipicamente 2 a 5 opções); **Checkboxes**: escolha **independente / múltipla seleção** (zero, uma ou várias opções podem ser marcadas simultaneamente) ou ativação booleana única (*\"Aceito os termos\"*); **Dropdown (`<select>`)**: escolha de 1 opção quando a lista de alternativas é maior (ex.: escolher 1 entre os 27 Estados do Brasil) para economizar espaço vertical na tela.",
+        "correta": true,
+        "diagnostico": "Correto: respeitar a convenção universal do formato dos componentes (redondo = exclusivo 1 só; quadrado = múltiplos) evita erros de execução imediatos do usuário."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar Checkboxes quando o usuário só pode escolher 1 único turno (Manhã ou Noite) e Radio Buttons para escolher vários ingredientes de pizza.",
+        "correta": false,
+        "diagnostico": "Erro inverso clássico de violação de convenção de interface."
+      },
+      {
+        "letra": "C",
+        "texto": "Usar um Dropdown escondido para escolher entre apenas 2 opções (Sim ou Não).",
+        "correta": false,
+        "diagnostico": "Erro ergonômico: esconder apenas 2 opções dentro de um Dropdown exige 2 cliques e esconde as alternativas sem necessidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Todos os três componentes têm o mesmo comportamento.",
+        "correta": false,
+        "diagnostico": "Erro funcional."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Botões antigos de rádio de carro (**Radio Button** redondo): quando você aperta a estação FM 1, o botão da estação FM 2 pula para fora sozinho (só toca uma rádio por vez!). Já a lista de mercado com quadradinhos (**Checkbox**): você pode marcar arroz, feijão e café ao mesmo tempo.",
+      "analise_correta": "Complementarmente, **Botões de Ação Primária** (Salvar/Confirmar) devem ter destaque visual claro em relação às **Ações Secundárias** (Cancelar/Voltar) e **Ações Destrutivas** (Excluir, em tom de alerta e com confirmação).",
+      "distratores": {
+        "B": "Erro inverso clássico de violação de convenção de interface.",
+        "C": "Erro ergonômico: esconder apenas 2 opções dentro de um Dropdown exige 2 cliques e esconde as alternativas sem necessidade.",
+        "D": "Erro funcional."
+      },
+      "referencia_vault": "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md"
+    }
+  },
+  {
+    "id": "DI-026",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Critérios Ergonômicos de Bastien e Scapin e a Lei de Fitts",
+    "artigo_origem": "15. Componentes e recomendações ergonômicas em sistemas interativos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na Ergonomia de Software (Critérios de **Bastien e Scapin**: Condução/Presteza, Carga de Trabalho, Controle Explícito, Adaptabilidade, Gestão de Erros, Homogeneidade/Consistência, Significado dos Códigos e Compatibilidade) e na **Lei de Fitts**, o que estabelece a Lei de Fitts sobre o posicionamento e tamanho de botões na tela?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "A **Lei de Fitts** demonstra matematicamente que o tempo necessário para apontar e clicar em um alvo na tela depende da **distância até o alvo** dividida pelo **tamanho (largura) do alvo**: portanto, botões usados com frequência ou importantes devem ser **maiores (alvos largos)** e posicionados **próximos** de onde o cursor/dedo já está, enquanto ações perigosas (como *Excluir*) não devem ficar coladas ao botão *Salvar*.",
+        "correta": true,
+        "diagnostico": "Correto: a Lei de Fitts fundamenta desde o tamanho mínimo de alvos de toque em celulares (mínimo de 44x44px ou 48x48dp) até o posicionamento de menus nos cantos/bordas da tela (que possuem \"largura infinita\" porque o mouse para na borda!)."
+      },
+      {
+        "letra": "B",
+        "texto": "A Lei de Fitts diz que botões minúsculos de 2 pixels no canto oposto da tela são mais rápidos de clicar.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Bastien e Scapin recomendam aumentar a Carga de Trabalho mental do usuário ao máximo.",
+        "correta": false,
+        "diagnostico": "Erro inverso: o critério Carga de Trabalho visa *reduzir* a carga perceptiva e cognitiva (concisão e densidade informacional equilibrada)."
+      },
+      {
+        "letra": "D",
+        "texto": "O critério de Controle Explícito diz que o sistema deve enviar formulários sozinho antes de o usuário clicar.",
+        "correta": false,
+        "diagnostico": "Erro inverso: Controle Explícito exige que as ações do sistema resultem de comandos explícitos do usuário."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Lei de Fitts no mundo real: é muito mais rápido e fácil acertar uma bola de basquete num cesto largo bem na sua frente do que acertar uma linha na agulha a dois metros de distância!",
+      "analise_correta": "Em telas *mobile* (celular), a Lei de Fitts se combina com a **Zona do Polegar (*Thumb Zone*)**, colocando as ações principais na parte inferior/central da tela onde o polegar alcança sem esforço.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro inverso: o critério Carga de Trabalho visa *reduzir* a carga perceptiva e cognitiva (concisão e densidade informacional equilibrada).",
+        "D": "Erro inverso: Controle Explícito exige que as ações do sistema resultem de comandos explícitos do usuário."
+      },
+      "referencia_vault": "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md"
+    }
+  },
+  {
+    "id": "DI-027",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "O Paradigma WIMP e a Manipulação Direta de Ben Shneiderman",
+    "artigo_origem": "16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md",
+    "dificuldade": "medio",
+    "enunciado": "A revolução das Interfaces Gráficas do Usuário (GUI - desenvolvida no Xerox PARC e popularizada pelo Macintosh e Windows) baseia-se no paradigma **WIMP** e no conceito de **Manipulação Direta** (cunhado por Ben Shneiderman). O que significa a sigla **WIMP** e quais são os 3 princípios da **Manipulação Direta**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**WIMP** significa ***Windows, Icons, Menus, Pointer*** (Janelas, Ícones, Menus e Ponteiro/Cursor). A **Manipulação Direta** baseia-se em: (1) representação visual contínua dos objetos e ações de interesse na tela; (2) substituição de comandos complexos digitados por ações físicas diretas (clicar, arrastar, redimensionar) ou botões; e (3) operações rápidas, incrementais e **imediatamente reversíveis** com feedback visual instantâneo no próprio objeto.",
+        "correta": true,
+        "diagnostico": "Correto: antes do WIMP e da Manipulação Direta, para mover um arquivo o usuário precisava lembrar e digitar `mv /pasta1/relatorio.txt /pasta2/`; com a Manipulação Direta, o arquivo existe visualmente como um ícone na sua frente e você o **arrasta** com o ponteiro até a pasta destino vendo-o se mover em tempo real!"
+      },
+      {
+        "letra": "B",
+        "texto": "WIMP significa Web, Internet, Modem e Protocolo.",
+        "correta": false,
+        "diagnostico": "Erro de sigla."
+      },
+      {
+        "letra": "C",
+        "texto": "Manipulação Direta consiste em digitar comandos longos no terminal tela preta do MS-DOS sem ver os arquivos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: isso é a Interface Baseada em Linha de Comando (**CLI** - *Command Line Interface*)."
+      },
+      {
+        "letra": "D",
+        "texto": "No paradigma WIMP as ações nunca podem ser desfeitas.",
+        "correta": false,
+        "diagnostico": "Erro: reversibilidade imediata (Undo) é pilar da Manipulação Direta."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Dirigir um carro é Manipulação Direta: você gira o volante para a direita e vê o carro virar para a direita no mesmo milissegundo; se virar demais, gira um pouquinho de volta na hora.",
+      "analise_correta": "A Manipulação Direta reduz drasticamente o Golfo de Execução e o Golfo de Avaliação para usuários iniciantes e intermediários.",
+      "distratores": {
+        "B": "Erro de sigla.",
+        "C": "Erro inverso: isso é a Interface Baseada em Linha de Comando (**CLI** - *Command Line Interface*).",
+        "D": "Erro: reversibilidade imediata (Undo) é pilar da Manipulação Direta."
+      },
+      "referencia_vault": "08. Design de Interacao/16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md"
+    }
+  },
+  {
+    "id": "DI-028",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Princípio Cognitivo: Reconhecer em vez de Recordar (Recognition Rather Than Recall)",
+    "artigo_origem": "16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md",
+    "dificuldade": "medio",
+    "enunciado": "Tanto nas interfaces gráficas quanto nas 10 Heurísticas de Nielsen, destaca-se o princípio **\"Reconhecer em vez de Recordar\"** (*Recognition rather than recall*). Qual fenômeno da memória humana explica a superioridade do reconhecimento sobre a recordação pura?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Na **Recordação livre (*Recall*)**, o cérebro precisa vasculhar a memória de longo prazo sem pistas visuais (ex.: uma prova discursiva em branco ou o prompt `C:\\>` piscando esperando você lembrar o nome exato do comando e seus parâmetros); no **Reconhecimento (*Recognition*)**, a interface **torna visíveis os objetos, opções, menus e ações**, fornecendo o contexto visual para que o cérebro apenas identifique a opção desejada com esforço cognitivo muito menor.",
+        "correta": true,
+        "diagnostico": "Correto: é por isso que uma questão de múltipla escolha (onde você *reconhece* a resposta certa entre 4 opções visíveis) exige menos esforço de busca na memória do que uma pergunta aberta em branco (onde você precisa *recordar* do zero)!"
+      },
+      {
+        "letra": "B",
+        "texto": "Recordar de cabeça 200 códigos de produtos sem lista na tela é mais fácil para o ser humano.",
+        "correta": false,
+        "diagnostico": "Erro cognitivo."
+      },
+      {
+        "letra": "C",
+        "texto": "Reconhecer exige esconder todos os menus e ícones da tela.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "D",
+        "texto": "A memória humana de curto prazo guarda 1 milhão de itens simultâneos.",
+        "correta": false,
+        "diagnostico": "Erro: a memória de trabalho guarda apenas cerca de 4 a 7 blocos (*chunks*)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É muito mais fácil você **reconhecer** o rosto de um colega de infância quando o encontra na rua (o rosto dele está visível na sua frente dando todas as pistas) do que tentar **recordar** de olhos fechados o nome completo de todos os 30 colegas da sua sala da 3ª série!",
+      "analise_correta": "Aplicações práticas na tela: mostrar histórico de buscas recentes, usar menus visíveis, autocompletar campos e exibir listas de seleção em vez de exigir códigos decorados.",
+      "distratores": {
+        "B": "Erro cognitivo.",
+        "C": "Erro inverso.",
+        "D": "Erro: a memória de trabalho guarda apenas cerca de 4 a 7 blocos (*chunks*)."
+      },
+      "referencia_vault": "08. Design de Interacao/16. Interfaces gráficas - paradigma wimp, manipulação direta e reconhecer em vez de recordar.md"
+    }
+  },
+  {
+    "id": "DI-029",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Semiótica de Peirce Aplicada a Ícones de Interface: Ícone (Semelhança), Índice (Causalidade) e Símbolo (Convenção)",
+    "artigo_origem": "17. Projeto de ícones em interfaces interativas - metáfora, mapeamento direto e convenção.md",
+    "dificuldade": "dificil",
+    "enunciado": "No projeto de representações gráficas em interfaces, com base na semiótica de Charles Sanders Peirce e nas estratégias de design de ícones, qual é a diferença entre **Mapeamento Direto / Semelhança (Ícone)**, **Metáfora / Indício** e **Convenção Arbitrária (Símbolo)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Mapeamento Direto / Semelhança**: o desenho parece fisicamente com o próprio objeto real representado (ex.: desenho de uma **Impressora** para imprimir); (2) **Metáfora / Analogia**: transporta o significado de um objeto familiar do mundo físico para uma função abstrata digital (ex.: **Lixeira** para excluir arquivo, **Lupa** para buscar, **Pasta de arquivo** para diretório, **Carrinho de supermercado** para checkout); (3) **Convenção Arbitrária (Símbolo)**: não há semelhança física natural, o significado é aprendido por acordo cultural/padrão (ex.: o símbolo de **três traços horizontais `tres barras` para Menu Hambúrguer**, o símbolo de **Bluetooth** ou o **Disquete** para Salvar para jovens que nunca viram um disquete físico).",
+        "correta": true,
+        "diagnostico": "Correto: como operações de software são muitas vezes abstratas (como você desenha \"Desfazer\", \"Sincronizar\" ou \"Filtrar\"?), recorremos a **Metáforas** e **Convenções**, e a boa prática ergonômica recomenda **acompanhar ícones importantes com um rótulo de texto curto (*label*)** para eliminar qualquer ambiguidade!"
+      },
+      {
+        "letra": "B",
+        "texto": "O ícone de Lixeira imprime papel na impressora.",
+        "correta": false,
+        "diagnostico": "Erro funcional."
+      },
+      {
+        "letra": "C",
+        "texto": "Ícones sem rótulo de texto são sempre compreendidos por 100% da humanidade sem ambiguidade.",
+        "correta": false,
+        "diagnostico": "Erro grave: ícones isolados sem texto (*mystery meat navigation*) são uma das maiores fontes de ruptura de comunicabilidade."
+      },
+      {
+        "letra": "D",
+        "texto": "O Menu Hambúrguer `tres barras` é um desenho idêntico a um menu de papel.",
+        "correta": false,
+        "diagnostico": "Erro semiótico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três jeitos de apontar para algo com um desenho: (1) Desenhar o próprio objeto igualzinho (Impressora = Imprimir); (2) Usar uma comparação poética do mundo real (Tesoura = Recortar texto); (3) Combinar um código que todo mundo aprende a usar (Sinal de Pare octagonal ou o `X` para fechar janela).",
+      "analise_correta": "Atenção especial nas provas para o perigo de metáforas culturais restritas (ex.: uma caixa de correio rural americana com bandeirinha vermelha que não existe no Brasil) ou metáforas quebradas.",
+      "distratores": {
+        "B": "Erro funcional.",
+        "C": "Erro grave: ícones isolados sem texto (*mystery meat navigation*) são uma das maiores fontes de ruptura de comunicabilidade.",
+        "D": "Erro semiótico."
+      },
+      "referencia_vault": "08. Design de Interacao/17. Projeto de ícones em interfaces interativas - metáfora, mapeamento direto e convenção.md"
+    }
+  },
+  {
+    "id": "DI-030",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Leis da Psicologia da Gestalt na Percepção Visual de Interfaces",
+    "artigo_origem": "18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
+    "dificuldade": "medio",
+    "enunciado": "A **Psicologia da Gestalt** explica como o cérebro humano organiza estímulos visuais em grupos coerentes (*\"O todo é diferente da soma das partes\"*). Associe corretamente as **Leis da Gestalt** aplicadas ao layout de telas:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Proximidade**: elementos posicionados perto uns dos outros são percebidos como pertencentes ao mesmo grupo (ex.: o rótulo `Nome` deve ficar mais perto do seu próprio `<input>` do que do campo de cima!); (2) **Similaridade (Semelhança)**: elementos que compartilham mesma cor, forma ou tamanho são percebidos como tendo a mesma função (ex.: todos os links têm a mesma cor); (3) **Região Comum / Fechamento**: elementos envolvidos por uma borda/card ou fundo compartilhado formam uma unidade lógica; (4) **Continuidade** e **Figura-Fundo** (destacar o modal em primeiro plano sobre o fundo escurecido).",
+        "correta": true,
+        "diagnostico": "Correto: violar a **Lei da Proximidade** em formulários (deixando o *label* equidistante entre dois *inputs* ou mais perto do *input* de cima) faz o usuário preencher o dado na caixa errada!"
+      },
+      {
+        "letra": "B",
+        "texto": "A Lei da Proximidade manda colocar o rótulo do campo `CPF` colado no campo `Telefone` e longe do campo `CPF`.",
+        "correta": false,
+        "diagnostico": "Erro inverso clássico de formulário."
+      },
+      {
+        "letra": "C",
+        "texto": "A Lei da Similaridade manda pintar cada botão de salvar de uma cor diferente em cada tela.",
+        "correta": false,
+        "diagnostico": "Erro: isso destruiria a Similaridade e a Consistência."
+      },
+      {
+        "letra": "D",
+        "texto": "A Gestalt estuda apenas comandos de banco de dados SQL.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quando você vê 12 cadeiras na praça: se elas estão separadas em 3 rodinhas de 4 cadeiras perto umas das outras, seu olho enxerga imediatamente '3 grupos de conversa' sem precisar desenhar linhas no chão (**Lei da Proximidade**). Se você colocar um tapete debaixo de cada grupo, reforça ainda mais com **Região Comum** (Cards na UI!).",
+      "analise_correta": "Aplicar Proximidade, Similaridade e Região Comum permite organizar telas complexas usando apenas alinhamento e espaçamento (*whitespace*), sem poluir a tela com dezenas de linhas divisórias.",
+      "distratores": {
+        "B": "Erro inverso clássico de formulário.",
+        "C": "Erro: isso destruiria a Similaridade e a Consistência.",
+        "D": "Erro de disciplina."
+      },
+      "referencia_vault": "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md"
+    }
+  },
+  {
+    "id": "DI-031",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "As 8 Regras de Ouro do Design de Interfaces de Ben Shneiderman",
+    "artigo_origem": "18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
+    "dificuldade": "dificil",
+    "enunciado": "Quais são as célebres **8 Regras de Ouro do Design de Interfaces** formuladas por **Ben Shneiderman**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Buscar a consistência** (terminologia, cores, layouts e fluxos padronizados); (2) **Atender à usabilidade universal / oferecer atalhos** para diferentes perfis (novatos a especialistas); (3) **Oferecer feedback informativo** para cada ação; (4) **Projetar diálogos que indiquem fechamento / conclusão** (início, meio e fim claros de uma tarefa); (5) **Prevenir erros e oferecer tratamento simples**; (6) **Permitir reversão fácil de ações (Undo)**; (7) **Manter o lócus interno de controle** (o usuário sente que comanda o sistema, e não que responde a ele); (8) **Reduzir a carga de memória de curto prazo**.",
+        "correta": true,
+        "diagnostico": "Correto: as 8 Regras de Ouro de Shneiderman (junto com as 10 Heurísticas de Nielsen e os 8 Critérios de Bastien & Scapin) formam a santíssima trindade dos guias práticos de projeto de IHC."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar telas inconsistentes, proibir o botão Desfazer e exigir que o usuário decore códigos de 20 dígitos.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "As Regras de Ouro de Shneiderman tratam de normalização de tabelas em 1FN a 8FN.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Deixar o sistema tomar decisões sozinho sem dar feedback ao usuário.",
+        "correta": false,
+        "diagnostico": "Erro: viola o feedback (regra 3) e o lócus interno de controle (regra 7)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Repare no poder da Regra 4 (**Diálogos com fechamento**) e da Regra 6 (**Reversão fácil**): quando você termina uma compra e vê a tela 'Pedido #1042 concluído com sucesso! Comprovante enviado' (fechamento), sua mente relaxa e encerra o ciclo cognitivo; e saber que existe o botão 'Desfazer' (reversão) tira a ansiedade de explorar o sistema.",
+      "analise_correta": "Muitas questões de prova cobram identificar qual Regra de Ouro de Shneiderman foi aplicada ou violada em um estudo de caso.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro de disciplina.",
+        "D": "Erro: viola o feedback (regra 3) e o lócus interno de controle (regra 7)."
+      },
+      "referencia_vault": "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md"
+    }
+  },
+  {
+    "id": "DI-032",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Avaliação Formativa vs. Avaliação Somativa e os 3 Paradigmas (Inspeção, Observação e Investigação)",
+    "artigo_origem": "19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
+    "dificuldade": "medio",
+    "enunciado": "Na **Avaliação de Sistemas Interativos**, qual é a diferença entre **Avaliação Formativa** (durante o processo de design) e **Avaliação Somativa** (no produto finalizado), e quais são as **três grandes classes de métodos de avaliação**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Avaliação Formativa**: realizada **durante** o ciclo iterativo sobre rascunhos e protótipos para diagnosticar problemas e melhorar o design antes de codificar tudo; **Avaliação Somativa**: realizada ao **final** sobre o sistema pronto para medir e certificar se atingiu as metas de qualidade. As 3 classes de métodos são: (1) **Inspeção** (especialistas avaliam a interface sem usuários reais: *Avaliação Heurística, Percurso Cognitivo, MIS*), (2) **Observação / Testes Empíricos** (observa-se usuários reais realizando tarefas: *Teste de Usabilidade, MAC*) e (3) **Investigação / Indagação** (colhe-se a opinião dos usuários: *Questionários como o SUS, Entrevistas*).",
+        "correta": true,
+        "diagnostico": "Correto: mapa taxonômico fundamental dos artigos 19 a 24! Memorize quem participa: **Inspeção** = APENAS Especialistas/Avaliadores (sem usuários!); **Observação** = Usuários reais executando tarefas observados pelo avaliador; **Investigação** = Usuários respondendo sobre sua percepção/satisfação."
+      },
+      {
+        "letra": "B",
+        "texto": "Métodos de Inspeção exigem contratar 100 usuários finais; Métodos de Observação não têm usuários.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Só se deve avaliar o sistema uma única vez depois que já foi lançado em produção.",
+        "correta": false,
+        "diagnostico": "Erro: esperar o fim do projeto torna a correção caríssima."
+      },
+      {
+        "letra": "D",
+        "texto": "O SUS é um método de inspeção sem usuários e a Avaliação Heurística é um questionário para clientes.",
+        "correta": false,
+        "diagnostico": "Erro inverso clássico de prova: Avaliação Heurística = Inspeção (por especialistas); SUS = Investigação (questionário respondido pelo usuário)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Avaliação Formativa é o chef provando o molho na colher enquanto cozinha para acertar o sal; Avaliação Somativa é o jurado do concurso dando a nota final para o prato pronto na mesa.",
+      "analise_correta": "Combinar um método de **Inspeção** (rápido e barato para limpar erros óbvios logo cedo) seguido de **Observação + Investigação** (Teste de Usabilidade + SUS com usuários reais) é a estratégia padrão ouro de avaliação.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: esperar o fim do projeto torna a correção caríssima.",
+        "D": "Erro inverso clássico de prova: Avaliação Heurística = Inspeção (por especialistas); SUS = Investigação (questionário respondido pelo usuário)."
+      },
+      "referencia_vault": "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md"
+    }
+  },
+  {
+    "id": "DI-033",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Avaliação Heurística e as 10 Heurísticas de Usabilidade de Jakob Nielsen",
+    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na **Avaliação Heurística** proposta por Jakob Nielsen e Rolf Molich, de 3 a 5 avaliadores especialistas inspecionam a interface de forma independente (antes de consolidar os achados e classificar a severidade de 0 a 4) verificando a conformidade com as **10 Heurísticas de Usabilidade**. Quais são as 10 Heurísticas de Nielsen?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Visibilidade do status do sistema**; (2) **Correspondência entre o sistema e o mundo real**; (3) **Controle e liberdade do usuário** (saídas de emergência, Desfazer/Refazer); (4) **Consistência e padrões**; (5) **Prevenção de erros**; (6) **Reconhecimento em vez de memorização/recordação**; (7) **Flexibilidade e eficiência de uso** (atalhos/aceleradores para experientes); (8) **Estética e design minimalista** (sem informação irrelevante); (9) **Auxiliar os usuários a reconhecer, diagnosticar e recuperar-se de erros** (mensagens claras em linguagem simples, sem códigos crípticos); e (10) **Ajuda e documentação**.",
+        "correta": true,
+        "diagnostico": "Correto: as **10 Heurísticas de Nielsen** são o conteúdo mais cobrado da história de IHC! Saiba diferenciar especialmente a **H5 (Prevenção de erros**: impedir o erro *antes* que aconteça, com confirmações, máscaras e desabilitação de opções inválidas) da **H9 (Recuperação de erros**: depois que o erro *já aconteceu*, explicar o que houve em linguagem humana e apontar a solução construtiva)."
+      },
+      {
+        "letra": "B",
+        "texto": "As 10 Heurísticas de Nielsen exigem mostrar códigos de erro hexadecimais `0x80040E14` e proibir o botão Cancelar.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Um único avaliador encontra 100% dos problemas de usabilidade sozinho.",
+        "correta": false,
+        "diagnostico": "Erro empírico: Nielsen provou que 1 avaliador sozinho acha apenas ~35% dos problemas, enquanto **3 a 5 avaliadores independentes** encontram cerca de **75% a 80%** dos problemas com ótimo custo-benefício!"
+      },
+      {
+        "letra": "D",
+        "texto": "A Avaliação Heurística é aplicada entregando um formulário de 10 perguntas para o cliente responder.",
+        "correta": false,
+        "diagnostico": "Erro metodológico: quem faz a Avaliação Heurística são os **especialistas**, nunca o usuário final."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Por que os avaliadores primeiro inspecionam sozinhos antes de conversar? Para que o avaliador mais falante não influencie os outros (viés de grupo) e cada um enxergue problemas diferentes; só na etapa final eles se reúnem para juntar as listas e dar a nota de gravidade (Severidade de 0 a 4).",
+      "analise_correta": "Dica de ouro para provas: leu \"barra de progresso / indicador de carregando\" -> **H1 (Visibilidade do status)**; leu \"botão Voltar / Cancelar / Desfazer\" -> **H3 (Controle e liberdade)**; leu \"tecla de atalho Ctrl+S\" -> **H7 (Flexibilidade e eficiência)**.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro empírico: Nielsen provou que 1 avaliador sozinho acha apenas ~35% dos problemas, enquanto **3 a 5 avaliadores independentes** encontram cerca de **75% a 80%** dos problemas com ótimo custo-benefício!",
+        "D": "Erro metodológico: quem faz a Avaliação Heurística são os **especialistas**, nunca o usuário final."
       },
       "referencia_vault": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md"
+    }
+  },
+  {
+    "id": "DI-034",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Percurso Cognitivo (Cognitive Walkthrough): Foco na Aprendizagem Exploratória de Novatos",
+    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "dificuldade": "dificil",
+    "enunciado": "Enquanto a Avaliação Heurística inspeciona a tela globalmente com base nas 10 regras gerais, qual é o foco específico e o funcionamento do método de inspeção chamado **Percurso Cognitivo (*Cognitive Walkthrough*)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O Percurso Cognitivo avalia especificamente a **facilidade de aprendizado por exploração (*learnability*) para usuários novatos**, percorrendo passo a passo uma tarefa específica e respondendo, a cada ação da sequência, a **4 perguntas cognitivas**: (1) O usuário tentará atingir o efeito correto? (2) O usuário notará que a ação correta está disponível na tela? (3) O usuário associará a ação correta ao efeito que deseja atingir? (4) Se a ação correta for executada, o usuário perceberá que está progredindo rumo ao objetivo (feedback)?",
+        "correta": true,
+        "diagnostico": "Correto: distinção clássica de prova: **Avaliação Heurística** = inspeção aberta por diretrizes gerais (10 heurísticas); **Percurso Cognitivo** = inspeção passo a passo **orientada a tarefas** simulando o ciclo cognitivo de tentativa e descoberta de um **novato**!"
+      },
+      {
+        "letra": "B",
+        "texto": "O Percurso Cognitivo avalia apenas usuários especialistas que já usam o sistema há 10 anos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: foca no aprendizado inicial sem treinamento prévio."
+      },
+      {
+        "letra": "C",
+        "texto": "Consiste em colocar um capacete de eletrodos no usuário final.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "Não precisa definir nenhuma tarefa nem perfil de usuário antes de começar.",
+        "correta": false,
+        "diagnostico": "Erro: os insumos obrigatórios de preparação do Percurso Cognitivo são o perfil dos usuários, a lista de tarefas concretas e a sequência exata de ações no protótipo."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No Percurso Cognitivo, o especialista calça os sapatos de alguém que nunca viu o aplicativo na vida e tenta fazer uma compra passo a passo, perguntando em cada clique: '1. Ele saberia que precisa fazer isso agora? 2. Ele enxergaria esse botão? 3. Ele entenderia pelo nome do botão que é aqui que clica? 4. Depois de clicar, ele entenderia que deu certo?'.",
+      "analise_correta": "Se a resposta para qualquer uma das 4 perguntas for \"Não\", registra-se uma falha no Golfo de Execução (perguntas 1 a 3) ou no Golfo de Avaliação (pergunta 4).",
+      "distratores": {
+        "B": "Erro inverso: foca no aprendizado inicial sem treinamento prévio.",
+        "C": "Erro técnico.",
+        "D": "Erro: os insumos obrigatórios de preparação do Percurso Cognitivo são o perfil dos usuários, a lista de tarefas concretas e a sequência exata de ações no protótipo."
+      },
+      "referencia_vault": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md"
+    }
+  },
+  {
+    "id": "DI-035",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "MIS (Método de Inspeção Semiótica) vs. MAC (Método de Avaliação da Comunicabilidade)",
+    "artigo_origem": "21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
+    "dificuldade": "dificil",
+    "enunciado": "Ambos criados pela escola da Engenharia Semiótica para avaliar a qualidade da **comunicabilidade** (a metacomunicação do designer para o usuário), qual é a diferença metodológica essencial entre o **MIS** (*Método de Inspeção Semiótica*) e o **MAC** (*Método de Avaliação da Comunicabilidade*)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O **MIS** é um método de **Inspeção** (realizado exclusivamente por especialistas, sem usuários) que analisa a emissão da mensagem do designer reconstruindo a metamensagem a partir dos **signos metalinguísticos, estáticos e dinâmicos**; já o **MAC** é um método de **Observação empírica com usuários reais**, no qual os usuários realizam tarefas gravadas em vídeo e o avaliador etiqueta as **rupturas de comunicação** com **13 expressões/etiquetas de comunicabilidade** que verbalizam a dúvida ou frustração do usuário.",
+        "correta": true,
+        "diagnostico": "Correto: nunca confunda! **MIS** = **I**nspeção Semiótica (Especialista analisa os 3 tipos de signos: Metalinguísticos -> Estáticos -> Dinâmicos e compara se há contradições entre eles); **MAC** = **O**bservação com Usuários (etiquetagem das rupturas de comunicação na gravação da interação)."
+      },
+      {
+        "letra": "B",
+        "texto": "O MIS usa 50 usuários em laboratório e o MAC é feito sem usuários.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Ambos avaliam apenas o contraste de cores para daltônicos.",
+        "correta": false,
+        "diagnostico": "Erro: isso é Acessibilidade (WCAG)."
+      },
+      {
+        "letra": "D",
+        "texto": "O MAC calcula uma nota de 0 a 100 através de 10 perguntas fechadas.",
+        "correta": false,
+        "diagnostico": "Erro: nota de 0 a 100 com 10 perguntas é o **SUS**, não o MAC!"
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O **MIS** analisa a carta que o designer escreveu (olhando os signos da tela para ver se a carta está bem escrita e coerente); o **MAC** filma o usuário lendo a carta e tentando usar o sistema, colando etiquetas nos momentos em que o usuário trava ou se confunde!",
+      "analise_correta": "No **MIS**, a análise ocorre sempre na ordem estrita: 1º Signos Metalinguísticos -> 2º Signos Estáticos -> 3º Signos Dinâmicos -> 4º Comparação/Contraste entre as três metamensagens reconstruídas.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: isso é Acessibilidade (WCAG).",
+        "D": "Erro: nota de 0 a 100 com 10 perguntas é o **SUS**, não o MAC!"
+      },
+      "referencia_vault": "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md"
+    }
+  },
+  {
+    "id": "DI-036",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "As 13 Etiquetas (Expressões) de Ruptura de Comunicabilidade do Método MAC",
+    "artigo_origem": "21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
+    "dificuldade": "dificil",
+    "enunciado": "No **Método de Avaliação da Comunicabilidade (MAC)**, quando o avaliador analisa o vídeo do usuário interagindo e identifica uma **ruptura comunicativa** (falha temporária, parcial ou completa na compreensão da mensagem do designer), ele rotula o trecho com uma das **13 etiquetas de comunicabilidade** (como se fossem falas na boca do usuário). Associe corretamente os exemplos clássicos dessas etiquetas:",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "`\"Cadê?\"` (o usuário procura na tela um signo/função que espera existir mas não encontra); `\"O que é isto?\"` (o usuário vê um ícone ou controle, para o mouse em cima, mas não entende o que ele significa); `\"Epa!\"` (o usuário comete um equívoco, percebe imediatamente que fez errado e tenta desfazer/voltar); `\"Onde estou?\"` (perdeu o contexto de navegação); `\"Ué, o que houve?\"` (o sistema não deu feedback ou reagiu de forma inesperada); `\"Assim não dá!\"` (abandona um caminho muito trabalhoso); `\"Desisto!\"` (falha completa); `\"Para mim está bom\"` (acha que acertou a tarefa, mas concluiu errado sem perceber!).",
+        "correta": true,
+        "diagnostico": "Correto: as 13 etiquetas do MAC são: *\"Cadê?\", \"O que é isto?\", \"Epa!\", \"Onde estou?\", \"Ué, o que houve?\", \"E agora?\", \"Por que não funciona?\", \"Assim não dá!\", \"Vai de outro jeito\", \"Não, obrigado!\", \"Para mim está bom\", \"Socorro!\" e \"Desisto!\"*."
+      },
+      {
+        "letra": "B",
+        "texto": "As etiquetas do MAC são códigos HTTP como `404`, `500` e `200`.",
+        "correta": false,
+        "diagnostico": "Erro de protocolo."
+      },
+      {
+        "letra": "C",
+        "texto": "`\"Cadê?\"` significa que o sistema travou e `\"Epa!\"` significa que o usuário desistiu da tarefa.",
+        "correta": false,
+        "diagnostico": "Erro de significado das etiquetas."
+      },
+      {
+        "letra": "D",
+        "texto": "O próprio usuário deve decorar as 13 etiquetas antes do teste.",
+        "correta": false,
+        "diagnostico": "Erro: quem aplica as etiquetas (*tagging*) é o **avaliador** durante a análise pós-teste do vídeo, embora o protocolo de pensamento em voz alta ajude."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Perceba a sutileza genial da etiqueta `\"Para mim está bom\"` (falha parcial/inconsciente): o usuário entrega a tarefa sorrindo achando que salvou o pedido, mas na verdade só salvou o rascunho porque a interface comunicou mal o encerramento!",
+      "analise_correta": "Dominar o significado de `\"Cadê?\"`, `\"O que é isto?\"`, `\"Epa!\"`, `\"Ué, o que houve?\"` e `\"Para mim está bom\"` resolve todas as questões práticas de MAC em provas.",
+      "distratores": {
+        "B": "Erro de protocolo.",
+        "C": "Erro de significado das etiquetas.",
+        "D": "Erro: quem aplica as etiquetas (*tagging*) é o **avaliador** durante a análise pós-teste do vídeo, embora o protocolo de pensamento em voz alta ajude."
+      },
+      "referencia_vault": "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md"
+    }
+  },
+  {
+    "id": "DI-037",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Os 4 Princípios Fundamentais da WCAG (POUR: Perceptível, Operável, Compreensível e Robusto)",
+    "artigo_origem": "22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
+    "dificuldade": "medio",
+    "enunciado": "As **Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1 / 2.2)** do W3C organizam todos os seus critérios de sucesso em torno de **quatro princípios fundamentais** (acrônimo **POUR** em inglês). Quais são esses 4 princípios e o que exige cada um?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Perceptível** (*Perceivable*): a informação e os componentes da interface não podem ser invisíveis a todos os sentidos do usuário (ex.: fornecer texto alternativo `alt` em imagens para leitores de tela, legendas em vídeos e contraste adequado); (2) **Operável** (*Operable*): os componentes de navegação devem poder ser acionados por diferentes meios (ex.: 100% navegável apenas pelo **teclado** com `Tab/Enter`, sem exigir mouse, e com tempo suficiente); (3) **Compreensível** (*Understandable*): o texto e a operação da interface devem ser claros e previsíveis; (4) **Robusto** (*Robust*): o conteúdo deve usar código semântico válido (HTML5/ARIA) para ser interpretado de forma confiável por diversas tecnologias assistivas.",
+        "correta": true,
+        "diagnostico": "Correto: os 4 princípios **P-O-U-R** (**P**erceptível, **O**perável, **C**ompreensível/*Understandable* e **R**obusto) são a espinha dorsal da Acessibilidade Digital."
+      },
+      {
+        "letra": "B",
+        "texto": "Perceptível significa usar apenas áudio; Operável significa exigir exclusivamente o uso de mouse óptico.",
+        "correta": false,
+        "diagnostico": "Erro inverso: exigir exclusivamente mouse viola frontalmente o princípio **Operável**."
+      },
+      {
+        "letra": "C",
+        "texto": "A WCAG aplica-se apenas a sites governamentais e proíbe o uso de imagens.",
+        "correta": false,
+        "diagnostico": "Erro legal: no Brasil, a **Lei Brasileira de Inclusão (LBI - Lei 13.146/2015, Art. 63)** torna obrigatória a acessibilidade nos sítios da internet de empresas e órgãos públicos."
+      },
+      {
+        "letra": "D",
+        "texto": "Robusto significa que o servidor deve pesar mais de 50 quilos.",
+        "correta": false,
+        "diagnostico": "Erro literal."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quatro perguntas de inclusão: (1) A pessoa consegue **perceber** o conteúdo (vendo com bom contraste ou ouvindo pelo leitor de tela)? (**Perceptível**); (2) Ela consegue **acionar** os controles (pelo teclado, voz ou toque)? (**Operável**); (3) Ela consegue **entender** o texto e como o formulário funciona? (**Compreensível**); (4) O código HTML é limpo para que qualquer leitor de tela consiga ler? (**Robusto**).",
+      "analise_correta": "Sempre que uma questão citar `alt` em imagens, legendas em vídeo ou contraste de cores, marque **Perceptível**; quando citar navegação por teclado ou foco visível, marque **Operável**!",
+      "distratores": {
+        "B": "Erro inverso: exigir exclusivamente mouse viola frontalmente o princípio **Operável**.",
+        "C": "Erro legal: no Brasil, a **Lei Brasileira de Inclusão (LBI - Lei 13.146/2015, Art. 63)** torna obrigatória a acessibilidade nos sítios da internet de empresas e órgãos públicos.",
+        "D": "Erro literal."
+      },
+      "referencia_vault": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md"
+    }
+  },
+  {
+    "id": "DI-038",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Os Três Níveis de Conformidade da WCAG (Nível A, Nível AA e Nível AAA) e Contraste Mínimo",
+    "artigo_origem": "22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
+    "dificuldade": "dificil",
+    "enunciado": "Na avaliação de conformidade com a **WCAG**, os critérios de sucesso são divididos em três níveis progressivos de exigência: **Nível A**, **Nível AA** e **Nível AAA**. O que caracteriza cada nível e qual é a taxa mínima de contraste de luminância exigida para texto normal no nível **AA**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Nível A**: nível mínimo básico (remove as barreiras mais severas que tornam o site impossível de acessar para certos grupos); **Nível AA**: nível intermediário e **padrão de referência mundial exigido em legislações e políticas públicas/corporativas**, exigindo razão de contraste mínima de **4.5:1** para texto normal (e 3:1 para texto grande); **Nível AAA**: nível máximo de excelência (exigindo contraste de **7:1** para texto normal, Libras em vídeos ao vivo, linguagem simplificada).",
+        "correta": true,
+        "diagnostico": "Correto: o **Nível AA** (que inclui todos os critérios do Nível A + todos do Nível AA, com contraste mínimo **4.5:1**) é a meta universal de conformidade na engenharia de software."
+      },
+      {
+        "letra": "B",
+        "texto": "O Nível A é o mais rigoroso de todos e o Nível AAA é o mais fraco.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Basta passar em um validador automático de código para garantir 100% de acessibilidade sem avaliação humana.",
+        "correta": false,
+        "diagnostico": "Erro metodológico importante: validadores automáticos (como Lighthouse, Axe ou ASES) detectam apenas cerca de 30% a 40% dos problemas (ex.: conseguem ver se existe o atributo `alt=\"...\"`, mas só um humano sabe julgar se `alt=\"foto123.jpg\"` descreve realmente a imagem!)."
+      },
+      {
+        "letra": "D",
+        "texto": "O Nível AA permite texto cinza claro `#CCCCCC` sobre fundo branco `#FFFFFF` (contraste 1.6:1).",
+        "correta": false,
+        "diagnostico": "Erro: contraste 1.6:1 reprova tanto no AA (4.5:1) quanto no AAA (7:1)."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três degraus da rampa da inclusão: **Nível A** tira os buracos que impediam a cadeira de rodas de passar; **Nível AA** constrói a rampa padrão ABNT confortável com corrimão (meta obrigatória de mercado, contraste 4.5:1); **Nível AAA** instala elevador panorâmico com guia intérprete dedicado (contraste 7:1).",
+      "analise_correta": "Por isso a avaliação completa de acessibilidade combina **ferramentas automáticas de validação + inspeção manual humana + testes com usuários que utilizam tecnologias assistivas (leitores de tela como NVDA/VoiceOver)**.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro metodológico importante: validadores automáticos (como Lighthouse, Axe ou ASES) detectam apenas cerca de 30% a 40% dos problemas (ex.: conseguem ver se existe o atributo `alt=\"...\"`, mas só um humano sabe julgar se `alt=\"foto123.jpg\"` descreve realmente a imagem!).",
+        "D": "Erro: contraste 1.6:1 reprova tanto no AA (4.5:1) quanto no AAA (7:1)."
+      },
+      "referencia_vault": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md"
+    }
+  },
+  {
+    "id": "DI-039",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Princípio Ético e Metodológico Central do Teste de Usabilidade: Avalia-se o Sistema, NUNCA o Usuário!",
+    "artigo_origem": "23. Teste de usabilidade - método empírico formal de avaliação por observação.md",
+    "dificuldade": "facil",
+    "enunciado": "No **Teste de Usabilidade** (método empírico de avaliação por observação onde usuários representativos do público-alvo executam tarefas reais no sistema/protótipo), qual é a regra ética e científica número 1 que o avaliador deve deixar clara ao participante no Termo de Consentimento Livre e Esclarecido (TCLE) e durante toda a sessão?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Quem está sendo testado e avaliado é exclusivamente o SISTEMA (a interface), e NUNCA o usuário!** Se o participante tiver dificuldade ou não conseguir concluir uma tarefa, a falha é do design da interface e não da inteligência do participante.",
+        "correta": true,
+        "diagnostico": "Correto: tanto por ética em pesquisa com seres humanos (TCLE, anonimato, direito de desistir a qualquer momento) quanto para que o usuário aja com naturalidade sem medo de ser julgado, deixa-se explícito: *\"Você não pode errar aqui; qualquer dificuldade que você encontrar é um achado valioso para melhorarmos o sistema\"*."
+      },
+      {
+        "letra": "B",
+        "texto": "O objetivo do teste é dar uma nota de QI para o usuário e demiti-lo se ele errar o clique.",
+        "correta": false,
+        "diagnostico": "Erro antiético e anticientífico."
+      },
+      {
+        "letra": "C",
+        "texto": "O avaliador deve ficar dando dicas e apontando com o dedo na tela onde o usuário deve clicar a cada segundo.",
+        "correta": false,
+        "diagnostico": "Erro metodológico grave: se o moderador ajudar ou ensinar onde clicar durante a tarefa, o teste é invalidado porque esconde o problema que ocorreria quando o usuário estivesse sozinho em casa!"
+      },
+      {
+        "letra": "D",
+        "texto": "Os programadores que criaram a tela devem ser os únicos participantes testados.",
+        "correta": false,
+        "diagnostico": "Erro: programadores conhecem o modelo interno e têm viés; os participantes devem ser representativos das **Personas / Público-Alvo**."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Se um sapato aperta o pé do cliente na loja, a culpa não é do pé do cliente — é da forma do sapato que precisa ser ajustada pelo sapateiro!",
+      "analise_correta": "Segundo Jakob Nielsen, realizar testes qualitativos com **5 usuários por perfil/rodada** já permite descobrir cerca de **85% dos problemas de usabilidade** daquela iteração.",
+      "distratores": {
+        "B": "Erro antiético e anticientífico.",
+        "C": "Erro metodológico grave: se o moderador ajudar ou ensinar onde clicar durante a tarefa, o teste é invalidado porque esconde o problema que ocorreria quando o usuário estivesse sozinho em casa!",
+        "D": "Erro: programadores conhecem o modelo interno e têm viés; os participantes devem ser representativos das **Personas / Público-Alvo**."
+      },
+      "referencia_vault": "08. Design de Interacao/23. Teste de usabilidade - método empírico formal de avaliação por observação.md"
+    }
+  },
+  {
+    "id": "DI-040",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Protocolo Think Aloud (Pensamento em Voz Alta), Teste-Piloto e Métricas Coletadas no Teste de Usabilidade",
+    "artigo_origem": "23. Teste de usabilidade - método empírico formal de avaliação por observação.md",
+    "dificuldade": "dificil",
+    "enunciado": "Durante a condução de um **Teste de Usabilidade**, em que consiste a técnica **Think Aloud (*Pensamento em Voz Alta*)**, para que serve o **Teste-Piloto** prévio e quais **métricas quantitativas e qualitativas** são coletadas?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "No **Think Aloud**, pede-se ao participante que **verbalize em voz alta o que está procurando, pensando, sentindo e por que está clicando** enquanto realiza a tarefa (permitindo ao observador acessar o modelo mental e a causa das dúvidas); o **Teste-Piloto** é um ensaio prévio com 1 pessoa antes dos testes reais para validar se o roteiro de tarefas, o protótipo e o gravador funcionam sem falhas; as métricas incluem **Taxa de Sucesso/Conclusão da tarefa**, **Tempo gasto na tarefa**, **Número de erros/cliques extras** e **Satisfação pós-teste**.",
+        "correta": true,
+        "diagnostico": "Correto: sem o *Think Aloud*, você vê o mouse parado por 20 segundos na tela mas não sabe se o usuário está lendo um texto longo ou se está perdido sem entender o ícone; com o *Think Aloud*, ele diz *\"Ué, estou procurando onde anexa o comprovante...\"* e revela o problema na hora!"
+      },
+      {
+        "letra": "B",
+        "texto": "Think Aloud consiste no avaliador ficar gritando ordens para o usuário.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Não é necessário preparar roteiro de tarefas antes do teste; pede-se apenas \"mexa aí livremente\".",
+        "correta": false,
+        "diagnostico": "Erro: tarefas bem redigidas devem dar um **cenário/objetivo realista** (ex.: *\"Compre 2 ingressos para o show de sábado\"*) sem usar as palavras exatas dos botões da tela (para não dar pista artificial)."
+      },
+      {
+        "letra": "D",
+        "texto": "O Teste-Piloto substitui todos os testes reais com usuários.",
+        "correta": false,
+        "diagnostico": "Erro: os dados do Teste-Piloto são descartados; ele serve para calibrar o instrumento e o ambiente do teste."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "O *Think Aloud* abre uma janela transparente para dentro do cérebro do usuário enquanto ele navega; e o *Teste-Piloto* é a passagem de som da banda antes de abrir os portões para o público.",
+      "analise_correta": "Existe também o *Retrospective Think Aloud* (verbalização retrospectiva), usado quando falar durante a tarefa poderia atrapalhar a medição exata do tempo de execução.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro: tarefas bem redigidas devem dar um **cenário/objetivo realista** (ex.: *\"Compre 2 ingressos para o show de sábado\"*) sem usar as palavras exatas dos botões da tela (para não dar pista artificial).",
+        "D": "Erro: os dados do Teste-Piloto são descartados; ele serve para calibrar o instrumento e o ambiente do teste."
+      },
+      "referencia_vault": "08. Design de Interacao/23. Teste de usabilidade - método empírico formal de avaliação por observação.md"
+    }
+  },
+  {
+    "id": "DI-041",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Estrutura do Questionário SUS (System Usability Scale) de John Brooke: 10 Afirmações Alternadas e Escala Likert de 1 a 5",
+    "artigo_origem": "24. Avaliação por investigação - método system usability scale sus.md",
+    "dificuldade": "dificil",
+    "enunciado": "Criado por John Brooke em 1986, o **SUS (*System Usability Scale*)** é o questionário padronizado de avaliação de usabilidade pós-teste mais utilizado no mundo (método de Investigação). Como os seus **10 itens** são estruturados?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "O SUS é composto por **10 afirmações padronizadas** respondidas em uma escala Likert de 5 pontos (de `1 = Discordo totalmente` a `5 = Concordo totalmente`), nas quais os **itens ímpares (1, 3, 5, 7, 9) têm formulação positiva** (ex.: *\"Acho que gostaria de usar este sistema com frequência\"*) e os **itens pares (2, 4, 6, 8, 10) têm formulação negativa** (ex.: *\"Achei o sistema desnecessariamente complexo\"*).",
+        "correta": true,
+        "diagnostico": "Correto: por que John Brooke alternou frases **ímpares positivas** com frases **pares negativas**? Para evitar o **viés de aquiescência / resposta automática** (impedir que o usuário preguiçoso marque `5` na coluna inteira sem ler: se ele marcar `5` em tudo, estará se contradizendo e a nota ficará em 50!)."
+      },
+      {
+        "letra": "B",
+        "texto": "O SUS possui 100 perguntas abertas discursivas que variam a cada empresa.",
+        "correta": false,
+        "diagnostico": "Erro: o SUS é famoso justamente por ser *quick and dirty* (rápido e simples, com apenas 10 itens fixos universais)."
+      },
+      {
+        "letra": "C",
+        "texto": "Todas as 10 afirmações do SUS são positivas para induzir o usuário a marcar 5 em tudo.",
+        "correta": false,
+        "diagnostico": "Erro: a alternância ímpar (+) / par (-) é a marca registrada do SUS."
+      },
+      {
+        "letra": "D",
+        "texto": "O SUS mede exclusivamente a velocidade da internet em megabits.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Alternar perguntas positivas nas ímpares ('Achei fácil de usar') e negativas nas pares ('Achei o sistema muito confuso') funciona como um freio de atenção: obriga o usuário a ler cada frase com cuidado antes de marcar de 1 a 5.",
+      "analise_correta": "Essa estrutura alternada explica diretamente como a fórmula matemática de cálculo do escore SUS funciona!",
+      "distratores": {
+        "B": "Erro: o SUS é famoso justamente por ser *quick and dirty* (rápido e simples, com apenas 10 itens fixos universais).",
+        "C": "Erro: a alternância ímpar (+) / par (-) é a marca registrada do SUS.",
+        "D": "Erro técnico."
+      },
+      "referencia_vault": "08. Design de Interacao/24. Avaliação por investigação - método system usability scale sus.md"
+    }
+  },
+  {
+    "id": "DI-042",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Cálculo Passo a Passo do Escore SUS (0 a 100) e Interpretação da Média de Referência (68 pontos)",
+    "artigo_origem": "24. Avaliação por investigação - método system usability scale sus.md",
+    "dificuldade": "dificil",
+    "enunciado": "Como é calculada matematicamente a pontuação final do **SUS** (que varia de **0 a 100**) a partir das respostas $R_1$ a $R_{10}$ (de 1 a 5), e como deve ser interpretado o resultado em relação ao *benchmark* histórico de **68 pontos**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) Para cada **item ímpar positivo (1, 3, 5, 7, 9)**, calcula-se a contribuição como **$(\text{Resposta} - 1)$** (gerando de 0 a 4 pontos); (2) Para cada **item par negativo (2, 4, 6, 8, 10)**, inverte-se a escala calculando **$(5 - \text{Resposta})$** (gerando também de 0 a 4 pontos); (3) Soma-se as 10 contribuições (total de 0 a 40) e **multiplica-se a soma por $2,5$**, obtendo o escore de **0 a 100**. Atenção: o escore SUS **NÃO é uma porcentagem**, e a média mundial histórica é **68 pontos** (acima de 68 = acima da média; acima de 80 = excelente / Grau A).",
+        "correta": true,
+        "diagnostico": "Correto: questão clássica de cálculo em provas de Design de Interação! Teste rápido da fórmula: se o usuário amou o sistema, ele marca **5** em todas as ímpares ($5 - 1 = 4$ pontos cada) e marca **1** em todas as pares negativas ($5 - 1 = 4$ pontos cada). Soma das 10 = $40$. Multiplicado por $2,5$ = **$100$ pontos**!"
+      },
+      {
+        "letra": "B",
+        "texto": "Basta somar os números de 1 a 5 direto sem inverter as pares e dividir por 10.",
+        "correta": false,
+        "diagnostico": "Erro: sem inverter os itens pares ($5 - R$), uma resposta ruim aumentaria a nota."
+      },
+      {
+        "letra": "C",
+        "texto": "Se um sistema tirar nota 65 no SUS, significa que 65% dos botões funcionam.",
+        "correta": false,
+        "diagnostico": "Erro clássico: o escore SUS (0 a 100) **não é percentual**; uma nota 68 corresponde ao percentil 50% (média de mercado)."
+      },
+      {
+        "letra": "D",
+        "texto": "Nos itens pares negativos, marcar 5 (Concordo totalmente que o sistema é complexo) dá 4 pontos positivos.",
+        "correta": false,
+        "diagnostico": "Erro inverso: se ele concordou totalmente (5) com uma frase negativa, a contribuição é $5 - 5 = 0$ pontos."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Receita de bolo da conta do SUS: Ímpares = `Nota - 1`; Pares = `5 - Nota`. Soma os 10 resultados (que dão no máximo 40) e multiplica por `2,5` para chegar na escala de 0 a 100. Passou de **68**? Está acima da média mundial! Passou de **80**? Nível de excelência!",
+      "analise_correta": "Com vários usuários respondendo ao SUS, calcula-se o escore individual (0 a 100) de cada participante e tira-se a média aritmética simples dos escores para obter a nota global do sistema.",
+      "distratores": {
+        "B": "Erro: sem inverter os itens pares ($5 - R$), uma resposta ruim aumentaria a nota.",
+        "C": "Erro clássico: o escore SUS (0 a 100) **não é percentual**; uma nota 68 corresponde ao percentil 50% (média de mercado).",
+        "D": "Erro inverso: se ele concordou totalmente (5) com uma frase negativa, a contribuição é $5 - 5 = 0$ pontos."
+      },
+      "referencia_vault": "08. Design de Interacao/24. Avaliação por investigação - método system usability scale sus.md"
+    }
+  },
+  {
+    "id": "DI-043",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Affordances (Gibson/Norman) vs. Signifiers (Significantes) e Restrições no Design",
+    "artigo_origem": "08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+    "dificuldade": "dificil",
+    "enunciado": "Donald Norman introduziu na IHC o termo **Affordance** (originalmente de J.J. Gibson) e posteriormente refinou a distinção com **Signifiers (Significantes)**. Qual é a diferença entre uma *Affordance* e um *Signifier* em uma interface digital?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**Affordance** é a relação de possibilidade de ação que um objeto oferece a um agente (ex.: uma tela sensível ao toque permite ser tocada ou deslizada); já o **Signifier (Significante)** é a **pista perceptível / sinal visual ou sonoro** que comunica ao usuário *onde e como* aquela ação deve ser realizada (ex.: o sombreamento 3D, a borda, o ícone ou o sublinhado que avisa *\"clique ou deslize aqui\"*).",
+        "correta": true,
+        "diagnostico": "Correto: em telas *flat design* modernas excessivamente minimalistas, muitas vezes a *affordance* técnica existe (o texto é clicável), mas falta o **Signifier** visual (parece um texto morto comum sem cor nem botão), alargando o Golfo de Execução!"
+      },
+      {
+        "letra": "B",
+        "texto": "Affordance é o código SQL do banco e Signifier é o servidor.",
+        "correta": false,
+        "diagnostico": "Erro de camada."
+      },
+      {
+        "letra": "C",
+        "texto": "Remover todas as bordas e pistas visuais dos botões aumenta os Signifiers.",
+        "correta": false,
+        "diagnostico": "Erro inverso: o excesso de *flat design* sem pistas visuais destrói os Signifiers."
+      },
+      {
+        "letra": "D",
+        "texto": "Signifiers só existem em objetos de madeira, nunca em telas de computador.",
+        "correta": false,
+        "diagnostico": "Erro inverso: Norman criou o termo *Signifier* justamente porque na tela de vidro tudo fisicamente é só \"tocar no vidro\", então o que importa para o designer digital são os **Signifiers** visuais!"
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Uma porta tem a possibilidade física de ser empurrada (Affordance), mas é a placa metálica lisa com o aviso 'Empurre' na altura da mão (Signifier) que sinaliza aos seus olhos onde apoiar a mão.",
+      "analise_correta": "Bons Signifiers eliminam a adivinhação e permitem que o usuário reconheça imediatamente o que é clicável.",
+      "distratores": {
+        "B": "Erro de camada.",
+        "C": "Erro inverso: o excesso de *flat design* sem pistas visuais destrói os Signifiers.",
+        "D": "Erro inverso: Norman criou o termo *Signifier* justamente porque na tela de vidro tudo fisicamente é só \"tocar no vidro\", então o que importa para o designer digital são os **Signifiers** visuais!"
+      },
+      "referencia_vault": "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md"
+    }
+  },
+  {
+    "id": "DI-044",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "A Falácia da Empatia Solitária: \"O Designer NÃO é o Usuário\"",
+    "artigo_origem": "10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md",
+    "dificuldade": "facil",
+    "enunciado": "Por que um dos aforismos mais importantes da IHC e da Engenharia de Usabilidade (Jakob Nielsen / Donald Norman) afirma categoricamente: **\"Você (designer/programador) NÃO é o usuário!\"**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Porque o desenvolvedor/designer conhece intimamente a arquitetura interna do sistema, o vocabulário técnico e o banco de dados que ele mesmo construiu (sofrendo da \"Maldição do Conhecimento\"), o que o impede de enxergar as dúvidas, limitações de domínio e dificuldades que um usuário real enfrentará.",
+        "correta": true,
+        "diagnostico": "Correto: para quem criou o labirinto, o caminho até a saída parece \"100% óbvio e intuitivo\"; só quando observamos outra pessoa tentando atravessar o labirinto percebemos onde as placas estão confusas!"
+      },
+      {
+        "letra": "B",
+        "texto": "Porque programadores são proibidos por lei de usar computadores.",
+        "correta": false,
+        "diagnostico": "Erro absurdo."
+      },
+      {
+        "letra": "C",
+        "texto": "Porque o usuário final sabe mais programação C# do que o desenvolvedor.",
+        "correta": false,
+        "diagnostico": "Erro de domínio."
+      },
+      {
+        "letra": "D",
+        "texto": "Basta o programador testar a própria tela por 2 minutos para substituir qualquer pesquisa com usuários.",
+        "correta": false,
+        "diagnostico": "Erro clássico do Design Independente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Quem escondeu os ovos de Páscoa no jardim acha facílimo encontrar todos em 10 segundos — porque foi ele mesmo quem escondeu! Para saber se está fácil ou difícil de achar, você precisa chamar quem não estava lá na hora de esconder.",
+      "analise_correta": "Reconhecer que \"nós não somos o usuário\" é o ponto de partida da humildade científica em Design de Interação.",
+      "distratores": {
+        "B": "Erro absurdo.",
+        "C": "Erro de domínio.",
+        "D": "Erro clássico do Design Independente."
+      },
+      "referencia_vault": "08. Design de Interacao/10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md"
+    }
+  },
+  {
+    "id": "DI-045",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Daltonismo, Semântica de Cores e Redundância de Codificação Visual",
+    "artigo_origem": "14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md",
+    "dificuldade": "medio",
+    "enunciado": "Cerca de 8% dos homens e 0,5% das mulheres no mundo possuem algum grau de **daltonismo** (deficiência na visão de cores, sendo a mais comum a dificuldade de distinguir entre **vermelho e verde** — deuteranopia/protanopia). Como o designer deve projetar estados de sucesso, alerta e erro em formulários e dashboards?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Aplicando **codificação redundante (multimodal)**: além da cor (verde/vermelho), deve-se combinar obrigatoriamente **ícones distintos** (ex.: `check` para sucesso e `!` ou `X` para erro), **rótulos textuais claros** ao lado do campo e alto contraste de luminância, garantindo que a mensagem seja compreendida mesmo em escala de cinza.",
+        "correta": true,
+        "diagnostico": "Correto: atende simultaneamente ao critério de **Acessibilidade (WCAG 1.4.1 - Uso da Cor)**, ao critério ergonômico de **Significado dos Códigos** e à **Heurística 9 de Nielsen**!"
+      },
+      {
+        "letra": "B",
+        "texto": "Usar apenas uma bolinha verde e uma bolinha vermelha do mesmo tamanho sem texto e sem ícone.",
+        "correta": false,
+        "diagnostico": "Erro clássico que reprova na WCAG Nível A."
+      },
+      {
+        "letra": "C",
+        "texto": "Proibir o uso de qualquer cor em sistemas web.",
+        "correta": false,
+        "diagnostico": "Erro extremista: cores ajudam muito a percepção rápida, desde que nunca sejam o *único* meio de informação."
+      },
+      {
+        "letra": "D",
+        "texto": "Exigir que o usuário instale um monitor especial.",
+        "correta": false,
+        "diagnostico": "Erro de transferência de responsabilidade."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "No semáforo de trânsito, além da cor (vermelho/amarelo/verde), existe a posição fixa (vermelho sempre no topo, verde sempre embaixo); na tela do computador, combinamos Cor + Ícone + Texto explicativo.",
+      "analise_correta": "Um teste rápido excelente é visualizar seu mockup em **preto e branco (tons de cinza)**: se você ainda conseguir diferenciar todos os estados e erros sem ver as cores, o design está aprovado!",
+      "distratores": {
+        "B": "Erro clássico que reprova na WCAG Nível A.",
+        "C": "Erro extremista: cores ajudam muito a percepção rápida, desde que nunca sejam o *único* meio de informação.",
+        "D": "Erro de transferência de responsabilidade."
+      },
+      "referencia_vault": "08. Design de Interacao/14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md"
+    }
+  },
+  {
+    "id": "DI-046",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Presteza (Prompting), Agrupamento por Formato/Localização e Feedback em Formulários Web",
+    "artigo_origem": "15. Componentes e recomendações ergonômicas em sistemas interativos.md",
+    "dificuldade": "medio",
+    "enunciado": "Segundo os Critérios Ergonômicos de **Bastien e Scapin**, o critério principal de **Condução (*Guidance*)** subdivide-se em **Presteza (*Prompting*)**, **Agrupamento/Distinção**, **Feedback Imediato** e **Legibilidade**. Como a **Presteza** é aplicada na prática em um campo de entrada de dados (como `Data de Nascimento` ou `CEP`)?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Exibindo rótulos claros e visíveis acima do campo, indicando se o campo é obrigatório (`*`), fornecendo dicas de formato esperado (ex.: `DD/MM/AAAA` ou `00000-000`), aplicando máscara automática durante a digitação e preenchendo automaticamente o endereço ao digitar o CEP.",
+        "correta": true,
+        "diagnostico": "Correto: **Presteza (*Prompting*)** consiste em todos os meios visuais que conduzem, orientam e informam o usuário *antes* de ele agir, economizando esforço e prevenindo erros."
+      },
+      {
+        "letra": "B",
+        "texto": "Deixando uma caixa de texto em branco sem rótulo para o usuário adivinhar o que digitar e só avisando o formato depois que der erro.",
+        "correta": false,
+        "diagnostico": "Erro grave de condução."
+      },
+      {
+        "letra": "C",
+        "texto": "Escondendo o botão de enviar até o usuário apertar `Alt + F4`.",
+        "correta": false,
+        "diagnostico": "Erro de usabilidade."
+      },
+      {
+        "letra": "D",
+        "texto": "Exibindo textos com fonte tamanho 6px.",
+        "correta": false,
+        "diagnostico": "Erro: viola a **Legibilidade**."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Presteza é o anfitrião gentil que já coloca a placa indicando onde é o banheiro e qual é a senha do Wi-Fi na parede, antes mesmo que o convidado precise passar vergonha perguntando.",
+      "analise_correta": "Cuidado ergonômico importante: o atributo `placeholder` dentro do `<input>` (que desaparece assim que o usuário começa a digitar) **NUNCA deve substituir o `<label>` fixo fora do campo**, pois se o usuário se distrair no meio da digitação, esquecerá qual era o campo (violando *Reconhecer em vez de Recordar*)!",
+      "distratores": {
+        "B": "Erro grave de condução.",
+        "C": "Erro de usabilidade.",
+        "D": "Erro: viola a **Legibilidade**."
+      },
+      "referencia_vault": "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md"
+    }
+  },
+  {
+    "id": "DI-047",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Escala de Severidade de Problemas de Usabilidade de Jakob Nielsen (0 a 4)",
+    "artigo_origem": "20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+    "dificuldade": "medio",
+    "enunciado": "Após consolidar a lista de problemas encontrados na **Avaliação Heurística**, os avaliadores classificam cada problema na **Escala de Severidade de Nielsen (de 0 a 4)** combinando três fatores: **frequência** com que ocorre, **impacto** para o usuário e **persistência** (se o usuário consegue contornar na segunda vez). O que significam os níveis **0, 1, 2, 3 e 4**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "**0**: Não é um problema de usabilidade; **1**: Problema apenas **cosmético** (só precisa ser corrigido se sobrar tempo no projeto); **2**: Problema **menor** de usabilidade (baixa prioridade); **3**: Problema **maior** de usabilidade (importante corrigir, alta prioridade); **4**: **Catástrofe de usabilidade** (imperativo corrigir obrigatoriamente antes de liberar o produto!).",
+        "correta": true,
+        "diagnostico": "Correto: a escala de severidade permite que a equipe de engenharia (ponte com priorização de backlog!) ataque primeiro os problemas nível **4 (Catástrofe)** e **3 (Maior)** antes do lançamento."
+      },
+      {
+        "letra": "B",
+        "texto": "0 é catástrofe e 4 é cosmético.",
+        "correta": false,
+        "diagnostico": "Erro inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Qualquer desalinhamento de 1 pixel deve ser classificado como nível 4 (Catástrofe).",
+        "correta": false,
+        "diagnostico": "Erro de calibração."
+      },
+      {
+        "letra": "D",
+        "texto": "A severidade é decidida por sorteio.",
+        "correta": false,
+        "diagnostico": "Erro metodológico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Triagem de pronto-socorro (Protocolo de Manchester) para os bugs da interface: Nível 4 (Vermelho/Catástrofe: o cliente não consegue finalizar a compra -> operar imediatamente!); Nível 3 (Laranja/Maior: o cliente sofre muito para achar o frete); Nível 2 (Amarelo/Menor); Nível 1 (Verde/Cosmético: um ícone está 2 pixels torto, arruma se sobrar tempo).",
+      "analise_correta": "Sempre associe a cada problema reportado na Avaliação Heurística: **Local na interface + Heurística violada + Grau de Severidade (0 a 4) + Recomendação de correção**.",
+      "distratores": {
+        "B": "Erro inverso.",
+        "C": "Erro de calibração.",
+        "D": "Erro metodológico."
+      },
+      "referencia_vault": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md"
+    }
+  },
+  {
+    "id": "DI-048",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Triangulação de Métodos de Avaliação: Quando Usar Inspeção, Observação e Investigação no Projeto?",
+    "artigo_origem": "19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
+    "dificuldade": "dificil",
+    "enunciado": "Você é o responsável pela avaliação de qualidade de uma aplicação Web interativa (como no Projeto Integrador). Qual combinação de métodos oferece a cobertura mais completa e inteligente para avaliar **Usabilidade**, **Comunicabilidade** e **Acessibilidade**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "Realizar primeiro uma **Inspeção** rápida com especialistas (**Avaliação Heurística / Percurso Cognitivo / MIS / Validação WCAG**) para eliminar defeitos estruturais básicos sem gastar o tempo de usuários; em seguida, conduzir sessões de **Observação** com usuários reais das Personas (**Teste de Usabilidade + MAC**) executando tarefas chave; e, imediatamente ao final de cada sessão de teste, aplicar o questionário de **Investigação SUS** para medir a satisfação subjetiva padronizada.",
+        "correta": true,
+        "diagnostico": "Correto: essa **triangulação metodológica** une dados objetivos de performance (tempo/sucesso no Teste de Usabilidade), diagnóstico profundo da comunicação (MIS/MAC), conformidade inclusiva (WCAG), filtro especializado (Heurísticas) e métrica subjetiva comparável (SUS)."
+      },
+      {
+        "letra": "B",
+        "texto": "Usar apenas o questionário SUS sem observar o usuário e sem inspecionar a tela.",
+        "correta": false,
+        "diagnostico": "Erro: o SUS dá a nota final (ex.: 72), mas sozinho não diz *qual botão da tela* causou o problema!"
+      },
+      {
+        "letra": "C",
+        "texto": "Fazer apenas Avaliação Heurística e proibir testes com pessoas reais.",
+        "correta": false,
+        "diagnostico": "Erro: especialistas não substituem o comportamento real imprevisível dos usuários finais."
+      },
+      {
+        "letra": "D",
+        "texto": "Não fazer nenhuma avaliação porque os desenvolvedores já gostaram da tela.",
+        "correta": false,
+        "diagnostico": "Erro do Design Independente."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Orquestra completa da avaliação: (1) A revisão mecânica na oficina limpa os defeitos óbvios (**Inspeção**); (2) O test-drive na pista com motoristas reais mostra onde o carro derrapa na curva (**Observação**); e (3) O formulário de avaliação no final do test-drive mede a nota de conforto que o motorista deu (**Investigação / SUS**).",
+      "analise_correta": "Na Etapa 2 do Projeto Integrador, planejamos exatamente esses roteiros de avaliação para aplicarmos sobre a aplicação construída.",
+      "distratores": {
+        "B": "Erro: o SUS dá a nota final (ex.: 72), mas sozinho não diz *qual botão da tela* causou o problema!",
+        "C": "Erro: especialistas não substituem o comportamento real imprevisível dos usuários finais.",
+        "D": "Erro do Design Independente."
+      },
+      "referencia_vault": "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md"
+    }
+  },
+  {
+    "id": "DI-049",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Ponte Interdisciplinar: Design de Interação <-> Engenharia de Requisitos <-> Desenvolvimento Web MVC",
+    "artigo_origem": "06. Contexto de uso, interface, interação e papéis do design.md",
+    "dificuldade": "medio",
+    "enunciado": "Como os artefatos produzidos em **Design de Interação** se conectam diretamente aos artefatos de **Engenharia de Requisitos** e ao código de **Desenvolvimento Web Back-End (ASP.NET Core MVC)**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "As **Personas e Perfis** de IHC mapeiam diretamente para os **Atores** dos Casos de Uso e para os **Perfis de Autorização (`enum Perfil` / `Roles`)** no MVC; os **Wireframes, Mockups e Fluxos de Interação** validam os **Requisitos Funcionais** e transformam-se nas **Views Razor (`.cshtml`) e `_Layout.cshtml`** com Bootstrap; e as metas de **Usabilidade (Nielsen/SUS) e Acessibilidade (WCAG AA)** especificam os **Requisitos Não-Funcionais (RNFs)** de qualidade da aplicação.",
+        "correta": true,
+        "diagnostico": "Correto: visão integradora do Eixo 2 da PUC Minas: cada decisão tomada no Design de Interação tem reflexo imediato nos Requisitos e nas Views/Controllers do ASP.NET Core MVC."
+      },
+      {
+        "letra": "B",
+        "texto": "As disciplinas são totalmente isoladas e o que é feito em Design de Interação é jogado fora na hora de programar.",
+        "correta": false,
+        "diagnostico": "Erro pedagógico."
+      },
+      {
+        "letra": "C",
+        "texto": "Personas viram tabelas de log do SGBD e Wireframes viram comandos `DROP TABLE`.",
+        "correta": false,
+        "diagnostico": "Erro técnico."
+      },
+      {
+        "letra": "D",
+        "texto": "A WCAG proíbe o uso de HTML5 e Bootstrap.",
+        "correta": false,
+        "diagnostico": "Erro inverso: HTML5 semântico e Bootstrap bem configurados apoiam diretamente o princípio Robusto e Operável da WCAG."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "Três lados do mesmo diamante: IHC descobre e desenha a experiência humana centrada no usuário; Engenharia de Requisitos formaliza os contratos e modelos UML; e o Desenvolvimento Web MVC dá vida real em código C#, Razor e Banco de Dados.",
+      "analise_correta": "Essa conexão evita que o sistema tenha um back-end robusto mas uma interface incompreensível, ou um protótipo lindo no Figma mas desconectado das regras de negócio.",
+      "distratores": {
+        "B": "Erro pedagógico.",
+        "C": "Erro técnico.",
+        "D": "Erro inverso: HTML5 semântico e Bootstrap bem configurados apoiam diretamente o princípio Robusto e Operável da WCAG."
+      },
+      "referencia_vault": "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md"
+    }
+  },
+  {
+    "id": "DI-050",
+    "disciplina_id": "08",
+    "disciplina": "Design de Interação",
+    "topico": "Síntese Geral da Disciplina: O Percurso Completo de Design de Interação (Dos Fundamentos Teóricos à Avaliação Empírica)",
+    "artigo_origem": "01. O que é interação humano-computador e a visão teórica do ser humano.md",
+    "dificuldade": "dificil",
+    "enunciado": "Qual sequência sintetiza com perfeição os 24 artigos estudados em **Design de Interação**?",
+    "alternativas": [
+      {
+        "letra": "A",
+        "texto": "(1) **Fundamentos Teóricos de IHC**: visão do ser humano, **Engenharia Cognitiva** (Norman: modelos mentais, Golfos de Execução e Avaliação, deslizes vs. enganos), **Engenharia Semiótica** (Clarisse de Souza: metacomunicação, preposto do designer e signos estáticos, dinâmicos e metalinguísticos), **Perspectivas de Interação** (com vs. por meio) e **Atributos de Qualidade** (Usabilidade, Comunicabilidade, Acessibilidade e UX); (2) **Processo e Modelagem de Design**: envolvimento do usuário (DCU e Participativo), Reflexão em Ação (Schön), **Perfis, Personas e Mapa de Empatia**, **Prototipagem** (Storyboard, Wireframe, Mockup), **Estética, Ergonomia, WIMP/Manipulação Direta, Ícones, Gestalt e Regras de Ouro**; e (3) **Avaliação de Sistemas Interativos**: **Inspeção** (Heurísticas de Nielsen, Percurso Cognitivo e MIS), **Acessibilidade (WCAG POUR A/AA/AAA)**, **Observação** (Teste de Usabilidade e MAC com 13 etiquetas) e **Investigação** (cálculo do escore **SUS**).",
+        "correta": true,
+        "diagnostico": "Correto: revisão panorâmica completa conectando todos os 24 artigos numerados de Design de Interação em uma arquitetura mental coesa."
+      },
+      {
+        "letra": "B",
+        "texto": "A disciplina resume-se a decorar atalhos do Figma sem teoria e sem métodos de avaliação.",
+        "correta": false,
+        "diagnostico": "Erro redutor."
+      },
+      {
+        "letra": "C",
+        "texto": "IHC estuda apenas hardware de roteadores e cabos coaxiais.",
+        "correta": false,
+        "diagnostico": "Erro de disciplina."
+      },
+      {
+        "letra": "D",
+        "texto": "Avaliação Heurística, MAC e SUS são nomes diferentes para o mesmo questionário.",
+        "correta": false,
+        "diagnostico": "Erro taxonômico."
+      }
+    ],
+    "explicacao": {
+      "modelo_mental": "É o mapa completo da jornada de IHC: 1º Entender a mente e a comunicação humana (Norman e Clarisse) -> 2º Conhecer quem é o usuário e projetar a interface com ergonomia, Gestalt e protótipos (Personas, Wireframes, Shneiderman) -> 3º Avaliar com rigor científico por Inspeção, Observação e Investigação (Nielsen, MIS/MAC, WCAG, Teste de Usabilidade e SUS).",
+      "analise_correta": "Com estas 50 questões, todos os 24 artigos de Design de Interação estão 100% cobertos no banco de questões.",
+      "distratores": {
+        "B": "Erro redutor.",
+        "C": "Erro de disciplina.",
+        "D": "Erro taxonômico."
+      },
+      "referencia_vault": "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md"
     }
   }
 ]
