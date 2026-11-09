@@ -342,6 +342,8 @@
 - **Rastreabilidade e qualidade:** validar os IDs, gabaritos e referências diretamente no banco e verificar se cada artigo indicado existe; não inventar caminhos nem declarar domínio por um acerto isolado. Questionar questões ambíguas ou incorretas, sem penalizar o usuário por falhas do item. Ao fim das dez questões, apresentar um resumo curto dos tópicos para estudar e seus artigos correspondentes, além do link do diagnóstico persistido; confirmar a escrita antes de afirmar que registrou.
 - **Compatibilidade de interface:** em caso de falha na visualização de formulários ou blocos interativos, usar alternativas numeradas em texto simples com código separado, sem prejudicar a continuidade do simulado.
 
+- **Identidade e versão das questões:** o banco pode ser editado durante uma sessão. Ao selecionar cada questão, preservar também o enunciado, alternativas, gabarito e referência efetivamente utilizados, ou ao menos o SHA da versão consultada e um identificador inequívoco do conteúdo. Antes do fechamento, verificar se o mesmo `id` ainda corresponde à mesma questão. Em caso de divergência, manter o histórico do item respondido sem trocar seu gabarito pela nova versão; sinalizar a colisão de ID e propor correção da rastreabilidade do banco.
+
 
 ### Manutenção de publicações e índice de busca
 
