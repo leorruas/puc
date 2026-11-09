@@ -6,6 +6,13 @@ on:
       - main
     paths:
       - "**/*.md"
+      - "!AGENTS.md"
+      - "!**/AGENTS.md"
+      - "!GEMINI.md"
+      - "!**/GEMINI.md"
+      - "!me.md"
+      - "!log.md"
+      - "!banco-de-questoes/diagnosticos/**"
       - "index.html"
       - "script.js"
       - "search-runtime.js"
