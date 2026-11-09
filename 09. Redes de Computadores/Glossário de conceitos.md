@@ -2,6 +2,18 @@
 
 Este glossário reúne a terminologia fundamental e os conceitos consolidados na disciplina de Redes de Computadores. Ele cresce junto com o estudo, registrando as definições precisas e distinções conceituais com links para as seções correspondentes.
 
+## Classificação por abrangência geográfica
+
+| Conceito | Definição curta | Distinção ou observação | Onde aparece |
+| --- | --- | --- | --- |
+| **PAN (Personal Area Network)** | Rede de área pessoal concebida para interligar os dispositivos de uso individual de uma pessoa. | Alcance físico de até 10 metros; historicamente baseada em cabos USB/FireWire. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes de área pessoal: PAN e WPAN\|Artigo 02 — PAN e WPAN]] |
+| **WPAN (Wireless Personal Area Network)** | Rede pessoal sem fio baseada em radiofrequência de curto alcance. | Utiliza tecnologias como Bluetooth, ZigBee, UWB e RFID; foco em baixo consumo de energia. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Principais tecnologias de WPAN\|Artigo 02 — tecnologias de WPAN]] |
+| **LAN (Local Area Network)** | Rede local cobrindo área geográfica restrita a uma residência, edifício, escritório ou campus universitário. | Utiliza cabos de par trançado/fibra e switches Ethernet; alta vazão (100 Mbps a 10 Gbps) e baixíssima taxa de erros. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes de área local: LAN e WLAN\|Artigo 02 — LAN e WLAN]] |
+| **WLAN (Wireless Local Area Network)** | Rede local sem fio baseada em radiofrequência, popularizada pela tecnologia Wi-Fi. | Utiliza pontos de acesso (APs) para converter sinais eletromagnéticos 802.11 em quadros Ethernet 802.3. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes locais sem fio (WLAN)\|Artigo 02 — WLAN]] |
+| **MAN (Metropolitan Area Network)** | Rede de área metropolitana que atende à extensão de uma cidade ou grande centro urbano. | Exemplo clássico em redes de TV a cabo (DOCSIS) e anéis metropolitanos de fibra óptica mantidos por provedores. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes de área metropolitana (MAN)\|Artigo 02 — MAN]] |
+| **WAN (Wide Area Network)** | Rede de longa distância que interliga cidades, estados, países ou continentes. | Emprega linhas alugadas de concessionárias de telecomunicações, sistemas ópticos (SONET/SDH) ou VPNs sobre a Internet. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes de longa distância (WAN)\|Artigo 02 — WAN]] |
+| **Internet** | Interconexão global de milhares de redes heterogêneas e autônomas operando sob o conjunto TCP/IP. | Não é um único canal homogêneo; viabiliza troca planetária de dados por acordos de trânsito e roteamento global. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes interconectadas: a Internet\|Artigo 02 — Internet]] |
+
 ## Elementos de rede e conectividade
 
 | Conceito | Definição curta | Distinção ou observação | Onde aparece |
@@ -11,6 +23,7 @@ Este glossário reúne a terminologia fundamental e os conceitos consolidados na
 | **Endereço MAC** | Endereço físico gravado na placa de rede para identificação no enlace local. | É imutável e local; atua como o "DNA" do dispositivo no enlace de hardware. | [[09. Redes de Computadores/01. Terminologia e fundamentos de redes de computadores#Elementos constitutivos: nós, enlaces e endereçamento\|Artigo 01 — endereçamento]] |
 | **Endereço IP** | Endereço lógico atribuído a uma interface de rede para fins de localização e roteamento global. | É hierárquico e modificável; atua como o "endereço postal" do nó na Internet. | [[09. Redes de Computadores/01. Terminologia e fundamentos de redes de computadores#Elementos constitutivos: nós, enlaces e endereçamento\|Artigo 01 — endereçamento]] |
 | **Segmento de rede** | Porção delimitada de uma rede de computadores que compartilha o mesmo meio de comunicação. | A topologia do segmento pode ser em estrela, barramento ou anel. | [[09. Redes de Computadores/01. Terminologia e fundamentos de redes de computadores#Elementos constitutivos: nós, enlaces e endereçamento\|Artigo 01 — segmentos]] |
+| **Ponto de acesso (AP)** | Dispositivo concentrador que interliga clientes sem fio (WLAN) ao segmento cabeado (LAN). | Atua como ponte e conversor de mídia entre quadros sem fio 802.11 e Ethernet 802.3; difere de um roteador. | [[09. Redes de Computadores/02. Tipos de redes de computadores por abrangência geográfica#Redes locais sem fio (WLAN)\|Artigo 02 — ponto de acesso]] |
 
 ## Protocolos e encapsulamento
 
