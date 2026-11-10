@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "tipo": "fila_de_aprofundamentos",
+  "atualizado_em": "2026-11-10",
+  "finalidade": "Registrar temas interessantes que extrapolam a cobertura atual dos artigos, sem considerá-los lacunas obrigatórias nem penalizar simulados da PUC.",
+  "itens": [
+    {
+      "id": "APF-AED-001",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "tema": "Contrato de igualdade entre Equals() e GetHashCode() em C#",
+      "status": "pendente",
+      "prioridade": "opcional",
+      "nivel": "aprofundamento",
+      "contexto": "Quarta bateria: questão AED-REV-003 proposta no chat e não respondida por ausência do conteúdo nos artigos existentes.",
+      "questao_referencia": {
+        "id_chat": "AED-REV-003",
+        "id_banco": "AED-010",
+        "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+        "origem_no_banco": "banco_sintetico_vault",
+        "origem_oficial_puc": false
+      },
+      "conteudo_a_estudar": [
+        "Igualdade por valor versus igualdade por referência",
+        "Contrato: objetos considerados iguais por Equals() devem ter o mesmo GetHashCode()",
+        "Colisões: hashes iguais não implicam objetos iguais",
+        "Cuidados com a mutabilidade de campos usados como chaves em Dictionary<TKey,TValue>",
+        "Exemplo prático com dois objetos Cliente de mesmo CPF"
+      ],
+      "artigo_relacionado": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md",
+      "cobertura_atual": "O artigo apresenta Hashtable, chaves e colisões, mas não ensina diretamente os contratos Equals/GetHashCode.",
+      "leituras_externas": [
+        {
+          "titulo": "Microsoft Learn: definir igualdade de valor para um tipo",
+          "url": "https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type"
+        },
+        {
+          "titulo": "Microsoft Learn: Object.GetHashCode",
+          "url": "https://learn.microsoft.com/pt-br/dotnet/api/system.object.gethashcode"
+        }
+      ],
+      "proximo_passo": "Quando solicitado, criar seção ou artigo complementar com exemplo C# e perguntas de aplicação, distinguindo claramente aprofundamento de conteúdo oficial.",
+      "regra_simulado": "Não contabilizar a questão AED-REV-003 como erro ou acerto. Não cobrar o tema como obrigatório antes de explicar o conteúdo, salvo pedido explícito do estudante."
+    }
+  ]
+}
