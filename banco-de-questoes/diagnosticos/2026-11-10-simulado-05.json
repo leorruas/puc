@@ -1,0 +1,384 @@
+{
+  "schema_version": "1.0",
+  "tipo": "diagnostico_simulado",
+  "id": "PUC-SIM-2026-11-10-05",
+  "data": "2026-11-10",
+  "status": "bateria_concluida",
+  "origem": "Simulado no chat baseado em questões identificadas no banco como revisão oficial da PUC, com adaptações identificadas",
+  "resumo": {
+    "respondidas": 10,
+    "acertos": 8,
+    "erros": 2,
+    "aproveitamento_percentual": 80,
+    "puladas": 0
+  },
+  "respostas": [
+    {
+      "numero": 1,
+      "id": "SQL-REV-011",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "B",
+      "resultado": "erro",
+      "topico": "AVG versus MAX em subconsulta para salários acima da média",
+      "origem": "revisao_oficial_puc",
+      "nota": "O usuário explicou espontaneamente que comparou as alternativas, mas não percebeu AVG versus MAX; hipótese principal: leitura de código/desatenção. O erro anterior em AVG com NULL impede descartar lacuna conceitual sem reteste."
+    },
+    {
+      "numero": 2,
+      "id": "MD-REV-019",
+      "disciplina_id": "02",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "2FN e dependência parcial de chave composta",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 3,
+      "id": "REQ-REV-017",
+      "disciplina_id": "07",
+      "resposta": "B",
+      "gabarito": "C",
+      "resultado": "erro",
+      "topico": "Generalização de atores versus include/extend entre casos de uso",
+      "origem": "revisao_oficial_puc_alternativas_adaptadas",
+      "nota": "A alternativa B proposta no chat era include; no banco o gabarito da questão oficial é C para generalização."
+    },
+    {
+      "numero": 4,
+      "id": "AED-REV-014",
+      "disciplina_id": "04",
+      "resposta": "D",
+      "gabarito": "D",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Classe autorreferencial Celula e campo prox",
+      "origem": "revisao_oficial_puc_alternativas_adaptadas",
+      "nota": "Acerto do conceito básico; não retestou remoção de nó intermediário."
+    },
+    {
+      "numero": 5,
+      "id": "WEB-REV-009",
+      "disciplina_id": "05",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Controller MVC e return View(lista)",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 6,
+      "id": "DI-REV-015",
+      "disciplina_id": "08",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Avaliação formativa versus somativa",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 7,
+      "id": "SQL-REV-004",
+      "disciplina_id": "03",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "WHERE, GROUP BY e HAVING COUNT(*) > 5",
+      "origem": "revisao_oficial_puc",
+      "nota": "Evidência adicional de domínio provisório de WHERE/HAVING, não de AVG/MAX nem NULL."
+    },
+    {
+      "numero": 8,
+      "id": "MD-REV-009",
+      "disciplina_id": "02",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Especialização sobreposta no MER-E",
+      "origem": "revisao_oficial_puc_alternativas_adaptadas"
+    },
+    {
+      "numero": 9,
+      "id": "PM-REV-016",
+      "disciplina_id": "01",
+      "resposta": "D",
+      "gabarito": "D",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Polimorfismo, virtual e override",
+      "origem": "revisao_oficial_puc_alternativas_adaptadas"
+    },
+    {
+      "numero": 10,
+      "id": "MD-REV-008-R1",
+      "disciplina_id": "02",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio_observado",
+      "topico": "Cardinalidade 1:N e participação total em CURSO e TURMA",
+      "origem": "reteste_inedito_baseado_em_MD-REV-007_e_MD-REV-008",
+      "versao_chat": {
+        "enunciado": "Todo curso deve ter ao menos uma turma; cada turma pertence obrigatoriamente a um curso; um curso pode possuir várias turmas. Qual a cardinalidade e participação?",
+        "alternativas": {
+          "A": "1:N, CURSO parcial e TURMA total",
+          "B": "N:N, ambos total",
+          "C": "1:N, ambos total",
+          "D": "1:1, CURSO total e TURMA parcial"
+        }
+      },
+      "nota": "ID específico de reteste criado no chat; não corresponde à pergunta literal oficial MD-REV-008."
+    }
+  ],
+  "lacunas_e_retestes": [
+    {
+      "id": "LAC-SQL-005",
+      "topico": "Funções agregadas AVG, MAX, COUNT com NULL e zero",
+      "disciplina_id": "03",
+      "prioridade": "alta",
+      "estado": "ativa_reteste_pendente",
+      "evidencias": [
+        {
+          "bateria": 4,
+          "id": "SQL-REV-003",
+          "resultado": "erro",
+          "nota": "Média ignorou zero, embora devesse incluí-lo."
+        },
+        {
+          "bateria": 5,
+          "id": "SQL-REV-011",
+          "resultado": "erro",
+          "nota": "Marcou MAX no lugar de AVG; relata não ter percebido o nome da função ao comparar alternativas."
+        }
+      ],
+      "hipoteses": [
+        "Desatenção e leitura de código na quinta bateria (declaração espontânea do usuário)",
+        "Possível lacuna conceitual no cálculo AVG e tratamento de NULL/zero, conforme quarta bateria"
+      ],
+      "taxonomia": "erro de leitura/notação (bateria 5) e possível erro conceitual (bateria 4)",
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+          "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/08.%20Fun%C3%A7%C3%B5es%20agregadas%20e%20c%C3%A1lculos%20em%20SQL",
+          "verificado_no_repositorio": true
+        }
+      ],
+      "reteste": "Duas questões diferentes, uma de execução numérica com NULL/zero e outra que contraste AVG, MAX e MIN, controlando atenção ao enunciado."
+    },
+    {
+      "id": "LAC-REQ-001",
+      "topico": "Generalização entre atores versus include e extend em casos de uso UML",
+      "disciplina_id": "07",
+      "prioridade": "alta",
+      "estado": "ativa_reteste_pendente",
+      "evidencias": [
+        {
+          "bateria": 5,
+          "id": "REQ-REV-017",
+          "resultado": "erro",
+          "resposta": "B",
+          "gabarito": "C"
+        }
+      ],
+      "taxonomia": "erro conceitual/terminológico",
+      "artigos": [
+        {
+          "caminho": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+          "url_site": "https://leorruas.github.io/puc/#/07.%20Engenharia%20de%20Requisitos/08.%20Modelagem%20de%20requisitos%20com%20casos%20de%20uso%20e%20especifica%C3%A7%C3%B5es%20textuais",
+          "verificado_no_repositorio": true
+        }
+      ],
+      "reteste": "Distinguir relações ator–ator e caso de uso–caso de uso em novo cenário com distratores próximos."
+    },
+    {
+      "id": "LAC-AED-002",
+      "topico": "Remoção de célula intermediária em listas encadeadas",
+      "disciplina_id": "04",
+      "prioridade": "alta",
+      "estado": "ativa_sem_reteste_direto",
+      "evidencias": [
+        {
+          "bateria": 4,
+          "id": "AED-REV-016",
+          "resultado": "erro"
+        },
+        {
+          "bateria": 5,
+          "id": "AED-REV-014",
+          "resultado": "acerto_parcial",
+          "habilidade": "tipo Celula no campo prox; conceito necessário, mas não suficiente para remoção"
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+          "url_site": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/08.%20Lista%20flex%C3%ADvel%20(n%C3%B3%20cabe%C3%A7a%2C%20inser%C3%A7%C3%A3o%2C%20remo%C3%A7%C3%A3o%20e%20percurso)",
+          "verificado_no_repositorio": true
+        }
+      ],
+      "reteste": "Retestar a ligação da célula anterior ao nó posterior após exercício de percurso, sem repetir a questão literal."
+    },
+    {
+      "id": "LAC-SQL-004",
+      "topico": "NOT IN com NULL e lógica de três valores",
+      "disciplina_id": "03",
+      "prioridade": "alta",
+      "estado": "ativa_sem_reteste",
+      "evidencias": [
+        {
+          "bateria": 4,
+          "id": "SQL-REV-006",
+          "resultado": "erro"
+        },
+        {
+          "bateria": 5,
+          "id": "SQL-REV-011",
+          "resultado": "acerto_nao_avaliado",
+          "nota": "O item SQL-REV-011 não avalia NOT IN; não há evidência de superação."
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+          "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/11.%20Consultas%20aninhadas%20sem%20e%20com%20correla%C3%A7%C3%A3o",
+          "verificado_no_repositorio": true
+        }
+      ],
+      "reteste": "Usar pequena tabela com NULL e predicado NOT IN, comparar com NOT EXISTS."
+    },
+    {
+      "id": "LAC-MD-002",
+      "topico": "Cardinalidade versus participação total/parcial",
+      "disciplina_id": "02",
+      "prioridade": "baixa",
+      "estado": "superada_provisoriamente_aguardar_retencao",
+      "evidencias": [
+        {
+          "bateria": 4,
+          "id": "MD-REV-008",
+          "resultado": "erro"
+        },
+        {
+          "bateria": 5,
+          "id": "MD-REV-008-R1",
+          "resultado": "acerto_sem_apoio_observado",
+          "nota": "Aplicação simultânea de 1:N e participação total dos dois lados em caso CURSO/TURMA."
+        }
+      ],
+      "artigos": [
+        {
+          "caminho": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+          "url_site": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/06.%20Modelagem%20de%20relacionamentos%2C%20cardinalidade%20e%20restri%C3%A7%C3%B5es%20de%20participa%C3%A7%C3%A3o",
+          "verificado_no_repositorio": true
+        }
+      ],
+      "reteste": "Verificar retenção mais adiante com participação parcial em outro domínio; dispensar leitura obrigatória imediata."
+    }
+  ],
+  "leituras_ordenadas": [
+    {
+      "prioridade": "alta",
+      "topico": "Funções agregadas SQL",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+        "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/08.%20Fun%C3%A7%C3%B5es%20agregadas%20e%20c%C3%A1lculos%20em%20SQL",
+        "verificado_no_repositorio": true
+      },
+      "motivo": "Questão 1 desta bateria e questão 7 da quarta; hipótese de leitura AVG/MAX e conceito AVG/NULL."
+    },
+    {
+      "prioridade": "alta",
+      "topico": "Relacionamentos UML de casos de uso",
+      "artigo": {
+        "caminho": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+        "url_site": "https://leorruas.github.io/puc/#/07.%20Engenharia%20de%20Requisitos/08.%20Modelagem%20de%20requisitos%20com%20casos%20de%20uso%20e%20especifica%C3%A7%C3%B5es%20textuais",
+        "verificado_no_repositorio": true
+      },
+      "motivo": "Questão 3 desta bateria: generalização versus include."
+    },
+    {
+      "prioridade": "alta",
+      "topico": "Listas encadeadas: remoção",
+      "artigo": {
+        "caminho": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+        "url_site": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/08.%20Lista%20flex%C3%ADvel%20(n%C3%B3%20cabe%C3%A7a%2C%20inser%C3%A7%C3%A3o%2C%20remo%C3%A7%C3%A3o%20e%20percurso)",
+        "verificado_no_repositorio": true
+      },
+      "motivo": "Lacuna da quarta bateria não resolvida por acerto da questão 4 (tipo Celula)."
+    },
+    {
+      "prioridade": "alta",
+      "topico": "NOT IN e NULL",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+        "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/11.%20Consultas%20aninhadas%20sem%20e%20com%20correla%C3%A7%C3%A3o",
+        "verificado_no_repositorio": true
+      },
+      "motivo": "Lacuna de SQL da quarta bateria ainda sem reteste."
+    },
+    {
+      "prioridade": "baixa",
+      "topico": "Cardinalidade e participação",
+      "artigo": {
+        "caminho": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+        "url_site": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/06.%20Modelagem%20de%20relacionamentos%2C%20cardinalidade%20e%20restri%C3%A7%C3%B5es%20de%20participa%C3%A7%C3%A3o",
+        "verificado_no_repositorio": true
+      },
+      "motivo": "Revisão opcional: reteste da questão 10 acertado, superação provisória."
+    }
+  ],
+  "comparacao": {
+    "baterias": [
+      {
+        "numero": 1,
+        "acertos": 5,
+        "respondidas": 10,
+        "percentual": 50
+      },
+      {
+        "numero": 2,
+        "acertos": 9,
+        "respondidas": 10,
+        "percentual": 90
+      },
+      {
+        "numero": 3,
+        "acertos": 10,
+        "respondidas": 10,
+        "percentual": 100
+      },
+      {
+        "numero": 4,
+        "acertos": 6,
+        "respondidas": 10,
+        "percentual": 60
+      },
+      {
+        "numero": 5,
+        "acertos": 8,
+        "respondidas": 10,
+        "percentual": 80
+      }
+    ],
+    "acumulado": {
+      "respondidas": 50,
+      "acertos": 38,
+      "erros": 12,
+      "percentual": 76
+    },
+    "variacao_4_para_5_pontos_percentuais": 20,
+    "limite": "As baterias diferem em dificuldade e qualidade dos distratores; melhoria de acertos não basta para concluir domínio global."
+  },
+  "rastreabilidade": {
+    "questoes_revisao_oficial_ou_adaptadas": 9,
+    "questoes_reteste_inedito": 1,
+    "observacao": "Conferir versão do chat; MD-REV-008-R1 é novo e gabarito C diferente do item MD-REV-008 do banco (gabarito A). Ao dizer 'revisão oficial', refere-se à etiqueta de origem do banco, não à validação externa de autoria institucional.",
+    "artigos_recomendados_verificados_no_github": true
+  },
+  "orientacoes_proxima_bateria": [
+    "Retestar AVG/MAX e AVG com NULL distinguindo leitura de código de conceito",
+    "Retestar generalização entre atores UML",
+    "Retestar remoção em lista flexível",
+    "Retestar NOT IN com NULL sem confundir com EXISTS já acertado",
+    "Manter cardinalidade/participação em monitoramento de retenção"
+  ],
+  "registro_automatico_a_cada_10_respondidas": true
+}
