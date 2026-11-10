@@ -1,0 +1,317 @@
+{
+  "schema_version": "1.0",
+  "tipo": "diagnostico_simulado",
+  "id": "PUC-SIM-2026-11-10-04",
+  "data": "2026-11-10",
+  "status": "bateria_concluida",
+  "origem": "Simulado interativo no chat, perguntas oficiais identificadas no banco e adaptações inéditas verificadas",
+  "resumo": {
+    "respondidas": 10,
+    "acertos": 6,
+    "erros": 4,
+    "aproveitamento_percentual": 60,
+    "questoes_excluidas_sem_resposta": 1,
+    "observacao": "Questão sobre Equals/GetHashCode foi retirada por extrapolar o artigo correspondente e não entra no denominador; posterior questão AED-REV-016 foi efetivamente respondida e conta como erro."
+  },
+  "respostas": [
+    {
+      "numero": 1,
+      "id_chat": "MD-REV-001",
+      "id_banco": null,
+      "disciplina_id": "02",
+      "topico": "Chaves candidatas, primária, alternativa e superchaves",
+      "resposta": "C",
+      "gabarito": "C",
+      "origem": "inedita_adaptada_chat",
+      "resultado": "acerto",
+      "resumo_enunciado": "Aplicação da distinção entre chaves candidatas, primária, alternativa e superchaves em cadastro acadêmico",
+      "nota_rastreabilidade": "ID MD-REV-001 no banco corresponde a outra questão, sobre arquivos e SGBD."
+    },
+    {
+      "numero": 2,
+      "id_chat": "SQL-REV-006",
+      "id_banco": null,
+      "disciplina_id": "03",
+      "topico": "NOT IN com NULL: lógica de três valores",
+      "resposta": "B",
+      "gabarito": "C",
+      "origem": "inedita_chat",
+      "resultado": "erro",
+      "enunciado": "Produto: Id 1, 2, 3. Bloqueio: IdProduto 2, NULL. SELECT Id FROM Produto WHERE Id NOT IN (SELECT IdProduto FROM Bloqueio). Qual é o resultado?",
+      "alternativa_correta": "Nenhuma linha é retornada",
+      "justificativa": "NULL na subconsulta faz o predicado NOT IN ser UNKNOWN para IDs não correspondentes e falso para o ID 2.",
+      "nota_rastreabilidade": "ID SQL-REV-006 no banco corresponde a outra questão, sobre integridade referencial."
+    },
+    {
+      "numero": 3,
+      "id_chat": "REQ-REV-001",
+      "id_banco": null,
+      "disciplina_id": "07",
+      "topico": "UML: associação, agregação e composição",
+      "resposta": "B",
+      "gabarito": "B",
+      "origem": "inedita_adaptada_chat_de_REQ-021",
+      "resultado": "acerto",
+      "enunciado": "Turma reúne alunos que continuam existindo se a turma acabar; PedidoCertificado contém itens cujo ciclo de vida depende do pedido; Professor e Aluno se relacionam independentemente. Classifique.",
+      "alternativa_correta": "Turma–Aluno agregação; PedidoCertificado–ItemPedido composição; Professor–Aluno associação",
+      "nota_rastreabilidade": "REQ-REV-001 no banco corresponde a outra questão, conceito de requisito."
+    },
+    {
+      "numero": 4,
+      "id_chat": "WEB-REV-001",
+      "id_banco": null,
+      "disciplina_id": "05",
+      "topico": "async/await e operações de entrada e saída em ASP.NET Core",
+      "resposta": "B",
+      "gabarito": "B",
+      "origem": "inedita_adaptada_chat_de_WEB-022",
+      "resultado": "acerto",
+      "enunciado": "Servidor recebe várias requisições com consulta ao banco em ~200 ms. Qual efeito correto de substituir acesso síncrono por async/await?",
+      "alternativa_correta": "Libera thread enquanto aguarda I/O, ajudando escalabilidade sem necessariamente acelerar a consulta individual",
+      "nota_rastreabilidade": "WEB-REV-001 no banco corresponde a outra questão, arquitetura em camadas."
+    },
+    {
+      "numero": 5,
+      "id_chat": "AED-REV-016",
+      "id_banco": "AED-REV-016",
+      "disciplina_id": "04",
+      "topico": "Remoção do nó intermediário em lista simplesmente encadeada",
+      "resposta": "B",
+      "gabarito": "C",
+      "origem": "revisao_oficial_puc_com_alternativas_adaptadas",
+      "resultado": "erro",
+      "enunciado": "Lista 5 → 10 → 15 → null; remover a célula de valor 10 mantendo 5 e 15 acessíveis. Referências cel5, cel10, cel15. A) cel10.prox=cel15; B) cel5.prox=null; C) cel5.prox=cel15; D) cel15.prox=cel10.",
+      "alternativa_correta": "cel5.prox = cel15;",
+      "nota_rastreabilidade": "Adaptação em chat do item oficial do banco; usuário declarou dificuldade e recebeu links do vault antes de responder."
+    },
+    {
+      "numero": 6,
+      "id_chat": "PM-REV-012",
+      "id_banco": "PM-REV-012",
+      "disciplina_id": "01",
+      "topico": "Encapsulamento, propriedade get/set e rejeição de valores negativos",
+      "resposta": "C",
+      "gabarito": "C",
+      "origem": "revisao_oficial_puc_com_codigo_adaptado",
+      "resultado": "acerto",
+      "enunciado": "Implementar Produto.Quantidade consultável e nunca negativa. A) get/set automático; B) get/private set sem validar; C) get e set com if(value<0) throw ArgumentOutOfRangeException; D) Math.Abs(value) no setter.",
+      "alternativa_correta": "Propriedade com validação no setter e exceção para valor negativo",
+      "nota_rastreabilidade": "Gabarito e alternativas são os da versão adaptada em chat, não as letras da pergunta de origem no banco."
+    },
+    {
+      "numero": 7,
+      "id_chat": "SQL-REV-003",
+      "id_banco": "SQL-REV-003",
+      "disciplina_id": "03",
+      "topico": "COUNT(*) vs COUNT(coluna) vs AVG(coluna) com NULL e zero",
+      "resposta": "B",
+      "gabarito": "D",
+      "origem": "revisao_oficial_puc",
+      "resultado": "erro",
+      "enunciado": "bonus: 500, NULL, 300, 0, NULL. SELECT COUNT(*), COUNT(bonus), AVG(bonus) FROM Funcionario; A)5,5,160 B)5,3,400 C)3,3,400 D)5,3,266.67",
+      "alternativa_correta": "5, 3, 266.67",
+      "nota_rastreabilidade": "ID SQL-REV-003 também foi usado para uma questão inédita diferente na terceira bateria; aqui é o item oficial do banco."
+    },
+    {
+      "numero": 8,
+      "id_chat": "DI-REV-003",
+      "id_banco": "DI-REV-003",
+      "disciplina_id": "08",
+      "topico": "Golfo de execução e golfo de avaliação de Donald Norman",
+      "resposta": "C",
+      "gabarito": "C",
+      "origem": "revisao_oficial_puc_expandida",
+      "resultado": "acerto",
+      "enunciado": "Usuário não encontra opção de imprimir; após ação, não sabe se imprimirá. Classificar golfo de execução e avaliação.",
+      "alternativa_correta": "Encontrar ação: execução; compreender resultado: avaliação",
+      "nota_rastreabilidade": "Enunciado ampliado em chat para testar ambos os golfos; não idêntico ao item oficial."
+    },
+    {
+      "numero": 9,
+      "id_chat": "MD-REV-008",
+      "id_banco": "MD-REV-008",
+      "disciplina_id": "02",
+      "topico": "Participação total/parcial versus cardinalidade 1:N",
+      "resposta": "D",
+      "gabarito": "A",
+      "origem": "revisao_oficial_puc_com_alternativas_adaptadas",
+      "resultado": "erro",
+      "enunciado": "Todo pedido pertence a um cliente; cliente pode existir sem pedidos. A) total PEDIDO/parcial CLIENTE; B) total ambos; C) parcial PEDIDO/total CLIENTE; D) parcial ambos, porque 1:N.",
+      "alternativa_correta": "Participação total para PEDIDO e parcial para CLIENTE",
+      "nota_rastreabilidade": "Adaptada em chat preservando o conceito e o gabarito da fonte."
+    },
+    {
+      "numero": 10,
+      "id_chat": "SQL-REV-012",
+      "id_banco": "SQL-REV-012",
+      "disciplina_id": "03",
+      "topico": "EXISTS correlacionado para selecionar alunos com matrícula ativa sem duplicar linhas",
+      "resposta": "B",
+      "gabarito": "B",
+      "origem": "revisao_oficial_puc",
+      "resultado": "acerto",
+      "enunciado": "Aluno(id,nome), Matricula(id,aluno_id,curso_id,status). Selecionar alunos com ao menos uma matrícula ativa usando EXISTS.",
+      "alternativa_correta": "SELECT A.nome FROM Aluno A WHERE EXISTS (SELECT 1 FROM Matricula M WHERE M.aluno_id=A.id AND M.status='Ativa');",
+      "nota_rastreabilidade": "Enunciado e alternativas do item oficial do banco apresentados novamente em texto simples por falha de UI."
+    }
+  ],
+  "questoes_excluidas": [
+    {
+      "id_chat": "AED-REV-003",
+      "id_banco_fonte": "AED-010",
+      "disciplina_id": "04",
+      "topico": "Contrato Equals/GetHashCode em C#",
+      "origem_fonte": "banco_sintetico_vault",
+      "razao": "Tema não explicado no artigo do vault e usuário pediu para estudar posteriormente.",
+      "resposta": null,
+      "conta_no_denominador": false,
+      "registro_aprofundamento": "banco-de-questoes/aprofundamentos-pendentes.json",
+      "observacao_identidade": "O ID AED-REV-003 já designa um item de ArrayList no banco oficial; no chat foi empregado para uma pergunta diferente, inspirada em AED-010."
+    }
+  ],
+  "lacunas_e_retestes": [
+    {
+      "id": "LAC-SQL-004",
+      "disciplina_id": "03",
+      "topico": "NOT IN com NULL e lógica trivalorada",
+      "prioridade": "alta",
+      "estado": "ativa_aguardando_reteste",
+      "evidencia": {
+        "id_chat": "SQL-REV-006",
+        "numero": 2,
+        "resposta": "B",
+        "gabarito": "C"
+      },
+      "diagnostico": "Alta: compreender por que NOT IN com valor NULL na subconsulta pode retornar conjunto vazio, e quando usar NOT EXISTS.",
+      "taxonomia_provisoria": "erro_conceitual_ou_leitura_de_codigo",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+        "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/11.%20Consultas%20aninhadas%20sem%20e%20com%20correla%C3%A7%C3%A3o",
+        "verificado_no_repositorio": true
+      },
+      "reteste": "Aplicar cenário diferente com alternativas plausíveis após releitura, sem repetir literal do item."
+    },
+    {
+      "id": "LAC-SQL-005",
+      "disciplina_id": "03",
+      "topico": "Funções agregadas COUNT e AVG com NULL e zero",
+      "prioridade": "alta",
+      "estado": "ativa_aguardando_reteste",
+      "evidencia": {
+        "id_chat": "SQL-REV-003",
+        "numero": 7,
+        "resposta": "B",
+        "gabarito": "D"
+      },
+      "diagnostico": "Alta: COUNT(*) inclui linhas com NULL, COUNT(coluna) ignora NULL, AVG ignora NULL mas inclui zero.",
+      "taxonomia_provisoria": "erro_conceitual_ou_calculo",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+        "url_site": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/08.%20Fun%C3%A7%C3%B5es%20agregadas%20e%20c%C3%A1lculos%20em%20SQL",
+        "verificado_no_repositorio": true
+      },
+      "reteste": "Aplicar cenário diferente com alternativas plausíveis após releitura, sem repetir literal do item."
+    },
+    {
+      "id": "LAC-AED-002",
+      "disciplina_id": "04",
+      "topico": "Atualização de referências ao remover nó de lista encadeada",
+      "prioridade": "alta",
+      "estado": "ativa_aguardando_reteste",
+      "evidencia": {
+        "id_chat": "AED-REV-016",
+        "numero": 5,
+        "resposta": "B",
+        "gabarito": "C"
+      },
+      "diagnostico": "Alta: atualizar a referência da célula anterior, preservando o restante do encadeamento.",
+      "taxonomia_provisoria": "erro_de_leitura_de_codigo_e_modelo",
+      "artigo": {
+        "caminho": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+        "url_site": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/08.%20Lista%20flex%C3%ADvel%20(n%C3%B3%20cabe%C3%A7a%2C%20inser%C3%A7%C3%A3o%2C%20remo%C3%A7%C3%A3o%20e%20percurso)",
+        "verificado_no_repositorio": true
+      },
+      "reteste": "Aplicar cenário diferente com alternativas plausíveis após releitura, sem repetir literal do item."
+    },
+    {
+      "id": "LAC-MD-002",
+      "disciplina_id": "02",
+      "topico": "Cardinalidade 1:N versus participação total/parcial",
+      "prioridade": "media",
+      "estado": "ativa_aguardando_reteste",
+      "evidencia": {
+        "id_chat": "MD-REV-008",
+        "numero": 9,
+        "resposta": "D",
+        "gabarito": "A"
+      },
+      "diagnostico": "Média: a multiplicidade não determina a obrigatoriedade de cada entidade participar do relacionamento.",
+      "taxonomia_provisoria": "erro_conceitual_terminologico",
+      "artigo": {
+        "caminho": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+        "url_site": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/06.%20Modelagem%20de%20relacionamentos%2C%20cardinalidade%20e%20restri%C3%A7%C3%B5es%20de%20participa%C3%A7%C3%A3o",
+        "verificado_no_repositorio": true
+      },
+      "reteste": "Aplicar cenário diferente com alternativas plausíveis após releitura, sem repetir literal do item."
+    }
+  ],
+  "comparacao": {
+    "baterias": [
+      {
+        "id": "PUC-SIM-2026-11-09-01",
+        "acertos": 5,
+        "respondidas": 10,
+        "percentual": 50
+      },
+      {
+        "id": "PUC-SIM-2026-11-09-02",
+        "acertos": 9,
+        "respondidas": 10,
+        "percentual": 90
+      },
+      {
+        "id": "PUC-SIM-2026-11-09-03",
+        "acertos": 10,
+        "respondidas": 10,
+        "percentual": 100
+      },
+      {
+        "id": "PUC-SIM-2026-11-10-04",
+        "acertos": 6,
+        "respondidas": 10,
+        "percentual": 60
+      }
+    ],
+    "acumulado": {
+      "respondidas": 40,
+      "acertos": 30,
+      "erros": 10,
+      "aproveitamento_percentual": 75
+    },
+    "interpretacao": "A queda de 100% para 60% ocorre em baterias com dificuldades e qualidade de distratores distintas. Não interpretar isoladamente como perda de aprendizado."
+  },
+  "recomendacoes_proxima_bateria": {
+    "prioridade": [
+      "NOT IN com NULL e NOT EXISTS",
+      "COUNT e AVG: diferença entre NULL e zero",
+      "Remover elemento intermediário em lista flexível",
+      "Participação obrigatória versus cardinalidade em DER"
+    ],
+    "acompanhamento_anterior": "Manter observação sobre colisões e sondagem em tabelas hash da bateria 03, com atenção à cobertura real do vault antes de cobrar.",
+    "itens": "Preferir revisões oficiais efetivamente cobertas no vault e alternativas plausíveis; retestar fraquezas por casos diferentes."
+  },
+  "rastreabilidade": {
+    "observacao": "Os IDs do chat podem colidir com IDs oficiais de itens diferentes. Usar id_banco, origem, resumo_enunciado/enunciado, alternativa_correta e nota_rastreabilidade para distinguir. As respostas e gabaritos aqui são os que foram efetivamente apresentados e corrigidos no chat.",
+    "questoes_adaptadas": [
+      "MD-REV-001",
+      "SQL-REV-006",
+      "REQ-REV-001",
+      "WEB-REV-001",
+      "AED-REV-016",
+      "PM-REV-012",
+      "DI-REV-003",
+      "MD-REV-008"
+    ],
+    "artigos_das_quatro_lacunas_verificados_no_repositorio": true
+  }
+}
