@@ -1,0 +1,1885 @@
+{
+  "schema_version": "1.0",
+  "id": "PUC-CONTROLE-COBERTURA-REVISAO",
+  "atualizado_em": "2026-11-12",
+  "descricao": "Rastreamento das perguntas cuja origem no banco e revisao_oficial_puc; classificacao interna, ainda sem verificacao independente de autoria/exata correspondencia com o simulado da instituicao.",
+  "sumario": {
+    "total_revisao_classificada": 152,
+    "ja_apresentadas_com_origem_identificada": 25,
+    "restantes_sem_aplicacao_valida_da_questao_da_colecao": 127,
+    "puladas_anteriores": 1,
+    "anuladas_anteriores": 1,
+    "quantidade_bancos": 8,
+    "disciplinas_com_revisao": 7,
+    "disciplinas_sem_revisao": [
+      "Projeto de Aplicação Interativa"
+    ],
+    "questoes_sinteticas_excluidas_do_modo_oficial": true
+  },
+  "por_banco": [
+    {
+      "arquivo": "banco-de-questoes/01.programacao-modular.json",
+      "total": 75,
+      "colecao_revisao": 25,
+      "ja_apresentadas": 3,
+      "nao_apresentadas": 22
+    },
+    {
+      "arquivo": "banco-de-questoes/02.modelagem-de-dados.json",
+      "total": 74,
+      "colecao_revisao": 24,
+      "ja_apresentadas": 5,
+      "nao_apresentadas": 19
+    },
+    {
+      "arquivo": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "total": 65,
+      "colecao_revisao": 15,
+      "ja_apresentadas": 5,
+      "nao_apresentadas": 10
+    },
+    {
+      "arquivo": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "total": 73,
+      "colecao_revisao": 23,
+      "ja_apresentadas": 2,
+      "nao_apresentadas": 21
+    },
+    {
+      "arquivo": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "total": 70,
+      "colecao_revisao": 20,
+      "ja_apresentadas": 3,
+      "nao_apresentadas": 17
+    },
+    {
+      "arquivo": "banco-de-questoes/06.projeto-aplicacao-interativa.json",
+      "total": 50,
+      "colecao_revisao": 0,
+      "ja_apresentadas": 0,
+      "nao_apresentadas": 0
+    },
+    {
+      "arquivo": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "total": 75,
+      "colecao_revisao": 25,
+      "ja_apresentadas": 3,
+      "nao_apresentadas": 22
+    },
+    {
+      "arquivo": "banco-de-questoes/08.design-de-interacao.json",
+      "total": 70,
+      "colecao_revisao": 20,
+      "ja_apresentadas": 4,
+      "nao_apresentadas": 16
+    }
+  ],
+  "origens_ambivalentes": {
+    "historico_de_ids_reutilizados_sem_correspondencia_com_o_enunciado_oficial": [
+      {
+        "id_usado": "SQL-REV-001",
+        "id_banco_identico": "SQL-REV-001",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-09-simulado-02.json",
+        "tipo": "questao_inedita",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "SQL-REV-002",
+        "id_banco_identico": "SQL-REV-002",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-09-simulado-02.json",
+        "tipo": "questao_inedita",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "SQL-REV-003",
+        "id_banco_identico": "SQL-REV-003",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-09-simulado-03.json",
+        "tipo": "inedita_reteste",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "SQL-REV-004",
+        "id_banco_identico": "SQL-REV-004",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-09-simulado-03.json",
+        "tipo": "inedita_reteste",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "SQL-REV-005",
+        "id_banco_identico": "SQL-REV-005",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-09-simulado-03.json",
+        "tipo": "inedita_reteste",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "MD-REV-001",
+        "id_banco_identico": "MD-REV-001",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+        "tipo": "inedita_adaptada_chat",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "SQL-REV-006",
+        "id_banco_identico": "SQL-REV-006",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+        "tipo": "inedita_chat",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "REQ-REV-001",
+        "id_banco_identico": "REQ-REV-001",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+        "tipo": "inedita_adaptada_chat_de_REQ-021",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      },
+      {
+        "id_usado": "WEB-REV-001",
+        "id_banco_identico": "WEB-REV-001",
+        "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+        "tipo": "inedita_adaptada_chat_de_WEB-022",
+        "motivo": "ID coincidente sem comprovação de correspondência ao item da revisão da PUC; não registrar cobertura"
+      }
+    ],
+    "nota": "Um ID semelhante a questao oficial usado em teste sintetico ou reteste inedito NAO contabiliza cobertura da questao original. Os IDs SQL-REV-003 e SQL-REV-004, embora usados em testes ineditos anteriores, foram posteriormente apresentados como questoes da revisao e portanto aparecem como cobertos."
+  },
+  "questoes": [
+    {
+      "id": "PM-REV-001",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Programação modular e gerenciamento da complexidade",
+      "artigo": "01. Programacao Modular/01. Introdução à programação modular.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-002",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Fatores externos de qualidade de software",
+      "artigo": "01. Programacao Modular/05. Fatores externos de qualidade de software.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-003",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Legibilidade, modularidade e manutenibilidade",
+      "artigo": "01. Programacao Modular/06. Fatores internos de qualidade de software.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-004",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Coesão, dependências e manutenibilidade",
+      "artigo": "01. Programacao Modular/06. Fatores internos de qualidade de software.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-005",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Classes, objetos, atributos e métodos",
+      "artigo": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-006",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Identidade, estado e comportamento dos objetos",
+      "artigo": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-007",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Construtores e inicialização de atributos",
+      "artigo": "01. Programacao Modular/08. Construtores (inicialização, sobrecarga e garantia de invariantes).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-008",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Membros estáticos e membros de instância",
+      "artigo": "01. Programacao Modular/09. Atributos estáticos e propriedades (compartilhamento de estado e encapsulamento).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-009",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Destrutores e gerenciamento de memória no C#",
+      "artigo": "01. Programacao Modular/10. Destrutores e finalizadores (desalocação de memória e liberação de recursos).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-010",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Ocultação da informação e encapsulamento",
+      "artigo": "01. Programacao Modular/11. Princípio da ocultação da informação (information hiding e encapsulamento).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-011",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Modificadores de acesso em C# (private)",
+      "artigo": "01. Programacao Modular/12. Modificadores de acesso (visibilidade e níveis de proteção no encapsulamento).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-012",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Getters, setters e validação em propriedades",
+      "artigo": "01. Programacao Modular/13. Métodos de acesso e propriedades (publicação de contratos e garantia de invariantes).md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "C",
+          "resultado": "acerto",
+          "apresentacao": "revisao_oficial_puc_com_codigo_adaptado"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-013",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Namespaces e classes parciais",
+      "artigo": "01. Programacao Modular/14. Namespaces e partial classes (espaços de nomes e modularização em larga escala).md",
+      "estado": "anulada_sem_pontuacao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-014",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Generalização, especialização e herança",
+      "artigo": "01. Programacao Modular/15. Herança (generalização, especialização e extensibilidade modular).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-015",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Construtores de subclasses e chamada a base",
+      "artigo": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "C",
+          "resultado": "erro",
+          "apresentacao": "oficial_adaptada"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-016",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Polimorfismo; virtual e override",
+      "artigo": "01. Programacao Modular/17. Sobreposição de métodos (virtual e override).md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "D",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-017",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Classes e métodos abstratos",
+      "artigo": "01. Programacao Modular/18. Classes abstratas e métodos abstratos (contratos de herança e polimorfismo puro).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-018",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Classes sealed e membros sealed override",
+      "artigo": "01. Programacao Modular/19. Classes e membros selados (sealed).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-019",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Tipos genéricos e polimorfismo paramétrico",
+      "artigo": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-020",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Listas e operações em coleções",
+      "artigo": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-021",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Dicionários e coleções genéricas",
+      "artigo": "01. Programacao Modular/21. Coleções genéricas em C# (estruturas de dados, propósitos e performance assintótica).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-022",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Delegates, lambda e eventos",
+      "artigo": "01. Programacao Modular/22. Delegates, funções anônimas, expressões lambda e eventos em C#.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-023",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "SOLID: princípio da responsabilidade única (SRP)",
+      "artigo": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-024",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "SOLID: princípio aberto/fechado (OCP)",
+      "artigo": "01. Programacao Modular/23. Princípios SOLID de design orientado a objetos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "PM-REV-025",
+      "disciplina": "Programação Modular",
+      "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
+      "topico": "Padrões de projeto e suas categorias (GoF)",
+      "artigo": "01. Programacao Modular/24. Padrões de projeto (design patterns) e o catálogo GoF.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-001",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Abordagem de arquivos versus abordagem de BD",
+      "artigo": "02. Modelagem de Dados/02. Abordagem de arquivos vs. abordagem de banco de dados.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "MD-REV-002",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Níveis externo, conceitual e interno do SGBD e independência física",
+      "artigo": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-003",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Etapas do projeto de banco de dados: conceitual, lógico e físico",
+      "artigo": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-004",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Linguagens de banco de dados: DDL versus DML",
+      "artigo": "02. Modelagem de Dados/03. Linguagens de banco de dados (ddl e dml) e perfis profissionais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-005",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Modelagem de entidades e tipos de atributos",
+      "artigo": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-006",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Atributos simples, compostos, multivalorados e derivados",
+      "artigo": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-007",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Cardinalidade de relacionamentos (1:1, 1:N, N:N)",
+      "artigo": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-008",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Restrições de participação (totalidade vs. parcialidade)",
+      "artigo": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "D",
+          "resultado": "erro",
+          "apresentacao": "revisao_oficial_puc_com_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-009",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Especialização: subtipos sobrepostos (overlap) vs. disjuntos (disjoint)",
+      "artigo": "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-010",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Entidades fracas, dependência de existência e chave parcial",
+      "artigo": "02. Modelagem de Dados/07. Modelo de entidades e relacionamentos estendido.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-011",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Superchaves, chaves candidatas e chave primária",
+      "artigo": "02. Modelagem de Dados/08. Conceitos do modelo relacional e chave primária.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "D",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "oficial"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-012",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Integridade referencial e chave estrangeira",
+      "artigo": "02. Modelagem de Dados/09. Integridade referencial e chave estrangeira.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-013",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Mapeamento de atributos multivalorados para o modelo relacional",
+      "artigo": "02. Modelagem de Dados/10. Mapeamento de entidades e atributos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-014",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Mapeamento de entidades fracas e chaves compostas",
+      "artigo": "02. Modelagem de Dados/10. Mapeamento de entidades e atributos.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-07.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "revisao_oficial_puc_adaptada"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-015",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Mapeamento de relacionamento 1:N (regra da chave estrangeira no lado N)",
+      "artigo": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-016",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Mapeamento de relacionamentos N:N e tabelas associativas",
+      "artigo": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-017",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Mapeamento de herança e generalização/especialização",
+      "artigo": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-018",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Primeira forma normal (1FN) e atomicidade de atributos",
+      "artigo": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-019",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Segunda forma normal (2FN) e eliminação de dependência funcional parcial",
+      "artigo": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "C",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-020",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Terceira forma normal (3FN) e eliminação de dependência funcional transitiva",
+      "artigo": "02. Modelagem de Dados/12. 1ª, 2ª e 3ª formas normais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-021",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Modelos pré-relacionais e não-relacionais: modelo hierárquico",
+      "artigo": "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-022",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Bancos de dados NoSQL, esquema flexível e escalabilidade horizontal",
+      "artigo": "02. Modelagem de Dados/13. Bancos de dados não-relacionais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-023",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Tríade CIA: Confidencialidade, Integridade e Disponibilidade",
+      "artigo": "02. Modelagem de Dados/14. Segurança de banco de dados.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "MD-REV-024",
+      "disciplina": "Modelagem de Dados",
+      "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
+      "topico": "Segurança em camadas e defesa em profundidade",
+      "artigo": "02. Modelagem de Dados/14. Segurança de banco de dados.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-001",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DDL: comando ALTER TABLE e adição de colunas",
+      "artigo": "03. Manipulação de Dados SQL/04. Alteração e remoção de tabelas.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-002",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DML: comando UPDATE com condições compostas (AND) e reajuste percentual",
+      "artigo": "03. Manipulação de Dados SQL/05. Comandos INSERT, UPDATE e DELETE.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-003",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Funções agregadas: COUNT(*), COUNT(coluna), AVG e tratamento de valores NULL",
+      "artigo": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "B",
+          "resultado": "erro",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-004",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Agrupamento e filtragem com WHERE, GROUP BY e HAVING",
+      "artigo": "03. Manipulação de Dados SQL/09. Cláusulas GROUP BY e HAVING.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "A",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-005",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Controle de transações, atomicidade e ROLLBACK",
+      "artigo": "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-006",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Chaves primárias, chaves estrangeiras e integridade referencial 1:N",
+      "artigo": "03. Manipulação de Dados SQL/02. Bancos de dados relacionais e SGBDs.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "SQL-REV-007",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DDL: CREATE TABLE, tipos INTEGER e VARCHAR e PRIMARY KEY",
+      "artigo": "03. Manipulação de Dados SQL/03. Comando CREATE TABLE.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-008",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DML: comandos INSERT INTO e DELETE FROM com WHERE",
+      "artigo": "03. Manipulação de Dados SQL/05. Comandos INSERT, UPDATE e DELETE.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-009",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Operadores LIKE, BETWEEN e AND em consultas SQL",
+      "artigo": "03. Manipulação de Dados SQL/07. Operadores e condições em consultas SQL.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-010",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Tipos de junção: LEFT JOIN e preservação de registros sem correspondência",
+      "artigo": "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "C",
+          "resultado": "erro",
+          "apresentacao": "oficial"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-011",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Subconsultas não correlacionadas com funções agregadas",
+      "artigo": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "A",
+          "resultado": "erro",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-012",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Subconsultas correlacionadas com EXISTS e predicados compostos",
+      "artigo": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "B",
+          "resultado": "acerto",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-013",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DCL: comando GRANT e concessão de privilégios específicos",
+      "artigo": "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-014",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "DCL: comando REVOKE e remoção de privilégios pontuais",
+      "artigo": "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "SQL-REV-015",
+      "disciplina": "Manipulação de Dados SQL",
+      "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
+      "topico": "Propriedades ACID: isolamento e concorrência de transações",
+      "artigo": "03. Manipulação de Dados SQL/12. Transações em banco de dados, COMMIT e ROLLBACK.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-001",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Conceitos de lista, pilha e fila (atendimento ordenado)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-002",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Arrays e indexação base zero em C#",
+      "artigo": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md",
+      "estado": "pulada_sem_pontuacao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-003",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "ArrayList e operação de inserção por índice (Insert)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-004",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Coleções não genéricas e tipagem fraca em ArrayList",
+      "artigo": "04. Algoritmos e Estruturas de Dados/01. ArrayList, referências e operações em coleções.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-005",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Stack e política LIFO (operações Push e Pop)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-006",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Queue e operação de consulta sem remoção (Peek)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-007",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Hashtable e acesso direto por chave",
+      "artigo": "04. Algoritmos e Estruturas de Dados/03. Hashtable (chave, valor, hashing e colisões).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-008",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Segurança de tipagem em tempo de compilação com List<T>",
+      "artigo": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-009",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Coleções sequenciais vs. encadeadas (List vs. LinkedList)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-010",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Organização genérica por chave-valor com Dictionary<TKey, TValue>",
+      "artigo": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-011",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Tipos abstratos de dados (TAD) e implementação interna",
+      "artigo": "04. Algoritmos e Estruturas de Dados/05. Listas lineares e flexíveis, árvores binárias e tabelas hash.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-012",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Inserção em lista linear sequencial e deslocamento de elementos",
+      "artigo": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-013",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Limite de capacidade e tratamento de overflow em lista sequencial estática",
+      "artigo": "04. Algoritmos e Estruturas de Dados/06. Lista linear (array, contador, inserção e remoção).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-014",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Classes autorreferenciais e referências de nó",
+      "artigo": "04. Algoritmos e Estruturas de Dados/07. Classes autorreferenciais e células encadeadas.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "D",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-015",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Lista flexível e o papel da célula sentinela (nó cabeça)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-016",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Remoção de nó intermediário em lista simplesmente encadeada",
+      "artigo": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "B",
+          "resultado": "erro",
+          "apresentacao": "revisao_oficial_puc_com_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-017",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Pesquisa e navegação por comparação em Árvore Binária de Busca (ABB)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-018",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Caminhamento em-ordem (in-order) em Árvore Binária de Busca",
+      "artigo": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-019",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Inserção ordenada em Árvore Binária de Busca",
+      "artigo": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-020",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Remoção de nó com dois filhos em Árvore Binária de Busca",
+      "artigo": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-021",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Árvores AVL e rotação simples à direita (desbalanceamento LL)",
+      "artigo": "04. Algoritmos e Estruturas de Dados/10. Árvores AVL (balanceamento e rotações).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-022",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Colisão em tabela hash e estratégias de tratamento",
+      "artigo": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "AED-REV-023",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
+      "topico": "Eficiência de tabelas hash, dispersão uniforme e fator de carga",
+      "artigo": "04. Algoritmos e Estruturas de Dados/11. Tabela hash (função de transformação e tratamento de colisões).md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-001",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Separação de responsabilidades e arquitetura em camadas",
+      "artigo": "05. Desenvolvimento Web Back-End/01. Arquitetura de software e cliente-servidor.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "WEB-REV-002",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Fluxo entre camadas no padrão MVC",
+      "artigo": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-003",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Atualização de páginas em Multi-Page Applications (MPA)",
+      "artigo": "05. Desenvolvimento Web Back-End/03. Tipos de aplicações Web e estratégias de renderização.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-004",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Geração de resposta HTTP e processamento no servidor",
+      "artigo": "05. Desenvolvimento Web Back-End/04. Linguagens de programação back-end e PHP.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-005",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Papel do ORM (Object-Relational Mapping)",
+      "artigo": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-006",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Injeção de dependência por construtor em ASP.NET Core",
+      "artigo": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-07.json",
+          "resposta": "B",
+          "resultado": "acerto_com_apoio",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-007",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Controle de versão com Git e GitHub",
+      "artigo": "05. Desenvolvimento Web Back-End/07. Ambiente de desenvolvimento, Visual Studio e controle de versão no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-008",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Modelo de dados (Model) e propriedades em C#",
+      "artigo": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-009",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Retorno de View com passagem de Model na action",
+      "artigo": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-010",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Consulta de registros com LINQ (FirstOrDefault)",
+      "artigo": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-011",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Persistência transacional com DbContext.SaveChanges()",
+      "artigo": "05. Desenvolvimento Web Back-End/06. Model, validação e persistência no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-012",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Exclusão de registros com DbContext.Remove() e SaveChanges()",
+      "artigo": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-013",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Relacionamentos entre modelos: chave estrangeira e propriedade de navegação",
+      "artigo": "05. Desenvolvimento Web Back-End/09. Relacionamentos entre modelos e novas funcionalidades no ASP.NET Core MVC.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "oficial"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-014",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Mapeamento de rotas convencionais no ASP.NET Core MVC",
+      "artigo": "05. Desenvolvimento Web Back-End/08. Implementação prática do CRUD de veículos no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-015",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Separação entre View e Controller (refatoração arquitetural)",
+      "artigo": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-016",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Armazenamento seguro de senhas e funções de hash criptográfico",
+      "artigo": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-017",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Segurança e gerenciamento de usuários com ASP.NET Core Identity",
+      "artigo": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-018",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Distinção fundamental entre Autenticação e Autorização",
+      "artigo": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-019",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Proteção de actions e controladores com o atributo [Authorize]",
+      "artigo": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "WEB-REV-020",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
+      "topico": "Acesso aos dados do usuário autenticado via HttpContext.User.Identity",
+      "artigo": "05. Desenvolvimento Web Back-End/11. Autenticação baseada em cookies, claims e login no ASP.NET Core MVC.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-001",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Conceito de requisito e engenharia de requisitos",
+      "artigo": "07. Engenharia de Requisitos/03. O conceito de requisito de software - definição, níveis e características.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": true
+    },
+    {
+      "id": "REQ-REV-002",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Critérios de qualidade de requisitos (completude)",
+      "artigo": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-003",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Critérios de qualidade de requisitos (rastreabilidade)",
+      "artigo": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-004",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Critérios de qualidade de requisitos (exequibilidade)",
+      "artigo": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-005",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Classificação de requisitos (funcional vs. não-funcional)",
+      "artigo": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-006",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Requisitos não-funcionais e métricas mensuráveis",
+      "artigo": "07. Engenharia de Requisitos/04. Requisitos funcionais e não-funcionais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-007",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Processo e macroatividades da engenharia de requisitos",
+      "artigo": "07. Engenharia de Requisitos/01. O que é, afinal, engenharia de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-008",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de elicitação (entrevista semiestruturada)",
+      "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-009",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de elicitação (brainstorming)",
+      "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-010",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de elicitação (questionários em larga escala)",
+      "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-011",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de elicitação (etnografia e observação direta)",
+      "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-012",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de elicitação (prototipagem)",
+      "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-013",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Papel e natureza da UML na engenharia de software",
+      "artigo": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-014",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Diagrama de casos de uso (atores e fronteira)",
+      "artigo": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-015",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Relacionamentos em casos de uso (inclusão / include)",
+      "artigo": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "oficial"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-016",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Relacionamentos em casos de uso (extensão / extend)",
+      "artigo": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "B",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "oficial_adaptada"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-017",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Generalização entre atores em casos de uso",
+      "artigo": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "B",
+          "resultado": "erro",
+          "apresentacao": "revisao_oficial_puc_alternativas_adaptadas"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-018",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Elementos do diagrama de classes (atributos vs. operações)",
+      "artigo": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-019",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Relacionamento de herança no diagrama de classes",
+      "artigo": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-020",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Composição vs. agregação (ciclo de vida e dependência)",
+      "artigo": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-021",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Classe associativa em relacionamentos N:N",
+      "artigo": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-022",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Diagrama de pacotes e organização em subsistemas",
+      "artigo": "07. Engenharia de Requisitos/10. Modelagem estrutural e modularização com diagrama de pacotes da uml.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-023",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Ferramentas CASE e consistência semântica de modelos",
+      "artigo": "07. Engenharia de Requisitos/07. Visão geral da uml e tipos de diagramas na modelagem de requisitos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-024",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Validação vs. verificação de requisitos",
+      "artigo": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "REQ-REV-025",
+      "disciplina": "Engenharia de Requisitos",
+      "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
+      "topico": "Técnicas de verificação (inspeção formal de requisitos)",
+      "artigo": "07. Engenharia de Requisitos/11. Verificação e validação de requisitos - técnicas, revisões e qualidade.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-001",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Perspectivas da interação (com o sistema vs. por meio do sistema)",
+      "artigo": "08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-002",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Papel dos sistemas interativos e apoio ao objetivo real do usuário",
+      "artigo": "08. Design de Interacao/03. O papel dos sistemas interativos na atividade humana.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-003",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Engenharia Cognitiva e o Golfo de Execução de Donald Norman",
+      "artigo": "08. Design de Interacao/08. Engenharia cognitiva e os problemas da interação usuário-sistema.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-04.json",
+          "resposta": "C",
+          "resultado": "acerto",
+          "apresentacao": "revisao_oficial_puc_expandida"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-004",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Engenharia Semiótica e metacomunicação designer-usuário",
+      "artigo": "08. Design de Interacao/09. Engenharia semiótica - comunicação usuário-sistema e metacomunicação usuário-designer.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-005",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Qualidades da interação: acessibilidade e comunicabilidade de rótulos",
+      "artigo": "08. Design de Interacao/07. Atributos de qualidade em sistemas interativos - usabilidade, comunicabilidade, acessibilidade e experiência de uso.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-006",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Contexto de uso: ambiente físico, condições técnicas e objetivos",
+      "artigo": "08. Design de Interacao/06. Contexto de uso, interface, interação e papéis do design.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-007",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Perspectiva humana e multidisciplinaridade em IHC",
+      "artigo": "08. Design de Interacao/01. O que é interação humano-computador e a visão teórica do ser humano.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-008",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Racionalismo técnico vs. reflexão em ação (Donald Schön)",
+      "artigo": "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-009",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Níveis de envolvimento: Design Participativo (projetar COM o usuário)",
+      "artigo": "08. Design de Interacao/10. Envolvimento do usuário no design - projetar de modo independente, centrado ou participativo.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-010",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Papel e benefícios da prototipagem rápida e exploratória",
+      "artigo": "08. Design de Interacao/13. Prototipagem de sistemas interativos - fidelidade, dimensão, wireframe, mockup e storyboard.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-011",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Feedback imediato e prevenção de submissões duplicadas",
+      "artigo": "08. Design de Interacao/15. Componentes e recomendações ergonômicas em sistemas interativos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-012",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Harmonia visual, contraste e legibilidade tipográfica",
+      "artigo": "08. Design de Interacao/14. Estética em sistemas interativos - harmonização de cores, fontes e usabilidade.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-013",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Personas e modelagem de usuários baseada em dados reais",
+      "artigo": "08. Design de Interacao/12. Modelagem de usuário - perfil, persona e mapa de empatia.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-014",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Princípios da Gestalt: Lei da Proximidade e organização visual",
+      "artigo": "08. Design de Interacao/18. Princípios e regras de design - psicologia da gestalt e regras de ouro.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-015",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Momentos da avaliação: avaliação formativa vs. avaliação somativa",
+      "artigo": "08. Design de Interacao/19. Avaliação de sistemas interativos - por que, quando e quem participa.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-10-simulado-05.json",
+          "resposta": "A",
+          "resultado": "acerto_sem_apoio_observado",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-016",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Princípios de acessibilidade da WCAG: Perceptível e Operável",
+      "artigo": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-017",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Métodos de inspeção por especialistas: Avaliação Heurística e Percurso Cognitivo",
+      "artigo": "08. Design de Interacao/20. Avaliação por inspeção - avaliação heurística e percurso cognitivo.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-07.json",
+          "resposta": "D",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "revisao_oficial_puc"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-018",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Método de Inspeção Semiótica (MIS) vs. Avaliação da Comunicabilidade (MAC)",
+      "artigo": "08. Design de Interacao/21. Avaliação da comunicabilidade - método de inspeção semiótica mis e método de avaliação da comunicabilidade mac.md",
+      "estado": "ja_apresentada_com_origem_da_revisao",
+      "historico": [
+        {
+          "diagnostico": "banco-de-questoes/diagnosticos/2026-11-12-simulado-06.json",
+          "resposta": "D",
+          "resultado": "acerto_sem_apoio",
+          "apresentacao": "oficial_adaptada"
+        }
+      ],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-019",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Avaliação por investigação com a escala SUS (System Usability Scale)",
+      "artigo": "08. Design de Interacao/24. Avaliação por investigação - método system usability scale sus.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    },
+    {
+      "id": "DI-REV-020",
+      "disciplina": "Design de Interação",
+      "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
+      "topico": "Teste de usabilidade: método empírico por observação de tarefas",
+      "artigo": "08. Design de Interacao/23. Teste de usabilidade - método empírico formal de avaliação por observação.md",
+      "estado": "nao_apresentada_com_origem_da_revisao",
+      "historico": [],
+      "possui_id_colidido_no_historico": false
+    }
+  ],
+  "proxima_bateria": {
+    "numero": 8,
+    "limite_respostas": 20,
+    "estado": "planejada",
+    "regra": "uma por vez; preservar enunciados, opcoes, gabaritos do banco, alternando disciplinas e topicos; atualizar status apenas apos resposta",
+    "ordem_ids": [
+      "PM-REV-001",
+      "MD-REV-002",
+      "SQL-REV-007",
+      "AED-REV-001",
+      "WEB-REV-002",
+      "REQ-REV-002",
+      "DI-REV-001",
+      "PM-REV-005",
+      "MD-REV-005",
+      "SQL-REV-014",
+      "AED-REV-008",
+      "WEB-REV-016",
+      "REQ-REV-008",
+      "DI-REV-008",
+      "PM-REV-019",
+      "MD-REV-016",
+      "AED-REV-018",
+      "WEB-REV-019",
+      "REQ-REV-020",
+      "DI-REV-016"
+    ],
+    "distribuicao": {
+      "Programacao_Modular": 3,
+      "Modelagem_de_Dados": 3,
+      "Manipulacao_SQL": 2,
+      "Algoritmos_Estruturas": 3,
+      "Web_Back_End": 3,
+      "Engenharia_Requisitos": 3,
+      "Design_Interacao": 3
+    }
+  },
+  "observacoes": [
+    "Baterias 01 a 07 possuem 10 respostas cada e devem manter seu fechamento historico.",
+    "AED-REV-002 foi apresentada e pulada: nao conta como respondida.",
+    "PM-REV-013 foi anulada por entregar o gabarito: nao conta como respondida.",
+    "Projeto de Aplicação Interativa tem 50 itens sem origem revisao_oficial_puc: para cobri-la mantendo a exclusividade, obter questoes originais antes ou reconsiderar o filtro em pedido futuro."
+  ]
+}
