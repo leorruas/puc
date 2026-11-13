@@ -5,8 +5,8 @@
   "descricao": "Rastreamento das perguntas cuja origem no banco e revisao_oficial_puc; classificacao interna, ainda sem verificacao independente de autoria/exata correspondencia com o simulado da instituicao.",
   "sumario": {
     "total_revisao_classificada": 152,
-    "ja_apresentadas_com_origem_identificada": 35,
-    "restantes_sem_aplicacao_valida_da_questao_da_colecao": 117,
+    "ja_apresentadas_com_origem_identificada": 45,
+    "restantes_sem_aplicacao_valida_da_questao_da_colecao": 107,
     "puladas_anteriores": 1,
     "anuladas_anteriores": 1,
     "quantidade_bancos": 8,
@@ -21,15 +21,15 @@
       "arquivo": "banco-de-questoes/01.programacao-modular.json",
       "total": 75,
       "colecao_revisao": 25,
-      "ja_apresentadas": 5,
-      "nao_apresentadas": 20
+      "ja_apresentadas": 6,
+      "nao_apresentadas": 19
     },
     {
       "arquivo": "banco-de-questoes/02.modelagem-de-dados.json",
       "total": 74,
       "colecao_revisao": 24,
-      "ja_apresentadas": 7,
-      "nao_apresentadas": 17
+      "ja_apresentadas": 8,
+      "nao_apresentadas": 16
     },
     {
       "arquivo": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
@@ -42,15 +42,15 @@
       "arquivo": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
       "total": 73,
       "colecao_revisao": 23,
-      "ja_apresentadas": 3,
-      "nao_apresentadas": 20
+      "ja_apresentadas": 5,
+      "nao_apresentadas": 18
     },
     {
       "arquivo": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
       "total": 70,
       "colecao_revisao": 20,
-      "ja_apresentadas": 4,
-      "nao_apresentadas": 16
+      "ja_apresentadas": 6,
+      "nao_apresentadas": 14
     },
     {
       "arquivo": "banco-de-questoes/06.projeto-aplicacao-interativa.json",
@@ -63,15 +63,15 @@
       "arquivo": "banco-de-questoes/07.engenharia-de-requisitos.json",
       "total": 75,
       "colecao_revisao": 25,
-      "ja_apresentadas": 4,
-      "nao_apresentadas": 21
+      "ja_apresentadas": 6,
+      "nao_apresentadas": 19
     },
     {
       "arquivo": "banco-de-questoes/08.design-de-interacao.json",
       "total": 70,
       "colecao_revisao": 20,
-      "ja_apresentadas": 5,
-      "nao_apresentadas": 15
+      "ja_apresentadas": 7,
+      "nao_apresentadas": 13
     }
   ],
   "origens_ambivalentes": {
@@ -368,8 +368,17 @@
       "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
       "topico": "Tipos genéricos e polimorfismo paramétrico",
       "artigo": "01. Programacao Modular/20. Tipos genéricos (generics, type safety e coleções homogêneas).md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "A",
+          "gabarito": "A",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -634,8 +643,17 @@
       "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
       "topico": "Mapeamento de relacionamentos N:N e tabelas associativas",
       "artigo": "02. Modelagem de Dados/11. Mapeamento de relacionamentos.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1013,8 +1031,17 @@
       "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
       "topico": "Segurança de tipagem em tempo de compilação com List<T>",
       "artigo": "04. Algoritmos e Estruturas de Dados/04. Coleções genéricas em C# (List, LinkedList, Queue, Stack e Dictionary).md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "A",
+          "resultado": "erro",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1127,8 +1154,17 @@
       "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
       "topico": "Caminhamento em-ordem (in-order) em Árvore Binária de Busca",
       "artigo": "04. Algoritmos e Estruturas de Dados/09. Árvore binária de pesquisa (estrutura, busca e operações).md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "D",
+          "gabarito": "D",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1367,8 +1403,17 @@
       "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
       "topico": "Armazenamento seguro de senhas e funções de hash criptográfico",
       "artigo": "05. Desenvolvimento Web Back-End/10. Controle de usuários e criptografia de senhas no ASP.NET Core MVC.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1397,8 +1442,17 @@
       "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
       "topico": "Proteção de actions e controladores com o atributo [Authorize]",
       "artigo": "05. Desenvolvimento Web Back-End/12. Autorização de acesso baseada em perfis no ASP.NET Core MVC.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1496,8 +1550,17 @@
       "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
       "topico": "Técnicas de elicitação (entrevista semiestruturada)",
       "artigo": "07. Engenharia de Requisitos/06. Técnicas de elicitação de requisitos.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1637,8 +1700,17 @@
       "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
       "topico": "Composição vs. agregação (ciclo de vida e dependência)",
       "artigo": "07. Engenharia de Requisitos/09. Modelagem estrutural com diagrama de classes da uml.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1783,8 +1855,17 @@
       "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
       "topico": "Racionalismo técnico vs. reflexão em ação (Donald Schön)",
       "artigo": "08. Design de Interacao/11. Racionalismo técnico e reflexão em ação - o papel da técnica e da criatividade no design.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1870,8 +1951,17 @@
       "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
       "topico": "Princípios de acessibilidade da WCAG: Perceptível e Operável",
       "artigo": "08. Design de Interacao/22. Avaliação da acessibilidade - diretrizes da wcag e conformidade em sistemas interativos.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 9,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1930,23 +2020,23 @@
     }
   ],
   "proxima_bateria": {
-    "numero": 9,
+    "numero": 10,
     "limite_respostas": 10,
     "estado": "planejada",
     "regra": "uma por vez; preservar enunciados, opcoes e gabaritos do banco; registrar apenas após resposta",
     "ordem_ids": [
-      "AED-REV-008",
-      "WEB-REV-016",
-      "REQ-REV-008",
-      "DI-REV-008",
-      "PM-REV-019",
-      "MD-REV-016",
-      "AED-REV-018",
-      "WEB-REV-019",
-      "REQ-REV-020",
-      "DI-REV-016"
+      "SQL-REV-001",
+      "PM-REV-002",
+      "MD-REV-001",
+      "AED-REV-003",
+      "WEB-REV-001",
+      "REQ-REV-001",
+      "DI-REV-002",
+      "SQL-REV-002",
+      "PM-REV-003",
+      "MD-REV-003"
     ],
-    "origem_fila": "fila_reservada_para_a_bateria_seguinte da bateria 08"
+    "origem_fila": "questões ainda não apresentadas, alternando disciplinas"
   },
   "observacoes": [
     "Baterias 01 a 07 possuem 10 respostas cada e devem manter seu fechamento historico.",
@@ -2059,6 +2149,114 @@
         "gabarito": "B",
         "resultado": "acerto_sem_apoio",
         "conceito": "DCL: comando REVOKE e remoção de privilégios pontuais",
+        "origem": "revisao_oficial_puc"
+      }
+    ]
+  },
+  "andamento_bateria_09": {
+    "total_previsto": 10,
+    "respondidas_confirmadas_no_chat": 10,
+    "estado": "concluida",
+    "diagnostico": "banco-de-questoes/diagnosticos/2026-11-13-simulado-09.json",
+    "registros": [
+      {
+        "numero": 1,
+        "id": "AED-REV-008",
+        "disciplina": "Algoritmos e Estruturas de Dados",
+        "resposta": "C",
+        "gabarito": "A",
+        "resultado": "erro",
+        "conceito": "Segurança de tipagem em tempo de compilação com List<T>",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 2,
+        "id": "WEB-REV-016",
+        "disciplina": "Desenvolvimento Web Back-End",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Armazenamento seguro de senhas e funções de hash criptográfico",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 3,
+        "id": "REQ-REV-008",
+        "disciplina": "Engenharia de Requisitos",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Técnicas de elicitação (entrevista semiestruturada)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 4,
+        "id": "DI-REV-008",
+        "disciplina": "Design de Interação",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Racionalismo técnico vs. reflexão em ação (Donald Schön)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 5,
+        "id": "PM-REV-019",
+        "disciplina": "Programação Modular",
+        "resposta": "A",
+        "gabarito": "A",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Tipos genéricos e polimorfismo paramétrico",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 6,
+        "id": "MD-REV-016",
+        "disciplina": "Modelagem de Dados",
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Mapeamento de relacionamentos N:N e tabelas associativas",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 7,
+        "id": "AED-REV-018",
+        "disciplina": "Algoritmos e Estruturas de Dados",
+        "resposta": "D",
+        "gabarito": "D",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Caminhamento em-ordem (in-order) em Árvore Binária de Busca",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 8,
+        "id": "WEB-REV-019",
+        "disciplina": "Desenvolvimento Web Back-End",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Proteção de actions e controladores com o atributo [Authorize]",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 9,
+        "id": "REQ-REV-020",
+        "disciplina": "Engenharia de Requisitos",
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Composição vs. agregação (ciclo de vida e dependência)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 10,
+        "id": "DI-REV-016",
+        "disciplina": "Design de Interação",
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Princípios de acessibilidade da WCAG: Perceptível e Operável",
         "origem": "revisao_oficial_puc"
       }
     ]
