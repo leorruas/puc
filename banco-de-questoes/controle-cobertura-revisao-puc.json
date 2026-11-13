@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "id": "PUC-CONTROLE-COBERTURA-REVISAO",
-  "atualizado_em": "2026-11-12",
+  "atualizado_em": "2026-11-13",
   "descricao": "Rastreamento das perguntas cuja origem no banco e revisao_oficial_puc; classificacao interna, ainda sem verificacao independente de autoria/exata correspondencia com o simulado da instituicao.",
   "sumario": {
     "total_revisao_classificada": 152,
-    "ja_apresentadas_com_origem_identificada": 25,
-    "restantes_sem_aplicacao_valida_da_questao_da_colecao": 127,
+    "ja_apresentadas_com_origem_identificada": 35,
+    "restantes_sem_aplicacao_valida_da_questao_da_colecao": 117,
     "puladas_anteriores": 1,
     "anuladas_anteriores": 1,
     "quantidade_bancos": 8,
@@ -21,36 +21,36 @@
       "arquivo": "banco-de-questoes/01.programacao-modular.json",
       "total": 75,
       "colecao_revisao": 25,
-      "ja_apresentadas": 3,
-      "nao_apresentadas": 22
+      "ja_apresentadas": 5,
+      "nao_apresentadas": 20
     },
     {
       "arquivo": "banco-de-questoes/02.modelagem-de-dados.json",
       "total": 74,
       "colecao_revisao": 24,
-      "ja_apresentadas": 5,
-      "nao_apresentadas": 19
+      "ja_apresentadas": 7,
+      "nao_apresentadas": 17
     },
     {
       "arquivo": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
       "total": 65,
       "colecao_revisao": 15,
-      "ja_apresentadas": 5,
-      "nao_apresentadas": 10
+      "ja_apresentadas": 7,
+      "nao_apresentadas": 8
     },
     {
       "arquivo": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
       "total": 73,
       "colecao_revisao": 23,
-      "ja_apresentadas": 2,
-      "nao_apresentadas": 21
+      "ja_apresentadas": 3,
+      "nao_apresentadas": 20
     },
     {
       "arquivo": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
       "total": 70,
       "colecao_revisao": 20,
-      "ja_apresentadas": 3,
-      "nao_apresentadas": 17
+      "ja_apresentadas": 4,
+      "nao_apresentadas": 16
     },
     {
       "arquivo": "banco-de-questoes/06.projeto-aplicacao-interativa.json",
@@ -63,15 +63,15 @@
       "arquivo": "banco-de-questoes/07.engenharia-de-requisitos.json",
       "total": 75,
       "colecao_revisao": 25,
-      "ja_apresentadas": 3,
-      "nao_apresentadas": 22
+      "ja_apresentadas": 4,
+      "nao_apresentadas": 21
     },
     {
       "arquivo": "banco-de-questoes/08.design-de-interacao.json",
       "total": 70,
       "colecao_revisao": 20,
-      "ja_apresentadas": 4,
-      "nao_apresentadas": 16
+      "ja_apresentadas": 5,
+      "nao_apresentadas": 15
     }
   ],
   "origens_ambivalentes": {
@@ -149,8 +149,17 @@
       "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
       "topico": "Programação modular e gerenciamento da complexidade",
       "artigo": "01. Programacao Modular/01. Introdução à programação modular.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -189,8 +198,17 @@
       "arquivo_banco": "banco-de-questoes/01.programacao-modular.json",
       "topico": "Classes, objetos, atributos e métodos",
       "artigo": "01. Programacao Modular/07. Atributos e métodos (classes, objetos e definição de membros).md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "A",
+          "gabarito": "A",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -430,8 +448,17 @@
       "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
       "topico": "Níveis externo, conceitual e interno do SGBD e independência física",
       "artigo": "02. Modelagem de Dados/04. Níveis do sgbd e etapas do projeto de banco de dados.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "D",
+          "gabarito": "D",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -460,8 +487,17 @@
       "arquivo_banco": "banco-de-questoes/02.modelagem-de-dados.json",
       "topico": "Modelagem de entidades e tipos de atributos",
       "artigo": "02. Modelagem de Dados/05. Modelagem de entidades e tipos de atributos.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -769,8 +805,17 @@
       "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
       "topico": "DDL: CREATE TABLE, tipos INTEGER e VARCHAR e PRIMARY KEY",
       "artigo": "03. Manipulação de Dados SQL/03. Comando CREATE TABLE.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "A",
+          "gabarito": "A",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -860,8 +905,17 @@
       "arquivo_banco": "banco-de-questoes/03.manipulacao-de-dados-sql.json",
       "topico": "DCL: comando REVOKE e remoção de privilégios pontuais",
       "artigo": "03. Manipulação de Dados SQL/13. Comandos GRANT e REVOKE.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -880,8 +934,17 @@
       "arquivo_banco": "banco-de-questoes/04.algoritmos-e-estruturas-de-dados.json",
       "topico": "Conceitos de lista, pilha e fila (atendimento ordenado)",
       "artigo": "04. Algoritmos e Estruturas de Dados/02. Queue e Stack (filas, pilhas, FIFO e LIFO).md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "B",
+          "gabarito": "B",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1134,8 +1197,17 @@
       "arquivo_banco": "banco-de-questoes/05.desenvolvimento-web-back-end.json",
       "topico": "Fluxo entre camadas no padrão MVC",
       "artigo": "05. Desenvolvimento Web Back-End/02. Estilos arquiteturais - camadas, monolítico e cliente-servidor.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1355,8 +1427,17 @@
       "arquivo_banco": "banco-de-questoes/07.engenharia-de-requisitos.json",
       "topico": "Critérios de qualidade de requisitos (completude)",
       "artigo": "07. Engenharia de Requisitos/05. Como escrever requisitos de qualidade - critérios, padrões e boas práticas.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "C",
+          "gabarito": "C",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1616,8 +1697,17 @@
       "arquivo_banco": "banco-de-questoes/08.design-de-interacao.json",
       "topico": "Perspectivas da interação (com o sistema vs. por meio do sistema)",
       "artigo": "08. Design de Interacao/04. Perspectivas de interação usuário-sistema - interagir com o sistema vs. por meio do sistema.md",
-      "estado": "nao_apresentada_com_origem_da_revisao",
-      "historico": [],
+      "estado": "respondida_com_origem_da_revisao",
+      "historico": [
+        {
+          "bateria": 8,
+          "data": "2026-11-13",
+          "resposta": "A",
+          "gabarito": "A",
+          "resultado": "acerto_sem_apoio",
+          "origem": "revisao_oficial_puc"
+        }
+      ],
       "possui_id_colidido_no_historico": false
     },
     {
@@ -1840,42 +1930,11 @@
     }
   ],
   "proxima_bateria": {
-    "numero": 8,
+    "numero": 9,
     "limite_respostas": 10,
-    "estado": "em_andamento",
-    "regra": "uma por vez; preservar enunciados, opcoes, gabaritos do banco, alternando disciplinas e topicos; atualizar status apenas apos resposta",
+    "estado": "planejada",
+    "regra": "uma por vez; preservar enunciados, opcoes e gabaritos do banco; registrar apenas após resposta",
     "ordem_ids": [
-      "PM-REV-001",
-      "MD-REV-002",
-      "SQL-REV-007",
-      "AED-REV-001",
-      "WEB-REV-002",
-      "REQ-REV-002",
-      "DI-REV-001",
-      "PM-REV-005",
-      "MD-REV-005",
-      "SQL-REV-014"
-    ],
-    "distribuicao": {
-      "Programacao_Modular": 2,
-      "Modelagem_de_Dados": 2,
-      "Manipulacao_SQL": 2,
-      "Algoritmos_Estruturas": 1,
-      "Web_Back_End": 1,
-      "Engenharia_Requisitos": 1,
-      "Design_Interacao": 1
-    },
-    "ordem_original_de_20": [
-      "PM-REV-001",
-      "MD-REV-002",
-      "SQL-REV-007",
-      "AED-REV-001",
-      "WEB-REV-002",
-      "REQ-REV-002",
-      "DI-REV-001",
-      "PM-REV-005",
-      "MD-REV-005",
-      "SQL-REV-014",
       "AED-REV-008",
       "WEB-REV-016",
       "REQ-REV-008",
@@ -1887,18 +1946,7 @@
       "REQ-REV-020",
       "DI-REV-016"
     ],
-    "fila_reservada_para_a_bateria_seguinte": [
-      "AED-REV-008",
-      "WEB-REV-016",
-      "REQ-REV-008",
-      "DI-REV-008",
-      "PM-REV-019",
-      "MD-REV-016",
-      "AED-REV-018",
-      "WEB-REV-019",
-      "REQ-REV-020",
-      "DI-REV-016"
-    ]
+    "origem_fila": "fila_reservada_para_a_bateria_seguinte da bateria 08"
   },
   "observacoes": [
     "Baterias 01 a 07 possuem 10 respostas cada e devem manter seu fechamento historico.",
@@ -1909,18 +1957,110 @@
   ],
   "andamento_bateria_08": {
     "total_previsto": 10,
-    "respondidas_confirmadas_no_chat": 1,
-    "registros_parciais": [
+    "respondidas_confirmadas_no_chat": 10,
+    "estado": "concluida",
+    "diagnostico": "banco-de-questoes/diagnosticos/2026-11-13-simulado-08.json",
+    "registros": [
       {
-        "id": "PM-REV-001",
         "numero": 1,
+        "id": "PM-REV-001",
+        "disciplina": "Programação Modular",
         "resposta": "C",
         "gabarito": "C",
         "resultado": "acerto_sem_apoio",
-        "disciplina": "Programação Modular"
+        "conceito": "Programação modular e gerenciamento da complexidade",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 2,
+        "id": "MD-REV-002",
+        "disciplina": "Modelagem de Dados",
+        "resposta": "D",
+        "gabarito": "D",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Níveis externo, conceitual e interno do SGBD e independência física",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 3,
+        "id": "SQL-REV-007",
+        "disciplina": "Manipulação de Dados SQL",
+        "resposta": "A",
+        "gabarito": "A",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "DDL: CREATE TABLE, tipos INTEGER e VARCHAR e PRIMARY KEY",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 4,
+        "id": "AED-REV-001",
+        "disciplina": "Algoritmos e Estruturas de Dados",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Conceitos de lista, pilha e fila (atendimento ordenado)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 5,
+        "id": "WEB-REV-002",
+        "disciplina": "Desenvolvimento Web Back-End",
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Fluxo entre camadas no padrão MVC",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 6,
+        "id": "REQ-REV-002",
+        "disciplina": "Engenharia de Requisitos",
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Critérios de qualidade de requisitos (completude)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 7,
+        "id": "DI-REV-001",
+        "disciplina": "Design de Interação",
+        "resposta": "A",
+        "gabarito": "A",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Perspectivas da interação (com o sistema vs. por meio do sistema)",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 8,
+        "id": "PM-REV-005",
+        "disciplina": "Programação Modular",
+        "resposta": "A",
+        "gabarito": "A",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Classes, objetos, atributos e métodos",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 9,
+        "id": "MD-REV-005",
+        "disciplina": "Modelagem de Dados",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "Modelagem de entidades e tipos de atributos",
+        "origem": "revisao_oficial_puc"
+      },
+      {
+        "numero": 10,
+        "id": "SQL-REV-014",
+        "disciplina": "Manipulação de Dados SQL",
+        "resposta": "B",
+        "gabarito": "B",
+        "resultado": "acerto_sem_apoio",
+        "conceito": "DCL: comando REVOKE e remoção de privilégios pontuais",
+        "origem": "revisao_oficial_puc"
       }
-    ],
-    "proxima_questao": "MD-REV-002",
-    "nota": "Parcial para continuidade; somente contabilizar cobertura definitiva e gerar diagnostico apos 10 respostas efetivas."
+    ]
   }
 }
