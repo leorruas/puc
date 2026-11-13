@@ -1841,10 +1841,31 @@
   ],
   "proxima_bateria": {
     "numero": 8,
-    "limite_respostas": 20,
-    "estado": "planejada",
+    "limite_respostas": 10,
+    "estado": "em_andamento",
     "regra": "uma por vez; preservar enunciados, opcoes, gabaritos do banco, alternando disciplinas e topicos; atualizar status apenas apos resposta",
     "ordem_ids": [
+      "PM-REV-001",
+      "MD-REV-002",
+      "SQL-REV-007",
+      "AED-REV-001",
+      "WEB-REV-002",
+      "REQ-REV-002",
+      "DI-REV-001",
+      "PM-REV-005",
+      "MD-REV-005",
+      "SQL-REV-014"
+    ],
+    "distribuicao": {
+      "Programacao_Modular": 2,
+      "Modelagem_de_Dados": 2,
+      "Manipulacao_SQL": 2,
+      "Algoritmos_Estruturas": 1,
+      "Web_Back_End": 1,
+      "Engenharia_Requisitos": 1,
+      "Design_Interacao": 1
+    },
+    "ordem_original_de_20": [
       "PM-REV-001",
       "MD-REV-002",
       "SQL-REV-007",
@@ -1866,20 +1887,40 @@
       "REQ-REV-020",
       "DI-REV-016"
     ],
-    "distribuicao": {
-      "Programacao_Modular": 3,
-      "Modelagem_de_Dados": 3,
-      "Manipulacao_SQL": 2,
-      "Algoritmos_Estruturas": 3,
-      "Web_Back_End": 3,
-      "Engenharia_Requisitos": 3,
-      "Design_Interacao": 3
-    }
+    "fila_reservada_para_a_bateria_seguinte": [
+      "AED-REV-008",
+      "WEB-REV-016",
+      "REQ-REV-008",
+      "DI-REV-008",
+      "PM-REV-019",
+      "MD-REV-016",
+      "AED-REV-018",
+      "WEB-REV-019",
+      "REQ-REV-020",
+      "DI-REV-016"
+    ]
   },
   "observacoes": [
     "Baterias 01 a 07 possuem 10 respostas cada e devem manter seu fechamento historico.",
     "AED-REV-002 foi apresentada e pulada: nao conta como respondida.",
     "PM-REV-013 foi anulada por entregar o gabarito: nao conta como respondida.",
-    "Projeto de Aplicação Interativa tem 50 itens sem origem revisao_oficial_puc: para cobri-la mantendo a exclusividade, obter questoes originais antes ou reconsiderar o filtro em pedido futuro."
-  ]
+    "Projeto de Aplicação Interativa tem 50 itens sem origem revisao_oficial_puc: para cobri-la mantendo a exclusividade, obter questoes originais antes ou reconsiderar o filtro em pedido futuro.",
+    "Exceção solicitada na conversa: bateria 08 fechada com 10 respostas, com registro e atualização de cobertura ao término; política geral de 20 mantém-se para futuras baterias até nova preferência."
+  ],
+  "andamento_bateria_08": {
+    "total_previsto": 10,
+    "respondidas_confirmadas_no_chat": 1,
+    "registros_parciais": [
+      {
+        "id": "PM-REV-001",
+        "numero": 1,
+        "resposta": "C",
+        "gabarito": "C",
+        "resultado": "acerto_sem_apoio",
+        "disciplina": "Programação Modular"
+      }
+    ],
+    "proxima_questao": "MD-REV-002",
+    "nota": "Parcial para continuidade; somente contabilizar cobertura definitiva e gerar diagnostico apos 10 respostas efetivas."
+  }
 }
