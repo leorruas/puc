@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.1",
+  "id": "PUC-SIM-2026-11-13-08",
+  "data": "2026-11-13",
+  "status": "bateria_concluida",
+  "tipo": "diagnostico_simulado",
+  "repositorio": "leorruas/puc",
+  "origem": "Questões rotuladas revisao_oficial_puc no banco interno; autoria institucional não verificada independentemente.",
+  "resumo": {
+    "respondidas": 10,
+    "acertos": 10,
+    "acertos_sem_apoio": 10,
+    "acertos_com_apoio": 0,
+    "erros": 0,
+    "aproveitamento_percentual": 100,
+    "questoes_anuladas": 0
+  },
+  "respostas": [
+    {
+      "numero": 1,
+      "id": "PM-REV-001",
+      "disciplina": "Programação Modular",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Programação modular e gerenciamento da complexidade",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 2,
+      "id": "MD-REV-002",
+      "disciplina": "Modelagem de Dados",
+      "resposta": "D",
+      "gabarito": "D",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Níveis externo, conceitual e interno do SGBD e independência física",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 3,
+      "id": "SQL-REV-007",
+      "disciplina": "Manipulação de Dados SQL",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "DDL: CREATE TABLE, tipos INTEGER e VARCHAR e PRIMARY KEY",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 4,
+      "id": "AED-REV-001",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Conceitos de lista, pilha e fila (atendimento ordenado)",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 5,
+      "id": "WEB-REV-002",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Fluxo entre camadas no padrão MVC",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 6,
+      "id": "REQ-REV-002",
+      "disciplina": "Engenharia de Requisitos",
+      "resposta": "C",
+      "gabarito": "C",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Critérios de qualidade de requisitos (completude)",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 7,
+      "id": "DI-REV-001",
+      "disciplina": "Design de Interação",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Perspectivas da interação (com o sistema vs. por meio do sistema)",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 8,
+      "id": "PM-REV-005",
+      "disciplina": "Programação Modular",
+      "resposta": "A",
+      "gabarito": "A",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Classes, objetos, atributos e métodos",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 9,
+      "id": "MD-REV-005",
+      "disciplina": "Modelagem de Dados",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "Modelagem de entidades e tipos de atributos",
+      "origem": "revisao_oficial_puc"
+    },
+    {
+      "numero": 10,
+      "id": "SQL-REV-014",
+      "disciplina": "Manipulação de Dados SQL",
+      "resposta": "B",
+      "gabarito": "B",
+      "resultado": "acerto_sem_apoio",
+      "conceito": "DCL: comando REVOKE e remoção de privilégios pontuais",
+      "origem": "revisao_oficial_puc"
+    }
+  ],
+  "lacunas_e_retestes": [
+    {
+      "id": "LAC-SQL-006",
+      "tema": "Junções SQL: LEFT JOIN vs INNER JOIN",
+      "prioridade": "alta",
+      "estado": "ativa_com_melhora_parcial",
+      "disciplina": "Manipulação de Dados SQL",
+      "evidencias": [
+        "B6 SQL-REV-010 erro: INNER em vez de LEFT",
+        "B7 SQL-REV-010-R1 erro: desconsiderou projeto sem tarefa",
+        "B7 SQL-REV-010-R2 acerto: LEFT JOIN+GROUP BY+COUNT"
+      ],
+      "descricao": "Erro em duas questões distintas de preservação de linhas sem correspondência; acerto recente indica progresso, mas demanda retenção.",
+      "leitura": {
+        "caminho": "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/10.%20Cl%C3%A1usula%20JOIN%2C%20jun%C3%A7%C3%B5es%20e%20UNION",
+        "verificado_no_github": true
+      },
+      "estrategia": "Comparar diagramas de linhas preservadas, executar LEFT JOIN com duas linhas correspondentes e com nenhuma; aplicar COUNT(*) vs COUNT(coluna).",
+      "criterio_superacao": "Dois novos problemas independentes corretos em sessões espaçadas, com explicação da inclusão de registros sem correspondência.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-SQL-004",
+      "tema": "NOT IN com NULL e lógica ternária",
+      "prioridade": "muito_alta",
+      "estado": "ativa_sem_reteste_nesta_bateria",
+      "disciplina": "Manipulação de Dados SQL",
+      "evidencias": [
+        "B4 erro em NOT IN com NULL (ID interno da questão de chat não corresponde ao SQL-REV-006 oficial, que trata de FK)",
+        "B6 SQL-NOTIN-NULL-R1 erro e solicitação de explicação longa",
+        "B7 não foi retestada"
+      ],
+      "descricao": "Não domina de forma estável NULL em NOT IN; comparações UNKNOWN podem eliminar todos os registros. Artigo referenciado cobre NOT IN e subconsultas, mas falta confirmar se aprofunda explicitamente o caso NULL.",
+      "leitura": {
+        "caminho": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/11.%20Consultas%20aninhadas%20sem%20e%20com%20correla%C3%A7%C3%A3o",
+        "verificado_no_github": true
+      },
+      "cobertura_vault": "parcial: artigo 11 cobre NOT IN e EXISTS; comportamento NOT IN com NULL não foi localizado explicitamente no texto consultado; recomendar inclusão de exemplos no vault, sem declarar cobertura plena",
+      "estrategia": "Prever resultados de NOT IN (..., NULL), excluir NULL na subconsulta e comparar NOT EXISTS com subconjunto correlacionado.",
+      "criterio_superacao": "Dois problemas com NULL e existência respondidos corretamente sem apoio.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-AED-002",
+      "tema": "Referências e remoção em lista encadeada",
+      "prioridade": "media",
+      "estado": "melhora_provisoria_dois_acertos_sem_apoio",
+      "disciplina": "Algoritmos e Estruturas de Dados",
+      "evidencias": [
+        "B4 AED-REV-016 erro",
+        "B6 AED-REV-016-R1 erro: i=tmp.prox vs i.prox=tmp.prox",
+        "B7 AED-REV-016-R2 acerto de mudança em prox",
+        "B7 AED-REV-016-R3 acerto isolando nó retirado"
+      ],
+      "descricao": "Duas variações corretas sem apoio sugerem compreensão de referência local versus campo de célula; risco de acerto por exposição recente.",
+      "leitura": {
+        "caminho": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+        "url": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/08.%20Lista%20flex%C3%ADvel%20%28n%C3%B3%20cabe%C3%A7a%2C%20inser%C3%A7%C3%A3o%2C%20remo%C3%A7%C3%A3o%20e%20percurso%29",
+        "verificado_no_github": true
+      },
+      "estrategia": "Deixar para reteste posterior, incluir remoção no início após nó sentinela e ligação de dois nós ao mesmo objeto.",
+      "criterio_superacao": "Acerto em outra sessão após intervalo sem reapresentar modelo igual.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-PM-001",
+      "tema": "Construtores em herança: this(...) vs base(...)",
+      "prioridade": "media",
+      "estado": "melhora_provisoria_um_reteste_sem_apoio",
+      "disciplina": "Programação Modular",
+      "evidencias": [
+        "B6 PM-REV-015 erro this(nome) sem sobrecarga correspondente, pediu explicação longa",
+        "B7 PM-REV-015-R1 acerto de cadeia this->base"
+      ],
+      "descricao": "Cadeia de construtores correta em novo exemplo, mas só um reteste após explicação anterior.",
+      "leitura": {
+        "caminho": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+        "url": "https://leorruas.github.io/puc/#/01.%20Programacao%20Modular/16.%20Construtores%20em%20classes%20filhas%20%28ordem%20de%20inicializa%C3%A7%C3%A3o%20e%20a%20cl%C3%A1usula%20base%29",
+        "verificado_no_github": true
+      },
+      "estrategia": "Outro exercício com múltiplos construtores e verificação de compilação versus valores atribuídos.",
+      "criterio_superacao": "Novo acerto independente após intervalo.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-REQ-001",
+      "tema": "Generalização entre atores, include e extend",
+      "prioridade": "baixa",
+      "estado": "melhora_provisoria_apos_reteste_direto",
+      "disciplina": "Engenharia de Requisitos",
+      "evidencias": [
+        "B5 REQ-REV-017 erro",
+        "B6 REQ-REV-015 e REQ-REV-016 acertos para include/extend",
+        "B7 REQ-REV-017-R1 acerto em generalização de atores"
+      ],
+      "descricao": "Primeiro acerto direto em generalização e dois anteriores em include/extend; aguardar retenção.",
+      "leitura": {
+        "caminho": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+        "url": "https://leorruas.github.io/puc/#/07.%20Engenharia%20de%20Requisitos/08.%20Modelagem%20de%20requisitos%20com%20casos%20de%20uso%20e%20especifica%C3%A7%C3%B5es%20textuais",
+        "verificado_no_github": true
+      },
+      "estrategia": "Exercício espaçado com troca de atores e relações entre casos.",
+      "criterio_superacao": "Novo acerto depois de período sem estudo sobre o mesmo item.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-SQL-005",
+      "tema": "Funções agregadas AVG, MAX, COUNT com NULL e zero",
+      "prioridade": "baixa",
+      "estado": "melhora_provisoria_com_reteste_duplo",
+      "disciplina": "Manipulação de Dados SQL",
+      "evidencias": [
+        "B4 SQL-REV-003 erro de AVG com 0 e NULL",
+        "B5 SQL-REV-011 erro AVG vs MAX; usuário sugeriu desatenção na leitura",
+        "B6 SQL-REV-003-R1 acerto de AVG e COUNT",
+        "B7 SQL-REV-011-R1 acerto AVG vs MAX e operadores"
+      ],
+      "descricao": "Dois retestes positivos em temas complementares; hipótese de erro de leitura no item anterior, ainda precisa retenção futura.",
+      "leitura": {
+        "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/08.%20Fun%C3%A7%C3%B5es%20agregadas%20e%20c%C3%A1lculos%20em%20SQL",
+        "verificado_no_github": true
+      },
+      "estrategia": "Questões em período posterior sem antecipar AVG ou MAX no título.",
+      "criterio_superacao": "Repetição positiva em outra bateria espaçada.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-WEB-001",
+      "tema": "Injeção de dependência por construtor em ASP.NET Core",
+      "prioridade": "media",
+      "estado": "nova_duvida_explicitada_acerto_com_apoio",
+      "disciplina": "Desenvolvimento Web Back-End",
+      "evidencias": [
+        "B7 WEB-REV-006 usuário pediu explicação e revelou desconhecimento antes de responder",
+        "B7 WEB-REV-006 respondeu B somente após explicação e gabarito fornecidos"
+      ],
+      "descricao": "Dúvida explícita sobre IVeiculoServico, campo readonly e parâmetro de construtor; não há evidência de domínio sem ajuda nesta sessão.",
+      "leitura": {
+        "caminho": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+        "url": "https://leorruas.github.io/puc/#/05.%20Desenvolvimento%20Web%20Back-End/05.%20Frameworks%20Web%2C%20MVC%20e%20mapeamento%20objeto-relacional",
+        "verificado_no_github": true
+      },
+      "estrategia": "Reteste com classe e serviço de outro domínio, distinguindo DI de instanciação direta new e herança.",
+      "criterio_superacao": "Uma questão inédita correta sem apoio e explicação da origem do serviço.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    },
+    {
+      "id": "LAC-MD-002",
+      "tema": "Participação/cardinalidade DER",
+      "prioridade": "baixa_opcional",
+      "estado": "superada_provisoriamente_desde_bateria_05",
+      "disciplina": "Modelagem de Dados",
+      "evidencias": [
+        "B4 MD-REV-008 erro",
+        "B5 MD-REV-008-R1 acerto",
+        "B6/B7 sem reteste específico"
+      ],
+      "descricao": "Sem evidência contrária, manter observação de retenção.",
+      "leitura": {
+        "caminho": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+        "url": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/06.%20Modelagem%20de%20relacionamentos%2C%20cardinalidade%20e%20restri%C3%A7%C3%B5es%20de%20participa%C3%A7%C3%A3o",
+        "verificado_no_github": true
+      },
+      "estrategia": "Revisar se houver erro futuro em participação total/parcial.",
+      "criterio_superacao": "Novo acerto independente após intervalo.",
+      "observacao_bateria_08": "Nenhum erro nesta bateria; tema não necessariamente retestado, manter acompanhamento anterior."
+    }
+  ],
+  "leituras_ordenadas": [
+    {
+      "prioridade": "muito alta",
+      "tema": "SQL: NOT IN e NULL",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/11. Consultas aninhadas sem e com correlação.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/11.%20Consultas%20aninhadas%20sem%20e%20com%20correla%C3%A7%C3%A3o",
+        "verificado_no_github": true
+      },
+      "motivo": "B4/B6: erro repetido; tema ainda não retestado na sétima bateria; o artigo aborda o operador, mas o caso NULL precisa de complemento."
+    },
+    {
+      "prioridade": "alta",
+      "tema": "SQL: LEFT JOIN e INNER JOIN",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/10. Cláusula JOIN, junções e UNION.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/10.%20Cl%C3%A1usula%20JOIN%2C%20jun%C3%A7%C3%B5es%20e%20UNION",
+        "verificado_no_github": true
+      },
+      "motivo": "Q1 errada e Q9 correta na B7; preservação de linhas ainda instável."
+    },
+    {
+      "prioridade": "média",
+      "tema": "Back-End: injeção de dependência",
+      "artigo": {
+        "caminho": "05. Desenvolvimento Web Back-End/05. Frameworks Web, MVC e mapeamento objeto-relacional.md",
+        "url": "https://leorruas.github.io/puc/#/05.%20Desenvolvimento%20Web%20Back-End/05.%20Frameworks%20Web%2C%20MVC%20e%20mapeamento%20objeto-relacional",
+        "verificado_no_github": true
+      },
+      "motivo": "Q8 foi explicada antes da resposta; acerto com apoio não permite encerrar lacuna."
+    },
+    {
+      "prioridade": "média",
+      "tema": "Algoritmos: remoção em lista encadeada",
+      "artigo": {
+        "caminho": "04. Algoritmos e Estruturas de Dados/08. Lista flexível (nó cabeça, inserção, remoção e percurso).md",
+        "url": "https://leorruas.github.io/puc/#/04.%20Algoritmos%20e%20Estruturas%20de%20Dados/08.%20Lista%20flex%C3%ADvel%20%28n%C3%B3%20cabe%C3%A7a%2C%20inser%C3%A7%C3%A3o%2C%20remo%C3%A7%C3%A3o%20e%20percurso%29",
+        "verificado_no_github": true
+      },
+      "motivo": "Q4 e Q10 corretas sem apoio; revisão opcional curta e reteste espaçado."
+    },
+    {
+      "prioridade": "média",
+      "tema": "Programação Modular: this/base",
+      "artigo": {
+        "caminho": "01. Programacao Modular/16. Construtores em classes filhas (ordem de inicialização e a cláusula base).md",
+        "url": "https://leorruas.github.io/puc/#/01.%20Programacao%20Modular/16.%20Construtores%20em%20classes%20filhas%20%28ordem%20de%20inicializa%C3%A7%C3%A3o%20e%20a%20cl%C3%A1usula%20base%29",
+        "verificado_no_github": true
+      },
+      "motivo": "Q2 correta em novo exemplo após erro na sexta bateria."
+    },
+    {
+      "prioridade": "baixa",
+      "tema": "Requisitos: generalização de atores",
+      "artigo": {
+        "caminho": "07. Engenharia de Requisitos/08. Modelagem de requisitos com casos de uso e especificações textuais.md",
+        "url": "https://leorruas.github.io/puc/#/07.%20Engenharia%20de%20Requisitos/08.%20Modelagem%20de%20requisitos%20com%20casos%20de%20uso%20e%20especifica%C3%A7%C3%B5es%20textuais",
+        "verificado_no_github": true
+      },
+      "motivo": "Q3 correta no reteste direto, após acertos de include/extend."
+    },
+    {
+      "prioridade": "baixa",
+      "tema": "SQL: AVG/MAX e COUNT",
+      "artigo": {
+        "caminho": "03. Manipulação de Dados SQL/08. Funções agregadas e cálculos em SQL.md",
+        "url": "https://leorruas.github.io/puc/#/03.%20Manipula%C3%A7%C3%A3o%20de%20Dados%20SQL/08.%20Fun%C3%A7%C3%B5es%20agregadas%20e%20c%C3%A1lculos%20em%20SQL",
+        "verificado_no_github": true
+      },
+      "motivo": "Q5 correta com atenção à função e operador, após retestes de médias."
+    },
+    {
+      "prioridade": "baixa opcional",
+      "tema": "Modelagem: cardinalidade e participação",
+      "artigo": {
+        "caminho": "02. Modelagem de Dados/06. Modelagem de relacionamentos, cardinalidade e restrições de participação.md",
+        "url": "https://leorruas.github.io/puc/#/02.%20Modelagem%20de%20Dados/06.%20Modelagem%20de%20relacionamentos%2C%20cardinalidade%20e%20restri%C3%A7%C3%B5es%20de%20participa%C3%A7%C3%A3o",
+        "verificado_no_github": true
+      },
+      "motivo": "Lacuna antiga provisoriamente superada, sem reteste nesta bateria."
+    }
+  ],
+  "qualidade_avaliacao": {
+    "nota": "10 acertos sem ajuda antecipada; itens predominantemente de reconhecimento conceitual, não provam domínio de exercícios complexos.",
+    "cobertura": "7 disciplinas; Projeto de Aplicação Interativa sem questões classificadas como revisão oficial no banco."
+  },
+  "comparacao": {
+    "bateria_07": {
+      "acertos": 9,
+      "total": 10
+    },
+    "bateria_08": {
+      "acertos": 10,
+      "total": 10
+    },
+    "acumulado_baterias_01_a_08": {
+      "acertos": 63,
+      "total": 80,
+      "percentual": 78.75
+    }
+  },
+  "questoes_fora_do_escopo": [],
+  "recomendacoes_para_bateria_09": {
+    "ordem_ids": [
+      "AED-REV-008",
+      "WEB-REV-016",
+      "REQ-REV-008",
+      "DI-REV-008",
+      "PM-REV-019",
+      "MD-REV-016",
+      "AED-REV-018",
+      "WEB-REV-019",
+      "REQ-REV-020",
+      "DI-REV-016"
+    ],
+    "nota": "Priorizar aplicação e raciocínio; manter retestes espaçados de lacunas anteriores."
+  },
+  "registrado_automaticamente_apos_10_questoes": true
+}
